@@ -68,7 +68,6 @@ BEGIN
   SET
     full_name = new_full_name,
     avatar_url = new_avatar_url,
-    billing_address = new_billing_address,
     invite_code = new_invite_code
   WHERE id = auth.uid();
 END;

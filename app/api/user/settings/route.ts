@@ -98,7 +98,6 @@ export async function PUT(request: Request) {
       {
         new_full_name: fullName?.trim() || '',
         new_avatar_url: avatarUrl || '',
-        new_billing_address: billingAddress || '',
         new_invite_code: inviteCode || '',
       }
     );
