@@ -2,7 +2,7 @@
 
 Nexty is a feature-rich full-stack SaaS application template built with Next.js 15, React 19, and Supabase, providing developers with a complete solution for rapidly building and deploying SaaS applications.
 
-🚀Get Starter 👉: https://nexty.dev
+🚀 Get Started Now 👉: https://nexty.dev
 
 > Documentation for Nexty.dev is being prepared. Please read this README to get started. If you encounter any issues, please contact me for support:
 > Email: hi@nexty.dev
