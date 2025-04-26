@@ -69,9 +69,12 @@ Supabaseで新しいプロジェクトを作成し、生成されたURLと匿名
 
 Supabaseにログインし、SQLエディタで`/data`フォルダ内の全SQLファイルを実行します。
 
-7. **Supabase types.ts をローカルで生成する**
+7. **ローカルでの Supabase types.ts の生成**
 
-ターミナルで以下のコマンドを順番に実行してください：
+まず、お使いのプラットフォーム用の Supabase CLI をインストールしてください: https://supabase.com/docs/guides/local-development/cli/getting-started
+
+その後、ローカルのターミナルで以下のコマンドを順番に実行します：
+
 ```
 supabase login
 
@@ -79,6 +82,9 @@ supabase gen types typescript --project-id <your-project-id> --schema public > l
 ```
 
 Supabase のテーブル、ポリシー、トリガー、関数を更新した場合は、このコマンドを再度実行する必要があります。
+
+> 注意：コマンドラインで Supabase CLI のバージョンアップグレードを求められた場合は、上記リンクからアップグレードコマンドを確認し、まずそれを実行してから `supabase gen` コマンドを実行してください。
+
 8. **Stripeの設定（オプション）**
 
 決済機能が必要な場合は、`/README/stripe`のスクリーンショットチュートリアルに従って設定し（関連ドキュメントは近日公開予定）、StripeのAPIキーを`.env.local`ファイルに追加します。

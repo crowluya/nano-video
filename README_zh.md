@@ -69,8 +69,11 @@ cp .env.example .env.local
 登录 Supabase，在 SQL Editor 里面依次执行 `/data` 文件夹下的所有 sql 文件
 
 7. **本地生成 Supabase types.ts**
+ 
+先根据你的平台安装 supabase-cli: https://supabase.com/docs/guides/local-development/cli/getting-started 
 
-在本地命令行依次执行下面命令：
+然后在本地命令行依次执行下面命令：
+
 ```
 supabase login
 
@@ -78,6 +81,8 @@ supabase gen types typescript --project-id <your-project-id> --schema public > l
 ```
 
 后续更新 Supabase table、pilicy、trigger、function 都要再次执行
+
+> 如果遇到命令行提示需要升级 supabase-cli 版本，在上面的链接里找到升级命令，先执行升级命令，再执行 supabase gen 命令。
 
 8. **配置 Stripe (可选)**
 

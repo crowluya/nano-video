@@ -68,16 +68,21 @@ Follow the screenshot tutorial in `/README/supabase/auth` (related documentation
 
 Log in to Supabase and execute all SQL files in the `/data` folder in the SQL Editor.
 
-7. **Generate Supabase types.ts locally**
+1. **Generating Local Supabase types.ts**
 
-Run the following commands in your terminal:
+First, install the Supabase CLI for your platform: https://supabase.com/docs/guides/local-development/cli/getting-started
+
+Then run these commands in your local terminal:
+
 ```
 supabase login
 
 supabase gen types typescript --project-id <your-project-id> --schema public > lib/supabase/types.ts
 ```
 
-You'll need to run this command again whenever you update Supabase tables, policies, triggers, or functions.
+You'll need to run this command again whenever you update any Supabase tables, policies, triggers, or functions.
+
+> Note: If you get a prompt to upgrade the Supabase CLI version, find the upgrade command in the link above, run it first, then proceed with the `supabase gen` command.
 
 8. **Configure Stripe (optional)**
 
