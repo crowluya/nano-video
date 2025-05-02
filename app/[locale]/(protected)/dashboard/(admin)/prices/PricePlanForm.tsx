@@ -948,14 +948,14 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
                       disabled={
                         isLoading ||
                         isTranslating ||
-                        process.env.NEXT_PUBLIC_AI_MODEL_ID === "" ||
-                        process.env.NEXT_PUBLIC_AI_PROVIDER === ""
+                        !process.env.NEXT_PUBLIC_AI_MODEL_ID ||
+                        !process.env.NEXT_PUBLIC_AI_PROVIDER
                       }
                     >
                       <Wand2 className="h-4 w-4" /> {t("translateByAI")}
                     </Button>
-                    {process.env.NEXT_PUBLIC_AI_MODEL_ID === "" ||
-                    process.env.NEXT_PUBLIC_AI_PROVIDER === "" ? (
+                    {!process.env.NEXT_PUBLIC_AI_MODEL_ID ||
+                    !process.env.NEXT_PUBLIC_AI_PROVIDER ? (
                       <TooltipProvider>
                         <Tooltip>
                           <TooltipTrigger asChild>

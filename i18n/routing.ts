@@ -12,7 +12,7 @@ export const LOCALE_NAMES: Record<string, string> = {
 export const routing = defineRouting({
   locales: LOCALES,
   defaultLocale: DEFAULT_LOCALE,
-  localeDetection: process.env.NEXT_PUBLIC_LOCALE_DETECTION === 'true',
+  localeDetection: process.env.NEXT_PUBLIC_LOCALE_DETECTION && process.env.NEXT_PUBLIC_LOCALE_DETECTION === 'true' || false,
 
   localePrefix: 'as-needed',
 });
