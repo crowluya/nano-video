@@ -80,6 +80,14 @@
           "title": "Support",
           "links": [
             {
+              "label": "Docs",
+              "href": "https://docs.nexty.dev/docs"
+            },
+            {
+              "label": "Roadmap",
+              "href": "/roadmap"
+            },
+            {
               "href": "mailto:hi@nexty.dev",
               "label": "Contact Us"
             }
@@ -119,6 +127,7 @@
       "titleHighlight": "Full-Stack SaaS",
       "description": "A production-ready Next.js and Supabase starter template for building modern SaaS applications. Launch your content, AI, or subscription service faster.",
       "getStarted": "Get Started",
+      "viewDocs": "View Docs",
       "viewShowcase": "View Showcase"
     },
     "Features": {

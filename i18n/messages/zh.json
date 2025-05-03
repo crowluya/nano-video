@@ -80,6 +80,14 @@
           "title": "支持",
           "links": [
             {
+              "label": "文档",
+              "href": "https://docs.nexty.dev/zh/docs"
+            },
+            {
+              "label": "功能路线图",
+              "href": "/roadmap"
+            },
+            {
               "href": "mailto:hi@nexty.dev",
               "label": "联系我们"
             }
@@ -119,6 +127,7 @@
       "titleHighlight": "全栈 SaaS",
       "description": "Nexty 是一个功能齐全的 Next.js SaaS 全栈模板，让你能够快速构建各种商业网站，无论是内容站、工具站还是集成 AI 能力的付费网站。",
       "getStarted": "立即开始",
+      "viewDocs": "查看文档",
       "viewShowcase": "查看案例"
     },
     "Features": {

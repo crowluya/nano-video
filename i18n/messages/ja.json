@@ -80,6 +80,14 @@
           "title": "サポート",
           "links": [
             {
+              "label": "Docs",
+              "href": "https://docs.nexty.dev/ja/docs"
+            },
+            {
+              "label": "Roadmap",
+              "href": "/roadmap"
+            },
+            {
               "href": "mailto:hi@nexty.dev",
               "label": "お問い合わせ"
             }
@@ -119,6 +127,7 @@
       "titleHighlight": "フルスタック SaaS",
       "description": "Next.js と Supabase を活用した本格的な SaaS 開発キット。コンテンツ配信、AI ツール、サブスクリプションサービスを迅速に構築できます。",
       "getStarted": "今すぐ始める",
+      "viewDocs": "ドキュメントを見る",
       "viewShowcase": "事例を見る"
     },
     "Features": {
