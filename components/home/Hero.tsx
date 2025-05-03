@@ -1,5 +1,6 @@
 import { Link as I18nLink } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Hero() {
   const t = useTranslations("Landing.Hero");
@@ -37,13 +38,13 @@ export default function Hero() {
               >
                 {t("getStarted")}
               </I18nLink>
-              <a
+              <Link
                 href="https://docs.nexty.dev/docs"
                 target="_blank"
                 className="border border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 px-8 py-3 rounded-lg font-medium text-center hover:bg-indigo-50 dark:hover:bg-indigo-900/10"
               >
                 {t("viewDocs")}
-              </a>
+              </Link>
             </div>
           </div>
 
