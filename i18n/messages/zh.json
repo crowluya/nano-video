@@ -409,7 +409,7 @@
         },
         {
           "question": "有哪些AI功能已经内置在模板中？",
-          "answer": "模板内置了 AI 图像生成和 AI 文本对话功能，可与主流 AI 提供商的 API 集成，如OpenAI、Claude、Gemini、Grok & DeppSeek 等等，让你轻松构建AI驱动的应用。"
+          "answer": "模板内置了 AI 图像生成和 AI 文本对话功能，可与主流 AI 提供商的 API 集成，如OpenAI、Claude、Gemini、Grok & DeepSeek 等等，让你轻松构建AI驱动的应用。"
         }
       ]
     },
