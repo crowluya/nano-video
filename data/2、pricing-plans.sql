@@ -35,7 +35,7 @@ COMMENT ON COLUMN public.pricing_plans.benefits_jsonb IS 'JSON object defining p
 CREATE OR REPLACE FUNCTION public.handle_updated_at()
 RETURNS TRIGGER AS $$
 BEGIN
-  NEW.updated_at = timezone('utc'::text, now());
+  NEW.updated_at = now();
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
