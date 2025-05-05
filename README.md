@@ -2,14 +2,14 @@
 
 Nexty is a feature-rich, full-stack SaaS application boilerplate built with Next.js 15, React 19, and Supabase. It provides developers with a complete solution to quickly build and deploy SaaS applications.
 
-🚀 Get the boilerplate 👉: https://nexty.dev
-🚀 Roadmap 👉: https://nexty.dev/roadmap
-🚀 Documentation 👉: https://nexty.dev/docs
+- 🚀 Get the boilerplate 👉: https://nexty.dev
+- 🚀 Roadmap 👉: https://nexty.dev/roadmap
+- 🚀 Documentation 👉: https://nexty.dev/docs
 
 > If you encounter any issues, please contact me for support:
-> Email: hi@nexty.dev
-> Twitter (Chinese): https://x.com/weijunext
-> Twitter (English): https://x.com/judewei_dev
+> - Email: hi@nexty.dev
+> - Twitter (Chinese): https://x.com/weijunext
+> - Twitter (English): https://x.com/judewei_dev
 
 ## ✨ Key Features
 

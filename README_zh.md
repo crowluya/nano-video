@@ -2,14 +2,14 @@
 
 Nexty 是一个功能丰富的全栈 SaaS 应用模板，基于 Next.js 15、React 19 和 Supabase 构建，为开发者提供了快速构建和部署 SaaS 应用的完整解决方案。
 
-🚀 获取模板 👉：https://nexty.dev  
-🚀 Roadmap 👉: https://nexty.dev/zh/roadmap  
-🚀 使用文档 👉: https://nexty.dev/zh/docs
+- 🚀 获取模板 👉：https://nexty.dev  
+- 🚀 Roadmap 👉: https://nexty.dev/zh/roadmap  
+- 🚀 使用文档 👉: https://nexty.dev/zh/docs
 
 > 如遇到任何问题，请联系我支持：
-> 邮箱：hi@nexty.dev
-> 推特（中文）：https://x.com/weijunext
-> 微信：bigye_chengpu
+> - 邮箱：hi@nexty.dev
+> - 推特（中文）：https://x.com/weijunext
+> - 微信：bigye_chengpu
 
 ## ✨ 主要特性
 
