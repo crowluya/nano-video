@@ -1,0 +1,9 @@
+- All user-facing strings should be internationalized.
+- Internationalization files (e.g., JSON, JS/TS modules) are likely located in the `i18n/` directory.
+- When adding new text, ensure translations are provided for all supported locales.
+- If using a library (e.g., `next-intl`, `react-i18next`), follow its specific conventions for defining and consuming translations.
+- Pay attention to pluralization and genderization rules if applicable for the supported languages.
+- For content in `content/` or `blogs/` that needs to be localized, ensure there's a clear strategy for managing translated versions (e.g., file naming conventions like `my-post.en.md`, `my-post.ja.md` or subdirectories per language).
+- When displaying dates, times, numbers, and currencies, use locale-aware formatting.
+- If new locales are added, ensure all necessary configuration and translation files are updated.
+- The `middleware.ts` file might contain logic for locale detection and routing. Consult it for understanding how locales are handled. 

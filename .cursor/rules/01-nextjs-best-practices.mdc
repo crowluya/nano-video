@@ -1,0 +1,12 @@
+- Follow Next.js App Router conventions.
+- Prioritize React Server Components (RSCs) for performance. Only use Client Components (`'use client'`) when necessary (e.g., for interactivity, browser APIs, React Context).
+- Fetch data in Server Components where possible. Use `async/await` in Server Components.
+- For Client Components that need data, consider passing data from Server Components or fetching via route handlers/server actions.
+- Utilize `next/link` for navigation and `next/image` for image optimization.
+- Be mindful of Core Web Vitals (LCP, FID, CLS). The project uses `next/core-web-vitals` ESLint config.
+- Structure API routes or server actions logically within the `app/` directory.
+- Use Route Handlers for building API endpoints.
+- Leverage Server Actions for data mutations from Client Components to simplify client-side logic and reduce boilerplate.
+- Dynamic rendering: use `next/dynamic` for components or sections that are not immediately critical or are client-side only.
+- Metadata: Use the Metadata API (e.g., `export const metadata = {...}`) for SEO in layouts and pages.
+- Refer to `next.config.mjs` for project-specific Next.js configurations. 

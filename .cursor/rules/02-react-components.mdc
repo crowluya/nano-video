@@ -1,0 +1,17 @@
+- Use functional components with Hooks. Avoid class components.
+- Component Naming: Use PascalCase (e.g., `MyComponent`). File names should match component names (e.g., `MyComponent.tsx`).
+- Props:
+    - Define prop types using TypeScript interfaces (e.g., `interface MyComponentProps { ... }`).
+    - Destructure props in the function signature.
+- State Management:
+    - Use `useState` for simple component-level state.
+    - Use `useReducer` for more complex state logic within a component.
+    - For global or shared state, this project might use context or a dedicated state management library (check `stores/` directory or `package.json` for specifics like Zustand, Redux, Jotai).
+    - When using context, ensure it's memoized correctly to prevent unnecessary re-renders.
+- Effects: Use `useEffect` sparingly. Ensure dependencies are correctly specified. Clean up effects to prevent memory leaks.
+- Memoization: Use `React.memo` for components, `useMemo` for values, and `useCallback` for functions to optimize performance where necessary, especially with frequently re-rendering components or expensive computations.
+- Folder Structure for Components:
+    - Common/reusable components in `components/`.
+    - Route-specific components co-located within their respective `app/` route directories if not broadly reusable.
+    - Complex components can have their own folder (e.g., `components/MyComplexComponent/index.tsx`, `components/MyComplexComponent/subcomponent.tsx`).
+- Keep components small and focused on a single responsibility (SRP). 

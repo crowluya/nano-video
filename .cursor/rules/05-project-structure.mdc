@@ -1,0 +1,25 @@
+This is a Next.js project with TypeScript and Tailwind CSS.
+Key directories:
+
+- `app/`: Core application code using Next.js App Router. Contains layouts, pages (routes), and route-specific components.
+- `components/`: Shared, reusable React components used across the application.
+- `lib/`: Utility functions, helper scripts, or third-party library configurations.
+- `public/`: Static assets (images, fonts, etc.) directly served by Next.js.
+- `styles/`: Global styles, Tailwind base/component styles if any (though primarily utility-first).
+- `i18n/`: Internationalization files (translations for different locales).
+- `content/`: Markdown files or other content sources for pages (e.g., blog posts, documentation).
+- `blogs/`: Likely contains blog content, possibly in Markdown format.
+- `data/`: May contain static data, mock data, or data fetching configurations.
+- `stores/`: If present, likely contains state management logic (e.g., Zustand, Jotai, Redux stores or React Context providers).
+- `types/`: TypeScript type definitions, especially shared or global types.
+- `config/`: Project-level configuration files or constants.
+- `emails/`: Templates or components for transactional emails if the project sends emails.
+
+Important files:
+
+- `next.config.mjs`: Next.js configuration.
+- `tailwind.config.ts`: Tailwind CSS configuration.
+- `tsconfig.json`: TypeScript configuration.
+- `package.json`: Project dependencies and scripts.
+- `middleware.ts`: Next.js middleware for handling requests, potentially for auth or i18n routing.
+- `.eslintrc.json`: ESLint configuration (extends `next/core-web-vitals`). 

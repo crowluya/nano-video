@@ -1,0 +1,11 @@
+- Embrace the utility-first approach. Apply utilities directly in your JSX.
+- Use `@apply` in CSS modules or global stylesheets sparingly, primarily for very common, repeated sets of utilities that form a component-like abstraction not suitable for a React component, or for styling third-party components.
+- Customization:
+    - Refer to `tailwind.config.ts` for theme customizations (colors, spacing, fonts, etc.) and plugins.
+    - When adding custom CSS, consider if it can be achieved with Tailwind utilities or by extending the theme in `tailwind.config.ts` first.
+- Readability: For very long lists of utility classes, consider formatting them (e.g., line breaks before responsive prefixes or related groups) if it improves readability without cluttering.
+- Responsive Design: Use Tailwind's responsive prefixes (e.g., `sm:`, `md:`, `lg:`) for building adaptive UIs.
+- State Variants: Utilize state variants like `hover:`, `focus:`, `disabled:`, etc.
+- Dark Mode: If dark mode is implemented, use the `dark:` variant. (Check `tailwind.config.ts` for dark mode strategy).
+- Avoid arbitrary values unless necessary. Prefer theme values. If arbitrary values are used often for a specific purpose, consider adding it to the theme.
+- Group related utilities if it makes sense (e.g., all flexbox utilities together, then padding, then margin). 
