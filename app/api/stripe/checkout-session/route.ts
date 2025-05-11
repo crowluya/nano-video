@@ -63,7 +63,7 @@ export async function POST(req: Request) {
       mode: mode,
       allow_promotion_codes: true,
       success_url: getURL('payment/success?session_id={CHECKOUT_SESSION_ID}'),
-      cancel_url: getURL('/#pricing'),
+      cancel_url: getURL('#pricing'),
       metadata: {
         userId: userId,
         planId: plan.id,
