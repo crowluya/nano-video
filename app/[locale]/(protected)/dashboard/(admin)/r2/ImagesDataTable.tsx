@@ -247,7 +247,7 @@ export function ImagesDataTable({
         </div>
       )}
 
-      <div className="rounded-md border relative min-h-[200px]">
+      <div className="rounded-md border relative min-h-[200px] max-h-[70vh] overflow-y-auto">
         {(isLoading || isDeleting) && (
           <div className="absolute inset-0 bg-background/50 backdrop-blur-sm flex items-center justify-center z-10">
             <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -302,26 +302,28 @@ export function ImagesDataTable({
         </Table>
       </div>
 
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <span className="text-sm text-muted-foreground">
+      <div className="flex items-center justify-between space-x-2 py-4">
+        <div className="text-sm text-muted-foreground">
           Page {currentPageIndex + 1}
-        </span>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handlePreviousPage}
-          disabled={!canGoPrevious || isLoading || isDeleting}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleNextPage}
-          disabled={!canGoNext || isLoading || isDeleting}
-        >
-          Next
-        </Button>
+        </div>
+        <div className="space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handlePreviousPage}
+            disabled={!canGoPrevious || isLoading || isDeleting}
+          >
+            Previous
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleNextPage}
+            disabled={!canGoNext || isLoading || isDeleting}
+          >
+            Next
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BLOGS_IMAGE_PATH } from "@/config/common";
 import { constructMetadata } from "@/lib/metadata";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
@@ -36,6 +37,7 @@ const CATEGORIES = [
   { name: "Text to Image", prefix: "text-to-images/" },
   { name: "Image to Image", prefix: "image-to-images/" },
   { name: "Image to Video", prefix: "image-to-videos/" },
+  { name: "Blogs Images", prefix: BLOGS_IMAGE_PATH },
 ];
 const PAGE_SIZE = 20;
 
