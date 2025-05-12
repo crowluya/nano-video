@@ -12,7 +12,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
     >
       <div className="relative rounded shadow-md  pt-[56.25%]">
         <Image
-          src={post.image || "/placeholder.svg"}
+          src={post.featured_image_url || "/placeholder.svg"}
           alt={post.title}
           fill
           className="object-cover shadow-sm w-full rounded hover:shadow-lg transition-shadow duration-200 h-[200p]"
@@ -23,7 +23,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
           {post.title}
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-sm mt-2">
-          {dayjs(post.date).format("YYYY-MM-DD")}
+          {dayjs(post.published_at).format("YYYY-MM-DD")}
         </p>
       </div>
     </I18nLink>

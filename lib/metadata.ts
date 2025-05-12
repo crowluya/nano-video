@@ -64,7 +64,7 @@ export async function constructMetadata({
       canonical: canonicalUrl ? `${siteConfig.url}/${canonicalUrl}` : undefined,
       languages: alternateLanguages,
     },
-    // Create an OG image using https://ogimage.click.
+    // Create an OG image using https://ogimage.click
     openGraph: {
       type: 'website',
       title: finalTitle,

@@ -38,7 +38,7 @@ export async function generateMetadata({
     page: "blogs",
     title: post.title,
     description: post.description,
-    images: post.image ? [post.image] : [],
+    images: post.featured_image_url ? [post.featured_image_url] : [],
     locale: locale as Locale,
     path: `/blogs/${slug}`,
   });
@@ -57,8 +57,12 @@ export default async function BlogPage({ params }: { params: Params }) {
   return (
     <div className="w-full md:w-3/5 px-2 md:px-12">
       <h1 className="break-words text-4xl font-bold mt-6 mb-4">{post.title}</h1>
-      {post.image && (
-        <img src={post.image} alt={post.title} className="rounded-sm" />
+      {post.featured_image_url && (
+        <img
+          src={post.featured_image_url}
+          alt={post.title}
+          className="rounded-sm"
+        />
       )}
       {post.tags && post.tags.split(",").length ? (
         <div className="flex flex-wrap gap-2">

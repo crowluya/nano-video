@@ -3,14 +3,14 @@ export type BlogPost = {
   locale?: string
   title: string
   description?: string
-  image?: string
+  featured_image_url?: string
   slug: string
   tags?: string
-  date: Date
-  visible?: 'draft' | 'invisible' | 'published'
-  pin?: boolean
+  published_at: Date
+  status?: 'draft' | 'published' | 'archived'
+  is_pinned?: boolean
   content: string
-  metadata: {
+  metadata?: {
     [key: string]: any
   },
 }

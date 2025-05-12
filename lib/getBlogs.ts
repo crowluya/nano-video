@@ -32,12 +32,12 @@ export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts
           locale,
           title: data.title,
           description: data.description,
-          image: data.image || '',
+          featured_image_url: data.featured_image_url || '',
           slug: data.slug,
           tags: data.tags,
-          date: data.date,
-          visible: data.visible || 'published',
-          pin: data.pin || false,
+          published_at: data.published_at,
+          status: data.status || 'published',
+          is_pinned: data.is_pinned || false,
           content,
           metadata: data,
         };
@@ -47,13 +47,13 @@ export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts
     allPosts.push(...batchPosts);
   }
 
-  allPosts = allPosts.filter(post => post.visible === 'published');
+  allPosts = allPosts.filter(post => post.status === 'published');
 
   allPosts = allPosts.sort((a, b) => {
-    if (a.pin !== b.pin) {
-      return (b.pin ? 1 : 0) - (a.pin ? 1 : 0);
+    if (a.is_pinned !== b.is_pinned) {
+      return (b.is_pinned ? 1 : 0) - (a.is_pinned ? 1 : 0);
     }
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
+    return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
   });
 
   return {
