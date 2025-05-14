@@ -8,7 +8,7 @@ if (process.env.NEXT_PUBLIC_ENABLE_STRIPE === 'true' && process.env.STRIPE_SECRE
     typescript: true,
   });
 } else {
-  console.warn('Warning: STRIPE_SECRET_KEY is not set');
+  console.warn('Warning: NEXT_PUBLIC_ENABLE_STRIPE is false, or STRIPE_SECRET_KEY is not set');
 }
 
 export default stripe;
