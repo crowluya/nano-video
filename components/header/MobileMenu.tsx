@@ -12,12 +12,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link as I18nLink } from "@/i18n/routing";
+import { Link as I18nLink, useRouter } from "@/i18n/routing";
 import { HeaderLink } from "@/types/common";
 import { Menu } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { UserInfo } from "./UserInfo";
 
 export default function MobileMenu() {

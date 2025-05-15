@@ -21,7 +21,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { DEFAULT_LOCALE, LOCALES } from "@/i18n/routing";
+import { DEFAULT_LOCALE, LOCALES, useRouter } from "@/i18n/routing";
 import { formatCurrency } from "@/lib/utils";
 import { PricingPlan } from "@/types/pricing";
 import { useCompletion } from "@ai-sdk/react";
@@ -37,7 +37,6 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Error from "next/error";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { toast } from "sonner";

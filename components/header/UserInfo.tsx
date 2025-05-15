@@ -11,8 +11,8 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useRouter } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { Suspense } from "react";
 
 type Menu = {

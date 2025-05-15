@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useRouter } from "@/i18n/routing";
 import { PricingPlan } from "@/types/pricing";
 import { Loader2, MousePointerClick } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 

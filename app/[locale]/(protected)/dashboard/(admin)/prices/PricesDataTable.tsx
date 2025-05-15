@@ -41,9 +41,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useRouter } from "@/i18n/routing";
 import { PricingPlan } from "@/types/pricing";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { DeletePlanDialog } from "./DeletePlanDialog";
 const PAGE_SIZE = 20;

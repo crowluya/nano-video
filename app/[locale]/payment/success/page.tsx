@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Link as I18nLink } from "@/i18n/routing";
+import { Link as I18nLink, useRouter } from "@/i18n/routing";
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
 import {
@@ -15,7 +15,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
 function SuccessContent() {
