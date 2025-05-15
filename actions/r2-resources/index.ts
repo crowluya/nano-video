@@ -2,6 +2,7 @@
 
 import { actionResponse } from "@/lib/action-response";
 import { deleteFile as deleteR2Util, ListedObject, listR2Objects } from "@/lib/cloudflare/r2";
+import { isAdmin } from "@/lib/supabase/isAdmin";
 import { z } from "zod";
 
 export type R2File = ListedObject;
@@ -40,6 +41,10 @@ export async function listR2Files(
     return actionResponse.badRequest(`Invalid input: ${JSON.stringify(formattedErrors)}`);
   }
 
+  if (!(await isAdmin())) {
+    return actionResponse.forbidden("Admin privileges required.");
+  }
+
   const { categoryPrefix, filterPrefix, continuationToken, pageSize } = validationResult.data;
 
   const searchPrefix = filterPrefix ? `${categoryPrefix}${filterPrefix}` : categoryPrefix;
@@ -73,6 +78,10 @@ export async function deleteR2File(input: z.infer<typeof deleteSchema>): Promise
   }
 
   const { key } = validationResult.data;
+
+  if (!(await isAdmin())) {
+    return actionResponse.forbidden("Admin privileges required.");
+  }
 
   try {
     await deleteR2Util(key);

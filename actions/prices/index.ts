@@ -2,6 +2,7 @@
 
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { getErrorMessage } from '@/lib/error-utils';
+import { isAdmin } from '@/lib/supabase/isAdmin';
 import { createClient } from "@/lib/supabase/server";
 import { Database } from "@/lib/supabase/types";
 import { PricingPlan } from "@/types/pricing";
@@ -11,6 +12,10 @@ import {
 import 'server-only';
 
 export async function getAdminPricingPlans(): Promise<ActionResult<PricingPlan[]>> {
+  if (!(await isAdmin())) {
+    return actionResponse.forbidden("Admin privileges required.");
+  }
+
   const supabaseAdmin = createAdminClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!
