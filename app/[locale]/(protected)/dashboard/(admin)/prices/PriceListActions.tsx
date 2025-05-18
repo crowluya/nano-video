@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link as I18nLink, useRouter } from "@/i18n/routing";
+import { DEFAULT_LOCALE, Link as I18nLink, useRouter } from "@/i18n/routing";
 import { PricingPlan } from "@/types/pricing";
 import { Copy, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -47,7 +47,7 @@ export function PriceListActions({ plan }: PriceListActionsProps) {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Accept-Language": (locale || "en") as string,
+          "Accept-Language": (locale || DEFAULT_LOCALE) as string,
         },
       });
 
