@@ -34,8 +34,9 @@ interface BlogListActionsProps {
 export function BlogListActions({ post }: BlogListActionsProps) {
   const t = useTranslations("Dashboard.Admin.Blogs.Delete");
   const locale = useLocale();
-
   const router = useRouter();
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -65,7 +66,7 @@ export function BlogListActions({ post }: BlogListActionsProps) {
 
   return (
     <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
-      <DropdownMenu>
+      <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="h-8 w-8 p-0">
             <span className="sr-only">Open menu</span>
@@ -88,7 +89,10 @@ export function BlogListActions({ post }: BlogListActionsProps) {
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <AlertDialogTrigger asChild>
-            <DropdownMenuItem className="text-destructive focus:text-destructive focus:bg-destructive/10">
+            <DropdownMenuItem
+              className="text-destructive focus:text-destructive focus:bg-destructive/10"
+              onClick={() => setDropdownOpen(false)}
+            >
               <Trash2 className="mr-2 h-4 w-4" /> Delete
             </DropdownMenuItem>
           </AlertDialogTrigger>
