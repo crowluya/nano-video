@@ -38,9 +38,10 @@ import {
 import { useLocale, useTranslations } from "next-intl";
 import Error from "next/error";
 import { useEffect, useState } from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
+import { PricingCardPreview } from "./PricingCardPreview";
 
 const featureSchema = z.object({
   description: z.string().min(1, "Feature description cannot be empty."),
@@ -156,6 +157,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
     name: "features",
   });
 
+  const watchedValues = useWatch({ control: form.control });
   const watchStripePriceId = form.watch("stripe_price_id");
   const watchEnvironment = form.watch("environment");
   const watchIsHighlighted = form.watch("is_highlighted");
@@ -1124,6 +1126,9 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
                 {isEditMode ? t("saveChanges") : t("createPlan")}
               </Button>
             </div>
+
+            {/* Pricing Card Preview */}
+            <PricingCardPreview watchedValues={watchedValues} />
           </div>
         </div>
       </form>
