@@ -64,4 +64,37 @@ export async function getPublicPricingPlans(): Promise<ActionResult<PricingPlan[
   }
 }
 
+export async function getPricingPlanById(planId: string): Promise<ActionResult<PricingPlan | null>> {
+  if (!planId) {
+    return actionResponse.badRequest("Plan ID is required.");
+  }
+  if (!(await isAdmin())) {
+    return actionResponse.forbidden("Admin privileges required.");
+  }
 
+  const supabaseAdmin = createAdminClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
+
+  try {
+    const { data: plan, error } = await supabaseAdmin
+      .from("pricing_plans")
+      .select("*")
+      .eq("id", planId)
+      .single();
+
+    if (error) {
+      if (error.code === 'PGRST116') { // PostgREST error code for "Not Found"
+        return actionResponse.notFound(`Pricing plan with ID ${planId} not found.`);
+      }
+      console.error(`Error fetching pricing plan with ID ${planId}:`, error);
+      return actionResponse.error(`Failed to fetch pricing plan: ${error.message}`);
+    }
+
+    return actionResponse.success(plan as unknown as PricingPlan || null);
+  } catch (error) {
+    console.error(`Unexpected error in getPricingPlanById for ID ${planId}:`, error);
+    return actionResponse.error(getErrorMessage(error));
+  }
+}

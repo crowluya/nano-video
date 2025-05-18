@@ -108,8 +108,11 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isVerifyingStripe, setIsVerifyingStripe] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
 
-  const isEditMode = !!initialData;
+  useEffect(() => {
+    setIsEditMode(!!planId);
+  }, [planId]);
 
   const form = useForm<PricingPlanFormValues>({
     resolver: zodResolver(pricingPlanFormSchema),
