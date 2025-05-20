@@ -33,6 +33,10 @@
       {
         "name": "AI Demo",
         "href": "/ai-demo"
+      },
+      {
+        "name": "博客",
+        "href": "/blogs"
       }
     ]
   },
