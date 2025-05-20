@@ -22,6 +22,10 @@ const nextConfig = {
     },
   ],
   images: {
+    images: {
+      unoptimized:
+        process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES &&
+        process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES === "false",
     remotePatterns: [
       ...(process.env.R2_PUBLIC_URL
         ? [
