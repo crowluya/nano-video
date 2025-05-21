@@ -152,7 +152,7 @@ export function PricesDataTable<TData extends PricingPlan, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border relative min-h-[200px] max-h-[calc(100vh-300px)] overflow-y-auto">
+      <div className="rounded-md border relative min-h-[200px] max-h-[calc(100vh-330px)] overflow-y-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
