@@ -24,7 +24,10 @@ import { Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
-import { getUsers, GetUsersResult } from "../../../../../../actions/users";
+import {
+  getUsers,
+  GetUsersResult,
+} from "../../../../../../actions/users/admin";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
