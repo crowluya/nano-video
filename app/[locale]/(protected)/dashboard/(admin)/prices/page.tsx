@@ -1,4 +1,4 @@
-import { getAdminPricingPlans } from "@/actions/prices";
+import { getAdminPricingPlans } from "@/actions/prices/admin";
 import { Button } from "@/components/ui/button";
 import { Link as I18nLink, Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";

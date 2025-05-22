@@ -1,4 +1,4 @@
-import { getPublicPricingPlans } from "@/actions/prices";
+import { getPublicPricingPlans } from "@/actions/prices/public";
 import { PricingCardDisplay } from "@/components/home/PricingCardDisplay";
 import { DEFAULT_LOCALE } from "@/i18n/routing";
 import { PricingPlan } from "@/types/pricing";

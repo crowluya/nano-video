@@ -4,7 +4,6 @@ import { DEFAULT_LOCALE } from '@/i18n/routing';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { getErrorMessage } from '@/lib/error-utils';
 import { isAdmin } from '@/lib/supabase/isAdmin';
-import { createClient } from "@/lib/supabase/server";
 import { Database, Json } from "@/lib/supabase/types";
 import { PricingPlan } from "@/types/pricing";
 import {
@@ -42,33 +41,6 @@ export async function getAdminPricingPlans(): Promise<ActionResult<PricingPlan[]
     return actionResponse.success((plans as unknown as PricingPlan[]) || []);
   } catch (error) {
     console.error("Unexpected error in getAdminPricingPlans:", error);
-    return actionResponse.error(getErrorMessage(error));
-  }
-}
-
-/**
- * Public List
- */
-export async function getPublicPricingPlans(): Promise<ActionResult<PricingPlan[]>> {
-  const supabase = await createClient();
-  const environment = process.env.NODE_ENV === 'production' ? 'live' : 'test';
-
-  try {
-    const { data: plans, error } = await supabase
-      .from("pricing_plans")
-      .select("*")
-      .eq("environment", environment)
-      .eq("is_active", true)
-      .order("display_order", { ascending: true });
-
-    if (error) {
-      console.error("Error fetching public pricing plans:", error);
-      return actionResponse.error(`Failed to fetch pricing plans: ${error.message}`);
-    }
-
-    return actionResponse.success((plans as unknown as PricingPlan[]) || []);
-  } catch (error) {
-    console.error("Unexpected error in getPublicPricingPlans:", error);
     return actionResponse.error(getErrorMessage(error));
   }
 }

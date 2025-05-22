@@ -1,4 +1,4 @@
-import { getPricingPlanById } from "@/actions/prices";
+import { getPricingPlanById } from "@/actions/prices/admin";
 import { constructMetadata } from "@/lib/metadata";
 import { PricingPlan } from "@/types/pricing";
 import { Metadata } from "next";

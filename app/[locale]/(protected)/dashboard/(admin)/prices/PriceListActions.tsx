@@ -1,6 +1,6 @@
 "use client";
 
-import { deletePricingPlanAction } from "@/actions/prices";
+import { deletePricingPlanAction } from "@/actions/prices/admin";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
