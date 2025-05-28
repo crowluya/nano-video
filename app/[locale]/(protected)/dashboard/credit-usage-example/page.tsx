@@ -26,16 +26,6 @@ import { toast } from "sonner";
 const CREDITS_TO_DEDUCT = 10;
 
 export default function CreditUsageExamplePage() {
-  if (process.env.NODE_ENV === "production") {
-    return (
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-2xl font-bold">
-          This page is only available in development mode.
-        </h1>
-      </div>
-    );
-  }
-
   const [benefits, setBenefits] = useState<UserBenefits | null>(null);
   const [isLoadingBenefits, setIsLoadingBenefits] = useState(true);
   const [isDeducting, setIsDeducting] = useState<string | false>(false);
@@ -139,6 +129,16 @@ export default function CreditUsageExamplePage() {
     }
   };
 
+  if (process.env.NODE_ENV === "production") {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-2xl font-bold">
+          This page is only available in development mode.
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
       <Card>
@@ -219,16 +219,16 @@ export default function CreditUsageExamplePage() {
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              "One-Time Only": Deducts only from one-time credits. Fails if
-              insufficient.
+              &quot;One-Time Only&quot;: Deducts only from one-time credits.
+              Fails if insufficient.
             </li>
             <li>
-              "Subscription Only": Deducts only from subscription credits. Fails
-              if insufficient.
+              &quot;Subscription Only&quot;: Deducts only from subscription
+              credits. Fails if insufficient.
             </li>
             <li>
-              "Prioritize Subscription": Deducts from subscription credits
-              first, then one-time credits if needed.
+              &quot;Prioritize Subscription&quot;: Deducts from subscription
+              credits first, then one-time credits if needed.
             </li>
           </ul>
           <p>
