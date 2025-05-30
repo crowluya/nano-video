@@ -54,18 +54,26 @@
         "multipleSubmissions": "你已多次提交，请明天再试再试"
       },
       "unsubscribe": {
-        "title": "邮件订阅状态变更",
-        "success": "你已成功退订 Nexty 邮件通知。",
-        "emailPrefix": "邮箱:",
-        "regretMessage": "你随时可以重新订阅邮件，获取 Nexty 最新更新和教程。",
-        "errorGeneric": "处理你的退订请求时发生错误",
-        "errorNoToken": "未提供退出令牌",
-        "errorMessage": "请确保你使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
+        "title": "退订邮件通知",
+        "success": "您已成功退订 Nexty 邮件通知。",
+        "emailPrefix": "邮箱：",
+        "regretMessage": "您随时可以重新订阅邮件，获取 Nexty 最新更新和教程。",
+        "errorGeneric": "处理您的退订请求时发生错误",
+        "errorNoToken": "未提供退订令牌",
+        "errorMessage": "请确保您使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
         "contactPrefix": "请发送邮件至：",
         "contactPrefixSuccess": "如有任何问题，请随时联系我们：",
         "backToHome": "返回主页",
-        "invalidEmail": "不是有效的邮箱",
-        "notInNewsletter": "该邮箱不在我们的订阅列表中"
+        "invalidEmail": "无效的邮箱地址",
+        "notInNewsletter": "该邮箱不在我们的订阅列表中",
+        "confirmTitle": "确认退订",
+        "confirmMessage": "您确定要退订我们的邮件通讯吗？您将不再收到有关新功能和内容的更新。",
+        "confirmButton": "确认退订",
+        "cancelButton": "取消",
+        "processing": "处理中...",
+        "retryButton": "重试",
+        "finalWarning": "此操作无法撤销。您可以随时重新订阅。",
+        "errorInvalidToken": "无效的退订链接。链接可能已损坏或过期。"
       }
     },
     "Links": {

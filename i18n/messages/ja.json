@@ -54,18 +54,26 @@
         "multipleSubmissions": "アクセスが集中しております。24時間後に再度お試しください"
       },
       "unsubscribe": {
-        "title": "ニュースレター配信設定の変更",
-        "success": "ニュースレターの配信を停止いたしました",
-        "emailPrefix": "登録メールアドレス：",
-        "regretMessage": "最新情報の配信は、いつでも再開していただけます",
-        "errorGeneric": "配信停止処理中にエラーが発生いたしました",
-        "errorNoToken": "配信停止用トークンが確認できません",
-        "errorMessage": "正しい配信停止リンクをご利用ください。問題が解決しない場合は、下記サポートまでお問い合わせください",
+        "title": "ニュースレター配信停止",
+        "success": "Nextyニュースレターの配信停止が完了しました。",
+        "emailPrefix": "メールアドレス：",
+        "regretMessage": "いつでも再登録して、Nextyの最新アップデートやチュートリアルを受け取ることができます。",
+        "errorGeneric": "配信停止の処理中にエラーが発生しました",
+        "errorNoToken": "配信停止トークンが提供されていません",
+        "errorMessage": "正しい配信停止リンクを使用していることをご確認ください。問題が解決しない場合は、サポートチームまでお問い合わせください。",
         "contactPrefix": "お問い合わせ先：",
-        "contactPrefixSuccess": "ご不明な点がございましたら、下記までご連絡ください：",
-        "backToHome": "トップページへ戻る",
+        "contactPrefixSuccess": "ご質問がございましたら、お気軽にお問い合わせください：",
+        "backToHome": "ホームに戻る",
         "invalidEmail": "無効なメールアドレスです",
-        "notInNewsletter": "このメールアドレスは配信リストに登録されておりません"
+        "notInNewsletter": "このメールアドレスは配信リストに登録されていません",
+        "confirmTitle": "配信停止の確認",
+        "confirmMessage": "ニュースレターの配信を停止してもよろしいですか？新機能やコンテンツの更新情報が届かなくなります。",
+        "confirmButton": "配信停止する",
+        "cancelButton": "キャンセル",
+        "processing": "処理中...",
+        "retryButton": "再試行",
+        "finalWarning": "この操作は取り消すことができません。後でいつでも再登録できます。",
+        "errorInvalidToken": "無効な配信停止リンクです。リンクが破損しているか、期限切れの可能性があります。"
       }
     },
     "Links": {
