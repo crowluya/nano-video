@@ -12,7 +12,7 @@ const ALLOWED_REDIRECT_HOSTS = (
     : []
 ).concat(process.env.NEXT_PUBLIC_SITE_URL!).filter(Boolean) as string[]
 
-function isValidRedirectUrl(url: string): boolean {
+export function isValidRedirectUrl(url: string): boolean {
   try {
     if (url.startsWith('/api/')) {
       return false;

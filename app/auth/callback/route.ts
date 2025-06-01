@@ -1,3 +1,4 @@
+import { isValidRedirectUrl } from '@/app/auth/confirm/route';
 import { createClient } from '@/lib/supabase/server';
 import { NextResponse } from 'next/server';
 
@@ -8,6 +9,12 @@ export async function GET(request: Request) {
 
   let next = searchParams.get('next') ?? '/'
   next = next == 'null' ? '/' : next
+
+
+  if (!isValidRedirectUrl(next)) {
+    console.error('Invalid redirect URL')
+    return NextResponse.redirect(new URL(`/redirect-error?code=invalid_redirect`, origin))
+  }
 
   if (code) {
     const supabase = await createClient()
