@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { CreditHistoryDataTable } from "./CreditHistoryDataTable";
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 20;
 
 export default async function CreditHistoryPage() {
   const t = await getTranslations("CreditHistory");
