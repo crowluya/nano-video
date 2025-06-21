@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import * as React from "react";
 
 interface InvoicePaymentFailedEmailProps {
@@ -227,7 +228,7 @@ export const InvoicePaymentFailedEmail: React.FC<
       <JapaneseVersion {...props} />
 
       <div style={commonStyles.footer}>
-        © {new Date().getFullYear()} Nexty.dev - All Rights Reserved
+        © {new Date().getFullYear()} {siteConfig.name} - All Rights Reserved
       </div>
     </div>
   );

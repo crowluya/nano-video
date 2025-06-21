@@ -8,6 +8,7 @@ const BSKY_URL = 'https://bsky.app/profile/judewei.bsky.social'
 const EMAIL_URL = 'mailto:hi@nexty.dev'
 
 export const siteConfig: SiteConfig = {
+  name: "Nexty.dev",
   url: BASE_URL,
   authors: [
     {

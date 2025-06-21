@@ -1,3 +1,4 @@
+import { siteConfig } from "@/config/site";
 import * as React from "react";
 
 interface NewsletterWelcomeEmailProps {
@@ -54,15 +55,13 @@ const EnglishVersion: React.FC<{ unsubscribeLink: string }> = ({
 }) => (
   <div style={commonStyles.section}>
     <h2 style={commonStyles.title}>
-      You've Successfully Subscribed to Nexty Updates!
+      You've Successfully Subscribed to {siteConfig.name} Updates!
     </h2>
     <p style={commonStyles.paragraph}>
       Here's what you'll receive in your inbox:
     </p>
     <ul style={commonStyles.list}>
-      <li>Nexty.dev version updates</li>
-      <li>Latest promotions and events from Nexty.dev</li>
-      <li>New documentation and blog posts</li>
+      <li>{siteConfig.name} updates</li>
     </ul>
     <p style={commonStyles.paragraph}>
       If you have any questions, feel free to reply to this email.
@@ -80,12 +79,12 @@ const ChineseVersion: React.FC<{ unsubscribeLink: string }> = ({
   unsubscribeLink,
 }) => (
   <div style={commonStyles.section}>
-    <h2 style={commonStyles.title}>你已成功订阅 Nexty 邮件通知！</h2>
+    <h2 style={commonStyles.title}>
+      你已成功订阅 {siteConfig.name} 邮件通知！
+    </h2>
     <p style={commonStyles.paragraph}>接下来，你将通过邮件获得：</p>
     <ul style={commonStyles.list}>
-      <li>Nexty.dev 版本更新通知</li>
-      <li>Nexty.dev 最新活动和优惠</li>
-      <li>Nexty.dev 最新文档和博客</li>
+      <li>{siteConfig.name} 版本更新通知</li>
     </ul>
     <p style={commonStyles.paragraph}>
       如有任何问题，欢迎直接回复此邮件与我们联系。
@@ -104,15 +103,13 @@ const JapaneseVersion: React.FC<{ unsubscribeLink: string }> = ({
 }) => (
   <div style={commonStyles.section}>
     <h2 style={commonStyles.title}>
-      Nexty メールマガジンのご登録ありがとうございます！
+      {siteConfig.name} メールマガジンのご登録ありがとうございます！
     </h2>
     <p style={commonStyles.paragraph}>
       今後、以下の情報をメールにてお届けいたします：
     </p>
     <ul style={commonStyles.list}>
-      <li>Nexty.dev のバージョンアップデート情報</li>
-      <li>Nexty.dev の最新キャンペーンと特典情報</li>
-      <li>Nexty.dev の新着ドキュメントとブログ記事</li>
+      <li>{siteConfig.name} のバージョンアップデート情報</li>
     </ul>
     <p style={commonStyles.paragraph}>
       ご不明な点がございましたら、このメールに直接返信してお問い合わせください。
@@ -139,7 +136,7 @@ export const NewsletterWelcomeEmail: React.FC<NewsletterWelcomeEmailProps> = ({
       <JapaneseVersion unsubscribeLink={unsubscribeLinkJA} />
 
       <div style={commonStyles.footer}>
-        © {new Date().getFullYear()} Nexty.dev - All Rights Reserved
+        © {new Date().getFullYear()} {siteConfig.name} - All Rights Reserved
       </div>
     </div>
   );

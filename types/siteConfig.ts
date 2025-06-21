@@ -8,7 +8,7 @@ export type ThemeColor = {
   color: string
 }
 export type SiteConfig = {
-  name?: string
+  name: string
   tagLine?: string
   description?: string
   url: string
