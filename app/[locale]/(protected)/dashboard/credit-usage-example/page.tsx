@@ -180,7 +180,7 @@ export default function CreditUsageExamplePage() {
           </p>
           <p>
             3. In a real application, credit deduction should happen on the
-            server-side *after* a feature's successful execution, typically
+            server-side *after* a feature&apos;s successful execution, typically
             within the API route that provides the feature.
           </p>
         </CardContent>
