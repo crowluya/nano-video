@@ -1,14 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -51,7 +43,7 @@ interface DataTableProps<TData extends PricingPlan, TValue> {
 export function PricesDataTable<TData extends PricingPlan, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
-  const t = useTranslations("Dashboard.Admin.Prices.PricesDataTable");
+  const t = useTranslations("Prices.PricesDataTable");
   const tCommon = useTranslations("Dashboard.Common");
 
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -122,35 +114,6 @@ export function PricesDataTable<TData extends PricingPlan, TValue>({
             <SelectItem value="live">{t("live")}</SelectItem>
           </SelectContent>
         </Select>
-
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="md:ml-auto">
-              {tCommon("columnsVisibility")}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>{tCommon("toggleColumns")}</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id.replace(/_/g, " ")}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
       </div>
       <div className="rounded-md border relative min-h-[200px] max-h-[calc(100vh-330px)] overflow-y-auto">
         <Table>

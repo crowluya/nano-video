@@ -25,7 +25,7 @@ interface PriceListActionsProps {
 export function PriceListActions({ plan }: PriceListActionsProps) {
   const router = useRouter();
   const locale = useLocale();
-  const t = useTranslations("Dashboard.Admin.Prices.PricesDataTable");
+  const t = useTranslations("Prices.PricesDataTable");
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);

@@ -1,0 +1,165 @@
+{
+  "title": "Blog Management",
+  "description": "Blog management dashboard for creating, editing, deleting, duplicating, and AI-translating blog posts. Supports pinning posts, setting status (draft, published, archived), and visibility settings (public, logged-in users, subscribers). (Admin only)",
+  "fetchError": "Failed to fetch blogs: {error}",
+  "createNewButton": "Create New Blog",
+  "List": {
+    "failedToFetch": "Failed to fetch blogs",
+    "searchPlaceholder": "Search titles, slugs, descriptions..."
+  },
+  "Delete": {
+    "title": "Confirm Deletion",
+    "description": "This action cannot be undone. This will permanently delete the blog post \"{title}\".",
+    "cancelButton": "Cancel",
+    "deleteButton": "Delete",
+    "deleting": "Deleting...",
+    "success": "Blog successfully deleted.",
+    "failedToDelete": "Failed to delete blog",
+    "unexpectedError": "An unexpected error occurred.",
+    "errorFetching": "Failed to fetch blog information."
+  },
+  "Create": {
+    "pageTitle": "Create Blog",
+    "pageDescription": "Create a new blog post (Admin only)",
+    "submitSuccess": "Blog created successfully.",
+    "submitErrorTitle": "Failed to create blog",
+    "submitErrorDesc": "Please try again later.",
+    "loadingDuplicateMessage": "Duplicating source blog...",
+    "errorFetchingDuplicateTitle": "Failed to fetch source blog information.",
+    "errorFetchingDuplicateDesc": "You can still continue creating a new blog.",
+    "errorFetchUnexpected": "An unexpected error occurred."
+  },
+  "Edit": {
+    "pageTitle": "Edit Blog",
+    "pageDescription": "Edit blog post (Admin only)",
+    "submitSuccess": "Blog updated successfully.",
+    "submitErrorTitle": "Failed to update blog",
+    "submitErrorDesc": "Please try again later.",
+    "errorInvalidId": "Invalid blog ID.",
+    "errorFetchFailed": "Failed to fetch blog.",
+    "errorFetchUnexpected": "An unexpected error occurred.",
+    "postNotFoundTitle": "Blog Not Found",
+    "postNotFoundDesc": "The blog does not exist.",
+    "backToList": "Back to List"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "Blog Language",
+        "placeholder": "Select blog language"
+      },
+      "title": {
+        "label": "Title",
+        "placeholder": "Enter title",
+        "description": "Recommended length 60 characters",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "Slug",
+        "placeholder": "Enter slug",
+        "generateButton": "Generate slug",
+        "description": "Auto-generates slug from English titles only. For other languages, please enter manually."
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Enter description",
+        "description": "Recommended length 160 characters",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "Tags",
+        "placeholder": "Select tags",
+        "description": "Select blog tags."
+      },
+      "featuredImageUrl": {
+        "label": "Featured Image",
+        "placeholder": "Select featured image",
+        "description": "Select a featured image."
+      },
+      "content": {
+        "label": "Content",
+        "placeholder": "Enter blog content, Markdown format supported",
+        "description": "Enter blog content, Markdown format supported."
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Select status",
+        "options": {
+          "draft": "Draft",
+          "published": "Published",
+          "archived": "Archived"
+        }
+      },
+      "visibility": {
+        "label": "Visibility",
+        "placeholder": "Select visibility",
+        "options": {
+          "public": "Public",
+          "loggedIn": "Logged-in Users",
+          "subscribers": "Subscribers Only"
+        }
+      },
+      "isPinned": {
+        "label": "Featured",
+        "description": "Pin this post to the top."
+      }
+    },
+    "cancelButton": "Cancel",
+    "submittingButton": "Submitting...",
+    "updateButton": "Update Blog",
+    "createButton": "Create Blog",
+    "upload": {
+      "uploading": "Uploading...",
+      "uploadError": "Upload Failed",
+      "uploadErrorDesc": "Please select an image file.",
+      "noPrefix": "Image naming prefix not provided.",
+      "invalidFileType": "Invalid file type. Only image files are allowed.",
+      "fileSizeExceeded": "File size limit: {maxSizeInMB}MB.",
+      "presignedUrlError": "Failed to generate presigned URL",
+      "uploadErrorUnexpected": "An unexpected error occurred.",
+      "uploadSuccess": "Upload Successful",
+      "uploadSuccessDesc": "Image uploaded to R2 storage."
+    },
+    "toolbar": {
+      "translateTo": "Translate to {languageName}",
+      "noTranslationOptions": "No translation options available.",
+      "translateByAIDescription": "AI translation requires environment variables NEXT_PUBLIC_AI_MODEL_ID and NEXT_PUBLIC_AI_PROVIDER to be configured",
+      "translateActionTitle": "Translate Content"
+    },
+    "translate": {
+      "loading": "Translating...",
+      "error": "Translation failed",
+      "success": "Translation successful!",
+      "infoEmpty": "Translation content is empty"
+    }
+  },
+  "TagManager": {
+    "title": "Tag Management",
+    "description": "Manage blog tags.",
+    "manageTagsButton": "Manage Tags",
+    "newTagPlaceholder": "Enter tag name",
+    "selectTags": "Select Tags",
+    "selectedTagsLabel": "Selected Tags",
+    "searchPlaceholder": "Search tags",
+    "loadingTagsMessage": "Loading tags...",
+    "noResults": "No tags found",
+    "createSuccess": "Tag \"{name}\" created successfully.",
+    "createNewTag": "Create New Tag",
+    "creatingButton": "Creating...",
+    "createButton": "Create Tag",
+    "closeButton": "Close",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "confirmDelete": "Are you sure you want to delete the tag \"{name}\"? This action cannot be undone.",
+    "deleteSuccess": "Tag \"{name}\" deleted successfully.",
+    "updateSuccess": "Tag \"{name}\" updated successfully.",
+    "errors": {
+      "nameRequired": "Tag name is required.",
+      "fetchFailed": "Failed to load tags",
+      "alreadyExists": "A tag with the name \"{name}\" already exists.",
+      "createFailed": "Failed to create tag",
+      "deleteFailed": "Failed to delete tag",
+      "updateFailed": "Failed to update tag"
+    }
+  }
+}

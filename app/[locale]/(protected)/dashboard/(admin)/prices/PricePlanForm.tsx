@@ -118,7 +118,7 @@ interface PricePlanFormProps {
 }
 
 export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
-  const t = useTranslations("Dashboard.Admin.Prices.PricePlanForm");
+  const t = useTranslations("Prices.PricePlanForm");
 
   const router = useRouter();
   const locale = useLocale();

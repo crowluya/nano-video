@@ -49,7 +49,7 @@ export async function generateMetadata({
   const { locale, id } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices.EditPlan",
+    namespace: "Prices.EditPlan",
   });
 
   const plan = await getPricingPlanById(id);
@@ -77,7 +77,7 @@ export default async function EditPricePlanPage({
 }) {
   const { id } = await params;
 
-  const t = await getTranslations("Dashboard.Admin.Prices.EditPlan");
+  const t = await getTranslations("Prices.EditPlan");
 
   const isAdminUser = await isAdmin();
   if (!isAdminUser) {

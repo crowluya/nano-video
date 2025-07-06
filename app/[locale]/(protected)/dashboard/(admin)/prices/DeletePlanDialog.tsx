@@ -29,7 +29,7 @@ export function DeletePlanDialog({
   planTitle,
   onConfirmDelete,
 }: DeletePlanDialogProps) {
-  const t = useTranslations("Dashboard.Admin.Prices.DeletePlanDialog");
+  const t = useTranslations("Prices.DeletePlanDialog");
 
   const [isDeleting, setIsDeleting] = React.useState(false);
 

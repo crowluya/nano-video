@@ -17,7 +17,7 @@ import { PostForm, type PostFormValues } from "../../PostForm";
 export default function EditBlogClient() {
   const router = useRouter();
   const locale = useLocale();
-  const t = useTranslations("Dashboard.Admin.Blogs.Edit");
+  const t = useTranslations("DashboardBlogs.Edit");
   const tCommon = useTranslations("Dashboard.Common");
 
   const params = useParams();

@@ -1,0 +1,165 @@
+{
+  "title": "博客管理",
+  "description": "博客管理后台，支持创建、编辑、删除、复制、AI翻译博客文章，支持设置置顶、文章状态（草稿、发布、归档）、文章可见性（公开、登录用户、订阅用户）。（仅限管理员）",
+  "fetchError": "获取博客失败：{error}",
+  "createNewButton": "创建新博客",
+  "List": {
+    "failedToFetch": "获取博客失败",
+    "searchPlaceholder": "搜索标题、slug、描述..."
+  },
+  "Delete": {
+    "title": "确定要删除吗？",
+    "description": "此操作无法撤销，这将永久删除博客文章「{title}」。",
+    "cancelButton": "取消",
+    "deleteButton": "删除",
+    "deleting": "删除中...",
+    "success": "博客删除成功。",
+    "failedToDelete": "删除博客失败",
+    "unexpectedError": "发生未知错误。",
+    "errorFetching": "获取此博客信息失败。"
+  },
+  "Create": {
+    "pageTitle": "创建博客",
+    "pageDescription": "创建新的博客文章（仅限管理员）",
+    "submitSuccess": "创建博客成功。",
+    "submitErrorTitle": "创建博客失败",
+    "submitErrorDesc": "请稍后再试。",
+    "loadingDuplicateMessage": "正在复制源博客...",
+    "errorFetchingDuplicateTitle": "获取源博客信息失败。",
+    "errorFetchingDuplicateDesc": "你仍可以继续创建博客。",
+    "errorFetchUnexpected": "发生未知错误。"
+  },
+  "Edit": {
+    "pageTitle": "编辑博客",
+    "pageDescription": "编辑博客文章（仅限管理员）",
+    "submitSuccess": "更新博客成功。",
+    "submitErrorTitle": "更新博客失败",
+    "submitErrorDesc": "请稍后再试。",
+    "errorInvalidId": "无效的博客ID。",
+    "errorFetchFailed": "获取博客失败。",
+    "errorFetchUnexpected": "发生未知错误。",
+    "postNotFoundTitle": "博客未找到",
+    "postNotFoundDesc": "博客不存在。",
+    "backToList": "返回博客列表"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "选择博客语言",
+        "placeholder": "选择博客语言"
+      },
+      "title": {
+        "label": "标题",
+        "placeholder": "输入标题",
+        "description": "推荐长度不超过 60 字符",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "slug",
+        "placeholder": "输入slug",
+        "generateButton": "生成slug",
+        "description": "自动生成slug，仅支持英文标题，其他语言请手动输入。"
+      },
+      "description": {
+        "label": "描述",
+        "placeholder": "输入描述",
+        "description": "推荐长度不超过 160 字符",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "标签",
+        "placeholder": "选择标签",
+        "description": "选择博客标签。"
+      },
+      "featuredImageUrl": {
+        "label": "封面图",
+        "placeholder": "选择封面图",
+        "description": "选择封面图。"
+      },
+      "content": {
+        "label": "内容",
+        "placeholder": "输入博客内容，支持 Markdown 格式",
+        "description": "输入博客内容，支持 Markdown 格式。"
+      },
+      "status": {
+        "label": "状态",
+        "placeholder": "选择状态",
+        "options": {
+          "draft": "草稿",
+          "published": "发布",
+          "archived": "归档"
+        }
+      },
+      "visibility": {
+        "label": "可见性",
+        "placeholder": "选择可见性",
+        "options": {
+          "public": "公开",
+          "loggedIn": "登录用户",
+          "subscribers": "订阅用户"
+        }
+      },
+      "isPinned": {
+        "label": "置顶",
+        "description": "是否置顶。"
+      }
+    },
+    "cancelButton": "取消",
+    "submittingButton": "提交中...",
+    "updateButton": "更新博客",
+    "createButton": "创建博客",
+    "upload": {
+      "uploading": "上传中...",
+      "uploadError": "上传失败",
+      "uploadErrorDesc": "请选择一个图片文件。",
+      "noPrefix": "未提供图片命名前缀。",
+      "invalidFileType": "无效的文件类型。仅允许图片文件。",
+      "fileSizeExceeded": "文件大小限制 {maxSizeInMB}MB。",
+      "presignedUrlError": "生成预签名URL失败",
+      "uploadErrorUnexpected": "发生未知错误。",
+      "uploadSuccess": "上传成功",
+      "uploadSuccessDesc": "图片已上传到 R2。"
+    },
+    "toolbar": {
+      "translateTo": "翻译成 {languageName}",
+      "noTranslationOptions": "暂无翻译选项。",
+      "translateByAIDescription": "配置了环境变量 NEXT_PUBLIC_AI_MODEL_ID 和 NEXT_PUBLIC_AI_PROVIDER 才可使用AI翻译",
+      "translateActionTitle": "翻译内容"
+    },
+    "translate": {
+      "loading": "翻译中...",
+      "error": "翻译失败",
+      "success": "翻译成功！",
+      "infoEmpty": "翻译内容为空"
+    }
+  },
+  "TagManager": {
+    "title": "标签管理",
+    "description": "管理博客标签。",
+    "manageTagsButton": "管理标签",
+    "newTagPlaceholder": "输入新标签名称",
+    "selectTags": "选择标签",
+    "selectedTagsLabel": "已选标签",
+    "searchPlaceholder": "搜索标签",
+    "loadingTagsMessage": "正在加载标签...",
+    "noResults": "暂无标签",
+    "createSuccess": "标签「{name}」已创建成功。",
+    "createNewTag": "创建新标签",
+    "creatingButton": "创建中...",
+    "createButton": "创建标签",
+    "closeButton": "关闭",
+    "editButton": "编辑",
+    "deleteButton": "删除",
+    "confirmDelete": "确定要删除标签「{name}」吗？",
+    "deleteSuccess": "标签「{name}」已删除成功。",
+    "updateSuccess": "标签「{name}」已更新成功。",
+    "errors": {
+      "nameRequired": "标签名称是必填的。",
+      "fetchFailed": "获取标签失败",
+      "alreadyExists": "标签「{name}」已存在。",
+      "createFailed": "创建标签失败",
+      "deleteFailed": "删除标签失败",
+      "updateFailed": "更新标签失败"
+    }
+  }
+}

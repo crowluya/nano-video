@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   const { get } = await headers();
   const locale = get("Accept-Language");
 
-  const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'Dashboard.Admin.Prices.API' });
+  const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'Prices.API' });
 
   let payload: VerifyPricePayload;
   try {

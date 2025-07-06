@@ -92,7 +92,7 @@ function ContentToolbar({
   isTranslating,
   currentFormLanguage,
 }: ContentToolbarProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.Form.toolbar");
+  const t = useTranslations("DashboardBlogs.Form.toolbar");
 
   const showTooltip =
     !process.env.NEXT_PUBLIC_AI_MODEL_ID ||
@@ -189,7 +189,7 @@ export function PostForm({
   onSubmit,
   isSubmitting,
 }: PostFormProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.Form");
+  const t = useTranslations("DashboardBlogs.Form");
   const router = useRouter();
 
   const defaultValues: Partial<PostFormValues> = {

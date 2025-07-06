@@ -18,7 +18,7 @@ interface ImageUploadProps {
 }
 
 export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.Form.upload");
+  const t = useTranslations("DashboardBlogs.Form.upload");
   const locale = useLocale();
 
   const [previewUrl, setPreviewUrl] = useState<string | null>(value || null);

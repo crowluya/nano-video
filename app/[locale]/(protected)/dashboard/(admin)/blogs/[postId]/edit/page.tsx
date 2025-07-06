@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale, postId } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Blogs.Edit",
+    namespace: "DashboardBlogs.Edit",
   });
 
   return constructMetadata({

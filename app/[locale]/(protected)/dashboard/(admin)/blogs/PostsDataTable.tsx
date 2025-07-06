@@ -41,7 +41,7 @@ export function PostsDataTable<TData, TValue>({
   pageSize,
   totalPosts,
 }: DataTableProps<TData, TValue>) {
-  const t = useTranslations("Dashboard.Admin.Blogs.List");
+  const t = useTranslations("DashboardBlogs.List");
   const locale = useLocale();
 
   const [sorting, setSorting] = useState<SortingState>([]);

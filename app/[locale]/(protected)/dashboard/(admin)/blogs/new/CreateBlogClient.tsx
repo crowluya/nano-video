@@ -14,7 +14,7 @@ import { toast } from "sonner";
 import { PostForm, type PostFormValues } from "../PostForm";
 
 export default function CreateBlogClient() {
-  const t = useTranslations("Dashboard.Admin.Blogs.Create");
+  const t = useTranslations("DashboardBlogs.Create");
   const router = useRouter();
 
   const searchParams = useSearchParams();

@@ -27,7 +27,7 @@ export default function Settings() {
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
-  const t = useTranslations("Dashboard.User.Settings");
+  const t = useTranslations("Settings");
   const locale = useLocale();
 
   useEffect(() => {

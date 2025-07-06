@@ -1,0 +1,165 @@
+{
+  "title": "ブログ管理",
+  "description": "ブログ管理ダッシュボードでは、ブログ記事の作成、編集、削除、複製、AI翻訳が可能です。記事のピン留め、ステータス設定（下書き、公開、アーカイブ）、公開範囲設定（一般公開、ログインユーザー限定、サブスクライバー限定）にも対応しています。（管理者専用）",
+  "fetchError": "ブログの取得に失敗しました：{error}",
+  "createNewButton": "新規ブログ作成",
+  "List": {
+    "failedToFetch": "ブログの取得に失敗しました",
+    "searchPlaceholder": "タイトル、スラッグ、説明で検索..."
+  },
+  "Delete": {
+    "title": "削除の確認",
+    "description": "この操作は取り消せません。ブログ記事「{title}」は完全に削除されます。",
+    "cancelButton": "キャンセル",
+    "deleteButton": "削除",
+    "deleting": "削除中...",
+    "success": "ブログが正常に削除されました。",
+    "failedToDelete": "ブログの削除に失敗しました",
+    "unexpectedError": "予期しないエラーが発生しました。",
+    "errorFetching": "ブログ情報の取得に失敗しました。"
+  },
+  "Create": {
+    "pageTitle": "ブログ作成",
+    "pageDescription": "新しいブログ記事を作成（管理者専用）",
+    "submitSuccess": "ブログが正常に作成されました。",
+    "submitErrorTitle": "ブログの作成に失敗しました",
+    "submitErrorDesc": "後でもう一度お試しください。",
+    "loadingDuplicateMessage": "元のブログを複製しています...",
+    "errorFetchingDuplicateTitle": "元のブログ情報の取得に失敗しました。",
+    "errorFetchingDuplicateDesc": "引き続きブログの作成は可能です。",
+    "errorFetchUnexpected": "予期しないエラーが発生しました。"
+  },
+  "Edit": {
+    "pageTitle": "ブログ編集",
+    "pageDescription": "ブログ記事を編集（管理者専用）",
+    "submitSuccess": "ブログが正常に更新されました。",
+    "submitErrorTitle": "ブログの更新に失敗しました",
+    "submitErrorDesc": "後でもう一度お試しください。",
+    "errorInvalidId": "無効なブログIDです。",
+    "errorFetchFailed": "ブログの取得に失敗しました。",
+    "errorFetchUnexpected": "予期しないエラーが発生しました。",
+    "postNotFoundTitle": "ブログが見つかりません",
+    "postNotFoundDesc": "ブログが存在しません。",
+    "backToList": "ブログ一覧に戻る"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "ブログ言語",
+        "placeholder": "ブログ言語を選択"
+      },
+      "title": {
+        "label": "タイトル",
+        "placeholder": "タイトルを入力",
+        "description": "推奨長さは 60 文字以下",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "スラッグ",
+        "placeholder": "スラッグを入力",
+        "generateButton": "スラッグを生成",
+        "description": "英語のタイトルからのみスラッグを自動生成します。他の言語の場合は手動で入力してください。"
+      },
+      "description": {
+        "label": "説明",
+        "placeholder": "説明を入力",
+        "description": "推奨長さは 160 文字以下",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "タグ",
+        "placeholder": "タグを選択",
+        "description": "ブログのタグを選択してください。"
+      },
+      "featuredImageUrl": {
+        "label": "アイキャッチ画像",
+        "placeholder": "アイキャッチ画像を選択",
+        "description": "アイキャッチ画像を選択してください。"
+      },
+      "content": {
+        "label": "コンテンツ",
+        "placeholder": "ブログ内容を入力、Markdown形式対応",
+        "description": "ブログ内容を入力してください。Markdown形式に対応しています。"
+      },
+      "status": {
+        "label": "ステータス",
+        "placeholder": "ステータスを選択",
+        "options": {
+          "draft": "下書き",
+          "published": "公開",
+          "archived": "アーカイブ"
+        }
+      },
+      "visibility": {
+        "label": "公開範囲",
+        "placeholder": "公開範囲を選択",
+        "options": {
+          "public": "一般公開",
+          "loggedIn": "ログインユーザー",
+          "subscribers": "サブスクライバー限定"
+        }
+      },
+      "isPinned": {
+        "label": "ピン留め",
+        "description": "この記事を先頭に固定する。"
+      }
+    },
+    "cancelButton": "キャンセル",
+    "submittingButton": "送信中...",
+    "updateButton": "ブログを更新",
+    "createButton": "ブログを作成",
+    "upload": {
+      "uploading": "アップロード中...",
+      "uploadError": "アップロード失敗",
+      "uploadErrorDesc": "画像ファイルを選択してください。",
+      "noPrefix": "画像の命名プレフィックスが提供されていません。",
+      "invalidFileType": "無効なファイル形式です。画像ファイルのみ許可されています。",
+      "fileSizeExceeded": "ファイルサイズ制限：{maxSizeInMB}MB。",
+      "presignedUrlError": "生成預签名URLに失敗しました",
+      "uploadErrorUnexpected": "予期しないエラーが発生しました。",
+      "uploadSuccess": "アップロード成功",
+      "uploadSuccessDesc": "画像がR2ストレージにアップロードされました。"
+    },
+    "toolbar": {
+      "translateTo": "{languageName}に翻訳",
+      "noTranslationOptions": "利用可能な翻訳オプションがありません。",
+      "translateByAIDescription": "AI翻訳を使用するには環境変数 NEXT_PUBLIC_AI_MODEL_ID と NEXT_PUBLIC_AI_PROVIDER の設定が必要です",
+      "translateActionTitle": "コンテンツを翻訳"
+    },
+    "translate": {
+      "loading": "翻訳中...",
+      "error": "翻訳に失敗しました",
+      "success": "翻訳が完了しました！",
+      "infoEmpty": "翻訳内容が空です"
+    }
+  },
+  "TagManager": {
+    "title": "タグ管理",
+    "description": "ブログタグを管理します。",
+    "manageTagsButton": "タグを管理する",
+    "newTagPlaceholder": "タグ名を入力",
+    "selectTags": "タグを選択",
+    "selectedTagsLabel": "選択済みタグ",
+    "searchPlaceholder": "タグを検索",
+    "loadingTagsMessage": "タグを読み込み中...",
+    "noResults": "タグが見つかりません",
+    "createSuccess": "タグ「{name}」が正常に作成されました。",
+    "createNewTag": "新しいタグを作成",
+    "creatingButton": "作成中...",
+    "createButton": "タグを作成",
+    "closeButton": "閉じる",
+    "editButton": "編集",
+    "deleteButton": "削除",
+    "confirmDelete": "タグ「{name}」を削除してもよろしいですか？この操作は元に戻せません。",
+    "deleteSuccess": "タグ「{name}」が正常に削除されました。",
+    "updateSuccess": "タグ「{name}」が正常に更新されました。",
+    "errors": {
+      "nameRequired": "タグ名は必須です。",
+      "fetchFailed": "タグの読み込みに失敗しました",
+      "alreadyExists": "「{name}」という名前のタグはすでに存在します。",
+      "createFailed": "タグの作成に失敗しました",
+      "deleteFailed": "タグの削除に失敗しました",
+      "updateFailed": "タグの更新に失敗しました"
+    }
+  }
+}

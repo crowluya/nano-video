@@ -20,7 +20,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Users",
+    namespace: "Users",
   });
 
   return constructMetadata({
@@ -50,7 +50,7 @@ async function UsersTable() {
 }
 
 export default function AdminUsersPage() {
-  const t = useTranslations("Dashboard.Admin.Users");
+  const t = useTranslations("Users");
 
   return (
     <div className="space-y-4">

@@ -22,11 +22,11 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Blogs",
+    namespace: "DashboardBlogs",
   });
 
   return constructMetadata({
-    page: "Blogs",
+    page: "DashboardBlogs",
     title: t("title"),
     description: t("description"),
     locale: locale as Locale,
@@ -36,7 +36,7 @@ export async function generateMetadata({
 
 export default async function AdminBlogsPage() {
   const locale = await getLocale();
-  const t = await getTranslations("Dashboard.Admin.Blogs");
+  const t = await getTranslations("DashboardBlogs");
 
   // Fetch posts - initial load
   const result = await listPostsAction({

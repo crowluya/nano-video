@@ -1,0 +1,31 @@
+{
+  "title": "个人设置",
+  "description": "管理你的账户设置和个人信息。",
+  "form": {
+    "emailLabel": "邮箱",
+    "fullNameLabel": "全名",
+    "fullNamePlaceholder": "输入你的全名",
+    "avatarLabel": "头像",
+    "avatarHint": "最大文件大小: {maxSizeInMB} MB。 允许的文件类型: {allowedTypes}.",
+    "updateButton": "提交更新",
+    "updatingButton": "更新中..."
+  },
+  "toast": {
+    "fullNameLengthError": "全名必须小于 {maxLength} 个字符",
+    "fullNameInvalidCharactersError": "全名包含非法字符",
+    "errorInvalidFileType": "头像文件类型无效。只允许以下类型: {allowedTypes}.",
+    "errorInvalidFileTypeDescription": "请上传小于 {maxSizeInMB} MB 的文件。",
+    "errorFileSizeExceeded": "头像文件大小超过 {maxSizeInMB}MB 限制。",
+    "errorFileSizeExceededDescription": "请上传小于 {maxSizeInMB} MB 的文件。",
+    "errorInvalidFullName": "输入的全名无效。",
+    "errorFullNameRequired": "全名是必填的。",
+    "updateSuccessTitle": "更新成功",
+    "updateSuccessDescription": "你的个人资料已更新成功。",
+    "updateErrorTitle": "更新失败",
+    "updateErrorDescription": "更新设置失败。请稍后再试。",
+    "errorDeleteOldAvatar": "删除旧头像失败。",
+    "errorUploadAvatar": "上传头像失败。",
+    "errorUpdateAuthUser": "更新用户信息失败。",
+    "errorUpdateUserProfile": "更新用户资料失败。"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Settings",
+  "description": "Manage your account settings and profile information.",
+  "form": {
+    "emailLabel": "Email",
+    "fullNameLabel": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "avatarLabel": "Avatar",
+    "avatarHint": "Max file size: {maxSizeInMB} MB. Allowed types: {allowedTypes}.",
+    "updateButton": "Update Settings",
+    "updatingButton": "Updating..."
+  },
+  "toast": {
+    "fullNameLengthError": "Full name must be less than {maxLength} characters",
+    "fullNameInvalidCharactersError": "Full name contains invalid characters",
+    "errorInvalidFileType": "Invalid file type for avatar. Only {allowedTypes} are allowed.",
+    "errorInvalidFileTypeDescription": "Please upload a file smaller than {maxSizeInMB} MB.",
+    "errorFileSizeExceeded": "Avatar size exceeds the {maxSizeInMB} MB limit.",
+    "errorFileSizeExceededDescription": "Please upload a file smaller than {maxSizeInMB} MB.",
+    "errorInvalidFullName": "Invalid full name provided.",
+    "errorFullNameRequired": "Full name is required.",
+    "updateSuccessTitle": "Profile Updated",
+    "updateSuccessDescription": "Your profile has been updated successfully.",
+    "updateErrorTitle": "Update Failed",
+    "updateErrorDescription": "Failed to update settings. Please try again later.",
+    "errorDeleteOldAvatar": "Failed to delete old avatar.",
+    "errorUploadAvatar": "Failed to upload avatar.",
+    "errorUpdateAuthUser": "Failed to update auth user.",
+    "errorUpdateUserProfile": "Failed to update user profile."
+  }
+}

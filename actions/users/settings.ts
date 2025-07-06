@@ -42,7 +42,7 @@ export async function updateUserSettingsAction({
 
     const t = await getTranslations({
       locale,
-      namespace: "Dashboard.User.Settings",
+      namespace: "Settings",
     });
 
     const fullName = formData.get("fullName") as string;

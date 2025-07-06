@@ -34,7 +34,7 @@ import { useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 export function TagManagementDrawer() {
-  const t = useTranslations("Dashboard.Admin.Blogs.TagManager");
+  const t = useTranslations("DashboardBlogs.TagManager");
   const locale = useLocale();
 
   const [isOpen, setIsOpen] = useState(false);

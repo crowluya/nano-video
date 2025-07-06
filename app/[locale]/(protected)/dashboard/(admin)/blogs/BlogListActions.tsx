@@ -32,7 +32,7 @@ interface BlogListActionsProps {
 }
 
 export function BlogListActions({ post }: BlogListActionsProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.Delete");
+  const t = useTranslations("DashboardBlogs.Delete");
   const locale = useLocale();
   const router = useRouter();
 

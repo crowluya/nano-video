@@ -20,7 +20,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices",
+    namespace: "Prices",
   });
 
   return constructMetadata({
@@ -34,7 +34,7 @@ export async function generateMetadata({
 
 export default async function AdminPricesPage() {
   const result = await getAdminPricingPlans();
-  const t = await getTranslations("Dashboard.Admin.Prices");
+  const t = await getTranslations("Prices");
 
   let plans: PricingPlan[] = [];
   if (result.success) {

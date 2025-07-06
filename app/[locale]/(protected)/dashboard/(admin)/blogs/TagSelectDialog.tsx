@@ -47,7 +47,7 @@ export function TagSelectDialog({
   initialAvailableTags,
   isLoadingInitialTags,
 }: TagSelectDialogProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.TagManager");
+  const t = useTranslations("DashboardBlogs.TagManager");
   const locale = useLocale();
 
   const [currentAvailableTags, setCurrentAvailableTags] =

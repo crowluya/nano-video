@@ -21,7 +21,7 @@ interface TagInputProps {
 }
 
 export function TagInput({ value, onChange, disabled }: TagInputProps) {
-  const t = useTranslations("Dashboard.Admin.Blogs.TagManager");
+  const t = useTranslations("DashboardBlogs.TagManager");
   const locale = useLocale();
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);

@@ -101,7 +101,7 @@ export async function createPricingPlanAction({
 
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices.API",
+    namespace: "Prices.API",
   });
 
   if (!planData.environment || !planData.card_title) {
@@ -205,7 +205,7 @@ export async function updatePricingPlanAction({
 
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices.API",
+    namespace: "Prices.API",
   });
 
   if (!id) {
@@ -299,7 +299,7 @@ export async function deletePricingPlanAction({
 
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices.API",
+    namespace: "Prices.API",
   });
 
   if (!id) {

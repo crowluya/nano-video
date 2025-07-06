@@ -363,7 +363,7 @@ interface DeletePostParams {
 
 export async function deletePostAction({ postId, locale }: DeletePostParams): Promise<ActionResult> {
 
-  const t = await getTranslations({ locale, namespace: 'Dashboard.Admin.Blogs.Delete' });
+  const t = await getTranslations({ locale, namespace: 'DashboardBlogs.Delete' });
 
   if (!(await isAdmin())) {
     return actionResponse.forbidden("Admin privileges required.");

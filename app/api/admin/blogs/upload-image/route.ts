@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   const { get } = await headers();
   const locale = get("Accept-Language");
 
-  const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'Dashboard.Admin.Blogs.Form.upload' });
+  const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'DashboardBlogs.Form.upload' });
 
   try {
     const formData = await request.formData();

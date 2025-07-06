@@ -18,7 +18,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "Dashboard.Admin.Prices.CreatePlan",
+    namespace: "Prices.CreatePlan",
   });
 
   return constructMetadata({
@@ -35,7 +35,7 @@ export default async function NewPricePlanPage({
 }: {
   searchParams: Promise<{ duplicatePlanId?: string }>;
 }) {
-  const t = await getTranslations("Dashboard.Admin.Prices.CreatePlan");
+  const t = await getTranslations("Prices.CreatePlan");
   let initialDataForForm: PricingPlan | null = null;
 
   const { duplicatePlanId } = await searchParams;
