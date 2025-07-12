@@ -5,23 +5,16 @@ CREATE TABLE public.users (
     email text UNIQUE NOT NULL,
     full_name text NULL,
     avatar_url text NULL,
-    billing_address jsonb NULL,
     payment_provider text NULL,
     stripe_customer_id text UNIQUE NULL,
-    role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('admin', 'user')),
-    invite_code text UNIQUE NULL,
-    inviter_user_id uuid NULL REFERENCES public.users(id) ON DELETE SET NULL,
-    CONSTRAINT check_not_self_inviter CHECK (id <> inviter_user_id)
+    role TEXT NOT NULL DEFAULT 'user' CHECK (role IN ('admin', 'user'))
 );
 
 COMMENT ON TABLE public.users IS 'Stores application-specific user profile data, extending the auth.users table.';
 COMMENT ON COLUMN public.users.id IS 'Primary key, references auth.users.id.';
 COMMENT ON COLUMN public.users.email IS 'User email, kept in sync with auth.users. Must be unique.';
 COMMENT ON COLUMN public.users.stripe_customer_id IS 'Unique identifier for the user in Stripe.';
-COMMENT ON COLUMN public.users.invite_code IS 'User-defined unique code for inviting others. Case-sensitive. Nullable until set by user.';
-COMMENT ON COLUMN public.users.inviter_user_id IS 'The ID of the user (from this table) who invited the current user. Null if not invited.';
 
-CREATE INDEX users_inviter_user_id_idx ON public.users (inviter_user_id);
 CREATE INDEX users_stripe_customer_id_idx ON public.users (stripe_customer_id);
 CREATE INDEX users_email_idx ON public.users (email);
 
@@ -50,13 +43,12 @@ ON public.users FOR SELECT
 USING (auth.uid() = id);
 
 -- Allow user to update their own profile
-  -- Only allows updating specific fields: full_name, avatar_url, invite_code
+  -- Only allows updating specific fields: full_name, avatar_url
   -- Add more fields as needed.
   -- See example usage in /actions/users/settings.ts -> supabase.rpc('update_my_profile', ...)
 CREATE OR REPLACE FUNCTION update_my_profile(
     new_full_name TEXT,
-    new_avatar_url TEXT,
-    new_invite_code TEXT
+    new_avatar_url TEXT
 )
 RETURNS void
 LANGUAGE plpgsql
@@ -66,9 +58,7 @@ BEGIN
   UPDATE public.users
   SET
     full_name = new_full_name,
-    avatar_url = new_avatar_url,
-    -- Use CASE to convert an empty string to NULL, otherwise use the provided value
-    invite_code = CASE WHEN new_invite_code = '' THEN NULL ELSE new_invite_code END
+    avatar_url = new_avatar_url
   WHERE id = auth.uid();
 END;
 $$;

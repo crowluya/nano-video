@@ -47,7 +47,6 @@ export async function updateUserSettingsAction({
 
     const fullName = formData.get("fullName") as string;
     const avatar = formData.get("avatar") as File | null;
-    const inviteCode = formData.get("inviteCode") as string | null; // Assuming inviteCode can be optional
 
     if (!fullName || !isValidFullName(fullName.trim()) || fullName.trim().length > FULL_NAME_MAX_LENGTH) {
       return actionResponse.badRequest(t("toast.errorInvalidFullName"));
@@ -124,8 +123,7 @@ export async function updateUserSettingsAction({
       "update_my_profile",
       {
         new_full_name: fullName.trim(),
-        new_avatar_url: avatarUrl || authUser.user_metadata?.avatar_url || '',
-        new_invite_code: inviteCode || '',
+        new_avatar_url: avatarUrl || authUser.user_metadata?.avatar_url || ''
       }
     );
 

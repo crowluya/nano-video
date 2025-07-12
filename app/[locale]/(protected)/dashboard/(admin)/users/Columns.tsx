@@ -79,36 +79,6 @@ export const columns: ColumnDef<UserType>[] = [
     ),
   },
   {
-    accessorKey: "invite_code",
-    header: "Invite Code",
-    cell: ({ row }) => (
-      <span
-        className="cursor-pointer"
-        onClick={() => {
-          navigator.clipboard.writeText(row.original.invite_code || "");
-          toast.success("Copied to clipboard");
-        }}
-      >
-        {row.original.invite_code || "-"}
-      </span>
-    ),
-  },
-  {
-    accessorKey: "inviter_user_id",
-    header: "Inviter ID",
-    cell: ({ row }) => (
-      <span
-        className="cursor-pointer"
-        onClick={() => {
-          navigator.clipboard.writeText(row.original.inviter_user_id || "");
-          toast.success("Copied to clipboard");
-        }}
-      >
-        {row.original.inviter_user_id || "-"}
-      </span>
-    ),
-  },
-  {
     accessorKey: "created_at",
     header: "Joined",
     cell: ({ row }) =>
