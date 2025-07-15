@@ -53,18 +53,11 @@ export default function TechStack() {
             {t("badge")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t("title")
-              .split(t("titleHighlight"))
-              .map((part, i) =>
-                i === 0 ? (
-                  part
-                ) : (
-                  <span key={part}>
-                    <span className="gradient-text">{t("titleHighlight")}</span>
-                    {part}
-                  </span>
-                )
-              )}
+            {t.rich("title", {
+              highlight: (chunks) => (
+                <span className="gradient-text">{chunks}</span>
+              ),
+            })}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
             {t("description")}

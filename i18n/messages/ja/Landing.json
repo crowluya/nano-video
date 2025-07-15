@@ -1,15 +1,13 @@
 {
   "Hero": {
-    "title": "最新の フルスタック SaaS テンプレート",
-    "titleHighlight": "フルスタック SaaS",
+    "title": "最新の <highlight>フルスタック SaaS</highlight> テンプレート",
     "description": "Next.js と Supabase を活用した本格的な SaaS 開発キット。コンテンツ配信、AI ツール、サブスクリプションサービスを迅速に構築できます。",
     "getStarted": "今すぐ始める",
     "viewDocs": "ドキュメントを見る",
     "viewShowcase": "事例を見る"
   },
   "Features": {
-    "title": "高速開発のための完全機能スイート",
-    "titleHighlight": "高速開発",
+    "title": "<highlight>高速開発</highlight>のための完全機能スイート",
     "description": "最新のSaaSアプリケーションに必要な全ての機能を搭載し、ビジネスロジックの開発に専念できます。",
     "items": [
       {
@@ -61,8 +59,7 @@
   },
   "TechStack": {
     "badge": "テックスタック",
-    "title": "最先端の技術スタックを活用",
-    "titleHighlight": "最先端",
+    "title": "<highlight>最先端</highlight>の技術スタックを活用",
     "description": "厳選された最新技術で、安定性、拡張性、保守性の高いプロダクトを実現",
     "groups": [
       {
@@ -156,8 +153,7 @@
     }
   },
   "UseCases": {
-    "title": "1つのテンプレートで多彩なサイト構築",
-    "titleHighlight": "多彩なサイト",
+    "title": "1つのテンプレートで<highlight>多彩なサイト</highlight>構築",
     "description": "NextyはコンテンツサイトからAIツール、無料サービスから有料サブスクリプションまで、さまざまなWebプロジェクトを迅速に開発・デプロイできる汎用性を備えています。",
     "cases": [
       {
@@ -255,8 +251,7 @@
     ]
   },
   "Testimonials": {
-    "title": "お客様が短期間でAIツールやSaaSプロダクトを立ち上げた事例",
-    "titleHighlight": "AIツールやSaaSプロダクト",
+    "title": "お客様が短期間で<highlight>AIツールやSaaSプロダクト</highlight>を立ち上げた事例",
     "description": "開発者やプロダクトマネージャーの実際の声をご紹介。Nextyを活用してプロジェクト開発をどのようにスピードアップしたかをご覧ください。"
   },
   "FAQ": {
@@ -299,8 +294,7 @@
     "button": "テンプレートを入手"
   },
   "Pricing": {
-    "title": "一度の購入で、永続的な進化を。",
-    "titleHighlight": "永続的な進化",
+    "title": "一度の購入で、<highlight>永続的な進化</highlight>を。",
     "description": "私たちが数ヶ月かけて開発したテンプレートで、あなたは数日でサービスをローンチできます"
   }
 }

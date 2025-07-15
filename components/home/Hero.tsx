@@ -12,21 +12,13 @@ export default function Hero() {
           {/* Left Content */}
           <div className="mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {t("title")
-                .split(t("titleHighlight"))
-                .map((part, i) =>
-                  i === 0 ? (
-                    part
-                  ) : (
-                    <span key={part}>
-                      <span className="gradient-text">
-                        {t("titleHighlight")}
-                      </span>
-                      {part}
-                    </span>
-                  )
-                )}
+              {t.rich("title", {
+                highlight: (chunks) => (
+                  <span className="gradient-text">{chunks}</span>
+                ),
+              })}
             </h1>
+
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
               {t("description")}
             </p>

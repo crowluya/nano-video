@@ -1,15 +1,13 @@
 {
   "Hero": {
-    "title": "多场景全栈 SaaS 开发模板",
-    "titleHighlight": "全栈 SaaS",
+    "title": "多场景<highlight>全栈 SaaS</highlight>开发模板",
     "description": "Nexty 是一个功能齐全的 Next.js SaaS 全栈模板，让你能够快速构建各种商业网站，无论是内容站、工具站还是集成 AI 能力的付费网站。",
     "getStarted": "立即开始",
     "viewDocs": "查看文档",
     "viewShowcase": "查看案例"
   },
   "Features": {
-    "title": "为极速开发打造的完整功能套件",
-    "titleHighlight": "极速开发",
+    "title": "为<highlight>极速开发</highlight>打造的完整功能套件",
     "description": "我们的模板涵盖了现代 SaaS 应用所需的所有核心功能，让你可以专注于业务逻辑的开发。",
     "items": [
       {
@@ -61,8 +59,7 @@
   },
   "TechStack": {
     "badge": "技术生态",
-    "title": "由流行技术栈驱动",
-    "titleHighlight": "流行技术栈",
+    "title": "由<highlight>流行技术栈</highlight>驱动",
     "description": "精心选择的最新技术组合，确保你的产品稳定、可扩展且易于维护",
     "groups": [
       {
@@ -156,8 +153,7 @@
     }
   },
   "UseCases": {
-    "title": "一套模板，多场景应用",
-    "titleHighlight": "多场景",
+    "title": "一套模板，<highlight>多场景</highlight>应用",
     "description": "Nexty 适用于开发不同场景的网站，从内容站到 AI 工具，从免费服务到付费订阅，都可快速开发上线。",
     "cases": [
       {
@@ -255,8 +251,7 @@
     ]
   },
   "Testimonials": {
-    "title": "我们的客户快速上线了 AI 工具、SaaS 产品",
-    "titleHighlight": "AI 工具、SaaS 产品",
+    "title": "我们的客户快速上线了 <highlight>AI 工具、SaaS 产品</highlight>",
     "description": "了解开发者和产品经理的真实反馈，看他们如何使用 Nexty 加速项目开发进程。"
   },
   "FAQ": {
@@ -299,8 +294,7 @@
     "button": "立即获取模板"
   },
   "Pricing": {
-    "title": "一次付费，永久更新",
-    "titleHighlight": "永久更新",
+    "title": "一次付费，<highlight>永久更新</highlight>",
     "description": "我们数月打磨，让你能够快速发布"
   }
 }

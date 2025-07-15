@@ -1,15 +1,13 @@
 {
   "Hero": {
-    "title": "A Modern Full-Stack SaaS Template",
-    "titleHighlight": "Full-Stack SaaS",
+    "title": "A Modern <highlight>Full-Stack SaaS</highlight> Template",
     "description": "A production-ready Next.js and Supabase starter template for building modern SaaS applications. Launch your content, AI, or subscription service faster.",
     "getStarted": "Get Started",
     "viewDocs": "View Docs",
     "viewShowcase": "View Showcase"
   },
   "Features": {
-    "title": "Complete Feature Suite for Rapid Development",
-    "titleHighlight": "Rapid Development",
+    "title": "Complete Feature Suite for <highlight>Rapid Development</highlight>",
     "description": "Our template includes all essential features for modern SaaS applications, allowing you to focus on building your business logic.",
     "items": [
       {
@@ -61,8 +59,7 @@
   },
   "TechStack": {
     "badge": "Tech Stack",
-    "title": "Powered by Modern Technologies",
-    "titleHighlight": "Modern",
+    "title": "Powered by <highlight>Modern Technologies</highlight>",
     "description": "A carefully curated stack of modern technologies ensuring your product is stable, scalable, and maintainable",
     "groups": [
       {
@@ -156,8 +153,7 @@
     }
   },
   "UseCases": {
-    "title": "One Template, Multiple Solutions",
-    "titleHighlight": "Multiple Solutions",
+    "title": "One Template, <highlight>Multiple Solutions</highlight>",
     "description": "Nexty is versatile enough to power various web projects - from content sites to AI tools, from free utilities to premium subscription services, all with rapid development and deployment.",
     "cases": [
       {
@@ -255,8 +251,7 @@
     ]
   },
   "Testimonials": {
-    "title": "Our Customers Rapidly Launched AI Tools & SaaS Products",
-    "titleHighlight": "AI Tools & SaaS Products",
+    "title": "Our Customers Rapidly Launched <highlight>AI Tools & SaaS Products</highlight>",
     "description": "Discover authentic feedback from developers and product managers who accelerated their project development with Nexty."
   },
   "FAQ": {
@@ -299,8 +294,7 @@
     "button": "Get Template Now"
   },
   "Pricing": {
-    "title": "One-Time Payment, Lifetime Updates",
-    "titleHighlight": "Lifetime Updates",
+    "title": "One-Time Payment, <highlight>Lifetime Updates</highlight>",
     "description": "We spent months, so you can launch in just days."
   }
 }
