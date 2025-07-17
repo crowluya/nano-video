@@ -14,6 +14,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale,
     messages: {
       Landing: (await import(`./messages/${locale}/Landing.json`)).default,
+      NotFound: (await import(`./messages/${locale}/NotFound.json`)).default,
 
       // Dashboard - User
       Settings: (await import(`./messages/${locale}/Dashboard/User/Settings.json`)).default,
