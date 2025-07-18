@@ -13,7 +13,7 @@ const FeatureCard = ({ feature }: { feature: Feature }) => {
       key={feature.title}
       className="card rounded-xl p-6 shadow-sm hover:shadow-md dark:shadow-indigo-900/10"
     >
-      <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 gradient-bg text-white">
+      <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 highlight-bg text-white">
         {feature.icon && (
           <DynamicIcon name={feature.icon} className="size-6 shrink-0" />
         )}
@@ -40,7 +40,7 @@ export default function Features() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t.rich("title", {
               highlight: (chunks) => (
-                <span className="gradient-text">{chunks}</span>
+                <span className="highlight-text">{chunks}</span>
               ),
             })}
           </h2>

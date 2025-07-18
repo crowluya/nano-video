@@ -66,7 +66,7 @@ export default async function AdminBlogsPage() {
         <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
         <div className="flex space-x-2">
           <TagManagementDrawer />
-          <Button asChild className="gradient-bg text-white">
+          <Button asChild className="highlight-bg text-white">
             <I18nLink
               href={`/dashboard/blogs/new`}
               title={t("createNewButton")}

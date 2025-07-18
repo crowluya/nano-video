@@ -14,7 +14,7 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               {t.rich("title", {
                 highlight: (chunks) => (
-                  <span className="gradient-text">{chunks}</span>
+                  <span className="highlight-text">{chunks}</span>
                 ),
               })}
             </h1>
@@ -27,7 +27,7 @@ export default function Hero() {
                 href={process.env.NEXT_PUBLIC_PRICING_PATH!}
                 title={t("getStarted")}
                 prefetch={false}
-                className="gradient-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg"
+                className="highlight-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg"
               >
                 {t("getStarted")}
               </I18nLink>

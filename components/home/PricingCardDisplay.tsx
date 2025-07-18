@@ -6,7 +6,7 @@ import { Check, X } from "lucide-react";
 const defaultBorderStyle = "border-gray-300 dark:border-gray-600";
 const highlightedBorderStyle = "border-indigo-600 dark:border-indigo-400";
 const defaultCtaStyle = "bg-gray-800 hover:bg-gray-700";
-const highlightedCtaStyle = "gradient-bg hover:opacity-90";
+const highlightedCtaStyle = "highlight-bg hover:opacity-90";
 
 interface PricingCardDisplayProps {
   plan: PricingPlan;

@@ -48,7 +48,7 @@ export default async function RedirectErrorPage({
         <I18nLink
           href="/"
           title={t("goToHome")}
-          className="px-4 py-2 gradient-bg text-white rounded-md"
+          className="px-4 py-2 highlight-bg text-white rounded-md"
         >
           {t("goToHome")}
         </I18nLink>

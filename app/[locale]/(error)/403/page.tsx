@@ -35,7 +35,7 @@ export default function ForbiddenPage() {
       <p className="text-muted-foreground">{t("description")}</p>
       <Button
         asChild
-        className="gradient-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg"
+        className="highlight-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg"
       >
         <I18nLink href={t("button.href")} title={t("button.name")}>
           {t("button.name")}

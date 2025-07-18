@@ -29,20 +29,20 @@
   }
 }
 @layer components {
-  .gradient-text {
+  .highlight-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[--main-gradient-from] to-[--main-gradient-to];
   }
 
-  .gradient-bg {
+  .highlight-bg {
     @apply bg-gradient-to-r from-[--main-gradient-from] to-[--main-gradient-to];
   }
 
-  .dark .gradient-bg {
+  .dark .highlight-bg {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.15);
   }
 
-  .button-gradient-bg {
-    @apply gradient-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg;
+  .highlight-button {
+    @apply highlight-bg text-white px-8 py-3 rounded-lg font-medium text-center hover:opacity-90 shadow-lg;
   }
 
   .code-window {

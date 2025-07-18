@@ -55,7 +55,7 @@ export default function TechStack() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t.rich("title", {
               highlight: (chunks) => (
-                <span className="gradient-text">{chunks}</span>
+                <span className="highlight-text">{chunks}</span>
               ),
             })}
           </h2>

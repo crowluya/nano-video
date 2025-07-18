@@ -31,7 +31,7 @@ export default async function Footer() {
             <div className="w-full flex flex-col sm:flex-row lg:flex-col gap-4 col-span-full md:col-span-2">
               <div className="space-y-4 flex-1">
                 <div className="items-center space-x-2 flex">
-                  <h2 className="gradient-text text-2xl font-bold">
+                  <h2 className="highlight-text text-2xl font-bold">
                     {t("title")}
                   </h2>
                 </div>

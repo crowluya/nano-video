@@ -50,7 +50,7 @@ export default async function AdminPricesPage() {
           <h1 className="text-2xl font-semibold">{t("title")}</h1>
           <p className="text-muted-foreground">{t("description")}</p>
         </div>
-        <Button asChild className="gradient-bg text-white">
+        <Button asChild className="highlight-bg text-white">
           <I18nLink
             href="/dashboard/prices/new"
             title={t("createNewPlan")}
