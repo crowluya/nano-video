@@ -35,7 +35,7 @@ export default function DemoPage() {
   return (
     <div className="container max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 highlight-text">
           {t("title")}
         </h1>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

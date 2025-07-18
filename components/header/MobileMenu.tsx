@@ -52,7 +52,7 @@ export default function MobileMenu() {
                 width={32}
                 height={32}
               />
-              <span className="gradient-text">{t("title")}</span>
+              <span className="highlight-text">{t("title")}</span>
             </I18nLink>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />

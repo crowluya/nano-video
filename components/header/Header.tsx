@@ -19,7 +19,7 @@ const Header = () => {
             prefetch={true}
             className="flex items-center space-x-1 font-bold"
           >
-            <span className="gradient-text">{t("title")}</span>
+            <span className="highlight-text">{t("title")}</span>
           </I18nLink>
 
           <HeaderLinks />
