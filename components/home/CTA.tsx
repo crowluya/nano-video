@@ -1,8 +1,8 @@
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import { Link as I18nLink } from "@/i18n/routing";
 import { MousePointerClick } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 export default function CTA() {
   const t = useTranslations("Landing.CTA");
@@ -40,14 +40,14 @@ export default function CTA() {
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <RainbowButton>
-                  <Link
-                    href="#pricing"
+                  <I18nLink
+                    href="/#pricing"
                     className="flex items-center gap-2"
                     prefetch={true}
                   >
                     <MousePointerClick className="w-5 h-5" />
                     {t("button")}
-                  </Link>
+                  </I18nLink>
                 </RainbowButton>
               </div>
 

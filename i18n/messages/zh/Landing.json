@@ -292,11 +292,10 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "客户评价",
-      "text": "真实成功案例"
+      "label": "客户评价"
     },
-    "title": "我们的客户快速上线了 AI 工具和 SaaS 产品",
-    "description": "了解开发者和产品经理的真实反馈，看他们如何使用 Nexty 加速项目开发进程。"
+    "title": "用户真实评价",
+    "description": "不要只听我们说，看看用户怎么说"
   },
   "FAQ": {
     "title": "常见问题解答",

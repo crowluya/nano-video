@@ -292,11 +292,10 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "TESTIMONIALS",
-      "text": "Real Success Stories"
+      "label": "TESTIMONIALS"
     },
-    "title": "Our Customers Rapidly Launched AI Tools & SaaS Products",
-    "description": "Real success stories from developers and entrepreneurs who used Nexty to accelerate their SaaS development and achieve faster time-to-market."
+    "title": "What Our Customers Say",
+    "description": "Don't just take our word for it"
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
