@@ -1,6 +1,6 @@
 "use client";
 
-import { UserBenefits } from "@/lib/stripe/actions";
+import { UserBenefits } from "@/actions/usage/benefits";
 import { createContext } from "react";
 
 export const BenefitsContext =

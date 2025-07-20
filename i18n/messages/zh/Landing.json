@@ -65,8 +65,7 @@
         ],
         "images": [
           "/images/features/payment-1.png",
-          "/images/features/payment-2.png",
-          "/images/features/payment-3.png"
+          "/images/features/payment-2.png"
         ]
       },
       {
@@ -351,6 +350,10 @@
       "text": "一次付费，永久更新"
     },
     "title": "我们数月打磨，让你能够快速发布",
-    "description": "使用我们经过验证的 SaaS 模板，你将专注于用户真正需要的功能"
+    "description": "使用我们经过验证的 SaaS 模板，你将专注于用户真正需要的功能",
+    "annual": "年付",
+    "monthly": "月付",
+    "onetime": "一次性",
+    "saveTip": "节省 20%"
   }
 }

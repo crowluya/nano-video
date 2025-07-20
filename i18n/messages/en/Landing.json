@@ -65,8 +65,7 @@
         ],
         "images": [
           "/images/features/payment-1.png",
-          "/images/features/payment-2.png",
-          "/images/features/payment-3.png"
+          "/images/features/payment-2.png"
         ]
       },
       {
@@ -351,6 +350,10 @@
       "text": "One-Time Payment, Lifetime Updates"
     },
     "title": "Ship your SaaS in days, not months",
-    "description": "Using our battle-tested SaaS starter template, so you can skip boilerplate coding and focus on the features your users actually need."
+    "description": "Using our battle-tested SaaS starter template, so you can skip boilerplate coding and focus on the features your users actually need.",
+    "annual": "Annual",
+    "monthly": "Monthly",
+    "onetime": "One-Time",
+    "saveTip": "Save 20%"
   }
 }

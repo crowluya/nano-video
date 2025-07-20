@@ -9,11 +9,13 @@ const highlightedBorderStyle =
 const highlightedBgStyle = "bg-indigo-500";
 
 interface PricingCardDisplayProps {
+  id?: string;
   plan: PricingPlan;
   localizedPlan: PricingPlanTranslation;
 }
 
 export function PricingCardDisplay({
+  id,
   plan,
   localizedPlan,
 }: PricingCardDisplayProps) {
@@ -31,6 +33,7 @@ export function PricingCardDisplay({
 
   return (
     <div
+      id={id}
       className={`card rounded-xl p-8 shadow-sm border-t-4 ${
         plan.is_highlighted ? highlightedBorderStyle : defaultBorderStyle
       } ${

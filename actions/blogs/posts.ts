@@ -663,7 +663,7 @@ async function checkUserSubscription(userId: string): Promise<boolean> {
       return false;
     }
 
-    const isActive = latestSubscription.status === 'active';
+    const isActive = latestSubscription.status === 'active' || latestSubscription.status === 'trialing';
     const isWithinPeriod = latestSubscription.current_period_end && new Date(latestSubscription.current_period_end) > new Date();
 
     return !!(isActive && isWithinPeriod);

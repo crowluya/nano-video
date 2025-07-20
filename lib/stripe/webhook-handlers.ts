@@ -5,6 +5,11 @@ import { Database, TablesInsert } from '@/lib/supabase/types';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import Stripe from 'stripe';
 
+const supabaseAdmin = createAdminClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
+
 /**
  * Handles the `checkout.session.completed` event from Stripe.
  *
@@ -14,11 +19,6 @@ import Stripe from 'stripe';
  * @param session The Stripe Checkout Session object.
  */
 export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   const userId = session.metadata?.userId;
   const planId = session.metadata?.planId;
   const priceId = session.metadata?.priceId;
@@ -92,11 +92,6 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
 }
 
 export async function upgradeOneTimeCredits(userId: string, planId: string, paymentIntentId?: string) {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   // --- TODO: [custom] Upgrade the user's benefits ---
   /**
    * Complete the user's benefit upgrade based on your business logic.
@@ -168,11 +163,6 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
     return;
   }
 
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   /**
    * Idempotency Check
    * 幂等性检查
@@ -202,9 +192,10 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
     let planId: string | null = null;
     let priceId: string | null = null;
     let productId: string | null = null;
+    let subscription: Stripe.Subscription | null = null;
 
     try {
-      const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+      subscription = await stripe.subscriptions.retrieve(subscriptionId);
       userId = subscription.metadata?.userId;
       planId = subscription.metadata?.planId;
       if (subscription.items.data.length > 0) {
@@ -279,9 +270,9 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
       throw insertOrderError;
     }
 
-    if (planId && userId) {
+    if (planId && userId && subscription) {
       // --- [custom] Upgrade the user's benefits ---
-      upgradeSubscriptionCredits(userId, planId, invoiceId);
+      upgradeSubscriptionCredits(userId, planId, invoiceId, subscription);
       // --- End: [custom] Upgrade the user's benefits ---
     } else {
       console.warn(`Cannot grant subscription credits for invoice ${invoiceId} because planId (${planId}) or userId (${userId}) is unknown.`);
@@ -295,12 +286,7 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
   }
 }
 
-export async function upgradeSubscriptionCredits(userId: string, planId: string, invoiceId: string) {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
+export async function upgradeSubscriptionCredits(userId: string, planId: string, invoiceId: string, subscription: Stripe.Subscription) {
   // --- TODO: [custom] Upgrade the user's benefits ---
   /**
    * Complete the user's benefit upgrade based on your business logic.
@@ -318,14 +304,17 @@ export async function upgradeSubscriptionCredits(userId: string, planId: string,
   try {
     const { data: planData, error: planError } = await supabaseAdmin
       .from('pricing_plans')
-      .select('benefits_jsonb')
+      .select('recurring_interval, benefits_jsonb')
       .eq('id', planId)
       .single();
 
     if (planError || !planData) {
       console.error(`Error fetching plan benefits for planId ${planId} during invoice ${invoiceId} processing:`, planError);
     } else {
-      const creditsToGrant = (planData.benefits_jsonb as any)?.monthly_credits || 0;
+      const benefits = planData.benefits_jsonb as any;
+      const recurringInterval = planData.recurring_interval;
+
+      const creditsToGrant = benefits?.monthly_credits || 0;
 
       const { data: order } = await supabaseAdmin
         .from('orders')
@@ -335,7 +324,7 @@ export async function upgradeSubscriptionCredits(userId: string, planId: string,
 
       const orderId = order?.id;
 
-      if (creditsToGrant && creditsToGrant > 0) {
+      if (recurringInterval === 'month' && creditsToGrant) {
         const { error: usageError } = await supabaseAdmin.rpc('grant_subscription_credits_and_log', {
           p_user_id: userId,
           p_credits_to_set: creditsToGrant,
@@ -345,9 +334,20 @@ export async function upgradeSubscriptionCredits(userId: string, planId: string,
         if (usageError) {
           console.error(`Error setting subscription credits for user ${userId} (invoice ${invoiceId}):`, usageError);
         }
-      } else {
-        console.log(`No recurring credits defined or amount is < 0 for plan ${planId}. Skipping credit grant/reset.`);
+        return
       }
+
+      if (recurringInterval === 'year' && benefits?.total_months && benefits?.monthly_credits) {
+        await supabaseAdmin.rpc('initialize_or_reset_yearly_allocation', {
+          p_user_id: userId,
+          p_total_months: benefits.total_months,
+          p_monthly_credits: benefits.monthly_credits,
+          p_subscription_start_date: new Date(subscription.start_date * 1000).toISOString(),
+          p_related_order_id: orderId,
+        });
+        return
+      }
+
     }
   } catch (creditError) {
     console.error(`Error processing credits for user ${userId} (invoice ${invoiceId}):`, creditError);
@@ -374,12 +374,7 @@ export async function handleSubscriptionUpdate(subscription: Stripe.Subscription
   try {
     await syncSubscriptionData(subscription.id, customerId, subscription.metadata);
 
-    if (!userId || !planId) {
-      console.warn(`Cannot sync subscription ${subscription.id} during update event because userId (${userId}) or planId (${planId}) is missing in metadata.`);
-      return;
-    }
-
-    if (isDeleted) {
+    if (isDeleted && userId && planId) {
       // --- [custom] Revoke the user's benefits (only for one time purchase) ---
       revokeSubscriptionCredits(userId, planId, subscription.id);
       // --- End: [custom] Revoke the user's benefits ---
@@ -391,32 +386,21 @@ export async function handleSubscriptionUpdate(subscription: Stripe.Subscription
 }
 
 export async function revokeSubscriptionCredits(userId: string, planId: string, subscriptionId: string) {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   // --- TODO: [custom] Revoke the user's subscription benefits ---
   /**
    * Complete the user's subscription benefit revocation based on your business logic.
    * This function is triggered when a subscription is canceled ('customer.subscription.deleted').
-   * We recommend defining benefits in the `benefits_jsonb` field within your pricing plans.
-   * This code uses `monthly_credits` as an example. If you need to handle other benefits or use different logic (e.g., proportional allocation), please modify the code according to your specific business logic.
    * 
    * 根据你的业务逻辑，取消用户的订阅权益。
    * 此函数在订阅被取消时 ('customer.subscription.deleted') 触发。
-   * 我们建议在定价方案的 `benefits_jsonb` 字段中定义权益。
-   * 以下代码以 `monthly_credits` 为例，如果你需要处理其他权益或使用不同的逻辑（例如，按比例分配），请根据你的具体业务逻辑修改以下代码。
    *
    * お客様のビジネスロジックに基づいて、ユーザーのサブスクリプション特典を取消してください。
    * この関数は、サブスクリプションがキャンセルされたとき ('customer.subscription.deleted') にトリガーされます。
-   * 特典は、料金プランの `benefits_jsonb` フィールドで定義することをお勧めします。
-   * このコードは、`monthly_credits` を例としています。もし他の特典や、比例配分のような異なるロジックを適用する必要がある場合は、具体的なビジネスロジックに合わせて、このコードを修正してください。
    */
   try {
     const { data: planData, error: planError } = await supabaseAdmin
       .from('pricing_plans')
-      .select('benefits_jsonb')
+      .select('recurring_interval')
       .eq('id', planId)
       .single();
 
@@ -426,19 +410,41 @@ export async function revokeSubscriptionCredits(userId: string, planId: string, 
     }
 
     let subscriptionToRevoke = 0;
-    const benefits = planData.benefits_jsonb as any;
+    const recurringInterval = planData.recurring_interval;
+    let clearYearly = false;
+    let clearMonthly = false;
 
-    if (benefits?.monthly_credits > 0) {
-      subscriptionToRevoke = benefits.monthly_credits;
+    const { data: usageData, error: usageError } = await supabaseAdmin
+      .from('usage')
+      .select('balance_jsonb')
+      .eq('user_id', userId)
+      .single();
+
+    if (usageError) {
+      console.error(`Error fetching usage data for user ${userId}:`, usageError);
+      return;
     }
 
-    if (subscriptionToRevoke >= 0) {
-      const { error: revokeError } = await supabaseAdmin.rpc('revoke_credits_and_log', {
+    if (recurringInterval === 'year') {
+      const yearlyDetails = usageData.balance_jsonb?.yearly_allocation_details;
+      subscriptionToRevoke = yearlyDetails?.monthly_credits
+      clearYearly = true;
+    } else if (recurringInterval === 'month') {
+      const monthlyDetails = usageData.balance_jsonb?.monthly_allocation_details;
+      subscriptionToRevoke = monthlyDetails?.monthly_credits
+      clearMonthly = true;
+    }
+
+    if (subscriptionToRevoke) {
+      const { data: revokeResult, error: revokeError } = await supabaseAdmin.rpc('revoke_credits_and_log', {
         p_user_id: userId,
         p_revoke_one_time: 0,
         p_revoke_subscription: subscriptionToRevoke,
         p_log_type: 'subscription_cancel_revoke',
-        p_notes: `Subscription ${subscriptionId} cancelled/ended.`
+        p_notes: `Subscription ${subscriptionId} cancelled/ended.`,
+        p_related_order_id: null,
+        p_clear_yearly_details: clearYearly,
+        p_clear_monthly_details: clearMonthly
       });
 
       if (revokeError) {
@@ -446,8 +452,6 @@ export async function revokeSubscriptionCredits(userId: string, planId: string, 
       } else {
         console.log(`Successfully revoked subscription credits for user ${userId} related to subscription ${subscriptionId} cancellation.`);
       }
-    } else {
-      console.log(`No subscription credits (e.g., monthly_credits >= 0) defined to revoke for plan ${planId} on subscription ${subscriptionId} cancellation.`);
     }
   } catch (error) {
     console.error(`Error during revokeSubscriptionCredits for user ${userId}, subscription ${subscriptionId}:`, error);
@@ -508,11 +512,6 @@ export async function handleRefund(charge: Stripe.Charge) {
   const refundId = charge.id;
   const paymentIntentId = charge.payment_intent as string | null;
   const customerId = typeof charge.customer === 'string' ? charge.customer : null;
-
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
 
   if (!refundId || !paymentIntentId) {
     console.error(`Refund ID missing from refunded charge: ${charge.id}. Cannot process refund fully.`);
@@ -619,11 +618,6 @@ export async function handleRefund(charge: Stripe.Charge) {
 }
 
 export async function revokeOneTimeCredits(charge: Stripe.Charge, originalOrder: Database['public']['Tables']['orders']['Row'], refundOrderId: string) {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   // --- TODO: [custom] Revoke the user's one time purchase benefits ---
   /**
    * Complete the user's benefit revoke based on your business logic.
@@ -665,7 +659,9 @@ export async function revokeOneTimeCredits(charge: Stripe.Charge, originalOrder:
             p_revoke_subscription: 0,
             p_log_type: 'refund_revoke',
             p_notes: `Full refund for order ${originalOrder.id}.`,
-            p_related_order_id: refundOrderId
+            p_related_order_id: refundOrderId,
+            p_clear_yearly_details: false,
+            p_clear_monthly_details: false
           });
 
           if (revokeError) {

@@ -1,5 +1,6 @@
 "use client";
 
+import { UserBenefits } from "@/actions/usage/benefits";
 import { deductCredits, getClientUserBenefits } from "@/actions/usage/deduct";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,7 +12,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { UserBenefits } from "@/lib/stripe/actions";
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 

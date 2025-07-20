@@ -21,10 +21,6 @@
         "href": "/#features"
       },
       {
-        "name": "技術スタック",
-        "href": "/#tech-stack"
-      },
-      {
         "id": "pricing",
         "name": "料金プラン",
         "href": "/#pricing"
@@ -84,10 +80,6 @@
             {
               "href": "/#features",
               "name": "機能特性"
-            },
-            {
-              "href": "/#tech-stack",
-              "name": "技術スタック"
             },
             {
               "id": "pricing",

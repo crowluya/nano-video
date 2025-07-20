@@ -65,8 +65,7 @@
         ],
         "images": [
           "/images/features/payment-1.png",
-          "/images/features/payment-2.png",
-          "/images/features/payment-3.png"
+          "/images/features/payment-2.png"
         ]
       },
       {
@@ -351,6 +350,10 @@
       "text": "一度の購入で、永続的な進化を"
     },
     "title": "数か月ではなく、数日であなたのSaaSをリリースしよう",
-    "description": "Nextyは、開発者が実際に必要とする機能を備えた、確かなSaaSテンプレートです。"
+    "description": "Nextyは、開発者が実際に必要とする機能を備えた、確かなSaaSテンプレートです。",
+    "annual": "月間",
+    "monthly": "年間",
+    "onetime": "一次性",
+    "saveTip": "50% 節約"
   }
 }

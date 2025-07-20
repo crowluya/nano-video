@@ -1,7 +1,8 @@
 'use server';
 
 import { actionResponse, ActionResult } from '@/lib/action-response';
-import { getUserBenefits as fetchUserBenefitsInternal, UserBenefits } from '@/lib/stripe/actions';
+import { getUserBenefits as fetchUserBenefitsInternal, UserBenefits } from './benefits';
+
 import { createClient } from '@/lib/supabase/server';
 import { Database } from '@/lib/supabase/types';
 import { createClient as createAdminClient } from '@supabase/supabase-js';

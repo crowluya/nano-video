@@ -11,95 +11,15 @@ import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import Stripe from 'stripe';
 
-export interface UserBenefits {
-  activePlanId: string | null;
-  subscriptionStatus: string | null; // e.g., 'active', 'trialing', 'past_due', 'canceled', null
-  totalAvailableCredits: number;
-  subscriptionCreditsBalance: number;
-  oneTimeCreditsBalance: number;
-  // Add other plan-specific benefits if needed, fetched via planId
-}
-
-/**
- * Retrieves the user's current benefits including plan, status, and credit balances.
- *
- * @param userId The UUID of the user.
- * @returns A promise resolving to the UserBenefits object.
- */
-export async function getUserBenefits(userId: string): Promise<UserBenefits> {
-  if (!userId) {
-    return {
-      activePlanId: null,
-      subscriptionStatus: null,
-      totalAvailableCredits: 0,
-      subscriptionCreditsBalance: 0,
-      oneTimeCreditsBalance: 0,
-    };
-  }
-
-  const supabase = await createClient();
-
-  try {
-    const { data: usageData, error: usageError } = await supabase
-      .from('usage')
-      .select('subscription_credits_balance, one_time_credits_balance')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (usageError) {
-      console.error(`Error fetching usage data for user ${userId}:`, usageError);
-    }
-
-    const subCredits = usageData?.subscription_credits_balance ?? 0;
-    const oneTimeCredits = usageData?.one_time_credits_balance ?? 0;
-    const totalCredits = subCredits + oneTimeCredits;
-
-    const { data: subscription, error: subscriptionError } = await supabase
-      .from('subscriptions')
-      .select('plan_id, status, current_period_end')
-      .eq('user_id', userId)
-      .in('status', ['active', 'trialing'])
-      .order('created_at', { ascending: false })
-      .limit(1)
-      .maybeSingle();
-
-    if (subscriptionError) {
-      console.error(`Error fetching subscription data for user ${userId}:`, subscriptionError);
-    }
-
-    let finalStatus = subscription?.status ?? null;
-    if (finalStatus && subscription?.current_period_end && new Date(subscription.current_period_end) < new Date()) {
-      finalStatus = 'inactive_period_ended';
-    }
-
-    return {
-      activePlanId: (finalStatus === 'active' || finalStatus === 'trialing') ? subscription?.plan_id ?? null : null,
-      subscriptionStatus: finalStatus,
-      totalAvailableCredits: totalCredits,
-      subscriptionCreditsBalance: subCredits,
-      oneTimeCreditsBalance: oneTimeCredits,
-    };
-
-  } catch (error) {
-    console.error(`Unexpected error in getUserBenefits for user ${userId}:`, error);
-    return {
-      activePlanId: null,
-      subscriptionStatus: null,
-      totalAvailableCredits: 0,
-      subscriptionCreditsBalance: 0,
-      oneTimeCreditsBalance: 0,
-    };
-  }
-}
+const supabaseAdmin = createAdminClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+);
 
 export async function getOrCreateStripeCustomer(
   userId: string
 ): Promise<string> {
   const supabase = await createClient();
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
 
   const { data: userProfile, error: profileError } = await supabase
     .from('users')
@@ -228,11 +148,6 @@ export async function syncSubscriptionData(
   customerId: string,
   initialMetadata?: Record<string, any>
 ): Promise<void> {
-  const supabaseAdmin = createAdminClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-  );
-
   try {
     if (!stripe) {
       console.error('Stripe is not initialized. Please check your environment variables.');
@@ -394,10 +309,6 @@ export async function sendInvoicePaymentFailedEmail({
       return;
     }
 
-    const supabaseAdmin = createAdminClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!
-    );
     const { data: userData, error: userError } = await supabaseAdmin
       .from('users')
       .select('email')

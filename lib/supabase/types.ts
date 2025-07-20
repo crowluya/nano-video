@@ -485,7 +485,7 @@ export type Database = {
       allocate_specific_monthly_credit_for_year_plan: {
         Args: {
           p_user_id: string
-          p_credits_per_month: number
+          p_monthly_credits: number
           p_current_yyyy_mm: string
         }
         Returns: undefined
@@ -511,12 +511,20 @@ export type Database = {
         Returns: undefined
       }
       initialize_or_reset_yearly_allocation: {
-        Args: {
-          p_user_id: string
-          p_total_months: number
-          p_credits_per_month: number
-          p_subscription_start_date: string
-        }
+        Args:
+          | {
+              p_user_id: string
+              p_total_months: number
+              p_credits_per_month: number
+              p_subscription_start_date: string
+            }
+          | {
+              p_user_id: string
+              p_total_months: number
+              p_monthly_credits: number
+              p_subscription_start_date: string
+              p_related_order_id?: string
+            }
         Returns: undefined
       }
       revoke_credits_and_log: {
@@ -527,6 +535,8 @@ export type Database = {
           p_log_type: string
           p_notes: string
           p_related_order_id?: string
+          p_clear_yearly_details?: boolean
+          p_clear_monthly_details?: boolean
         }
         Returns: undefined
       }

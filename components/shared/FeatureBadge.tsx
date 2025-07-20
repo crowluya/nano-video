@@ -13,7 +13,7 @@ export default function FeatureBadge({
   label,
   text,
   href,
-  target = "_blank",
+  target = "_self",
   rel = "",
   className = "",
 }: FeatureBadgeProps) {

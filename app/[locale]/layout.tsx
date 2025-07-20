@@ -1,3 +1,4 @@
+import { getUserBenefits, UserBenefits } from "@/actions/usage/benefits";
 import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAdsense from "@/app/GoogleAdsense";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
@@ -14,7 +15,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { siteConfig } from "@/config/site";
 import { DEFAULT_LOCALE, Locale, routing } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
-import { getUserBenefits, UserBenefits } from "@/lib/stripe/actions";
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
