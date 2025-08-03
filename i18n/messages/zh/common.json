@@ -46,7 +46,6 @@
         "invalidEmail": "请输入有效的邮箱地址",
         "defaultErrorMessage": "订阅失败，请稍后再试",
         "successMessage": "订阅成功",
-        "emailSubject": "你已成功订阅 Nexty 邮件通知",
         "multipleSubmissions": "你已多次提交，请明天再试再试"
       },
       "unsubscribe": {

@@ -46,7 +46,6 @@
         "invalidEmail": "メールアドレスの形式が正しくありません",
         "defaultErrorMessage": "登録処理に失敗しました。恐れ入りますが、時間をおいて再度お試しください",
         "successMessage": "ニュースレターの登録が完了いたしました",
-        "emailSubject": "【Nexty】ニュースレターのご登録ありがとうございます",
         "multipleSubmissions": "アクセスが集中しております。24時間後に再度お試しください"
       },
       "unsubscribe": {

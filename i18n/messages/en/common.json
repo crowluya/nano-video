@@ -46,7 +46,6 @@
         "invalidEmail": "Please enter a valid email address",
         "defaultErrorMessage": "Subscription failed. Please try again later",
         "successMessage": "Successfully subscribed!",
-        "emailSubject": "Welcome to Nexty Newsletter!",
         "multipleSubmissions": "Too many requests. Please try again tomorrow"
       },
       "unsubscribe": {

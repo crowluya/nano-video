@@ -1,8 +1,9 @@
 'use server';
 
+import { sendEmail } from '@/actions/resend';
+import { siteConfig } from '@/config/site';
 import { InvoicePaymentFailedEmail } from '@/emails/invoice-payment-failed';
 import { getErrorMessage } from '@/lib/error-utils';
-import resend from '@/lib/resend';
 import stripe from '@/lib/stripe/stripe';
 import { createClient } from '@/lib/supabase/server';
 import { TablesInsert } from '@/lib/supabase/types';
@@ -357,19 +358,13 @@ export async function sendInvoicePaymentFailedEmail({
       };
 
       try {
-        const subject = `Action Required: Payment Failed`; // Example subject
+        const subject = `Action Required: Payment Failed on ${siteConfig.name}`;
 
-        if (!resend) {
-          console.error('Resend client is not initialized. Cannot send invoice payment failed email.');
-          return;
-        }
-
-        await resend.emails.send({
-          from: `${process.env.ADMIN_NAME} <${process.env.ADMIN_EMAIL}>`,
-          to: userEmail,
-          subject: subject,
-          react: await InvoicePaymentFailedEmail(emailProps),
-        });
+        await sendEmail({
+          email: userEmail,
+          subject,
+          react: await InvoicePaymentFailedEmail(emailProps)
+        })
       } catch (emailError) {
         console.error(`Failed to send payment failed email for invoice ${invoiceId} to ${userEmail}:`, emailError);
       }

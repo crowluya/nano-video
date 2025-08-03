@@ -1,13 +1,11 @@
 'use server';
+import { removeUserFromContacts, sendEmail } from '@/actions/resend';
 import { NewsletterWelcomeEmail } from '@/emails/newsletter-welcome';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { normalizeEmail, validateEmail } from '@/lib/email';
-import resend from '@/lib/resend';
 import { checkRateLimit } from '@/lib/upstash';
 import { getTranslations } from 'next-intl/server';
 import { headers } from 'next/headers';
-
-const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID!;
 
 const NEWSLETTER_RATE_LIMIT = {
   prefix: process.env.UPSTASH_REDIS_NEWSLETTER_RATE_LIMIT_KEY || 'newsletter_rate_limit',
@@ -42,31 +40,18 @@ export async function subscribeToNewsletter(email: string, locale = 'en'): Promi
       return actionResponse.error(error || t('subscribe.invalidEmail'));
     }
 
-    if (!resend) {
-      return actionResponse.error('Newsletter service is temporarily unavailable');
-    }
-
-    await resend.contacts.create({
-      audienceId: AUDIENCE_ID,
-      email: normalizedEmail
-    });
-
+    const subject = 'Welcome to Nexty Newsletter!'
     const unsubscribeToken = Buffer.from(normalizedEmail).toString('base64');
-    const unsubscribeLink = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;
+    const unsubscribeLinkEN = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;
 
-    await resend.emails.send({
-      from: `${process.env.ADMIN_NAME} <${process.env.ADMIN_EMAIL}>`,
-      to: normalizedEmail,
-      subject: t('subscribe.emailSubject'),
+    await sendEmail({
+      email: normalizedEmail,
+      subject,
       react: await NewsletterWelcomeEmail({
         email: normalizedEmail,
-        unsubscribeLink,
-      }),
-      headers: {
-        "List-Unsubscribe": `<${unsubscribeLink}>`,
-        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"
-      }
-    });
+        unsubscribeLink: unsubscribeLinkEN
+      })
+    })
 
     return actionResponse.success({ email: normalizedEmail });
   } catch (error) {
@@ -90,23 +75,8 @@ export async function unsubscribeFromNewsletter(token: string, locale = 'en'): P
       return actionResponse.error(error || t('unsubscribe.invalidEmail'));
     }
 
-    if (!resend) {
-      return actionResponse.error('Newsletter service is temporarily unavailable');
-    }
-
-    // check if user exists in audience
-    const list = await resend.contacts.list({ audienceId: AUDIENCE_ID });
-    const user = list.data?.data.find((item: any) => item.email === normalizedEmail);
-
-    if (!user) {
-      return actionResponse.error(t('unsubscribe.notInNewsletter'));
-    }
-
-    // remove from audience
-    await resend.contacts.remove({
-      audienceId: AUDIENCE_ID,
-      email: normalizedEmail,
-    });
+    // Remove user from contacts asynchronously (fire and forget)
+    removeUserFromContacts(normalizedEmail);
 
     return actionResponse.success({ email: normalizedEmail });
   } catch (error) {
