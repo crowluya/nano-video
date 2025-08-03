@@ -10,7 +10,6 @@ interface InvoicePaymentFailedEmailProps {
   nextPaymentAttemptDate?: string;
   updatePaymentMethodLink: string;
   supportLink: string;
-  locale?: "en" | "zh" | "ja";
 }
 
 const commonStyles = {
@@ -126,106 +125,12 @@ const EnglishVersion: React.FC<InvoicePaymentFailedEmailProps> = ({
   </div>
 );
 
-const ChineseVersion: React.FC<InvoicePaymentFailedEmailProps> = ({
-  planName,
-  amountDue,
-  currency,
-  nextPaymentAttemptDate,
-  updatePaymentMethodLink,
-  supportLink,
-  invoiceId,
-}) => (
-  <div style={commonStyles.section}>
-    <h2 style={commonStyles.title}>需要你处理：支付失败</h2>
-    <p style={commonStyles.paragraph}>
-      我们未能成功处理你的{" "}
-      <span style={commonStyles.highlight}>{planName}</span> 订阅付款。
-    </p>
-    <div style={commonStyles.infoBox}>
-      <strong>账单 ID:</strong> {invoiceId}
-      <br />
-      <strong>应付金额:</strong>{" "}
-      {new Intl.NumberFormat("zh-CN", {
-        style: "currency",
-        currency: currency.toUpperCase(),
-      }).format(amountDue)}
-    </div>
-    <p style={commonStyles.paragraph}>
-      为避免你的服务中断，请尽快更新你的支付方式。
-    </p>
-    <a href={updatePaymentMethodLink} style={commonStyles.ctaButton}>
-      更新支付方式
-    </a>
-    {nextPaymentAttemptDate && (
-      <p style={commonStyles.paragraph}>
-        我们将在 {nextPaymentAttemptDate}{" "}
-        左右再次尝试扣款。在此之前更新你的支付信息可以确保你的订阅保持有效。
-      </p>
-    )}
-    <p style={commonStyles.supportText}>
-      如果你已经更新了支付信息或认为这是一个错误，请忽略此邮件。如需帮助，请{" "}
-      <a href={supportLink} style={commonStyles.link}>
-        联系我们的支持团队
-      </a>
-      。
-    </p>
-  </div>
-);
-
-const JapaneseVersion: React.FC<InvoicePaymentFailedEmailProps> = ({
-  planName,
-  amountDue,
-  currency,
-  nextPaymentAttemptDate,
-  updatePaymentMethodLink,
-  supportLink,
-  invoiceId,
-}) => (
-  <div style={commonStyles.section}>
-    <h2 style={commonStyles.title}>要対応：お支払いが失敗しました</h2>
-    <p style={commonStyles.paragraph}>
-      お客様の <span style={commonStyles.highlight}>{planName}</span>{" "}
-      サブスクリプションのお支払いを処理できませんでした。
-    </p>
-    <div style={commonStyles.infoBox}>
-      <strong>請求書 ID:</strong> {invoiceId}
-      <br />
-      <strong>請求額:</strong>{" "}
-      {new Intl.NumberFormat("ja-JP", {
-        style: "currency",
-        currency: currency.toUpperCase(),
-      }).format(amountDue)}
-    </div>
-    <p style={commonStyles.paragraph}>
-      サービスの停止を避けるため、できるだけ早くお支払い方法を更新してください。
-    </p>
-    <a href={updatePaymentMethodLink} style={commonStyles.ctaButton}>
-      お支払い方法を更新する
-    </a>
-    {nextPaymentAttemptDate && (
-      <p style={commonStyles.paragraph}>
-        {nextPaymentAttemptDate}{" "}
-        頃に再度お支払いを試みます。それまでに情報を更新していただくことで、サブスクリプションが有効に保たれます。
-      </p>
-    )}
-    <p style={commonStyles.supportText}>
-      既にお支払い情報を更新された場合、またはこれがエラーであると思われる場合は、このメッセージを無視してください。サポートが必要な場合は、
-      <a href={supportLink} style={commonStyles.link}>
-        サポートチームにお問い合わせください
-      </a>
-      。
-    </p>
-  </div>
-);
-
 export const InvoicePaymentFailedEmail: React.FC<
   InvoicePaymentFailedEmailProps
 > = (props) => {
   return (
     <div style={commonStyles.container}>
       <EnglishVersion {...props} />
-      <ChineseVersion {...props} />
-      <JapaneseVersion {...props} />
 
       <div style={commonStyles.footer}>
         © {new Date().getFullYear()} {siteConfig.name} - All Rights Reserved

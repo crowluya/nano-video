@@ -52,10 +52,7 @@ export async function subscribeToNewsletter(email: string, locale = 'en'): Promi
     });
 
     const unsubscribeToken = Buffer.from(normalizedEmail).toString('base64');
-    const unsubscribeLinkEN = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;
-    const unsubscribeLinkZH = `${process.env.NEXT_PUBLIC_SITE_URL}/zh/unsubscribe/newsletter?token=${unsubscribeToken}`;
-    const unsubscribeLinkJA = `${process.env.NEXT_PUBLIC_SITE_URL}/ja/unsubscribe/newsletter?token=${unsubscribeToken}`;
-    const unsubscribeLink = locale === 'zh' ? unsubscribeLinkZH : locale === 'ja' ? unsubscribeLinkJA : unsubscribeLinkEN;
+    const unsubscribeLink = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;
 
     await resend.emails.send({
       from: `${process.env.ADMIN_NAME} <${process.env.ADMIN_EMAIL}>`,
@@ -63,10 +60,7 @@ export async function subscribeToNewsletter(email: string, locale = 'en'): Promi
       subject: t('subscribe.emailSubject'),
       react: await NewsletterWelcomeEmail({
         email: normalizedEmail,
-        unsubscribeLinkEN,
-        unsubscribeLinkZH,
-        unsubscribeLinkJA,
-        locale: locale as 'en' | 'zh' | 'ja'
+        unsubscribeLink,
       }),
       headers: {
         "List-Unsubscribe": `<${unsubscribeLink}>`,

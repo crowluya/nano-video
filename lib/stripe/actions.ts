@@ -338,7 +338,7 @@ export async function sendInvoicePaymentFailedEmail({
 
     if (userEmail && userId) {
       const updatePaymentMethodLink = `${process.env.NEXT_PUBLIC_SITE_URL}${process.env.STRIPE_CUSTOMER_PORTAL_URL}`;
-      const supportLink = `${process.env.NEXT_PUBLIC_SITE_URL}`;
+      const supportLink = `${process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}`;
 
       const nextPaymentAttemptTimestamp = invoice.next_payment_attempt;
       const nextPaymentAttemptDate = nextPaymentAttemptTimestamp
@@ -357,7 +357,7 @@ export async function sendInvoicePaymentFailedEmail({
       };
 
       try {
-        const subject = `Action Required: Payment Failed / 操作提醒：支付失败 / 要対応：お支払いが失敗`; // Example subject
+        const subject = `Action Required: Payment Failed`; // Example subject
 
         if (!resend) {
           console.error('Resend client is not initialized. Cannot send invoice payment failed email.');
