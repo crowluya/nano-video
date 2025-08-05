@@ -31,7 +31,7 @@ export default function MobileMenu() {
   }
 
   return (
-    <div className="flex items-center md:hidden">
+    <div className="flex items-center gap-x-2 md:hidden">
       <LocaleSwitcher />
       <ThemeToggle />
       <DropdownMenu>
