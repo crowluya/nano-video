@@ -7,7 +7,7 @@ import { constructMetadata } from "@/lib/metadata";
 import dayjs from "dayjs";
 import { ArrowLeftIcon, CalendarIcon } from "lucide-react";
 import { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -55,10 +55,9 @@ export async function generateMetadata({
 }
 
 export default async function BlogPage({ params }: { params: Params }) {
+  const { slug, locale } = await params;
   const t = await getTranslations("Blogs");
-  const locale = await getLocale();
 
-  const { slug } = await params;
   const { post, errorCode } = await getPostBySlug(slug, locale);
 
   if (!post) {
