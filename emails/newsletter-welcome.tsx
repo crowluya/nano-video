@@ -13,9 +13,7 @@ const commonStyles = {
     margin: "0 auto",
   },
   section: {
-    marginBottom: "40px",
-    borderBottom: "1px solid #e5e7eb",
-    paddingBottom: "30px",
+    marginBottom: "20px",
   },
   title: {
     color: "#3b82f6",
@@ -58,16 +56,11 @@ const EnglishVersion: React.FC<{ unsubscribeLink: string }> = ({
       Here's what you'll receive in your inbox:
     </p>
     <ul style={commonStyles.list}>
-      <li>{siteConfig.name} updates</li>
+      <li>{siteConfig.name} version updates</li>
+      <li>Latest promotions and events from {siteConfig.name}</li>
     </ul>
     <p style={commonStyles.paragraph}>
       If you have any questions, feel free to reply to this email.
-    </p>
-    <p style={commonStyles.unsubscribe}>
-      To unsubscribe from these updates,{" "}
-      <a href={unsubscribeLink} style={commonStyles.link}>
-        click here
-      </a>
     </p>
   </div>
 );
@@ -80,7 +73,15 @@ export const NewsletterWelcomeEmail: React.FC<NewsletterWelcomeEmailProps> = ({
       <EnglishVersion unsubscribeLink={unsubscribeLink} />
 
       <div style={commonStyles.footer}>
-        © {new Date().getFullYear()} {siteConfig.name} - All Rights Reserved
+        <p style={commonStyles.unsubscribe}>
+          To unsubscribe from these updates,{" "}
+          <a href={unsubscribeLink} style={commonStyles.link}>
+            click here
+          </a>
+        </p>
+        <p>
+          © {new Date().getFullYear()} {siteConfig.name} - All Rights Reserved
+        </p>
       </div>
     </div>
   );
