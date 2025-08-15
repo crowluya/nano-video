@@ -1,5 +1,6 @@
 import { sendEmail } from '@/actions/resend';
 import { isValidRedirectUrl } from '@/app/auth/utils';
+import { siteConfig } from '@/config/site';
 import { UserWelcomeEmail } from '@/emails/user-welcome';
 import { createClient } from '@/lib/supabase/server';
 import { User, type SupabaseClient } from '@supabase/supabase-js';
@@ -69,7 +70,7 @@ const handleReferral = async (supabase: SupabaseClient<any, "public", any>, refe
 }
 
 async function sendWelcomeEmail(user: User) {
-  const subject = 'Welcome to Nexty.dev'
+  const subject = `Welcome to ${siteConfig.name}`
   const email = user.email as string
   const unsubscribeToken = Buffer.from(user.email as string).toString('base64');
   const unsubscribeLinkEN = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;

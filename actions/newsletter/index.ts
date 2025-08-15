@@ -1,5 +1,6 @@
 'use server';
 import { removeUserFromContacts, sendEmail } from '@/actions/resend';
+import { siteConfig } from '@/config/site';
 import { NewsletterWelcomeEmail } from '@/emails/newsletter-welcome';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { normalizeEmail, validateEmail } from '@/lib/email';
@@ -40,7 +41,7 @@ export async function subscribeToNewsletter(email: string, locale = 'en'): Promi
       return actionResponse.error(error || t('subscribe.invalidEmail'));
     }
 
-    const subject = 'Welcome to Nexty Newsletter!'
+    const subject = `Welcome to ${siteConfig.name} Newsletter!`
     const unsubscribeToken = Buffer.from(normalizedEmail).toString('base64');
     const unsubscribeLinkEN = `${process.env.NEXT_PUBLIC_SITE_URL}/unsubscribe/newsletter?token=${unsubscribeToken}`;
 
