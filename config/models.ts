@@ -106,7 +106,7 @@ export const LANGUAGE_MODELS = [
     name: "Google",
     models: [
       {
-        id: "gemini-2-0-flash",
+        id: "gemini-2.0-flash",
         name: "Gemini 2.0 Flash",
         inputSupport: ["text"],
         outputSupport: ["text"]

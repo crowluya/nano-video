@@ -66,7 +66,7 @@ export async function POST(req: Request) {
         break;
 
       case "google":
-        if (!process.env.GOOGLE_API_KEY) {
+        if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
           return apiResponse.serverError("Server configuration error: Missing Google API Key.");
         }
         textModel = google(modelId);
