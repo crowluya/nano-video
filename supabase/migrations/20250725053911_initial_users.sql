@@ -89,8 +89,8 @@ begin
 end;
 $$;
 
--- Deprecated definition, will not actually be executed.
--- Users table already contains foreign key reference to auth table
+-- 2. Create the trigger that calls the function
+--    This trigger fires automatically AFTER a new user is inserted into auth.users
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
