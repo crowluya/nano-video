@@ -190,10 +190,6 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
   }, [watchStripePriceId, initialData?.stripe_price_id]);
 
   useEffect(() => {
-    handleFetchCoupons();
-  }, [watchEnvironment]);
-
-  useEffect(() => {
     const calculateDisplayPrice = async () => {
       const numericPrice = form.getValues("price");
       const currency = form.getValues("currency");
@@ -265,6 +261,10 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
       setIsFetchingCoupons(false);
     }
   };
+
+  useEffect(() => {
+    handleFetchCoupons();
+  }, [watchEnvironment]);
 
   const handleStripeVerify = async () => {
     const priceId = form.getValues("stripe_price_id");
