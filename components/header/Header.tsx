@@ -7,12 +7,12 @@ import { user as userSchema } from "@/drizzle/db/schema";
 import { Link as I18nLink } from "@/i18n/routing";
 import { getSession } from "@/lib/auth/server";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 type User = typeof userSchema.$inferSelect;
 
 const Header = async () => {
-  const t = useTranslations("Home");
+  const t = await getTranslations("Home");
   const session = await getSession();
   const user = session?.user;
 
@@ -26,7 +26,7 @@ const Header = async () => {
             prefetch={true}
             className="flex items-center space-x-1"
           >
-            <Image src="/logo.png" alt="Logo" width={32} height={32} />
+            <Image src="/logo.png" alt="Logo" width={28} height={28} />
             <span className={cn("text-md font-medium")}>{t("title")}</span>
           </I18nLink>
 
