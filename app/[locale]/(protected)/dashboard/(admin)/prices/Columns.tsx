@@ -42,6 +42,7 @@ export const columns: ColumnDef<PricingPlan>[] = [
   {
     accessorKey: "cardTitle",
     header: "Title",
+    minSize: 200,
     cell: ({ row }) => (
       <span className="font-medium">{row.getValue("cardTitle")}</span>
     ),
@@ -81,6 +82,7 @@ export const columns: ColumnDef<PricingPlan>[] = [
   {
     accessorKey: "paymentType",
     header: "Payment Type",
+    minSize: 200,
     cell: ({ row }) => {
       const paymentType = row.getValue("paymentType") as string | null;
       const interval = row.original.recurringInterval;
@@ -142,12 +144,13 @@ export const columns: ColumnDef<PricingPlan>[] = [
   {
     accessorKey: "benefitsJsonb",
     header: "Benefits",
+    minSize: 300,
     cell: ({ row }) => {
       const benefits = row.getValue("benefitsJsonb") as object | null;
       const benefitsString = benefits ? JSON.stringify(benefits) : "-";
       const displayString =
-        benefitsString.length > 20
-          ? benefitsString.substring(0, 17) + "..."
+        benefitsString.length > 50
+          ? benefitsString.substring(0, 47) + "..."
           : benefitsString;
 
       return benefits && Object.keys(benefits).length > 0 ? (

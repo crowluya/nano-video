@@ -1,9 +1,7 @@
 import { getAdminPricingPlans } from "@/actions/prices/admin";
-import { Button } from "@/components/ui/button";
 import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
-import { Link as I18nLink, Locale } from "@/i18n/routing";
+import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
-import { PlusCircle } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { PricesDataTable } from "./PricesDataTable";
@@ -36,7 +34,6 @@ export async function generateMetadata({
 
 export default async function AdminPricesPage() {
   const result = await getAdminPricingPlans();
-  const t = await getTranslations("Prices");
 
   let plans: PricingPlan[] = [];
   if (result.success) {
@@ -47,21 +44,6 @@ export default async function AdminPricesPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold">{t("title")}</h1>
-          <p className="text-muted-foreground">{t("description")}</p>
-        </div>
-        <Button asChild className="highlight-bg text-white">
-          <I18nLink
-            href="/dashboard/prices/new"
-            title={t("createNewPlan")}
-            prefetch={false}
-          >
-            <PlusCircle className="mr-2 h-4 w-4" /> {t("createNewPlan")}
-          </I18nLink>
-        </Button>
-      </div>
       <PricesDataTable data={plans} />
     </div>
   );
