@@ -6,7 +6,7 @@ import { ActionResult, actionResponse } from '@/lib/action-response';
 import { isAdmin } from '@/lib/auth/server';
 import { getErrorMessage } from '@/lib/error-utils';
 import { OrderWithUser } from '@/types/admin/orders';
-import { and, count, desc, eq, ilike, or } from 'drizzle-orm';
+import { and, count, desc, eq, ilike, or, sql } from 'drizzle-orm';
 import { z } from 'zod';
 
 const FilterSchema = z.object({
@@ -47,7 +47,8 @@ export async function getOrders(
       conditions.push(
         or(
           ilike(userSchema.email, `%${filter}%`),
-          ilike(ordersSchema.providerOrderId, `%${filter}%`)
+          ilike(ordersSchema.providerOrderId, `%${filter}%`),
+          sql`CAST(${ordersSchema.id} AS TEXT) ILIKE ${`%${filter}%`}`
         )
       );
     }

@@ -2,6 +2,7 @@
 
 import {
   ColumnDef,
+  ColumnPinningState,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
@@ -72,6 +73,9 @@ export function OrdersDataTable<TData, TValue>({
   const [provider, setProvider] = useState("");
   const [orderType, setOrderType] = useState("");
   const [status, setStatus] = useState("");
+  const [columnPinning, setColumnPinning] = useState<ColumnPinningState>({
+    left: ["id", "users"],
+  });
 
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
@@ -169,9 +173,11 @@ export function OrdersDataTable<TData, TValue>({
     state: {
       sorting,
       pagination,
+      columnPinning,
     },
     onSortingChange: setSorting,
     onPaginationChange: setPagination,
+    onColumnPinningChange: setColumnPinning,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     manualPagination: true,
@@ -242,7 +248,7 @@ export function OrdersDataTable<TData, TValue>({
           </Select>
         </div>
       </div>
-      <div className="relative min-h-[200px] max-h-[calc(100vh-200px)] overflow-y-auto rounded-md border">
+      <div className="relative min-h-[200px] max-h-[calc(100vh-200px)] overflow-auto rounded-md border">
         {isLoading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/50 backdrop-blur-sm">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -254,7 +260,35 @@ export function OrdersDataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead
+                      key={header.id}
+                      style={{
+                        width: header.getSize(),
+                        minWidth: header.column.columnDef.minSize,
+                        maxWidth: header.column.columnDef.maxSize,
+                        position: header.column.getIsPinned()
+                          ? "sticky"
+                          : "relative",
+                        left:
+                          header.column.getIsPinned() === "left"
+                            ? `${header.column.getStart("left")}px`
+                            : undefined,
+                        right:
+                          header.column.getIsPinned() === "right"
+                            ? `${header.column.getAfter("right")}px`
+                            : undefined,
+                        zIndex: header.column.getIsPinned() ? 20 : 1,
+                        backgroundColor: "hsl(var(--background))",
+                        boxShadow:
+                          header.column.getIsPinned() === "left" &&
+                          header.column.getIsLastColumn("left")
+                            ? "2px 0 4px -2px rgba(0, 0, 0, 0.1)"
+                            : header.column.getIsPinned() === "right" &&
+                                header.column.getIsFirstColumn("right")
+                              ? "-2px 0 4px -2px rgba(0, 0, 0, 0.1)"
+                              : undefined,
+                      }}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -275,7 +309,35 @@ export function OrdersDataTable<TData, TValue>({
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
+                    <TableCell
+                      key={cell.id}
+                      style={{
+                        width: cell.column.getSize(),
+                        minWidth: cell.column.columnDef.minSize,
+                        maxWidth: cell.column.columnDef.maxSize,
+                        position: cell.column.getIsPinned()
+                          ? "sticky"
+                          : "relative",
+                        left:
+                          cell.column.getIsPinned() === "left"
+                            ? `${cell.column.getStart("left")}px`
+                            : undefined,
+                        right:
+                          cell.column.getIsPinned() === "right"
+                            ? `${cell.column.getAfter("right")}px`
+                            : undefined,
+                        zIndex: cell.column.getIsPinned() ? 20 : 1,
+                        backgroundColor: "hsl(var(--background))",
+                        boxShadow:
+                          cell.column.getIsPinned() === "left" &&
+                          cell.column.getIsLastColumn("left")
+                            ? "2px 0 4px -2px rgba(0, 0, 0, 0.1)"
+                            : cell.column.getIsPinned() === "right" &&
+                                cell.column.getIsFirstColumn("right")
+                              ? "-2px 0 4px -2px rgba(0, 0, 0, 0.1)"
+                              : undefined,
+                      }}
+                    >
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
