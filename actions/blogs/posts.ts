@@ -1,11 +1,11 @@
 'use server'
 
 import { postActionSchema } from '@/app/[locale]/(protected)/dashboard/(admin)/blogs/schema'
-import { db } from '@/drizzle/db'
-import { posts as postsSchema, postTags as postTagsSchema, subscriptions as subscriptionsSchema, tags as tagsSchema } from '@/drizzle/db/schema'
 import { DEFAULT_LOCALE } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
 import { getSession, isAdmin } from '@/lib/auth/server'
+import { db } from '@/lib/db'
+import { posts as postsSchema, postTags as postTagsSchema, subscriptions as subscriptionsSchema, tags as tagsSchema } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
 import { Tag } from '@/types/blog'
 import { and, count, desc, eq, getTableColumns, ilike, inArray, or, sql } from 'drizzle-orm'

@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
 import { DEFAULT_LOCALE, useRouter } from "@/i18n/routing";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { Loader2, MousePointerClick } from "lucide-react";
 import { useLocale } from "next-intl";
 import Link from "next/link";

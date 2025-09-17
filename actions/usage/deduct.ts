@@ -1,12 +1,12 @@
 'use server';
 
-import { db } from '@/drizzle/db';
+import { actionResponse, ActionResult } from '@/lib/action-response';
+import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
 import {
   creditLogs as creditLogsSchema,
   usage as usageSchema,
-} from '@/drizzle/db/schema';
-import { actionResponse, ActionResult } from '@/lib/action-response';
-import { getSession } from '@/lib/auth/server';
+} from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { getUserBenefits, UserBenefits } from './benefits';
 

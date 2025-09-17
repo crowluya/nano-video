@@ -1,10 +1,10 @@
 "use server";
 
-import { db } from '@/drizzle/db';
-import { user as userSchema } from '@/drizzle/db/schema';
 import type { ActionResult } from '@/lib/action-response';
 import { actionResponse } from '@/lib/action-response';
 import { isAdmin } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { user as userSchema } from '@/lib/db/schema';
 import { getErrorMessage } from '@/lib/error-utils';
 import { count, desc, eq, ilike, or } from 'drizzle-orm';
 

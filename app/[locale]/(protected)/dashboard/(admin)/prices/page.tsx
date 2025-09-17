@@ -1,6 +1,6 @@
 import { getAdminPricingPlans } from "@/actions/prices/admin";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
 import { Locale } from "@/i18n/routing";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";

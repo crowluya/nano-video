@@ -27,7 +27,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { user as userSchema } from "@/drizzle/db/schema";
+import { user as userSchema } from "@/lib/db/schema";
 import { ColumnDef } from "@tanstack/react-table";
 import dayjs from "dayjs";
 import { MoreHorizontal } from "lucide-react";

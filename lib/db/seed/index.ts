@@ -11,15 +11,11 @@ async function main() {
 
   console.log('Seeding database...');
 
-  const isServerless = process.env.DB_SERVERLESS === 'true';
-
-  const client = postgres(connectionString, {
-    prepare: !isServerless,
-  });
+  const client = postgres(connectionString);
 
   try {
-    const seedFile = path.join(process.cwd(), 'db', 'pricing_plan_seed.sql');
-    const seedSql = fs.readFileSync(seedFile, 'utf-8');
+    const pricingPlanSeedFile = path.join(__dirname, 'pricing_plan_seed.sql');
+    const seedSql = fs.readFileSync(pricingPlanSeedFile, 'utf-8');
 
     await client.unsafe(seedSql);
 

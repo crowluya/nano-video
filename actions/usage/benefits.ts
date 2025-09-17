@@ -1,9 +1,9 @@
 'use server';
 
-import { db } from '@/drizzle/db';
-import { subscriptions as subscriptionsSchema, usage as usageSchema } from '@/drizzle/db/schema';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { subscriptions as subscriptionsSchema, usage as usageSchema } from '@/lib/db/schema';
 import { desc, eq } from 'drizzle-orm';
 
 export interface UserBenefits {

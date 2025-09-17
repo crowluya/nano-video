@@ -2,15 +2,15 @@
 
 import { sendEmail } from '@/actions/resend';
 import { siteConfig } from '@/config/site';
-import { db } from '@/drizzle/db';
+import { CreditUpgradeFailedEmail } from '@/emails/credit-upgrade-failed';
+import { InvoicePaymentFailedEmail } from '@/emails/invoice-payment-failed';
+import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
 import {
   pricingPlans as pricingPlansSchema,
   subscriptions as subscriptionsSchema,
   user as userSchema,
-} from '@/drizzle/db/schema';
-import { CreditUpgradeFailedEmail } from '@/emails/credit-upgrade-failed';
-import { InvoicePaymentFailedEmail } from '@/emails/invoice-payment-failed';
-import { getSession } from '@/lib/auth/server';
+} from '@/lib/db/schema';
 import { getErrorMessage } from '@/lib/error-utils';
 import stripe from '@/lib/stripe/stripe';
 import { eq, InferInsertModel } from 'drizzle-orm';

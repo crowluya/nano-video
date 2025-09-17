@@ -8,7 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { user as userSchema } from "@/drizzle/db/schema";
+import { user as userSchema } from "@/lib/db/schema";
 import { UserInfo } from "./UserInfo";
 
 type User = typeof userSchema.$inferSelect;

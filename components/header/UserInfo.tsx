@@ -7,9 +7,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { user as userSchema } from "@/drizzle/db/schema";
 import { useRouter } from "@/i18n/routing";
 import { authClient } from "@/lib/auth/auth-client";
+import { user as userSchema } from "@/lib/db/schema";
 import { ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 

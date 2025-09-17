@@ -17,8 +17,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
 import { Link as I18nLink } from "@/i18n/routing";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import {
   ColumnDef,
   ColumnFiltersState,

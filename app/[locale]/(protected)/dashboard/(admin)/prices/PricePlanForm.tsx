@@ -33,8 +33,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
 import { DEFAULT_LOCALE, LOCALES, useRouter } from "@/i18n/routing";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { extractJsonFromText, isValidJsonString } from "@/lib/safeJson";
 import { formatCurrency } from "@/lib/utils";
 import { useCompletion } from "@ai-sdk/react";

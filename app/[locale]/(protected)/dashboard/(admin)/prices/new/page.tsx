@@ -1,5 +1,5 @@
 import { getPricingPlanById } from "@/actions/prices/admin";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { Locale } from "next-intl";

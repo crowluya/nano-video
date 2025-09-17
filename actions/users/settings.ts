@@ -1,7 +1,5 @@
 "use server";
 
-import { db } from "@/drizzle/db";
-import { user as userSchema } from "@/drizzle/db/schema";
 import { DEFAULT_LOCALE } from "@/i18n/routing";
 import { actionResponse } from "@/lib/action-response";
 import { getSession } from "@/lib/auth/server";
@@ -10,6 +8,8 @@ import {
   generateR2Key,
   serverUploadFile,
 } from "@/lib/cloudflare/r2";
+import { db } from "@/lib/db";
+import { user as userSchema } from "@/lib/db/schema";
 import { getErrorMessage } from "@/lib/error-utils";
 import {
   AVATAR_ALLOWED_FILE_TYPES,

@@ -1,10 +1,10 @@
-import { db } from '@/drizzle/db';
+import { db } from '@/lib/db';
 import {
   creditLogs as creditLogsSchema,
   orders as ordersSchema,
   pricingPlans as pricingPlansSchema,
   usage as usageSchema,
-} from '@/drizzle/db/schema';
+} from '@/lib/db/schema';
 import {
   sendCreditUpgradeFailedEmail,
   sendInvoicePaymentFailedEmail,

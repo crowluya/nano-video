@@ -1,10 +1,10 @@
 'use server'
 
-import { db } from '@/drizzle/db'
-import { tags as tagsSchema } from '@/drizzle/db/schema'
 import { Locale } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
 import { isAdmin } from '@/lib/auth/server'
+import { db } from '@/lib/db'
+import { tags as tagsSchema } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
 import { and, asc, eq, ilike, not } from 'drizzle-orm'
 

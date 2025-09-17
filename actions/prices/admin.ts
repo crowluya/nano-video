@@ -1,10 +1,10 @@
 'use server'
 
-import { db } from '@/drizzle/db'
-import { pricingPlans as pricingPlansSchema } from '@/drizzle/db/schema'
 import { DEFAULT_LOCALE } from '@/i18n/routing'
 import { actionResponse, ActionResult } from '@/lib/action-response'
 import { isAdmin } from '@/lib/auth/server'
+import { db } from '@/lib/db'
+import { pricingPlans as pricingPlansSchema } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
 import { asc, eq } from 'drizzle-orm'
 import { getTranslations } from 'next-intl/server'

@@ -1,9 +1,9 @@
 import { sendEmail } from "@/actions/resend";
 import { siteConfig } from "@/config/site";
-import { db } from "@/drizzle/db";
-import { account, session, user, verification } from "@/drizzle/db/schema";
 import MagicLinkEmail from '@/emails/magic-link-email';
 import { UserWelcomeEmail } from "@/emails/user-welcome";
+import { db } from "@/lib/db";
+import { account, session, user, verification } from "@/lib/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";

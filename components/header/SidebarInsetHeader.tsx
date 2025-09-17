@@ -5,8 +5,8 @@ import MobileMenu from "@/components/header/MobileMenu";
 import { UserAvatar } from "@/components/header/UserAvatar";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { user as userSchema } from "@/drizzle/db/schema";
 import { getSession } from "@/lib/auth/server";
+import { user as userSchema } from "@/lib/db/schema";
 
 type User = typeof userSchema.$inferSelect;
 

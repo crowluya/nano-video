@@ -1,9 +1,9 @@
 'use server';
 
-import { db } from '@/drizzle/db';
-import { creditLogs as creditLogsSchema } from '@/drizzle/db/schema';
 import { actionResponse } from '@/lib/action-response';
 import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { creditLogs as creditLogsSchema } from '@/lib/db/schema';
 import { getErrorMessage } from '@/lib/error-utils';
 import { count, desc, eq } from 'drizzle-orm';
 

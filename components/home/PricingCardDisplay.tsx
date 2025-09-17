@@ -1,5 +1,5 @@
 import PricingCTA from "@/components/home/PricingCTA";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { cn } from "@/lib/utils";
 import { PricingPlanFeature, PricingPlanTranslation } from "@/types/pricing";
 import { Check, X } from "lucide-react";

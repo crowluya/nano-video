@@ -1,7 +1,7 @@
-import { db } from '@/drizzle/db';
-import { pricingPlans as pricingPlansSchema } from '@/drizzle/db/schema';
 import { apiResponse } from '@/lib/api-response';
 import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { pricingPlans as pricingPlansSchema } from '@/lib/db/schema';
 import { getErrorMessage } from '@/lib/error-utils';
 import { getOrCreateStripeCustomer } from '@/lib/stripe/actions';
 import stripe from '@/lib/stripe/stripe';

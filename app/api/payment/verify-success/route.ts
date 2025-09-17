@@ -1,7 +1,7 @@
-import { db } from '@/drizzle/db';
-import { orders as ordersSchema, subscriptions as subscriptionsSchema } from '@/drizzle/db/schema';
 import { apiResponse } from '@/lib/api-response';
 import { getSession } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { orders as ordersSchema, subscriptions as subscriptionsSchema } from '@/lib/db/schema';
 import { syncSubscriptionData } from '@/lib/stripe/actions';
 import stripe from '@/lib/stripe/stripe';
 import { and, eq, inArray } from 'drizzle-orm';

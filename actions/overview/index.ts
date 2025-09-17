@@ -1,9 +1,9 @@
 'use server';
 
-import { db } from '@/drizzle/db';
-import { orders as ordersSchema, pricingPlans as pricingPlansSchema, user as userSchema } from '@/drizzle/db/schema';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { isAdmin } from '@/lib/auth/server';
+import { db } from '@/lib/db';
+import { orders as ordersSchema, pricingPlans as pricingPlansSchema, user as userSchema } from '@/lib/db/schema';
 import { getErrorMessage } from '@/lib/error-utils';
 import { and, count, eq, gte, inArray, lt, sql } from 'drizzle-orm';
 

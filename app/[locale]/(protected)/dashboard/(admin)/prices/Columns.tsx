@@ -6,7 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { pricingPlans as pricingPlansSchema } from "@/drizzle/db/schema";
+import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, ExternalLink } from "lucide-react";
 import Link from "next/link";
