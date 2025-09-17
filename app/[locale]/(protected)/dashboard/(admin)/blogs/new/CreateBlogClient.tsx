@@ -75,7 +75,6 @@ export default function CreateBlogClient() {
     if (result.success && result.data?.postId) {
       toast.success(t("submitSuccess"));
       router.push(`/dashboard/blogs`);
-      router.refresh();
     } else {
       toast.error(t("submitErrorTitle"), {
         description: result.error || t("submitErrorDesc"),

@@ -13,6 +13,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ContentRestrictionMessage } from "./ContentRestrictionMessage";
 
+export const dynamicParams = true;
+
 type Params = Promise<{
   locale: string;
   slug: string;

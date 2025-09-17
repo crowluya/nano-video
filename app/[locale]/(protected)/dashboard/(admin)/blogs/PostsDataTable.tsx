@@ -11,6 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Link as I18nLink } from "@/i18n/routing";
 import {
   ColumnDef,
   flexRender,
@@ -21,12 +22,13 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table";
-import { Loader2 } from "lucide-react";
+import { Loader2, PlusCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
 import { columns } from "./Columns";
+import { TagManagementDrawer } from "./TagManagementDrawer";
 
 interface DataTableProps<TData, TValue> {
   initialData: TData[];
@@ -130,16 +132,29 @@ export function PostsDataTable<TData, TValue>({
 
   return (
     <div className="w-full">
-      <div className="flex flex-col sm:flex-row items-start gap-4 py-4">
+      <div className="flex items-center justify-between gap-4 py-4">
         <Input
           placeholder={t("searchPlaceholder")}
           value={globalFilter ?? ""}
           onChange={(event) => setGlobalFilter(event.target.value)}
           className="max-w-sm"
         />
+        <div className="flex space-x-2">
+          <TagManagementDrawer />
+          <Button asChild className="highlight-bg text-white">
+            <I18nLink
+              href={`/dashboard/blogs/new`}
+              title="Create New Blog"
+              prefetch={false}
+            >
+              <PlusCircle className="mr-2 h-4 w-4" />
+              Create New Blog
+            </I18nLink>
+          </Button>
+        </div>
       </div>
 
-      <div className="rounded-md border relative min-h-[200px] max-h-[calc(100vh-330px)] overflow-y-auto">
+      <div className="relative min-h-[200px] max-h-[calc(100vh-200px)] overflow-auto rounded-md border">
         {isLoading && (
           <div className="absolute inset-0 bg-background/50 backdrop-blur-sm flex items-center justify-center z-10">
             <Loader2 className="w-8 h-8 animate-spin text-primary" />

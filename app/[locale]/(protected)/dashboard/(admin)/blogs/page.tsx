@@ -1,12 +1,9 @@
 import { listPostsAction } from "@/actions/blogs/posts";
-import { Button } from "@/components/ui/button";
-import { Link as I18nLink, Locale } from "@/i18n/routing";
+import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
-import { PlusCircle } from "lucide-react";
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { PostsDataTable } from "./PostsDataTable";
-import { TagManagementDrawer } from "./TagManagementDrawer";
 
 const PAGE_SIZE = 20;
 
@@ -62,23 +59,6 @@ export default async function AdminBlogsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
-        <div className="flex space-x-2">
-          <TagManagementDrawer />
-          <Button asChild className="highlight-bg text-white">
-            <I18nLink
-              href={`/dashboard/blogs/new`}
-              title={t("createNewButton")}
-              prefetch={false}
-            >
-              <PlusCircle className="mr-2 h-4 w-4" /> {t("createNewButton")}
-            </I18nLink>
-          </Button>
-        </div>
-      </div>
-      <p className="text-muted-foreground">{t("description")}</p>
-
       <PostsDataTable
         initialData={posts}
         initialPageCount={pageCount}

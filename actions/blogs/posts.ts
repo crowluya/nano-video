@@ -3,6 +3,7 @@
 import { postActionSchema } from '@/app/[locale]/(protected)/dashboard/(admin)/blogs/schema'
 import { db } from '@/drizzle/db'
 import { posts as postsSchema, postTags as postTagsSchema, subscriptions as subscriptionsSchema, tags as tagsSchema } from '@/drizzle/db/schema'
+import { DEFAULT_LOCALE } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
 import { getSession, isAdmin } from '@/lib/auth/server'
 import { getErrorMessage } from '@/lib/error-utils'
@@ -271,19 +272,15 @@ export async function createPostAction({
     }
 
     if (postData.status === 'published') {
-      revalidatePath(`/${postData.language || ''}/blogs`)
-      revalidatePath(`/${postData.language || ''}/blogs/${postData.slug}`)
+      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/blogs`)
+      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/blogs/${postData.slug}`)
     }
 
     return actionResponse.success({ postId: postId })
   } catch (error) {
     console.error('Create Post Action Failed:', error)
     const errorMessage = getErrorMessage(error)
-    if (
-      errorMessage.includes(
-        'duplicate key value violates unique constraint "posts_language_slug_unique"'
-      )
-    ) {
+    if ((error as any)?.cause?.code === '23505') {
       return actionResponse.conflict(
         `Slug '${validatedFields.data.slug}' already exists for language '${validatedFields.data.language}'.`
       )
@@ -363,12 +360,12 @@ export async function updatePostAction({
       await db.insert(postTagsSchema).values(newTagAssociations)
     }
 
-    revalidatePath(`/${currentPost.language || ''}/blogs`)
-    revalidatePath(`/${currentPost.language || ''}/blogs/${currentPost.slug}`)
+    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/blogs`)
+    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/blogs/${currentPost.slug}`)
 
     if (postUpdateData.status === 'published') {
       revalidatePath(
-        `/${postUpdateData.language || ''}/blogs/${postUpdateData.slug}`
+        `${postUpdateData.language === DEFAULT_LOCALE ? '' : '/' + postUpdateData.language}/blogs/${postUpdateData.slug}`
       )
     }
 
@@ -376,11 +373,7 @@ export async function updatePostAction({
   } catch (error) {
     console.error('Update Post Action Failed:', error)
     const errorMessage = getErrorMessage(error)
-    if (
-      errorMessage.includes(
-        'duplicate key value violates unique constraint "posts_language_slug_unique"'
-      )
-    ) {
+    if ((error as any)?.cause?.code === '23505') {
       return actionResponse.conflict(
         `Slug '${validatedFields.data.slug}' already exists for language '${validatedFields.data.language}'.`
       )
@@ -426,8 +419,8 @@ export async function deletePostAction({
     await db.delete(postsSchema).where(eq(postsSchema.id, postId))
 
     if (postDetails?.slug && postDetails?.language) {
-      revalidatePath(`/${postDetails?.language || ''}/blogs`)
-      revalidatePath(`/${postDetails?.language || ''}/blogs/${postDetails.slug}`)
+      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/blogs`)
+      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/blogs/${postDetails.slug}`)
     }
 
     return actionResponse.success({ postId: postId })
