@@ -4,7 +4,7 @@ import { BLOGS_IMAGE_PATH } from "@/config/common";
 import { constructMetadata } from "@/lib/metadata";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
-import { Locale, useTranslations } from "next-intl";
+import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { ImagesDataTable } from "./ImagesDataTable";
@@ -82,16 +82,10 @@ async function CategoryTable({ categoryPrefix }: { categoryPrefix: string }) {
 }
 
 export default function AdminImagesPage() {
-  const t = useTranslations("R2Files");
   const defaultCategory = CATEGORIES[0].prefix;
 
   return (
     <div className="space-y-4">
-      <div>
-        <h1 className="text-2xl font-semibold">{t("title")}</h1>
-        <p className="text-muted-foreground">{t("description")}</p>
-      </div>
-
       <Tabs defaultValue={defaultCategory}>
         <TabsList>
           {CATEGORIES.map((cat) => (
