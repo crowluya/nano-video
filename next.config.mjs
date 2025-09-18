@@ -54,7 +54,7 @@ if (
   process.env.NODE_ENV === "development" &&
   !process.env.NEXTY_WELCOME_SHOWN
 ) {
-  console.log("\n🎉 Welcome to Nexty Template!");
+  console.log("\n🎉 Welcome to Nexty Boilerplate!");
   console.log("💬 Join our Discord community: https://discord.gg/VRDxBgXUZ8");
   console.log("📚 Documentation: https://nexty.dev/docs\n\n");
   process.env.NEXTY_WELCOME_SHOWN = "true";
