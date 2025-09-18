@@ -1,6 +1,7 @@
 "use client";
 
 import { GoogleIcon } from "@/components/icons";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DEFAULT_LOCALE } from "@/i18n/routing";
@@ -19,6 +20,8 @@ interface LoginFormProps {
 export default function LoginForm({ className = "" }: LoginFormProps) {
   const t = useTranslations("Login");
   const locale = useLocale();
+
+  const lastMethod = authClient.getLastUsedLoginMethod();
 
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -117,6 +120,9 @@ export default function LoginForm({ className = "" }: LoginFormProps) {
             <GoogleIcon className="mr-2 h-4 w-4" />
           )}
           {t("signInMethods.signInWithGoogle")}
+          {lastMethod === "google" && (
+            <Badge className="ml-2 text-xs">Last used</Badge>
+          )}
         </Button>
         <Button
           variant="outline"
@@ -129,6 +135,9 @@ export default function LoginForm({ className = "" }: LoginFormProps) {
             <Github className="mr-2 h-4 w-4" />
           )}
           {t("signInMethods.signInWithGithub")}
+          {lastMethod === "github" && (
+            <Badge className="ml-2 text-xs">Last used</Badge>
+          )}
         </Button>
       </div>
 
@@ -167,8 +176,8 @@ export default function LoginForm({ className = "" }: LoginFormProps) {
             )}
           </div>
           <Button disabled={isLoading || !captchaToken}>
-            {t("signInMethods.signInWithEmail")}
             {isLoading && <Loader2 className="w-4 h-4 animate-spin ml-2" />}
+            {t("signInMethods.signInWithEmail")}
           </Button>
         </div>
       </form>

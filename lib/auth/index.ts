@@ -7,7 +7,7 @@ import { account, session, user, verification } from "@/lib/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
-import { admin, anonymous, captcha, magicLink, oneTap } from "better-auth/plugins";
+import { admin, anonymous, captcha, lastLoginMethod, magicLink, oneTap } from "better-auth/plugins";
 import { eq } from "drizzle-orm";
 import { cookies } from "next/headers";
 
@@ -125,6 +125,7 @@ export const auth = betterAuth({
       },
       expiresIn: 60 * 5,
     }),
+    lastLoginMethod(),
     admin(),
     anonymous(),
     nextCookies() // make sure this is the last plugin in the array
