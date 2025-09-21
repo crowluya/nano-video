@@ -9,6 +9,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link as I18nLink } from "@/i18n/routing";
@@ -22,7 +25,7 @@ export default function MobileMenu() {
   const tHeader = useTranslations("Header");
 
   const headerLinks: HeaderLink[] = tHeader.raw("links");
-  const pricingLink = headerLinks.find((link) => link.name === "Pricing");
+  const pricingLink = headerLinks.find((link) => link.id === "pricing");
   if (pricingLink) {
     pricingLink.href = process.env.NEXT_PUBLIC_PRICING_PATH!;
   }
@@ -32,7 +35,7 @@ export default function MobileMenu() {
       <DropdownMenuTrigger className="p-2" aria-label="Open menu">
         <Menu className="h-5 w-5" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-64">
+      <DropdownMenuContent align="end" className="w-40">
         <DropdownMenuLabel>
           <I18nLink
             href="/"
@@ -52,21 +55,54 @@ export default function MobileMenu() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          {headerLinks.map((link) => (
-            <DropdownMenuItem key={link.name}>
-              <I18nLink
-                href={link.href}
-                title={link.name}
-                prefetch={
-                  link.target && link.target === "_blank" ? false : true
-                }
-                target={link.target || "_self"}
-                rel={link.rel || undefined}
-              >
-                {link.name}
-              </I18nLink>
-            </DropdownMenuItem>
-          ))}
+          {headerLinks.map((link) =>
+            link.items ? (
+              <DropdownMenuSub key={link.name}>
+                <DropdownMenuSubTrigger className="px-2 py-1.5">
+                  {link.name}
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent className="w-40">
+                  {link.items.map((child) => (
+                    <DropdownMenuItem key={child.name}>
+                      <I18nLink
+                        href={child.href}
+                        title={child.name}
+                        prefetch={
+                          child.target && child.target === "_blank"
+                            ? false
+                            : true
+                        }
+                        target={child.target || "_self"}
+                        rel={child.rel || undefined}
+                        className="flex flex-col gap-y-1"
+                      >
+                        <span>{child.name}</span>
+                        {child.description && (
+                          <span className="text-xs text-muted-foreground">
+                            {child.description}
+                          </span>
+                        )}
+                      </I18nLink>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
+            ) : (
+              <DropdownMenuItem key={link.name}>
+                <I18nLink
+                  href={link.href}
+                  title={link.name}
+                  prefetch={
+                    link.target && link.target === "_blank" ? false : true
+                  }
+                  target={link.target || "_self"}
+                  rel={link.rel || undefined}
+                >
+                  {link.name}
+                </I18nLink>
+              </DropdownMenuItem>
+            )
+          )}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <div className="flex items-center justify-between px-1">

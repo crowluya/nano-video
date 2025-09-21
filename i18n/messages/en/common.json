@@ -33,6 +33,33 @@
       {
         "name": "Blogs",
         "href": "/blogs"
+      },
+      {
+        "name": "Demo",
+        "href": "#",
+        "items": [
+          {
+            "name": "Nexty Demo",
+            "href": "https://demo.nexty.dev/",
+            "target": "_blank",
+            "rel": "noopener noreferrer nofollow",
+            "description": "Next.js SaaS Boilerplate"
+          },
+          {
+            "name": "AI Image Generator Demo",
+            "href": "https://flux-kontext.nexty.dev/",
+            "target": "_blank",
+            "rel": "noopener noreferrer nofollow",
+            "description": "AI Image Generator Demo Based on Nexty.dev"
+          },
+          {
+            "name": "Directory Boilerplate Demo",
+            "href": "https://dofollow.tools/",
+            "target": "_blank",
+            "rel": "noopener noreferrer nofollow",
+            "description": "Directory Boilerplate Demo Based on Nexty.dev"
+          }
+        ]
       }
     ]
   },

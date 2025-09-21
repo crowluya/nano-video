@@ -1,11 +1,12 @@
-
 export interface HeaderLink {
   id?: string;
   name: string;
   href: string;
   target?: string;
   rel?: string;
-};
+  items?: HeaderLink[];
+  description?: string;
+}
 
 export interface FooterLink {
   title: string;
