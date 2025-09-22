@@ -175,7 +175,12 @@ export default function LoginForm({ className = "" }: LoginFormProps) {
               />
             )}
           </div>
-          <Button disabled={isLoading || !captchaToken}>
+          <Button
+            disabled={
+              isLoading ||
+              (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !captchaToken)
+            }
+          >
             {isLoading && <Loader2 className="w-4 h-4 animate-spin ml-2" />}
             {t("signInMethods.signInWithEmail")}
           </Button>
