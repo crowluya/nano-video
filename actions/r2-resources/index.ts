@@ -1,9 +1,11 @@
 "use server";
 
+import { siteConfig } from "@/config/site";
 import { actionResponse } from "@/lib/action-response";
 import { getSession, isAdmin } from "@/lib/auth/server";
 import { createR2Client, deleteFile as deleteR2Util, generateR2Key, ListedObject, listR2Objects } from "@/lib/cloudflare/r2";
 import { getErrorMessage } from "@/lib/error-utils";
+import { checkRateLimit, getClientIPFromHeaders } from "@/lib/upstash";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { z } from "zod";
@@ -185,4 +187,24 @@ export async function generateUserPresignedUploadUrl(
   const userPath = `/users/${input.path}/userid-${user.id}`;
 
   return generatePresignedUploadUrl({ ...input, path: userPath });
+}
+
+export async function generatePublicPresignedUploadUrl(
+  input: GeneratePresignedUploadUrlInput
+): Promise<GeneratePresignedUploadUrlData> {
+  if (!(await isAdmin())) {
+    // Anonymous user: Use IP for rate limiting with stricter limits
+    const clientIP = await getClientIPFromHeaders();
+    const isAllowed = await checkRateLimit(clientIP, {
+      prefix: `${siteConfig.name.trim()}-anonymous-image-upload`,
+      maxRequests: parseInt(process.env.NEXT_PUBLIC_DAILY_IMAGE_UPLOAD_LIMIT || "100"),
+      window: "1 d"
+    });
+
+    if (!isAllowed) {
+      return actionResponse.badRequest(`Rate limit exceeded. Anonymous users can upload up to ${process.env.NEXT_PUBLIC_DAILY_IMAGE_UPLOAD_LIMIT || "100"} images per day.`);
+    }
+  }
+
+  return generatePresignedUploadUrl({ ...input });
 }
