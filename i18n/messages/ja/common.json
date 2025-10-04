@@ -1,14 +1,4 @@
 {
-  "Shared": {
-    "promoCode": {
-      "copy": "コピー",
-      "copied": "コピー完了!",
-      "limitedTimeOffer": "期間限定",
-      "save": "{discount}お得",
-      "validUntil": "有効期限",
-      "copyAndScroll": "コードをコピーして料金を確認"
-    }
-  },
   "LanguageDetection": {
     "title": "言語の提案",
     "description": "ブラウザの言語設定が現在のサイト言語と異なっています。いつでも言語を切り替えることができます。",
@@ -69,6 +59,7 @@
     "About": "サイトについて",
     "PrivacyPolicy": "プライバシーポリシー",
     "TermsOfService": "利用規約",
+    "RefundPolicy": "返金ポリシー",
     "Newsletter": {
       "title": "ニュースレターのご案内",
       "description": "最新情報を定期的にお届けいたします",
@@ -269,6 +260,10 @@
       "backToBlogs": "ブログ一覧に戻る",
       "notFound": "記事が見つかりません"
     }
+  },
+  "About": {
+    "title": "About",
+    "description": "About the site"
   },
   "AIDemo": {
     "title": "AI機能デモ",

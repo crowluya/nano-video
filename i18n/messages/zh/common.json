@@ -1,14 +1,4 @@
 {
-  "Shared": {
-    "promoCode": {
-      "copy": "复制",
-      "copied": "已复制!",
-      "limitedTimeOffer": "限时特惠",
-      "save": "立省{discount}",
-      "validUntil": "有效期至",
-      "copyAndScroll": "复制代码并查看价格"
-    }
-  },
   "LanguageDetection": {
     "title": "语言建议",
     "description": "检测到你的浏览器语言和当前语言不一样，你随时都可切换语言。",
@@ -68,6 +58,7 @@
     "About": "关于",
     "PrivacyPolicy": "隐私政策",
     "TermsOfService": "条款与条件",
+    "RefundPolicy": "退款政策",
     "Newsletter": {
       "title": "订阅我们的邮件",
       "description": "获取最新的更新和教程",
@@ -268,6 +259,10 @@
       "backToBlogs": "返回博客列表",
       "notFound": "文章未找到"
     }
+  },
+  "About": {
+    "title": "关于我们",
+    "description": "关于我们"
   },
   "AIDemo": {
     "title": "AI 能力演示",

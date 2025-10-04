@@ -1,14 +1,4 @@
 {
-  "Shared": {
-    "promoCode": {
-      "copy": "Copy",
-      "copied": "Copied!",
-      "limitedTimeOffer": "Limited Time Offer",
-      "save": "Save {discount}",
-      "validUntil": "Valid until",
-      "copyAndScroll": "Copy code and view pricing"
-    }
-  },
   "LanguageDetection": {
     "title": "Language Suggestion",
     "description": "We noticed your browser language differs from the current site language. You can switch languages anytime.",
@@ -68,6 +58,7 @@
     "About": "About",
     "PrivacyPolicy": "Privacy Policy",
     "TermsOfService": "Terms of Service",
+    "RefundPolicy": "Refund Policy",
     "Newsletter": {
       "title": "Subscribe to our newsletter",
       "description": "Stay up to date with our latest news.",
@@ -268,6 +259,10 @@
       "backToBlogs": "Back to Blog List",
       "notFound": "Article Not Found"
     }
+  },
+  "About": {
+    "title": "About",
+    "description": "About the site"
   },
   "AIDemo": {
     "title": "AI Capabilities Demo",

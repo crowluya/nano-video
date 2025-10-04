@@ -26,7 +26,7 @@ export default async function Footer() {
 
   return (
     <div className="bg-gray-900 text-gray-300">
-      <footer className="py-2 border-t border-gray-700">
+      <footer className="py-2 border-t border-gray-700 container max-w-8xl mx-auto">
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-12 lg:grid-cols-6">
             <div className="w-full flex flex-col sm:flex-row lg:flex-col gap-4 col-span-full md:col-span-2">
@@ -177,22 +177,30 @@ export default async function Footer() {
               >
                 {tFooter("About")}
               </I18nLink>
-              <I18nLink
+              <Link
                 href="/privacy-policy"
                 title={tFooter("PrivacyPolicy")}
                 prefetch={false}
                 className="text-gray-400 hover:text-white text-sm"
               >
                 {tFooter("PrivacyPolicy")}
-              </I18nLink>
-              <I18nLink
+              </Link>
+              <Link
                 href="/terms-of-service"
                 title={tFooter("TermsOfService")}
                 prefetch={false}
                 className="text-gray-400 hover:text-white text-sm"
               >
                 {tFooter("TermsOfService")}
-              </I18nLink>
+              </Link>
+              <Link
+                href="/refund-policy"
+                title={tFooter("RefundPolicy")}
+                prefetch={false}
+                className="text-gray-400 hover:text-white text-sm"
+              >
+                {tFooter("RefundPolicy")}
+              </Link>
             </div>
           </div>
         </div>

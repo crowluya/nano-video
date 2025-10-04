@@ -12,9 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
   const staticPages = [
     '',
-    // '/about',
-    '/privacy-policy',
-    '/terms-of-service',
   ]
 
   const pages = LOCALES.flatMap(locale => {
@@ -72,6 +69,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...pages,
-    ...uniqueBlogPostEntries,
+    ...uniqueBlogPostEntries
   ]
 }
