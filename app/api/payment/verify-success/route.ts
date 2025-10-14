@@ -4,7 +4,7 @@ import { getSession } from '@/lib/auth/server';
 import { db } from '@/lib/db';
 import { orders as ordersSchema, subscriptions as subscriptionsSchema } from '@/lib/db/schema';
 import { stripe } from '@/lib/stripe';
-import { and, eq, inArray } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { NextRequest } from 'next/server';
 import Stripe from 'stripe';
 
@@ -65,7 +65,6 @@ export async function GET(req: NextRequest) {
               and(
                 eq(subscriptionsSchema.stripeSubscriptionId, subId),
                 eq(subscriptionsSchema.userId, user.id),
-                inArray(subscriptionsSchema.status, ['active', 'trialing'])
               )
             )
             .limit(1);
@@ -85,13 +84,18 @@ export async function GET(req: NextRequest) {
             message: 'Payment successful! Subscription activation may take a moment. Please refresh shortly.',
           });
         } else {
-          return apiResponse.success({
-            subscriptionId: activeSubscription.id,
-            planName: (activeSubscription.metadata as any)?.planName,
-            planId: activeSubscription.planId,
-            status: activeSubscription.status,
-            message: 'Subscription verified and active.',
-          });
+          if (activeSubscription.status === 'active' || activeSubscription.status === 'trialing') {
+            return apiResponse.success({
+              subscriptionId: activeSubscription.id,
+              planName: (activeSubscription.metadata as any)?.planName,
+              planId: activeSubscription.planId,
+              status: activeSubscription.status,
+              message: 'Subscription verified and active.',
+            });
+          }
+          if (activeSubscription.status === 'canceled') {
+            return apiResponse.serverError('Subscription was canceled. Maybe your charge was refunded. Please contact support.');
+          }
         }
       } else if (session.mode === 'payment') {
         if (session.payment_status !== 'paid') {
@@ -106,6 +110,7 @@ export async function GET(req: NextRequest) {
             .select({
               id: ordersSchema.id,
               metadata: ordersSchema.metadata,
+              status: ordersSchema.status,
             })
             .from(ordersSchema)
             .where(
@@ -114,7 +119,6 @@ export async function GET(req: NextRequest) {
                 eq(ordersSchema.providerOrderId, piId),
                 eq(ordersSchema.userId, user.id),
                 eq(ordersSchema.orderType, 'one_time_purchase'),
-                eq(ordersSchema.status, 'succeeded')
               )
             )
             .limit(1);
@@ -134,13 +138,20 @@ export async function GET(req: NextRequest) {
             message: 'Payment successful! Order confirmation may take a moment. Please refresh shortly.',
           });
         } else {
-          const message = 'Payment verified and order confirmed.';
-          return apiResponse.success({
-            orderId: existingOrder.id,
-            planName: (existingOrder.metadata as any)?.planName,
-            planId: (existingOrder.metadata as any)?.planId,
-            message: message
-          });
+
+          if (existingOrder.status === 'succeeded') {
+            const message = 'Payment verified and order confirmed.';
+            return apiResponse.success({
+              orderId: existingOrder.id,
+              planName: (existingOrder.metadata as any)?.planName,
+              planId: (existingOrder.metadata as any)?.planId,
+              message: message
+            });
+          }
+
+          if (existingOrder.status === 'refunded') {
+            return apiResponse.serverError('Payment was refunded. Maybe your charge was refunded. Please contact support.');
+          }
         }
       }
     } catch (syncError) {
