@@ -13,6 +13,7 @@ type MetadataProps = {
   path?: string
   canonicalUrl?: string
   availableLocales?: string[]
+  useDefaultOgImage?: boolean
 }
 
 export async function constructMetadata({
@@ -24,6 +25,7 @@ export async function constructMetadata({
   path,
   canonicalUrl,
   availableLocales,
+  useDefaultOgImage = true,
 }: MetadataProps): Promise<Metadata> {
   const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'Home' })
 
@@ -62,10 +64,11 @@ export async function constructMetadata({
       url: img.startsWith('http') ? img : `${siteConfig.url}/${img}`,
       alt: pageTitle,
     }))
-    : [{
+    :
+    useDefaultOgImage ? [{
       url: `${siteConfig.url}/og${locale === DEFAULT_LOCALE ? '' : '_' + locale}.png`,
       alt: pageTitle,
-    }]
+    }] : undefined
   const pageURL = `${locale === DEFAULT_LOCALE ? '' : `/${locale}`}${path}`
 
   return {
@@ -87,14 +90,14 @@ export async function constructMetadata({
       url: pageURL,
       siteName: t('title'),
       locale: locale,
-      images: imageUrls,
+      ...(imageUrls && { images: imageUrls }),
     },
     twitter: {
       card: 'summary_large_image',
       title: finalTitle,
       description: pageDescription,
       site: `${siteConfig.url}${pageURL === '/' ? '' : pageURL}`,
-      images: imageUrls,
+      ...(imageUrls && { images: imageUrls }),
       creator: siteConfig.creator,
     },
     robots: {
