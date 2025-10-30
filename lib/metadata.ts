@@ -30,10 +30,11 @@ export async function constructMetadata({
   const t = await getTranslations({ locale: locale || DEFAULT_LOCALE, namespace: 'Home' })
 
   const pageTitle = title || t(`title`)
+  const pageTagLine = t(`tagLine`)
   const pageDescription = description || t(`description`)
 
   const finalTitle = path === '/'
-    ? `${pageTitle} - ${siteConfig.tagLine}`
+    ? `${pageTitle} - ${pageTagLine}`
     : `${pageTitle} | ${siteConfig.name}`
 
   canonicalUrl = canonicalUrl || path
