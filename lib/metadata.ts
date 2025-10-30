@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 
 type MetadataProps = {
-  page?: string
+  page?: string // legacy
   title?: string
   description?: string
   images?: string[]

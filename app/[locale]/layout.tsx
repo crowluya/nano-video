@@ -43,7 +43,6 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Home" });
 
   return constructMetadata({
-    page: "Home",
     title: t("title"),
     description: t("description"),
     locale: locale as Locale,
