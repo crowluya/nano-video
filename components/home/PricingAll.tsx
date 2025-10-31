@@ -51,7 +51,7 @@ export default async function PricingAll() {
         </div>
 
         <div
-          className={`grid grid-cols-1  gap-8 md:grid-cols-${
+          className={`grid grid-cols-1 gap-8 items-start md:grid-cols-${
             allPlans.length > 0 ? allPlans.length : 1
           }`}
         >

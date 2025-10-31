@@ -33,10 +33,12 @@ export function PricingCardDisplay({
     <div
       id={id}
       className={cn(
-        "border rounded-xl p-8 shadow-xs border-t-4",
+        "border rounded-xl shadow-xs border-t-4",
         "border-gray-300 dark:border-gray-600",
-        "hover:border-primary hover:scale-105 hover:shadow-xl transition-all duration-300",
-        plan.isHighlighted ? "border-primary relative z-10" : ""
+        "hover:border-primary dark:hover:border-primary hover:scale-105 hover:shadow-xl transition-all duration-300",
+        plan.isHighlighted
+          ? "border-primary dark:border-primary relative z-10 px-8 py-12 -my-4"
+          : "p-8"
       )}
     >
       {plan.isHighlighted && highlightText && (

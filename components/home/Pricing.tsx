@@ -80,7 +80,7 @@ export default async function Pricing() {
   const renderPlans = (plans: PricingPlan[]) => {
     return (
       <div
-        className={`grid gap-8 justify-center ${
+        className={`grid gap-8 justify-center items-start ${
           plans.length === 1
             ? "grid-cols-1 max-w-sm mx-auto"
             : plans.length === 2

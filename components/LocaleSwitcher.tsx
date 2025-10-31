@@ -56,7 +56,7 @@ export default function LocaleSwitcher() {
       onValueChange={onSelectChange}
     >
       <SelectTrigger
-        className="w-fit border-none bg-transparent shadow-none p-0"
+        className="w-fit border-none bg-transparent dark:bg-transparent shadow-none p-0"
         aria-label="Select language"
       >
         <Globe className="w-4 h-4 mr-1" />

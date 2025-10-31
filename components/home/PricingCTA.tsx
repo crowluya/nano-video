@@ -98,10 +98,10 @@ export default function PricingCTA({ plan, localizedPlan }: Params) {
       <Button
         asChild={!!plan.buttonLink}
         disabled={isLoading}
-        className={`w-full flex items-center justify-center gap-2 text-white py-5 font-medium ${
+        className={`w-full flex items-center justify-center gap-2 py-5 font-medium ${
           plan.isHighlighted
             ? "highlight-button"
-            : "bg-gray-800 hover:bg-gray-700"
+            : "bg-gray-900 text-white dark:bg-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100"
         } ${
           plan.stripeCouponId && plan.enableManualInputCoupon ? "mb-2" : "mb-6"
         }`}
