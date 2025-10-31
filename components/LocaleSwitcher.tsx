@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Locale,
   LOCALE_NAMES,
@@ -15,10 +15,10 @@ import {
   useRouter,
 } from "@/i18n/routing";
 import { useLocaleStore } from "@/stores/localeStore";
-import { Globe } from "lucide-react";
+import { Languages } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useTransition } from "react";
 
 export default function LocaleSwitcher() {
   const router = useRouter();
@@ -27,14 +27,8 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const { dismissLanguageAlert } = useLocaleStore();
   const [, startTransition] = useTransition();
-  const [currentLocale, setCurrentLocale] = useState("locale");
-
-  useEffect(() => {
-    setCurrentLocale(locale);
-  }, [locale, setCurrentLocale]);
 
   function onSelectChange(nextLocale: Locale) {
-    setCurrentLocale(nextLocale);
     dismissLanguageAlert();
 
     startTransition(() => {
@@ -50,25 +44,22 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <Select
-      defaultValue={locale}
-      value={currentLocale}
-      onValueChange={onSelectChange}
-    >
-      <SelectTrigger
-        className="w-fit border-none bg-transparent dark:bg-transparent shadow-none p-0"
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className="w-fit border-none bg-transparent dark:bg-transparent shadow-none p-0 focus:outline-none"
         aria-label="Select language"
       >
-        <Globe className="w-4 h-4 mr-1" />
-        <SelectValue placeholder="Language" />
-      </SelectTrigger>
-      <SelectContent>
-        {routing.locales.map((cur) => (
-          <SelectItem key={cur} value={cur}>
-            {LOCALE_NAMES[cur]}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+        <Languages className="w-4 h-4" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuRadioGroup value={locale} onValueChange={onSelectChange}>
+          {routing.locales.map((cur) => (
+            <DropdownMenuRadioItem key={cur} value={cur}>
+              {LOCALE_NAMES[cur]}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
