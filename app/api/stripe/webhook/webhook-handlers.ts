@@ -23,8 +23,6 @@ import {
   upgradeSubscriptionCredits,
 } from './credit-upgrades';
 
-type Order = typeof ordersSchema.$inferSelect;
-
 /**
  * Handles the `checkout.session.completed` event from Stripe.
  *
@@ -166,12 +164,26 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
     try {
       subscription = await stripe.subscriptions.retrieve(subscriptionId);
       userId = subscription.metadata?.userId;
-      planId = subscription.metadata?.planId;
+      // planId = subscription.metadata?.planId;
       if (subscription.items.data.length > 0) {
         priceId = subscription.items.data[0].price.id;
         productId = typeof subscription.items.data[0].price.product === 'string'
           ? subscription.items.data[0].price.product
           : (subscription.items.data[0].price.product as Stripe.Product)?.id;
+
+        if (priceId) {
+          const planDataResults = await db
+            .select({ id: pricingPlansSchema.id })
+            .from(pricingPlansSchema)
+            .where(eq(pricingPlansSchema.stripePriceId, priceId))
+            .limit(1);
+          planId = planDataResults[0]?.id ?? null;
+        }
+      }
+
+      // fallback
+      if (!planId) {
+        planId = subscription.metadata?.planId ?? null;
       }
 
       if (!userId && customerId) {
@@ -179,15 +191,6 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
         if (customer && !customer.deleted) {
           userId = customer.metadata?.userId ?? null;
         }
-      }
-
-      if (!planId && priceId) {
-        const planDataResults = await db
-          .select({ id: pricingPlansSchema.id })
-          .from(pricingPlansSchema)
-          .where(eq(pricingPlansSchema.stripePriceId, priceId))
-          .limit(1);
-        planId = planDataResults[0]?.id ?? null;
       }
     } catch (subError) {
       console.error(`Error fetching subscription ${subscriptionId} or related data during invoice.paid handling:`, subError);
@@ -247,7 +250,7 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
     }
 
     if (planId && userId && subscription) {
-      // --- [custom] Upgrade the user's benefits ---
+      // --- [custom] Upgrade ---
       const orderId = insertedOrder.id;
       try {
         await upgradeSubscriptionCredits(userId, planId, orderId, subscription);
@@ -256,7 +259,7 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
         await sendCreditUpgradeFailedEmail({ userId, orderId, planId, error });
         throw error;
       }
-      // --- End: [custom] Upgrade the user's benefits ---
+      // --- End: [custom] Upgrade ---
     } else {
       console.warn(`Cannot grant subscription credits for invoice ${invoiceId} because planId (${planId}) or userId (${userId}) is unknown.`);
     }
