@@ -1,10 +1,20 @@
 import { Link as I18nLink } from "@/i18n/routing";
-import { BlogPost } from "@/types/blog";
+import { PostBase } from "@/types/cms";
 import dayjs from "dayjs";
 import { EyeIcon, LockIcon, PinIcon, UserIcon } from "lucide-react";
 import Image from "next/image";
 
-export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
+interface PostCardProps {
+  post: PostBase;
+  baseUrl: string;
+  showDescription?: boolean;
+}
+
+export function PostCard({
+  post,
+  baseUrl,
+  showDescription = true,
+}: PostCardProps) {
   const getVisibilityInfo = () => {
     switch (post.visibility) {
       case "subscribers":
@@ -32,12 +42,12 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
 
   return (
     <I18nLink
-      href={`/blogs/${post.slug}`}
+      href={`${baseUrl}/${post.slug}`}
       title={post.title}
       prefetch={false}
       className="group block"
     >
-      <div className="bg-card border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-xs transition-all duration-300 hover:shadow-md hover:translate-y-[-3px]">
+      <div className="bg-card border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-3px]">
         <div className="relative w-full overflow-hidden aspect-video">
           <Image
             src={post.featuredImageUrl || "/placeholder.svg"}
@@ -74,7 +84,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
             {post.title}
           </h2>
 
-          {post.description && (
+          {showDescription && post.description && (
             <p className="text-muted-foreground text-sm mt-2 line-clamp-1">
               {post.description}
             </p>

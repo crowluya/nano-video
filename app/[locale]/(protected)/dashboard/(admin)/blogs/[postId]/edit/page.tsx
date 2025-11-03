@@ -1,8 +1,10 @@
+import { PostEditorClient } from "@/components/cms/PostEditorClient";
 import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
+import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import EditBlogClient from "./EditBlogClient";
+import { Suspense } from "react";
 
 type Params = Promise<{ locale: string; postId: string }>;
 
@@ -28,6 +30,17 @@ export async function generateMetadata({
   });
 }
 
-export default function EditBlogPage() {
-  return <EditBlogClient />;
+export default async function EditBlogPage({ params }: MetadataProps) {
+  const r2PublicUrl = process.env.R2_PUBLIC_URL || "";
+  const { postId } = await params;
+  return (
+    <Suspense fallback={<Loader2 className="w-4 h-4 animate-spin" />}>
+      <PostEditorClient
+        postType="blog"
+        mode="edit"
+        r2PublicUrl={r2PublicUrl}
+        postId={postId as string}
+      />
+    </Suspense>
+  );
 }

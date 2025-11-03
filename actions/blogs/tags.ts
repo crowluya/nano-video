@@ -1,14 +1,12 @@
 'use server'
 
-import { Locale } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
 import { isAdmin } from '@/lib/auth/server'
 import { db } from '@/lib/db'
-import { tags as tagsSchema } from '@/lib/db/schema'
+import { PostType, tags as tagsSchema } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
+import { Tag } from '@/types/cms'
 import { and, asc, eq, ilike, not } from 'drizzle-orm'
-
-export type Tag = typeof tagsSchema.$inferSelect
 
 interface ListTagsResponse {
   success: boolean
@@ -35,19 +33,28 @@ interface DeleteTagResponse {
 
 export async function listTagsAction({
   query,
-  locale,
+  postType = 'blog',
 }: {
   query?: string
-  locale?: Locale
+  postType?: PostType
 }): Promise<ListTagsResponse> {
   try {
-    let queryBuilder = db.select().from(tagsSchema).orderBy(asc(tagsSchema.name))
+    const conditions = []
+
+    conditions.push(eq(tagsSchema.postType, postType))
 
     if (query) {
-      queryBuilder.where(ilike(tagsSchema.name, `%${query}%`))
+      conditions.push(ilike(tagsSchema.name, `%${query}%`))
     }
 
-    const tags = await queryBuilder.limit(100)
+    const whereCondition = conditions.length > 0 ? and(...conditions) : undefined
+
+    const tags = await db
+      .select()
+      .from(tagsSchema)
+      .where(whereCondition)
+      .orderBy(asc(tagsSchema.name))
+      .limit(100)
 
     return actionResponse.success({ tags: tags })
   } catch (error) {
@@ -62,10 +69,10 @@ export async function listTagsAction({
 
 export async function createTagAction({
   name,
-  locale,
+  postType = 'blog',
 }: {
   name: string
-  locale: Locale
+  postType?: PostType
 }): Promise<CreateTagResponse> {
   if (!(await isAdmin())) {
     return actionResponse.forbidden('Admin privileges required.')
@@ -79,7 +86,12 @@ export async function createTagAction({
     const existingTag = await db
       .select({ id: tagsSchema.id })
       .from(tagsSchema)
-      .where(eq(tagsSchema.name, name))
+      .where(
+        and(
+          eq(tagsSchema.name, name),
+          eq(tagsSchema.postType, postType)
+        )
+      )
       .limit(1)
 
     if (existingTag.length > 0) {
@@ -88,13 +100,12 @@ export async function createTagAction({
 
     const newTag = await db
       .insert(tagsSchema)
-      .values({ name })
+      .values({ name, postType })
       .returning()
 
     if (!newTag || newTag.length === 0) {
       throw new Error('Failed to create tag, no data returned.')
     }
-
 
     return actionResponse.success({ tag: newTag[0] })
   } catch (error) {
@@ -113,11 +124,9 @@ export async function createTagAction({
 export async function updateTagAction({
   id,
   name,
-  locale,
 }: {
   id: string
   name: string
-  locale: Locale
 }): Promise<UpdateTagResponse> {
   if (!(await isAdmin())) {
     return actionResponse.forbidden('Admin privileges required.')
@@ -128,23 +137,39 @@ export async function updateTagAction({
   }
 
   try {
+    // Get current tag to check postType
+    const currentTag = await db
+      .select()
+      .from(tagsSchema)
+      .where(eq(tagsSchema.id, id))
+      .limit(1)
+
+    if (!currentTag || currentTag.length === 0) {
+      return actionResponse.notFound('Tag not found.')
+    }
+
+    const finalPostType = currentTag[0].postType
+
     const existingTag = await db
       .select({ id: tagsSchema.id })
       .from(tagsSchema)
       .where(
-        and(eq(tagsSchema.name, name), not(eq(tagsSchema.id, id)))
+        and(
+          eq(tagsSchema.name, name),
+          eq(tagsSchema.postType, finalPostType as PostType),
+          not(eq(tagsSchema.id, id)))
       )
       .limit(1)
 
     if (existingTag.length > 0) {
       return actionResponse.conflict(
-        `Another tag with the name "${name}" already exists.`
+        `Another tag with the name "${name}" and post type "${finalPostType}" already exists.`
       )
     }
 
     const updatedTag = await db
       .update(tagsSchema)
-      .set({ name })
+      .set({ name, postType: finalPostType })
       .where(eq(tagsSchema.id, id))
       .returning()
 
@@ -172,10 +197,8 @@ export async function updateTagAction({
 
 export async function deleteTagAction({
   id,
-  locale,
 }: {
   id: string
-  locale: Locale
 }): Promise<DeleteTagResponse> {
   if (!(await isAdmin())) {
     return actionResponse.forbidden('Admin privileges required.')
@@ -187,7 +210,6 @@ export async function deleteTagAction({
 
   try {
     await db.delete(tagsSchema).where(eq(tagsSchema.id, id))
-
 
     return actionResponse.success({})
   } catch (error) {

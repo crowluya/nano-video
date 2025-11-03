@@ -12,9 +12,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { type Tag } from "@/types/blog";
+import { PostType } from "@/lib/db/schema";
+import { Tag } from "@/types/cms";
 import { Loader2, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { TagCreateForm } from "./TagCreateForm";
 
@@ -32,6 +32,7 @@ interface TagSelectDialogProps {
   onTagsChange: (tags: FormTag[]) => void;
   initialAvailableTags: Tag[];
   isLoadingInitialTags: boolean;
+  postType: PostType;
 }
 
 export function TagSelectDialog({
@@ -41,10 +42,8 @@ export function TagSelectDialog({
   onTagsChange,
   initialAvailableTags,
   isLoadingInitialTags,
+  postType,
 }: TagSelectDialogProps) {
-  const t = useTranslations("DashboardBlogs.TagManager");
-  const locale = useLocale();
-
   const [currentAvailableTags, setCurrentAvailableTags] =
     useState<Tag[]>(initialAvailableTags);
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,14 +101,14 @@ export function TagSelectDialog({
 
         {selectedTags.length > 0 && (
           <div className="border-b pb-4 mb-4">
-            <p className="text-sm font-medium mb-2">{t("selectedTagsLabel")}</p>
+            <p className="text-sm font-medium mb-2">Selected Tags</p>
             <div className="flex flex-wrap gap-2">
               {selectedTags.map((tag) => (
                 <Badge key={tag.id} variant="secondary">
                   {tag.name}
                   <button
                     type="button"
-                    className="ml-1 rounded-full outline-hidden ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                    className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
                     onClick={() => handleDeselectTag(tag.id)}
                     aria-label={`Remove ${tag.name}`}
                   >
@@ -124,9 +123,7 @@ export function TagSelectDialog({
         {isLoadingInitialTags ? (
           <div className="flex grow justify-center items-center p-4 min-h-[150px]">
             <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
-            <span className="ml-2">
-              {t("loadingTagsMessage") || "Loading tags..."}
-            </span>
+            <span className="ml-2">Loading tags...</span>
           </div>
         ) : (
           <>
@@ -136,7 +133,7 @@ export function TagSelectDialog({
                   placeholder="Search for tags..."
                   value={searchTerm}
                   onValueChange={setSearchTerm}
-                  className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-hidden placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 border-none focus:ring-0"
+                  className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 border-none focus:ring-0"
                 />
               </div>
 
@@ -146,6 +143,7 @@ export function TagSelectDialog({
                   existingTags={currentAvailableTags}
                   onTagCreated={handleTagCreated}
                   disabled={selectedTags.length >= MAX_TAGS_LIMIT}
+                  postType={postType}
                 />
                 {selectedTags.length >= MAX_TAGS_LIMIT && (
                   <p className="text-xs text-muted-foreground mt-1 ml-1">
@@ -154,7 +152,7 @@ export function TagSelectDialog({
                 )}
               </div>
 
-              <ScrollArea className="grow h-[calc(80vh-300px)]">
+              <ScrollArea className="flex-grow h-[calc(80vh-300px)]">
                 {selectableTags.length === 0 ? (
                   <div className="py-6 text-center text-sm text-muted-foreground">
                     No tags found.

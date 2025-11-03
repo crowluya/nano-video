@@ -1,6 +1,6 @@
 "use client";
 
-import { deletePostAction, PostWithTags } from "@/actions/blogs/posts";
+import { deletePostAction } from "@/actions/blogs/posts";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -21,20 +21,28 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link as I18nLink, useRouter } from "@/i18n/routing";
+import { Link as I18nLink } from "@/i18n/routing";
+import { PostType } from "@/lib/db/schema";
+import { PostWithTags } from "@/types/cms";
 import { Copy, MoreHorizontal, Pencil, Trash2 } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
-interface BlogListActionsProps {
-  post: PostWithTags;
+interface PostListActionsConfig {
+  postType: PostType;
+  editUrl: string;
+  duplicateUrl: string;
 }
 
-export function BlogListActions({ post }: BlogListActionsProps) {
-  const t = useTranslations("DashboardBlogs.Delete");
-  const locale = useLocale();
+interface PostListActionsProps {
+  post: PostWithTags;
+  config: PostListActionsConfig;
+}
+
+export function PostListActions({ post, config }: PostListActionsProps) {
   const router = useRouter();
+  const { postType, editUrl, duplicateUrl } = config;
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
@@ -45,23 +53,24 @@ export function BlogListActions({ post }: BlogListActionsProps) {
       try {
         const result = await deletePostAction({
           postId: post.id,
-          locale: locale,
         });
         if (result.success) {
-          toast.success(t("success"));
+          toast.success(`Post deleted successfully.`);
           setIsDeleteDialogOpen(false);
         } else {
-          toast.error(t("failedToDelete"), { description: result.error });
+          toast.error(`Failed to delete post.`, {
+            description: result.error,
+          });
         }
       } catch (error) {
-        toast.error(t("unexpectedError"));
+        toast.error("An unexpected error occurred.");
         console.error("Delete failed:", error);
       }
     });
   };
 
   const handleDuplicate = () => {
-    router.push(`/dashboard/blogs/new?duplicatePostId=${post.id}`);
+    router.push(duplicateUrl);
   };
 
   return (
@@ -76,11 +85,7 @@ export function BlogListActions({ post }: BlogListActionsProps) {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem asChild>
-            <I18nLink
-              href={`/dashboard/blogs/${post.id}/edit`}
-              title="Edit"
-              prefetch={false}
-            >
+            <I18nLink href={editUrl} title="Edit" prefetch={false}>
               <Pencil className="mr-2 h-4 w-4" /> Edit
             </I18nLink>
           </DropdownMenuItem>
@@ -101,21 +106,22 @@ export function BlogListActions({ post }: BlogListActionsProps) {
 
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>{t("title")}</AlertDialogTitle>
+          <AlertDialogTitle>
+            Are you sure you want to delete this post?
+          </AlertDialogTitle>
           <AlertDialogDescription>
-            {t("description", { title: post.title })}
+            This action cannot be undone. This will permanently delete the{" "}
+            titled &quot;{post.title}&quot;.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel disabled={isPending}>
-            {t("cancelButton")}
-          </AlertDialogCancel>
+          <AlertDialogCancel disabled={isPending}>Cancel</AlertDialogCancel>
           <AlertDialogAction
             onClick={handleDelete}
             disabled={isPending}
             className="bg-destructive hover:bg-destructive/90 text-destructive-foreground"
           >
-            {isPending ? t("deleting") : t("deleteButton")}
+            {isPending ? "Deleting..." : "Delete"}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

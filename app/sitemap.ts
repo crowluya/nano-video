@@ -47,6 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       locale: locale,
       pageSize: 1000,
       visibility: "public",
+      postType: "blog",
     });
     if (serverResult.success && serverResult.data?.posts) {
       serverResult.data.posts.forEach((post) => {

@@ -3,9 +3,9 @@
 import { createTagAction } from "@/actions/blogs/tags";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Tag } from "@/types/blog";
+import { PostType } from "@/lib/db/schema";
+import { Tag } from "@/types/cms";
 import { Loader2, PlusCircle } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -13,16 +13,15 @@ interface TagCreateFormProps {
   existingTags: Tag[];
   onTagCreated: (tag: Tag) => void;
   disabled?: boolean;
+  postType: PostType;
 }
 
 export function TagCreateForm({
   existingTags,
   onTagCreated,
   disabled = false,
+  postType,
 }: TagCreateFormProps) {
-  const locale = useLocale();
-  const t = useTranslations("DashboardBlogs.TagManager");
-
   const [isCreating, setIsCreating] = useState(false);
   const [newTagName, setNewTagName] = useState("");
 
@@ -30,7 +29,7 @@ export function TagCreateForm({
     const trimmedName = newTagName.trim();
 
     if (!trimmedName) {
-      toast.info(t("errors.nameRequired"));
+      toast.info("Please enter a tag name.");
       return;
     }
 
@@ -39,7 +38,7 @@ export function TagCreateForm({
         (tag) => tag.name.toLowerCase() === trimmedName.toLowerCase()
       )
     ) {
-      toast.info(t("errors.alreadyExists", { name: trimmedName }));
+      toast.info(`Tag "${trimmedName}" already exists.`);
       return;
     }
 
@@ -47,14 +46,14 @@ export function TagCreateForm({
     try {
       const result = await createTagAction({
         name: trimmedName,
-        locale,
+        postType,
       });
       if (result.success && result.data?.tag) {
-        toast.success(t("createSuccess", { name: result.data.tag.name }));
+        toast.success(`Tag "${result.data.tag.name}" created successfully.`);
         onTagCreated(result.data.tag);
         setNewTagName("");
       } else {
-        toast.error(t("errors.createFailed"), { description: result.error });
+        toast.error("Failed to create tag.", { description: result.error });
       }
     } catch (error) {
       toast.error("Failed to create tag.");
@@ -67,7 +66,7 @@ export function TagCreateForm({
   return (
     <div className="flex items-center gap-2">
       <Input
-        placeholder={t("newTagPlaceholder")}
+        placeholder="New tag name"
         value={newTagName}
         onChange={(e) => setNewTagName(e.target.value)}
         onKeyDown={(e) => {

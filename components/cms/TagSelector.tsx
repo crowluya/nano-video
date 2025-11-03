@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Tag } from "@/types/blog";
+import { Tag } from "@/types/cms";
 
 interface TagSelectorProps {
   tags: Tag[];

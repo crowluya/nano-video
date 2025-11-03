@@ -1,11 +1,11 @@
 "use client";
 
 import { generateAdminPresignedUploadUrl } from "@/actions/r2-resources";
+import { R2ResourceSelector } from "@/components/tiptap/R2ResourceSelector";
 import { Button } from "@/components/ui/button";
 import { BLOGS_IMAGE_PATH } from "@/config/common";
 import { getErrorMessage } from "@/lib/error-utils";
-import { Loader2, UploadCloud, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { Cloud, Loader2, UploadCloud, X } from "lucide-react";
 import Image from "next/image";
 import { ChangeEvent, useCallback, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -15,12 +15,21 @@ interface ImageUploadProps {
   value?: string;
   onChange: (value: string) => void;
   disabled?: boolean;
+  imagePath?: string;
+  maxSize?: number;
+  r2PublicUrl?: string;
+  enableR2Selector?: boolean;
 }
 
-export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
-  const t = useTranslations("DashboardBlogs.Form.upload");
-  const locale = useLocale();
-
+export function ImageUpload({
+  value,
+  onChange,
+  disabled,
+  imagePath = BLOGS_IMAGE_PATH,
+  maxSize = 10 * 1024 * 1024, // 10MB
+  r2PublicUrl,
+  enableR2Selector = false,
+}: ImageUploadProps) {
   const [previewUrl, setPreviewUrl] = useState<string | null>(value || null);
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -29,18 +38,15 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
-      toast.error(t("uploadError"), {
-        description: t("uploadErrorDesc"),
+      toast.error("Upload Error", {
+        description: "Invalid file type.",
       });
       return;
     }
 
-    const maxSize = 5 * 1024 * 1024; // 5MB
     if (file.size > maxSize) {
-      toast.error(t("uploadError"), {
-        description: t("fileSizeExceeded", {
-          maxSizeInMB: maxSize / 1024 / 1024,
-        }),
+      toast.error("Upload Error", {
+        description: `File size cannot exceed ${maxSize / 1024 / 1024}MB.`,
       });
       return;
     }
@@ -60,7 +66,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
         fileName: file.name,
         contentType: file.type,
         prefix: filenamePrefix,
-        path: BLOGS_IMAGE_PATH,
+        path: imagePath,
       });
 
       if (
@@ -68,9 +74,10 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
         !presignedUrlActionResponse.data
       ) {
         setPreviewUrl(null);
-        toast.error(t("uploadError"), {
+        toast.error("Upload Error", {
           description:
-            presignedUrlActionResponse.error || t("presignedUrlError"),
+            presignedUrlActionResponse.error ||
+            "Failed to generate presigned URL.",
         });
         return "";
       }
@@ -95,13 +102,15 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
       }
 
       onChange(publicObjectUrl);
-      toast.success(t("uploadSuccess"), {
-        description: t("uploadSuccessDesc"),
+      toast.success("Upload successful", {
+        description: "Your image has been uploaded successfully.",
       });
     } catch (error) {
       setPreviewUrl(null);
       console.error("MDX Image Upload failed:", error);
-      toast.error(getErrorMessage(error) || t("upload.uploadErrorUnexpected"));
+      toast.error(
+        getErrorMessage(error) || "An unexpected error occurred during upload."
+      );
       throw error;
     } finally {
       setIsLoading(false);
@@ -163,9 +172,7 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
         {isLoading ? (
           <div className="flex flex-col items-center justify-center h-32">
             <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-            <p className="mt-2 text-sm text-muted-foreground">
-              {t("uploading")}
-            </p>
+            <p className="mt-2 text-sm text-muted-foreground">Uploading...</p>
           </div>
         ) : previewUrl ? (
           <div className="relative group">
@@ -202,32 +209,82 @@ export function ImageUpload({ value, onChange, disabled }: ImageUploadProps) {
           </div>
         )}
         {!isLoading && !previewUrl && (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={(e) => {
-              e.stopPropagation();
-              fileInputRef.current?.click();
-            }}
-            disabled={disabled || isLoading}
-            className="mt-4"
-          >
-            Select Image
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={(e) => {
+                e.stopPropagation();
+                fileInputRef.current?.click();
+              }}
+              disabled={disabled || isLoading}
+              className="mt-4"
+            >
+              Select Image
+            </Button>
+            {enableR2Selector && r2PublicUrl && (
+              <R2ResourceSelector
+                onSelect={(url) => {
+                  const selectedUrl = Array.isArray(url) ? url[0] : url;
+                  setPreviewUrl(selectedUrl);
+                  onChange(selectedUrl);
+                }}
+                r2PublicUrl={r2PublicUrl}
+                fileTypeFilter="image"
+                multiple={false}
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={disabled || isLoading}
+                  className="mt-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Cloud className="h-4 w-4 mr-2" />
+                  Select from R2
+                </Button>
+              </R2ResourceSelector>
+            )}
+          </div>
         )}
         {!isLoading && previewUrl && (
-          <Button
-            type="button"
-            variant="outline"
-            onClick={(e) => {
-              e.stopPropagation();
-              fileInputRef.current?.click();
-            }}
-            disabled={disabled || isLoading}
-            className="mt-4"
-          >
-            Change Image
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={(e) => {
+                e.stopPropagation();
+                fileInputRef.current?.click();
+              }}
+              disabled={disabled || isLoading}
+              className="mt-4"
+            >
+              Change Image
+            </Button>
+            {enableR2Selector && r2PublicUrl && (
+              <R2ResourceSelector
+                onSelect={(url) => {
+                  const selectedUrl = Array.isArray(url) ? url[0] : url;
+                  setPreviewUrl(selectedUrl);
+                  onChange(selectedUrl);
+                }}
+                r2PublicUrl={r2PublicUrl}
+                fileTypeFilter="image"
+                multiple={false}
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={disabled || isLoading}
+                  className="mt-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Cloud className="h-4 w-4 mr-2" />
+                  Select from R2
+                </Button>
+              </R2ResourceSelector>
+            )}
+          </div>
         )}
       </div>
     </div>

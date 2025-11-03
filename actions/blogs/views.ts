@@ -1,12 +1,15 @@
 'use server'
 
+import { DEFAULT_LOCALE } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
+import { PostType } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
 import { getClientIPFromHeaders, redis } from '@/lib/upstash'
 import { RedisKeys } from '@/lib/upstash/redis-keys'
 
 interface IncrementViewCountParams {
   slug: string
+  postType: PostType
   locale: string
 }
 
@@ -23,10 +26,11 @@ interface ViewCountResult {
  */
 export async function incrementViewCountAction({
   slug,
-  locale,
+  postType = 'blog',
+  locale = DEFAULT_LOCALE,
 }: IncrementViewCountParams): Promise<ViewCountResult> {
-  if (!slug || !locale) {
-    return actionResponse.badRequest('Slug and locale are required.')
+  if (!slug) {
+    return actionResponse.badRequest('Slug is required.')
   }
 
   try {
@@ -35,7 +39,7 @@ export async function incrementViewCountAction({
       return actionResponse.success({ count: 0 })
     }
 
-    const key = RedisKeys.blog.viewCount(slug, locale)
+    const key = RedisKeys.post.viewCount(postType, slug, locale)
     const count = await redis.incr(key)
 
     return actionResponse.success({ count })
@@ -51,10 +55,11 @@ export async function incrementViewCountAction({
  */
 export async function incrementUniqueViewCountAction({
   slug,
-  locale,
+  postType = 'blog',
+  locale = DEFAULT_LOCALE,
 }: IncrementViewCountParams): Promise<ViewCountResult> {
-  if (!slug || !locale) {
-    return actionResponse.badRequest('Slug and locale are required.')
+  if (!slug) {
+    return actionResponse.badRequest('Slug is required.')
   }
 
   try {
@@ -67,21 +72,21 @@ export async function incrementUniqueViewCountAction({
     const clientIP = await getClientIPFromHeaders()
 
     // Check if this IP has already viewed this post in the last hour
-    const ipKey = RedisKeys.blog.viewIpTracking(slug, locale, clientIP)
+    const ipKey = RedisKeys.post.viewIpTracking(postType, slug, locale, clientIP)
     const hasViewed = await redis.get(ipKey)
 
     let count: number
 
     if (!hasViewed) {
       // IP hasn't viewed this post in the last hour, increment counter
-      const viewKey = RedisKeys.blog.viewCount(slug, locale)
+      const viewKey = RedisKeys.post.viewCount(postType, slug, locale)
       count = await redis.incr(viewKey)
 
       // Set IP tracking key with 1 hour expiration (3600 seconds)
       await redis.set(ipKey, '1', { ex: 3600 })
     } else {
       // IP has already viewed this post in the last hour, just return current count
-      const viewKey = RedisKeys.blog.viewCount(slug, locale)
+      const viewKey = RedisKeys.post.viewCount(postType, slug, locale)
       const currentCount = await redis.get<number>(viewKey)
       count = currentCount || 0
     }
@@ -96,7 +101,8 @@ export async function incrementUniqueViewCountAction({
 
 interface GetViewCountParams {
   slug: string
-  locale: string
+  postType: PostType
+  locale?: string
 }
 
 /**
@@ -104,7 +110,8 @@ interface GetViewCountParams {
  */
 export async function getViewCountAction({
   slug,
-  locale,
+  postType = 'blog',
+  locale = DEFAULT_LOCALE,
 }: GetViewCountParams): Promise<ViewCountResult> {
   if (!slug || !locale) {
     return actionResponse.badRequest('Slug and locale are required.')
@@ -116,7 +123,7 @@ export async function getViewCountAction({
       return actionResponse.success({ count: 0 })
     }
 
-    const key = RedisKeys.blog.viewCount(slug, locale)
+    const key = RedisKeys.post.viewCount(postType, slug, locale)
     const count = await redis.get<number>(key)
 
     return actionResponse.success({ count: count || 0 })

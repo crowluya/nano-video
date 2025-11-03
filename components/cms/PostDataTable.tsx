@@ -1,6 +1,6 @@
 "use client";
 
-import { listPostsAction } from "@/actions/blogs/posts";
+import { TagManagementDialog } from "@/components/cms/TagManagementDialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,6 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Link as I18nLink } from "@/i18n/routing";
+import { PostType } from "@/lib/db/schema";
 import {
   ColumnDef,
   flexRender,
@@ -23,28 +24,47 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import { Loader2, PlusCircle } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
-import { columns } from "./Columns";
-import { TagManagementDialog } from "./TagManagementDialog";
+
+interface PostDataTableConfig {
+  postType: PostType;
+  columns: ColumnDef<any, any>[];
+  listAction: (params: {
+    postType: PostType;
+    pageIndex: number;
+    pageSize: number;
+    filter: string;
+  }) => Promise<any>;
+  createUrl: string;
+  enableTags?: boolean;
+  searchPlaceholder?: string;
+}
 
 interface DataTableProps<TData, TValue> {
+  config: PostDataTableConfig;
   initialData: TData[];
   initialPageCount: number;
   pageSize: number;
   totalPosts: number;
 }
 
-export function PostsDataTable<TData, TValue>({
+export function PostDataTable<TData, TValue>({
+  config,
   initialData,
   initialPageCount,
   pageSize,
   totalPosts,
 }: DataTableProps<TData, TValue>) {
-  const t = useTranslations("DashboardBlogs.List");
-  const locale = useLocale();
+  const {
+    postType,
+    columns,
+    listAction,
+    createUrl,
+    enableTags = false,
+    searchPlaceholder,
+  } = config;
 
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
@@ -76,15 +96,15 @@ export function PostsDataTable<TData, TValue>({
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const result = await listPostsAction({
+        const result = await listAction({
+          postType,
           pageIndex: pagination.pageIndex,
           pageSize: pagination.pageSize,
           filter: debouncedGlobalFilter,
-          locale: locale,
         });
 
         if (!result.success) {
-          throw new Error(result.error || t("failedToFetch"));
+          throw new Error(result.error || `Failed to fetch ${postType}s.`);
         }
 
         setData(result.data?.posts as TData[]);
@@ -92,7 +112,7 @@ export function PostsDataTable<TData, TValue>({
           Math.ceil((result.data?.count || 0) / pagination.pageSize)
         );
       } catch (error: any) {
-        toast.error(t("failedToFetch"), {
+        toast.error(`Failed to fetch ${postType}s.`, {
           description: error.message,
         });
         setData([]);
@@ -108,6 +128,7 @@ export function PostsDataTable<TData, TValue>({
     pagination.pageIndex,
     pagination.pageSize,
     initialData,
+    postType,
   ]);
 
   const table = useReactTable({
@@ -134,21 +155,17 @@ export function PostsDataTable<TData, TValue>({
     <div className="w-full">
       <div className="flex items-center justify-between gap-4 py-4">
         <Input
-          placeholder={t("searchPlaceholder")}
+          placeholder={searchPlaceholder || `Search ${postType}s...`}
           value={globalFilter ?? ""}
           onChange={(event) => setGlobalFilter(event.target.value)}
           className="max-w-sm"
         />
         <div className="flex space-x-2">
-          <TagManagementDialog />
+          {enableTags && <TagManagementDialog postType={postType} />}
           <Button asChild className="highlight-button">
-            <I18nLink
-              href={`/dashboard/blogs/new`}
-              title="Create New Blog"
-              prefetch={false}
-            >
+            <I18nLink href={createUrl} title="Create New Post" prefetch={false}>
               <PlusCircle className="mr-2 h-4 w-4" />
-              Create New Blog
+              Create New Post
             </I18nLink>
           </Button>
         </div>
@@ -156,7 +173,7 @@ export function PostsDataTable<TData, TValue>({
 
       <div className="relative min-h-[200px] max-h-[calc(100vh-200px)] overflow-auto rounded-md border">
         {isLoading && (
-          <div className="absolute inset-0 bg-background/50 backdrop-blur-xs flex items-center justify-center z-10">
+          <div className="absolute inset-0 bg-background/50 backdrop-blur-sm flex items-center justify-center z-10">
             <Loader2 className="w-8 h-8 animate-spin text-primary" />
           </div>
         )}
@@ -213,7 +230,7 @@ export function PostsDataTable<TData, TValue>({
       <div className="flex items-center justify-between space-x-2 py-4">
         <div className="text-sm text-muted-foreground">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
-          {table.getPageCount()} ({totalPosts} Posts)
+          {table.getPageCount() || 0} ({totalPosts} Post)
         </div>
         <div className="space-x-2">
           <Button

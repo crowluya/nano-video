@@ -1,11 +1,11 @@
 "use client";
 
-import { type PostWithTags } from "@/actions/blogs/posts";
+import { PostListActions } from "@/components/cms/PostListActions";
 import { Badge } from "@/components/ui/badge";
+import { PostWithTags } from "@/types/cms";
 import { ColumnDef } from "@tanstack/react-table";
 import dayjs from "dayjs";
 import { Pin } from "lucide-react";
-import { BlogListActions } from "./BlogListActions";
 
 const getStatusBadgeVariant = (
   status: string
@@ -117,7 +117,16 @@ export const columns: ColumnDef<PostWithTags>[] = [
     header: "Actions",
     cell: ({ row }) => {
       const post = row.original;
-      return <BlogListActions post={post} />;
+      return (
+        <PostListActions
+          post={post}
+          config={{
+            postType: "blog",
+            editUrl: `/dashboard/blogs/${post.id}/edit`,
+            duplicateUrl: `/dashboard/blogs/new?duplicatePostId=${post.id}`,
+          }}
+        />
+      );
     },
   },
 ];

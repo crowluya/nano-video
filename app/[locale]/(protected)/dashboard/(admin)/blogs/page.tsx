@@ -1,9 +1,10 @@
 import { listPostsAction } from "@/actions/blogs/posts";
+import { PostDataTable } from "@/components/cms/PostDataTable";
 import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
-import { PostsDataTable } from "./PostsDataTable";
+import { columns } from "./Columns";
 
 const PAGE_SIZE = 20;
 
@@ -23,7 +24,6 @@ export async function generateMetadata({
   });
 
   return constructMetadata({
-    page: "DashboardBlogs",
     title: t("title"),
     description: t("description"),
     locale: locale as Locale,
@@ -39,7 +39,7 @@ export default async function AdminBlogsPage() {
   const result = await listPostsAction({
     pageIndex: 0,
     pageSize: PAGE_SIZE,
-    locale: locale as Locale,
+    postType: "blog",
   });
 
   if (!result.success) {
@@ -59,7 +59,15 @@ export default async function AdminBlogsPage() {
 
   return (
     <div className="space-y-6">
-      <PostsDataTable
+      <PostDataTable
+        config={{
+          postType: "blog",
+          columns,
+          listAction: listPostsAction,
+          createUrl: "/dashboard/blogs/new",
+          enableTags: true,
+          searchPlaceholder: "Search blogs...",
+        }}
         initialData={posts}
         initialPageCount={pageCount}
         pageSize={PAGE_SIZE}

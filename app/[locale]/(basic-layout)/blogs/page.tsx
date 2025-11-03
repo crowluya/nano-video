@@ -1,13 +1,13 @@
 import { listPublishedPostsAction } from "@/actions/blogs/posts";
 import { listTagsAction } from "@/actions/blogs/tags";
+import { PostList } from "@/components/cms/PostList";
 import { Locale } from "@/i18n/routing";
 import { getPosts } from "@/lib/getBlogs";
 import { constructMetadata } from "@/lib/metadata";
-import { Tag } from "@/types/blog";
+import { Tag } from "@/types/cms";
 import { TextSearch } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { BlogList } from "./BlogList";
 
 type Params = Promise<{ locale: string }>;
 
@@ -41,6 +41,8 @@ export default async function Page({ params }: { params: Params }) {
   const initialServerPostsResult = await listPublishedPostsAction({
     pageIndex: 0,
     pageSize: SERVER_POST_PAGE_SIZE,
+    postType: "blog",
+    visibility: "public",
     locale: locale,
   });
 
@@ -85,13 +87,17 @@ export default async function Page({ params }: { params: Params }) {
           </p>
         </div>
       ) : (
-        <BlogList
+        <PostList
+          postType="blog"
+          baseUrl="/blogs"
           localPosts={localPosts}
           initialPosts={initialServerPosts}
           initialTotal={totalServerPosts}
           serverTags={serverTags}
           locale={locale}
           pageSize={SERVER_POST_PAGE_SIZE}
+          showTagSelector={true}
+          emptyMessage="No posts found for this tag."
         />
       )}
     </div>

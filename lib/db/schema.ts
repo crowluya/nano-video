@@ -266,11 +266,18 @@ export const creditLogs = pgTable(
   }
 )
 
+export const postTypeEnum = pgEnum('post_type', [
+  'blog',
+  "guide"
+])
+export type PostType = (typeof postTypeEnum.enumValues)[number]
+
 export const postStatusEnum = pgEnum('post_status', [
   'draft',
   'published',
   'archived',
 ])
+export type PostStatus = (typeof postStatusEnum.enumValues)[number]
 
 export const postVisibilityEnum = pgEnum('post_visibility', [
   'public',
@@ -283,6 +290,7 @@ export const posts = pgTable(
   {
     id: uuid('id').primaryKey().defaultRandom(),
     language: varchar('language', { length: 10 }).notNull(),
+    postType: postTypeEnum('post_type').default('blog'),
     authorId: uuid('author_id')
       .references(() => user.id, { onDelete: 'set null' })
       .notNull(),
@@ -307,15 +315,22 @@ export const posts = pgTable(
   },
   (table) => {
     return {
-      languageSlugUnique: unique('posts_language_slug_unique').on(
+      languageSlugPostTypeUnique: unique('posts_language_slug_post_type_unique').on(
         table.language,
-        table.slug
+        table.slug,
+        table.postType
       ),
       authorIdIdx: index('idx_posts_author_id').on(table.authorId),
+      postTypeIdx: index('idx_posts_post_type').on(table.postType),
       statusIdx: index('idx_posts_status').on(table.status),
       visibilityIdx: index('idx_posts_visibility').on(table.visibility),
       languageStatusIdx: index('idx_posts_language_status').on(
         table.language,
+        table.status
+      ),
+      languagePostTypeStatusIdx: index('idx_posts_language_post_type_status').on(
+        table.language,
+        table.postType,
         table.status
       ),
     }
@@ -327,6 +342,7 @@ export const tags = pgTable(
   {
     id: uuid('id').primaryKey().defaultRandom(),
     name: text('name').notNull().unique(),
+    postType: postTypeEnum('post_type').default('blog'),
     createdAt: timestamp('created_at', { withTimezone: true })
       .defaultNow()
       .notNull(),

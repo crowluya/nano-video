@@ -1,6 +1,6 @@
-import { getPublishedPostBySlugAction, PublicPostWithContent } from '@/actions/blogs/posts';
+import { getPublishedPostBySlugAction } from '@/actions/blogs/posts';
 import { DEFAULT_LOCALE } from '@/i18n/routing';
-import { BlogPost } from '@/types/blog';
+import { PostBase, PublicPostWithContent } from '@/types/cms';
 import dayjs from 'dayjs';
 import fs from 'fs';
 import matter from 'gray-matter';
@@ -8,7 +8,7 @@ import path from 'path';
 
 const POSTS_BATCH_SIZE = 10;
 
-export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts: BlogPost[] }> {
+export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts: PostBase[] }> {
   const postsDirectory = path.join(process.cwd(), 'blogs', locale);
 
   // is directory exist
@@ -19,13 +19,13 @@ export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts
   let filenames = await fs.promises.readdir(postsDirectory);
   filenames = filenames.reverse();
 
-  let allPosts: BlogPost[] = [];
+  let allPosts: PostBase[] = [];
 
   // read file by batch
   for (let i = 0; i < filenames.length; i += POSTS_BATCH_SIZE) {
     const batchFilenames = filenames.slice(i, i + POSTS_BATCH_SIZE);
 
-    const batchPosts: BlogPost[] = await Promise.all(
+    const batchPosts: PostBase[] = await Promise.all(
       batchFilenames.map(async (filename) => {
         const fullPath = path.join(postsDirectory, filename);
         const fileContents = await fs.promises.readFile(fullPath, 'utf8');
@@ -67,9 +67,10 @@ export async function getPosts(locale: string = DEFAULT_LOCALE): Promise<{ posts
   };
 }
 
-function mapServerPostToBlogPost(serverPost: PublicPostWithContent, locale: string): BlogPost {
+function mapServerPostToBlogPost(serverPost: PublicPostWithContent, locale: string): PostBase {
   return {
     locale: locale,
+    id: serverPost.id || undefined,
     title: serverPost.title,
     description: serverPost.description ?? "",
     featuredImageUrl: serverPost.featuredImageUrl ?? "",
@@ -87,7 +88,7 @@ function mapServerPostToBlogPost(serverPost: PublicPostWithContent, locale: stri
 export async function getPostBySlug(
   slug: string,
   locale: string = DEFAULT_LOCALE
-): Promise<{ post: BlogPost | null; error?: string; errorCode?: string }> {
+): Promise<{ post: PostBase | null; error?: string; errorCode?: string }> {
   const postsDirectory = path.join(process.cwd(), 'blogs', locale);
   if (fs.existsSync(postsDirectory)) {
     const filenames = await fs.promises.readdir(postsDirectory);
@@ -104,6 +105,7 @@ export async function getPostBySlug(
           return {
             post: {
               locale,
+              id: data.id || undefined,
               title: data.title,
               description: data.description || '',
               featuredImageUrl: data.featuredImageUrl || '',
@@ -126,7 +128,7 @@ export async function getPostBySlug(
     }
   }
 
-  const serverResult = await getPublishedPostBySlugAction({ slug, locale });
+  const serverResult = await getPublishedPostBySlugAction({ slug, locale, postType: 'blog' });
 
   if (serverResult.success && serverResult.data?.post) {
     return {

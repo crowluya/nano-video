@@ -3,9 +3,9 @@
 import { listTagsAction } from "@/actions/blogs/tags";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { type Tag as DbTag } from "@/types/blog";
+import { PostType } from "@/lib/db/schema";
+import { Tag } from "@/types/cms";
 import { Tag as TagIcon, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { TagSelectDialog } from "./TagSelectDialog";
@@ -19,38 +19,41 @@ interface TagInputProps {
   value: FormTag[];
   onChange: (value: FormTag[]) => void;
   disabled?: boolean;
+  postType: PostType;
 }
 
-export function TagInput({ value, onChange, disabled }: TagInputProps) {
-  const t = useTranslations("DashboardBlogs.TagManager");
-  const locale = useLocale();
-
+export function TagInput({
+  value,
+  onChange,
+  disabled,
+  postType,
+}: TagInputProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [allAvailableTags, setAllAvailableTags] = useState<DbTag[]>([]);
+  const [allAvailableTags, setAllAvailableTags] = useState<Tag[]>([]);
   const [isLoadingTags, setIsLoadingTags] = useState(true);
 
   useEffect(() => {
     const loadTags = async () => {
       setIsLoadingTags(true);
       try {
-        const result = await listTagsAction({ query: "", locale });
+        const result = await listTagsAction({ query: "", postType: postType });
         if (result.success && result.data?.tags) {
           setAllAvailableTags(result.data.tags);
         } else {
-          toast.error(t("errors.fetchFailed"), {
+          toast.error("Failed to fetch tags.", {
             description: result.error,
           });
           console.error("Failed to fetch initial tags:", result.error);
         }
       } catch (error) {
-        toast.error(t("errors.fetchFailed"));
+        toast.error("Failed to fetch tags.");
         console.error("Error fetching initial tags:", error);
       } finally {
         setIsLoadingTags(false);
       }
     };
     loadTags();
-  }, [locale]);
+  }, []);
 
   const handleDeselectTag = (tagId: string) => {
     onChange(value.filter((t) => t.id !== tagId));
@@ -64,7 +67,7 @@ export function TagInput({ value, onChange, disabled }: TagInputProps) {
             {tag.name}
             <button
               type="button"
-              className="ml-1 rounded-full outline-hidden ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
+              className="ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
               onClick={() => handleDeselectTag(tag.id)}
               aria-label={`Remove ${tag.name}`}
               disabled={disabled}
@@ -82,7 +85,7 @@ export function TagInput({ value, onChange, disabled }: TagInputProps) {
           className="ml-auto shrink-0"
         >
           <TagIcon className="mr-2 h-4 w-4" />
-          {t("selectTags")}
+          Select Tags
         </Button>
       </div>
 
@@ -93,6 +96,7 @@ export function TagInput({ value, onChange, disabled }: TagInputProps) {
         onTagsChange={onChange}
         initialAvailableTags={allAvailableTags}
         isLoadingInitialTags={isLoadingTags}
+        postType={postType}
       />
     </div>
   );

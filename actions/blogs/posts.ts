@@ -1,29 +1,25 @@
 'use server'
 
-import { postActionSchema } from '@/app/[locale]/(protected)/dashboard/(admin)/blogs/schema'
+import { postActionSchema } from '@/components/cms/post-config'
 import { DEFAULT_LOCALE } from '@/i18n/routing'
 import { actionResponse } from '@/lib/action-response'
 import { getSession, isAdmin } from '@/lib/auth/server'
 import { db } from '@/lib/db'
-import { posts as postsSchema, postTags as postTagsSchema, subscriptions as subscriptionsSchema, tags as tagsSchema } from '@/lib/db/schema'
+import { posts as postsSchema, PostStatus, postTags as postTagsSchema, PostType, subscriptions as subscriptionsSchema, tags as tagsSchema } from '@/lib/db/schema'
 import { getErrorMessage } from '@/lib/error-utils'
-import { Tag } from '@/types/blog'
+import { PostWithTags, PublicPost, PublicPostWithContent } from '@/types/cms'
 import { and, count, desc, eq, getTableColumns, ilike, inArray, or, sql } from 'drizzle-orm'
-import { getTranslations } from 'next-intl/server'
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 
 export type PostListItem = Omit<typeof postsSchema.$inferSelect, 'content'>
 
-export type PostWithTags = typeof postsSchema.$inferSelect & {
-  tags: Pick<Tag, 'id' | 'name' | 'createdAt'>[]
-}
-
 interface ListPostsParams {
   pageIndex?: number
   pageSize?: number
-  status?: 'draft' | 'published' | 'archived'
+  status?: PostStatus
   filter?: string
+  postType: PostType
   language?: string
   locale?: string
 }
@@ -43,14 +39,17 @@ export async function listPostsAction({
   status,
   language,
   filter = '',
-  locale = 'en',
-}: ListPostsParams = {}): Promise<ListPostsResult> {
+  postType = 'blog',
+}: ListPostsParams): Promise<ListPostsResult> {
   if (!(await isAdmin())) {
     return actionResponse.forbidden('Admin privileges required.')
   }
 
   try {
     const conditions = []
+    if (postType) {
+      conditions.push(eq(postsSchema.postType, postType))
+    }
     if (status) {
       conditions.push(eq(postsSchema.status, status))
     }
@@ -146,7 +145,6 @@ export async function listPostsAction({
 
 interface GetPostByIdParams {
   postId: string
-  locale?: string
 }
 
 interface GetPostResult {
@@ -210,7 +208,7 @@ type PostActionInput = z.infer<typeof postActionSchema>
 
 interface CreatePostParams {
   data: PostActionInput
-  locale?: string
+  postType: PostType
 }
 interface ActionResult {
   success: boolean
@@ -222,6 +220,7 @@ interface ActionResult {
 
 export async function createPostAction({
   data,
+  postType = 'blog',
 }: CreatePostParams): Promise<ActionResult> {
   const validatedFields = postActionSchema.safeParse(data)
   if (!validatedFields.success) {
@@ -250,6 +249,7 @@ export async function createPostAction({
       .insert(postsSchema)
       .values({
         ...postData,
+        postType: postType,
         authorId: authorId,
         featuredImageUrl: finalFeaturedImageUrl,
         content: postData.content || null,
@@ -272,8 +272,8 @@ export async function createPostAction({
     }
 
     if (postData.status === 'published') {
-      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/blogs`)
-      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/blogs/${postData.slug}`)
+      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/${postType}`)
+      revalidatePath(`${postData.language === DEFAULT_LOCALE ? '' : '/' + postData.language}/${postType}/${postData.slug}`)
     }
 
     return actionResponse.success({ postId: postId })
@@ -282,7 +282,7 @@ export async function createPostAction({
     const errorMessage = getErrorMessage(error)
     if ((error as any)?.cause?.code === '23505') {
       return actionResponse.conflict(
-        `Slug '${validatedFields.data.slug}' already exists for language '${validatedFields.data.language}'.`
+        `Slug '${validatedFields.data.slug}' already exists.`
       )
     }
     return actionResponse.error(errorMessage)
@@ -291,7 +291,6 @@ export async function createPostAction({
 
 interface UpdatePostParams {
   data: PostActionInput
-  locale?: string
 }
 
 export async function updatePostAction({
@@ -329,6 +328,7 @@ export async function updatePostAction({
         slug: postsSchema.slug,
         language: postsSchema.language,
         status: postsSchema.status,
+        postType: postsSchema.postType,
       })
       .from(postsSchema)
       .where(eq(postsSchema.id, postId))
@@ -339,10 +339,14 @@ export async function updatePostAction({
     }
     const currentPost = currentPostData[0]
 
+    // Use provided postType or keep existing one
+    const finalPostType = currentPost.postType
+
     await db
       .update(postsSchema)
       .set({
         ...postUpdateData,
+        postType: finalPostType,
         featuredImageUrl: finalFeaturedImageUrl,
         content: postUpdateData.content || null,
         description: postUpdateData.description || null,
@@ -360,12 +364,12 @@ export async function updatePostAction({
       await db.insert(postTagsSchema).values(newTagAssociations)
     }
 
-    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/blogs`)
-    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/blogs/${currentPost.slug}`)
+    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/${finalPostType}`)
+    revalidatePath(`${currentPost.language === DEFAULT_LOCALE ? '' : '/' + currentPost.language}/${finalPostType}/${currentPost.slug}`)
 
     if (postUpdateData.status === 'published') {
       revalidatePath(
-        `${postUpdateData.language === DEFAULT_LOCALE ? '' : '/' + postUpdateData.language}/blogs/${postUpdateData.slug}`
+        `${postUpdateData.language === DEFAULT_LOCALE ? '' : '/' + postUpdateData.language}/${finalPostType}/${postUpdateData.slug}`
       )
     }
 
@@ -384,15 +388,11 @@ export async function updatePostAction({
 
 interface DeletePostParams {
   postId: string
-  locale: string
 }
 
 export async function deletePostAction({
   postId,
-  locale,
 }: DeletePostParams): Promise<ActionResult> {
-  const t = await getTranslations({ locale, namespace: 'DashboardBlogs.Delete' })
-
   if (!(await isAdmin())) {
     return actionResponse.forbidden('Admin privileges required.')
   }
@@ -406,21 +406,22 @@ export async function deletePostAction({
       .select({
         slug: postsSchema.slug,
         language: postsSchema.language,
+        postType: postsSchema.postType,
       })
       .from(postsSchema)
       .where(eq(postsSchema.id, postId))
       .limit(1)
 
     if (!postDetailsData || postDetailsData.length === 0) {
-      return actionResponse.notFound(t('errorFetching'))
+      return actionResponse.notFound('Failed to fetch post information.')
     }
     const postDetails = postDetailsData[0]
 
     await db.delete(postsSchema).where(eq(postsSchema.id, postId))
 
     if (postDetails?.slug && postDetails?.language) {
-      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/blogs`)
-      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/blogs/${postDetails.slug}`)
+      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/${postDetails.postType}`)
+      revalidatePath(`${postDetails?.language === DEFAULT_LOCALE ? '' : '/' + postDetails?.language}/${postDetails.postType}/${postDetails.slug}`)
     }
 
     return actionResponse.success({ postId: postId })
@@ -437,29 +438,13 @@ export async function deletePostAction({
 /**
  * User-side functionality
  */
-export type PublicPost = Pick<
-  typeof postsSchema.$inferSelect,
-  | 'id'
-  | 'language'
-  | 'title'
-  | 'slug'
-  | 'description'
-  | 'featuredImageUrl'
-  | 'status'
-  | 'visibility'
-  | 'isPinned'
-  | 'publishedAt'
-  | 'createdAt'
-> & {
-  tags: string | null
-}
-
 interface ListPublishedPostsParams {
   pageIndex?: number
   pageSize?: number
   tagId?: string | null
-  locale?: string
   visibility?: 'public' // only public posts, for generateStaticParams
+  postType: PostType
+  locale: string
 }
 
 interface ListPublishedPostsResult {
@@ -475,16 +460,16 @@ export async function listPublishedPostsAction({
   pageIndex = 0,
   pageSize = 60,
   tagId = null,
-  locale = 'en',
-  visibility,
-}: ListPublishedPostsParams = {}): Promise<ListPublishedPostsResult> {
+  postType = 'blog',
+  visibility = 'public',
+  locale = DEFAULT_LOCALE,
+}: ListPublishedPostsParams): Promise<ListPublishedPostsResult> {
   try {
     const conditions = [eq(postsSchema.status, 'published')]
+    conditions.push(eq(postsSchema.visibility, visibility))
+    conditions.push(eq(postsSchema.postType, postType))
     if (locale) {
       conditions.push(eq(postsSchema.language, locale))
-    }
-    if (visibility && visibility === 'public') {
-      conditions.push(eq(postsSchema.visibility, 'public'))
     }
 
     const postsSubquery = db
@@ -545,26 +530,9 @@ export async function listPublishedPostsAction({
   }
 }
 
-export type PublicPostWithContent = Pick<
-  typeof postsSchema.$inferSelect,
-  | 'id'
-  | 'language'
-  | 'title'
-  | 'slug'
-  | 'description'
-  | 'content'
-  | 'featuredImageUrl'
-  | 'status'
-  | 'visibility'
-  | 'isPinned'
-  | 'publishedAt'
-  | 'createdAt'
-> & {
-  tags: string | null
-}
-
 interface GetPublishedPostBySlugParams {
   slug: string
+  postType: PostType
   locale?: string
 }
 
@@ -579,29 +547,29 @@ interface GetPublishedPostBySlugResult {
 
 export async function getPublishedPostBySlugAction({
   slug,
+  postType = 'blog',
   locale = 'en',
 }: GetPublishedPostBySlugParams): Promise<GetPublishedPostBySlugResult> {
   if (!slug) {
     return actionResponse.badRequest('Slug is required.')
   }
 
-  const t = await getTranslations({ locale, namespace: 'Blogs' })
-
   try {
+    const conditions = [
+      eq(postsSchema.slug, slug),
+      eq(postsSchema.language, locale),
+      eq(postsSchema.status, 'published'),
+      eq(postsSchema.postType, postType)
+    ]
+
     const postData = await db
       .select()
       .from(postsSchema)
-      .where(
-        and(
-          eq(postsSchema.slug, slug),
-          eq(postsSchema.language, locale),
-          eq(postsSchema.status, 'published')
-        )
-      )
+      .where(and(...conditions))
       .limit(1)
 
     if (!postData || postData.length === 0) {
-      return actionResponse.notFound(t('BlogDetail.notFound'))
+      return actionResponse.notFound('Post not found.')
     }
     const post = postData[0]
 
@@ -696,3 +664,110 @@ async function checkUserSubscription(userId: string): Promise<boolean> {
   }
 }
 // --- End: [custom] check user subscription or custom logic
+
+interface GetRelatedPostsParams {
+  postId: string
+  postType: PostType
+  locale: string
+  limit?: number
+}
+
+interface GetRelatedPostsResult {
+  success: boolean
+  data?: {
+    posts?: PublicPost[]
+  }
+  error?: string
+}
+
+export async function getRelatedPostsAction({
+  postId,
+  postType,
+  locale = DEFAULT_LOCALE,
+  limit = 10,
+}: GetRelatedPostsParams): Promise<GetRelatedPostsResult> {
+  try {
+    // Get tags for the current post
+    const postTagsData = await db
+      .select({ tagId: postTagsSchema.tagId })
+      .from(postTagsSchema)
+      .where(eq(postTagsSchema.postId, postId))
+      .limit(1)
+
+    if (!postTagsData || postTagsData.length === 0) {
+      // No tags, return empty array
+      return actionResponse.success({ posts: [] })
+    }
+
+    const tagId = postTagsData[0].tagId
+
+    // Find other posts with the same tag
+    const relatedPostIds = await db
+      .select({ postId: postTagsSchema.postId })
+      .from(postTagsSchema)
+      .where(eq(postTagsSchema.tagId, tagId))
+
+    const postIdsArray = relatedPostIds
+      .map((r) => r.postId)
+      .filter((id) => id !== postId) // Exclude current post
+
+    if (postIdsArray.length === 0) {
+      return actionResponse.success({ posts: [] })
+    }
+
+    // Get the related posts with tag names
+    const postsSubquery = db
+      .$with('posts_with_tags')
+      .as(
+        db
+          .select({
+            ...getTableColumns(postsSchema),
+            tag_ids: sql<string[]>`array_agg(${postTagsSchema.tagId})`.as('tag_ids'),
+            tag_names: sql<string[]>`array_agg(${tagsSchema.name})`.as('tag_names'),
+          })
+          .from(postsSchema)
+          .leftJoin(
+            postTagsSchema,
+            eq(postsSchema.id, postTagsSchema.postId)
+          )
+          .leftJoin(tagsSchema, eq(postTagsSchema.tagId, tagsSchema.id))
+          .where(
+            and(
+              inArray(postsSchema.id, postIdsArray),
+              eq(postsSchema.status, 'published'),
+              eq(postsSchema.postType, postType),
+              eq(postsSchema.language, locale),
+            )
+          )
+          .groupBy(postsSchema.id)
+      )
+
+    const data = await db
+      .with(postsSubquery)
+      .select()
+      .from(postsSubquery)
+      .orderBy(
+        desc(postsSubquery.isPinned),
+        desc(postsSubquery.publishedAt),
+        desc(postsSubquery.createdAt)
+      )
+      .limit(limit)
+
+    const postsWithProcessedTags = (data || []).map((post) => {
+      const tagNames = post.tag_names?.filter(Boolean).join(', ') || null
+      const { tag_ids, tag_names, content, ...restOfPost } = post
+      return {
+        ...restOfPost,
+        tags: tagNames,
+      }
+    })
+
+    return actionResponse.success({
+      posts: postsWithProcessedTags as unknown as PublicPost[],
+    })
+  } catch (error) {
+    console.error('Get Related Posts Action Failed:', error)
+    const errorMessage = getErrorMessage(error)
+    return actionResponse.error(errorMessage)
+  }
+}

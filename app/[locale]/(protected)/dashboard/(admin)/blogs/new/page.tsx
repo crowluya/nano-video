@@ -1,10 +1,10 @@
+import { PostEditorClient } from "@/components/cms/PostEditorClient";
 import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
-import CreateBlogClient from "./CreateBlogClient";
 
 type Params = Promise<{ locale: string }>;
 
@@ -31,9 +31,15 @@ export async function generateMetadata({
 }
 
 export default function CreateBlogPage() {
+  const r2PublicUrl = process.env.R2_PUBLIC_URL || "";
+
   return (
     <Suspense fallback={<Loader2 className="w-4 h-4 animate-spin" />}>
-      <CreateBlogClient />
+      <PostEditorClient
+        postType="blog"
+        mode="create"
+        r2PublicUrl={r2PublicUrl}
+      />
     </Suspense>
   );
 }

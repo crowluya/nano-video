@@ -1,17 +1,17 @@
 "use client";
 
-import { listPublishedPostsAction, PublicPost } from "@/actions/blogs/posts";
-import { BlogPost, Tag } from "@/types/blog";
+import { listPublishedPostsAction } from "@/actions/blogs/posts";
+import { PostType } from "@/lib/db/schema";
+import { PostBase, PublicPost, Tag } from "@/types/cms";
 import dayjs from "dayjs";
 import { Loader2 } from "lucide-react";
-import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { toast } from "sonner";
-import { BlogCard } from "./BlogCard";
+import { PostCard } from "./PostCard";
 import { TagSelector } from "./TagSelector";
 
-function mapServerPostToBlogCard(post: PublicPost, locale: string): BlogPost {
+function mapServerPostToCard(post: PublicPost, locale: string): PostBase {
   return {
     locale: locale,
     title: post.title,
@@ -24,29 +24,37 @@ function mapServerPostToBlogCard(post: PublicPost, locale: string): BlogPost {
     status: post.status ?? "published",
     visibility: post.visibility ?? "public",
     isPinned: post.isPinned ?? false,
-    content: "", // content is not used in the blog card
+    content: "", // content is not used in the card
   };
 }
 
-interface BlogListProps {
-  localPosts: BlogPost[];
+interface PostListProps {
+  postType: PostType;
+  locale: string;
+  baseUrl: string;
+  localPosts: PostBase[];
   initialPosts: PublicPost[];
   initialTotal: number;
-  serverTags: Tag[];
-  locale: string;
+  serverTags?: Tag[];
   pageSize: number;
+  showTagSelector?: boolean;
+  gridClassName?: string;
+  emptyMessage?: string;
 }
 
-export function BlogList({
+export function PostList({
+  postType,
+  baseUrl,
   localPosts,
   initialPosts,
   initialTotal,
-  serverTags,
+  serverTags = [],
   locale,
   pageSize,
-}: BlogListProps) {
-  const t = useTranslations("Blogs");
-
+  showTagSelector = false,
+  gridClassName = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+  emptyMessage = "No posts found.",
+}: PostListProps) {
   const [posts, setPosts] = useState<PublicPost[]>(initialPosts);
   const [pageIndex, setPageIndex] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(
@@ -66,8 +74,9 @@ export function BlogList({
     const result = await listPublishedPostsAction({
       pageIndex: pageIndex,
       pageSize: pageSize,
+      tagId: showTagSelector ? selectedTagId : undefined,
+      postType: postType,
       locale: locale,
-      tagId: selectedTagId,
     });
 
     if (result.success && result.data?.posts) {
@@ -78,19 +87,22 @@ export function BlogList({
       setHasMore(posts.length + newPosts.length < newTotal);
     } else {
       console.error("Failed to load more posts:", result.error);
-      toast.error(t("loadMorePostsFailed"), {
+      toast.error("Failed to load more posts", {
         description: result.error,
       });
     }
     setIsLoading(false);
   }, [
     pageIndex,
-    locale,
     isLoading,
     hasMore,
     initialTotal,
     posts.length,
     selectedTagId,
+    pageSize,
+    postType,
+    showTagSelector,
+    locale,
   ]);
 
   useEffect(() => {
@@ -114,8 +126,9 @@ export function BlogList({
     const result = await listPublishedPostsAction({
       pageIndex: 0,
       pageSize: pageSize,
-      locale: locale,
       tagId: tagId,
+      postType: postType,
+      locale: locale,
     });
 
     if (result.success && result.data?.posts) {
@@ -124,7 +137,7 @@ export function BlogList({
       setHasMore(result.data.posts.length < (result.data.count ?? 0));
     } else {
       console.error("Failed to filter posts by tag:", result.error);
-      toast.error(t("filterPostsFailed"), {
+      toast.error("Failed to filter posts by tag", {
         description: result.error,
       });
     }
@@ -134,7 +147,7 @@ export function BlogList({
 
   return (
     <>
-      {serverTags.length > 0 && (
+      {showTagSelector && serverTags.length > 0 && (
         <TagSelector
           tags={serverTags}
           selectedTagId={selectedTagId}
@@ -148,21 +161,21 @@ export function BlogList({
         </div>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {selectedTagId === null &&
+          <div className={gridClassName}>
+            {(!showTagSelector || selectedTagId === null) &&
               localPosts.map((post) => (
-                <BlogCard
+                <PostCard
                   key={`local-${post.slug}`}
-                  locale={locale}
                   post={post}
+                  baseUrl={baseUrl}
                 />
               ))}
 
             {posts.map((post) => (
-              <BlogCard
+              <PostCard
                 key={`server-${post.id}`}
-                locale={locale}
-                post={mapServerPostToBlogCard(post, locale)}
+                post={mapServerPostToCard(post, locale)}
+                baseUrl={baseUrl}
               />
             ))}
           </div>
@@ -172,16 +185,14 @@ export function BlogList({
               {isLoading ? (
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
               ) : (
-                <span className="text-gray-500">{t("loadMorePosts")}</span>
+                <span className="text-gray-500">Loading more posts...</span>
               )}
             </div>
           )}
 
           {!hasMore && posts.length >= 0 && (
             <p className="text-center text-gray-500 py-8 text-sm">
-              {posts.length === 0
-                ? t("noPostsFoundForThisTag")
-                : t("reachedTheEnd")}
+              {posts.length === 0 ? emptyMessage : "You've reached the end."}
             </p>
           )}
         </>
