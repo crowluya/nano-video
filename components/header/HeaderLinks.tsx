@@ -25,21 +25,21 @@ const HeaderLinks = () => {
   }
 
   return (
-    <NavigationMenu className="hidden lg:block">
-      <NavigationMenuList>
+    <NavigationMenu viewport={false} className="hidden lg:block">
+      <NavigationMenuList className="flex-wrap">
         {headerLinks.map((link) => (
-          <NavigationMenuItem key={link.name} className="relative">
+          <NavigationMenuItem key={link.name}>
             {link.items ? (
               <>
-                <NavigationMenuTrigger className="bg-transparent rounded-xl px-4 py-2 flex items-center gap-x-1 hover:bg-accent-foreground/10 hover:text-accent-foreground text-sm font-normal text-muted-foreground">
+                <NavigationMenuTrigger className="">
                   {link.name}
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="absolute top-full left-0 bg-background dark:bg-accent border rounded-md shadow-lg">
-                  <ul className=" w-[250px] gap-1 p-2">
+                <NavigationMenuContent>
+                  <ul className="w-[250px] gap-1">
                     {link.items.map((child) => (
                       <li
                         key={child.name}
-                        className="hover:bg-accent-foreground/10 rounded-md px-4 py-2"
+                        className="hover:bg-accent-foreground/10"
                       >
                         <NavigationMenuLink asChild>
                           <I18nLink
