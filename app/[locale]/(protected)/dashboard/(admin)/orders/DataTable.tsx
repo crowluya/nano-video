@@ -260,7 +260,7 @@ export function OrdersDataTable<TData, TValue>({
                             ? `${header.column.getAfter("right")}px`
                             : undefined,
                         zIndex: header.column.getIsPinned() ? 20 : 1,
-                        backgroundColor: "hsl(var(--background))",
+                        backgroundColor: "var(--background)",
                         boxShadow:
                           header.column.getIsPinned() === "left" &&
                           header.column.getIsLastColumn("left")
@@ -309,7 +309,7 @@ export function OrdersDataTable<TData, TValue>({
                             ? `${cell.column.getAfter("right")}px`
                             : undefined,
                         zIndex: cell.column.getIsPinned() ? 20 : 1,
-                        backgroundColor: "hsl(var(--background))",
+                        backgroundColor: "var(--background)",
                         boxShadow:
                           cell.column.getIsPinned() === "left" &&
                           cell.column.getIsLastColumn("left")
