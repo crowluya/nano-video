@@ -40,14 +40,14 @@
             "href": "https://flux-kontext.nexty.dev/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "AI Image Generator Demo Based on Nexty.dev"
+            "description": "AI Image Generator Demo Based on NEXTY.DEV"
           },
           {
             "name": "Directory Boilerplate Demo",
             "href": "https://dofollow.tools/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "Directory Boilerplate Demo Based on Nexty.dev"
+            "description": "Directory Boilerplate Demo Based on NEXTY.DEV"
           }
         ]
       }
@@ -86,7 +86,6 @@
         "confirmButton": "确认退订",
         "cancelButton": "取消",
         "processing": "处理中...",
-        "retryButton": "重试",
         "finalWarning": "此操作无法撤销。您可以随时重新订阅。",
         "errorInvalidToken": "无效的退订链接。链接可能已损坏或过期。"
       }
@@ -153,7 +152,7 @@
     }
   },
   "Home": {
-    "title": "Nexty.dev",
+    "title": "NEXTY.DEV",
     "tagLine": "多场景 Next.js 全栈 SaaS 开发模板",
     "description": "Nexty 是一个功能齐全的 Next.js SaaS 全栈模板，让你能够快速构建各种商业网站，无论是内容站、工具站还是集成 AI 能力的付费网站。"
   },
@@ -243,7 +242,7 @@
   },
   "Blogs": {
     "title": "博客列表",
-    "description": "分享 Next.js 生态圈和 Nexty.dev 模板动态。",
+    "description": "分享 Next.js 生态圈和 NEXTY.DEV 模板动态。",
     "emptyState": {
       "title": "暂无博客文章",
       "description": "我们正在创作精彩内容，敬请期待！"

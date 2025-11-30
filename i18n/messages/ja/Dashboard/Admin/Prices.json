@@ -1,14 +1,10 @@
 {
   "title": "料金プラン管理",
   "description": "テスト環境および本番環境の料金プランを管理できます（管理者専用）。",
-  "createNewPlan": "新規プラン作成",
   "PricesDataTable": {
     "deleteError": "プラン削除に失敗しました（ステータス: {status}）",
     "deleteError2": "プランの削除処理に失敗しました",
     "deleteSuccess": "料金プラン「{title}」が正常に削除されました。",
-    "allEnvironments": "すべての環境",
-    "test": "テスト環境",
-    "live": "本番環境",
     "noPlansFound": "料金プランが登録されていません。"
   },
   "DeletePlanDialog": {
@@ -40,11 +36,8 @@
     "cardTitle": "カードタイトル",
     "cardDescription": "カード説明文",
     "cardDescriptionPlaceholder": "カード上に表示される簡潔な説明文...",
-    "stripeIntegration": "Stripe連携（任意）",
-    "stripeIntegrationDescription": "自動決済処理のためにStripe価格IDと連携できます。手動設定の場合は空欄にしてください。",
     "verifyAndFetch": "検証して取得",
     "stripePriceIdDescription": "StripeダッシュボードからPrice ID（{environment}環境）を入力してください。",
-    "currencyCodeDescription": "小文字3文字のISO通貨コード。",
     "displayAndContent": "表示内容設定",
     "displayPrice": "表示価格",
     "displayPriceDescription": "カード上に表示される価格。",

@@ -41,14 +41,14 @@
             "href": "https://flux-kontext.nexty.dev/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "AI Image Generator Demo Based on Nexty.dev"
+            "description": "AI Image Generator Demo Based on NEXTY.DEV"
           },
           {
             "name": "Directory Boilerplate Demo",
             "href": "https://dofollow.tools/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "Directory Boilerplate Demo Based on Nexty.dev"
+            "description": "Directory Boilerplate Demo Based on NEXTY.DEV"
           }
         ]
       }
@@ -87,7 +87,6 @@
         "confirmButton": "配信停止する",
         "cancelButton": "キャンセル",
         "processing": "処理中...",
-        "retryButton": "再試行",
         "finalWarning": "この操作は取り消すことができません。後でいつでも再登録できます。",
         "errorInvalidToken": "無効な配信停止リンクです。リンクが破損しているか、期限切れの可能性があります。"
       }
@@ -154,7 +153,7 @@
     }
   },
   "Home": {
-    "title": "Nexty.dev",
+    "title": "NEXTY.DEV",
     "tagLine": "最新の Next.js フルスタック SaaS テンプレート",
     "description": "Next.js と Supabase を活用した本格的な SaaS 開発キット。コンテンツ配信、AI ツール、サブスクリプションサービスを迅速に構築できます。"
   },

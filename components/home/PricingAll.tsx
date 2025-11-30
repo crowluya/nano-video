@@ -1,11 +1,9 @@
 /**
  * Tips:
- * This component is equivalent to Pricing.tsx on nexty v1.x
  * Use this component if you need to display all active pricing cards at once
  * If you want to display different pricing cards based on different payment types (monthly, annual, one_time), use Pricing.tsx
  *
  * 提示：
- * 该组件等同于 nexty v1.x 中的 Pricing.tsx 组件
  * 如果你希望一次性展示所有定价卡片，请使用这个组件
  * 如果你希望根据不同的支付类型（monthly, annual, one_time）来展示不同的定价卡片，请使用 Pricing.tsx
  */

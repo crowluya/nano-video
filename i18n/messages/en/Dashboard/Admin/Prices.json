@@ -1,14 +1,10 @@
 {
   "title": "Pricing Plans",
   "description": "Manage pricing plans for test and live environments. (Admin only).",
-  "createNewPlan": "Create New Plan",
   "PricesDataTable": {
     "deleteError": "Failed to delete plan (status: {status})",
     "deleteError2": "Failed to delete plan",
     "deleteSuccess": "Plan {title} deleted successfully.",
-    "allEnvironments": "All Environments",
-    "test": "Test",
-    "live": "Live",
     "noPlansFound": "No pricing plans found."
   },
   "DeletePlanDialog": {
@@ -40,11 +36,8 @@
     "cardTitle": "Card Title",
     "cardDescription": "Card Description",
     "cardDescriptionPlaceholder": "Short description shown on the card...",
-    "stripeIntegration": "Stripe Integration (Optional)",
-    "stripeIntegrationDescription": "Link this plan to a Stripe Price ID for automated checkout. Leave blank for manual configuration.",
     "verifyAndFetch": "Verify & Fetch",
     "stripePriceIdDescription": "Enter the Price ID from your Stripe Dashboard ({environment} environment).",
-    "currencyCodeDescription": "Lowercase, 3-letter ISO code.",
     "displayAndContent": "Display & Content",
     "displayPrice": "Display Price",
     "displayPriceDescription": "The price shown on the card.",

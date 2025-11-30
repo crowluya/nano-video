@@ -1,14 +1,10 @@
 {
   "title": "定价卡片管理",
   "description": "管理测试环境和生产环境的各项定价卡片（仅管理员可用）。",
-  "createNewPlan": "新建定价卡片",
   "PricesDataTable": {
     "deleteError": "删除卡片失败（状态码：{status}）",
     "deleteError2": "删除定价卡片失败",
     "deleteSuccess": "定价卡片「{title}」已成功删除。",
-    "allEnvironments": "全部",
-    "test": "测试环境",
-    "live": "生产环境",
     "noPlansFound": "暂无定价卡片。"
   },
   "DeletePlanDialog": {
@@ -40,11 +36,8 @@
     "cardTitle": "卡片标题",
     "cardDescription": "卡片描述",
     "cardDescriptionPlaceholder": "在卡片上显示的简短描述...",
-    "stripeIntegration": "Stripe集成（可选）",
-    "stripeIntegrationDescription": "将此方案关联到Stripe价格ID以实现自动结账。如需手动配置，请留空。",
     "verifyAndFetch": "验证并获取",
     "stripePriceIdDescription": "输入来自Stripe控制台的价格ID（{environment}环境）。",
-    "currencyCodeDescription": "小写三字母ISO货币代码。",
     "displayAndContent": "显示与内容",
     "displayPrice": "显示价格",
     "displayPriceDescription": "在卡片上显示的价格。",

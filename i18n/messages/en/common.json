@@ -40,14 +40,14 @@
             "href": "https://flux-kontext.nexty.dev/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "AI Image Generator Demo Based on Nexty.dev"
+            "description": "AI Image Generator Demo Based on NEXTY.DEV"
           },
           {
             "name": "Directory Boilerplate Demo",
             "href": "https://dofollow.tools/",
             "target": "_blank",
             "rel": "noopener noreferrer nofollow",
-            "description": "Directory Boilerplate Demo Based on Nexty.dev"
+            "description": "Directory Boilerplate Demo Based on NEXTY.DEV"
           }
         ]
       }
@@ -86,7 +86,6 @@
         "confirmButton": "Yes, Unsubscribe",
         "cancelButton": "Cancel",
         "processing": "Processing...",
-        "retryButton": "Try Again",
         "finalWarning": "This action cannot be undone. You can always resubscribe later.",
         "errorInvalidToken": "Invalid unsubscribe link. The link may be corrupted or expired."
       }
@@ -153,7 +152,7 @@
     }
   },
   "Home": {
-    "title": "Nexty.dev",
+    "title": "NEXTY.DEV",
     "tagLine": "A Modern Next.js Full-Stack SaaS Template",
     "description": "A production-ready Next.js and Supabase starter template for building modern SaaS applications. Launch your content, AI, or subscription service faster."
   },
@@ -243,7 +242,7 @@
   },
   "Blogs": {
     "title": "Blog Posts",
-    "description": "Insights on Next.js ecosystem and Nexty.dev template updates.",
+    "description": "Insights on Next.js ecosystem and NEXTY.DEV template updates.",
     "emptyState": {
       "title": "No blog posts",
       "description": "We are creating exciting content, please stay tuned!"

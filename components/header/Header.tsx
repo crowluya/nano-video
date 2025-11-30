@@ -27,7 +27,9 @@ const Header = async () => {
             className="flex items-center space-x-1"
           >
             <Image src="/logo.png" alt="Logo" width={28} height={28} />
-            <span className={cn("text-md font-medium")}>{t("title")}</span>
+            <span className={cn("text-xl font-medium highlight-text")}>
+              {t("title")}
+            </span>
           </I18nLink>
 
           <HeaderLinks />

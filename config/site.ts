@@ -11,7 +11,7 @@ const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL
 const EMAIL_URL = 'hi@nexty.dev'
 
 export const siteConfig: SiteConfig = {
-  name: "Nexty.dev",
+  name: "NEXTY.DEV",
   url: BASE_URL,
   authors: [
     {

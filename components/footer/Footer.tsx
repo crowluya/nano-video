@@ -32,7 +32,7 @@ export default async function Footer() {
             <div className="w-full flex flex-col sm:flex-row lg:flex-col gap-4 col-span-full md:col-span-2">
               <div className="space-y-4 flex-1">
                 <div className="items-center space-x-2 flex">
-                  <div className="text-gray-50 text-2xl font-semibold flex items-center gap-2">
+                  <div className="text-gray-50 text-xl font-medium flex items-center gap-2">
                     <Image
                       src="/logo.png"
                       alt={siteConfig.name}
