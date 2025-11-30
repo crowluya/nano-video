@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 
 let stripe: Stripe | null = null;
 
-const isStripeEnabled = process.env.NEXT_PUBLIC_ENABLE_STRIPE === 'true' && process.env.STRIPE_SECRET_KEY;
+const isStripeEnabled = process.env.STRIPE_SECRET_KEY && process.env.STRIPE_WEBHOOK_SECRET;
 
 if (isStripeEnabled) {
   stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
@@ -10,7 +10,7 @@ if (isStripeEnabled) {
     typescript: true,
   });
 } else {
-  console.warn('Warning: NEXT_PUBLIC_ENABLE_STRIPE is false, or STRIPE_SECRET_KEY is not set');
+  console.warn('Warning: STRIPE_SECRET_KEY or STRIPE_WEBHOOK_SECRET is not set');
 }
 
 export { isStripeEnabled, stripe };

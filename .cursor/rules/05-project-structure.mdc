@@ -48,5 +48,4 @@ Key directories and files:
 - **UI Framework**: shadcn/ui + Tailwind.
 - **State Management**: Zustand.
 - **Database**: PostgreSQL via Drizzle ORM; schema in `lib/db/schema.ts`, migrations in `lib/db/migrations`.
-- **Payments**: Stripe (conditional init via `NEXT_PUBLIC_ENABLE_STRIPE`).
 - **Storage**: Cloudflare R2 via AWS SDK S3-compatible client.
