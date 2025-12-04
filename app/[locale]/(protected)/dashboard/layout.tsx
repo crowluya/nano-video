@@ -13,10 +13,10 @@ export default async function DashboardLayout({
     <AuthGuard>
       <SidebarProvider>
         <DashboardSidebar />
-        <SidebarInset className="overflow-x-hidden">
+        <SidebarInset className="min-w-0">
           <SidebarInsetHeader />
-          <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-            <div className="min-h-screen flex-1 rounded-xl md:min-h-min">
+          <div className="flex flex-1 flex-col gap-4 p-4 pt-0 min-w-0">
+            <div className="min-h-screen flex-1 rounded-xl md:min-h-min min-w-0">
               {children}
             </div>
           </div>
