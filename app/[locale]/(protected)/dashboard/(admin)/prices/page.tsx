@@ -35,6 +35,8 @@ export async function generateMetadata({
 }
 
 export default async function AdminPricesPage() {
+  const t = await getTranslations("Prices");
+
   const result = await getAdminPricingPlans();
 
   let plans: PricingPlan[] = [];
@@ -48,16 +50,16 @@ export default async function AdminPricesPage() {
     <div className="space-y-6">
       <Alert className="border-primary/50 bg-primary/20 dark:bg-primary/20 mb-0 text-primary">
         <Info className="h-4 w-4" />
-        <AlertTitle className="text-primary">Environment Isolation</AlertTitle>
+        <AlertTitle className="text-primary">
+          {t("EnvironmentAlert.title")}
+        </AlertTitle>
         <AlertDescription className="text-primary">
           <ul className="list-inside list-disc text-sm">
             <li>
-              <strong>Test</strong> pricing plans only show in the
-              test/development environments
+              <strong>Test</strong> {t("EnvironmentAlert.testDescription")}
             </li>
             <li>
-              <strong>Live</strong> pricing plans only show in the production
-              environment
+              <strong>Live</strong> {t("EnvironmentAlert.liveDescription")}
             </li>
           </ul>
         </AlertDescription>

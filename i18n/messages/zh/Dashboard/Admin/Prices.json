@@ -22,6 +22,11 @@
     "title": "编辑定价卡片",
     "description": "修改「{title}（{environment}）」定价卡片的详细信息。（仅管理员可用）"
   },
+  "EnvironmentAlert": {
+    "title": "环境隔离",
+    "testDescription": "定价卡片仅在测试/开发环境中显示",
+    "liveDescription": "定价卡片仅在生产环境中显示"
+  },
   "PricePlanForm": {
     "stripePriceIdRequired": "请先输入Stripe价格ID。",
     "verifyStripeError": "验证价格ID失败",

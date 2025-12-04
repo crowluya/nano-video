@@ -22,6 +22,11 @@
     "title": "Edit Plan",
     "description": "Modify the details for plan: {title} ({environment}).(Admin only)."
   },
+  "EnvironmentAlert": {
+    "title": "Environment Isolation",
+    "testDescription": "pricing plans only show in the test/development environments",
+    "liveDescription": "pricing plans only show in the production environment"
+  },
   "PricePlanForm": {
     "stripePriceIdRequired": "Please enter a Stripe Price ID first.",
     "verifyStripeError": "Failed to verify Price ID",
