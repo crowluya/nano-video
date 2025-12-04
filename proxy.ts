@@ -6,7 +6,7 @@ const intlMiddleware = createIntlMiddleware(routing);
 
 const referralParams = ['utm_source', 'ref', 'via', 'aff', 'referral', 'referral_code'];
 
-export async function middleware(request: NextRequest): Promise<NextResponse> {
+export async function proxy(request: NextRequest): Promise<NextResponse> {
 
   let referralValue: string | null = null;
 

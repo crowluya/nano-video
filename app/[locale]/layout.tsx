@@ -27,7 +27,7 @@ import { ThemeProvider } from "next-themes";
 import { Inter as FontSans } from "next/font/google";
 import { notFound } from "next/navigation";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -59,7 +59,7 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   const COOKIE_CONSENT_ENABLED =
