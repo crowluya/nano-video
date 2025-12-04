@@ -39,10 +39,28 @@ import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { extractJsonFromText, isValidJsonString } from "@/lib/safeJson";
 import { formatCurrency } from "@/lib/utils";
 import { useCompletion } from "@ai-sdk/react";
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   AlertCircle,
   Code,
+  GripVertical,
   Info,
   Loader2,
   PlusCircle,
@@ -179,10 +197,35 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
     },
   });
 
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove, move } = useFieldArray({
     control: form.control,
     name: "features",
   });
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    }),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (over && active.id !== over.id) {
+      const oldIndex = fields.findIndex((field) => field.id === active.id);
+      const newIndex = fields.findIndex((field) => field.id === over.id);
+
+      if (oldIndex !== -1 && newIndex !== -1) {
+        const newFields = arrayMove(fields, oldIndex, newIndex);
+        form.setValue("features", newFields, { shouldValidate: true });
+      }
+    }
+  };
 
   const watchedValues = useWatch({ control: form.control });
   const watchProvider = form.watch("provider");
@@ -1237,113 +1280,47 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
                   <FormDescription className="mb-2">
                     {t("featuresListDescription")}
                   </FormDescription>
-                  <div className="space-y-3">
-                    {fields.map((item, index) => (
-                      <div
-                        key={item.id}
-                        className="flex flex-col gap-2 p-2 border rounded"
-                      >
-                        <div className="flex items-center gap-2">
-                          <FormField
-                            control={form.control}
-                            name={`features.${index}.description`}
-                            render={({ field }) => (
-                              <FormItem className="flex-1">
-                                <FormControl>
-                                  <Input
-                                    placeholder="Feature description"
-                                    {...field}
-                                    disabled={isLoading}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          />
-                        </div>
-                        <div className="flex items-center justify-between gap-2">
-                          <FormField
-                            control={form.control}
-                            name={`features.${index}.href`}
-                            render={({ field }) => (
-                              <FormItem className="flex-1">
-                                <FormControl>
-                                  <Input
-                                    placeholder="Feature href"
-                                    {...field}
-                                    value={field.value ?? ""}
-                                    disabled={isLoading}
-                                  />
-                                </FormControl>
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name={`features.${index}.included`}
-                            render={({ field }) => (
-                              <FormItem className="flex items-center space-x-2 space-y-0">
-                                <FormControl>
-                                  <Checkbox
-                                    checked={field.value ?? false}
-                                    onCheckedChange={field.onChange}
-                                    disabled={isLoading}
-                                  />
-                                </FormControl>
-                                <FormLabel className="text-sm font-normal whitespace-nowrap mt-0">
-                                  {t("included")}
-                                </FormLabel>
-                              </FormItem>
-                            )}
-                          />
-                          <FormField
-                            control={form.control}
-                            name={`features.${index}.bold`}
-                            render={({ field }) => (
-                              <FormItem className="flex items-center space-x-2 space-y-0">
-                                <FormControl>
-                                  <Checkbox
-                                    checked={field.value ?? false}
-                                    onCheckedChange={field.onChange}
-                                    disabled={isLoading}
-                                  />
-                                </FormControl>
-                                <FormLabel className="text-sm font-normal whitespace-nowrap mt-0">
-                                  {t("bold")}
-                                </FormLabel>
-                              </FormItem>
-                            )}
-                          />
-                          <Button
-                            type="button"
-                            variant="ghost"
-                            size="icon"
-                            onClick={() => remove(index)}
-                            disabled={isLoading}
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                    ))}
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      onClick={() =>
-                        append({
-                          description: "",
-                          included: true,
-                          bold: false,
-                          href: "",
-                        })
-                      }
-                      disabled={isLoading}
-                      className="mt-2"
+                  <DndContext
+                    sensors={sensors}
+                    collisionDetection={closestCenter}
+                    onDragEnd={handleDragEnd}
+                  >
+                    <SortableContext
+                      items={fields.map((field) => field.id)}
+                      strategy={verticalListSortingStrategy}
                     >
-                      <PlusCircle className="mr-2 h-4 w-4" /> {t("addFeature")}
-                    </Button>
-                  </div>
+                      <div className="space-y-3">
+                        {fields.map((item, index) => (
+                          <SortableFeatureItem
+                            key={item.id}
+                            id={item.id}
+                            index={index}
+                            form={form}
+                            remove={remove}
+                            isLoading={isLoading}
+                            t={t}
+                          />
+                        ))}
+                      </div>
+                    </SortableContext>
+                  </DndContext>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      append({
+                        description: "",
+                        included: true,
+                        bold: false,
+                        href: "",
+                      })
+                    }
+                    disabled={isLoading}
+                    className="mt-2"
+                  >
+                    <PlusCircle className="mr-2 h-4 w-4" /> {t("addFeature")}
+                  </Button>
                 </div>
 
                 {/* Highlight Section */}
@@ -1682,6 +1659,141 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
         </div>
       </form>
     </Form>
+  );
+}
+
+/**
+ * Sortable Feature Item Component
+ * Wraps each feature item with drag-and-drop functionality
+ */
+interface SortableFeatureItemProps {
+  id: string;
+  index: number;
+  form: any;
+  remove: (index: number) => void;
+  isLoading: boolean;
+  t: any;
+}
+
+function SortableFeatureItem({
+  id,
+  index,
+  form,
+  remove,
+  isLoading,
+  t,
+}: SortableFeatureItemProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="flex flex-col gap-2 p-2 border rounded"
+    >
+      <div className="flex items-center gap-2">
+        <FormField
+          control={form.control}
+          name={`features.${index}.description`}
+          render={({ field }) => (
+            <FormItem className="flex-1">
+              <FormControl>
+                <Input
+                  placeholder="Feature description"
+                  {...field}
+                  disabled={isLoading}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      </div>
+      <div className="flex items-center justify-between gap-2">
+        <FormField
+          control={form.control}
+          name={`features.${index}.href`}
+          render={({ field }) => (
+            <FormItem className="flex-1">
+              <FormControl>
+                <Input
+                  placeholder="Feature href"
+                  {...field}
+                  value={field.value ?? ""}
+                  disabled={isLoading}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name={`features.${index}.included`}
+          render={({ field }) => (
+            <FormItem className="flex items-center space-x-2 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value ?? false}
+                  onCheckedChange={field.onChange}
+                  disabled={isLoading}
+                />
+              </FormControl>
+              <FormLabel className="text-sm font-normal whitespace-nowrap mt-0">
+                {t("included")}
+              </FormLabel>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name={`features.${index}.bold`}
+          render={({ field }) => (
+            <FormItem className="flex items-center space-x-2 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value ?? false}
+                  onCheckedChange={field.onChange}
+                  disabled={isLoading}
+                />
+              </FormControl>
+              <FormLabel className="text-sm font-normal whitespace-nowrap mt-0">
+                {t("bold")}
+              </FormLabel>
+            </FormItem>
+          )}
+        />
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          onClick={() => remove(index)}
+          disabled={isLoading}
+        >
+          <Trash2 className="h-4 w-4" />
+        </Button>
+        <button
+          type="button"
+          className="cursor-grab active:cursor-grabbing touch-none p-2 hover:bg-accent rounded"
+          {...attributes}
+          {...listeners}
+        >
+          <GripVertical className="h-4 w-4 text-muted-foreground" />
+        </button>
+      </div>
+    </div>
   );
 }
 
