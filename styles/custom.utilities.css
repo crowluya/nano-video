@@ -1,6 +1,9 @@
 @import 'tailwindcss';
+@import '@fontsource/science-gothic/latin.css';
 
 @theme inline {
+  --font-science-gothic: 'Science Gothic', sans-serif;
+
   @keyframes rainbow {
     0% {
       background-position: 0%;

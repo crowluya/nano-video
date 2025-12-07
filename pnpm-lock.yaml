@@ -50,6 +50,9 @@ importers:
       '@dnd-kit/utilities':
         specifier: ^3.2.2
         version: 3.2.2(react@19.2.1)
+      '@fontsource/science-gothic':
+        specifier: ^5.2.1
+        version: 5.2.1
       '@hookform/resolvers':
         specifier: ^5.0.1
         version: 5.2.1(react-hook-form@7.62.0(react@19.2.1))
@@ -1275,6 +1278,9 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@fontsource/science-gothic@5.2.1':
+    resolution: {integrity: sha512-mkhQ4jkQFC04+4f/wo5qofP0+L1QX9d4N4FpbhoDhqTFTevHe56uppkUzNxIYTJdIGgS4LZ/DA9Ji2vGAUA1VQ==}
 
   '@formatjs/ecma402-abstract@2.3.4':
     resolution: {integrity: sha512-qrycXDeaORzIqNhBOx0btnhpD1c+/qFIHAN9znofuMJX6QBwtbrmlpWfD4oiUUD2vJUOIYFA/gYtg2KAMGG7sA==}
@@ -7562,6 +7568,8 @@ snapshots:
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@fontsource/science-gothic@5.2.1': {}
 
   '@formatjs/ecma402-abstract@2.3.4':
     dependencies:
