@@ -42,7 +42,7 @@ export default function Hero() {
               </I18nLink>
             </Button>
             <Button
-              className="h-11 rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
+              className="h-11 rounded-xl px-8 py-2 bg-white hover:bg-background text-indigo-500 hover:text-indigo-600 border-2"
               variant="outline"
               asChild
             >
