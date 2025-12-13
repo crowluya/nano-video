@@ -152,9 +152,9 @@
     }
   },
   "Home": {
-    "title": "NEXTY.DEV",
-    "tagLine": "A Modern Next.js Full-Stack SaaS Template",
-    "description": "A production-ready Next.js and Supabase starter template for building modern SaaS applications. Launch your content, AI, or subscription service faster."
+    "title": "Nano Banana Video",
+    "tagLine": "AI-Powered Creative Studio",
+    "description": "Create stunning images, videos, and music with AI. Generate content with Nano Banana, Midjourney, Sora 2, Veo 3.1, and Suno - all in one place."
   },
   "Login": {
     "title": "Welcome back",
@@ -186,6 +186,26 @@
       "signOut": "Sign Out"
     },
     "UserMenus": [
+      {
+        "name": "Creative Studio",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "Image Gen",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Video Gen",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Music Gen",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
       {
         "name": "Settings",
         "href": "/dashboard/settings",

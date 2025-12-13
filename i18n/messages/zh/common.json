@@ -187,6 +187,26 @@
     },
     "UserMenus": [
       {
+        "name": "创意工作室",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "图像生成",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "视频生成",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "音乐生成",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
+      {
         "name": "个人设置",
         "href": "/dashboard/settings",
         "icon": "Settings"

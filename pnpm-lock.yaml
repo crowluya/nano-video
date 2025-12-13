@@ -155,6 +155,12 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@remotion/media-utils':
+        specifier: ^4.0.387
+        version: 4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@remotion/player':
+        specifier: ^4.0.387
+        version: 4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@stripe/stripe-js':
         specifier: ^7.0.0
         version: 7.9.0
@@ -359,6 +365,9 @@ importers:
       remark-gfm:
         specifier: ^4.0.0
         version: 4.0.1
+      remotion:
+        specifier: ^4.0.387
+        version: 4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       replicate:
         specifier: ^1.0.1
         version: 1.1.0
@@ -2438,6 +2447,27 @@ packages:
   '@remirror/core-constants@3.0.0':
     resolution: {integrity: sha512-42aWfPrimMfDKDi4YegyS7x+/0tlzaqwPQCULLanv3DMIlu96KTJR0fM5isWX2UViOqlGnX6YFgqWepcX+XMNg==}
 
+  '@remotion/licensing@4.0.387':
+    resolution: {integrity: sha512-BHiKAVSV54/4wG+vLy9MJQ6gMda6CDTTcq6w3h17y3doC3vhUi6oLqB8r/c2UZhLY85JxUc/gb3ywp2CmHCinQ==}
+
+  '@remotion/media-parser@4.0.387':
+    resolution: {integrity: sha512-AMZJRPo9pHMZyybwpAexHI9C73lEmRxgtzK9ZUgbJPoUHB5CmrrElVwhPXsyyCvxwCp4RYdIwptjc/n4AgMgZA==}
+
+  '@remotion/media-utils@4.0.387':
+    resolution: {integrity: sha512-ongH3551OQgLOvuL0VKAvLkdYATwx4q84+n5L9WUeVHWByabxJgDb3JDQRBKkfA28FvDr5mQ8/odE7M0Xe2l4A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@remotion/player@4.0.387':
+    resolution: {integrity: sha512-8SVC8yAmVmrhRUUIVP33eY0xVNhp2XhXaN6/WtYl6S8drqTdc2K1jReA7lmsaW3Oy6adw0N86h0iQ2BjfhAlPw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@remotion/webcodecs@4.0.387':
+    resolution: {integrity: sha512-pLvdZHHp9l8bZlm9jfKq5pG/xmlFkPPlF8c4xJBLkOE6WwZ2QG91+d+f3GUdB02IX6RQ0ZNwgBs9FLroKUUzhA==}
+
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
@@ -3089,6 +3119,12 @@ packages:
 
   '@types/diff-match-patch@1.0.36':
     resolution: {integrity: sha512-xFdR6tkm0MWvBfO8xXCSsinYxHcqkQUlcHeSpMC2ukzOb6lwQAfDmW+Qt0AvlGd8HpsS28qKsB+oPeJn9I39jg==}
+
+  '@types/dom-mediacapture-transform@0.1.11':
+    resolution: {integrity: sha512-Y2p+nGf1bF2XMttBnsVPHUWzRRZzqUoJAKmiP10b5umnO6DDrWI0BrGDJy1pOHoOULVmGSfFNkQrAlC5dcj6nQ==}
+
+  '@types/dom-webcodecs@0.1.13':
+    resolution: {integrity: sha512-O5hkiFIcjjszPIYyUSyvScyvrBoV3NOEEZx/pMlsu44TKzWNkLVBBxnxJz42in5n3QIolYOcBYFCPZZ0h8SkwQ==}
 
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
@@ -4964,6 +5000,9 @@ packages:
   mdurl@2.0.0:
     resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
+  mediabunny@1.25.8:
+    resolution: {integrity: sha512-2WCa9WtEbHOvg5rAWXQjVE+O/r01fpj65ymZdA2XhIeaWmdDQ40p32F0WY6tdBi+aeY+4ldwhAOpo0eyVrYTGg==}
+
   merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -5685,6 +5724,12 @@ packages:
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
+
+  remotion@4.0.387:
+    resolution: {integrity: sha512-GdnJjhSfWbClC7udTfSbDavc5bNpnnqvcDu2/LkuvzxafR2NZGafC99eNfqj/aU2bZflDBc0Blk4be/u+OMMjw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   replicate@1.1.0:
     resolution: {integrity: sha512-6D49t/etFvRUz7hOseEmI6mxm3vypFPffpTR37Gai924s6JmeNmnPk+QooFINYsq4Gu5HYlg49ut6zxwhfKxqQ==}
@@ -8918,6 +8963,30 @@ snapshots:
 
   '@remirror/core-constants@3.0.0': {}
 
+  '@remotion/licensing@4.0.387': {}
+
+  '@remotion/media-parser@4.0.387': {}
+
+  '@remotion/media-utils@4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+    dependencies:
+      '@remotion/media-parser': 4.0.387
+      '@remotion/webcodecs': 4.0.387
+      mediabunny: 1.25.8
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
+      remotion: 4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+
+  '@remotion/player@4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+    dependencies:
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
+      remotion: 4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+
+  '@remotion/webcodecs@4.0.387':
+    dependencies:
+      '@remotion/licensing': 4.0.387
+      '@remotion/media-parser': 4.0.387
+
   '@rtsao/scc@1.1.0': {}
 
   '@schummar/icu-type-parser@1.21.5': {}
@@ -9664,6 +9733,12 @@ snapshots:
       '@types/ms': 2.1.0
 
   '@types/diff-match-patch@1.0.36': {}
+
+  '@types/dom-mediacapture-transform@0.1.11':
+    dependencies:
+      '@types/dom-webcodecs': 0.1.13
+
+  '@types/dom-webcodecs@0.1.13': {}
 
   '@types/estree-jsx@1.0.5':
     dependencies:
@@ -11767,6 +11842,11 @@ snapshots:
 
   mdurl@2.0.0: {}
 
+  mediabunny@1.25.8:
+    dependencies:
+      '@types/dom-mediacapture-transform': 0.1.11
+      '@types/dom-webcodecs': 0.1.13
+
   merge2@1.4.1: {}
 
   micromark-core-commonmark@2.0.3:
@@ -12749,6 +12829,11 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
+
+  remotion@4.0.387(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+    dependencies:
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
 
   replicate@1.1.0:
     optionalDependencies:

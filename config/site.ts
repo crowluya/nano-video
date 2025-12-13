@@ -11,15 +11,15 @@ const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_INVITE_URL
 const EMAIL_URL = ''
 
 export const siteConfig: SiteConfig = {
-  name: "NEXTY.DEV",
+  name: "Nano Banana Video",
   url: BASE_URL,
   authors: [
     {
-      name: "your-name",
+      name: "Nano Banana",
       url: BASE_URL,
     }
   ],
-  creator: '@your-handle',
+  creator: '@nanobanana',
   socialLinks: {
     github: GITHUB_URL,
     twitter: TWITTER_URL,
