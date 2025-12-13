@@ -111,26 +111,41 @@ Respond with ONLY the prompt, no explanations.`,
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
-          result += decoder.decode(value);
+          result += decoder.decode(value, { stream: true });
         }
       }
 
-      // Parse the streamed response
-      const lines = result.split("\n").filter((l) => l.startsWith("0:"));
-      const content = lines
-        .map((l) => {
-          try {
-            return JSON.parse(l.slice(2));
-          } catch {
-            return "";
-          }
-        })
-        .join("");
+      // Parse the streamed response (AI SDK data stream format)
+      // Format: "0:{"type":"text-delta","textDelta":"..."}"
+      const lines = result.split("\n").filter((l) => l.trim());
+      let fullText = "";
 
-      setGeneratedPrompt(content || result);
-      setImagePrompt(content || result);
-      setVideoPrompt(content || result);
-      toast.success("Prompt generated!");
+      for (const line of lines) {
+        if (line.startsWith("0:")) {
+          try {
+            const data = JSON.parse(line.slice(2));
+            if (data.type === "text-delta" && data.textDelta) {
+              fullText += data.textDelta;
+            } else if (data.type === "text" && data.text) {
+              fullText = data.text;
+            }
+          } catch {
+            // Skip invalid JSON lines
+          }
+        }
+      }
+
+      // Fallback: if no structured data found, use raw result
+      const finalPrompt = fullText || result.trim();
+      
+      if (finalPrompt) {
+        setGeneratedPrompt(finalPrompt);
+        setImagePrompt(finalPrompt);
+        setVideoPrompt(finalPrompt);
+        toast.success("Prompt generated!");
+      } else {
+        throw new Error("No prompt generated");
+      }
     } catch (error) {
       console.error(error);
       toast.error("Failed to generate prompt");

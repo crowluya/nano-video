@@ -52,6 +52,7 @@ AI Providers:
 - XAI_API_KEY
 - OPENROUTER_API_KEY
 - REPLICATE_API_TOKEN
+- KIE_API_KEY (Kie.ai API for image/video/music generation)
 - NEXT_PUBLIC_AI_MODEL_ID (UI)
 - NEXT_PUBLIC_AI_PROVIDER (UI)
 

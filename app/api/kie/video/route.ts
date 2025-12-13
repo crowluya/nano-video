@@ -153,8 +153,15 @@ export async function POST(req: Request) {
     console.error("Video generation failed:", error);
     const errorMessage = error instanceof Error ? error.message : "Failed to generate video";
     
+    // Note: Credits are already deducted, so we don't refund on error
+    // This is intentional - credits are consumed when task is created
+    
     if (errorMessage.includes("API key") || errorMessage.includes("authentication") || errorMessage.includes("401")) {
       return apiResponse.unauthorized("Authentication error with Kie.ai API");
+    }
+    
+    if (errorMessage.includes("Insufficient credits")) {
+      return apiResponse.badRequest("Insufficient credits for this operation");
     }
     
     return apiResponse.serverError(errorMessage);
