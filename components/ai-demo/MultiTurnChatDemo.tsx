@@ -87,9 +87,6 @@ export default function MultiTurnChatDemo() {
               <SelectContent>
                 {LANGUAGE_MODELS.map((group) => (
                   <SelectGroup key={group.provider}>
-                    <SelectLabel className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">
-                      {group.name}
-                    </SelectLabel>
                     {group.models.map((model) => (
                       <SelectItem
                         key={model.id}
@@ -99,7 +96,6 @@ export default function MultiTurnChatDemo() {
                         {model.name}
                       </SelectItem>
                     ))}
-                    <SelectSeparator className="my-1" />
                   </SelectGroup>
                 ))}
               </SelectContent>

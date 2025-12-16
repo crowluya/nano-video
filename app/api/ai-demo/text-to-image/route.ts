@@ -1,14 +1,10 @@
 /**
- * ai sdk docs:
- * https://sdk.vercel.ai/docs/reference/ai-sdk-core/generate-image
- * https://sdk.vercel.ai/providers/ai-sdk-providers
+ * Text to Image API Route - Using Kie.ai
  */
 
 import { apiResponse } from "@/lib/api-response";
-import { openai } from "@ai-sdk/openai";
-import { replicate } from "@ai-sdk/replicate";
-import { xai } from "@ai-sdk/xai";
-import { ImageModel, JSONValue, experimental_generateImage as generateImage } from 'ai';
+import { getKieClient } from "@/lib/kie";
+import { getKieImageModel } from "@/config/models";
 import { z } from 'zod';
 
 const inputSchema = z.object({
@@ -28,86 +24,73 @@ export async function POST(req: Request) {
 
     const { prompt, modelId, provider } = validationResult.data;
 
-    let imageModel: ImageModel;
-    let providerOptions: Record<string, Record<string, JSONValue>> = {};
-    let size = '1024x1024' as `${number}x${number}` | undefined;
-
-    switch (provider) {
-      case "replicate":
-        if (!process.env.REPLICATE_API_TOKEN) {
-          return apiResponse.serverError("Server configuration error: Missing Replicate API Token.");
-        }
-        imageModel = replicate.image(modelId);
-        size = undefined;
-        break;
-
-      case "xai":
-        if (!process.env.XAI_API_KEY) {
-          return apiResponse.serverError("Server configuration error: Missing XAI API Key.");
-        }
-        imageModel = xai.image(modelId);
-        size = undefined;
-        break;
-
-      case "openai":
-        if (!process.env.OPENAI_API_KEY) {
-          return apiResponse.serverError("Server configuration error: Missing OpenAI API Key.");
-        }
-        imageModel = openai.image(modelId);
-        // providerOptions = {
-        //   openai: { background: 'transparent', quality: 'high' },
-        // };
-        break;
-
-      default:
-        return apiResponse.badRequest(`Unsupported image generation provider: ${provider}`);
+    // Validate provider is kie
+    if (provider !== "kie") {
+      return apiResponse.badRequest("Only kie.ai provider is supported for text-to-image");
     }
 
-    const { images, warnings } = await generateImage({
-      model: imageModel,
-      prompt: prompt,
-      size: size as `${number}x${number}` | undefined,
-      n: 1, // number of images to generate
-      providerOptions: providerOptions,
+    // Validate model exists
+    const modelConfig = getKieImageModel(modelId);
+    if (!modelConfig) {
+      return apiResponse.badRequest(`Unknown image model: ${modelId}`);
+    }
+
+    if (!modelConfig.features.includes("text-to-image")) {
+      return apiResponse.badRequest(`Model ${modelId} does not support text-to-image`);
+    }
+
+    const client = getKieClient();
+    let taskId: string;
+
+    // Generate image based on model
+    if (modelId === "google/nano-banana" || modelId === "nano-banana-pro") {
+      taskId = await client.generateNanoBananaImage({
+        prompt,
+        aspectRatio: "auto",
+        outputFormat: "png",
+      });
+    } else if (modelId === "midjourney") {
+      taskId = await client.generateMidjourneyImage({
+        prompt,
+        taskType: "mj_txt2img",
+        version: "7",
+        speed: "fast",
+        aspectRatio: "1:1",
+      });
+    } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
+      taskId = await client.generateFluxKontextImage({
+        prompt,
+        model: modelId === "flux-kontext-max" ? "flux-kontext-max" : "flux-kontext-pro",
+        aspectRatio: "1:1",
+        outputFormat: "png",
+      });
+    } else if (modelId === "gpt4o-image") {
+      taskId = await client.generate4oImage({
+        prompt,
+        size: "1:1",
+        nVariants: 1,
+      });
+    } else {
+      return apiResponse.badRequest(`Unsupported image model: ${modelId}`);
+    }
+
+    // Poll for result
+    const result = await client.pollTaskStatus({
+      taskId,
+      type: "image",
+      modelId,
+      maxAttempts: 60,
+      intervalMs: 2000,
     });
 
-    if (warnings?.length) {
-      return apiResponse.serverError(`Image generation warnings: ${warnings[0]}.`);
+    if (!result.success || !result.data?.outputUrl) {
+      return apiResponse.serverError(result.error || "Failed to generate image");
     }
 
-    if (!images || images.length === 0) {
-      return apiResponse.serverError("Image generation failed, no image returned.");
-    }
-
-    // Optional: Upload result image to R2
-    // ---- Start R2 Upload ----
-    // try {
-    //   const path = `text-to-images/${provider}/${modelId}/`;
-
-    //   const dataUri = `data:${images[0].mimeType};base64,${images[0].base64}`;
-    //   const imageData = await getDataFromDataUrl(dataUri);
-    //   if (!imageData) {
-    //     return apiResponse.serverError("Failed to get image data from data URL.");
-    //   }
-    //   const objectKey = await generateR2Key({
-    //     fileName: imageData.contentType.split("/")[1],
-    //     path: path,
-    //   });
-
-    //   await serverUploadFile({
-    //     data: imageData.buffer,
-    //     contentType: imageData.contentType,
-    //     key: objectKey,
-    //   });
-    // } catch (uploadError) {
-    //   console.error("Failed to upload to R2:", uploadError);
-    // }
-    // ---- End R2 Upload ----
-
-    return apiResponse.success({ imageUrl: `data:image/png;base64,${images[0].base64}` });
+    return apiResponse.success({ imageUrl: result.data.outputUrl });
 
   } catch (error: any) {
-    console.error("Image generation failed:", error);
+    console.error("Text-to-Image generation failed:", error);
     const errorMessage = error?.message || "Failed to generate image";
     if (errorMessage.includes("API key") || errorMessage.includes("authentication")) {
       return apiResponse.serverError(`Server configuration error: ${errorMessage}`);

@@ -1,183 +1,119 @@
 /**
- * ai sdk docs:
- * https://sdk.vercel.ai/docs/reference/ai-sdk-core/generate-image
- * https://sdk.vercel.ai/providers/ai-sdk-providers
+ * Image/Text to Video API Route - Using Kie.ai
  */
 
-import { IMAGE_TO_VIDEO_MODELS } from "@/config/models";
 import { apiResponse } from "@/lib/api-response";
-import { ReplicatePredictionResponse } from "@/types/ai";
-import Replicate from "replicate";
+import { getKieClient } from "@/lib/kie";
+import { getKieVideoModel } from "@/config/models";
 import { z } from 'zod';
 
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_TOKEN,
-});
-
 const inputSchema = z.object({
-  image: z.string().startsWith('data:image/', "Invalid image data URI format"),
+  image: z.string().startsWith('data:image/').optional(),
   prompt: z.string().min(1, "Prompt cannot be empty"),
-  duration: z.union([z.literal(5), z.literal(10)], {
-    errorMap: () => ({ message: "Duration must be the number 5 or 10" })
-  }),
+  duration: z.union([z.literal(5), z.literal(10)]).optional(),
   modelId: z.string(),
-  provider: z.literal('replicate'),
+  provider: z.string(),
 });
 
 export async function POST(req: Request) {
   try {
-    if (!process.env.REPLICATE_API_TOKEN) {
-      return apiResponse.serverError("Server configuration error: Missing Replicate API Token.");
-    }
-
     const rawBody = await req.json();
 
     const validationResult = inputSchema.safeParse(rawBody);
     if (!validationResult.success) {
-      console.error("Input validation failed:", validationResult.error.errors);
       return apiResponse.badRequest(`Invalid input: ${validationResult.error.errors.map(e => `${e.path.join('.')}: ${e.message}`).join(', ')}`);
     }
 
-    const { image: imageBase64DataUri, prompt, duration, modelId: fullModelVersionId, provider } = validationResult.data;
+    const { image: imageBase64DataUri, prompt, duration, modelId, provider } = validationResult.data;
 
-    const modelDefinition = IMAGE_TO_VIDEO_MODELS.find(m => m.provider === provider && m.id === fullModelVersionId);
-    if (!modelDefinition) {
-      return apiResponse.badRequest(`Unsupported model: ${provider}/${fullModelVersionId}`);
+    // Validate provider is kie
+    if (provider !== "kie") {
+      return apiResponse.badRequest("Only kie.ai provider is supported for video generation");
     }
 
-    const replicateInput = {
-      start_image: imageBase64DataUri,
-      prompt: prompt,
-      duration: duration,
-    };
+    // Validate model exists
+    const modelConfig = getKieVideoModel(modelId);
+    if (!modelConfig) {
+      return apiResponse.badRequest(`Unknown video model: ${modelId}`);
+    }
 
-    // console.log(`Starting Replicate prediction for model version: ${fullModelVersionId}`);
+    const client = getKieClient();
+    let taskId: string;
+    let imageUrl: string | undefined;
 
-    // 1. Start the prediction using predictions.create
-    const initialPrediction = await replicate.predictions.create({
-      version: fullModelVersionId,
-      input: replicateInput,
-      // Optional: Use webhooks for true async operation if needed
-      // webhook: "YOUR_WEBHOOK_URL",
-      // webhook_events_filter: ["completed"]
+    // Upload image if provided
+    if (imageBase64DataUri) {
+      const uploadResult = await client.uploadFileBase64({
+        base64Data: imageBase64DataUri.split(',')[1],
+        fileName: "input-image.png",
+      });
+
+      if (!uploadResult.success || !uploadResult.data?.fileUrl) {
+        return apiResponse.serverError("Failed to upload image");
+      }
+
+      imageUrl = uploadResult.data.fileUrl;
+    }
+
+    // Generate video based on model
+    if (modelId.startsWith("sora-2")) {
+      // Sora 2 uses a single method
+      taskId = await client.generateSora2Video({
+        prompt,
+        imageUrl,
+        aspectRatio: "landscape",
+        duration: duration?.toString() || "10",
+      });
+    } else if (modelId.startsWith("veo3")) {
+      // Veo 3 uses a single method
+      taskId = await client.generateVeo3Video({
+        prompt,
+        imageUrl,
+        generationType: imageUrl ? "TEXT_2_VIDEO" : "TEXT_2_VIDEO",
+        aspectRatio: "16:9",
+      });
+    } else if (modelId.startsWith("wan/")) {
+      // Wan uses a single method
+      taskId = await client.generateWanVideo({
+        prompt,
+        imageUrl,
+        resolution: "1080p",
+        duration: duration?.toString() || "10",
+      });
+    } else if (modelId === "runway-gen3") {
+      // Runway
+      taskId = await client.generateRunwayVideo({
+        prompt,
+        imageUrl,
+        quality: "1080p",
+        duration: duration || 10,
+        aspectRatio: "16:9",
+      });
+    } else {
+      return apiResponse.badRequest(`Unsupported video model: ${modelId}`);
+    }
+
+    // Poll for result
+    const result = await client.pollTaskStatus({
+      taskId,
+      type: "video",
+      modelId,
+      maxAttempts: 120, // Videos take longer
+      intervalMs: 3000,
     });
 
-    // console.log("Initial prediction created:", initialPrediction.id, initialPrediction.status);
-
-    if (initialPrediction.status === 'failed') {
-      console.error("Prediction failed immediately on creation:", initialPrediction.error);
-      const errorMessage = typeof initialPrediction.error === 'string'
-        ? initialPrediction.error
-        : JSON.stringify(initialPrediction.error);
-      return apiResponse.serverError(`Prediction creation failed: ${errorMessage}`);
-    }
-    if (initialPrediction.error) {
-      console.warn("Non-fatal error during prediction creation:", initialPrediction.error);
+    if (!result.success || !result.data?.outputUrl) {
+      return apiResponse.serverError(result.error || "Failed to generate video");
     }
 
-
-    // 2. Wait for the prediction to complete
-    // console.log(`Waiting for prediction ${initialPrediction.id} to complete...`);
-    const finalPrediction = await replicate.wait(initialPrediction, {}) as ReplicatePredictionResponse;
-
-    // console.log(`Prediction ${finalPrediction.id} finished with status: ${finalPrediction.status}`);
-
-    // 3. Check the final status and process the result
-    if (finalPrediction.status === 'succeeded') {
-      const output = finalPrediction.output;
-      const replicateVideoUrl = Array.isArray(output) ? output[0] : typeof output === 'string' ? output : null;
-
-      if (!replicateVideoUrl || typeof replicateVideoUrl !== 'string' || !replicateVideoUrl.startsWith('http')) {
-        console.error(`Replicate output did not contain a valid video URL. Status: ${finalPrediction.status}, Output:`, output);
-        return apiResponse.serverError("Video generation succeeded, but no valid video URL was found in the output.");
-      }
-
-      let finalVideoUrl = replicateVideoUrl;
-
-      // Optional: Upload to R2
-      // ---- Start R2 Upload ----
-      // try {
-      //   const path = `image-to-videos/${provider}/${fullModelVersionId.replace(':', '/')}`;
-
-      //   const videoResponse = await fetch(replicateVideoUrl);
-      //   if (!videoResponse.ok) {
-      //     throw new Error(`Failed to fetch video from Replicate: ${videoResponse.statusText}`);
-      //   }
-      //   const videoBuffer = Buffer.from(await videoResponse.arrayBuffer());
-      //   const videoContentType = videoResponse.headers.get("content-type") || "video/mp4";
-      //   const videoKey = generateR2Key({
-      //     fileName: videoContentType.split('/')[1] || 'mp4',
-      //     path: path,
-      //   });
-
-      //   const originalImageData = getDataFromDataUrl(imageBase64DataUri);
-
-      //   if (!originalImageData) {
-      //     throw new Error("Invalid source image data.");
-      //   }
-      //   const originalImageKey = generateR2Key({
-      //     fileName: originalImageData.contentType.split('/')[1] || 'png',
-      //     path: path,
-      //   });
-
-      //   const [uploadVideoResult] = await Promise.all([
-      //     serverUploadFile({
-      //       data: videoBuffer,
-      //       contentType: videoContentType,
-      //       key: videoKey,
-      //     }),
-      //   ]);
-
-      //   finalVideoUrl = uploadVideoResult.url;
-      //   console.log("Uploaded generated video to R2:", uploadVideoResult.url);
-      // } catch (uploadError: any) {
-      //   console.error("Failed to upload assets to R2:", uploadError);
-      //   return apiResponse.serverError("Video generation succeeded, but failed to store the assets permanently.");
-      // }
-      // ---- End R2 Upload ----
-
-      return apiResponse.success({ videoUrl: finalVideoUrl });
-
-    } else {
-      console.error(`Replicate job did not succeed. Status: ${finalPrediction.status}`, finalPrediction.error);
-      let errorMessage = `Video generation ${finalPrediction.status}.`;
-      if (finalPrediction.error) {
-        errorMessage = `Video generation ${finalPrediction.status}: ${finalPrediction.error.message || JSON.stringify(finalPrediction.error)}`;
-        if (finalPrediction.error.stack) console.error("Replicate Error Stack:", finalPrediction.error.stack);
-      } else if (finalPrediction.logs) {
-        errorMessage += ` Check logs: ${finalPrediction.logs.slice(-500)}`;
-      }
-      return apiResponse.serverError(errorMessage);
-    }
+    return apiResponse.success({ videoUrl: result.data.outputUrl });
 
   } catch (error: any) {
-    console.error("Image-to-Video API endpoint error:", error);
-    let errorMessage = error?.message || "An unexpected error occurred during video generation";
-    let statusCode = 500;
-
-    if (error.statusCode === 401 || error.statusCode === 403) {
-      errorMessage = "Authentication error: Invalid Replicate API Token.";
-      statusCode = 401;
-    } else if (error.statusCode === 404 && error.message?.includes('version')) {
-      errorMessage = "Model version not found. Ensure 'modelId' includes the correct version hash (owner/name:version_hash).";
-      statusCode = 400;
-    } else if (error.statusCode === 422) {
-      errorMessage = `Invalid input for the Replicate model: ${error.message || 'Check model requirements.'}`;
-      statusCode = 400;
-    } else if (errorMessage.includes("Input validation failed")) {
-      errorMessage = `API Input Error: ${error.message}`;
-      statusCode = 400;
-    } else if (error.name === 'AbortError') {
-      errorMessage = "Request timed out or was aborted.";
-      statusCode = 504;
+    console.error("Video generation failed:", error);
+    const errorMessage = error?.message || "Failed to generate video";
+    if (errorMessage.includes("API key") || errorMessage.includes("authentication")) {
+      return apiResponse.serverError(`Server configuration error: ${errorMessage}`);
     }
-
-    switch (statusCode) {
-      case 400: return apiResponse.badRequest(errorMessage);
-      case 401: return apiResponse.unauthorized(errorMessage);
-      case 404: return apiResponse.notFound(errorMessage);
-      case 504: return apiResponse.serverError(errorMessage);
-      default: return apiResponse.serverError(errorMessage);
-    }
+    return apiResponse.serverError(errorMessage);
   }
-} 
+}

@@ -91,7 +91,7 @@ export default function TextToImageDemo() {
     const model = TEXT_TO_IMAGE_MODELS.find(
       (m) => m.provider === provider && m.id === modelId
     );
-    return model ? `${model.name} (${model.provider})` : "Select a model";
+    return model ? model.name : "Select a model";
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -131,7 +131,7 @@ export default function TextToImageDemo() {
                     key={`${model.provider}/${model.id}`}
                     value={`${model.provider}/${model.id}`}
                   >
-                    {model.name} ({model.provider})
+                    {model.name}
                   </SelectItem>
                 ))}
               </SelectContent>

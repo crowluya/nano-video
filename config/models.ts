@@ -3,192 +3,101 @@ export const LANGUAGE_MODELS = [
     provider: "openrouter",
     name: "OpenRouter",
     models: [
+      // 先放出的模型
       {
-        id: "x-ai/grok-3-mini-beta",
-        name: "Grok 3 Mini (OpenRouter)",
-        inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"],
-      },
-      {
-        id: "openai/gpt-4o-mini",
-        name: "OpenAI GPT 4o mini (OpenRouter)",
+        id: "deepseek/deepseek-v3.2",
+        name: "DeepSeek V3.2",
         inputSupport: ["text"],
         outputSupport: ["text"],
       },
       {
-        id: "anthropic/claude-sonnet-4",
-        name: "Anthropic Claude 4 Sonnet (OpenRouter)",
+        id: "tngtech/deepseek-r1t2-chimera",
+        name: "DeepSeek R1T2 Chimera",
         inputSupport: ["text"],
         outputSupport: ["text", "reasoning"],
-      }
-    ]
-  },
-  {
-    provider: "deepseek",
-    name: "DeepSeek",
-    models: [
-      {
-        id: "deepseek-chat",
-        name: "DeepSeek Chat(V3)",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
       },
       {
-        id: "deepseek-reasoner",
-        name: "DeepSeek R1",
+        id: "google/gemini-2.5-flash",
+        name: "Gemini 2.5 Flash",
         inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"]
-      },
-    ],
-  },
-  {
-    provider: "openai",
-    name: "OpenAI",
-    models: [
-      {
-        id: "gpt-4o-mini",
-        name: "GPT 4o mini",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
+        outputSupport: ["text"],
       },
       {
-        id: "gpt-4o",
-        name: "GPT 4o",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-      {
-        id: "gpt-4.5-preview",
-        name: "GPT 4.5 Preview",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-      {
-        id: "o1",
-        name: "GPT o1",
-        inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"]
-      },
-      {
-        id: "o3-mini",
-        name: "GPT o3 mini",
-        inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"]
-      },
-    ],
-  },
-  {
-    provider: "anthropic",
-    name: "Anthropic",
-    models: [
-      {
-        id: "claude-4-sonnet",
-        name: "Claude 4 Sonnet",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-      {
-        id: "claude-3-7-sonnet",
-        name: "Claude 3.7 Sonnet",
-        inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"]
-      },
-      {
-        id: "claude-3-5-haiku",
-        name: "Claude 3.5 Haiku",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-    ],
-  },
-  {
-    provider: "google",
-    name: "Google",
-    models: [
-      {
-        id: "gemini-2.0-flash",
+        id: "google/gemini-2.0-flash-001",
         name: "Gemini 2.0 Flash",
         inputSupport: ["text"],
-        outputSupport: ["text"]
+        outputSupport: ["text"],
       },
       {
-        id: "gemini-1-5-pro",
-        name: "Gemini 1.5 Pro",
+        id: "google/gemini-2.5-flash-lite",
+        name: "Gemini 2.5 Flash Lite",
         inputSupport: ["text"],
-        outputSupport: ["text"]
+        outputSupport: ["text"],
       },
-    ],
+      {
+        id: "openai/gpt-4o-mini",
+        name: "GPT-4o Mini",
+        inputSupport: ["text"],
+        outputSupport: ["text"],
+      },
+      {
+        id: "openai/gpt-5-mini",
+        name: "GPT-5 Mini",
+        inputSupport: ["text"],
+        outputSupport: ["text"],
+      },
+      {
+        id: "anthropic/claude-haiku-4.5",
+        name: "Claude Haiku 4.5",
+        inputSupport: ["text"],
+        outputSupport: ["text"],
+      },
+      // 后续会添加的模型（暂时注释）
+      // {
+      //   id: "deepseek/deepseek-chat-v3-0324",
+      //   name: "DeepSeek Chat V3-0324",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text"],
+      // },
+      // {
+      //   id: "deepseek/deepseek-r1-0528",
+      //   name: "DeepSeek R1-0528",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text", "reasoning"],
+      // },
+      // {
+      //   id: "deepseek/deepseek-r1",
+      //   name: "DeepSeek R1",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text", "reasoning"],
+      // },
+      // {
+      //   id: "openai/gpt-oss-120b",
+      //   name: "GPT OSS 120B",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text"],
+      // },
+      // {
+      //   id: "openai/gpt-5-nano",
+      //   name: "GPT-5 Nano",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text"],
+      // },
+      // {
+      //   id: "x-ai/grok-code-fast-1",
+      //   name: "Grok Code Fast 1",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text"],
+      // },
+      // {
+      //   id: "z-ai/glm-4.6",
+      //   name: "GLM 4.6",
+      //   inputSupport: ["text"],
+      //   outputSupport: ["text"],
+      // },
+    ]
   },
-  {
-    provider: "xai",
-    name: "XAI",
-    models: [
-      {
-        id: "grok-3",
-        name: "Grok 3",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-      {
-        id: "grok-3-mini",
-        name: "Grok 3 Mini",
-        inputSupport: ["text"],
-        outputSupport: ["text", "reasoning"]
-      },
-      {
-        id: "grok-2",
-        name: "Grok 2",
-        inputSupport: ["text"],
-        outputSupport: ["text"]
-      },
-    ],
-  }
 ];
-
-export const TEXT_TO_IMAGE_MODELS = [
-  {
-    // size: 1024x1024, 1536x1024, 1024x1536
-    provider: "openai",
-    name: "GPT Image",
-    id: "gpt-image-1",
-  },
-  {
-    // https://replicate.com/black-forest-labs/flux-schnell
-    provider: "replicate",
-    name: "Flux Schnell",
-    id: "black-forest-labs/flux-schnell",
-  },
-  {
-    // not support size, and default is 1024x768
-    provider: "xai",
-    name: "Grok 2 Image",
-    id: "grok-2-image",
-  },
-]
-
-export const IMAGE_TO_IMAGE_MODELS = [
-  {
-    // https://replicate.com/black-forest-labs/flux-schnell
-    provider: "replicate",
-    name: "Flux 1.1 Pro",
-    id: "black-forest-labs/flux-1.1-pro",
-  },
-]
-
-export const IMAGE_TO_VIDEO_MODELS = [
-  {
-    // https://replicate.com/kwaivgi/kling-v1.6-standard
-    provider: "replicate",
-    name: "Kling 1.6 Standard",
-    id: "kwaivgi/kling-v1.6-standard",
-  },
-  {
-    // https://replicate.com/kwaivgi/kling-v1.6-pro
-    provider: "replicate",
-    name: "Kling 1.6 Pro",
-    id: "kwaivgi/kling-v1.6-pro",
-  },
-]
 
 // =============================================================================
 // Kie.ai Image Generation Models
@@ -439,3 +348,39 @@ export function getKieVideoModel(id: string): KieVideoModel | undefined {
 export function getKieMusicModel(id: string): KieMusicModel | undefined {
   return KIE_MUSIC_MODELS.find(m => m.id === id);
 }
+
+// =============================================================================
+// Text to Image models - using kie.ai
+// =============================================================================
+
+export const TEXT_TO_IMAGE_MODELS = KIE_IMAGE_MODELS.filter(
+  (model): model is typeof KIE_IMAGE_MODELS[number] => 
+    (model.features as readonly string[]).includes("text-to-image")
+).map((model) => ({
+  provider: model.provider,
+  name: model.name,
+  id: model.id,
+}));
+
+// =============================================================================
+// Image to Image models - using kie.ai
+// =============================================================================
+
+export const IMAGE_TO_IMAGE_MODELS = KIE_IMAGE_MODELS.filter(
+  (model): model is typeof KIE_IMAGE_MODELS[number] => 
+    (model.features as readonly string[]).includes("image-to-image")
+).map((model) => ({
+  provider: model.provider,
+  name: model.name,
+  id: model.id,
+}));
+
+// =============================================================================
+// Image/Text to Video models - using kie.ai
+// =============================================================================
+
+export const IMAGE_TO_VIDEO_MODELS = KIE_VIDEO_MODELS.map((model) => ({
+  provider: model.provider,
+  name: model.name,
+  id: model.id,
+}));

@@ -1,13 +1,10 @@
 /**
- * ai sdk docs:
- * https://sdk.vercel.ai/docs/reference/ai-sdk-core/generate-image
- * https://sdk.vercel.ai/providers/ai-sdk-providers
+ * Image to Image API Route - Using Kie.ai
  */
 
-import { IMAGE_TO_IMAGE_MODELS } from "@/config/models";
 import { apiResponse } from "@/lib/api-response";
-import { replicate } from "@ai-sdk/replicate";
-import { ImageModel, JSONValue, experimental_generateImage as generateImage } from 'ai';
+import { getKieClient } from "@/lib/kie";
+import { getKieImageModel } from "@/config/models";
 import { z } from 'zod';
 
 const inputSchema = z.object({
@@ -29,107 +26,93 @@ export async function POST(req: Request) {
 
     const { image: imageBase64DataUri, prompt, seed, modelId, provider } = validationResult.data;
 
-    const modelDefinition = IMAGE_TO_IMAGE_MODELS.find(m => m.provider === provider && m.id === modelId);
-    if (!modelDefinition) {
-      return apiResponse.badRequest(`Unsupported model: ${provider}/${modelId}`);
+    // Validate provider is kie
+    if (provider !== "kie") {
+      return apiResponse.badRequest("Only kie.ai provider is supported for image-to-image");
     }
 
-    let imageModel: ImageModel;
-    let providerOptions: Record<string, Record<string, JSONValue>> = {};
-
-    switch (provider) {
-      case "replicate":
-        if (!process.env.REPLICATE_API_TOKEN) {
-          return apiResponse.serverError("Server configuration error: Missing Replicate API Token.");
-        }
-        imageModel = replicate.image(modelId);
-        providerOptions = {
-          replicate: {
-            image_prompt: imageBase64DataUri,
-          }
-        };
-        break;
-
-      default:
-        return apiResponse.badRequest(`Unsupported image generation provider for image-to-image: ${provider}`);
+    // Validate model exists
+    const modelConfig = getKieImageModel(modelId);
+    if (!modelConfig) {
+      return apiResponse.badRequest(`Unknown image model: ${modelId}`);
     }
 
-    const { images, warnings } = await generateImage({
-      model: imageModel,
-      prompt: prompt,
-      seed: seed,
-      n: 1,
-      providerOptions,
+    if (!modelConfig.features.includes("image-to-image")) {
+      return apiResponse.badRequest(`Model ${modelId} does not support image-to-image`);
+    }
+
+    const client = getKieClient();
+    
+    // Upload image first
+    const uploadResult = await client.uploadFileBase64({
+      base64Data: imageBase64DataUri.split(',')[1],
+      fileName: "input-image.png",
     });
 
-    if (warnings?.length) {
-      return apiResponse.serverError(`Image generation warnings: ${warnings[0]}.`);
+    if (!uploadResult.success || !uploadResult.data?.fileUrl) {
+      return apiResponse.serverError("Failed to upload image");
     }
 
-    if (!images || images.length === 0) {
-      return apiResponse.serverError("Image generation failed, no image returned.");
+    const imageUrl = uploadResult.data.fileUrl;
+    let taskId: string;
+
+    // Generate image based on model
+    if (modelId === "google/nano-banana-edit" || modelId === "nano-banana-pro") {
+      taskId = await client.generateNanoBananaImage({
+        prompt,
+        filesUrl: [imageUrl],
+        aspectRatio: "auto",
+        outputFormat: "png",
+      });
+    } else if (modelId === "midjourney") {
+      taskId = await client.generateMidjourneyImage({
+        prompt,
+        taskType: "mj_img2img",
+        imageUrl,
+        version: "7",
+        speed: "fast",
+        aspectRatio: "1:1",
+      });
+    } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
+      taskId = await client.generateFluxKontextImage({
+        prompt,
+        model: modelId === "flux-kontext-max" ? "flux-kontext-max" : "flux-kontext-pro",
+        imageUrl,
+        aspectRatio: "1:1",
+        outputFormat: "png",
+      });
+    } else if (modelId === "gpt4o-image") {
+      taskId = await client.generate4oImage({
+        prompt,
+        filesUrl: [imageUrl],
+        size: "1:1",
+        nVariants: 1,
+      });
+    } else {
+      return apiResponse.badRequest(`Unsupported image model: ${modelId}`);
     }
 
-    // Optional: Upload result image to R2
-    // ---- Start R2 Upload ----
-    // try {
-    //   const path = `image-to-images/${provider}/${modelId}`;
+    // Poll for result
+    const result = await client.pollTaskStatus({
+      taskId,
+      type: "image",
+      modelId,
+      maxAttempts: 60,
+      intervalMs: 2000,
+    });
 
-    //   const originalImageData = getDataFromDataUrl(imageBase64DataUri);
-    //   if (!originalImageData) {
-    //     console.error("Failed to process original image data URI.");
-    //     throw new Error("Invalid original image data.");
-    //   }
-    //   const originalImageExt = originalImageData.contentType.split('/')[1] || 'png';
-    //   const originalImageKey = generateR2Key({
-    //     fileName: `original.${originalImageExt}`,
-    //     path: path,
-    //     prefix: 'original'
-    //   });
+    if (!result.success || !result.data?.outputUrl) {
+      return apiResponse.serverError(result.error || "Failed to transform image");
+    }
 
-    //   const generatedImageDataUri = `data:image/png;base64,${images[0].base64}`;
-    //   const generatedImageData = getDataFromDataUrl(generatedImageDataUri);
-    //   if (!generatedImageData) {
-    //     console.error("Failed to process generated image data URI.");
-    //     throw new Error("Invalid generated image data.");
-    //   }
-    //   const generatedImageKey = generateR2Key({
-    //     fileName: generatedImageData.contentType.split("/")[1],
-    //     path: path,
-    //   });
-
-    //   const [uploadOriginalResult, uploadGeneratedResult] = await Promise.all([
-    //     serverUploadFile({
-    //       data: originalImageData.buffer,
-    //       contentType: originalImageData.contentType,
-    //       key: originalImageKey,
-    //     }),
-    //     serverUploadFile({
-    //       data: generatedImageData.buffer,
-    //       contentType: generatedImageData.contentType,
-    //       key: generatedImageKey,
-    //     })
-    //   ]);
-
-    //   console.log("Uploaded original image to R2:", uploadOriginalResult.url);
-    //   console.log("Uploaded generated image to R2:", uploadGeneratedResult.url);
-    // } catch (uploadError) {
-    //   console.error("Failed to upload to R2:", uploadError);
-    // }
-    // ---- End R2 Upload ----
-
-    const resultImageUrl = `data:image/png;base64,${images[0].base64}`;
-    return apiResponse.success({ imageUrl: resultImageUrl });
+    return apiResponse.success({ imageUrl: result.data.outputUrl });
 
   } catch (error: any) {
     console.error("Image-to-Image generation failed:", error);
-    const errorMessage = error?.message || "Failed to generate image";
+    const errorMessage = error?.message || "Failed to transform image";
     if (errorMessage.includes("API key") || errorMessage.includes("authentication")) {
       return apiResponse.serverError(`Server configuration error: ${errorMessage}`);
     }
-    if (errorMessage.includes("Invalid Base64 Data URI")) {
-      return apiResponse.badRequest(errorMessage);
-    }
     return apiResponse.serverError(errorMessage);
   }
-} 
+}

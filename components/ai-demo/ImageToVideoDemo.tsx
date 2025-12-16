@@ -151,7 +151,7 @@ export default function ImageToVideoDemo() {
     const model = IMAGE_TO_VIDEO_MODELS.find(
       (m) => m.provider === provider && m.id === modelId
     );
-    return model ? `${model.name} (${model.provider})` : "Select a model";
+    return model ? model.name : "Select a model";
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -200,7 +200,7 @@ export default function ImageToVideoDemo() {
                     key={`${model.provider}/${model.id}`}
                     value={`${model.provider}/${model.id}`}
                   >
-                    {model.name} ({model.provider})
+                    {model.name}
                   </SelectItem>
                 ))}
               </SelectContent>
