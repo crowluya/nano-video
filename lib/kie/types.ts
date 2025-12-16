@@ -108,11 +108,36 @@ export interface MidjourneyRequest {
   aspectRatio?: string;
   version?: MidjourneyVersion;
   speed?: MidjourneySpeed;
-  fileUrls?: string[];
+  fileUrl?: string; // Single image URL (legacy, use fileUrls instead)
+  fileUrls?: string[]; // Array of image URLs (recommended)
+  variety?: number; // 0-100, controls diversity
+  stylization?: number; // 0-1000, controls artistic style
+  weirdness?: number; // 0-3000, controls creativity
+  ow?: number; // 1-1000, omni intensity (for mj_omni_reference)
+  waterMark?: string; // Watermark identifier
+  callBackUrl?: string; // Callback URL for completion notifications
+  enableTranslation?: boolean; // Enable prompt translation
+}
+
+export interface MidjourneyResultUrl {
+  resultUrl: string;
+}
+
+export interface MidjourneyResultInfo {
+  resultUrls: MidjourneyResultUrl[];
 }
 
 export interface MidjourneyStatusResponse {
+  taskId?: string;
+  taskType?: string;
+  paramJson?: string;
+  completeTime?: number | string;
+  resultInfoJson?: MidjourneyResultInfo;
   successFlag: TaskSuccessFlag;
+  createTime?: number | string;
+  errorCode?: string | null;
+  errorMessage?: string | null;
+  // Legacy support
   resultUrls?: string[];
   state?: TaskState;
 }

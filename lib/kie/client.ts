@@ -381,9 +381,16 @@ export class KieClient {
     );
 
     if (finalStatus.successFlag !== 1 && finalStatus.state !== 'success') {
-      throw new Error('Midjourney Image generation failed');
+      const errorMsg = finalStatus.errorMessage || 'Midjourney Image generation failed';
+      throw new Error(errorMsg);
     }
 
+    // Extract URLs from resultInfoJson.resultUrls array
+    if (finalStatus.resultInfoJson?.resultUrls) {
+      return finalStatus.resultInfoJson.resultUrls.map(item => item.resultUrl);
+    }
+
+    // Fallback to legacy format
     return finalStatus.resultUrls || [];
   }
 
