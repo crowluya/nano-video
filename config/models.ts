@@ -184,6 +184,7 @@ export const KIE_IMAGE_MODELS = [
 // =============================================================================
 
 export const KIE_VIDEO_MODELS = [
+  // Sora 2 Models
   {
     provider: "kie",
     id: "sora-2-text-to-video",
@@ -224,6 +225,7 @@ export const KIE_VIDEO_MODELS = [
     durations: ["10", "15"] as const,
     creditsPerGeneration: 150,
   },
+  // Veo 3.1 Models
   {
     provider: "kie",
     id: "veo3",
@@ -243,37 +245,6 @@ export const KIE_VIDEO_MODELS = [
     generationTypes: ["TEXT_2_VIDEO", "FIRST_AND_LAST_FRAMES_2_VIDEO", "REFERENCE_2_VIDEO"] as const,
     aspectRatios: ["16:9", "9:16", "Auto"] as const,
     creditsPerGeneration: 60,
-  },
-  {
-    provider: "kie",
-    id: "runway-gen3",
-    name: "Runway Gen-3 Alpha",
-    description: "Runway Gen-3 Alpha Video Generation",
-    features: ["text-to-video", "image-to-video", "extend"],
-    qualities: ["720p", "1080p"] as const,
-    durations: [5, 10] as const,
-    aspectRatios: ["16:9", "9:16", "1:1", "4:3", "3:4"] as const,
-    creditsPerGeneration: 80,
-  },
-  {
-    provider: "kie",
-    id: "wan/2-5-text-to-video",
-    name: "Wan 2.5 Text",
-    description: "Wan 2.5 - Text to Video",
-    features: ["text-to-video"],
-    resolutions: ["720p", "1080p"] as const,
-    durations: ["5", "10"] as const,
-    creditsPerGeneration: 50,
-  },
-  {
-    provider: "kie",
-    id: "wan/2-5-image-to-video",
-    name: "Wan 2.5 Image",
-    description: "Wan 2.5 - Image to Video",
-    features: ["image-to-video"],
-    resolutions: ["720p", "1080p"] as const,
-    durations: ["5", "10"] as const,
-    creditsPerGeneration: 50,
   },
 ] as const;
 

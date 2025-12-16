@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
     // Generate video based on model and wait for completion
     if (modelId.startsWith("sora-2")) {
-      // Sora 2 uses a single method
+      // Sora 2 - Text to Video or Image to Video
       const taskId = await client.generateSora2Video({
         prompt,
         imageUrl,
@@ -66,35 +66,21 @@ export async function POST(req: Request) {
       });
       videoUrls = await client.waitForSora2Completion(taskId);
     } else if (modelId.startsWith("veo3")) {
-      // Veo 3 uses a single method
+      // Veo 3.1 - Text to Video, Image to Video, or First/Last Frame
+      const generationType = imageUrl 
+        ? "FIRST_AND_LAST_FRAMES_2_VIDEO" 
+        : "TEXT_2_VIDEO";
+      
       const taskId = await client.generateVeo3Video({
         prompt,
         imageUrl,
-        generationType: imageUrl ? "TEXT_2_VIDEO" : "TEXT_2_VIDEO",
+        model: modelId === "veo3_fast" ? "veo3_fast" : "veo3",
+        generationType: generationType as "TEXT_2_VIDEO" | "FIRST_AND_LAST_FRAMES_2_VIDEO" | "REFERENCE_2_VIDEO",
         aspectRatio: "16:9",
       });
       videoUrls = await client.waitForVeo3Completion(taskId);
-    } else if (modelId.startsWith("wan/")) {
-      // Wan uses a single method
-      const taskId = await client.generateWanVideo({
-        prompt,
-        imageUrl,
-        resolution: "1080p",
-        duration: duration?.toString() || "10",
-      });
-      videoUrls = await client.waitForWanVideoCompletion(taskId);
-    } else if (modelId === "runway-gen3") {
-      // Runway
-      const taskId = await client.generateRunwayVideo({
-        prompt,
-        imageUrl,
-        quality: "1080p",
-        duration: duration || 10,
-        aspectRatio: "16:9",
-      });
-      videoUrls = await client.waitForRunwayCompletion(taskId);
     } else {
-      return apiResponse.badRequest(`Unsupported video model: ${modelId}`);
+      return apiResponse.badRequest(`Unsupported video model: ${modelId}. Only Sora 2 and Veo 3.1 are supported.`);
     }
 
     if (!videoUrls || videoUrls.length === 0) {
