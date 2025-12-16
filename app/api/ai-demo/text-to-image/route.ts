@@ -40,54 +40,49 @@ export async function POST(req: Request) {
     }
 
     const client = getKieClient();
-    let taskId: string;
+    let imageUrls: string[];
 
-    // Generate image based on model
+    // Generate image based on model and wait for completion
     if (modelId === "google/nano-banana" || modelId === "nano-banana-pro") {
-      taskId = await client.generateNanoBananaImage({
+      const taskId = await client.generateNanoBananaImage({
         prompt,
         aspectRatio: "auto",
         outputFormat: "png",
       });
+      imageUrls = await client.waitForNanoBananaCompletion(taskId);
     } else if (modelId === "midjourney") {
-      taskId = await client.generateMidjourneyImage({
+      const taskId = await client.generateMidjourneyImage({
         prompt,
         taskType: "mj_txt2img",
         version: "7",
         speed: "fast",
         aspectRatio: "1:1",
       });
+      imageUrls = await client.waitForMidjourneyCompletion(taskId);
     } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
-      taskId = await client.generateFluxKontextImage({
+      const taskId = await client.generateFluxKontextImage({
         prompt,
         model: modelId === "flux-kontext-max" ? "flux-kontext-max" : "flux-kontext-pro",
         aspectRatio: "1:1",
         outputFormat: "png",
       });
+      imageUrls = await client.waitForFluxKontextCompletion(taskId);
     } else if (modelId === "gpt4o-image") {
-      taskId = await client.generate4oImage({
+      const taskId = await client.generate4oImage({
         prompt,
         size: "1:1",
         nVariants: 1,
       });
+      imageUrls = await client.waitFor4oImageCompletion(taskId);
     } else {
       return apiResponse.badRequest(`Unsupported image model: ${modelId}`);
     }
 
-    // Poll for result
-    const result = await client.pollTaskStatus({
-      taskId,
-      type: "image",
-      modelId,
-      maxAttempts: 60,
-      intervalMs: 2000,
-    });
-
-    if (!result.success || !result.data?.outputUrl) {
-      return apiResponse.serverError(result.error || "Failed to generate image");
+    if (!imageUrls || imageUrls.length === 0) {
+      return apiResponse.serverError("Failed to generate image: No image URL returned");
     }
 
-    return apiResponse.success({ imageUrl: result.data.outputUrl });
+    return apiResponse.success({ imageUrl: imageUrls[0] });
 
   } catch (error: any) {
     console.error("Text-to-Image generation failed:", error);

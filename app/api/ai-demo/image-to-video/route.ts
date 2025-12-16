@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     }
 
     const client = getKieClient();
-    let taskId: string;
+    let videoUrls: string[];
     let imageUrl: string | undefined;
 
     // Upload image if provided
@@ -55,58 +55,53 @@ export async function POST(req: Request) {
       imageUrl = uploadResult.data.fileUrl;
     }
 
-    // Generate video based on model
+    // Generate video based on model and wait for completion
     if (modelId.startsWith("sora-2")) {
       // Sora 2 uses a single method
-      taskId = await client.generateSora2Video({
+      const taskId = await client.generateSora2Video({
         prompt,
         imageUrl,
         aspectRatio: "landscape",
         duration: duration?.toString() || "10",
       });
+      videoUrls = await client.waitForSora2Completion(taskId);
     } else if (modelId.startsWith("veo3")) {
       // Veo 3 uses a single method
-      taskId = await client.generateVeo3Video({
+      const taskId = await client.generateVeo3Video({
         prompt,
         imageUrl,
         generationType: imageUrl ? "TEXT_2_VIDEO" : "TEXT_2_VIDEO",
         aspectRatio: "16:9",
       });
+      videoUrls = await client.waitForVeo3Completion(taskId);
     } else if (modelId.startsWith("wan/")) {
       // Wan uses a single method
-      taskId = await client.generateWanVideo({
+      const taskId = await client.generateWanVideo({
         prompt,
         imageUrl,
         resolution: "1080p",
         duration: duration?.toString() || "10",
       });
+      videoUrls = await client.waitForWanVideoCompletion(taskId);
     } else if (modelId === "runway-gen3") {
       // Runway
-      taskId = await client.generateRunwayVideo({
+      const taskId = await client.generateRunwayVideo({
         prompt,
         imageUrl,
         quality: "1080p",
         duration: duration || 10,
         aspectRatio: "16:9",
       });
+      videoUrls = await client.waitForRunwayCompletion(taskId);
     } else {
       return apiResponse.badRequest(`Unsupported video model: ${modelId}`);
     }
 
-    // Poll for result
-    const result = await client.pollTaskStatus({
-      taskId,
-      type: "video",
-      modelId,
-      maxAttempts: 120, // Videos take longer
-      intervalMs: 3000,
-    });
-
-    if (!result.success || !result.data?.outputUrl) {
-      return apiResponse.serverError(result.error || "Failed to generate video");
+    if (!videoUrls || videoUrls.length === 0) {
+      return apiResponse.serverError("Failed to generate video: No video URL returned");
     }
 
-    return apiResponse.success({ videoUrl: result.data.outputUrl });
+    return apiResponse.success({ videoUrl: videoUrls[0] });
 
   } catch (error: any) {
     console.error("Video generation failed:", error);
