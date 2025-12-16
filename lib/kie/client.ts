@@ -28,8 +28,6 @@ import {
   NanoBananaRequest,
   PollingOptions,
   RunwayAlephRequest,
-  ZImageRequest,
-  ZImageStatusResponse,
   RunwayExtendRequest,
   RunwayGenerateRequest,
   RunwayStatusResponse,
@@ -40,12 +38,13 @@ import {
   SunoLyricsRequest,
   SunoLyricsResponse,
   SunoStatusResponse,
-  TaskSuccessFlag,
   Veo3ExtendRequest,
   Veo3GenerateRequest,
   Veo3StatusResponse,
   WanStatusResponse,
   WanVideoRequest,
+  ZImageRequest,
+  ZImageStatusResponse
 } from './types';
 
 const DEFAULT_BASE_URL = 'https://api.kie.ai';
@@ -247,10 +246,20 @@ export class KieClient {
     );
 
     if (finalStatus.successFlag !== 1) {
-      throw new Error('Flux Kontext Image generation failed');
+      const errorMsg = finalStatus.errorMessage || 'Flux Kontext Image generation failed';
+      throw new Error(errorMsg);
     }
 
-    return finalStatus.resultUrls || (finalStatus.resultUrl ? [finalStatus.resultUrl] : []);
+    // Extract URL from response.resultImageUrl (actual API format)
+    let urls: string[] = [];
+    if (finalStatus.response?.resultImageUrl) {
+      urls = [finalStatus.response.resultImageUrl];
+    } else if (finalStatus.resultUrls && finalStatus.resultUrls.length > 0) {
+      urls = finalStatus.resultUrls;
+    } else if (finalStatus.resultUrl) {
+      urls = [finalStatus.resultUrl];
+    }
+    return urls;
   }
 
   // ===========================================================================

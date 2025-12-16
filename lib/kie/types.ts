@@ -47,7 +47,7 @@ export interface Gpt4oImageStatusResponse {
 
 // --- Flux Kontext ---
 export type FluxKontextModel = 'flux-kontext-pro' | 'flux-kontext-max';
-export type FluxKontextAspectRatio = '21:9' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16' | '16:21';
+export type FluxKontextAspectRatio = '21:9' | '16:9' | '4:3' | '1:1' | '3:4' | '9:16';
 
 export interface FluxKontextRequest {
   prompt: string;
@@ -55,12 +55,22 @@ export interface FluxKontextRequest {
   aspectRatio?: FluxKontextAspectRatio;
   inputImage?: string;
   outputFormat?: 'jpeg' | 'png';
+  enableTranslation?: boolean; // Default: true
+  promptUpsampling?: boolean; // Default: false
+}
+
+export interface FluxKontextResponse {
+  originImageUrl?: string | null;
+  resultImageUrl?: string | null;
 }
 
 export interface FluxKontextStatusResponse {
   successFlag: TaskSuccessFlag;
   resultUrl?: string;
   resultUrls?: string[];
+  response?: FluxKontextResponse; // API returns URL in response.resultImageUrl
+  errorMessage?: string;
+  errorCode?: string | null;
 }
 
 // --- Nano Banana (Google Gemini Image) ---

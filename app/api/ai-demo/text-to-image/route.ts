@@ -2,9 +2,9 @@
  * Text to Image API Route - Using Kie.ai
  */
 
+import { getKieImageModel } from "@/config/models";
 import { apiResponse } from "@/lib/api-response";
 import { getKieClient } from "@/lib/kie";
-import { getKieImageModel } from "@/config/models";
 import { z } from 'zod';
 
 const inputSchema = z.object({
@@ -69,6 +69,7 @@ export async function POST(req: Request) {
         model: modelId === "flux-kontext-max" ? "flux-kontext-max" : "flux-kontext-pro",
         aspectRatio: "1:1",
         outputFormat: "png",
+        enableTranslation: true,
       });
       imageUrls = await client.waitForFluxKontextCompletion(taskId);
     } else if (modelId === "gpt4o-image") {

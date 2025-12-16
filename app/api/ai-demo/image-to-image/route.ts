@@ -2,9 +2,9 @@
  * Image to Image API Route - Using Kie.ai
  */
 
+import { getKieImageModel } from "@/config/models";
 import { apiResponse } from "@/lib/api-response";
 import { getKieClient } from "@/lib/kie";
-import { getKieImageModel } from "@/config/models";
 import { z } from 'zod';
 
 const inputSchema = z.object({
@@ -37,23 +37,42 @@ export async function POST(req: Request) {
       return apiResponse.badRequest(`Unknown image model: ${modelId}`);
     }
 
-    if (!modelConfig.features.includes("image-to-image")) {
+    if (!(modelConfig.features as readonly string[]).includes("image-to-image")) {
       return apiResponse.badRequest(`Model ${modelId} does not support image-to-image`);
     }
 
     const client = getKieClient();
     
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/ai-demo/image-to-image/route.ts:44',message:'Starting image upload',data:{modelId,hasBase64Data:!!imageBase64DataUri,base64Length:imageBase64DataUri?.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+    // #endregion
+    
     // Upload image first
-    const uploadResult = await client.uploadFileBase64({
-      base64Data: imageBase64DataUri.split(',')[1],
-      fileName: "input-image.png",
-    });
-
-    if (!uploadResult.success || !uploadResult.data?.fileUrl) {
-      return apiResponse.serverError("Failed to upload image");
+    let uploadResult: { fileUrl: string; downloadUrl: string } | null = null;
+    try {
+      uploadResult = await client.uploadFileBase64({
+        base64Data: imageBase64DataUri.split(',')[1],
+        uploadPath: "ai-demo/image-to-image",
+        fileName: `input-image-${Date.now()}.png`,
+      });
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/ai-demo/image-to-image/route.ts:54',message:'Upload success',data:{hasFileUrl:!!uploadResult?.fileUrl,fileUrl:uploadResult?.fileUrl},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+      // #endregion
+    } catch (uploadError: any) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/ai-demo/image-to-image/route.ts:58',message:'Upload error',data:{errorMessage:uploadError?.message,errorStack:uploadError?.stack,errorName:uploadError?.name},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+      // #endregion
+      return apiResponse.serverError(`Failed to upload image: ${uploadError?.message || 'Unknown error'}`);
     }
 
-    const imageUrl = uploadResult.data.fileUrl;
+    if (!uploadResult?.fileUrl) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/ai-demo/image-to-image/route.ts:63',message:'Upload result missing fileUrl',data:{uploadResult},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      return apiResponse.serverError("Failed to upload image: No file URL returned");
+    }
+
+    const imageUrl = uploadResult.fileUrl;
     let imageUrls: string[];
 
     // Generate image based on model and wait for completion
