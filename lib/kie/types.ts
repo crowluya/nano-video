@@ -65,7 +65,7 @@ export interface FluxKontextStatusResponse {
 
 // --- Nano Banana (Google Gemini Image) ---
 export type NanoBananaModel = 'google/nano-banana' | 'google/nano-banana-edit' | 'nano-banana-pro';
-export type NanoBananaAspectRatio = '1:1' | '16:9' | '9:16' | '4:3' | '3:4' | '21:9' | 'auto';
+export type NanoBananaAspectRatio = '1:1' | '2:3' | '3:2' | '3:4' | '4:3' | '4:5' | '5:4' | '9:16' | '16:9' | '21:9' | 'auto';
 export type NanoBananaResolution = '1K' | '2K' | '4K';
 
 export interface NanoBananaInput {
@@ -81,6 +81,20 @@ export interface NanoBananaInput {
 export interface NanoBananaRequest {
   model: NanoBananaModel;
   input: NanoBananaInput;
+}
+
+// --- Z-Image (Tongyi-MAI) ---
+export type ZImageAspectRatio = '1:1' | '4:3' | '3:4' | '16:9' | '9:16';
+
+export interface ZImageRequest {
+  prompt: string;
+  aspect_ratio: ZImageAspectRatio;
+}
+
+export interface ZImageStatusResponse {
+  state: TaskState;
+  resultJson?: string;
+  resultUrls?: string[];
 }
 
 // --- Midjourney ---

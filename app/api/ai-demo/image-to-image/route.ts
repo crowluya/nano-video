@@ -58,18 +58,22 @@ export async function POST(req: Request) {
 
     // Generate image based on model and wait for completion
     if (modelId === "google/nano-banana-edit" || modelId === "nano-banana-pro") {
+      // Nano Banana models require model field in request
       const taskId = await client.generateNanoBananaImage({
-        prompt,
-        filesUrl: [imageUrl],
-        aspectRatio: "auto",
-        outputFormat: "png",
+        model: modelId === "nano-banana-pro" ? "nano-banana-pro" : "google/nano-banana-edit",
+        input: {
+          prompt,
+          image_input: [imageUrl],
+          aspect_ratio: "auto",
+          output_format: "png",
+        },
       });
       imageUrls = await client.waitForNanoBananaCompletion(taskId);
     } else if (modelId === "midjourney") {
       const taskId = await client.generateMidjourneyImage({
-        prompt,
         taskType: "mj_img2img",
-        imageUrl,
+        prompt,
+        fileUrls: imageUrl ? [imageUrl] : undefined,
         version: "7",
         speed: "fast",
         aspectRatio: "1:1",
@@ -79,7 +83,7 @@ export async function POST(req: Request) {
       const taskId = await client.generateFluxKontextImage({
         prompt,
         model: modelId === "flux-kontext-max" ? "flux-kontext-max" : "flux-kontext-pro",
-        imageUrl,
+        inputImage: imageUrl,
         aspectRatio: "1:1",
         outputFormat: "png",
       });

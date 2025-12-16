@@ -28,6 +28,8 @@ import {
   NanoBananaRequest,
   PollingOptions,
   RunwayAlephRequest,
+  ZImageRequest,
+  ZImageStatusResponse,
   RunwayExtendRequest,
   RunwayGenerateRequest,
   RunwayStatusResponse,
@@ -264,6 +266,54 @@ export class KieClient {
       }
     );
     return response.data.taskId;
+  }
+  
+  // ===========================================================================
+  // Image Generation - Z-Image (Tongyi-MAI)
+  // ===========================================================================
+
+  async generateZImage(params: ZImageRequest): Promise<string> {
+    const response = await this.request<KieApiResponse<KieTaskResponse>>(
+      '/api/v1/jobs/createTask',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          model: 'z-image',
+          input: params,
+        }),
+      }
+    );
+    return response.data.taskId;
+  }
+
+  async getZImageStatus(taskId: string): Promise<ZImageStatusResponse> {
+    const response = await this.request<KieApiResponse<ZImageStatusResponse>>(
+      `/api/v1/jobs/recordInfo?taskId=${taskId}`,
+      { method: 'GET' }
+    );
+    return response.data;
+  }
+
+  async waitForZImageCompletion(
+    taskId: string,
+    options?: PollingOptions
+  ): Promise<string[]> {
+    const finalStatus = await this.poll(
+      () => this.getZImageStatus(taskId),
+      (status) => status.state === 'success' || status.state === 'fail' || status.state === 'failed',
+      { ...DEFAULT_POLLING_OPTIONS.image, ...options }
+    );
+
+    if (finalStatus.state !== 'success') {
+      throw new Error('Z-Image generation failed');
+    }
+
+    if (finalStatus.resultJson) {
+      const result = JSON.parse(finalStatus.resultJson);
+      return result.resultUrls || result.result_urls || [];
+    }
+
+    return finalStatus.resultUrls || [];
   }
 
   async getNanoBananaStatus(taskId: string): Promise<GenericJobStatusResponse> {

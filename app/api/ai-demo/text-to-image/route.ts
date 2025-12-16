@@ -43,17 +43,21 @@ export async function POST(req: Request) {
     let imageUrls: string[];
 
     // Generate image based on model and wait for completion
-    if (modelId === "google/nano-banana" || modelId === "nano-banana-pro") {
+    if (modelId === "google/nano-banana" || modelId === "nano-banana-pro" || modelId === "google/nano-banana-edit") {
+      // Nano Banana models require model field in request
       const taskId = await client.generateNanoBananaImage({
-        prompt,
-        aspectRatio: "auto",
-        outputFormat: "png",
+        model: modelId as "google/nano-banana" | "google/nano-banana-edit" | "nano-banana-pro",
+        input: {
+          prompt,
+          aspect_ratio: "auto",
+          output_format: "png",
+        },
       });
       imageUrls = await client.waitForNanoBananaCompletion(taskId);
     } else if (modelId === "midjourney") {
       const taskId = await client.generateMidjourneyImage({
-        prompt,
         taskType: "mj_txt2img",
+        prompt,
         version: "7",
         speed: "fast",
         aspectRatio: "1:1",
@@ -74,6 +78,12 @@ export async function POST(req: Request) {
         nVariants: 1,
       });
       imageUrls = await client.waitFor4oImageCompletion(taskId);
+    } else if (modelId === "z-image") {
+      const taskId = await client.generateZImage({
+        prompt,
+        aspect_ratio: "1:1",
+      });
+      imageUrls = await client.waitForZImageCompletion(taskId);
     } else {
       return apiResponse.badRequest(`Unsupported image model: ${modelId}`);
     }
