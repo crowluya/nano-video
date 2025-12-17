@@ -65,7 +65,14 @@ export async function GET(req: Request) {
         
         if (fluxStatus.successFlag === 1) {
           status = "success";
-          resultUrls = fluxStatus.resultUrls || (fluxStatus.resultUrl ? [fluxStatus.resultUrl] : []);
+          // Extract URL from response.resultImageUrl (actual API format)
+          if (fluxStatus.response?.resultImageUrl) {
+            resultUrls = [fluxStatus.response.resultImageUrl];
+          } else if (fluxStatus.resultUrls && fluxStatus.resultUrls.length > 0) {
+            resultUrls = fluxStatus.resultUrls;
+          } else if (fluxStatus.resultUrl) {
+            resultUrls = [fluxStatus.resultUrl];
+          }
         } else if (fluxStatus.successFlag === 2 || fluxStatus.successFlag === 3) {
           status = "failed";
         } else {
@@ -112,14 +119,21 @@ export async function GET(req: Request) {
         
         if (veoStatus.successFlag === 1) {
           status = "success";
-          if (veoStatus.resultUrls) {
+          // Priority 1: Extract from response.resultUrls (actual API format)
+          if (veoStatus.response?.resultUrls && veoStatus.response.resultUrls.length > 0) {
+            resultUrls = veoStatus.response.resultUrls;
+          } 
+          // Priority 2: Parse legacy resultUrls JSON string
+          else if (veoStatus.resultUrls) {
             try {
               const urls = JSON.parse(veoStatus.resultUrls);
               resultUrls = Array.isArray(urls) ? urls : [urls];
             } catch {
               resultUrls = [veoStatus.resultUrls];
             }
-          } else if (veoStatus.videoUrl) {
+          } 
+          // Priority 3: Use videoUrl if exists
+          else if (veoStatus.videoUrl) {
             resultUrls = [veoStatus.videoUrl];
           }
         } else if (veoStatus.successFlag === 2 || veoStatus.successFlag === 3) {

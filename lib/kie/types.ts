@@ -179,8 +179,26 @@ export interface Veo3ExtendRequest {
   callBackUrl?: string;
 }
 
+export interface Veo3Response {
+  taskId?: string;
+  resolution?: string;
+  originUrls?: string[] | null;
+  resultUrls?: string[];
+  hasAudioList?: boolean[];
+  seeds?: number[];
+}
+
 export interface Veo3StatusResponse {
+  taskId?: string;
+  paramJson?: string;
+  response?: Veo3Response | null;
   successFlag: TaskSuccessFlag;
+  fallbackFlag?: boolean;
+  completeTime?: number | null;
+  createTime?: number | null;
+  errorCode?: string | null;
+  errorMessage?: string | null;
+  // Legacy fields for backward compatibility
   resultUrls?: string; // JSON string that needs to be parsed
   videoUrl?: string;
 }
@@ -360,8 +378,15 @@ export interface FileBase64UploadRequest {
 }
 
 export interface FileUploadResponse {
-  fileUrl: string;
+  success: boolean;
+  fileName: string;
+  filePath: string;
   downloadUrl: string;
+  fileSize: number;
+  mimeType: string;
+  uploadedAt: string;
+  // Legacy field for backward compatibility
+  fileUrl?: string;
 }
 
 // =============================================================================

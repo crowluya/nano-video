@@ -18,6 +18,7 @@ import { AlertTriangle, Download, FileUp, Loader2, X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
+import { TaskProgress } from "@/components/kie/TaskProgress";
 
 const parseModelValue = (value: string) => {
   const modelInfo = IMAGE_TO_IMAGE_MODELS.find(
@@ -42,6 +43,8 @@ export default function ImageToImageDemo() {
   const [seed, setSeed] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [taskId, setTaskId] = useState<string | null>(null);
+  const [modelId, setModelId] = useState<string | null>(null);
 
   const initialModelValue =
     IMAGE_TO_IMAGE_MODELS.length > 0
@@ -80,9 +83,16 @@ export default function ImageToImageDemo() {
       return;
     }
 
+    // Prevent multiple simultaneous requests
+    if (loading || taskId) {
+      return;
+    }
+
     setLoading(true);
     setResultImage(null);
     setError(null);
+    setTaskId(null);
+    setModelId(null);
 
     const { provider, modelId } = parseModelValue(selectedModelValue);
     const seedValue = seed.trim() === "" ? undefined : parseInt(seed, 10);
@@ -105,6 +115,7 @@ export default function ImageToImageDemo() {
           seed: seedValue,
           modelId: modelId,
           provider: provider,
+          wait: false, // Don't wait, return taskId for progress tracking
         }),
       });
 
@@ -120,18 +131,24 @@ export default function ImageToImageDemo() {
         throw new Error(result.error || "Failed to transform image");
       }
 
-      if (result.data?.imageUrl) {
+      // If taskId is returned, use progress tracking
+      if (result.data?.taskId) {
+        setTaskId(result.data.taskId);
+        setModelId(result.data.modelId);
+        setError(null);
+      } else if (result.data?.imageUrl) {
+        // Fallback: if imageUrl is returned directly (shouldn't happen with wait=false)
         setResultImage(result.data.imageUrl);
+        setLoading(false);
       } else {
-        throw new Error("API did not return an image URL.");
+        throw new Error("API did not return a task ID or image URL.");
       }
     } catch (err: any) {
       console.error("API call failed:", err);
       const errorMessage = err.message || "Failed to transform image.";
       setError(errorMessage);
-      toast.error(errorMessage);
-    } finally {
       setLoading(false);
+      toast.error(errorMessage);
     }
   };
 
@@ -139,6 +156,26 @@ export default function ImageToImageDemo() {
     setSourceImage(null);
     setResultImage(null);
     setError(null);
+    setTaskId(null);
+    setModelId(null);
+  };
+
+  const handleTaskComplete = (resultUrls: string[]) => {
+    if (resultUrls && resultUrls.length > 0) {
+      setResultImage(resultUrls[0]);
+      setTaskId(null);
+      setModelId(null);
+      setLoading(false);
+      toast.success("Image transformation completed!");
+    }
+  };
+
+  const handleTaskError = (error: string) => {
+    setError(error);
+    setTaskId(null);
+    setModelId(null);
+    setLoading(false);
+    toast.error(error);
   };
 
   const getModelDisplayName = (value: string) => {
@@ -285,11 +322,11 @@ export default function ImageToImageDemo() {
           <Button
             onClick={handleTransform}
             disabled={
-              loading || !sourceImage || !prompt.trim() || !selectedModelValue
+              loading || !sourceImage || !prompt.trim() || !selectedModelValue || !!taskId
             }
             className="w-full"
           >
-            {loading ? (
+            {loading || taskId ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Transforming...
@@ -298,6 +335,19 @@ export default function ImageToImageDemo() {
               "Transform Image"
             )}
           </Button>
+
+          {/* Progress Display */}
+          {taskId && modelId && (
+            <TaskProgress
+              taskId={taskId}
+              type="image"
+              modelId={modelId}
+              onComplete={handleTaskComplete}
+              onError={handleTaskError}
+              pollInterval={15000}
+              maxPolls={120}
+            />
+          )}
         </div>
 
         <div className="lg:col-span-2">

@@ -40,6 +40,7 @@ import {
   SunoStatusResponse,
   Veo3ExtendRequest,
   Veo3GenerateRequest,
+  Veo3Response,
   Veo3StatusResponse,
   WanStatusResponse,
   WanVideoRequest,
@@ -427,6 +428,9 @@ export class KieClient {
       `/api/v1/veo/record-info?taskId=${taskId}`,
       { method: 'GET' }
     );
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:425',message:'Veo 3 status response',data:{taskId,fullResponse:JSON.stringify(response.data)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     return response.data;
   }
 
@@ -459,20 +463,68 @@ export class KieClient {
       { ...DEFAULT_POLLING_OPTIONS.video, ...options }
     );
 
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:462',message:'Veo 3 final status',data:{taskId,successFlag:finalStatus.successFlag,hasResponse:!!finalStatus.response,hasResponseResultUrls:!!finalStatus.response?.resultUrls,responseResultUrls:finalStatus.response?.resultUrls,hasResultUrls:!!finalStatus.resultUrls,resultUrls:finalStatus.resultUrls,hasVideoUrl:!!finalStatus.videoUrl,videoUrl:finalStatus.videoUrl},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+
     if (finalStatus.successFlag !== 1) {
       throw new Error('Veo 3.1 Video generation failed');
     }
 
+    // Priority 1: Extract from response.resultUrls (actual API format)
+    if (finalStatus.response?.resultUrls && finalStatus.response.resultUrls.length > 0) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:470',message:'Veo 3 using response.resultUrls',data:{urlsCount:finalStatus.response.resultUrls.length,urls:finalStatus.response.resultUrls},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      return finalStatus.response.resultUrls;
+    }
+
+    // Priority 2: Parse legacy resultUrls JSON string
     if (finalStatus.resultUrls) {
       try {
         const urls = JSON.parse(finalStatus.resultUrls);
-        return Array.isArray(urls) ? urls : [urls];
+        const result = Array.isArray(urls) ? urls : [urls];
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:477',message:'Veo 3 parsed legacy resultUrls',data:{urlsCount:result.length,urls:result},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
+        return result;
       } catch {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:480',message:'Veo 3 resultUrls as string',data:{resultUrls:finalStatus.resultUrls},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
         return [finalStatus.resultUrls];
       }
     }
 
-    return finalStatus.videoUrl ? [finalStatus.videoUrl] : [];
+    // Priority 3: Use videoUrl if exists
+    if (finalStatus.videoUrl) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:485',message:'Veo 3 using videoUrl',data:{videoUrl:finalStatus.videoUrl},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      return [finalStatus.videoUrl];
+    }
+
+    // Priority 4: Try to get 1080p video URL as fallback (may not be ready immediately)
+    try {
+      const videoUrl1080p = await this.getVeo31080pVideo(taskId);
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:491',message:'Veo 3 got 1080p video URL',data:{videoUrl1080p},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      if (videoUrl1080p) {
+        return [videoUrl1080p];
+      }
+    } catch (error: any) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:495',message:'Veo 3 get-1080p-video failed',data:{error:error?.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+      // Ignore error - 1080p may not be ready yet, but 720p should be in response.resultUrls
+    }
+
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:500',message:'Veo 3 no video URL found',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
+
+    return [];
   }
 
   // ===========================================================================
@@ -508,14 +560,33 @@ export class KieClient {
       { ...DEFAULT_POLLING_OPTIONS.video, ...options }
     );
 
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:511',message:'Sora 2 final status',data:{taskId,state:finalStatus.state,hasResultJson:!!finalStatus.resultJson,resultJson:finalStatus.resultJson},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
+
     if (finalStatus.state !== 'success') {
       throw new Error('Sora 2 Video generation failed');
     }
 
     if (finalStatus.resultJson) {
-      const result = JSON.parse(finalStatus.resultJson);
-      return result.resultUrls || result.result_urls || [];
+      try {
+        const result = JSON.parse(finalStatus.resultJson);
+        const urls = result.resultUrls || result.result_urls || [];
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:518',message:'Sora 2 parsed resultJson',data:{urlsCount:urls.length,urls,parsedResult:result},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+        // #endregion
+        return urls;
+      } catch (parseError: any) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:520',message:'Sora 2 resultJson parse error',data:{resultJson:finalStatus.resultJson,parseError:parseError?.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+        // #endregion
+        return [];
+      }
     }
+
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'lib/kie/client.ts:525',message:'Sora 2 no resultJson',data:{state:finalStatus.state},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+    // #endregion
 
     return [];
   }

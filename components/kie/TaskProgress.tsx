@@ -95,26 +95,34 @@ export const TaskProgress: React.FC<TaskProgressProps> = ({
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
     let isCancelled = false;
+    let currentPollCount = 0;
 
     const poll = async () => {
       if (isCancelled) return;
 
       const isComplete = await pollStatus();
 
-      if (!isComplete && pollCount < maxPolls && !isCancelled) {
-        setPollCount((c) => c + 1);
-        timeoutId = setTimeout(poll, pollInterval);
+      if (!isComplete && currentPollCount < maxPolls && !isCancelled) {
+        currentPollCount++;
+        setPollCount(currentPollCount);
+        // Add initial delay to avoid immediate polling after task creation
+        const delay = currentPollCount === 1 ? Math.max(pollInterval, 3000) : pollInterval;
+        timeoutId = setTimeout(poll, delay);
       }
     };
 
-    // Start polling
-    poll();
+    // Add initial delay before first poll to avoid rate limiting
+    timeoutId = setTimeout(() => {
+      if (!isCancelled) {
+        poll();
+      }
+    }, 2000);
 
     return () => {
       isCancelled = true;
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [pollStatus, pollInterval, maxPolls, pollCount]);
+  }, [pollStatus, pollInterval, maxPolls]); // Removed pollCount from dependencies
 
   const handleRetry = useCallback(() => {
     setStatus("pending");
