@@ -1,0 +1,272 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "新着",
+      "text": "無料AIビデオジェネレーター - ウォーターマークなし",
+      "href": "#video-demo"
+    },
+    "title": "Nano Banana to Video - Sora 2 & Veo 3.1 AIビデオジェネレーター",
+    "description": "Nano Banana画像を瞬時にプロフェッショナルなビデオに変換。Sora 2とVeo 3.1 Fastをサポート。無料トライアル、ウォーターマークなし。UGC広告とeコマースに最適。",
+    "getStarted": "作成開始",
+    "getStartedLink": "#video-demo"
+  },
+  "Features": {
+    "badge": {
+      "label": "機能",
+      "text": "プロフェッショナルAIビデオ生成"
+    },
+    "title": "最高のNano Banana to Videoコンバーター",
+    "description": "最先端のAIモデルでNano Banana画像を素晴らしいビデオに変換。高速、無料、ウォーターマークなし。",
+    "items": [
+      {
+        "title": "Nano Banana to Video変換",
+        "description": "高度なAI技術で、数分でNano Banana画像をプロフェッショナルなビデオに変換。",
+        "details": [
+          {
+            "title": "複数の入力方法",
+            "description": "テキストからビデオ、画像からビデオ、キーフレームからビデオの変換をサポート。"
+          },
+          {
+            "title": "高品質出力",
+            "description": "商用利用に最適な1080pのプロフェッショナル品質のビデオを生成。"
+          },
+          {
+            "title": "高速生成",
+            "description": "モデルと複雑さに応じて、3〜10分でビデオを作成。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      },
+      {
+        "title": "複数のAIモデル (Sora 2 & Veo 3.1 Fast)",
+        "description": "OpenAI Sora 2とGoogle Veo 3.1 Fastを含む最新のAIビデオ生成モデルから選択。",
+        "details": [
+          {
+            "title": "Sora 2",
+            "description": "優れた品質とリアリズムを備えたOpenAIの最新ビデオ生成モデル。"
+          },
+          {
+            "title": "Veo 3.1 Fast",
+            "description": "複数の生成モードを備えたGoogleの最速ビデオ生成モデル。"
+          },
+          {
+            "title": "モデル比較",
+            "description": "Nano Banana vs Sora vs Veo 3を比較して、ニーズに最適なモデルを選択。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      },
+      {
+        "title": "無料＆ウォーターマークなし",
+        "description": "ウォーターマークなしでビデオの作成を無料で開始。テストや小規模プロジェクトに最適。",
+        "details": [
+          {
+            "title": "無料トライアルクレジット",
+            "description": "支払いなしでビデオ生成をテストするための無料クレジットを取得。"
+          },
+          {
+            "title": "ウォーターマークなし",
+            "description": "生成されたすべてのビデオはウォーターマークなしでプロフェッショナルな使用が可能。"
+          },
+          {
+            "title": "柔軟な価格設定",
+            "description": "従量課金制または無制限のビデオ生成のためのサブスクリプション。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      },
+      {
+        "title": "UGC＆商用利用",
+        "description": "TikTok、Instagram、ShopifyストアのUGC広告作成に最適。",
+        "details": [
+          {
+            "title": "TikTok UGC広告",
+            "description": "Nano Banana画像から数分で魅力的なTikTok広告を作成。"
+          },
+          {
+            "title": "InstagramとShopify",
+            "description": "Instagram reelsとShopifyストア用の製品ビデオを生成。"
+          },
+          {
+            "title": "商用ライセンス",
+            "description": "すべてのビデオにはビジネス用の商用利用権が付属。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      },
+      {
+        "title": "キーフレームからビデオ",
+        "description": "複数のキーフレームからスムーズなトランジションを持つ映画的なビデオを作成。",
+        "details": [
+          {
+            "title": "参照からビデオ",
+            "description": "2〜3枚の参照画像を使用してビデオ生成プロセスをガイド。"
+          },
+          {
+            "title": "スムーズなトランジション",
+            "description": "AIがキーフレーム間のスムーズなトランジションを自動生成。"
+          },
+          {
+            "title": "映画的品質",
+            "description": "ストーリーボードから映画のようなビデオを作成するのに最適。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      },
+      {
+        "title": "高速生成 (3〜10分)",
+        "description": "モデルと複雑さに応じて、わずか3〜10分でプロフェッショナルなビデオを生成。",
+        "details": [
+          {
+            "title": "迅速な納期",
+            "description": "Veo 3.1 Fastを使用すると、ほとんどのビデオが3〜5分で準備完了。"
+          },
+          {
+            "title": "リアルタイム進捗",
+            "description": "ライブステータス更新で生成進捗を追跡。"
+          },
+          {
+            "title": "バッチ生成",
+            "description": "時間を節約するために複数のビデオを同時に生成。"
+          }
+        ],
+        "images": [
+          "/placeholder.webp"
+        ]
+      }
+    ]
+  },
+  "UseCases": {
+    "badge": {
+      "label": "使用例",
+      "text": "コンテンツ作成を変革"
+    },
+    "title": "すべてのクリエイターに最適",
+    "description": "UGC広告、顔なしYouTubeビデオ、eコマースコンテンツを作成する場合でも、Nano Banana to Videoが対応します。",
+    "cases": [
+      {
+        "title": "UGC広告 (TikTok, Instagram, Shopify)",
+        "description": "TikTok、Instagram、Shopifyストア向けの魅力的なユーザー生成コンテンツスタイルの広告を作成。高額な制作コストなしでビデオ広告制作を拡大したいeコマースブランドに最適。",
+        "image": "/placeholder.webp",
+        "icon": "Video"
+      },
+      {
+        "title": "顔なしYouTubeビデオ",
+        "description": "Nano Banana画像から顔なしYouTubeビデオを生成。教育コンテンツ、製品レビュー、ストーリーテリングチャンネルに最適。撮影機材や俳優は不要。",
+        "image": "/placeholder.webp",
+        "icon": "Youtube"
+      },
+      {
+        "title": "eコマース製品ビデオ",
+        "description": "製品画像をeコマースストア用の動的な製品ビデオに変換。プロフェッショナルな製品デモとライフスタイルビデオでコンバージョン率を向上。",
+        "image": "/placeholder.webp",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "映画的ビデオ (キーフレーム)",
+        "description": "複数のキーフレームから映画的なビデオを作成。ストーリーボードを視覚化したり、コンセプトビデオを作成したい映画製作者、アニメーター、コンテンツクリエイターに最適。",
+        "image": "/placeholder.webp",
+        "icon": "Film"
+      },
+      {
+        "title": "TikTokコンテンツ",
+        "description": "Nano Banana画像からバイラルTikTokコンテンツを生成。コンテンツ制作を拡大し、一貫した投稿スケジュールを維持したいクリエイターに最適。",
+        "image": "/placeholder.webp",
+        "icon": "Smartphone"
+      }
+    ]
+  },
+  "Testimonials": {
+    "badge": {
+      "label": "お客様の声"
+    },
+    "title": "世界中のクリエイターに愛用",
+    "description": "毎日Nano Banana to Videoを使用している数千人のクリエイターに参加"
+  },
+  "FAQ": {
+    "title": "よくある質問",
+    "description": "Nano Banana to Videoについて知っておくべきすべて",
+    "items": [
+      {
+        "question": "Nano BananaをビデオにLOCATION変換する方法は？",
+        "answer": "Nano Bananaをビデオに変換するのは簡単です：1) 好みのAIモデル（Sora 2またはVeo 3.1）を選択、2) 生成モード（テキストからビデオまたは画像からビデオ）を選択、3) 画像からビデオを使用する場合はNano Banana画像をアップロード、4) ビデオモーションを説明するプロンプトを入力、5) 生成をクリックして3〜10分待つ。"
+      },
+      {
+        "question": "Nano Banana to Videoは無料ですか？",
+        "answer": "はい！支払いなしでビデオ生成をテストできる無料トライアルクレジットを提供しています。生成されたすべてのビデオはウォーターマークなしです。無料クレジットを使用した後、従量課金制または無制限のビデオ生成のためのサブスクリプションを選択できます。"
+      },
+      {
+        "question": "Nano Bananaビデオからウォーターマークを削除する方法は？",
+        "answer": "当プラットフォームで生成されたすべてのビデオは自動的にウォーターマークなしです！特別なことをする必要はありません。他のプラットフォームとは異なり、ビデオにウォーターマークを追加しないため、すぐにプロフェッショナルおよび商用利用が可能です。"
+      },
+      {
+        "question": "Nano Banana vs Sora vs Veo 3 - どれが良いですか？",
+        "answer": "各モデルには強みがあります：Sora 2はリアルなモーションと高品質の出力に優れ、映画的なビデオに最適です。Veo 3.1 Fastは複数の生成モードを備えた最速のオプションで、迅速な納期に最適です。Nano Banana Editはビデオ生成前の画像編集に最適です。無料クレジットですべてのモデルを試して、ニーズに最適なものを確認することをお勧めします。"
+      },
+      {
+        "question": "Nano Bananaビデオを商用利用できますか？",
+        "answer": "はい！当プラットフォームで生成されたすべてのビデオには商用利用権が付属しています。UGC広告、TikTokコンテンツ、YouTubeビデオ、eコマースストア、およびその他の商用目的に制限なく使用できます。"
+      },
+      {
+        "question": "ビデオ生成にはどのくらい時間がかかりますか？",
+        "answer": "ビデオ生成は通常、モデルと複雑さに応じて3〜10分かかります。Veo 3.1 Fastが最速（3〜5分）で、Sora 2はより高品質の結果を得るために5〜10分かかる場合があります。リアルタイムステータス更新で進捗をリアルタイムで追跡できます。"
+      },
+      {
+        "question": "どのビデオ形式がサポートされていますか？",
+        "answer": "すべてのビデオは、1080p解像度の標準MP4形式で生成されます。この形式は、TikTok、Instagram、YouTube、Shopifyなどのすべての主要プラットフォームと互換性があります。ビデオはWebストリーミングとダウンロード用に最適化されています。"
+      },
+      {
+        "question": "使用するにはアカウントを作成する必要がありますか？",
+        "answer": "アカウントなしでビデオ生成を試すことができますが、無料アカウントを作成すると、ビデオを保存し、生成履歴を追跡し、クレジットをより簡単に管理できます。アカウント作成は迅速で、メールまたはソーシャルログインのみが必要です。"
+      },
+      {
+        "question": "Nano Bananaから1080pビデオを取得する方法は？",
+        "answer": "当プラットフォームで生成されたすべてのビデオは自動的に1080p解像度で作成されます！Sora 2またはVeo 3.1を使用して通常どおりビデオを生成するだけで、出力はプロフェッショナルな使用に最適なフルHD 1080p品質になります。"
+      },
+      {
+        "question": "ビデオ生成の最良のプロンプトは何ですか？",
+        "answer": "最良のプロンプトは詳細で具体的です。望むモーション、カメラの動き、照明、雰囲気を説明してください。例：'カメラが夕日のビーチをゆっくりとパンし、波が穏やかに海岸に打ち寄せる'は、単に'ビーチビデオ'よりも効果的です。速度（遅い、速い）、方向（左から右、ズームイン）、ムード（穏やか、エネルギッシュ）の詳細を含めてください。"
+      }
+    ]
+  },
+  "CTA": {
+    "title": "今日からビデオ作成を始める",
+    "description": "AIを使用してNano Banana画像を素晴らしいビデオに変換している数千人のクリエイターに参加。無料トライアル、クレジットカード不要。",
+    "button": "今すぐ無料で試す",
+    "trustText": "世界中のクリエイターに信頼されています",
+    "features": {
+      "deploy": "🎬 即座に生成",
+      "production": "✨ ウォーターマークなし",
+      "updates": "🚀 高速処理",
+      "i18n": "💎 商用利用"
+    }
+  },
+  "VideoDemo": {
+    "title": "ビデオを生成",
+    "loginPrompt": "ビデオを保存してより多くの機能にアクセスするにはサインイン",
+    "loginButton": "サインイン"
+  },
+  "Pricing": {
+    "badge": {
+      "label": "価格",
+      "text": "すべてのクリエイター向けの柔軟なプラン"
+    },
+    "title": "ビデオ生成プランを選択",
+    "description": "柔軟な価格プランでプロフェッショナルなビデオの作成を開始。無料トライアルあり、クレジットカード不要。",
+    "annual": "年間",
+    "monthly": "月額",
+    "onetime": "一回限り",
+    "saveTip": "20%節約"
+  }
+}
+

@@ -15,6 +15,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     messages: {
       Landing: (await import(`./messages/${locale}/Landing.json`)).default,
       NotFound: (await import(`./messages/${locale}/NotFound.json`)).default,
+      NanoBananaVideo: (await import(`./messages/${locale}/NanoBananaVideo.json`)).default,
 
       // Dashboard - User
       Settings: (await import(`./messages/${locale}/Dashboard/User/Settings.json`)).default,

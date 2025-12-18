@@ -1,13 +1,3 @@
-/**
- * Tips:
- * Use this component if you want to display different pricing cards based on different payment types (monthly, annual, one_time)
- * If you want to display all pricing cards at once, use PricingAll.tsx
- *
- * 提示：
- * 如果你希望根据不同的支付类型（monthly, annual, one_time）来展示不同的定价卡片，请使用这个组件
- * 如果你希望一次性展示所有定价卡片，请使用 PricingAll.tsx
- */
-
 import { getPublicPricingPlans } from "@/actions/prices/public";
 import { PricingCardDisplay } from "@/components/home/PricingCardDisplay";
 import FeatureBadge from "@/components/shared/FeatureBadge";
@@ -26,8 +16,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 type PricingPlan = typeof pricingPlansSchema.$inferSelect;
 
-export default async function Pricing() {
-  const t = await getTranslations("Landing.Pricing");
+export default async function NanoBananaPricing() {
+  const t = await getTranslations("NanoBananaVideo.Pricing");
 
   const locale = await getLocale();
 
@@ -202,3 +192,4 @@ export default async function Pricing() {
     </section>
   );
 }
+
