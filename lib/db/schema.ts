@@ -402,3 +402,55 @@ export const postTags = pgTable(
     }
   }
 )
+
+export const activityLogs = pgTable(
+  'activity_logs',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    userId: uuid('user_id')
+      .references(() => user.id, { onDelete: 'cascade' })
+      .notNull(),
+    action: text('action').notNull(),
+    resourceType: text('resource_type'),
+    resourceId: text('resource_id'),
+    metadata: jsonb('metadata').default('{}').notNull(),
+    ipAddress: text('ip_address'),
+    userAgent: text('user_agent'),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => {
+    return {
+      userIdx: index('idx_activity_logs_user_id').on(table.userId),
+      actionIdx: index('idx_activity_logs_action').on(table.action),
+      createdAtIdx: index('idx_activity_logs_created_at').on(table.createdAt),
+    }
+  }
+)
+
+export const taskCreditMappings = pgTable(
+  'task_credit_mappings',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    taskId: text('task_id').notNull(),
+    creditLogId: uuid('credit_log_id')
+      .references(() => creditLogs.id, { onDelete: 'cascade' })
+      .notNull(),
+    userId: uuid('user_id')
+      .references(() => user.id, { onDelete: 'cascade' })
+      .notNull(),
+    refunded: boolean('refunded').default(false).notNull(),
+    createdAt: timestamp('created_at', { withTimezone: true })
+      .defaultNow()
+      .notNull(),
+  },
+  (table) => {
+    return {
+      taskIdIdx: index('idx_task_credit_mappings_task_id').on(table.taskId),
+      creditLogIdIdx: index('idx_task_credit_mappings_credit_log_id').on(table.creditLogId),
+      userIdIdx: index('idx_task_credit_mappings_user_id').on(table.userId),
+      taskIdUnique: unique('idx_task_credit_mappings_task_id_unique').on(table.taskId),
+    }
+  }
+)

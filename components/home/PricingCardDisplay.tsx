@@ -2,7 +2,13 @@ import PricingCTA from "@/components/home/PricingCTA";
 import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { cn } from "@/lib/utils";
 import { PricingPlanFeature, PricingPlanTranslation } from "@/types/pricing";
-import { Check, X } from "lucide-react";
+import { Check, X, Coins } from "lucide-react";
+import {
+  isOneTimePaymentType,
+  isRecurringPaymentType,
+  isMonthlyInterval,
+  isYearlyInterval,
+} from "@/lib/payments/provider-utils";
 
 type PricingPlan = typeof pricingPlansSchema.$inferSelect;
 
@@ -28,6 +34,66 @@ export function PricingCardDisplay({
     plan.priceSuffix?.replace(/^\/+/, "");
   const features = localizedPlan?.features || plan.features || [];
   const highlightText = localizedPlan?.highlightText;
+
+  // Extract credits from benefitsJsonb
+  let benefits: any = {};
+  if (plan.benefitsJsonb) {
+    if (typeof plan.benefitsJsonb === 'string') {
+      try {
+        benefits = JSON.parse(plan.benefitsJsonb);
+      } catch (e) {
+        console.error('Failed to parse benefitsJsonb as string:', e);
+        benefits = {};
+      }
+    } else {
+      benefits = plan.benefitsJsonb as any;
+    }
+  }
+  const monthlyCredits = benefits.monthlyCredits || 0;
+  const oneTimeCredits = benefits.oneTimeCredits || 0;
+  
+  // #region agent log
+  console.log('[PricingCardDisplay]', {
+    planId: plan.id,
+    title: plan.cardTitle,
+    price: plan.price,
+    paymentType: plan.paymentType,
+    benefitsJsonbType: typeof plan.benefitsJsonb,
+    benefitsJsonb: plan.benefitsJsonb,
+    parsedBenefits: benefits,
+    monthlyCredits,
+    oneTimeCredits,
+  });
+  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'components/home/PricingCardDisplay.tsx:41',message:'Extracting credits from plan',data:{planId:plan.id,title:plan.cardTitle,price:plan.price,paymentType:plan.paymentType,benefitsType:typeof plan.benefitsJsonb,benefits:plan.benefitsJsonb,parsedBenefits:benefits,monthlyCredits,oneTimeCredits},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+  // #endregion
+  
+  // Determine credit display text
+  const getCreditsDisplay = () => {
+    if (isOneTimePaymentType(plan.paymentType) && oneTimeCredits > 0) {
+      return `${oneTimeCredits.toLocaleString()} credits`;
+    }
+    if (
+      isRecurringPaymentType(plan.paymentType) &&
+      monthlyCredits > 0
+    ) {
+      return `${monthlyCredits.toLocaleString()} credits/month`;
+    }
+    return null;
+  };
+
+  const creditsDisplay = getCreditsDisplay();
+  
+  // #region agent log
+  console.log('[PricingCardDisplay] Credits display:', {
+    planId: plan.id,
+    title: plan.cardTitle,
+    creditsDisplay,
+    hasCredits: !!creditsDisplay,
+    isOneTime: isOneTimePaymentType(plan.paymentType),
+    isRecurring: isRecurringPaymentType(plan.paymentType),
+  });
+  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'components/home/PricingCardDisplay.tsx:57',message:'Credits display determined',data:{planId:plan.id,title:plan.cardTitle,creditsDisplay,hasCredits:!!creditsDisplay},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+  // #endregion
 
   return (
     <div
@@ -57,7 +123,7 @@ export function PricingCardDisplay({
 
       <PricingCTA plan={plan} localizedPlan={localizedPlan} />
 
-      <div className="text-4xl mb-6">
+      <div className="text-4xl mb-4">
         {originalPrice ? (
           <span className="text-sm line-through decoration-2 text-muted-foreground mr-1">
             {originalPrice}
@@ -70,6 +136,13 @@ export function PricingCardDisplay({
           <span className="text-sm text-muted-foreground">/{priceSuffix}</span>
         ) : null}
       </div>
+
+      {creditsDisplay && (
+        <div className="flex items-center gap-2 mb-6 text-lg font-medium text-primary">
+          <Coins className="w-5 h-5" />
+          <span>{creditsDisplay}</span>
+        </div>
+      )}
       <ul className="space-y-3 mb-6">
         {(features as PricingPlanFeature[])?.map(
           (

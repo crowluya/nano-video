@@ -5,13 +5,16 @@ import VideoGenerationPage from "@/components/video-generation/VideoGenerationPa
 import { authClient } from "@/lib/auth/auth-client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Info, LogIn } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Info, LogIn, Coins, AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useUserBenefits } from "@/hooks/useUserBenefits";
 
 export default function VideoGenerationDemo() {
   const t = useTranslations("NanoBananaVideo.VideoDemo");
   const { data: session } = authClient.useSession();
+  const { benefits, isLoading: isLoadingBenefits } = useUserBenefits();
   const [showLoginPrompt, setShowLoginPrompt] = useState(true);
 
   const isLoggedIn = !!session?.user;
@@ -54,6 +57,33 @@ export default function VideoGenerationDemo() {
                 >
                   ✕
                 </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Credits Display for Logged In Users */}
+        {isLoggedIn && (
+          <Card className="mb-6 border-border">
+            <CardContent className="flex items-center justify-between p-4">
+              <div className="flex items-center gap-3">
+                <Coins className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="text-sm font-medium">
+                    {isLoadingBenefits ? (
+                      "Loading credits..."
+                    ) : benefits ? (
+                      `Available Credits: ${benefits.totalAvailableCredits}`
+                    ) : (
+                      "Credits: --"
+                    )}
+                  </p>
+                  {benefits && benefits.totalAvailableCredits === 0 && (
+                    <p className="text-xs text-muted-foreground mt-1">
+                      You need credits to generate videos. <Link href="/pricing" className="text-primary underline">Get credits</Link>
+                    </p>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>

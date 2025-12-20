@@ -10,8 +10,12 @@
 
 import { apiResponse } from "@/lib/api-response";
 import { getKieClient } from "@/lib/kie";
-import { deductKieCredits } from "@/lib/kie/credits";
+import { deductKieCredits, refundKieCredits } from "@/lib/kie/credits";
 import { getKieVideoModel } from "@/config/models";
+import { db } from "@/lib/db";
+import { taskCreditMappings } from "@/lib/db/schema";
+import { getSession } from "@/lib/auth/server";
+import { createActivityLog } from "@/actions/usage/activity-logs";
 import { z } from "zod";
 
 const inputSchema = z.object({
@@ -37,6 +41,8 @@ const inputSchema = z.object({
 });
 
 export async function POST(req: Request) {
+  let creditResult: { success: boolean; logId?: string; creditsDeducted?: number; remainingCredits?: number; error?: string } | undefined;
+  
   try {
     const apiKey = process.env.KIE_API_KEY;
     if (!apiKey) {
@@ -61,10 +67,21 @@ export async function POST(req: Request) {
     }
 
     // Deduct credits before generation
-    const creditResult = await deductKieCredits('video', modelId, `Video generation: ${prompt.slice(0, 50)}...`);
+    creditResult = await deductKieCredits('video', modelId, `Video generation: ${prompt.slice(0, 50)}...`);
     if (!creditResult.success) {
       return apiResponse.badRequest(creditResult.error || 'Insufficient credits');
     }
+
+    // Record activity log
+    await createActivityLog({
+      action: 'video_generation_started',
+      resourceType: 'video',
+      metadata: {
+        modelId,
+        prompt: prompt.slice(0, 100),
+        creditsUsed: creditResult.creditsDeducted,
+      },
+    }).catch(err => console.error('Failed to log activity:', err));
 
     const client = getKieClient();
     let taskId: string;
@@ -143,18 +160,59 @@ export async function POST(req: Request) {
       return apiResponse.badRequest(`Unsupported video model: ${modelId}`);
     }
 
+    // Store taskId -> creditLogId mapping for failure refund
+    if (taskId && creditResult.logId) {
+      const session = await getSession();
+      const userId = session?.user?.id;
+      if (userId) {
+        await db.insert(taskCreditMappings).values({
+          taskId,
+          creditLogId: creditResult.logId,
+          userId,
+        }).catch(err => {
+          console.error('Failed to store task-credit mapping:', err);
+          // Non-critical, continue
+        });
+      }
+    }
+
     return apiResponse.success({
       taskId,
       modelId,
       creditsUsed: modelConfig.creditsPerGeneration,
+      remainingCredits: creditResult.remainingCredits,
     });
 
   } catch (error: unknown) {
     console.error("Video generation failed:", error);
     const errorMessage = error instanceof Error ? error.message : "Failed to generate video";
     
-    // Note: Credits are already deducted, so we don't refund on error
-    // This is intentional - credits are consumed when task is created
+    // Refund credits if deduction was successful
+    if (creditResult?.success && creditResult.logId) {
+      try {
+        const refundResult = await refundKieCredits(
+          creditResult.creditsDeducted || 0,
+          `Refund for failed video generation: ${errorMessage.slice(0, 50)}`,
+          creditResult.logId
+        );
+        if (refundResult.success) {
+          console.log(`Credits refunded: ${refundResult.creditsRefunded}`);
+        }
+      } catch (refundError) {
+        console.error('Failed to refund credits:', refundError);
+        // Log but don't fail the request
+      }
+    }
+
+    // Record activity log for failure
+    await createActivityLog({
+      action: 'video_generation_failed',
+      resourceType: 'video',
+      metadata: {
+        error: errorMessage,
+        creditsRefunded: creditResult?.success || false,
+      },
+    }).catch(err => console.error('Failed to log activity:', err));
     
     if (errorMessage.includes("API key") || errorMessage.includes("authentication") || errorMessage.includes("401")) {
       return apiResponse.unauthorized("Authentication error with Kie.ai API");

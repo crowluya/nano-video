@@ -1,5 +1,5 @@
-import HomeComponent from "@/components/home";
+import NanoBananaVideoPage from "@/components/nanabananvideo";
 
 export default function Home() {
-  return <HomeComponent />;
+  return <NanoBananaVideoPage />;
 }

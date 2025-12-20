@@ -8,6 +8,11 @@
 
 import { apiResponse } from "@/lib/api-response";
 import { getKieClient } from "@/lib/kie";
+import { refundKieCredits } from "@/lib/kie/credits";
+import { db } from "@/lib/db";
+import { taskCreditMappings, creditLogs as creditLogsSchema } from "@/lib/db/schema";
+import { eq, and } from "drizzle-orm";
+import { createActivityLog } from "@/actions/usage/activity-logs";
 import { z } from "zod";
 
 const querySchema = z.object({
@@ -176,6 +181,64 @@ export async function GET(req: Request) {
           status = "processing";
         }
       }
+
+      // If task failed, check if we need to refund credits
+      if (status === "failed" && type === "video") {
+        try {
+          // Find the credit log mapping for this task
+          const mapping = await db.select()
+            .from(taskCreditMappings)
+            .where(and(
+              eq(taskCreditMappings.taskId, taskId),
+              eq(taskCreditMappings.refunded, false)
+            ))
+            .limit(1);
+
+          if (mapping.length > 0 && mapping[0].creditLogId) {
+            const creditLogId = mapping[0].creditLogId;
+            
+            // Get the original credit log to find the amount
+            const creditLog = await db.select()
+              .from(creditLogsSchema)
+              .where(eq(creditLogsSchema.id, creditLogId))
+              .limit(1);
+
+            if (creditLog.length > 0) {
+              const amountToRefund = Math.abs(creditLog[0].amount);
+              
+              // Refund credits
+              const refundResult = await refundKieCredits(
+                amountToRefund,
+                `Refund for failed video generation task: ${taskId}`,
+                creditLogId
+              );
+
+              if (refundResult.success) {
+                // Mark as refunded
+                await db.update(taskCreditMappings)
+                  .set({ refunded: true })
+                  .where(eq(taskCreditMappings.id, mapping[0].id));
+
+                // Log activity
+                await createActivityLog({
+                  action: 'video_generation_failed_refunded',
+                  resourceType: 'video',
+                  resourceId: taskId,
+                  metadata: {
+                    taskId,
+                    creditsRefunded: amountToRefund,
+                  },
+                }).catch(err => console.error('Failed to log activity:', err));
+
+                console.log(`Credits refunded for failed task ${taskId}: ${amountToRefund}`);
+              }
+            }
+          }
+        } catch (refundError) {
+          console.error(`Failed to refund credits for task ${taskId}:`, refundError);
+          // Don't fail the status check, just log the error
+        }
+      }
     } else if (type === "music") {
       const sunoStatus = await client.getSunoStatus(taskId);
       rawStatus = sunoStatus;
@@ -193,12 +256,25 @@ export async function GET(req: Request) {
       }
     }
 
+    // Check if credits were refunded for failed tasks
+    let creditsRefunded = false;
+    if (status === "failed" && type === "video") {
+      const mapping = await db.select()
+        .from(taskCreditMappings)
+        .where(eq(taskCreditMappings.taskId, taskId))
+        .limit(1)
+        .catch(() => []);
+      
+      creditsRefunded = mapping.length > 0 ? mapping[0].refunded : false;
+    }
+
     return apiResponse.success({
       taskId,
       type,
       status,
       resultUrls,
       isComplete: status === "success" || status === "failed",
+      creditsRefunded,
       raw: rawStatus,
     });
 

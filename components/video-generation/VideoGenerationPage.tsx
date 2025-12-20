@@ -9,9 +9,12 @@ import { VideoPreviewPanel } from "./VideoPreviewPanel";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Loader2, Zap } from "lucide-react";
+import { Loader2, Zap, Coins, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
 import { KIE_VIDEO_MODELS, type KieVideoModel } from "@/config/models";
+import { useUserBenefits } from "@/hooks/useUserBenefits";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import Link from "next/link";
 
 export type VideoModel = KieVideoModel;
 export type Veo3GenerationType = "TEXT_2_VIDEO" | "FIRST_AND_LAST_FRAMES_2_VIDEO" | "REFERENCE_2_VIDEO";
@@ -32,6 +35,7 @@ interface VideoGenerationParams {
 }
 
 export default function VideoGenerationPage() {
+  const { benefits, isLoading: isLoadingBenefits } = useUserBenefits();
   const [selectedModel, setSelectedModel] = useState<VideoModel | null>(
     KIE_VIDEO_MODELS.find(m => m.id === "sora-2-text-to-video") || KIE_VIDEO_MODELS[0] || null
   );
@@ -81,6 +85,11 @@ export default function VideoGenerationPage() {
 
     if (!prompt.trim()) {
       toast.error("Please enter a prompt");
+      return;
+    }
+
+    if (!hasEnoughCredits()) {
+      toast.error(`Insufficient credits. Required: ${getCreditsCost()}, Available: ${benefits?.totalAvailableCredits || 0}`);
       return;
     }
 
@@ -178,6 +187,16 @@ export default function VideoGenerationPage() {
     return selectedModel.creditsPerGeneration || 0;
   };
 
+  const hasEnoughCredits = () => {
+    if (!benefits || !selectedModel) return false;
+    const required = getCreditsCost();
+    return benefits.totalAvailableCredits >= required;
+  };
+
+  const canGenerate = () => {
+    return !loading && selectedModel && prompt.trim() && hasEnoughCredits();
+  };
+
   return (
     <div className="w-full h-full flex flex-col bg-background">
       {/* Header */}
@@ -190,10 +209,16 @@ export default function VideoGenerationPage() {
             </p>
           </div>
           <div className="text-right">
-            <div className="text-sm opacity-75">Pricing</div>
+            <div className="text-sm opacity-75">Cost per Generation</div>
             <div className="text-lg font-semibold">
               {selectedModel ? `${getCreditsCost()} credits` : "Select model"}
             </div>
+            {benefits && (
+              <div className="text-xs opacity-75 mt-1 flex items-center gap-1 justify-end">
+                <Coins className="h-3 w-3" />
+                <span>Available: {benefits.totalAvailableCredits}</span>
+              </div>
+            )}
           </div>
         </div>
         <VideoModelSelector
@@ -269,10 +294,21 @@ export default function VideoGenerationPage() {
             />
           </div>
 
+          {/* Credits Warning */}
+          {benefits && !hasEnoughCredits() && selectedModel && (
+            <Alert variant="destructive">
+              <AlertCircle className="h-4 w-4" />
+              <AlertDescription>
+                Insufficient credits. Required: {getCreditsCost()}, Available: {benefits.totalAvailableCredits}.{" "}
+                <Link href="/pricing" className="underline font-medium">Get more credits</Link>
+              </AlertDescription>
+            </Alert>
+          )}
+
           {/* Generate Button */}
           <Button
             onClick={handleGenerate}
-            disabled={loading || !selectedModel || !prompt.trim()}
+            disabled={!canGenerate()}
             className="w-full"
             size="lg"
           >

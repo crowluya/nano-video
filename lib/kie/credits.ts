@@ -18,6 +18,14 @@ export interface CreditDeductionResult {
   error?: string;
   creditsDeducted?: number;
   remainingCredits?: number;
+  logId?: string;
+}
+
+export interface CreditRefundResult {
+  success: boolean;
+  error?: string;
+  creditsRefunded?: number;
+  remainingCredits?: number;
 }
 
 /**
@@ -51,6 +59,7 @@ export async function deductKieCredits(
 
   try {
     let remainingCredits = 0;
+    let logId: string | undefined;
 
     await db.transaction(async (tx) => {
       // Lock the user's usage row
@@ -89,7 +98,7 @@ export async function deductKieCredits(
         })
         .where(eq(usageSchema.userId, user.id));
 
-      await tx.insert(creditLogsSchema)
+      const logResult = await tx.insert(creditLogsSchema)
         .values({
           userId: user.id,
           amount: -creditsRequired,
@@ -97,13 +106,17 @@ export async function deductKieCredits(
           subscriptionBalanceAfter: newSubBalance,
           type: 'feature_usage',
           notes: `[${type}] ${notes}`,
-        });
+        })
+        .returning({ id: creditLogsSchema.id });
+
+      logId = logResult[0]?.id;
     });
 
     return {
       success: true,
       creditsDeducted: creditsRequired,
       remainingCredits,
+      logId,
     };
 
   } catch (e: unknown) {
@@ -165,6 +178,113 @@ export async function checkKieCredits(
   } catch (e) {
     console.error('Error checking credits:', e);
     return { hasCredits: false, required: creditsRequired, available: 0 };
+  }
+}
+
+/**
+ * Refunds credits for a failed kie.ai operation
+ * Priority: Refund to subscription credits first, then one-time credits (opposite of deduction)
+ */
+export async function refundKieCredits(
+  amount: number,
+  notes: string,
+  originalLogId?: string
+): Promise<CreditRefundResult> {
+  const session = await getSession();
+  const user = session?.user;
+
+  if (!user) {
+    return { success: false, error: 'Unauthorized' };
+  }
+
+  if (amount <= 0) {
+    return { success: false, error: 'Invalid refund amount' };
+  }
+
+  try {
+    // Check if already refunded by looking for existing refund log
+    if (originalLogId) {
+      const existingRefund = await db.select()
+        .from(creditLogsSchema)
+        .where(
+          eq(creditLogsSchema.userId, user.id)
+        )
+        .limit(100); // Get recent logs to check
+
+      // Check if there's already a refund for this original log
+      const hasRefund = existingRefund.some(log => 
+        log.type === 'refund_failed_generation' && 
+        log.notes?.includes(`Original log: ${originalLogId}`)
+      );
+
+      if (hasRefund) {
+        return { success: false, error: 'Credits already refunded' };
+      }
+    }
+
+    let remainingCredits = 0;
+
+    await db.transaction(async (tx) => {
+      // Lock the user's usage row
+      const usageResults = await tx.select({
+        oneTimeCreditsBalance: usageSchema.oneTimeCreditsBalance,
+        subscriptionCreditsBalance: usageSchema.subscriptionCreditsBalance,
+      })
+        .from(usageSchema)
+        .where(eq(usageSchema.userId, user.id))
+        .for('update');
+
+      const usage = usageResults[0];
+
+      if (!usage) {
+        throw new Error('USER_NOT_FOUND');
+      }
+
+      // Refund priority: First to subscription, then to one-time (opposite of deduction)
+      // This means we need to track how much was deducted from each type
+      // For simplicity, we'll refund proportionally or to subscription first
+      // In a more sophisticated system, we'd track the original deduction breakdown
+      
+      // For now, refund to subscription credits first (up to the amount)
+      // If there's remaining, refund to one-time
+      const refundToSub = Math.min(amount, amount); // Can be adjusted based on original deduction
+      const refundToOneTime = amount - refundToSub;
+
+      const newSubBalance = usage.subscriptionCreditsBalance + refundToSub;
+      const newOneTimeBalance = usage.oneTimeCreditsBalance + refundToOneTime;
+
+      remainingCredits = newSubBalance + newOneTimeBalance;
+
+      await tx.update(usageSchema)
+        .set({
+          subscriptionCreditsBalance: newSubBalance,
+          oneTimeCreditsBalance: newOneTimeBalance,
+        })
+        .where(eq(usageSchema.userId, user.id));
+
+      await tx.insert(creditLogsSchema)
+        .values({
+          userId: user.id,
+          amount: amount,
+          oneTimeBalanceAfter: newOneTimeBalance,
+          subscriptionBalanceAfter: newSubBalance,
+          type: 'refund_failed_generation',
+          notes: originalLogId 
+            ? `${notes} (Original log: ${originalLogId})`
+            : notes,
+        });
+    });
+
+    return {
+      success: true,
+      creditsRefunded: amount,
+      remainingCredits,
+    };
+
+  } catch (e: unknown) {
+    const error = e instanceof Error ? e : new Error(String(e));
+    console.error('Error refunding credits:', error);
+    return { success: false, error: error.message || 'Failed to refund credits' };
   }
 }
 
