@@ -252,9 +252,43 @@
     }
   },
   "VideoDemo": {
-    "title": "Generate Your Video",
+    "title": "nano banana video generator",
     "loginPrompt": "Sign in to save your videos and access more features",
     "loginButton": "Sign In"
+  },
+  "VideoGeneration": {
+    "title": "nano banana video generator",
+    "subtitle": "Generate videos using Sora 2 and Veo 3.1 AI models",
+    "costPerGeneration": "Cost per Generation",
+    "selectModel": "Select model",
+    "availableCredits": "Available",
+    "generationType": "Generation Type",
+    "prompt": "Prompt",
+    "promptPlaceholder": "Describe the video you want to generate...",
+    "promptDescription": "The text prompt describing the desired video motion",
+    "imageUpload": "Image Upload",
+    "referenceImages": "Reference Images",
+    "imagesRequired": "images required",
+    "parameters": "Parameters",
+    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
+    "getMoreCredits": "Get more credits",
+    "generating": "Generating...",
+    "generate": "Generate",
+    "storyboardPrompt": {
+      "title": "Storyboard Prompt Generator",
+      "description": "AI-powered cinematic prompt generation from your images",
+      "generateFast": "Generate (Fast)",
+      "generateMaster": "Generate (Master)",
+      "generating": "Generating storyboard...",
+      "upgradeRequired": "Upgrade to use Master mode",
+      "noImages": "Please upload image(s) first",
+      "singleImageRequired": "Upload 1 image for Sora 2",
+      "dualImageRequired": "Upload 2 images for Veo 3.1",
+      "result": "Generated Storyboard Prompt",
+      "applyToPrompt": "Apply to Prompt",
+      "fast": "Fast",
+      "master": "Master"
+    }
   },
   "Pricing": {
     "badge": {
@@ -269,4 +303,3 @@
     "saveTip": "Save 20%"
   }
 }
-

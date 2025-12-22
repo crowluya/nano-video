@@ -252,9 +252,43 @@
     }
   },
   "VideoDemo": {
-    "title": "生成您的视频",
-    "loginPrompt": "登录以保存您的视频并访问更多功能",
+    "title": "nano banana 视频生成器",
+    "loginPrompt": "登录以保存你的视频并访问更多功能",
     "loginButton": "登录"
+  },
+  "VideoGeneration": {
+    "title": "nano banana 视频生成器",
+    "subtitle": "使用 Sora 2 和 Veo 3.1 AI 模型生成视频",
+    "costPerGeneration": "每次生成费用",
+    "selectModel": "选择模型",
+    "availableCredits": "可用",
+    "generationType": "生成类型",
+    "prompt": "提示词",
+    "promptPlaceholder": "描述你想生成的视频...",
+    "promptDescription": "描述所需视频动作的文本提示",
+    "imageUpload": "上传图片",
+    "referenceImages": "参考图片",
+    "imagesRequired": "张图片必需",
+    "parameters": "参数设置",
+    "insufficientCredits": "积分不足。需要：{required}，可用：{available}。",
+    "getMoreCredits": "获取更多积分",
+    "generating": "生成中...",
+    "generate": "生成",
+    "storyboardPrompt": {
+      "title": "分镜提示词生成器",
+      "description": "AI 智能从图片生成电影级提示词",
+      "generateFast": "生成（快速）",
+      "generateMaster": "生成（专业）",
+      "generating": "正在生成分镜...",
+      "upgradeRequired": "升级以使用专业模式",
+      "noImages": "请先上传图片",
+      "singleImageRequired": "为 Sora 2 上传 1 张图片",
+      "dualImageRequired": "为 Veo 3.1 上传 2 张图片",
+      "result": "生成的分镜提示词",
+      "applyToPrompt": "应用到提示词",
+      "fast": "快速",
+      "master": "专业"
+    }
   },
   "Pricing": {
     "badge": {
@@ -269,4 +303,3 @@
     "saveTip": "节省 20%"
   }
 }
-

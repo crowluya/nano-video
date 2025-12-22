@@ -252,9 +252,43 @@
     }
   },
   "VideoDemo": {
-    "title": "ビデオを生成",
+    "title": "nano banana ビデオジェネレーター",
     "loginPrompt": "ビデオを保存してより多くの機能にアクセスするにはサインイン",
     "loginButton": "サインイン"
+  },
+  "VideoGeneration": {
+    "title": "nano banana ビデオジェネレーター",
+    "subtitle": "Sora 2 と Veo 3.1 AI モデルを使用してビデオを生成",
+    "costPerGeneration": "生成あたりのコスト",
+    "selectModel": "モデルを選択",
+    "availableCredits": "利用可能",
+    "generationType": "生成タイプ",
+    "prompt": "プロンプト",
+    "promptPlaceholder": "生成したいビデオを説明してください...",
+    "promptDescription": "希望するビデオの動きを説明するテキストプロンプト",
+    "imageUpload": "画像アップロード",
+    "referenceImages": "参考画像",
+    "imagesRequired": "枚の画像が必要",
+    "parameters": "パラメーター",
+    "insufficientCredits": "クレジット不足。必要：{required}、利用可能：{available}。",
+    "getMoreCredits": "クレジットを取得",
+    "generating": "生成中...",
+    "generate": "生成",
+    "storyboardPrompt": {
+      "title": "ストーリーボードプロンプトジェネレーター",
+      "description": "AIが画像から映画品質のプロンプトを生成",
+      "generateFast": "生成（高速）",
+      "generateMaster": "生成（マスター）",
+      "generating": "ストーリーボードを生成中...",
+      "upgradeRequired": "マスターモードを使用するにはアップグレードが必要です",
+      "noImages": "まず画像をアップロードしてください",
+      "singleImageRequired": "Sora 2 用に1枚の画像をアップロード",
+      "dualImageRequired": "Veo 3.1 用に2枚の画像をアップロード",
+      "result": "生成されたストーリーボードプロンプト",
+      "applyToPrompt": "プロンプトに適用",
+      "fast": "高速",
+      "master": "マスター"
+    }
   },
   "Pricing": {
     "badge": {
@@ -269,4 +303,3 @@
     "saveTip": "20%節約"
   }
 }
-

@@ -12,45 +12,21 @@
         "href": "/#features"
       },
       {
+        "name": "ビデオ生成器",
+        "href": "/#video-demo"
+      },
+      {
         "id": "pricing",
         "name": "料金プラン",
         "href": "/#pricing"
       },
       {
-        "name": "AI Demo",
-        "href": "/ai-demo"
+        "name": "よくある質問",
+        "href": "/#faq"
       },
       {
         "name": "ブログ",
         "href": "/blog"
-      },
-      {
-        "id": "demo",
-        "name": "Demo",
-        "href": "#",
-        "items": [
-          {
-            "name": "Nexty Demo",
-            "href": "https://demo.nexty.dev/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "Next.js SaaS Boilerplate"
-          },
-          {
-            "name": "AI Image Generator Demo",
-            "href": "https://flux-kontext.nexty.dev/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "AI Image Generator Demo Based on NEXTY.DEV"
-          },
-          {
-            "name": "Directory Boilerplate Demo",
-            "href": "https://dofollow.tools/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "Directory Boilerplate Demo Based on NEXTY.DEV"
-          }
-        ]
       }
     ]
   },

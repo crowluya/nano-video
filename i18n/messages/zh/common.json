@@ -12,44 +12,21 @@
         "href": "/#features"
       },
       {
+        "name": "视频生成器",
+        "href": "/#video-demo"
+      },
+      {
         "id": "pricing",
         "name": "定价",
         "href": "/#pricing"
       },
       {
-        "name": "AI Demo",
-        "href": "/ai-demo"
+        "name": "常见问题",
+        "href": "/#faq"
       },
       {
         "name": "博客",
         "href": "/blog"
-      },
-      {
-        "name": "Demo",
-        "href": "#",
-        "items": [
-          {
-            "name": "Nexty Demo",
-            "href": "https://demo.nexty.dev/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "Next.js SaaS Boilerplate"
-          },
-          {
-            "name": "AI Image Generator Demo",
-            "href": "https://flux-kontext.nexty.dev/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "AI Image Generator Demo Based on NEXTY.DEV"
-          },
-          {
-            "name": "Directory Boilerplate Demo",
-            "href": "https://dofollow.tools/",
-            "target": "_blank",
-            "rel": "noopener noreferrer nofollow",
-            "description": "Directory Boilerplate Demo Based on NEXTY.DEV"
-          }
-        ]
       }
     ]
   },

@@ -1,20 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { VideoModelSelector } from "./VideoModelSelector";
-import { VideoGenerationModeSelector } from "./VideoGenerationModeSelector";
-import { VideoParameterPanel } from "./VideoParameterPanel";
-import { ImageUploadZone } from "./ImageUploadZone";
-import { VideoPreviewPanel } from "./VideoPreviewPanel";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Loader2, Zap, Coins, AlertCircle } from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 import { KIE_VIDEO_MODELS, type KieVideoModel } from "@/config/models";
 import { useUserBenefits } from "@/hooks/useUserBenefits";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle, Coins, Loader2, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useState } from "react";
+import { toast } from "sonner";
+import { ImageUploadZone } from "./ImageUploadZone";
+import { StoryboardPromptGenerator } from "./StoryboardPromptGenerator";
+import { VideoGenerationModeSelector } from "./VideoGenerationModeSelector";
+import { VideoModelSelector } from "./VideoModelSelector";
+import { VideoParameterPanel } from "./VideoParameterPanel";
+import { VideoPreviewPanel } from "./VideoPreviewPanel";
 
 export type VideoModel = KieVideoModel;
 export type Veo3GenerationType = "TEXT_2_VIDEO" | "FIRST_AND_LAST_FRAMES_2_VIDEO" | "REFERENCE_2_VIDEO";
@@ -27,7 +29,7 @@ interface VideoGenerationParams {
   aspect_ratio?: Sora2AspectRatio;
   n_frames?: Sora2Frames;
   remove_watermark?: boolean;
-  
+
   // Veo 3.1 parameters
   aspectRatio?: Veo3AspectRatio;
   seeds?: number;
@@ -35,11 +37,12 @@ interface VideoGenerationParams {
 }
 
 export default function VideoGenerationPage() {
+  const t = useTranslations("NanoBananaVideo.VideoGeneration");
   const { benefits, isLoading: isLoadingBenefits } = useUserBenefits();
   const [selectedModel, setSelectedModel] = useState<VideoModel | null>(
     KIE_VIDEO_MODELS.find(m => m.id === "sora-2-text-to-video") || KIE_VIDEO_MODELS[0] || null
   );
-  
+
   const [generationMode, setGenerationMode] = useState<Veo3GenerationType | "text-to-video" | "image-to-video">("text-to-video");
   const [prompt, setPrompt] = useState("");
   const [images, setImages] = useState<string[]>([]);
@@ -50,7 +53,7 @@ export default function VideoGenerationPage() {
     aspectRatio: "16:9",
     enableTranslation: true,
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [taskId, setTaskId] = useState<string | null>(null);
   const [resultVideoUrl, setResultVideoUrl] = useState<string | null>(null);
@@ -94,7 +97,7 @@ export default function VideoGenerationPage() {
     }
 
     const effectiveMode = getEffectiveGenerationMode();
-    
+
     // Validate images based on mode
     if (effectiveMode === "image-to-video" || effectiveMode === "FIRST_AND_LAST_FRAMES_2_VIDEO") {
       if (images.length === 0) {
@@ -102,7 +105,7 @@ export default function VideoGenerationPage() {
         return;
       }
     }
-    
+
     if (effectiveMode === "REFERENCE_2_VIDEO") {
       if (images.length < 2) {
         toast.error("Reference to Video requires at least 2 images");
@@ -203,20 +206,20 @@ export default function VideoGenerationPage() {
       <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 border-b border-purple-700">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h1 className="text-xl font-bold">Video Generation</h1>
+            <h1 className="text-xl font-bold">{t("title")}</h1>
             <p className="text-sm opacity-90 mt-1">
-              Generate videos using Sora 2 and Veo 3.1 AI models
+              {t("subtitle")}
             </p>
           </div>
           <div className="text-right">
-            <div className="text-sm opacity-75">Cost per Generation</div>
+            <div className="text-sm opacity-75">{t("costPerGeneration")}</div>
             <div className="text-lg font-semibold">
-              {selectedModel ? `${getCreditsCost()} credits` : "Select model"}
+              {selectedModel ? `${getCreditsCost()} credits` : t("selectModel")}
             </div>
             {benefits && (
               <div className="text-xs opacity-75 mt-1 flex items-center gap-1 justify-end">
                 <Coins className="h-3 w-3" />
-                <span>Available: {benefits.totalAvailableCredits}</span>
+                <span>{t("availableCredits")}: {benefits.totalAvailableCredits}</span>
               </div>
             )}
           </div>
@@ -235,7 +238,7 @@ export default function VideoGenerationPage() {
           {isVeo3 && (
             <div>
               <Label className="text-sm font-semibold mb-3 block">
-                Generation Type
+                {t("generationType")}
               </Label>
               <VideoGenerationModeSelector
                 selectedMode={generationMode as Veo3GenerationType}
@@ -248,28 +251,28 @@ export default function VideoGenerationPage() {
           {/* Prompt Input */}
           <div>
             <Label htmlFor="prompt" className="text-sm font-semibold mb-2 block">
-              Prompt *
+              {t("prompt")} *
             </Label>
             <Textarea
               id="prompt"
-              placeholder="Describe the video you want to generate..."
+              placeholder={t("promptPlaceholder")}
               className="min-h-32 resize-none"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               disabled={loading}
             />
             <p className="text-xs text-muted-foreground mt-2">
-              The text prompt describing the desired video motion
+              {t("promptDescription")}
             </p>
           </div>
 
           {/* Image Upload */}
           <div>
             <Label className="text-sm font-semibold mb-2 block">
-              {generationMode === "REFERENCE_2_VIDEO" ? "Reference Images *" : "Image Upload"}
+              {generationMode === "REFERENCE_2_VIDEO" ? t("referenceImages") : t("imageUpload")}
               {generationMode === "REFERENCE_2_VIDEO" && (
                 <span className="text-xs text-muted-foreground ml-2">
-                  (2-3 images required)
+                  (2-3 {t("imagesRequired")})
                 </span>
               )}
             </Label>
@@ -281,10 +284,19 @@ export default function VideoGenerationPage() {
             />
           </div>
 
+          {/* Storyboard Prompt Generator */}
+          {images.length > 0 && (
+            <StoryboardPromptGenerator
+              images={images}
+              modelType={isVeo3 ? "veo3" : "sora2"}
+              onPromptGenerated={(generatedPrompt) => setPrompt(generatedPrompt)}
+            />
+          )}
+
           {/* Parameters */}
           <div>
             <Label className="text-sm font-semibold mb-3 block">
-              Parameters
+              {t("parameters")}
             </Label>
             <VideoParameterPanel
               model={selectedModel}
@@ -299,8 +311,8 @@ export default function VideoGenerationPage() {
             <Alert variant="destructive">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>
-                Insufficient credits. Required: {getCreditsCost()}, Available: {benefits.totalAvailableCredits}.{" "}
-                <Link href="/pricing" className="underline font-medium">Get more credits</Link>
+                {t("insufficientCredits", { required: getCreditsCost(), available: benefits.totalAvailableCredits })}.{" "}
+                <Link href="/pricing" className="underline font-medium">{t("getMoreCredits")}</Link>
               </AlertDescription>
             </Alert>
           )}
@@ -315,12 +327,12 @@ export default function VideoGenerationPage() {
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Generating...
+                {t("generating")}
               </>
             ) : (
               <>
                 <Zap className="mr-2 h-4 w-4" />
-                {getCreditsCost()} Generate
+                {getCreditsCost()} {t("generate")}
               </>
             )}
           </Button>
