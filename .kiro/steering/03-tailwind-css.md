@@ -1,0 +1,38 @@
+---
+inclusion: always
+---
+- Embrace the utility-first approach. Apply utilities directly in your JSX.
+- Use `@apply` sparingly - only for very common, repeated utility combinations that form a component-like abstraction.
+- Use the project's predefined design system:
+    - Tailwind v4 uses CSS-based configuration with `@theme` directive in CSS files instead of `tailwind.config.ts`.
+    - Reference your CSS theme configuration (typically in `globals.css` or similar) for custom colors, spacing, fonts, etc.
+    - Use the shadcn/ui component library patterns for consistent UI.
+    - Prefer theme values over arbitrary values. If arbitrary values are used often for a specific purpose, consider adding it to the theme using `@theme`.
+- Class Organization:
+    - Group related utilities logically (layout, typography, colors, etc.).
+    - Consider using Prettier with Tailwind plugin for consistent formatting.
+    - For very long lists of utility classes, consider formatting them for better readability.
+- Responsive Design:
+    - Use mobile-first approach with responsive prefixes (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`).
+    - Test across different viewport sizes during development.
+- State Variants:
+    - Properly use state variants (`hover:`, `focus:`, `active:`, `disabled:`, etc.).
+    - For complex interactive states, prefer `group` and `group-*` classes.
+- Dark Mode:
+    - Use `dark:` variant with the project's dark mode configuration.
+    - Ensure sufficient contrast in both light and dark modes.
+- Use Tailwind CSS with JavaScript conditionals where needed:
+    - `className={condition ? 'bg-blue-500' : 'bg-red-500'}`
+    - Consider libraries like `clsx` or `tailwind-merge` for complex conditionals.
+- Performance:
+    - Tailwind v4 has automatic optimization built-in - no need to manually configure PurgeCSS.
+    - Faster build times and improved CSS generation in v4.
+    - Avoid unnecessarily long chains of arbitrary values.
+- Customization:
+    - Tailwind v4 uses CSS-based configuration: define theme customizations using `@theme` in your CSS files.
+    - Use `@utility` to define custom utility classes in CSS.
+    - Use `@variant` to define custom variants in CSS.
+    - When adding custom CSS, consider if it can be achieved with Tailwind utilities or by extending the theme using `@theme` first.
+- Readability: For very long lists of utility classes, consider formatting them (e.g., line breaks before responsive prefixes or related groups) if it improves readability without cluttering.
+- Avoid arbitrary values unless necessary. Prefer theme values. If arbitrary values are used often for a specific purpose, consider adding it to the theme using `@theme`.
+- Group related utilities if it makes sense (e.g., all flexbox utilities together, then padding, then margin). 

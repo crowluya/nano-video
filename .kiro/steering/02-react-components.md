@@ -1,0 +1,37 @@
+---
+inclusion: always
+---
+- Use functional components with Hooks. Avoid class components.
+- Component Naming: Use PascalCase (e.g., `MyComponent`). File names should match component names (e.g., `MyComponent.tsx`).
+- Props:
+    - Define prop types using TypeScript interfaces (e.g., `interface MyComponentProps { ... }`).
+    - Destructure props in the function signature.
+    - Use optional props with default values where appropriate.
+    - Consider using prop validation for complex components.
+- State Management:
+    - Use `useState` for simple component-level state.
+    - Use `useReducer` for more complex state logic within a component.
+    - For global state, this project uses Zustand. Refer to the `stores/` directory for examples.
+    - When using context, ensure it's properly optimized to prevent unnecessary re-renders.
+- Effects:
+    - Use `useEffect` sparingly and properly manage dependencies.
+    - Always clean up effects that create subscriptions or timers.
+    - Consider using React 19's `use` hook for data fetching in client components.
+- Performance Optimization:
+    - Use `React.memo` for components that render often with the same props.
+    - Use `useMemo` for expensive calculations and `useCallback` for functions passed to child components.
+    - Avoid creating new objects or functions in render unless necessary.
+    - Consider code-splitting with dynamic imports for larger components.
+- Component Structure:
+    - Common/reusable components in `components/`.
+    - Route-specific components in their respective `app/` route directories.
+    - UI components like buttons, inputs, etc. in `components/ui/`.
+    - Complex components can have their own folder with multiple files (e.g., `components/MyComplexComponent/index.tsx`).
+- Component Composition:
+    - Prefer composition over props drilling.
+    - Use children props, render props, or higher-order components for flexible components.
+- Accessibility:
+    - Ensure proper HTML semantics and ARIA attributes.
+    - Make interactive elements keyboard accessible.
+    - Maintain appropriate color contrast for text.
+- Keep components small and focused on a single responsibility (SRP). 

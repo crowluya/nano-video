@@ -1,0 +1,21 @@
+---
+inclusion: always
+---
+- This project uses `next-intl` for internationalization. Check the `i18n/` directory for translation files.
+- All user-facing strings should be internationalized using the translation hooks:
+  - In server components: `import { getTranslations } from 'next-intl/server'`
+  - In client components: `import { useTranslations } from 'next-intl'`
+- Translation files are organized in the `i18n/messages/` directory with language-specific JSON files (e.g., `en.json`, `ja.json`).
+- Follow the established naming patterns in translation files - use descriptive nested keys to organize translations by feature or component.
+- Avoid hardcoded strings in components. All text visible to users should be internationalized, including:
+  - UI text, labels, buttons
+  - Error messages and notifications
+  - Dynamic content like form validations
+- Use interpolation for dynamic values: `t('greeting', { name })` rather than string concatenation.
+- For date, time, number, and currency formatting, use the locale-aware formatters:
+  - `import { useFormatter } from 'next-intl'` for client components
+  - `import { getFormatter } from 'next-intl/server'` for server components
+- The locale system is configured in `middleware.ts`, `i18n/routing.ts` and `i18n/request.ts`. Consult these files for locale detection and routing.
+- When adding new text, ensure translations are provided for all supported locales.
+- Pay attention to pluralization and genderization rules if applicable for the supported languages.
+- If new locales are added, ensure all necessary configuration and translation files are updated. 

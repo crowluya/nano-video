@@ -1,0 +1,22 @@
+---
+inclusion: always
+---
+- Follow Next.js App Router conventions and directory structure.
+- Prioritize React Server Components (RSCs) for performance. Only use Client Components (`'use client'`) when necessary (e.g., for interactivity, browser APIs, hooks, or React Context).
+- Fetch data in Server Components where possible. Use `async/await` in Server Components.
+- For Client Components that need data, consider:
+  - Passing data from parent Server Components as props
+  - Using route handlers/server actions to fetch data
+  - Using React Query or SWR for client-side data fetching with caching
+- Always use `next/link` for internal navigation and `next/image` for optimized image loading.
+- Be mindful of Core Web Vitals (LCP, CLS, INP). The project uses `next/core-web-vitals` ESLint config.
+- Structure API routes within the `app/api` directory using route handlers.
+- Prioritize Server Actions over Route Handlers for implementation. Manage all Server Actions centrally in the `actions` directory.
+- Leverage Server Actions for form submissions and data mutations to simplify client-side logic.
+- Use Route Handlers with proper HTTP methods (GET, POST, etc.) for API endpoints.
+- For dynamic data, utilize Next.js data fetching patterns like `fetch` with cache/revalidation options.
+- Dynamic components: use `next/dynamic` with proper loading states for components that are not immediately critical.
+- Metadata: Use the Metadata API for SEO optimization in layouts and pages.
+- Leverage app router features like parallel routes, intercepting routes, and route groups when appropriate.
+- Use the built-in error handling (`error.tsx`) and loading states (`loading.tsx`) for better UX.
+- Refer to `next.config.mjs` for project-specific Next.js configurations. 

@@ -1,0 +1,54 @@
+---
+inclusion: always
+---
+# Project Structure Guidelines
+
+This is a Next.js (App Router) project with TypeScript, Tailwind CSS, Better Auth + Drizzle (Postgres), Stripe, Cloudflare R2, next-intl, and Resend.
+Key directories and files:
+
+## Core Directories
+- `app/`: App Router architecture with nested routes, layouts, and pages.
+  - `[locale]/`: Localized routes using `next-intl`
+  - `api/`: API endpoints using Route Handlers
+- `components/`: Reusable React components organized by feature
+  - `ui/`: shadcn/ui primitives
+- `lib/`: Backend utilities and integrations
+  - `auth/`: Better Auth server/client config
+  - `db/`: Drizzle ORM schema, migrations, seed
+  - `stripe/`: Stripe SDK initialization
+  - `cloudflare/`: R2 helpers
+  - `resend/`: Resend client
+  - `api-response.ts`: Consistent API response helpers
+- `i18n/`: next-intl configuration and message files
+  - `messages/`: Translation JSON by locale
+  - `routing.ts`: Locale routing definition
+- `actions/`: Server Actions for business logic (Stripe, usage, emails, blogs, etc.)
+- `emails/`: Transactional email React templates
+- `config/`: Project-level config (site, colors, models)
+- `stores/`: Zustand state stores
+- `types/`: Shared TypeScript types
+- `public/`: Static assets
+- `styles/`: Global CSS + Tailwind
+
+## Content and Config
+- `blogs/`: MDX blog content by locale
+- `content/`: Static content (privacy policy, terms)
+- `config/`: General configuration files
+- `emails/`: Email templates for transactional emails
+
+## Configuration Files
+- `next.config.mjs`: Next.js configuration (intl plugin, images, analyzer)
+- `tailwind.config.ts`: Tailwind configuration
+- `tsconfig.json`: TypeScript configuration
+- `middleware.ts`: next-intl middleware + referral cookie
+- `drizzle.config.ts`: Drizzle migration configuration
+- `.env*`: Environment variables (never commit secrets)
+
+## Feature Guide
+- **Authentication**: Better Auth with Drizzle adapter and Google/GitHub providers.
+- **Internationalization**: next-intl for `en`, `zh`, `ja` with cookie-based locale.
+- **AI Integration**: ai-sdk providers (OpenAI, Anthropic, Google, DeepSeek, XAI, Replicate).
+- **UI Framework**: shadcn/ui + Tailwind.
+- **State Management**: Zustand.
+- **Database**: PostgreSQL via Drizzle ORM; schema in `lib/db/schema.ts`, migrations in `lib/db/migrations`.
+- **Storage**: Cloudflare R2 via AWS SDK S3-compatible client.
