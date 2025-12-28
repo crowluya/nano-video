@@ -24,6 +24,37 @@ const HeaderLinks = () => {
     pricingLink.href = process.env.NEXT_PUBLIC_PRICING_PATH!;
   }
 
+  const promptGeneratorLink = headerLinks.find(
+    (link) => link.href === "/prompt-generator"
+  );
+  if (promptGeneratorLink) {
+    promptGeneratorLink.href = "/#prompt-generator";
+  }
+
+  const scrollToPromptGenerator = () => {
+    const byId = document.getElementById("prompt-generator");
+    if (byId) {
+      byId.scrollIntoView({ behavior: "smooth", block: "start" });
+      return true;
+    }
+
+    const heading = Array.from(document.querySelectorAll("h1,h2,h3,h4"))
+      .find((el) => (el.textContent || "").trim() === "Prompt Generator");
+    if (heading) {
+      const container = heading.closest("section") || heading.closest("div");
+      const target = container || heading;
+      if (target instanceof HTMLElement) {
+        if (!target.id) {
+          target.id = "prompt-generator";
+        }
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   return (
     <NavigationMenu viewport={false} className="hidden lg:block">
       <NavigationMenuList className="flex-wrap">
@@ -81,6 +112,21 @@ const HeaderLinks = () => {
                 key={link.name}
                 href={link.href}
                 title={link.name}
+                onClick={(e) => {
+                  if (link.href !== "/#prompt-generator") return;
+                  if (!pathname || pathname !== "/") return;
+                  e.preventDefault();
+
+                  const ok = scrollToPromptGenerator();
+                  window.history.replaceState(null, "", ok ? "/#prompt-generator" : "/#video-demo");
+
+                  if (!ok) {
+                    const byVideoDemo = document.getElementById("video-demo");
+                    if (byVideoDemo) {
+                      byVideoDemo.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }
+                }}
                 prefetch={
                   link.target && link.target === "_blank" ? false : true
                 }

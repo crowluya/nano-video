@@ -3,7 +3,6 @@ import NanoBananaFAQ from "@/components/nanabananvideo/FAQ";
 import NanoBananaFeatures from "@/components/nanabananvideo/Features";
 import NanoBananaHero from "@/components/nanabananvideo/Hero";
 import NanoBananaPricing from "@/components/nanabananvideo/Pricing";
-import NanoBananaTestimonials from "@/components/nanabananvideo/Testimonials";
 import NanoBananaUseCases from "@/components/nanabananvideo/UseCases";
 import VideoGenerationDemo from "@/components/nanabananvideo/VideoGenerationDemo";
 import { VideoShowcase } from "@/components/nanabananvideo/VideoShowcase";
@@ -44,8 +43,6 @@ export default async function NanoBananaVideoPage() {
       {messages.NanoBananaVideo?.UseCases && <NanoBananaUseCases />}
 
       {messages.NanoBananaVideo?.Pricing && <NanoBananaPricing />}
-
-      {messages.NanoBananaVideo?.Testimonials && <NanoBananaTestimonials />}
 
       {messages.NanoBananaVideo?.FAQ && <NanoBananaFAQ />}
 
