@@ -198,7 +198,7 @@
     "description": "Nano Banana to Videoについて知っておくべきすべて",
     "items": [
       {
-        "question": "Nano BananaをビデオにLOCATION変換する方法は？",
+        "question": "Nano Bananaをビデオに変換する方法は？",
         "answer": "Nano Bananaをビデオに変換するのは簡単です：1) 好みのAIモデル（Sora 2またはVeo 3.1）を選択、2) 生成モード（テキストからビデオまたは画像からビデオ）を選択、3) 画像からビデオを使用する場合はNano Banana画像をアップロード、4) ビデオモーションを説明するプロンプトを入力、5) 生成をクリックして3〜10分待つ。"
       },
       {
@@ -240,18 +240,16 @@
     ]
   },
   "CTA": {
-    "title": "今日からビデオ作成を始める",
-    "description": "AIを使用してNano Banana画像を素晴らしいビデオに変換している数千人のクリエイターに参加。無料トライアル、クレジットカード不要。",
+    "title": "今すぐ Nano Banana Pro Images を動画に変換",
+    "description": "最強の Sora 2 と Veo 3.1 を使って nano banana pro images を動画に変換。無料で試せて、クレジットカード不要。",
     "button": "今すぐ無料で試す",
     "trustText": "世界中のクリエイターに信頼されています",
     "features": {
-      "deploy": "即座に生成"
+      "deploy": "即座に生成",
+      "production": "ウォーターマークなし",
+      "updates": "高速処理",
+      "i18n": "商用利用"
     }
-  },
-  "VideoDemo": {
-    "title": "nano banana ビデオジェネレーター",
-    "loginPrompt": "ビデオを保存してより多くの機能にアクセスするにはサインイン",
-    "loginButton": "サインイン"
   },
   "PromptGenerator": {
     "title": "プロンプトジェネレーター",
