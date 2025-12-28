@@ -6,13 +6,13 @@
  * - Returns current status and result URLs if completed
  */
 
+import { createActivityLog } from "@/actions/usage/activity-logs";
 import { apiResponse } from "@/lib/api-response";
+import { db } from "@/lib/db";
+import { creditLogs as creditLogsSchema, taskCreditMappings } from "@/lib/db/schema";
 import { getKieClient } from "@/lib/kie";
 import { refundKieCredits } from "@/lib/kie/credits";
-import { db } from "@/lib/db";
-import { taskCreditMappings, creditLogs as creditLogsSchema } from "@/lib/db/schema";
-import { eq, and } from "drizzle-orm";
-import { createActivityLog } from "@/actions/usage/activity-logs";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 const querySchema = z.object({
@@ -55,7 +55,7 @@ export async function GET(req: Request) {
       if (modelId === "gpt4o-image") {
         const imageStatus = await client.get4oImageStatus(taskId);
         rawStatus = imageStatus;
-        
+
         if (imageStatus.successFlag === 1) {
           status = "success";
           resultUrls = imageStatus.response?.resultUrls || [];
@@ -67,7 +67,7 @@ export async function GET(req: Request) {
       } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
         const fluxStatus = await client.getFluxKontextStatus(taskId);
         rawStatus = fluxStatus;
-        
+
         if (fluxStatus.successFlag === 1) {
           status = "success";
           // Extract URL from response.resultImageUrl (actual API format)
@@ -86,7 +86,7 @@ export async function GET(req: Request) {
       } else if (modelId === "midjourney") {
         const mjStatus = await client.getMidjourneyStatus(taskId);
         rawStatus = mjStatus;
-        
+
         if (mjStatus.successFlag === 1 || mjStatus.state === "success") {
           status = "success";
           resultUrls = mjStatus.resultUrls || [];
@@ -99,7 +99,7 @@ export async function GET(req: Request) {
         // Nano Banana and others use generic job endpoint
         const jobStatus = await client.getNanoBananaStatus(taskId);
         rawStatus = jobStatus;
-        
+
         if (jobStatus.state === "success") {
           status = "success";
           if (jobStatus.resultJson) {
@@ -118,16 +118,16 @@ export async function GET(req: Request) {
       }
     } else if (type === "video") {
       // Determine which video status endpoint to use based on modelId
-      if (modelId === "veo3" || modelId === "veo3_fast") {
+      if (modelId === "veo3" || modelId === "veo3_fast" || (modelId?.startsWith("veo-3") ?? false)) {
         const veoStatus = await client.getVeo3Status(taskId);
         rawStatus = veoStatus;
-        
+
         if (veoStatus.successFlag === 1) {
           status = "success";
           // Priority 1: Extract from response.resultUrls (actual API format)
           if (veoStatus.response?.resultUrls && veoStatus.response.resultUrls.length > 0) {
             resultUrls = veoStatus.response.resultUrls;
-          } 
+          }
           // Priority 2: Parse legacy resultUrls JSON string
           else if (veoStatus.resultUrls) {
             try {
@@ -136,7 +136,7 @@ export async function GET(req: Request) {
             } catch {
               resultUrls = [veoStatus.resultUrls];
             }
-          } 
+          }
           // Priority 3: Use videoUrl if exists
           else if (veoStatus.videoUrl) {
             resultUrls = [veoStatus.videoUrl];
@@ -149,7 +149,7 @@ export async function GET(req: Request) {
       } else if (modelId === "runway-gen3") {
         const runwayStatus = await client.getRunwayStatus(taskId);
         rawStatus = runwayStatus;
-        
+
         if (runwayStatus.state === "success") {
           status = "success";
           if (runwayStatus.videoInfo?.videoUrl) {
@@ -164,7 +164,7 @@ export async function GET(req: Request) {
         // Sora 2, Wan use generic job endpoint
         const jobStatus = await client.getSora2Status(taskId);
         rawStatus = jobStatus;
-        
+
         if (jobStatus.state === "success") {
           status = "success";
           if (jobStatus.resultJson) {
@@ -196,7 +196,7 @@ export async function GET(req: Request) {
 
           if (mapping.length > 0 && mapping[0].creditLogId) {
             const creditLogId = mapping[0].creditLogId;
-            
+
             // Get the original credit log to find the amount
             const creditLog = await db.select()
               .from(creditLogsSchema)
@@ -205,7 +205,7 @@ export async function GET(req: Request) {
 
             if (creditLog.length > 0) {
               const amountToRefund = Math.abs(creditLog[0].amount);
-              
+
               // Refund credits
               const refundResult = await refundKieCredits(
                 amountToRefund,
@@ -242,7 +242,7 @@ export async function GET(req: Request) {
     } else if (type === "music") {
       const sunoStatus = await client.getSunoStatus(taskId);
       rawStatus = sunoStatus;
-      
+
       if (sunoStatus.status === "SUCCESS") {
         status = "success";
         // Extract audio URLs from suno data
@@ -264,7 +264,7 @@ export async function GET(req: Request) {
         .where(eq(taskCreditMappings.taskId, taskId))
         .limit(1)
         .catch(() => []);
-      
+
       creditsRefunded = mapping.length > 0 ? mapping[0].refunded : false;
     }
 

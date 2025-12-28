@@ -245,16 +245,26 @@
     "button": "今すぐ無料で試す",
     "trustText": "世界中のクリエイターに信頼されています",
     "features": {
-      "deploy": "🎬 即座に生成",
-      "production": "✨ ウォーターマークなし",
-      "updates": "🚀 高速処理",
-      "i18n": "💎 商用利用"
+      "deploy": "即座に生成"
     }
   },
   "VideoDemo": {
     "title": "nano banana ビデオジェネレーター",
     "loginPrompt": "ビデオを保存してより多くの機能にアクセスするにはサインイン",
     "loginButton": "サインイン"
+  },
+  "PromptGenerator": {
+    "title": "プロンプトジェネレーター",
+    "description": "マルチターンチャットでより高品質な動画プロンプトを生成",
+    "clear": "クリア",
+    "modelLabel": "モデル",
+    "freeUserHint": "無料ユーザーは Gemini 2.5 Flash Lite のみ利用できます。アップグレードすると DeepSeek を利用できます。",
+    "previewHint": "ページの閲覧は可能です。送信にはログインが必要です。",
+    "emptyState": "目的（例：カメラワーク、スタイル、テンポ、被写体の動き）を入力してください。より強いプロンプトを生成します。",
+    "inputPlaceholder": "希望する動画の効果 / プロンプトの目的を入力...",
+    "reasoningTitle": "推論",
+    "loginRequired": "プロンプトジェネレーターを利用するにはサインインしてください",
+    "defaultError": "応答の生成に失敗しました"
   },
   "VideoGeneration": {
     "title": "nano banana ビデオジェネレーター",
@@ -264,8 +274,7 @@
     "availableCredits": "利用可能",
     "generationType": "生成タイプ",
     "prompt": "プロンプト",
-    "promptPlaceholder": "生成したいビデオを説明してください...",
-    "promptDescription": "希望するビデオの動きを説明するテキストプロンプト",
+    "promptPlaceholder": "生成したいビデオを説明してください",
     "imageUpload": "画像アップロード",
     "referenceImages": "参考画像",
     "imagesRequired": "枚の画像が必要",

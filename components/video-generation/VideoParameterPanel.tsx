@@ -1,10 +1,9 @@
 "use client";
 
-import { VideoModel, VideoGenerationParams } from "./VideoGenerationPage";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
+import type { VideoGenerationParams, VideoModel } from "./VideoGenerationPage";
 
 interface VideoParameterPanelProps {
   model: VideoModel | null;
@@ -22,7 +21,8 @@ export function VideoParameterPanel({
   if (!model) return null;
 
   const isSora2 = model.id.startsWith("sora-2");
-  const isVeo3 = model.id.startsWith("veo3");
+  const isSora2Pro = model.id.startsWith("sora-2-pro");
+  const isVeo3 = model.id.startsWith("veo-3");
 
   const updateParam = <K extends keyof VideoGenerationParams>(
     key: K,
@@ -61,6 +61,67 @@ export function VideoParameterPanel({
               This parameter defines the aspect ratio of the video
             </p>
           </div>
+
+          {/* Resolution (only for Sora 2 Pro) */}
+          {isSora2Pro && (
+            <div>
+              <Label className="text-xs text-muted-foreground mb-2 block">
+                Resolution
+              </Label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => updateParam("size", "Standard")}
+                  className={cn(
+                    "flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm transition-all",
+                    params.size === "Standard" || (!params.size && model.resolutions?.includes("720p"))
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-background border-border hover:border-primary/50"
+                  )}
+                >
+                  720p
+                </button>
+                <button
+                  onClick={() => updateParam("size", "High")}
+                  className={cn(
+                    "flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm transition-all",
+                    params.size === "High"
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-background border-border hover:border-primary/50"
+                  )}
+                >
+                  1080p
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                The resolution quality of the generated video
+              </p>
+            </div>
+          )}
+
+          {/* Resolution for Sora 2 (non-Pro) - 只显示 720p，样式跟 Pro 一样 */}
+          {isSora2 && !isSora2Pro && (
+            <div>
+              <Label className="text-xs text-muted-foreground mb-2 block">
+                Resolution
+              </Label>
+              <div className="flex gap-2">
+                <button
+                  className="flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm bg-primary text-primary-foreground border-primary"
+                >
+                  720p
+                </button>
+                <button
+                  disabled
+                  className="flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm bg-background border-border text-muted-foreground opacity-50 cursor-not-allowed"
+                >
+                  1080p
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mt-1">
+                The resolution quality of the generated video
+              </p>
+            </div>
+          )}
 
           {/* Duration / N Frames */}
           <div>
@@ -116,10 +177,10 @@ export function VideoParameterPanel({
               {model.aspectRatios?.map((ratio) => (
                 <button
                   key={ratio}
-                  onClick={() => updateParam("aspectRatio", ratio as "16:9" | "9:16" | "Auto")}
+                  onClick={() => updateParam("aspect_ratio", ratio as "portrait" | "landscape")}
                   className={cn(
-                    "flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm transition-all",
-                    params.aspectRatio === ratio
+                    "flex-1 px-2 py-2 rounded-md border-2 text-xs transition-all",
+                    params.aspect_ratio === ratio
                       ? "bg-primary text-primary-foreground border-primary"
                       : "bg-background border-border hover:border-primary/50"
                   )}
@@ -130,36 +191,50 @@ export function VideoParameterPanel({
             </div>
           </div>
 
-          {/* Seed (Optional) */}
+          {/* Resolution */}
           <div>
-            <Label htmlFor="seed" className="text-xs text-muted-foreground mb-2 block">
-              Seed (Optional)
+            <Label className="text-xs text-muted-foreground mb-2 block">
+              Resolution
             </Label>
-            <Input
-              id="seed"
-              type="number"
-              placeholder="Please input seed"
-              value={params.seeds || ""}
-              onChange={(e) => {
-                const value = e.target.value ? parseInt(e.target.value, 10) : undefined;
-                updateParam("seeds", value);
-              }}
-              className="w-full"
-            />
+            <div className="flex gap-2">
+              <button
+                className={cn(
+                  "flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm transition-all",
+                  "bg-primary text-primary-foreground border-primary"
+                )}
+              >
+                720p
+              </button>
+              <button
+                disabled
+                className={cn(
+                  "flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm transition-all",
+                  "bg-background border-border text-muted-foreground opacity-50 cursor-not-allowed"
+                )}
+              >
+                1080p
+              </button>
+            </div>
           </div>
 
-          {/* Enable Translation */}
-          <div className="flex items-center justify-between p-3 bg-background border border-border rounded-lg">
-            <div>
-              <div className="font-medium text-sm mb-1">Enable Translation</div>
-              <div className="text-xs text-muted-foreground">
-                Automatically translate prompt if needed
-              </div>
+          {/* Duration */}
+          <div>
+            <Label className="text-xs text-muted-foreground mb-2 block">
+              Duration
+            </Label>
+            <div className="flex gap-2">
+              <button
+                className="flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm bg-primary text-primary-foreground border-primary"
+              >
+                8s
+              </button>
+              <button
+                disabled
+                className="flex-1 min-w-[80px] px-3 py-2 rounded-md border-2 text-sm bg-background border-border text-muted-foreground opacity-50 cursor-not-allowed"
+              >
+                -
+              </button>
             </div>
-            <Switch
-              checked={params.enableTranslation ?? true}
-              onCheckedChange={(checked) => updateParam("enableTranslation", checked)}
-            />
           </div>
         </>
       )}

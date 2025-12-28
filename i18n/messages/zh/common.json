@@ -16,6 +16,10 @@
         "href": "/#video-demo"
       },
       {
+        "name": "提示词生成器",
+        "href": "/prompt-generator"
+      },
+      {
         "id": "pricing",
         "name": "定价",
         "href": "/#pricing"

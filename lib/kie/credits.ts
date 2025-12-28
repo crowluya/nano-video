@@ -4,6 +4,7 @@
  * Server-side helper for deducting credits when using kie.ai features.
  */
 
+import { getKieImageModel, getKieMusicModel } from '@/config/models';
 import { getSession } from '@/lib/auth/server';
 import { db } from '@/lib/db';
 import {
@@ -11,7 +12,6 @@ import {
   usage as usageSchema,
 } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
-import { getKieImageModel, getKieVideoModel, getKieMusicModel } from '@/config/models';
 
 export interface CreditDeductionResult {
   success: boolean;
@@ -29,12 +29,54 @@ export interface CreditRefundResult {
 }
 
 /**
+ * Calculate video generation credits based on model, resolution, and duration
+ * Pricing rules:
+ * - Sora 2 (Fast): 720p 10s = 80 credits
+ * - Sora 2 Pro (Quality):
+ *   - 720p 10s = 150 credits
+ *   - 720p 15s = 300 credits
+ *   - 1080p 10s = 300 credits
+ *   - 1080p 15s = 600 credits
+ */
+export function calculateVideoCredits(
+  modelId: string,
+  size?: 'Standard' | 'High',
+  duration?: '10' | '15'
+): number {
+  const isVeo = modelId.startsWith('veo3') || modelId.startsWith('veo-') || modelId.includes('veo');
+  if (isVeo) {
+    return 100;
+  }
+
+  const isPro = modelId.includes('pro');
+  const resolution = size === 'High' ? '1080p' : '720p';
+  const dur = duration || '10';
+
+  if (!isPro) {
+    // Sora 2 (Fast): 720p 10s = 80 credits
+    return 80;
+  }
+
+  // Sora 2 Pro (Quality)
+  if (resolution === '720p') {
+    return dur === '10' ? 150 : 300;
+  } else {
+    // 1080p
+    return dur === '10' ? 300 : 600;
+  }
+}
+
+/**
  * Deducts credits for a kie.ai operation
  */
 export async function deductKieCredits(
   type: 'image' | 'video' | 'music',
   modelId: string,
-  notes: string
+  notes: string,
+  options?: {
+    size?: 'Standard' | 'High';
+    duration?: '10' | '15';
+  }
 ): Promise<CreditDeductionResult> {
   const session = await getSession();
   const user = session?.user;
@@ -45,13 +87,13 @@ export async function deductKieCredits(
 
   // Get credits required for this model
   let creditsRequired = 0;
-  
+
   if (type === 'image') {
     const model = getKieImageModel(modelId);
     creditsRequired = model?.creditsPerGeneration || 10;
   } else if (type === 'video') {
-    const model = getKieVideoModel(modelId);
-    creditsRequired = model?.creditsPerGeneration || 80;
+    // Use dynamic calculation for video credits
+    creditsRequired = calculateVideoCredits(modelId, options?.size, options?.duration);
   } else if (type === 'music') {
     const model = getKieMusicModel(modelId);
     creditsRequired = model?.creditsPerGeneration || 20;
@@ -134,7 +176,11 @@ export async function deductKieCredits(
  */
 export async function checkKieCredits(
   type: 'image' | 'video' | 'music',
-  modelId: string
+  modelId: string,
+  options?: {
+    size?: 'Standard' | 'High';
+    duration?: '10' | '15';
+  }
 ): Promise<{ hasCredits: boolean; required: number; available: number }> {
   const session = await getSession();
   const user = session?.user;
@@ -145,13 +191,13 @@ export async function checkKieCredits(
 
   // Get credits required for this model
   let creditsRequired = 0;
-  
+
   if (type === 'image') {
     const model = getKieImageModel(modelId);
     creditsRequired = model?.creditsPerGeneration || 10;
   } else if (type === 'video') {
-    const model = getKieVideoModel(modelId);
-    creditsRequired = model?.creditsPerGeneration || 80;
+    // Use dynamic calculation for video credits
+    creditsRequired = calculateVideoCredits(modelId, options?.size, options?.duration);
   } else if (type === 'music') {
     const model = getKieMusicModel(modelId);
     creditsRequired = model?.creditsPerGeneration || 20;
@@ -212,8 +258,8 @@ export async function refundKieCredits(
         .limit(100); // Get recent logs to check
 
       // Check if there's already a refund for this original log
-      const hasRefund = existingRefund.some(log => 
-        log.type === 'refund_failed_generation' && 
+      const hasRefund = existingRefund.some(log =>
+        log.type === 'refund_failed_generation' &&
         log.notes?.includes(`Original log: ${originalLogId}`)
       );
 
@@ -244,7 +290,7 @@ export async function refundKieCredits(
       // This means we need to track how much was deducted from each type
       // For simplicity, we'll refund proportionally or to subscription first
       // In a more sophisticated system, we'd track the original deduction breakdown
-      
+
       // For now, refund to subscription credits first (up to the amount)
       // If there's remaining, refund to one-time
       const refundToSub = Math.min(amount, amount); // Can be adjusted based on original deduction
@@ -269,7 +315,7 @@ export async function refundKieCredits(
           oneTimeBalanceAfter: newOneTimeBalance,
           subscriptionBalanceAfter: newSubBalance,
           type: 'refund_failed_generation',
-          notes: originalLogId 
+          notes: originalLogId
             ? `${notes} (Original log: ${originalLogId})`
             : notes,
         });

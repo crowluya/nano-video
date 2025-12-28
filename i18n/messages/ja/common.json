@@ -16,6 +16,10 @@
         "href": "/#video-demo"
       },
       {
+        "name": "プロンプトジェネレーター",
+        "href": "/prompt-generator"
+      },
+      {
         "id": "pricing",
         "name": "料金プラン",
         "href": "/#pricing"

@@ -256,6 +256,19 @@
     "loginPrompt": "Sign in to save your videos and access more features",
     "loginButton": "Sign In"
   },
+  "PromptGenerator": {
+    "title": "Prompt Generator",
+    "description": "Generate higher-quality video prompts through multi-turn chat",
+    "clear": "Clear",
+    "modelLabel": "Model",
+    "freeUserHint": "Free users can only use Gemini 2.5 Flash Lite. Upgrade to use DeepSeek.",
+    "previewHint": "You can preview this page. Sending messages requires login.",
+    "emptyState": "Describe your goal (e.g., camera movement, style, pacing, subject action). I will generate a stronger prompt for you.",
+    "inputPlaceholder": "Describe your desired video effect / prompt goal...",
+    "reasoningTitle": "Reasoning",
+    "loginRequired": "Please sign in to use Prompt Generator",
+    "defaultError": "Failed to generate response"
+  },
   "VideoGeneration": {
     "title": "nano banana video generator",
     "subtitle": "Generate videos using Sora 2 and Veo 3.1 AI models",

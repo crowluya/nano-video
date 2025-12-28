@@ -193,67 +193,78 @@ export const KIE_IMAGE_MODELS = [
 // =============================================================================
 
 export const KIE_VIDEO_MODELS = [
-  // Sora 2 Models
+  // Sora 2 Models (Fast Mode)
   {
     provider: "kie",
     id: "sora-2-text-to-video",
-    name: "Sora 2",
-    description: "OpenAI Sora 2 - Text to Video",
+    name: "Sora 2 (Fast)",
+    description: "OpenAI Sora 2 - Text to Video (Fast Mode)",
     features: ["text-to-video"],
     aspectRatios: ["portrait", "landscape"] as const,
-    durations: ["10", "15"] as const,
-    creditsPerGeneration: 100,
+    durations: ["10", "15"] as const, // Sora 2 supports 10s and 15s
+    resolutions: ["720p"] as const, // Sora 2 only supports 720p
   },
   {
     provider: "kie",
     id: "sora-2-image-to-video",
-    name: "Sora 2 Image",
-    description: "OpenAI Sora 2 - Image to Video",
+    name: "Sora 2 Image (Fast)",
+    description: "OpenAI Sora 2 - Image to Video (Fast Mode)",
     features: ["image-to-video"],
     aspectRatios: ["portrait", "landscape"] as const,
-    durations: ["10", "15"] as const,
-    creditsPerGeneration: 100,
+    durations: ["10", "15"] as const, // Sora 2 supports 10s and 15s
+    resolutions: ["720p"] as const, // Sora 2 only supports 720p
   },
+  // Sora 2 Pro Models (Quality Mode)
   {
     provider: "kie",
     id: "sora-2-pro-text-to-video",
-    name: "Sora 2 Pro",
-    description: "OpenAI Sora 2 Pro - Text to Video",
+    name: "Sora 2 Pro (Quality)",
+    description: "OpenAI Sora 2 Pro - Text to Video (Quality Mode)",
     features: ["text-to-video"],
     aspectRatios: ["portrait", "landscape"] as const,
     durations: ["10", "15"] as const,
-    creditsPerGeneration: 150,
+    resolutions: ["720p", "1080p"] as const,
   },
   {
     provider: "kie",
     id: "sora-2-pro-image-to-video",
-    name: "Sora 2 Pro Image",
-    description: "OpenAI Sora 2 Pro - Image to Video",
+    name: "Sora 2 Pro Image (Quality)",
+    description: "OpenAI Sora 2 Pro - Image to Video (Quality Mode)",
     features: ["image-to-video"],
     aspectRatios: ["portrait", "landscape"] as const,
     durations: ["10", "15"] as const,
-    creditsPerGeneration: 150,
+    resolutions: ["720p", "1080p"] as const,
   },
   // Veo 3.1 Models
   {
     provider: "kie",
-    id: "veo3",
-    name: "Veo 3.1 Quality",
-    description: "Google Veo 3.1 - Quality Mode",
-    features: ["text-to-video", "image-to-video", "first-last-frame"],
-    generationTypes: ["TEXT_2_VIDEO", "FIRST_AND_LAST_FRAMES_2_VIDEO"] as const,
-    aspectRatios: ["16:9", "9:16", "Auto"] as const,
-    creditsPerGeneration: 80,
+    id: "veo-3.1-fast",
+    name: "Veo 3.1 Fast",
+    description: "Google Veo 3.1 Fast - Text/Image to Video",
+    features: ["text-to-video", "image-to-video", "start-end-frame-to-video", "reference-to-video"],
+    aspectRatios: ["16:9", "9:16"] as const,
+    durations: ["8"] as const,
+    resolutions: ["720p"] as const,
   },
   {
     provider: "kie",
-    id: "veo3_fast",
-    name: "Veo 3.1 Fast",
-    description: "Google Veo 3.1 - Fast Mode",
-    features: ["text-to-video", "image-to-video", "first-last-frame", "reference-to-video"],
-    generationTypes: ["TEXT_2_VIDEO", "FIRST_AND_LAST_FRAMES_2_VIDEO", "REFERENCE_2_VIDEO"] as const,
-    aspectRatios: ["16:9", "9:16", "Auto"] as const,
-    creditsPerGeneration: 60,
+    id: "veo-3.1-start-end-frame",
+    name: "Veo 3.1 (Start & End Frame)",
+    description: "Google Veo 3.1 - Start & End Frame to Video",
+    features: ["start-end-frame-to-video"],
+    aspectRatios: ["16:9", "9:16"] as const,
+    durations: ["8"] as const,
+    resolutions: ["720p"] as const,
+  },
+  {
+    provider: "kie",
+    id: "veo-3.1-reference",
+    name: "Veo 3.1 (Reference)",
+    description: "Google Veo 3.1 - Reference Images to Video",
+    features: ["reference-to-video"],
+    aspectRatios: ["16:9", "9:16"] as const,
+    durations: ["8"] as const,
+    resolutions: ["720p"] as const,
   },
 ] as const;
 
@@ -334,7 +345,7 @@ export function getKieMusicModel(id: string): KieMusicModel | undefined {
 // =============================================================================
 
 export const TEXT_TO_IMAGE_MODELS = KIE_IMAGE_MODELS.filter(
-  (model): model is typeof KIE_IMAGE_MODELS[number] => 
+  (model): model is typeof KIE_IMAGE_MODELS[number] =>
     (model.features as readonly string[]).includes("text-to-image")
 ).map((model) => ({
   provider: model.provider,
@@ -347,7 +358,7 @@ export const TEXT_TO_IMAGE_MODELS = KIE_IMAGE_MODELS.filter(
 // =============================================================================
 
 export const IMAGE_TO_IMAGE_MODELS = KIE_IMAGE_MODELS.filter(
-  (model): model is typeof KIE_IMAGE_MODELS[number] => 
+  (model): model is typeof KIE_IMAGE_MODELS[number] =>
     (model.features as readonly string[]).includes("image-to-image")
 ).map((model) => ({
   provider: model.provider,

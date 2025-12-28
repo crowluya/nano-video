@@ -213,12 +213,14 @@ export type Sora2Model =
 
 export type Sora2AspectRatio = 'portrait' | 'landscape';
 export type Sora2Frames = '10' | '15';
+export type Sora2Size = 'Standard' | 'High'; // Standard = 720p, High = 1080p
 
 export interface Sora2Input {
   prompt: string;
   image_urls?: string[];
   aspect_ratio?: Sora2AspectRatio;
   n_frames?: Sora2Frames;
+  size?: Sora2Size;
   remove_watermark?: boolean;
 }
 

@@ -16,6 +16,10 @@
         "href": "/#video-demo"
       },
       {
+        "name": "Prompt Generator",
+        "href": "/prompt-generator"
+      },
+      {
         "id": "pricing",
         "name": "Pricing",
         "href": "/#pricing"

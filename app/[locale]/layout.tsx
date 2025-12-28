@@ -79,6 +79,7 @@ export default async function LocaleLayout({
         <ToltScript />
       </head>
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background flex flex-col",
           fontSans.variable
