@@ -38,7 +38,7 @@ export default async function NanoBananaVideoPage() {
 
       {messages.NanoBananaVideo?.Features && <NanoBananaFeatures />}
 
-      {messages.NanoBananaVideo?.VideoDemo && <VideoGenerationDemo />}
+      <VideoGenerationDemo />
 
       {messages.NanoBananaVideo?.UseCases && <NanoBananaUseCases />}
 

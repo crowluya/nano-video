@@ -3,6 +3,7 @@
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import type { VideoGenerationParams, VideoModel } from "./VideoGenerationPage";
 
 interface VideoParameterPanelProps {
@@ -20,6 +21,8 @@ export function VideoParameterPanel({
 }: VideoParameterPanelProps) {
   if (!model) return null;
 
+  const t = useTranslations("NanoBananaVideo.VideoGeneration.parameterPanel");
+
   const isSora2 = model.id.startsWith("sora-2");
   const isSora2Pro = model.id.startsWith("sora-2-pro");
   const isVeo3 = model.id.startsWith("veo-3");
@@ -31,6 +34,12 @@ export function VideoParameterPanel({
     onParamsChange({ ...params, [key]: value });
   };
 
+  const getAspectRatioLabel = (ratio: string) => {
+    if (ratio === "portrait") return t("aspectRatio.portrait");
+    if (ratio === "landscape") return t("aspectRatio.landscape");
+    return ratio;
+  };
+
   return (
     <div className="space-y-4">
       {/* Sora 2 Parameters */}
@@ -39,7 +48,7 @@ export function VideoParameterPanel({
           {/* Aspect Ratio */}
           <div>
             <Label className="text-xs text-muted-foreground mb-2 block">
-              Aspect Ratio
+              {t("aspectRatio.label")}
             </Label>
             <div className="flex gap-2">
               {model.aspectRatios?.map((ratio) => (
@@ -53,12 +62,12 @@ export function VideoParameterPanel({
                       : "bg-background border-border hover:border-primary/50"
                   )}
                 >
-                  {ratio === "portrait" ? "Portrait" : "Landscape"}
+                  {getAspectRatioLabel(ratio)}
                 </button>
               ))}
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              This parameter defines the aspect ratio of the video
+              {t("aspectRatio.help")}
             </p>
           </div>
 
@@ -66,7 +75,7 @@ export function VideoParameterPanel({
           {isSora2Pro && (
             <div>
               <Label className="text-xs text-muted-foreground mb-2 block">
-                Resolution
+                {t("resolution.label")}
               </Label>
               <div className="flex gap-2">
                 <button
@@ -93,7 +102,7 @@ export function VideoParameterPanel({
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                The resolution quality of the generated video
+                {t("resolution.help")}
               </p>
             </div>
           )}
@@ -102,7 +111,7 @@ export function VideoParameterPanel({
           {isSora2 && !isSora2Pro && (
             <div>
               <Label className="text-xs text-muted-foreground mb-2 block">
-                Resolution
+                {t("resolution.label")}
               </Label>
               <div className="flex gap-2">
                 <button
@@ -118,7 +127,7 @@ export function VideoParameterPanel({
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                The resolution quality of the generated video
+                {t("resolution.help")}
               </p>
             </div>
           )}
@@ -126,7 +135,7 @@ export function VideoParameterPanel({
           {/* Duration / N Frames */}
           <div>
             <Label className="text-xs text-muted-foreground mb-2 block">
-              Duration
+              {t("duration.label")}
             </Label>
             <div className="flex gap-2">
               {model.durations?.map((duration) => (
@@ -145,16 +154,16 @@ export function VideoParameterPanel({
               ))}
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              The number of frames to be generated
+              {t("duration.help")}
             </p>
           </div>
 
           {/* Remove Watermark */}
           <div className="flex items-center justify-between p-3 bg-background border border-border rounded-lg">
             <div>
-              <div className="font-medium text-sm mb-1">Remove Watermark</div>
+              <div className="font-medium text-sm mb-1">{t("removeWatermark.title")}</div>
               <div className="text-xs text-muted-foreground">
-                When enabled, removes watermarks from the generated video
+                {t("removeWatermark.description")}
               </div>
             </div>
             <Switch
@@ -171,7 +180,7 @@ export function VideoParameterPanel({
           {/* Aspect Ratio */}
           <div>
             <Label className="text-xs text-muted-foreground mb-2 block">
-              Aspect Ratio
+              {t("aspectRatio.label")}
             </Label>
             <div className="flex gap-2">
               {model.aspectRatios?.map((ratio) => (
@@ -185,7 +194,7 @@ export function VideoParameterPanel({
                       : "bg-background border-border hover:border-primary/50"
                   )}
                 >
-                  {ratio}
+                  {getAspectRatioLabel(ratio)}
                 </button>
               ))}
             </div>
@@ -194,7 +203,7 @@ export function VideoParameterPanel({
           {/* Resolution */}
           <div>
             <Label className="text-xs text-muted-foreground mb-2 block">
-              Resolution
+              {t("resolution.label")}
             </Label>
             <div className="flex gap-2">
               <button
@@ -220,7 +229,7 @@ export function VideoParameterPanel({
           {/* Duration */}
           <div>
             <Label className="text-xs text-muted-foreground mb-2 block">
-              Duration
+              {t("duration.label")}
             </Label>
             <div className="flex gap-2">
               <button

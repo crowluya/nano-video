@@ -283,6 +283,26 @@
     "referenceImages": "Reference Images",
     "imagesRequired": "images required",
     "parameters": "Parameters",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "Aspect Ratio",
+        "portrait": "9:16",
+        "landscape": "16:9",
+        "help": "This parameter defines the aspect ratio of the video"
+      },
+      "resolution": {
+        "label": "Resolution",
+        "help": "The resolution quality of the generated video"
+      },
+      "duration": {
+        "label": "Duration",
+        "help": "The number of frames to be generated"
+      },
+      "removeWatermark": {
+        "title": "Remove Watermark",
+        "description": "When enabled, removes watermarks from the generated video"
+      }
+    },
     "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
     "getMoreCredits": "Get more credits",
     "generating": "Generating...",

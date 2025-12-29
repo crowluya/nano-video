@@ -283,6 +283,26 @@
     "referenceImages": "参考图片",
     "imagesRequired": "张图片必需",
     "parameters": "参数设置",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "画面比例",
+        "portrait": "9:16",
+        "landscape": "16:9",
+        "help": "该参数用于设置视频画面比例"
+      },
+      "resolution": {
+        "label": "分辨率",
+        "help": "生成视频的分辨率质量"
+      },
+      "duration": {
+        "label": "时长",
+        "help": "要生成的帧数"
+      },
+      "removeWatermark": {
+        "title": "去除水印",
+        "description": "开启后将去除生成视频的水印"
+      }
+    },
     "insufficientCredits": "积分不足。需要：{required}，可用：{available}。",
     "getMoreCredits": "获取更多积分",
     "generating": "生成中...",

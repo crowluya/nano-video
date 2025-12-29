@@ -241,7 +241,7 @@
   },
   "CTA": {
     "title": "今すぐ Nano Banana Pro Images を動画に変換",
-    "description": "最強の Sora 2 と Veo 3.1 を使って nano banana pro images を動画に変換。無料で試せて、クレジットカード不要。",
+    "description": "最強の Sora 2 と Veo 3.1 を使って nano banana pro images を動画に変換。無料で試せて、クレジットカード不要.",
     "button": "今すぐ無料で試す",
     "trustText": "世界中のクリエイターに信頼されています",
     "features": {
@@ -251,14 +251,19 @@
       "i18n": "商用利用"
     }
   },
+  "VideoDemo": {
+    "title": "nano banana ビデオジェネレーター",
+    "loginPrompt": "サインインして動画を保存し、より多くの機能にアクセスしましょう",
+    "loginButton": "サインイン"
+  },
   "PromptGenerator": {
     "title": "プロンプトジェネレーター",
     "description": "マルチターンチャットでより高品質な動画プロンプトを生成",
     "clear": "クリア",
     "modelLabel": "モデル",
-    "freeUserHint": "無料ユーザーは Gemini 2.5 Flash Lite のみ利用できます。アップグレードすると DeepSeek を利用できます。",
-    "previewHint": "ページの閲覧は可能です。送信にはログインが必要です。",
-    "emptyState": "目的（例：カメラワーク、スタイル、テンポ、被写体の動き）を入力してください。より強いプロンプトを生成します。",
+    "freeUserHint": "無料ユーザーは Gemini 2.5 Flash Lite のみ利用できます。アップグレードすると DeepSeek を利用できます.",
+    "previewHint": "ページの閲覧は可能です。送信にはログインが必要です.",
+    "emptyState": "目的（例：カメラワーク、スタイル、テンポ、被写体の動き）を入力してください。より強いプロンプトを生成します.",
     "inputPlaceholder": "希望する動画の効果 / プロンプトの目的を入力...",
     "reasoningTitle": "推論",
     "loginRequired": "プロンプトジェネレーターを利用するにはサインインしてください",
@@ -273,10 +278,31 @@
     "generationType": "生成タイプ",
     "prompt": "プロンプト",
     "promptPlaceholder": "生成したいビデオを説明してください",
+    "promptDescription": "目的のビデオモーションを説明するテキストプロンプト",
     "imageUpload": "画像アップロード",
     "referenceImages": "参考画像",
     "imagesRequired": "枚の画像が必要",
     "parameters": "パラメーター",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "アスペクト比",
+        "portrait": "9:16",
+        "landscape": "16:9",
+        "help": "このパラメーターは動画のアスペクト比を設定します"
+      },
+      "resolution": {
+        "label": "解像度",
+        "help": "生成される動画の解像度品質"
+      },
+      "duration": {
+        "label": "長さ",
+        "help": "生成するフレーム数"
+      },
+      "removeWatermark": {
+        "title": "ウォーターマークを削除",
+        "description": "有効にすると、生成された動画からウォーターマークを削除します"
+      }
+    },
     "insufficientCredits": "クレジット不足。必要：{required}、利用可能：{available}。",
     "getMoreCredits": "クレジットを取得",
     "generating": "生成中...",

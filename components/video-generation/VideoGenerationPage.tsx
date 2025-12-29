@@ -27,10 +27,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { GenerationTypeSelector, GenerationTypeType, ImageToVideoMode } from "./GenerationTypeSelector";
 import { VideoModelSelector } from "./VideoModelSelector";
 import { VideoParameterPanel } from "./VideoParameterPanel";
 import { VideoPreviewPanel } from "./VideoPreviewPanel";
-import { GenerationTypeSelector, GenerationTypeType, ImageToVideoMode } from "./GenerationTypeSelector";
 
 export type VideoModel = KieVideoModel;
 export type Sora2AspectRatio = "portrait" | "landscape";

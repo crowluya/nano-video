@@ -53,8 +53,8 @@ export function calculateVideoCredits(
   const dur = duration || '10';
 
   if (!isPro) {
-    // Sora 2 (Fast): 720p 10s = 80 credits
-    return 80;
+    // Sora 2 (Fast): 720p 10s = 80 credits, 15s = 120 credits
+    return dur === '10' ? 80 : 120;
   }
 
   // Sora 2 Pro (Quality)
