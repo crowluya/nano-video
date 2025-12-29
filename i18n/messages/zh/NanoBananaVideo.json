@@ -334,5 +334,46 @@
     "monthly": "月付",
     "onetime": "一次性",
     "saveTip": "节省 20%"
+  },
+  "ImageGeneration": {
+    "title": "nano banana 图像生成器",
+    "subtitle": "使用 Nano Banana、Nano Banana Pro 和 Midjourney AI 模型生成图像",
+    "costPerGeneration": "每次生成费用",
+    "selectModel": "选择模型",
+    "availableCredits": "可用",
+    "generationType": "生成类型",
+    "textToImage": "文生图",
+    "imageToImage": "图生图",
+    "prompt": "提示词",
+    "promptPlaceholder": "描述你想生成的图像...",
+    "promptDescription": "描述所需图像的文本提示",
+    "referenceImage": "参考图片",
+    "parameters": "参数设置",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "画面比例",
+        "help": "生成图像的画面比例（1:1 方形，16:9 横屏，9:16 竖屏）"
+      },
+      "resolution": {
+        "label": "分辨率",
+        "help": "输出分辨率：1K/2K（30积分），4K（60积分）"
+      },
+      "speed": {
+        "label": "速度",
+        "help": "Midjourney 生成速度（默认快速模式）"
+      }
+    },
+    "insufficientCredits": "积分不足。需要：{required}，可用：{available}。",
+    "getMoreCredits": "获取更多积分",
+    "generating": "生成中...",
+    "pleaseWait": "请稍候，正在生成您的图像...",
+    "generate": "积分",
+    "download": "下载",
+    "previewPlaceholder": "您生成的图像将显示在这里"
+  },
+  "ImageDemo": {
+    "title": "nano banana 图像生成器",
+    "loginPrompt": "登录以保存你的图像并访问更多功能",
+    "loginButton": "登录"
   }
 }

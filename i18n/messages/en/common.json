@@ -17,7 +17,11 @@
       },
       {
         "name": "Prompt Generator",
-        "href": "/prompt-generator"
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Image Generator",
+        "href": "/#image-demo"
       },
       {
         "id": "pricing",

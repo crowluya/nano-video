@@ -17,7 +17,11 @@
       },
       {
         "name": "提示词生成器",
-        "href": "/prompt-generator"
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "图像生成器",
+        "href": "/#image-demo"
       },
       {
         "id": "pricing",

@@ -6,6 +6,7 @@ import NanoBananaPricing from "@/components/nanabananvideo/Pricing";
 import NanoBananaUseCases from "@/components/nanabananvideo/UseCases";
 import VideoGenerationDemo from "@/components/nanabananvideo/VideoGenerationDemo";
 import { VideoShowcase } from "@/components/nanabananvideo/VideoShowcase";
+import ImageGenerationDemo from "@/components/nanabananvideo/ImageGenerationDemo";
 import { BG1 } from "@/components/shared/BGs";
 import { getMessages } from "next-intl/server";
 
@@ -39,6 +40,8 @@ export default async function NanoBananaVideoPage() {
       {messages.NanoBananaVideo?.Features && <NanoBananaFeatures />}
 
       <VideoGenerationDemo />
+
+      <ImageGenerationDemo />
 
       {messages.NanoBananaVideo?.UseCases && <NanoBananaUseCases />}
 

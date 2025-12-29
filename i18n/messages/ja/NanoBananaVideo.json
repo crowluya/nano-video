@@ -334,5 +334,46 @@
     "monthly": "月額",
     "onetime": "一回限り",
     "saveTip": "20%節約"
+  },
+  "ImageGeneration": {
+    "title": "nano banana 画像ジェネレーター",
+    "subtitle": "Nano Banana、Nano Banana Pro、Midjourney AIモデルを使用して画像を生成",
+    "costPerGeneration": "生成あたりのコスト",
+    "selectModel": "モデルを選択",
+    "availableCredits": "利用可能",
+    "generationType": "生成タイプ",
+    "textToImage": "テキストから画像",
+    "imageToImage": "画像から画像",
+    "prompt": "プロンプト",
+    "promptPlaceholder": "生成したい画像を説明してください...",
+    "promptDescription": "目的の画像を説明するテキストプロンプト",
+    "referenceImage": "参照画像",
+    "parameters": "パラメーター",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "アスペクト比",
+        "help": "生成画像のアスペクト比（1:1 正方形、16:9 横向き、9:16 縦向き）"
+      },
+      "resolution": {
+        "label": "解像度",
+        "help": "出力解像度：1K/2K（30クレジット）、4K（60クレジット）"
+      },
+      "speed": {
+        "label": "速度",
+        "help": "Midjourney生成速度（デフォルトは高速モード）"
+      }
+    },
+    "insufficientCredits": "クレジット不足。必要：{required}、利用可能：{available}。",
+    "getMoreCredits": "クレジットを取得",
+    "generating": "生成中...",
+    "pleaseWait": "画像を生成しています。お待ちください...",
+    "generate": "クレジット",
+    "download": "ダウンロード",
+    "previewPlaceholder": "生成された画像がここに表示されます"
+  },
+  "ImageDemo": {
+    "title": "nano banana 画像ジェネレーター",
+    "loginPrompt": "サインインして画像を保存し、より多くの機能にアクセスしましょう",
+    "loginButton": "サインイン"
   }
 }

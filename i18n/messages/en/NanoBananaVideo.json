@@ -334,5 +334,46 @@
     "monthly": "Monthly",
     "onetime": "One-Time",
     "saveTip": "Save 20%"
+  },
+  "ImageGeneration": {
+    "title": "nano banana image generator",
+    "subtitle": "Generate images using Nano Banana, Nano Banana Pro, and Midjourney AI models",
+    "costPerGeneration": "Cost per Generation",
+    "selectModel": "Select model",
+    "availableCredits": "Available",
+    "generationType": "Generation Type",
+    "textToImage": "Text to Image",
+    "imageToImage": "Image to Image",
+    "prompt": "Prompt",
+    "promptPlaceholder": "Describe the image you want to generate...",
+    "promptDescription": "The text prompt describing the desired image",
+    "referenceImage": "Reference Image",
+    "parameters": "Parameters",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "Aspect Ratio",
+        "help": "The aspect ratio of the generated image (1:1 square, 16:9 landscape, 9:16 portrait)"
+      },
+      "resolution": {
+        "label": "Resolution",
+        "help": "Output resolution: 1K/2K (30 credits), 4K (60 credits)"
+      },
+      "speed": {
+        "label": "Speed",
+        "help": "Midjourney generation speed (fast mode by default)"
+      }
+    },
+    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
+    "getMoreCredits": "Get more credits",
+    "generating": "Generating...",
+    "pleaseWait": "Please wait while your image is being generated...",
+    "generate": "Credits",
+    "download": "Download",
+    "previewPlaceholder": "Your generated image will appear here"
+  },
+  "ImageDemo": {
+    "title": "nano banana image generator",
+    "loginPrompt": "Sign in to save your images and access more features",
+    "loginButton": "Sign In"
   }
 }

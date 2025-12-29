@@ -17,7 +17,11 @@
       },
       {
         "name": "プロンプトジェネレーター",
-        "href": "/prompt-generator"
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "画像生成器",
+        "href": "/#image-demo"
       },
       {
         "id": "pricing",

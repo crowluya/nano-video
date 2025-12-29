@@ -31,24 +31,34 @@ const HeaderLinks = () => {
     promptGeneratorLink.href = "/#prompt-generator";
   }
 
-  const scrollToPromptGenerator = () => {
-    const byId = document.getElementById("prompt-generator");
+  const scrollToSection = (sectionId: string) => {
+    const byId = document.getElementById(sectionId);
     if (byId) {
       byId.scrollIntoView({ behavior: "smooth", block: "start" });
       return true;
     }
 
-    const heading = Array.from(document.querySelectorAll("h1,h2,h3,h4"))
-      .find((el) => (el.textContent || "").trim() === "Prompt Generator");
-    if (heading) {
-      const container = heading.closest("section") || heading.closest("div");
-      const target = container || heading;
-      if (target instanceof HTMLElement) {
-        if (!target.id) {
-          target.id = "prompt-generator";
+    // Fallback to finding by heading text
+    const headingMap: Record<string, string> = {
+      "prompt-generator": "Prompt Generator",
+      "image-demo": "nano banana image generator",
+      "video-demo": "nano banana video generator",
+    };
+
+    const headingText = headingMap[sectionId];
+    if (headingText) {
+      const heading = Array.from(document.querySelectorAll("h1,h2,h3,h4"))
+        .find((el) => (el.textContent || "").trim().toLowerCase().includes(headingText.toLowerCase()));
+      if (heading) {
+        const container = heading.closest("section") || heading.closest("div");
+        const target = container || heading;
+        if (target instanceof HTMLElement) {
+          if (!target.id) {
+            target.id = sectionId;
+          }
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          return true;
         }
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        return true;
       }
     }
 
@@ -113,12 +123,15 @@ const HeaderLinks = () => {
                 href={link.href}
                 title={link.name}
                 onClick={(e) => {
-                  if (link.href !== "/#prompt-generator") return;
+                  const anchorLinks = ["/#prompt-generator", "/#image-demo"];
+                  const isAnchorLink = anchorLinks.some(anchor => link.href === anchor);
+                  if (!isAnchorLink) return;
                   if (!pathname || pathname !== "/") return;
                   e.preventDefault();
 
-                  const ok = scrollToPromptGenerator();
-                  window.history.replaceState(null, "", ok ? "/#prompt-generator" : "/#video-demo");
+                  const sectionId = link.href.replace("/#", "");
+                  const ok = scrollToSection(sectionId);
+                  window.history.replaceState(null, "", ok ? link.href : "/#video-demo");
 
                   if (!ok) {
                     const byVideoDemo = document.getElementById("video-demo");
