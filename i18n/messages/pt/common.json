@@ -150,6 +150,16 @@
               "href": "/pt",
               "name": "Português",
               "useA": true
+            },
+            {
+              "href": "/de",
+              "name": "Deutsch",
+              "useA": true
+            },
+            {
+              "href": "/it",
+              "name": "Italiano",
+              "useA": true
             }
           ]
         }

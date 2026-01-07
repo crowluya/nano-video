@@ -1,0 +1,409 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "NEU",
+      "text": "Next.js SaaS Full-Stack-Vorlage",
+      "href": "https://nexty.dev/#pricing"
+    },
+    "title": "Eine moderne Next.js Full-Stack SaaS-Vorlage",
+    "description": "Unsere Next.js-Vorlage enthält Authentifizierung, Stripe-Zahlungen, KI-Integration, CMS und alles, was Sie benötigen, um sofort zu verdienen.",
+    "getStarted": "Loslegen",
+    "getStartedLink": "https://nexty.dev/#pricing",
+    "viewDocs": "Dokumentation anzeigen",
+    "viewDocsLink": "https://nexty.dev/docs"
+  },
+  "Features": {
+    "badge": {
+      "label": "FUNKTIONEN",
+      "text": "Produktionsreifes SaaS-Entwicklungskit"
+    },
+    "title": "Produktionsreife Next.js SaaS-Vorlage",
+    "description": "Die Next.js-Vorlage enthält jede wesentliche Funktion, die moderne SaaS-Anwendungen benötigen, damit Sie sich auf Ihre einzigartige Geschäftslogik und den Kundennutzen konzentrieren können.",
+    "items": [
+      {
+        "title": "3 leistungsstarke Vorlagen",
+        "description": "Einmal kaufen, 3 leistungsstarke Vorlagen erhalten.",
+        "details": [
+          {
+            "title": "Vorlage 1: Nexty",
+            "description": "Universelle SaaS-Vorlage mit jeder Funktion, die Sie benötigen.",
+            "href": "https://demo.nexty.dev"
+          },
+          {
+            "title": "Vorlage 2: nexty-flux-kontext",
+            "description": "KI-Bildgenerierungs-SaaS-Vorlage.",
+            "href": "https://flux-kontext.nexty.dev"
+          },
+          {
+            "title": "Vorlage 3: nexty-directory",
+            "description": "Verzeichnis- und Listenwebsite-Vorlage.",
+            "href": "https://dofollow.tools"
+          }
+        ],
+        "images": [
+          "/images/features/template1.webp",
+          "/images/features/template2.webp",
+          "/images/features/template3.webp"
+        ]
+      },
+      {
+        "title": "Authentifizierung",
+        "description": "Integriertes Better Auth mit mehreren Anmeldemöglichkeiten.",
+        "details": [
+          {
+            "title": "Social Sign-in",
+            "description": "Google, GitHub und mehr."
+          },
+          {
+            "title": "Magic-Links",
+            "description": "E-Mail-Verifizierung mit Magic-Links."
+          },
+          {
+            "title": "Bot-Schutz",
+            "description": "Schützen Sie Ihre App vor Bots mit Cloudflare Turnstile."
+          }
+        ],
+        "images": [
+          "/images/features/login.png"
+        ]
+      },
+      {
+        "title": "Datenbank",
+        "description": "Integriertes Drizzle ORM mit mehreren Datenbankoptionen wie Supabase, Neon und selbst gehostetem PostgreSQL.",
+        "details": [
+          {
+            "title": "Einzeilen-Konfiguration",
+            "description": "Füllen Sie einfach DATABASE_URL aus und die beste Konfiguration wird automatisch abgeschlossen."
+          },
+          {
+            "title": "Umfassende integrierte Tabellen",
+            "description": "Umfassender Satz von Tabellen für Benutzerverwaltung, Preispläne, Bestellungen, Inhaltsverwaltung und mehr."
+          },
+          {
+            "title": "Mehrere Datenbankoptionen",
+            "description": "Supabase, Neon und selbst gehostetes PostgreSQL."
+          }
+        ],
+        "images": [
+          "/images/features/database-config.webp",
+          "/images/features/database-tables.webp"
+        ]
+      },
+      {
+        "title": "Zahlungssystem",
+        "description": "Vollständige Abrechnungslösung mit Stripe Checkout und Stripe Billing Portal.",
+        "details": [
+          {
+            "title": "Alle Zahlungsmethoden",
+            "description": "Nexty unterstützt monatliche und jährliche Abonnements sowie Einmalzahlungen."
+          },
+          {
+            "title": "Nutzungsbasierte Abrechnung",
+            "description": "Nexty unterstützt nutzungsbasierte Abrechnung für Apps, die Benutzer basierend auf ihrer Nutzung in Rechnung stellen."
+          },
+          {
+            "title": "Intelligente Admin-Verwaltung",
+            "description": "Nextys Preispläne werden über das Admin-Dashboard verwaltet und an Stripe Price IDs gebunden für intelligente, sichere und Echtzeit-Vorschau-Funktionen."
+          }
+        ],
+        "images": [
+          "/images/features/payment-1.png",
+          "/images/features/payment-2.png"
+        ]
+      },
+      {
+        "title": "KI-Fähigkeiten",
+        "description": "Vollständiges KI-Integrations-Toolkit mit interaktiven Demos, Multi-Provider-Support und einsatzbereiter KI-Bildgenerierungs-Website-Vorlage.",
+        "details": [
+          {
+            "title": "KI-Demo-Hub",
+            "description": "Nexty enthält integrierte Demos für Chat, Text-zu-Bild, Bild-zu-Bild und Videogenerierung, um Entwicklern zu helfen, KI-Workflows zu lernen und Modelle schnell zu testen."
+          },
+          {
+            "title": "Universeller KI-Provider-Support",
+            "description": "Nexty bietet KI-SDK-Integration mit Unterstützung für GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter und Replicate für maximale Flexibilität."
+          },
+          {
+            "title": "Bonus: KI-Bildgenerierungs-Website",
+            "description": "Nexty-Kunden erhalten eine vollständige Flux Kontext KI-Bildgenerierungs-Website-Vorlage für schnelle Bereitstellung von KI-Kunstplattformen."
+          }
+        ],
+        "images": [
+          "/images/features/ai-1.png",
+          "/images/features/ai-2.png"
+        ]
+      },
+      {
+        "title": "CMS",
+        "description": "Fortgeschrittenes CMS, das über die grundlegende Inhaltverwaltung hinausgeht mit Paywall-Schutz, KI-Übersetzung und vielseitigen Publikationsfunktionen.",
+        "details": [
+          {
+            "title": "Zugangskontrolle für Inhalte",
+            "description": "Nextys CMS unterstützt öffentliche, angemeldete Benutzer und nur Abonnenten-Inhalte mit Paywall-Schutz für monetarisierte Inhaltsseiten."
+          },
+          {
+            "title": "KI-gestützte Übersetzung",
+            "description": "Nextys CMS enthält integrierte KI-Übersetzung für mehrsprachige Inhaltserstellung plus Duplizierungsfunktion für effiziente Inhaltsproduktions-Workflows."
+          },
+          {
+            "title": "Vielseitige Veröffentlichung",
+            "description": "Nextys CMS ermöglicht sowohl kostenlose Blog-Sites als auch kostenpflichtige Inhaltsplattformen mit fortgeschrittener Statusverwaltung (Entwurf, veröffentlicht, archiviert)."
+          }
+        ],
+        "images": [
+          "/images/features/cms-1.png",
+          "/images/features/admin-3.png",
+          "/images/features/cms-3.png",
+          "/images/features/cms-4.png",
+          "/images/features/cms-5.png"
+        ]
+      },
+      {
+        "title": "Dateispeicherung",
+        "description": "Unternehmenswürdige Dateiverwaltung powered by Cloudflare R2 mit Admin-Dashboard, automatischer CDN-Verteilung und optimierten Upload-Workflows.",
+        "details": [
+          {
+            "title": "Admin-Dateiverwaltung",
+            "description": "Nexty bietet ein dediziertes Admin-Dashboard für umfassende Dateiverwaltung mit Upload-, Lösch- und Organisationsfunktionen."
+          },
+          {
+            "title": "Cloudflare R2-Integration",
+            "description": "Nexty nutzt Cloudflare R2 für kostengünstigen, leistungsstarken Dateispeicher mit automatischer CDN-Verteilung weltweit."
+          },
+          {
+            "title": "Optimierter Upload-Experience",
+            "description": "Nexty bietet Drag-and-Drop-Uploads, Vorschaufunktion und automatische Dateiverarbeitung für nahtlose Benutzererfahrung."
+          }
+        ],
+        "images": [
+          "/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Visuelle Preisverwaltung",
+        "description": "Nexty führt Dashboard-Preisverwaltung ein, die sicher und bequem ist, aktualisieren Sie Ihre Preise, ohne Code zu berühren.",
+        "details": [
+          {
+            "title": "Echtzeit-Vorschau",
+            "description": "Nextys Preiskarten-Editor enthält Echtzeit-Vorschau, damit Sie sehen können, wie Preiskarten vor dem Speichern aussehen werden."
+          },
+          {
+            "title": "Stripe-Integration",
+            "description": "Nexty ruft Preisdaten von Stripe mit Ein-Klick-Verifizierung für genaue Abrechnungseinrichtung ab."
+          },
+          {
+            "title": "Mehrsprachigen-Support",
+            "description": "Nexty unterstützt KI-gestützte Übersetzung für Preiskarten, ermöglicht einfache Verwaltung von mehrsprachigen Preisinhalten."
+          }
+        ],
+        "images": [
+          "/images/features/admin-2.png",
+          "/images/features/prices-1.png",
+          "/images/features/prices-2.png",
+          "/images/features/prices-3.png",
+          "/images/features/prices-4.png",
+          "/images/features/prices-5.png"
+        ]
+      },
+      {
+        "title": "E-Mail-System",
+        "description": "Vollständige E-Mail-Lösung mit Cloudflare-Domänen-E-Mail und Resend-Integration für professionelle Kommunikation und Abonnentenverwaltung.",
+        "details": [
+          {
+            "title": "Professionelle Domänen-E-Mail",
+            "description": "Nexty implementiert Domänen-E-Mail über Cloudflare, damit Ihre Marke professioneller erscheint und hilft, Vertrauen mit Benutzern aufzubauen."
+          },
+          {
+            "title": "Fortgeschrittene E-Mail-Marketing",
+            "description": "Nexty enthält Resend-Integration für Abonnentenverwaltung und E-Mail-Kampagnen mit integriertem Newsletter-Abonnementmodul in der Fußzeile."
+          },
+          {
+            "title": "Integrierte E-Mail-Automatisierung",
+            "description": "Nexty enthält Newsletter-Abonnement und Zahlungsfehler-Benachrichtigungs-E-Mails plus vorbereitete Vorlagen für wesentliche Benutzerkommunikation."
+          }
+        ],
+        "images": [
+          "/images/features/email-2.png",
+          "/images/features/email-1.png"
+        ]
+      },
+      {
+        "title": "Benutzer-Dashboard",
+        "description": "Vollständiges Benutzer-Dashboard, das eine nahtlose Erfahrung für Benutzer bietet.",
+        "details": [
+          {
+            "title": "Profilverwaltung",
+            "description": "Nexty enthält umfassende Profil-Einstellungen."
+          },
+          {
+            "title": "Abonnementverwaltung",
+            "description": "Nexty bietet Abonnementverwaltung mit Abrechnungshistorie und Plan-Upgrades über Stripe-Integration."
+          },
+          {
+            "title": "Guthabenverlauf & Nutzung",
+            "description": "Nexty verfolgt Guthabengewährungen und -nutzung mit detaillierter Historie, unterstützt sowohl Einmal- als auch Abonnement-basierte Guthabensysteme."
+          }
+        ],
+        "images": [
+          "/images/features/user-1.png",
+          "/images/features/user-2.png",
+          "/images/features/user-3.png"
+        ]
+      },
+      {
+        "title": "Admin-Dashboard",
+        "description": "Umfassendes Admin-Dashboard mit voller Kontrolle über Benutzer, Preise, Inhalte und Dateien für vollständige SaaS-Verwaltung.",
+        "details": [
+          {
+            "title": "Benutzerverwaltung",
+            "description": "Nexty bietet vollständige Benutzerverwaltung mit Rollenkontrolle, Stripe-Kundenintegration und Kontoverwaltung."
+          },
+          {
+            "title": "Preisverwaltung",
+            "description": "Nexty bietet visuelle Preisplanverwaltung mit Umgebungstrennung, Stripe-Integration und Echtzeit-Vorschau."
+          },
+          {
+            "title": "CMS & Dateiverwaltung",
+            "description": "Nexty enthält Blogverwaltung mit mehrsprachigem Support, Zugangskontrolle und R2-Dateiverwaltung mit Vorschaufunktionen."
+          }
+        ],
+        "images": [
+          "/images/features/admin-1.png",
+          "/images/features/admin-2.png",
+          "/images/features/admin-3.png",
+          "/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Marketing & Wachstum",
+        "description": "Vollständiges Wachstums-Toolkit mit Internationalisierung, Analytics, Werbung und SEO-Optimierung für globale Reichweite und Geschäftserfolg.",
+        "details": [
+          {
+            "title": "i18n",
+            "description": "Nexty unterstützt mehrere Sprachen von Haus aus mit einfacher Erweiterung für weltweite Marktreichweite."
+          },
+          {
+            "title": "Analytics & AdSense",
+            "description": "Nexty enthält Google Analytics, Plausible-Tracking und AdSense-Integration für Einblicke und Umsatzgenerierung."
+          },
+          {
+            "title": "SEO-Optimierung",
+            "description": "Nexty bietet umfassende SEO-Optimierung mit Meta-Tags und Sitemaps für bessere Rankings."
+          }
+        ],
+        "images": [
+          "/images/features/other-1.png",
+          "/images/features/other-2.png",
+          "/images/features/other-3.png"
+        ]
+      }
+    ]
+  },
+  "UseCases": {
+    "badge": {
+      "label": "ANWENDUNGSFÄLLE",
+      "text": "Mehrere Lösungsszenarien"
+    },
+    "title": "Eine Vorlage, mehrere Lösungen",
+    "description": "Ob Sie KI-Tools, Inhaltsplattformen oder andere SaaS-Produkte erstellen, unsere Next.js SaaS-Vorlage passt sich an Ihre spezifischen Bedürfnisse mit minimaler Konfiguration an.",
+    "cases": [
+      {
+        "title": "KI-gestützte SaaS-Tools",
+        "description": "Starten Sie produktionsreife KI-Anwendungen in Tagen, nicht Monaten. Integrierte Integrationen mit OpenRouter, Replicate und führenden KI-Anbietern. Enthält intelligente Nutzungsnachverfolgung, automatisierte Abrechnung und alles, was Sie zur Monetarisierung von KI-Workflows benötigen.",
+        "image": "/placeholder.webp",
+        "icon": "Bot"
+      },
+      {
+        "title": "Inhalts- & Blogplattformen",
+        "description": "Starten Sie SEO-optimierte Inhaltewebsites mit fortgeschrittenen CMS-Funktionen. Funktionen umfassen Markdown-Bearbeitung, mehrsprachigen Support, Paywall-Schutz, KI-Übersetzung und AdSense-Integration. Perfekt zum Erstellen von Premium-Inhaltsplattformen, Newslettern oder inhaltsgetriebenen SaaS-Anwendungen.",
+        "image": "/placeholder.webp",
+        "icon": "FileText"
+      },
+      {
+        "title": "Abonnement- & Marktplatzplattformen",
+        "description": "Erstellen Sie wiederkehrende Umsatzgeschäfte mit automatisierter Abrechnung, Kundenverwaltung und Zahlungsabwicklung. Funktionen umfassen Abonnementverwaltung, nutzungsbasierte Preiskalkulation, Kundenportale und umfassende Analytics. Perfekt für SaaS-Marktplätze, Abonnementdienste oder Premium-Toolplattformen.",
+        "image": "/placeholder.webp",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Kostenlose Tools & Lead-Magneten",
+        "description": "Erstellen Sie virale kostenlose Tools, die massiven organischen Traffic驱动的. Blitzschnelle Leistung und SEO-Optimierung. Perfekt zum Erstellen Ihrer E-Mail-Liste, Generierung von Leads oder Erstellen des nächsten viralen Taschenrechners/Konverter-Tools.",
+        "image": "/placeholder.webp",
+        "icon": "Wrench"
+      }
+    ]
+  },
+  "Testimonials": {
+    "badge": {
+      "label": "KUNDENBEWERTUNGEN"
+    },
+    "title": "Was unsere Kunden sagen",
+    "description": "Hören Sie nicht nur auf unser Wort"
+  },
+  "FAQ": {
+    "title": "Häufig gestellte Fragen",
+    "description": "Häufige Fragen über unsere Next.js SaaS-Vorlage und wie sie Ihnen helfen kann, besser Anwendungen schneller zu entwickeln",
+    "items": [
+      {
+        "question": "Kann ich diese Vorlage als nicht-technische Person verwenden?",
+        "answer": "Absolut! Nexty ist speziell entwickelt, um nahtlos mit KI-Assistenten zu arbeiten, sodass auch Personen mit null Programmiererfahrung Produkte durch KI-gestützte Entwicklung entwickeln können. Unsere Codestruktur und Dokumentation sind KI-freundlich, sodass es easier für KI ist, den Code zu verstehen und zu ändern. Technische Teams profitieren von noch größerer Entwicklungseffizienz."
+      },
+      {
+        "question": "Was macht dies zur besten Next.js SaaS-Vorlage?",
+        "answer": "Nexty ist das umfassendste Next.js SaaS-Startkit verfügbar. Im Gegensatz zu anderen Vorlagen, die nur grundlegende Komponenten bereitstellen, enthalten wir vollständige Geschäftsworkflows: Authentifizierung, Zahlungen, KI-Integration, Inhaltsverwaltung und Monetarisierungsfunktionen. Alles ist produktionsreif und in echten Anwendungen getestet."
+      },
+      {
+        "question": "Wie schnell kann ich mein SaaS mit dieser Vorlage starten?",
+        "answer": "Ihr erstes Projekt dauert 3-5 Tage, während Sie die Funktionen der Vorlage lernen, aber die Lernkurve zahlt sich schnell aus. Unsere Kunden, die das System beherrschen, starten jetzt vollständige SaaS-Anwendungen in nur 1-2 Tagen. Die Vorlage handhabt die gesamte komplexe Infrastruktur, sodass Sie sich auf das konzentrieren können, was Ihr Produkt einzigartig macht."
+      },
+      {
+        "question": "Ist dies geeignet für KI-gestützte SaaS-Anwendungen?",
+        "answer": "Absolut! Unsere Vorlage enthält umfassende KI-SDK-Integration mit funktionierenden Beispielen für Textgenerierung, Bilderstellung und Videoverarbeitung. Sie ist kompatibel mit OpenAI, Claude, Gemini, Grok, DeepSeek und anderen beliebten KI-Modellen. Perfekt zum Erstellen von KI-Tools oder Inhaltsgenerierungsplattformen."
+      },
+      {
+        "question": "Welche Zahlungsmethoden und Abrechnungsmodelle werden unterstützt?",
+        "answer": "Die Vorlage enthält vollständige Stripe-Integration mit Unterstützung für Einmalzahlungen, Abonnements, nutzungsbasierte Abrechnung und automatische Verlängerungen. Sie können sofort mit der Monetarisierung beginnen."
+      },
+      {
+        "question": "Wie funktioniert das Content-Management-System?",
+        "answer": "Unser integriertes CMS unterstützt Markdown und Rich-Text-Bearbeitung, mehrsprachige Inhalte, SEO-Optimierung, Paywall-Schutz und KI-Übersetzung. Sie können Artikel, Seiten und Premium-Inhalte über ein intuitives Admin-Dashboard mit rollenbasierter Zugangskontrolle verwalten."
+      },
+      {
+        "question": "Ist die Vorlage SEO-optimiert?",
+        "answer": "Ja! Die Vorlage enthält umfassende SEO-Funktionen: automatische Meta-Tags, strukturierte Daten, XML-Sitemaps, OpenGraph-Support und Leistungsoptimierung. Sie ist mit Next.js-Best-Practices für Suchmaschinensichtbarkeit und schnellere Ladezeiten erstellt."
+      },
+      {
+        "question": "Welche Art von Support bieten Sie?",
+        "answer": "Wir bieten umfassende Dokumentation, Codebeispiele und E-Mail-Support. Wir haben auch eine öffentliche Discord-Community, in der Sie Hilfe von anderen Entwicklern erhalten und Ihre Projekte teilen können."
+      },
+      {
+        "question": "Wie verwalte ich Preiskarten?",
+        "answer": "Dies ist ein Hauptverkaufsargument von Nexty. Sie können Preiskarten im Dashboard verwalten, einschließlich Hinzufügen, Bearbeiten und Löschen von Preiskarten mit KI-mehrsprachiger Übersetzungsunterstützung, wodurch komplexe mehrsprachige Dateikonfiguration eliminiert wird."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Starten Sie Ihr Produkt schnell und verdienen Sie schnell Geld",
+    "description": "Hören Sie auf, bei Null anzufangen! Verwenden Sie Nexty-Vorlagen, um sich auf Ihre Kernidee zu konzentrieren, schnell zu erstellen, zu validieren und zu verdienen.",
+    "button": "Vorlage jetzt erhalten",
+    "trustText": "Vertraut von Entwicklern weltweit",
+    "features": {
+      "deploy": "🚀 Schnelle Bereitstellung",
+      "production": "🔧 Produktionsbereit",
+      "updates": "💎 Lebenslange Updates",
+      "i18n": "🌍 Internationalisierung"
+    }
+  },
+  "Pricing": {
+    "badge": {
+      "label": "PREISE",
+      "text": "Einmalzahlung, lebenslange Updates"
+    },
+    "title": "Bringen Sie Ihr SaaS in Tagen, nicht Monaten auf den Markt",
+    "description": "Verwenden Sie unsere erprobte SaaS-Startvorlage, damit Sie Vorlagen-Coding überspringen und sich auf die Funktionen konzentrieren können, die Ihre Benutzer tatsächlich benötigen.",
+    "annual": "Jährlich",
+    "monthly": "Monatlich",
+    "onetime": "Einmalig",
+    "saveTip": "20% sparen"
+  }
+}

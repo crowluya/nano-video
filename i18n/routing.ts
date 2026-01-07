@@ -1,7 +1,7 @@
 import { createNavigation } from 'next-intl/navigation';
 import { defineRouting } from 'next-intl/routing';
 
-export const LOCALES = ['en', 'zh', 'ja', 'es', 'fr', 'ko', 'pt']
+export const LOCALES = ['en', 'zh', 'ja', 'es', 'fr', 'ko', 'pt', 'de', 'it']
 export const DEFAULT_LOCALE = 'en'
 export const LOCALE_NAMES: Record<string, string> = {
   'en': "English",
@@ -11,6 +11,8 @@ export const LOCALE_NAMES: Record<string, string> = {
   'fr': "Français",
   'ko': "한국어",
   'pt': "Português",
+  'de': "Deutsch",
+  'it': "Italiano",
 };
 export const LOCALE_TO_HREFLANG: Record<string, string> = {
   'en': 'en-US',
@@ -20,6 +22,8 @@ export const LOCALE_TO_HREFLANG: Record<string, string> = {
   'fr': 'fr-FR',
   'ko': 'ko-KR',
   'pt': 'pt-BR',
+  'de': 'de-DE',
+  'it': 'it-IT',
 };
 
 export const routing = defineRouting({

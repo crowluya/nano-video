@@ -1,0 +1,31 @@
+{
+  "title": "Impostazioni",
+  "description": "Gestisci le impostazioni account e informazioni profilo.",
+  "form": {
+    "emailLabel": "Email",
+    "fullNameLabel": "Nome completo",
+    "fullNamePlaceholder": "Inserisci il tuo nome completo",
+    "avatarLabel": "Avatar",
+    "avatarHint": "Dimensione massima file: {maxSizeInMB} MB. Tipi consentiti: {allowedTypes}.",
+    "updateButton": "Aggiorna impostazioni",
+    "updatingButton": "Aggiornamento..."
+  },
+  "toast": {
+    "fullNameLengthError": "Il nome completo deve essere inferiore a {maxLength} caratteri",
+    "fullNameInvalidCharactersError": "Il nome completo contiene caratteri non validi",
+    "errorInvalidFileType": "Tipo file non valido per l'avatar. Sono consentiti solo {allowedTypes}.",
+    "errorInvalidFileTypeDescription": "Carica un file più piccolo di {maxSizeInMB} MB.",
+    "errorFileSizeExceeded": "La dimensione avatar supera il limite {maxSizeInMB} MB.",
+    "errorFileSizeExceededDescription": "Carica un file più piccolo di {maxSizeInMB} MB.",
+    "errorInvalidFullName": "Nome completo non valido fornito.",
+    "errorFullNameRequired": "Il nome completo è obbligatorio.",
+    "updateSuccessTitle": "Profilo aggiornato",
+    "updateSuccessDescription": "Il tuo profilo è stato aggiornato con successo.",
+    "updateErrorTitle": "Aggiornamento fallito",
+    "updateErrorDescription": "Impossibile aggiornare le impostazioni. Riprova più tardi.",
+    "errorDeleteOldAvatar": "Impossibile eliminare vecchio avatar.",
+    "errorUploadAvatar": "Caricamento avatar fallito.",
+    "errorUpdateAuthUser": "Aggiornamento utente auth fallito.",
+    "errorUpdateUserProfile": "Aggiornamento profilo utente fallito."
+  }
+}

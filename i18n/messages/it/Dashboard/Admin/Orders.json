@@ -1,0 +1,12 @@
+{
+  "title": "Ordini",
+  "description": "Ecco un elenco di tutti gli ordini.",
+  "user": "Utente",
+  "orderId": "ID ordine",
+  "amount": "Importo",
+  "discount": "Sconto",
+  "type": "Tipo",
+  "status": "Stato",
+  "createdAt": "Creato il",
+  "filterByEmail": "Filtra per email..."
+}

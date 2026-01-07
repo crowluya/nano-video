@@ -1,0 +1,362 @@
+{
+  "LanguageDetection": {
+    "title": "Sprachvorschlag",
+    "description": "Wir haben bemerkt, dass Ihre Browsersprache von der aktuellen Sprachenseite abweicht. Sie können die Sprache jederzeit wechseln.",
+    "countdown": "Schließt in {countdown} Sekunden",
+    "switchTo": "Wechseln zu"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "Funktionen",
+        "href": "/#features"
+      },
+      {
+        "name": "Videogenerator",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "Prompt-Generator",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Bildgenerator",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "Preise",
+        "href": "/#pricing"
+      },
+      {
+        "name": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Copyright © {year} {name} Alle Rechte vorbehalten.",
+    "About": "Über uns",
+    "PrivacyPolicy": "Datenschutzrichtlinie",
+    "TermsOfService": "Nutzungsbedingungen",
+    "RefundPolicy": "Rückerstattungsrichtlinie",
+    "Newsletter": {
+      "title": "Abonnieren Sie unseren Newsletter",
+      "description": "Bleiben Sie mit unseren neuesten Nachrichten auf dem Laufenden.",
+      "subscribe": {
+        "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "defaultErrorMessage": "Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut",
+        "successMessage": "Erfolgreich abonniert!",
+        "multipleSubmissions": "Zu viele Anfragen. Bitte versuchen Sie es morgen erneut"
+      },
+      "unsubscribe": {
+        "title": "Newsletter-Abmeldung",
+        "success": "Sie haben sich erfolgreich von Nexty-Newslettern abgemeldet.",
+        "emailPrefix": "E-Mail:",
+        "regretMessage": "Sie können sich jederzeit erneut anmelden, um die neuesten Nexty-Updates und Tutorials zu erhalten.",
+        "errorGeneric": "Ein Fehler ist bei der Verarbeitung Ihrer Abmeldeanfrage aufgetreten",
+        "errorNoToken": "Kein Abmelde-Token bereitgestellt",
+        "errorMessage": "Bitte stellen Sie sicher, dass Sie den richtigen Abmeldelink verwenden. Wenn das Problem weiterhin besteht, kontaktieren Sie unser Support-Team für Hilfe.",
+        "contactPrefix": "Kontaktieren Sie uns unter:",
+        "contactPrefixSuccess": "Wenn Sie Fragen haben, kontaktieren Sie uns gerne unter:",
+        "backToHome": "Zurück zur Startseite",
+        "invalidEmail": "Ungültige E-Mail-Adresse",
+        "notInNewsletter": "Diese E-Mail ist nicht in unserer Abonnentenliste",
+        "confirmTitle": "Abmeldung bestätigen",
+        "confirmMessage": "Möchten Sie sich wirklich von unserem Newsletter abmelden? Sie werden keine Updates über neue Funktionen und Inhalte mehr erhalten.",
+        "confirmButton": "Ja, abmelden",
+        "cancelButton": "Abbrechen",
+        "processing": "Verarbeitung...",
+        "finalWarning": "Diese Aktion kann nicht rückgängig gemacht werden. Sie können sich später jederzeit erneut anmelden.",
+        "errorInvalidToken": "Ungültiger Abmeldelink. Der Link ist möglicherweise beschädigt oder abgelaufen."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "Produkte",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "Funktionen"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "Preise"
+            },
+            {
+              "href": "/blog",
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            {
+              "name": "Dokumentation",
+              "href": "https://docs.nexty.dev/docs",
+              "target": "_blank"
+            },
+            {
+              "name": "Roadmap",
+              "href": "https://nexty.dev/roadmap"
+            },
+            {
+              "href": "mailto:hi@nexty.dev",
+              "name": "Kontaktieren Sie uns"
+            }
+          ]
+        },
+        {
+          "title": "Sprachen",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            },
+            {
+              "href": "/de",
+              "name": "Deutsch",
+              "useA": true
+            },
+            {
+              "href": "/it",
+              "name": "Italiano",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "KI-gestütztes Kreativstudio",
+    "description": "Erstellen Sie atemberaubende Bilder, Videos und Musik mit KI. Generieren Sie Inhalte mit Nano Banana, Midjourney, Sora 2, Veo 3.1 und Suno - alles an einem Ort."
+  },
+  "Login": {
+    "title": "Willkommen zurück",
+    "description": "Melden Sie sich mit den folgenden Methoden an",
+    "Toast": {
+      "Email": {
+        "successTitle": "Magic-Link gesendet!",
+        "successDescription": "Bitte überprüfen Sie Ihre E-Mail auf den Anmeldelink.",
+        "errorTitle": "Fehler",
+        "errorDescription": "Magic-Link konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+      },
+      "Google": {
+        "errorTitle": "Fehler",
+        "errorDescription": "Anmeldung mit Google fehlgeschlagen. Bitte versuchen Sie es erneut."
+      },
+      "Github": {
+        "errorTitle": "Fehler",
+        "errorDescription": "Anmeldung mit GitHub fehlgeschlagen. Bitte versuchen Sie es erneut."
+      }
+    },
+    "signInMethods": {
+      "or": "Oder fortfahren mit",
+      "signInWithGoogle": "Mit Google fortfahren",
+      "signInWithGithub": "Mit GitHub fortfahren",
+      "signInWithEmail": "Mit E-Mail fortfahren"
+    },
+    "Button": {
+      "signIn": "Anmelden",
+      "signOut": "Abmelden"
+    },
+    "UserMenus": [
+      {
+        "name": "Kreativstudio",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "Bildgenerierung",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Videogenerierung",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Musikgenerierung",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
+      {
+        "name": "Einstellungen",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "Meine Bestellungen",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Abonnement",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "Guthabenverlauf",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "Übersicht",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "Benutzer",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "Bestellungen",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Preise",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "Blogs",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "R2-Dateien",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "Blogbeiträge",
+    "description": "Einblicke in das Next.js-Ökosystem und NEXTY.DEV-Vorlagen-Updates.",
+    "emptyState": {
+      "title": "Keine Blogbeiträge",
+      "description": "Wir erstellen spannende Inhalte, bleiben Sie dran!"
+    },
+    "loadMorePostsFailed": "Weitere Beiträge konnten nicht geladen werden",
+    "loadMorePosts": "Weitere Beiträge werden geladen...",
+    "filterPostsFailed": "Beiträge konnten nicht geladen werden",
+    "noPostsFoundForThisTag": "Keine Beiträge mit diesem Tag gefunden",
+    "reachedTheEnd": "Sie haben das Ende aller Beiträge erreicht",
+    "BlogDetail": {
+      "featured": "Empfohlener Beitrag",
+      "viewCount": "{count} Aufrufe",
+      "accessRestricted": "Zugang eingeschränkt",
+      "unauthorized": "Dieser Artikel ist nur für angemeldete Benutzer verfügbar",
+      "premium": "Premium-Inhalt",
+      "premiumContent": "Dieser Artikel ist exklusiv für Abonnenten",
+      "signIn": "Anmelden",
+      "upgrade": "Upgraden",
+      "backToBlogs": "Zurück zur Blogliste",
+      "notFound": "Artikel nicht gefunden"
+    }
+  },
+  "About": {
+    "title": "Über uns",
+    "description": "Über die Website"
+  },
+  "AIDemo": {
+    "title": "KI-Fähigkeiten-Demo",
+    "description": "Diese Seite zeigt nicht-öffentliche Funktionen und ist exklusiv für Benutzer, die die Vorlage gekauft haben. Sie ist zum Lernen und Testen des KI-Modellaufrufprozesses bestimmt. Um sie zu verwenden, starten Sie einfach die Vorlage lokal und geben Sie Ihren API-Schlüssel in den Umgebungsvariablen ein. Die KI-Demo umfasst Funktionen wie Ein- und Mehrfachgespräche, Text-zu-Bild, Bild-zu-Bild und Text/Bild-zu-Video-Konvertierungen. Durch diese Demo können Sie den KI-Aufruf-Workflow schnell verstehen und Ihre Reise beim Erstellen von KI-Anwendungen beschleunigen.",
+    "metaDescription": "Diese Seite zeigt KI-Fähigkeiten einschließlich Ein- und Mehrfachgesprächen, Text-zu-Bild, Bild-zu-Bild und Text/Bild-zu-Video-Konvertierungen."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - Zugriff verweigert",
+      "description": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen.",
+      "button": {
+        "name": "Zurück zur Startseite",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "Weiterleitungsfehler",
+      "description": "Ein Fehler ist während des Authentifizierungsprozesses aufgetreten.",
+      "goToHome": "Zur Startseite",
+      "goToLogin": "Zum Login",
+      "invalid_params": {
+        "title": "Ungültige Parameter",
+        "description": "Erforderliche Parameter fehlen in der Anfrage."
+      },
+      "invalid_redirect": {
+        "title": "Ungültige Weiterleitungs-URL",
+        "description": "Die bereitgestellte Weiterleitungs-URL ist nicht zulässig."
+      },
+      "token_expired": {
+        "title": "Token abgelaufen",
+        "description": "Ihr Bestätigungstoken ist abgelaufen. Bitte versuchen Sie, sich erneut anzumelden."
+      },
+      "invalid_token": {
+        "title": "Ungültiges Token",
+        "description": "Das bereitgestellte Bestätigungstoken ist ungültig."
+      },
+      "invalid_link_or_expired": {
+        "title": "Ungültiger oder abgelaufener Link",
+        "description": "Der E-Mail-Bestätigungslink ist ungültig oder abgelaufen."
+      },
+      "server_error": {
+        "title": "Serverfehler",
+        "description": "Ein unerwarteter Fehler ist auf dem Server während der Authentifizierung aufgetreten."
+      },
+      "unknown": {
+        "title": "Authentifizierungsfehler",
+        "description": "Ein unbekannter Fehler ist während des Authentifizierungsprozesses aufgetreten."
+      }
+    },
+    "StripeError": {
+      "title": "Zahlungsportal-Fehler",
+      "description": "Ein Fehler ist mit Ihren Zahlungsinformationen aufgetreten.",
+      "goToHome": "Zur Startseite",
+      "goToDashboard": "Zum Dashboard"
+    }
+  }
+}

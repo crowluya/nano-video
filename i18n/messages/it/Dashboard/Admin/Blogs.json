@@ -1,0 +1,165 @@
+{
+  "title": "Gestione blog",
+  "description": "Dashboard gestione blog per creare, modificare, eliminare, duplicare e tradurre con IA i post del blog. Supporta pinning post, impostazione stato (bozza, pubblicato, archiviato) e impostazioni visibilità (pubblico, utenti registrati, abbonati). (Solo admin)",
+  "fetchError": "Impossibile recuperare blog: {error}",
+  "createNewButton": "Crea nuovo blog",
+  "List": {
+    "failedToFetch": "Impossibile recuperare blog",
+    "searchPlaceholder": "Cerca titoli, slug, descrizioni..."
+  },
+  "Delete": {
+    "title": "Conferma eliminazione",
+    "description": "Questa azione non può essere annullata. Questo eliminerà permanentemente il post del blog \"{title}\".",
+    "cancelButton": "Annulla",
+    "deleteButton": "Elimina",
+    "deleting": "Eliminazione...",
+    "success": "Blog eliminato con successo.",
+    "failedToDelete": "Impossibile eliminare blog",
+    "unexpectedError": "Si è verificato un errore imprevisto.",
+    "errorFetching": "Impossibile recuperare informazioni blog."
+  },
+  "Create": {
+    "pageTitle": "Crea blog",
+    "pageDescription": "Crea un nuovo post del blog (solo admin)",
+    "submitSuccess": "Blog creato con successo.",
+    "submitErrorTitle": "Creazione blog fallita",
+    "submitErrorDesc": "Riprova più tardi.",
+    "loadingDuplicateMessage": "Duplicazione blog sorgente...",
+    "errorFetchingDuplicateTitle": "Impossibile recuperare informazioni blog sorgente.",
+    "errorFetchingDuplicateDesc": "Puoi comunque continuare a creare un nuovo blog.",
+    "errorFetchUnexpected": "Si è verificato un errore imprevisto."
+  },
+  "Edit": {
+    "pageTitle": "Modifica blog",
+    "pageDescription": "Modifica post del blog (solo admin)",
+    "submitSuccess": "Blog aggiornato con successo.",
+    "submitErrorTitle": "Aggiornamento blog fallito",
+    "submitErrorDesc": "Riprova più tardi.",
+    "errorInvalidId": "ID blog non valido.",
+    "errorFetchFailed": "Impossibile recuperare blog.",
+    "errorFetchUnexpected": "Si è verificato un errore imprevisto.",
+    "postNotFoundTitle": "Blog non trovato",
+    "postNotFoundDesc": "Il blog non esiste.",
+    "backToList": "Torna all'elenco"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "Lingua blog",
+        "placeholder": "Seleziona lingua blog"
+      },
+      "title": {
+        "label": "Titolo",
+        "placeholder": "Inserisci titolo",
+        "description": "Lunghezza consigliata 60 caratteri",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "Slug",
+        "placeholder": "Inserisci slug",
+        "generateButton": "Genera slug",
+        "description": "Genera automaticamente slug da titoli inglesi solo. Per altre lingue, inserisci manualmente."
+      },
+      "description": {
+        "label": "Descrizione",
+        "placeholder": "Inserisci descrizione",
+        "description": "Lunghezza consigliata 160 caratteri",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "Tag",
+        "placeholder": "Seleziona tag",
+        "description": "Seleziona tag del blog."
+      },
+      "featuredImageUrl": {
+        "label": "Immagine in evidenza",
+        "placeholder": "Seleziona immagine in evidenza",
+        "description": "Seleziona un'immagine in evidenza."
+      },
+      "content": {
+        "label": "Contenuto",
+        "placeholder": "Inserisci contenuto blog, formato Markdown supportato",
+        "description": "Inserisci contenuto blog, formato Markdown supportato."
+      },
+      "status": {
+        "label": "Stato",
+        "placeholder": "Seleziona stato",
+        "options": {
+          "draft": "Bozza",
+          "published": "Pubblicato",
+          "archived": "Archiviato"
+        }
+      },
+      "visibility": {
+        "label": "Visibilità",
+        "placeholder": "Seleziona visibilità",
+        "options": {
+          "public": "Pubblico",
+          "loggedIn": "Utenti registrati",
+          "subscribers": "Solo abbonati"
+        }
+      },
+      "isPinned": {
+        "label": "In evidenza",
+        "description": "Blocca questo post in cima."
+      }
+    },
+    "cancelButton": "Annulla",
+    "submittingButton": "Invio...",
+    "updateButton": "Aggiorna blog",
+    "createButton": "Crea blog",
+    "upload": {
+      "uploading": "Caricamento...",
+      "uploadError": "Caricamento fallito",
+      "uploadErrorDesc": "Seleziona un file immagine.",
+      "noPrefix": "Prefisso nome immagine non fornito.",
+      "invalidFileType": "Tipo file non valido. Sono consentiti solo file immagine.",
+      "fileSizeExceeded": "Limite dimensione file: {maxSizeInMB}MB.",
+      "presignedUrlError": "Impossibile generare URL pre-firmato",
+      "uploadErrorUnexpected": "Si è verificato un errore imprevisto.",
+      "uploadSuccess": "Caricamento riuscito",
+      "uploadSuccessDesc": "Immagine caricata su archiviazione R2."
+    },
+    "toolbar": {
+      "translateTo": "Traduci in {languageName}",
+      "noTranslationOptions": "Nessuna opzione traduzione disponibile.",
+      "translateByAIDescription": "La traduzione IA richiede che le variabili ambiente NEXT_PUBLIC_AI_MODEL_ID e NEXT_PUBLIC_AI_PROVIDER siano configurate",
+      "translateActionTitle": "Traduci contenuto"
+    },
+    "translate": {
+      "loading": "Traduzione...",
+      "error": "Traduzione fallita",
+      "success": "Traduzione riuscita!",
+      "infoEmpty": "Contenuto traduzione vuoto"
+    }
+  },
+  "TagManager": {
+    "title": "Gestione tag",
+    "description": "Gestisci tag del blog.",
+    "manageTagsButton": "Gestisci tag",
+    "newTagPlaceholder": "Inserisci nome tag",
+    "selectTags": "Seleziona tag",
+    "selectedTagsLabel": "Tag selezionati",
+    "searchPlaceholder": "Cerca tag",
+    "loadingTagsMessage": "Caricamento tag...",
+    "noResults": "Nessun tag trovato",
+    "createSuccess": "Tag \"{name}\" creato con successo.",
+    "createNewTag": "Crea nuovo tag",
+    "creatingButton": "Creazione...",
+    "createButton": "Crea tag",
+    "closeButton": "Chiudi",
+    "editButton": "Modifica",
+    "deleteButton": "Elimina",
+    "confirmDelete": "Sei sicuro di voler eliminare il tag \"{name}\"? Questa azione non può essere annullata.",
+    "deleteSuccess": "Tag \"{name}\" eliminato con successo.",
+    "updateSuccess": "Tag \"{name}\" aggiornato con successo.",
+    "errors": {
+      "nameRequired": "Il nome tag è obbligatorio.",
+      "fetchFailed": "Impossibile caricare tag",
+      "alreadyExists": "Un tag con nome \"{name}\" esiste già.",
+      "createFailed": "Impossibile creare tag",
+      "deleteFailed": "Impossibile eliminare tag",
+      "updateFailed": "Impossibile aggiornare tag"
+    }
+  }
+}

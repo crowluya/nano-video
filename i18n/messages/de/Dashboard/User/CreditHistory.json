@@ -1,0 +1,17 @@
+{
+  "title": "Guthabenverlauf",
+  "description": "Hier können Sie den Verlauf aller Ihrer Guthabengewährungen und -nutzungen einsehen.",
+  "load_error": "Laden des Guthabenverlaufs fehlgeschlagen. Bitte versuchen Sie es später erneut.",
+  "no_records": "Keine Guthabenverlaufsdatensätze gefunden.",
+  "header_date": "Datum",
+  "header_type": "Typ",
+  "header_details": "Details",
+  "header_amount": "Betrag",
+  "header_balance_one_time": "Einmalguthaben",
+  "header_balance_subscription": "Abonnement-Guthaben",
+  "type_one_time_purchase": "Guthabenkauf",
+  "type_subscription_grant": "Abonnement-Gewährung",
+  "type_feature_usage": "Funktionsnutzung",
+  "type_refund_revoke": "Rückerstattung-Widerruf",
+  "type_subscription_ended_revoke": "Abonnement-beendet-Widerruf"
+}

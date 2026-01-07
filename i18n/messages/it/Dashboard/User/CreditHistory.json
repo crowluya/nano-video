@@ -1,0 +1,17 @@
+{
+  "title": "Cronologia crediti",
+  "description": "Visualizza qui la cronologia di tutte le concessioni e utilizzi dei crediti.",
+  "load_error": "Caricamento cronologia crediti fallito. Riprova più tardi.",
+  "no_records": "Nessun record cronologia crediti trovato.",
+  "header_date": "Data",
+  "header_type": "Tipo",
+  "header_details": "Dettagli",
+  "header_amount": "Importo",
+  "header_balance_one_time": "Crediti una tantum",
+  "header_balance_subscription": "Crediti abbonamento",
+  "type_one_time_purchase": "Acquisto crediti",
+  "type_subscription_grant": "Concessione abbonamento",
+  "type_feature_usage": "Utilizzo funzionalità",
+  "type_refund_revoke": "Revoca rimborso",
+  "type_subscription_ended_revoke": "Revoca abbonamento terminato"
+}

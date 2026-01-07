@@ -1,0 +1,362 @@
+{
+  "LanguageDetection": {
+    "title": "Suggerimento lingua",
+    "description": "Abbiamo notato che la lingua del tuo browser è diversa dalla lingua corrente del sito. Puoi cambiare lingua in qualsiasi momento.",
+    "countdown": "Chiusura tra {countdown} secondi",
+    "switchTo": "Passa a"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "Funzionalità",
+        "href": "/#features"
+      },
+      {
+        "name": "Generatore Video",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "Generatore Prompt",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Generatore Immagini",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "Prezzi",
+        "href": "/#pricing"
+      },
+      {
+        "name": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Copyright © {year} {name} Tutti i diritti riservati.",
+    "About": "Chi siamo",
+    "PrivacyPolicy": "Informativa sulla privacy",
+    "TermsOfService": "Termini di servizio",
+    "RefundPolicy": "Politica di rimborso",
+    "Newsletter": {
+      "title": "Iscriviti alla nostra newsletter",
+      "description": "Rimani aggiornato con le nostre ultime notizie.",
+      "subscribe": {
+        "invalidEmail": "Inserisci un indirizzo email valido",
+        "defaultErrorMessage": "Iscrizione fallita. Riprova più tardi",
+        "successMessage": "Iscritto con successo!",
+        "multipleSubmissions": "Troppe richieste. Riprova domani"
+      },
+      "unsubscribe": {
+        "title": "Disiscrizione newsletter",
+        "success": "Ti sei disiscritto con successo dalle newsletter di Nexty.",
+        "emailPrefix": "Email:",
+        "regretMessage": "Puoi riiscriverti in qualsiasi momento per ricevere gli ultimi aggiornamenti e tutorial di Nexty.",
+        "errorGeneric": "Si è verificato un errore durante l'elaborazione della tua richiesta di disiscrizione",
+        "errorNoToken": "Nessun token di disiscrizione fornito",
+        "errorMessage": "Assicurati di utilizzare il link di disiscrizione corretto. Se il problema persiste, contatta il nostro team di assistenza.",
+        "contactPrefix": "Contattaci a:",
+        "contactPrefixSuccess": "Se hai domande, sentiti libero di contattarci a:",
+        "backToHome": "Torna alla home",
+        "invalidEmail": "Indirizzo email non valido",
+        "notInNewsletter": "Questa email non è nella nostra lista di iscritti",
+        "confirmTitle": "Conferma disiscrizione",
+        "confirmMessage": "Sei sicuro di volerti disiscrivere dalla nostra newsletter? Non riceverai più aggiornamenti su nuove funzionalità e contenuti.",
+        "confirmButton": "Sì, disiscriviti",
+        "cancelButton": "Annulla",
+        "processing": "Elaborazione...",
+        "finalWarning": "Questa azione non può essere annullata. Puoi sempre riiscriverti più tardi.",
+        "errorInvalidToken": "Link di disiscrizione non valido. Il link potrebbe essere corrotto o scaduto."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "Prodotti",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "Funzionalità"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "Prezzi"
+            },
+            {
+              "href": "/blog",
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "title": "Supporto",
+          "links": [
+            {
+              "name": "Documentazione",
+              "href": "https://docs.nexty.dev/docs",
+              "target": "_blank"
+            },
+            {
+              "name": "Roadmap",
+              "href": "https://nexty.dev/roadmap"
+            },
+            {
+              "href": "mailto:hi@nexty.dev",
+              "name": "Contattaci"
+            }
+          ]
+        },
+        {
+          "title": "Lingue",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            },
+            {
+              "href": "/de",
+              "name": "Deutsch",
+              "useA": true
+            },
+            {
+              "href": "/it",
+              "name": "Italiano",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "Studio creativo potenziato dall'IA",
+    "description": "Crea immagini, video e musica stupendi con l'IA. Genera contenuti con Nano Banana, Midjourney, Sora 2, Veo 3.1 e Suno - tutto in un unico posto."
+  },
+  "Login": {
+    "title": "Bentornato",
+    "description": "Accedi con i seguenti metodi",
+    "Toast": {
+      "Email": {
+        "successTitle": "Magic link inviato!",
+        "successDescription": "Controlla la tua email per il link di accesso.",
+        "errorTitle": "Errore",
+        "errorDescription": "Invio del magic link fallito. Riprova."
+      },
+      "Google": {
+        "errorTitle": "Errore",
+        "errorDescription": "Accesso con Google fallito. Riprova."
+      },
+      "Github": {
+        "errorTitle": "Errore",
+        "errorDescription": "Accesso con GitHub fallito. Riprova."
+      }
+    },
+    "signInMethods": {
+      "or": "Oppure continua con",
+      "signInWithGoogle": "Continua con Google",
+      "signInWithGithub": "Continua con GitHub",
+      "signInWithEmail": "Continua con Email"
+    },
+    "Button": {
+      "signIn": "Accedi",
+      "signOut": "Esci"
+    },
+    "UserMenus": [
+      {
+        "name": "Studio Creativo",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "Generazione Immagini",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Generazione Video",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Generazione Musica",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
+      {
+        "name": "Impostazioni",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "I miei ordini",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Abbonamento",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "Cronologia crediti",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "Panoramica",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "Utenti",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "Ordini",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Prezzi",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "Blog",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "File R2",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "Post del blog",
+    "description": "Approfondimenti sull'ecosistema Next.js e aggiornamenti del template NEXTY.DEV.",
+    "emptyState": {
+      "title": "Nessun post del blog",
+      "description": "Stiamo creando contenuti entusiasmanti, rimanete sintonizzati!"
+    },
+    "loadMorePostsFailed": "Caricamento di altri post fallito",
+    "loadMorePosts": "Caricamento di altri post...",
+    "filterPostsFailed": "Caricamento post fallito",
+    "noPostsFoundForThisTag": "Nessun post trovato con questo tag",
+    "reachedTheEnd": "Hai raggiunto la fine di tutti i post",
+    "BlogDetail": {
+      "featured": "Post in evidenza",
+      "viewCount": "{count} visualizzazioni",
+      "accessRestricted": "Accesso limitato",
+      "unauthorized": "Questo articolo è disponibile solo per gli utenti registrati",
+      "premium": "Contenuto premium",
+      "premiumContent": "Questo articolo è esclusivo per gli abbonati",
+      "signIn": "Accedi",
+      "upgrade": "Aggiorna",
+      "backToBlogs": "Torna all'elenco blog",
+      "notFound": "Articolo non trovato"
+    }
+  },
+  "About": {
+    "title": "Chi siamo",
+    "description": "Informazioni sul sito"
+  },
+  "AIDemo": {
+    "title": "Demo capacità IA",
+    "description": "Questa pagina mostra funzionalità non pubbliche è esclusiva per gli utenti che hanno acquistato il template. È progettata per l'apprendimento e il test del processo di chiamata del modello IA. Per utilizzarla, avvia semplicemente il modello localmente e inserisci la tua chiave API nelle variabili d'ambiente. La demo IA include funzionalità come conversazioni a turno singolo e multiplo, testo-immagine, immagine-immagine e conversioni testo/immagine-video. Attraverso questa demo, puoi comprendere rapidamente il flusso di lavoro IA, accelerando il tuo viaggio nella creazione di applicazioni IA.",
+    "metaDescription": "Questa pagina mostra le capacità IA tra cui conversazioni a turno singolo e multiplo, testo-immagine, immagine-immagine e conversioni testo/immagine-video."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - Accesso negato",
+      "description": "Non hai il permesso di accedere a questa pagina.",
+      "button": {
+        "name": "Torna alla homepage",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "Errore di reindirizzamento",
+      "description": "Si è verificato un errore durante il processo di autenticazione.",
+      "goToHome": "Vai alla Home",
+      "goToLogin": "Vai al Login",
+      "invalid_params": {
+        "title": "Parametri non validi",
+        "description": "Parametri richiesti mancanti nella richiesta."
+      },
+      "invalid_redirect": {
+        "title": "URL di reindirizzamento non valido",
+        "description": "L'URL di reindirizzamento fornito non è consentito."
+      },
+      "token_expired": {
+        "title": "Token scaduto",
+        "description": "Il tuo token di verifica è scaduto. Prova ad accedere di nuovo."
+      },
+      "invalid_token": {
+        "title": "Token non valido",
+        "description": "Il token di verifica fornito non è valido."
+      },
+      "invalid_link_or_expired": {
+        "title": "Link non valido o scaduto",
+        "description": "Il link di verifica email non è valido o è scaduto."
+      },
+      "server_error": {
+        "title": "Errore del server",
+        "description": "Si è verificato un errore imprevisto sul server durante l'autenticazione."
+      },
+      "unknown": {
+        "title": "Errore di autenticazione",
+        "description": "Si è verificato un errore sconosciuto durante il processo di autenticazione."
+      }
+    },
+    "StripeError": {
+      "title": "Errore portale pagamenti",
+      "description": "Si è verificato un errore con le informazioni di pagamento.",
+      "goToHome": "Vai alla Home",
+      "goToDashboard": "Vai alla Dashboard"
+    }
+  }
+}

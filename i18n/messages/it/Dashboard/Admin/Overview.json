@@ -1,0 +1,21 @@
+{
+  "title": "Panoramica",
+  "users": "Utenti",
+  "oneTimePayments": "Pagamenti una tantum",
+  "monthlySubscriptions": "Abbonamenti mensili",
+  "yearlySubscriptions": "Abbonamenti annuali",
+  "today": "Oggi",
+  "yesterday": "Ieri",
+  "growthRate": "Tasso di crescita",
+  "newUsers": "Nuovi utenti",
+  "totalUsers": "Utenti totali",
+  "orders": "Ordini",
+  "revenue": "Entrate",
+  "count": "Conteggio",
+  "growthTrend": "Tendenza crescita",
+  "totalOrders": "Ordini totali",
+  "newOrders": "Nuovi ordini",
+  "last7Days": "Ultimi 7 giorni",
+  "last30Days": "Ultimi 30 giorni",
+  "last90Days": "Ultimi 90 giorni"
+}
