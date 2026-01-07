@@ -1,0 +1,17 @@
+{
+  "title": "Historique des Crédits",
+  "description": "Voyez ici l'historique de tous vos octrois et utilisations de crédits.",
+  "load_error": "Échec du chargement de l'historique des crédits. Veuillez réessayer plus tard.",
+  "no_records": "Aucun enregistrement d'historique de crédits trouvé.",
+  "header_date": "Date",
+  "header_type": "Type",
+  "header_details": "Détails",
+  "header_amount": "Montant",
+  "header_balance_one_time": "Crédits Unique",
+  "header_balance_subscription": "Crédits d'Abonnement",
+  "type_one_time_purchase": "Achat de Crédits",
+  "type_subscription_grant": "Octroi d'Abonnement",
+  "type_feature_usage": "Utilisation de Fonctionnalité",
+  "type_refund_revoke": "Révocation de Remboursement",
+  "type_subscription_ended_revoke": "Révocation Fin d'Abonnement"
+}

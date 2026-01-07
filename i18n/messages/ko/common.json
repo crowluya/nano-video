@@ -1,0 +1,352 @@
+{
+  "LanguageDetection": {
+    "title": "언어 제안",
+    "description": "브라우저 언어가 현재 사이트 언어와 다른 것을 감지했습니다. 언제든지 언어를 전환할 수 있습니다.",
+    "countdown": "{countdown}초 후 닫힘",
+    "switchTo": "전환"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "기능",
+        "href": "/#features"
+      },
+      {
+        "name": "비디오 생성기",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "프롬프트 생성기",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "이미지 생성기",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "가격",
+        "href": "/#pricing"
+      },
+      {
+        "name": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "name": "블로그",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Copyright © {year} {name} 모든 권리 보유.",
+    "About": "소개",
+    "PrivacyPolicy": "개인정보처리방침",
+    "TermsOfService": "서비스 약관",
+    "RefundPolicy": "환불 정책",
+    "Newsletter": {
+      "title": "뉴스레터 구독",
+      "description": "최신 소식을 받아보세요.",
+      "subscribe": {
+        "invalidEmail": "유효한 이메일 주소를 입력해주세요",
+        "defaultErrorMessage": "구독 실패. 나중에 다시 시도해주세요",
+        "successMessage": "구독 성공!",
+        "multipleSubmissions": "너무 많은 요청입니다. 내일 다시 시도해주세요"
+      },
+      "unsubscribe": {
+        "title": "뉴스레터 구독 취소",
+        "success": "Nexty 뉴스레터 구독이 성공적으로 취소되었습니다.",
+        "emailPrefix": "이메일:",
+        "regretMessage": "언제든지 다시 구독하여 Nexty의 최신 업데이트 및 튜토리얼을 받으실 수 있습니다.",
+        "errorGeneric": "구독 취소 요청 처리 중 오류가 발생했습니다",
+        "errorNoToken": "구독 취소 토큰이 제공되지 않았습니다",
+        "errorMessage": "올바른 구독 취소 링크를 사용하고 있는지 확인해주세요. 문제가 지속되면 고객센터에 문의해주세요.",
+        "contactPrefix": "문의:",
+        "contactPrefixSuccess": "질문이 있으시면 언제든지 문의해주세요:",
+        "backToHome": "홈으로",
+        "invalidEmail": "유효하지 않은 이메일 주소",
+        "notInNewsletter": "이 이메일은 구독자 목록에 없습니다",
+        "confirmTitle": "구독 취소 확인",
+        "confirmMessage": "뉴스레터 구독을 취소하시겠습니까? 더 이상 새로운 기능과 콘텐츠에 대한 업데이트를 받지 못하게 됩니다.",
+        "confirmButton": "네, 구독 취소",
+        "cancelButton": "취소",
+        "processing": "처리 중...",
+        "finalWarning": "이 작업은 되돌릴 수 없습니다. 나중에 언제든지 다시 구독할 수 있습니다.",
+        "errorInvalidToken": "유효하지 않은 구독 취소 링크입니다. 링크가 손상되었거나 만료되었을 수 있습니다."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "제품",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "기능"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "가격"
+            },
+            {
+              "href": "/blog",
+              "name": "블로그"
+            }
+          ]
+        },
+        {
+          "title": "지원",
+          "links": [
+            {
+              "name": "문서",
+              "href": "https://docs.nexty.dev/docs",
+              "target": "_blank"
+            },
+            {
+              "name": "로드맵",
+              "href": "https://nexty.dev/roadmap"
+            },
+            {
+              "href": "mailto:hi@nexty.dev",
+              "name": "문의하기"
+            }
+          ]
+        },
+        {
+          "title": "언어",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "AI 크리에이티브 스튜디오",
+    "description": "AI로 멋진 이미지, 비디오, 음악을 만드세요. Nano Banana, Midjourney, Sora 2, Veo 3.1, Suno로 콘텐츠를 생성하세요. 한 곳에서 모든 것을."
+  },
+  "Login": {
+    "title": "환영합니다",
+    "description": "다음 방법으로 로그인하세요",
+    "Toast": {
+      "Email": {
+        "successTitle": "매직 링크를 보냈습니다!",
+        "successDescription": "이메일에서 로그인 링크를 확인해주세요.",
+        "errorTitle": "오류",
+        "errorDescription": "매직 링크 전송 실패. 다시 시도해주세요."
+      },
+      "Google": {
+        "errorTitle": "오류",
+        "errorDescription": "Google 로그인 실패. 다시 시도해주세요."
+      },
+      "Github": {
+        "errorTitle": "오류",
+        "errorDescription": "Github 로그인 실패. 다시 시도해주세요."
+      }
+    },
+    "signInMethods": {
+      "or": "또는 다음으로 계속",
+      "signInWithGoogle": "Google로 계속",
+      "signInWithGithub": "Github로 계속",
+      "signInWithEmail": "이메일로 계속"
+    },
+    "Button": {
+      "signIn": "로그인",
+      "signOut": "로그아웃"
+    },
+    "UserMenus": [
+      {
+        "name": "크리에이티브 스튜디오",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "이미지 생성",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "비디오 생성",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "음악 생성",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
+      {
+        "name": "설정",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "내 주문",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "구독",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "크레딧 내역",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "개요",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "사용자",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "주문",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "가격",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "블로그",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "R2 파일",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "블로그 게시물",
+    "description": "Next.js 생태계 및 NEXTY.DEV 템플릿 업데이트에 대한 인사이트.",
+    "emptyState": {
+      "title": "블로그 게시물 없음",
+      "description": "흥미로운 콘텐츠를 만들고 있습니다, 기대해주세요!"
+    },
+    "loadMorePostsFailed": "더 많은 게시물 로드 실패",
+    "loadMorePosts": "더 많은 게시물 로드 중...",
+    "filterPostsFailed": "게시물 로드 실패",
+    "noPostsFoundForThisTag": "이 태그에 대한 게시물을 찾을 수 없습니다",
+    "reachedTheEnd": "모든 게시물의 끝에 도달했습니다",
+    "BlogDetail": {
+      "featured": "추천 게시물",
+      "viewCount": "{count} 조회",
+      "accessRestricted": "액세스 제한됨",
+      "unauthorized": "이 게시물은 로그인한 사용자만 이용할 수 있습니다",
+      "premium": "프리미엄 콘텐츠",
+      "premiumContent": "이 게시물은 구독자 전용입니다",
+      "signIn": "로그인",
+      "upgrade": "업그레이드",
+      "backToBlogs": "블로그 목록으로",
+      "notFound": "게시물을 찾을 수 없음"
+    }
+  },
+  "About": {
+    "title": "소개",
+    "description": "사이트 소개"
+  },
+  "AIDemo": {
+    "title": "AI 기능 데모",
+    "description": "이 페이지는 공개되지 않은 기능을 보여주며 템플릿을 구매한 사용자만을 위한 것입니다. AI 모델 호출 프로세스를 학습하고 테스트하기 위해 설계되었습니다. 사용하려면 템플릿을 로컬에서 시작하고 환경 변수에 API 키를 입력하기만 하면 됩니다. AI 데모에는 단일 및 다중 턴 대화, 텍스트-이미지, 이미지-이미지, 텍스트/이미지-비디오 변환 기능이 포함됩니다. 이 데모를 통해 AI 호출 워크플로를 빠르게 이해하고 AI 애플리케이션 구축 여정을 가속화할 수 있습니다.",
+    "metaDescription": "이 페이지는 단일 및 다중 턴 대화, 텍스트-이미지, 이미지-이미지, 텍스트/이미지-비디오 변환을 포함한 AI 기능을 보여줍니다."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - 액세스 거부됨",
+      "description": "이 페이지에 액세스할 권한이 없습니다.",
+      "button": {
+        "name": "홈으로",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "리디렉션 오류",
+      "description": "인증 프로세스 중 오류가 발생했습니다.",
+      "goToHome": "홈으로",
+      "goToLogin": "로그인으로",
+      "invalid_params": {
+        "title": "잘못된 매개변수",
+        "description": "요청에 필수 매개변수가 누락되었습니다."
+      },
+      "invalid_redirect": {
+        "title": "잘못된 리디렉션 URL",
+        "description": "제공된 리디렉션 URL이 허용되지 않습니다."
+      },
+      "token_expired": {
+        "title": "만료된 토큰",
+        "description": "검증 토큰이 만료되었습니다. 다시 로그인해주세요."
+      },
+      "invalid_token": {
+        "title": "잘못된 토큰",
+        "description": "제공된 검증 토큰이 유효하지 않습니다."
+      },
+      "invalid_link_or_expired": {
+        "title": "잘못되었거나 만료된 링크",
+        "description": "이메일 검증 링크가 잘못되었거나 만료되었습니다."
+      },
+      "server_error": {
+        "title": "서버 오류",
+        "description": "인증 중 서버에서 예기치 않은 오류가 발생했습니다."
+      },
+      "unknown": {
+        "title": "인증 오류",
+        "description": "인증 프로세스 중 알 수 없는 오류가 발생했습니다."
+      }
+    },
+    "StripeError": {
+      "title": "결제 포털 오류",
+      "description": "결제 정보에 오류가 발생했습니다.",
+      "goToHome": "홈으로",
+      "goToDashboard": "대시보드로"
+    }
+  }
+}

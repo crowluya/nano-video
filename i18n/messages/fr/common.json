@@ -1,0 +1,352 @@
+{
+  "LanguageDetection": {
+    "title": "Suggestion de Langue",
+    "description": "Nous avons remarqué que la langue de votre navigateur est différente de la langue actuelle du site. Vous pouvez changer de langue à tout moment.",
+    "countdown": "Fermeture dans {countdown} secondes",
+    "switchTo": "Passer à"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "Fonctionnalités",
+        "href": "/#features"
+      },
+      {
+        "name": "Générateur Vidéo",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "Générateur de Prompts",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Générateur d'Images",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "Tarifs",
+        "href": "/#pricing"
+      },
+      {
+        "name": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Copyright © {year} {name} Tous droits réservés.",
+    "About": "À propos",
+    "PrivacyPolicy": "Politique de Confidentialité",
+    "TermsOfService": "Conditions d'Utilisation",
+    "RefundPolicy": "Politique de Remboursement",
+    "Newsletter": {
+      "title": "Abonnez-vous à notre newsletter",
+      "description": "Restez informé de nos dernières actualités.",
+      "subscribe": {
+        "invalidEmail": "Veuillez saisir une adresse email valide",
+        "defaultErrorMessage": "L'abonnement a échoué. Veuillez réessayer plus tard",
+        "successMessage": "Abonnement réussi !",
+        "multipleSubmissions": "Trop de requêtes. Veuillez réessayer demain"
+      },
+      "unsubscribe": {
+        "title": "Désabonnement de la Newsletter",
+        "success": "Vous vous êtes désabonné avec succès des newsletters Nexty.",
+        "emailPrefix": "Email :",
+        "regretMessage": "Vous pouvez vous réabonner à tout moment pour recevoir les dernières mises à jour et tutoriels Nexty.",
+        "errorGeneric": "Une erreur s'est produite lors du traitement de votre demande de désabonnement",
+        "errorNoToken": "Aucun jeton de désabonnement fourni",
+        "errorMessage": "Veuillez vous assurer d'utiliser le bon lien de désabonnement. Si le problème persiste, contactez notre équipe de support.",
+        "contactPrefix": "Contactez-nous à :",
+        "contactPrefixSuccess": "Si vous avez des questions, n'hésitez pas à nous contacter à :",
+        "backToHome": "Retour à l'Accueil",
+        "invalidEmail": "Adresse email invalide",
+        "notInNewsletter": "Cet email n'est pas dans notre liste d'abonnés",
+        "confirmTitle": "Confirmer le Désabonnement",
+        "confirmMessage": "Êtes-vous sûr de vouloir vous désabonner de notre newsletter ? Vous ne recevrez plus les mises à jour sur les nouvelles fonctionnalités et le contenu.",
+        "confirmButton": "Oui, Se Désabonner",
+        "cancelButton": "Annuler",
+        "processing": "Traitement...",
+        "finalWarning": "Cette action ne peut pas être annulée. Vous pouvez toujours vous réabonner plus tard.",
+        "errorInvalidToken": "Lien de désabonnement invalide. Le lien peut être corrompu ou expiré."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "Produits",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "Fonctionnalités"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "Tarifs"
+            },
+            {
+              "href": "/blog",
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "links": [
+            {
+              "name": "Docs",
+              "href": "https://docs.nexty.dev/docs",
+              "target": "_blank"
+            },
+            {
+              "name": "Roadmap",
+              "href": "https://nexty.dev/roadmap"
+            },
+            {
+              "href": "mailto:hi@nexty.dev",
+              "name": "Contactez-nous"
+            }
+          ]
+        },
+        {
+          "title": "Langues",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "Studio Créatif avec IA",
+    "description": "Créez des images, vidéos et musiques stupéfiantes avec l'IA. Générez du contenu avec Nano Banana, Midjourney, Sora 2, Veo 3.1 et Suno, tout en un seul endroit."
+  },
+  "Login": {
+    "title": "Bon retour",
+    "description": "Connectez-vous avec les méthodes suivantes",
+    "Toast": {
+      "Email": {
+        "successTitle": "Lien magique envoyé !",
+        "successDescription": "Veuillez vérifier votre email pour le lien de connexion.",
+        "errorTitle": "Erreur",
+        "errorDescription": "Échec de l'envoi du lien magique. Veuillez réessayer."
+      },
+      "Google": {
+        "errorTitle": "Erreur",
+        "errorDescription": "Échec de la connexion avec Google. Veuillez réessayer."
+      },
+      "Github": {
+        "errorTitle": "Erreur",
+        "errorDescription": "Échec de la connexion avec Github. Veuillez réessayer."
+      }
+    },
+    "signInMethods": {
+      "or": "Ou continuer avec",
+      "signInWithGoogle": "Continuer avec Google",
+      "signInWithGithub": "Continuer avec Github",
+      "signInWithEmail": "Continuer avec Email"
+    },
+    "Button": {
+      "signIn": "Se Connecter",
+      "signOut": "Se Déconnecter"
+    },
+    "UserMenus": [
+      {
+        "name": "Studio Créatif",
+        "href": "/dashboard/studio",
+        "icon": "Sparkles"
+      },
+      {
+        "name": "Générateur d'Images",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Générateur Vidéo",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Générateur de Musique",
+        "href": "/dashboard/music-gen",
+        "icon": "Music"
+      },
+      {
+        "name": "Paramètres",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "Mes Commandes",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Abonnement",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "Historique des Crédits",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "Vue d'ensemble",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "Utilisateurs",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "Commandes",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Tarifs",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "Blogs",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "Fichiers R2",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "Articles de Blog",
+    "description": "Perspectives sur l'écosystème Next.js et mises à jour du modèle NEXTY.DEV.",
+    "emptyState": {
+      "title": "Aucun article",
+      "description": "Nous créons du contenu passionnant, restez à l'écoute !"
+    },
+    "loadMorePostsFailed": "Échec du chargement d'articles supplémentaires",
+    "loadMorePosts": "Chargement d'articles supplémentaires...",
+    "filterPostsFailed": "Échec du chargement des articles",
+    "noPostsFoundForThisTag": "Aucun article trouvé avec cette étiquette",
+    "reachedTheEnd": "Vous avez atteint la fin de tous les articles",
+    "BlogDetail": {
+      "featured": "Article en Vedette",
+      "viewCount": "{count} vues",
+      "accessRestricted": "Accès Restreint",
+      "unauthorized": "Cet article est disponible uniquement pour les utilisateurs connectés",
+      "premium": "Contenu Premium",
+      "premiumContent": "Cet article est exclusif aux abonnés",
+      "signIn": "Se Connecter",
+      "upgrade": "Mettre à Niveau",
+      "backToBlogs": "Retour à la Liste des Blogs",
+      "notFound": "Article Non Trouvé"
+    }
+  },
+  "About": {
+    "title": "À propos",
+    "description": "À propos du site"
+  },
+  "AIDemo": {
+    "title": "Démo des Capacités IA",
+    "description": "Cette page présente des fonctionnalités non publiques et est exclusivement réservée aux utilisateurs qui ont acheté le modèle. Elle est conçue pour apprendre et tester le processus d'invocation de modèles IA. Pour l'utiliser, lancez simplement le modèle localement et saisissez votre clé API dans les variables d'environnement. La démo IA inclut des fonctionnalités comme les conversations à tour unique et à tours multiples, texte vers image, image vers image, et conversions texte/image vers vidéo. À travers cette démo, vous pouvez rapidement comprendre le flux de travail d'invocation IA, accélérant votre voyage dans la construction d'applications IA.",
+    "metaDescription": "Cette page présente les capacités IA incluant les conversations à tour unique et à tours multiples, texte vers image, image vers image, et conversions texte/image vers vidéo."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - Accès Refusé",
+      "description": "Vous n'avez pas la permission d'accéder à cette page.",
+      "button": {
+        "name": "Retour à l'accueil",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "Erreur de Redirection",
+      "description": "Une erreur s'est produite lors du processus d'authentification.",
+      "goToHome": "Aller à l'Accueil",
+      "goToLogin": "Aller à la Connexion",
+      "invalid_params": {
+        "title": "Paramètres Invalides",
+        "description": "Des paramètres requis sont manquants dans la requête."
+      },
+      "invalid_redirect": {
+        "title": "URL de Redirection Invalide",
+        "description": "L'URL de redirection fournie n'est pas autorisée."
+      },
+      "token_expired": {
+        "title": "Jeton Expiré",
+        "description": "Votre jeton de vérification a expiré. Veuillez réessayer de vous connecter."
+      },
+      "invalid_token": {
+        "title": "Jeton Invalide",
+        "description": "Le jeton de vérification fourni est invalide."
+      },
+      "invalid_link_or_expired": {
+        "title": "Lien Invalide ou Expiré",
+        "description": "Le lien de vérification email est invalide ou a expiré."
+      },
+      "server_error": {
+        "title": "Erreur du Serveur",
+        "description": "Une erreur inattendue s'est produite sur le serveur lors de l'authentification."
+      },
+      "unknown": {
+        "title": "Erreur d'Authentification",
+        "description": "Une erreur inconnue s'est produite lors du processus d'authentification."
+      }
+    },
+    "StripeError": {
+      "title": "Erreur du Portail de Paiement",
+      "description": "Une erreur s'est produite avec vos informations de paiement.",
+      "goToHome": "Aller à l'Accueil",
+      "goToDashboard": "Aller au Tableau de Bord"
+    }
+  }
+}

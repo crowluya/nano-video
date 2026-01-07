@@ -1,0 +1,409 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "NUEVO",
+      "text": "Plantilla SaaS Full Stack de Next.js",
+      "href": "https://nexty.dev/#pricing"
+    },
+    "title": "Una Plantilla SaaS Full Stack Moderna de Next.js",
+    "description": "Nuestra plantilla de Next.js incluye autenticación, pagos Stripe, integración IA, CMS y todo lo que necesitas para comenzar a ganar inmediatamente.",
+    "getStarted": "Comenzar",
+    "getStartedLink": "https://nexty.dev/#pricing",
+    "viewDocs": "Ver Documentación",
+    "viewDocsLink": "https://nexty.dev/docs"
+  },
+  "Features": {
+    "badge": {
+      "label": "CARACTERÍSTICAS",
+      "text": "Kit de Desarrollo SaaS Listo para Producción"
+    },
+    "title": "Plantilla SaaS de Next.js Lista para Producción",
+    "description": "La plantilla de Next.js incluye cada característica esencial que las aplicaciones SaaS modernas requieren, permitiéndote enfocarte en tu lógica de negocio única y valor para el cliente.",
+    "items": [
+      {
+        "title": "3 Plantillas Poderosas",
+        "description": "Compra una vez, obtén 3 plantillas poderosas.",
+        "details": [
+          {
+            "title": "Plantilla 1: Nexty",
+            "description": "Plantilla SaaS universal con cada característica que necesitas.",
+            "href": "https://demo.nexty.dev"
+          },
+          {
+            "title": "Plantilla 2: nexty-flux-kontext",
+            "description": "Plantilla SaaS de generación de imágenes con IA.",
+            "href": "https://flux-kontext.nexty.dev"
+          },
+          {
+            "title": "Plantilla 3: nexty-directory",
+            "description": "Plantilla de sitio web de directorio y listados.",
+            "href": "https://dofollow.tools"
+          }
+        ],
+        "images": [
+          "/images/features/template1.webp",
+          "/images/features/template2.webp",
+          "/images/features/template3.webp"
+        ]
+      },
+      {
+        "title": "Autenticación",
+        "description": "Better Auth integrado con múltiples opciones de inicio de sesión.",
+        "details": [
+          {
+            "title": "Inicio de Sesión Social",
+            "description": "Google, GitHub y más."
+          },
+          {
+            "title": "Enlaces Mágicos",
+            "description": "Verificación de correo con enlaces mágicos."
+          },
+          {
+            "title": "Protección contra Bots",
+            "description": "Protege tu aplicación de bots con Cloudflare Turnstile."
+          }
+        ],
+        "images": [
+          "/images/features/login.png"
+        ]
+      },
+      {
+        "title": "Base de Datos",
+        "description": "Drizzle ORM integrado con múltiples opciones de base de datos, como Supabase, Neon y PostgreSQL auto-hospedado.",
+        "details": [
+          {
+            "title": "Configuración de Una Línea",
+            "description": "Solo completa DATABASE_URL, y la mejor configuración se completará automáticamente."
+          },
+          {
+            "title": "Tablas Integradas Complejas",
+            "description": "Conjunto completo de tablas para gestión de usuarios, planes de precios, pedidos, gestión de contenido y más."
+          },
+          {
+            "title": "Múltiples Opciones de Base de Datos",
+            "description": "Supabase, Neon y PostgreSQL auto-hospedado."
+          }
+        ],
+        "images": [
+          "/images/features/database-config.webp",
+          "/images/features/database-tables.webp"
+        ]
+      },
+      {
+        "title": "Sistema de Pagos",
+        "description": "Solución de facturación completa con Stripe Checkout y Portal de Facturación de Stripe.",
+        "details": [
+          {
+            "title": "Todos los Métodos de Pago",
+            "description": "Nexty soporta suscripciones mensuales y anuales, y pagos de un solo uso."
+          },
+          {
+            "title": "Facturación Basada en Uso",
+            "description": "Nexty soporta facturación basada en uso para aplicaciones que necesitan cobrar a usuarios según su uso."
+          },
+          {
+            "title": "Gestión Inteligente de Administradores",
+            "description": "Los planes de precios de Nexty se gestionan a través del panel de administración, vinculados a IDs de Precio de Stripe para capacidades de vista previa inteligente, segura y en tiempo real."
+          }
+        ],
+        "images": [
+          "/images/features/payment-1.png",
+          "/images/features/payment-2.png"
+        ]
+      },
+      {
+        "title": "Capacidades de IA",
+        "description": "Kit de herramientas de integración IA completo con demostraciones interactivas, soporte multi-proveedor y plantilla de sitio web de generación de imágenes con IA lista para desplegar.",
+        "details": [
+          {
+            "title": "Centro de Demostraciones de IA",
+            "description": "Nexty incluye demostraciones integradas para chat, texto a imagen, imagen a imagen y generación de video para ayudar a los desarrolladores a aprender flujos de trabajo de IA y probar modelos rápidamente."
+          },
+          {
+            "title": "Soporte Universal de Proveedores de IA",
+            "description": "Nexty ofrece integración con SDK de IA soportando GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter y Replicate para máxima flexibilidad."
+          },
+          {
+            "title": "Bonus: Sitio Web de Generación de Imágenes con IA",
+            "description": "Los usuarios que pagan por Nexty reciben una plantilla completa de sitio web de generación de imágenes Flux Kontext para despliegue rápido de plataformas de arte con IA."
+          }
+        ],
+        "images": [
+          "/images/features/ai-1.png",
+          "/images/features/ai-2.png"
+        ]
+      },
+      {
+        "title": "CMS",
+        "description": "CMS avanzado que va más allá de la gestión básica de contenido con protección de paywall, traducción por IA y capacidades de publicación multipropósito.",
+        "details": [
+          {
+            "title": "Control de Acceso de Contenido",
+            "description": "El CMS de Nexty soporta contenido público, usuarios con sesión y solo suscriptores con protección de paywall para sitios de contenido monetizado."
+          },
+          {
+            "title": "Traducción Impulsada por IA",
+            "description": "El CMS de Nexty incluye traducción por IA integrada para creación de contenido multilingüe, más función de duplicado para flujos de producción de contenido eficientes."
+          },
+          {
+            "title": "Publicación Multipropósito",
+            "description": "Nexty permite tanto sitios de blog gratuitos como plataformas de contenido pagado con gestión avanzada de estados (borrador, publicado, archivado)."
+          }
+        ],
+        "images": [
+          "/images/features/cms-1.png",
+          "/images/features/admin-3.png",
+          "/images/features/cms-3.png",
+          "/images/features/cms-4.png",
+          "/images/features/cms-5.png"
+        ]
+      },
+      {
+        "title": "Almacenamiento de Archivos",
+        "description": "Gestión de archivos de nivel empresarial impulsado por Cloudflare R2 con panel de administración, distribución CDN automática y flujos de carga optimizados.",
+        "details": [
+          {
+            "title": "Gestión de Archivos de Administrador",
+            "description": "Nexty proporciona un panel de administración dedicado para gestión completa de archivos con capacidades de carga, eliminación y organización."
+          },
+          {
+            "title": "Integración con Cloudflare R2",
+            "description": "Nexty utiliza Cloudflare R2 para almacenamiento de archivos rentable y de alto rendimiento con distribución CDN automática en todo el mundo."
+          },
+          {
+            "title": "Experiencia de Carga Optimizada",
+            "description": "Nexty presenta cargas de arrastrar y soltar, funcionalidad de vista previa y procesamiento automático de archivos para una experiencia de usuario perfecta."
+          }
+        ],
+        "images": [
+          "/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Gestión Visual de Precios",
+        "description": "Nexty introduce gestión de precios en el panel que es segura y conveniente, actualiza tus precios sin tocar código.",
+        "details": [
+          {
+            "title": "Vista Previa en Tiempo Real",
+            "description": "El editor de tarjetas de precios de Nexty incluye vista previa en tiempo real, permitiéndote ver cómo se verán las tarjetas de precios antes de guardar."
+          },
+          {
+            "title": "Integración con Stripe",
+            "description": "Nexty obtiene datos de precios de Stripe con verificación de un clic para configuración de facturación precisa."
+          },
+          {
+            "title": "Soporte Multi-idioma",
+            "description": "Nexty soporta traducción multilingüe impulsada por IA para tarjetas de precios, permitiendo gestión fácil de contenido de precios multilingüe."
+          }
+        ],
+        "images": [
+          "/images/features/admin-2.png",
+          "/images/features/prices-1.png",
+          "/images/features/prices-2.png",
+          "/images/features/prices-3.png",
+          "/images/features/prices-4.png",
+          "/images/features/prices-5.png"
+        ]
+      },
+      {
+        "title": "Sistema de Correo",
+        "description": "Solución de correo completa con dominio de Cloudflare e integración Resend para comunicaciones profesionales y gestión de suscriptores.",
+        "details": [
+          {
+            "title": "Correo de Dominio Profesional",
+            "description": "Nexty implementa correo de dominio a través de Cloudflare, haciendo que tu marca parezca más profesional y ayudando a generar confianza con los usuarios."
+          },
+          {
+            "title": "Marketing de Correo Avanzado",
+            "description": "Nexty incluye integración Resend para gestión de suscriptores y campañas de correo, con módulo de suscripción al boletín integrado en el pie de página."
+          },
+          {
+            "title": "Automatización de Correo Integrada",
+            "description": "Nexty incluye suscripción al boletín y correos de notificación de fallo de pago, más plantillas preconstruidas para comunicaciones esenciales con usuarios."
+          }
+        ],
+        "images": [
+          "/images/features/email-2.png",
+          "/images/features/email-1.png"
+        ]
+      },
+      {
+        "title": "Panel de Usuario",
+        "description": "Panel de usuario completo que proporciona una experiencia perfecta para los usuarios.",
+        "details": [
+          {
+            "title": "Gestión de Perfil",
+            "description": "Nexty incluye configuración de perfil completa."
+          },
+          {
+            "title": "Gestión de Suscripción",
+            "description": "Nexty proporciona gestión de suscripción con historial de facturación y actualizaciones de plan a través de la integración con Stripe."
+          },
+          {
+            "title": "Historial de Créditos y Uso",
+            "description": "Nexty rastrea otorgamientos y uso de créditos con historial detallado, soportando tanto sistemas de créditos de un solo uso como basados en suscripción."
+          }
+        ],
+        "images": [
+          "/images/features/user-1.png",
+          "/images/features/user-2.png",
+          "/images/features/user-3.png"
+        ]
+      },
+      {
+        "title": "Panel de Administrador",
+        "description": "Panel de administración completo que proporciona control total sobre usuarios, precios, contenido y archivos para gestión completa de SaaS.",
+        "details": [
+          {
+            "title": "Gestión de Usuarios",
+            "description": "Nexty proporciona gestión completa de usuarios con control de roles, integración de clientes de Stripe y administración de cuentas."
+          },
+          {
+            "title": "Gestión de Precios",
+            "description": "Nexty ofrece gestión visual de planes de precios con separación de entornos, integración con Stripe y vista previa en tiempo real."
+          },
+          {
+            "title": "CMS y Gestión de Archivos",
+            "description": "Nexty incluye gestión de blogs con soporte multilingüe, control de acceso y gestión de archivos R2 con capacidades de vista previa."
+          }
+        ],
+        "images": [
+          "/images/features/admin-1.png",
+          "/images/features/admin-2.png",
+          "/images/features/admin-3.png",
+          "/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Marketing y Crecimiento",
+        "description": "Kit de herramientas de crecimiento completo con internacionalización, analíticas, publicidad y optimización SEO para alcance global y éxito empresarial.",
+        "details": [
+          {
+            "title": "i18n",
+            "description": "Nexty soporta múltiples idiomas de fábrica con fácil expansión para alcance de mercado mundial."
+          },
+          {
+            "title": "Analíticas y AdSense",
+            "description": "Nexty incluye Google Analytics, seguimiento Plausible e integración AdSense para información y generación de ingresos."
+          },
+          {
+            "title": "Optimización SEO",
+            "description": "Nexty proporciona optimización SEO completa con metaetiquetas y sitemaps para mejores rankings."
+          }
+        ],
+        "images": [
+          "/images/features/other-1.png",
+          "/images/features/other-2.png",
+          "/images/features/other-3.png"
+        ]
+      }
+    ]
+  },
+  "UseCases": {
+    "badge": {
+      "label": "CASOS DE USO",
+      "text": "Múltiples Escenarios de Solución"
+    },
+    "title": "Una Plantilla, Múltiples Soluciones",
+    "description": "Ya sea que estés construyendo herramientas con IA, plataformas de contenido u otros productos SaaS, nuestra plantilla SaaS de Next.js se adapta a tus necesidades específicas con configuración mínima requerida.",
+    "cases": [
+      {
+        "title": "Herramientas SaaS con IA",
+        "description": "Lanza aplicaciones con IA listas para producción en días, no meses. Integraciones integradas con OpenRouter, Replicate y proveedores de IA líderes. Incluye seguimiento inteligente de uso, facturación automatizada y todo lo que necesitas para monetizar flujos de trabajo con IA.",
+        "image": "/placeholder.webp",
+        "icon": "Bot"
+      },
+      {
+        "title": "Plataformas de Contenido y Blogs",
+        "description": "Lanza sitios web de contenido optimizados para SEO con capacidades avanzadas de CMS. Las características incluyen edición Markdown, soporte multilingüe, protección de paywall, traducción por IA e integración AdSense. Perfecto para construir plataformas de contenido premium, boletines o aplicaciones SaaS impulsadas por contenido.",
+        "image": "/placeholder.webp",
+        "icon": "FileText"
+      },
+      {
+        "title": "Plataformas de Suscripción y Mercado",
+        "description": "Construye negocios de ingresos recurrentes con facturación automatizada, gestión de clientes y procesamiento de pagos. Las características incluyen gestión de suscripciones, precios basados en uso, portales de clientes y analíticas completas. Perfecto para mercados SaaS, servicios de suscripción o plataformas de herramientas premium.",
+        "image": "/placeholder.webp",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Herramientas Gratuitas y Imanes de Clientes",
+        "description": "Crea herramientas gratuitas virales que generan tráfico orgánico masivo. Rendimiento ultrarrápido y optimización SEO. Perfecto para construir tu lista de correos, generar clientes potenciales o crear la próxima calculadora/convertidor viral.",
+        "image": "/placeholder.webp",
+        "icon": "Wrench"
+      }
+    ]
+  },
+  "Testimonials": {
+    "badge": {
+      "label": "TESTIMONIOS"
+    },
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "description": "No nos tomes la palabra, escucha a quienes ya han transformado su desarrollo"
+  },
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "description": "Preguntas comunes sobre nuestra plantilla SaaS de Next.js y cómo puede ayudarte a construir mejores aplicaciones más rápido",
+    "items": [
+      {
+        "question": "¿Puedo usar esta plantilla como persona no técnica?",
+        "answer": "¡Absolutamente! Nexty está específicamente diseñado para funcionar perfectamente con asistentes de IA, permitiendo incluso a aquellos con experiencia cero en programación desarrollar productos a través del desarrollo asistido por IA. Nuestra estructura de código y documentación son amigables para la IA, facilitando que la IA entienda y modifique el código. Los equipos técnicos se beneficiarán de una eficiencia de desarrollo aún mayor."
+      },
+      {
+        "question": "¿Qué hace a esta la mejor plantilla SaaS de Next.js?",
+        "answer": "Nexty es el kit de inicio SaaS de Next.js más completo disponible. A diferencia de otras plantillas que solo proporcionan componentes básicos, incluimos flujos de negocio completos: autenticación, pagos, integración IA, gestión de contenido y características de monetización. Todo está listo para producción y probado en batalla en aplicaciones reales."
+      },
+      {
+        "question": "¿Qué tan rápido puedo lanzar mi SaaS con esta plantilla?",
+        "answer": "Tu primer proyecto tomará 3-5 días mientras aprendes las características de la plantilla, pero la curva de aprendizaje vale la pena rápidamente. Nuestros clientes que han dominado el sistema ahora lanzan aplicaciones SaaS completas en solo 1-2 días. La plantilla maneja toda la infraestructura compleja, para que puedas enfocarte en lo que hace único a tu producto."
+      },
+      {
+        "question": "¿Es adecuada para aplicaciones SaaS impulsadas por IA?",
+        "answer": "¡Absolutamente! Nuestra plantilla incluye integración completa del SDK de IA con ejemplos funcionales para generación de texto, creación de imágenes y procesamiento de video. Es compatible con OpenAI, Claude, Gemini, Grok, DeepSeek y otros modelos de IA populares. Perfecto para construir herramientas con IA o plataformas de generación de contenido."
+      },
+      {
+        "question": "¿Qué métodos de pago y modelos de facturación son compatibles?",
+        "answer": "La plantilla incluye integración completa con Stripe soportando pagos de un solo uso, suscripciones, facturación basada en uso y renovaciones automatizadas. Puedes comenzar a monetizar inmediatamente."
+      },
+      {
+        "question": "¿Cómo funciona el sistema de gestión de contenido?",
+        "answer": "Nuestro CMS integrado soporta edición Markdown y de texto enriquecido, contenido multilingüe, optimización SEO, protección de paywall y traducción por IA. Puedes gestionar artículos, páginas y contenido premium a través de un panel de administración intuitivo con control de acceso basado en roles."
+      },
+      {
+        "question": "¿Está la plantilla optimizada para SEO?",
+        "answer": "¡Sí! La plantilla incluye características SEO completas: metaetiquetas automáticas, datos estructurados, sitemaps XML, soporte OpenGraph y optimización de rendimiento. Está construida con las mejores prácticas de Next.js para visibilidad en motores de búsqueda y tiempos de carga más rápidos."
+      },
+      {
+        "question": "¿Qué tipo de soporte proporcionan?",
+        "answer": "Proporcionamos documentación completa, ejemplos de código y soporte por correo. También tenemos una comunidad Discord pública donde puedes obtener ayuda de otros desarrolladores y compartir tus proyectos."
+      },
+      {
+        "question": "¿Cómo gestiono las tarjetas de precios?",
+        "answer": "Este es un punto de venta clave de Nexty. Puedes gestionar las tarjetas de precios en el Panel, incluyendo agregar, editar y eliminar tarjetas de precios con soporte de traducción multilingüe por IA, eliminando la configuración compleja de archivos multilingües."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Lanza Tu Producto Rápido, Gana Dinero Rápido",
+    "description": "¡Deja de empezar desde cero! Usa las plantillas de Nexty para enfocarte en tu idea central, construir rápidamente, validar y comenzar a ganar.",
+    "button": "Obtener Plantilla Ahora",
+    "trustText": "Confianza de desarrolladores en todo el mundo",
+    "features": {
+      "deploy": "🚀 Despliegue Rápido",
+      "production": "🔧 Listo para Producción",
+      "updates": "💎 Actualizaciones de Por Vida",
+      "i18n": "🌍 Internacionalización"
+    }
+  },
+  "Pricing": {
+    "badge": {
+      "label": "PRECIOS",
+      "text": "Pago de Un Solo Uso, Actualizaciones de Por Vida"
+    },
+    "title": "Lanza tu SaaS en días, no meses",
+    "description": "Usando nuestra plantilla inicial SaaS probada en batalla, para que puedas saltarte la codificación de plantillas y enfocarte en las características que tus usuarios realmente necesitan.",
+    "annual": "Anual",
+    "monthly": "Mensual",
+    "onetime": "Un Solo Uso",
+    "saveTip": "Ahorra 20%"
+  }
+}

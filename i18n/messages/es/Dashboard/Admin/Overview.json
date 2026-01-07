@@ -1,0 +1,21 @@
+{
+  "title": "Resumen",
+  "users": "Usuarios",
+  "oneTimePayments": "Pagos de Un Solo Uso",
+  "monthlySubscriptions": "Suscripciones Mensuales",
+  "yearlySubscriptions": "Suscripciones Anuales",
+  "today": "Hoy",
+  "yesterday": "Ayer",
+  "growthRate": "Tasa de Crecimiento",
+  "newUsers": "Nuevos Usuarios",
+  "totalUsers": "Total de Usuarios",
+  "orders": "Pedidos",
+  "revenue": "Ingresos",
+  "count": "Cantidad",
+  "growthTrend": "Tendencia de Crecimiento",
+  "totalOrders": "Total de Pedidos",
+  "newOrders": "Nuevos Pedidos",
+  "last7Days": "Últimos 7 Días",
+  "last30Days": "Últimos 30 Días",
+  "last90Days": "Últimos 90 Días"
+}

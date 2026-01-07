@@ -1,0 +1,12 @@
+{
+  "title": "Pedidos",
+  "description": "Aqui está uma lista de todos os pedidos.",
+  "user": "Usuário",
+  "orderId": "ID do Pedido",
+  "amount": "Valor",
+  "discount": "Desconto",
+  "type": "Tipo",
+  "status": "Status",
+  "createdAt": "Criado Em",
+  "filterByEmail": "Filtrar por email..."
+}

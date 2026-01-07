@@ -1,0 +1,31 @@
+{
+  "title": "설정",
+  "description": "계정 설정 및 프로필 정보를 관리하세요.",
+  "form": {
+    "emailLabel": "이메일",
+    "fullNameLabel": "이름",
+    "fullNamePlaceholder": "이름을 입력하세요",
+    "avatarLabel": "아바타",
+    "avatarHint": "최대 파일 크기: {maxSizeInMB} MB. 허용된 유형: {allowedTypes}.",
+    "updateButton": "설정 업데이트",
+    "updatingButton": "업데이트 중..."
+  },
+  "toast": {
+    "fullNameLengthError": "이름은 {maxLength}자보다 짧아야 합니다",
+    "fullNameInvalidCharactersError": "이름에 잘못된 문자가 포함되어 있습니다",
+    "errorInvalidFileType": "아바타의 잘못된 파일 유형입니다. {allowedTypes}만 허용됩니다.",
+    "errorInvalidFileTypeDescription": "{maxSizeInMB} MB보다 작은 파일을 업로드해주세요.",
+    "errorFileSizeExceeded": "아바타 크기가 {maxSizeInMB} MB 제한을 초과했습니다.",
+    "errorFileSizeExceededDescription": "{maxSizeInMB} MB보다 작은 파일을 업로드해주세요.",
+    "errorInvalidFullName": "잘못된 이름이 제공되었습니다.",
+    "errorFullNameRequired": "이름이 필요합니다.",
+    "updateSuccessTitle": "프로필 업데이트됨",
+    "updateSuccessDescription": "프로필이 성공적으로 업데이트되었습니다.",
+    "updateErrorTitle": "업데이트 실패",
+    "updateErrorDescription": "설정 업데이트 실패. 나중에 다시 시도해주세요.",
+    "errorDeleteOldAvatar": "이전 아바타 삭제 실패.",
+    "errorUploadAvatar": "아바타 업로드 실패.",
+    "errorUpdateAuthUser": "인증 사용자 업데이트 실패.",
+    "errorUpdateUserProfile": "사용자 프로필 업데이트 실패."
+  }
+}

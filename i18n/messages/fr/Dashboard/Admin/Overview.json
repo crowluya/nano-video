@@ -1,0 +1,21 @@
+{
+  "title": "Vue d'ensemble",
+  "users": "Utilisateurs",
+  "oneTimePayments": "Paiements Uniques",
+  "monthlySubscriptions": "Abonnements Mensuels",
+  "yearlySubscriptions": "Abonnements Annuels",
+  "today": "Aujourd'hui",
+  "yesterday": "Hier",
+  "growthRate": "Taux de Croissance",
+  "newUsers": "Nouveaux Utilisateurs",
+  "totalUsers": "Total des Utilisateurs",
+  "orders": "Commandes",
+  "revenue": "Revenus",
+  "count": "Nombre",
+  "growthTrend": "Tendance de Croissance",
+  "totalOrders": "Total des Commandes",
+  "newOrders": "Nouvelles Commandes",
+  "last7Days": "7 Derniers Jours",
+  "last30Days": "30 Derniers Jours",
+  "last90Days": "90 Derniers Jours"
+}

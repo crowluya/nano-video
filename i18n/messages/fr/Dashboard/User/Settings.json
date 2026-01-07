@@ -1,0 +1,31 @@
+{
+  "title": "Paramètres",
+  "description": "Gérez les paramètres de votre compte et les informations de profil.",
+  "form": {
+    "emailLabel": "Email",
+    "fullNameLabel": "Nom Complet",
+    "fullNamePlaceholder": "Entrez votre nom complet",
+    "avatarLabel": "Avatar",
+    "avatarHint": "Taille maximale de fichier : {maxSizeInMB} MB. Types autorisés : {allowedTypes}.",
+    "updateButton": "Mettre à Jour les Paramètres",
+    "updatingButton": "Mise à jour..."
+  },
+  "toast": {
+    "fullNameLengthError": "Le nom complet doit contenir moins de {maxLength} caractères",
+    "fullNameInvalidCharactersError": "Le nom complet contient des caractères invalides",
+    "errorInvalidFileType": "Type de fichier invalide pour l'avatar. Seuls {allowedTypes} sont autorisés.",
+    "errorInvalidFileTypeDescription": "Veuillez télécharger un fichier de moins de {maxSizeInMB} MB.",
+    "errorFileSizeExceeded": "La taille de l'avatar dépasse la limite de {maxSizeInMB} MB.",
+    "errorFileSizeExceededDescription": "Veuillez télécharger un fichier de moins de {maxSizeInMB} MB.",
+    "errorInvalidFullName": "Nom complet invalide fourni.",
+    "errorFullNameRequired": "Le nom complet est requis.",
+    "updateSuccessTitle": "Profil Mis à Jour",
+    "updateSuccessDescription": "Votre profil a été mis à jour avec succès.",
+    "updateErrorTitle": "Échec de la Mise à Jour",
+    "updateErrorDescription": "Échec de la mise à jour des paramètres. Veuillez réessayer plus tard.",
+    "errorDeleteOldAvatar": "Échec de la suppression de l'ancien avatar.",
+    "errorUploadAvatar": "Échec du téléchargement de l'avatar.",
+    "errorUpdateAuthUser": "Échec de la mise à jour de l'utilisateur d'authentification.",
+    "errorUpdateUserProfile": "Échec de la mise à jour du profil utilisateur."
+  }
+}
