@@ -8,12 +8,30 @@
 
 ### 基本信息
 - **项目名称**: Nano Banana Video
+- **域名**: nanobananavideo.net
 - **技术栈**: Next.js 16 + React 19 + TypeScript
 - **包管理器**: pnpm 10.x
-- **数据库**: PostgreSQL (Neon) + Drizzle ORM
-- **认证**: better-auth
-- **支付**: Stripe + Creem
+- **数据库**: Supabase PostgreSQL + Drizzle ORM
+- **认证**: better-auth (仅 Google 登录)
+- **支付**: Stripe
+- **AI 服务**: kie.ai
 - **国际化**: next-intl (支持 en/zh/ja)
+- **部署**: Vercel
+
+### 功能范围
+| 功能 | 状态 | 说明 |
+|------|------|------|
+| 视频生成 | ✅ 上线 | Sora 2, Veo 3.1 |
+| 图片生成 | ✅ 上线 | Nano Banana, Midjourney, Flux 等 |
+| Prompt 生成器 | ✅ 上线 | Gemini / DeepSeek |
+| Blog | ✅ 上线 | - |
+| 音乐生成 | ❌ 隐藏 | 后续开发 |
+| Remotion 剪辑 | ❌ 隐藏 | 后续开发 |
+| Studio 一体化 | ❌ 隐藏 | 后续开发 |
+
+### 积分体系
+- 新用户注册：80 积分
+- 积分配置：`config/models.ts` 和 `lib/kie/credits.ts`
 
 ### 项目结构
 ```
