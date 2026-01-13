@@ -130,3 +130,10 @@ dist
 */robots.txt
 
 .pnpm-store
+
+# Claude Code temp files
+tmpclaude-*
+nul
+
+# Claude Code local settings (personal overrides)
+.claude/settings.local.json

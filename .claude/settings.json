@@ -1,0 +1,82 @@
+{
+  "description": "Nano Banana Video - Team baseline configuration",
+  "defaultModel": "sonnet",
+  "permissions": {
+    "Read": [
+      { "pattern": ".env*", "action": "deny" },
+      { "pattern": ".env.local", "action": "deny" },
+      { "pattern": "**/.secrets/*", "action": "deny" },
+      { "pattern": "**/private.key", "action": "deny" },
+      { "pattern": "node_modules/**", "action": "deny" },
+      { "pattern": ".next/**", "action": "deny" }
+    ],
+    "Write": [
+      { "pattern": ".env*", "action": "deny" },
+      { "pattern": "node_modules/**", "action": "deny" },
+      { "pattern": ".next/**", "action": "deny" },
+      { "pattern": "dist/**", "action": "deny" },
+      { "pattern": "**/*.lock", "action": "deny" }
+    ],
+    "Bash": [
+      { "pattern": "pnpm dev", "action": "allow" },
+      { "pattern": "pnpm build", "action": "allow" },
+      { "pattern": "pnpm lint", "action": "allow" },
+      { "pattern": "pnpm test*", "action": "allow" },
+      { "pattern": "pnpm db:*", "action": "allow" },
+      { "pattern": "git status", "action": "allow" },
+      { "pattern": "git diff*", "action": "allow" },
+      { "pattern": "git log*", "action": "allow" },
+      { "pattern": "git show", "action": "allow" },
+      { "pattern": "git branch*", "action": "allow" },
+      { "pattern": "git checkout*", "action": "ask" },
+      { "pattern": "git add*", "action": "ask" },
+      { "pattern": "git commit*", "action": "ask" },
+      { "pattern": "git push*", "action": "ask" },
+      { "pattern": "git reset --hard*", "action": "deny" },
+      { "pattern": "git push --force*", "action": "deny" },
+      { "pattern": "rm -rf", "action": "deny" },
+      { "pattern": "rm /", "action": "deny" },
+      { "pattern": "rm .*\\*\\*", "action": "deny" },
+      { "pattern": "npx*", "action": "ask" }
+    ],
+    "mcp__playwright__browser_*": [
+      { "pattern": "*", "action": "allow" }
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          { "type": "command", "command": "python .claude/hooks/protect-main-branch.py" },
+          { "type": "command", "command": "python .claude/hooks/check-i18n.py" }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          { "type": "command", "command": "python .claude/hooks/protect-main-branch.py" },
+          { "type": "command", "command": "python .claude/hooks/check-i18n.py" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/auto-format.sh" }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          { "type": "command", "command": "bash .claude/hooks/auto-format.sh" }
+        ]
+      }
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoApproveBashInSandbox": false
+  }
+}
