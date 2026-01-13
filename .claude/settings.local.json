@@ -31,7 +31,9 @@
       "mcp__playwright__browser_tabs",
       "mcp__playwright__browser_wait_for",
       "mcp__web-reader__webReader",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)"
     ]
   }
 }
