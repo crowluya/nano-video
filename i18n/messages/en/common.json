@@ -172,11 +172,6 @@
     },
     "UserMenus": [
       {
-        "name": "Creative Studio",
-        "href": "/dashboard/studio",
-        "icon": "Sparkles"
-      },
-      {
         "name": "Image Gen",
         "href": "/dashboard/image-gen",
         "icon": "Image"
@@ -185,11 +180,6 @@
         "name": "Video Gen",
         "href": "/dashboard/video-gen",
         "icon": "Film"
-      },
-      {
-        "name": "Music Gen",
-        "href": "/dashboard/music-gen",
-        "icon": "Music"
       },
       {
         "name": "Settings",
