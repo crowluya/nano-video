@@ -36,7 +36,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-video-conversion.webp"
         ]
       },
       {
@@ -57,7 +57,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-ai-models.webp"
         ]
       },
       {
@@ -78,7 +78,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-free-trial.webp"
         ]
       },
       {
@@ -99,7 +99,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-commercial-use.webp"
         ]
       },
       {
@@ -120,7 +120,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-keyframes.webp"
         ]
       },
       {
@@ -141,7 +141,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-fast-generation.webp"
         ]
       }
     ]
@@ -157,31 +157,31 @@
       {
         "title": "UGC Ads (TikTok, Instagram, Shopify)",
         "description": "Create engaging user-generated content style ads for TikTok, Instagram, and Shopify stores. Perfect for e-commerce brands looking to scale their video ad production without expensive production costs.",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
       {
         "title": "Faceless YouTube Videos",
         "description": "Generate faceless YouTube videos from Nano Banana images. Perfect for educational content, product reviews, and storytelling channels. No filming equipment or actors needed.",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-youtube.webp",
         "icon": "Youtube"
       },
       {
         "title": "E-commerce Product Videos",
         "description": "Transform product images into dynamic product videos for your e-commerce store. Increase conversion rates with professional product demonstrations and lifestyle videos.",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-ecommerce.webp",
         "icon": "ShoppingCart"
       },
       {
         "title": "Cinematic Videos (Keyframes)",
         "description": "Create cinematic videos from multiple keyframes. Perfect for filmmakers, animators, and content creators who want to visualize storyboards or create concept videos.",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-cinematic.webp",
         "icon": "Film"
       },
       {
         "title": "TikTok Content",
         "description": "Generate viral TikTok content from Nano Banana images. Perfect for creators looking to scale their content production and maintain consistent posting schedules.",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
     ]

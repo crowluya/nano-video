@@ -36,7 +36,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-video-conversion.webp"
         ]
       },
       {
@@ -57,7 +57,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-ai-models.webp"
         ]
       },
       {
@@ -78,7 +78,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-free-trial.webp"
         ]
       },
       {
@@ -99,7 +99,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-commercial-use.webp"
         ]
       },
       {
@@ -120,7 +120,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-keyframes.webp"
         ]
       },
       {
@@ -141,7 +141,7 @@
           }
         ],
         "images": [
-          "/placeholder.webp"
+          "/images/brand/feature-fast-generation.webp"
         ]
       }
     ]
@@ -157,31 +157,31 @@
       {
         "title": "UGC広告 (TikTok, Instagram, Shopify)",
         "description": "TikTok、Instagram、Shopifyストア向けの魅力的なユーザー生成コンテンツスタイルの広告を作成。高額な制作コストなしでビデオ広告制作を拡大したいeコマースブランドに最適。",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
       {
         "title": "顔なしYouTubeビデオ",
         "description": "Nano Banana画像から顔なしYouTubeビデオを生成。教育コンテンツ、製品レビュー、ストーリーテリングチャンネルに最適。撮影機材や俳優は不要。",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-youtube.webp",
         "icon": "Youtube"
       },
       {
         "title": "eコマース製品ビデオ",
         "description": "製品画像をeコマースストア用の動的な製品ビデオに変換。プロフェッショナルな製品デモとライフスタイルビデオでコンバージョン率を向上。",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-ecommerce.webp",
         "icon": "ShoppingCart"
       },
       {
         "title": "映画的ビデオ (キーフレーム)",
         "description": "複数のキーフレームから映画的なビデオを作成。ストーリーボードを視覚化したり、コンセプトビデオを作成したい映画製作者、アニメーター、コンテンツクリエイターに最適。",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-cinematic.webp",
         "icon": "Film"
       },
       {
         "title": "TikTokコンテンツ",
         "description": "Nano Banana画像からバイラルTikTokコンテンツを生成。コンテンツ制作を拡大し、一貫した投稿スケジュールを維持したいクリエイターに最適。",
-        "image": "/placeholder.webp",
+        "image": "/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
     ]

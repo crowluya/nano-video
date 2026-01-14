@@ -34,7 +34,16 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push)",
-      "Bash(pnpm lint:*)"
+      "Bash(pnpm lint:*)",
+      "Bash(git fetch:*)",
+      "Bash(pnpm tsx:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(timeout:*)",
+      "Skill(screenshot)",
+      "Bash(pnpm add:*)",
+      "mcp__zread__get_repo_structure",
+      "mcp__zread__read_file",
+      "mcp__zread__search_doc"
     ]
   }
 }

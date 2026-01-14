@@ -288,8 +288,167 @@ const user = await db.query.users.findFirst({
 
 ## 九、扩展阅读
 
+### Nexty.dev 模板文档
+
+本项目基于 [NEXTY.DEV](https://nexty.dev) SaaS 模板开发。
+
+**核心特性参考：**
+- **认证**: Better-auth（Google/GitHub/Magic Link）
+- **数据库**: Drizzle ORM + Supabase/Neon/Postgres
+- **支付**: Stripe（月付/年付/一次性）
+- **AI Demo**: Vercel AI SDK + OpenRouter + Replicate
+- **可视化定价管理**: Admin 后台可视化创建/编辑定价方案
+- **CMS**: 博客编辑状态、访问权限、AI 翻译
+- **邮件订阅**: Resend + Cloudflare
+- **文件存储**: Cloudflare R2
+- **多语言**: i18n 国际化支持
+
+**技术栈：**
+| 技术 | 模块 |
+|------|------|
+| Next.js | React 全栈框架 |
+| Tailwind CSS | 样式 |
+| Shadcn UI | 组件库 |
+| Better-auth | 认证 |
+| Drizzle ORM | 数据库 ORM |
+| Upstash | Redis 缓存 + 限流 |
+| Stripe | 支付处理 |
+| Vercel/Dokploy | 一键部署 |
+| Vercel AI SDK | AI 能力集成 |
+| Resend | 邮件服务 |
+| Cloudflare R2 | 文件存储 |
+
+**文档链接：**
+- 官方文档: https://nexty.dev/docs
+- GitHub: https://github.com/weijunext
+- 作者 X: @Jude Wei
+
+### 项目内部文档
+
 - `@constitution.md` - 项目根本原则
 - `@AGENTS.md` - 跨 Agent 通用规范
 - `.claude/agents/` - 专家 Agent 定义
 - `.claude/commands/` - 团队 SOP 指令
 - `.claude/skills/` - 知识胶囊
+
+---
+
+## 十、品牌资源管理
+
+### 资源规格
+
+| 文件 | 尺寸 | 用途 |
+|------|------|------|
+| `logo.png` | 192x192 | 网站 Logo |
+| `logo.svg` | 矢量 | 可缩放 Logo |
+| `logo-512.png` | 512x512 | PWA 图标 |
+| `logo-maskable.png` | 192x192 | PWA Maskable (10% 安全区) |
+| `logo-512-maskable.png` | 512x512 | PWA Maskable 大图 |
+| `favicon.ico` | 16x16 + 32x32 | 浏览器标签图标 |
+| `apple-touch-icon.png` | 180x180 | iOS 主屏图标 |
+| `og.png` | 1200x630 | 社交分享图 (英文) |
+| `og_zh.png` | 1200x630 | 社交分享图 (中文) |
+| `og_ja.png` | 1200x630 | 社交分享图 (日文) |
+
+### 生成脚本
+
+```bash
+# 生成全套品牌资源 (Logo/favicon/OG)
+pnpm tsx scripts/generate-brand-assets.ts
+
+# 生成 Features/UseCases 占位图
+pnpm tsx scripts/generate-brand-images.ts
+
+# 更新 i18n JSON 中的图片路径
+pnpm tsx scripts/update-image-paths.ts
+
+# 恢复 AI 生成的 favicon
+pnpm tsx scripts/restore-favicon.ts
+```
+
+### 技术依赖
+
+| 依赖 | 用途 | 安装 |
+|------|------|------|
+| `sharp` | 图像处理 (resize, composite, format) | `pnpm add -D sharp` |
+| `png-to-ico` | PNG 转 ICO 格式 | `pnpm add -D png-to-ico` |
+
+### 生成流程
+
+```
+1. kie.ai 生成 Logo 基础图 (1024x1024)
+   ↓
+2. Sharp 处理多尺寸
+   ├── logo.png (192x192)
+   ├── logo-512.png (512x512)
+   ├── logo-maskable.png (带安全区)
+   ├── favicon.ico (16x16 + 32x32)
+   └── apple-touch-icon.png (180x180)
+
+3. kie.ai 生成 OG 背景 (1200x630)
+   ↓
+4. Sharp 合成文字
+   ├── og.png (英文)
+   ├── og_zh.png (中文)
+   └── og_ja.png (日文)
+```
+
+### 占位图位置
+
+Features 和 UseCases 图片存放在 `public/images/brand/`：
+- `feature-*.webp` - 功能展示图 (6张)
+- `usecase-*.webp` - 使用场景图 (5张)
+
+图片路径配置在 `i18n/messages/*/NanoBananaVideo.json`。
+
+---
+
+## 十一、上线检查清单
+
+### P0 - 阻塞上线
+
+| 项目 | 状态 | 说明 |
+|------|------|------|
+| 数据修复 | ✅ | "Stande Plan" → "Standard Plan" |
+| 积分修复 | ✅ | Standard Plan 110,000 → 11,000 |
+| 功能隐藏 | ✅ | 音乐/Remotion/Studio 从菜单移除 |
+| 登录简化 | ✅ | 只保留 Google 登录 |
+| 品牌资源 | ✅ | Logo/favicon/OG 图片已替换 |
+
+### P1 - 重要
+
+| 项目 | 状态 | 说明 |
+|------|------|------|
+| Features 图片 | ✅ | 6 张功能展示图 |
+| UseCases 图片 | ✅ | 5 张使用场景图 |
+| 社交链接 | ⬜ | 配置或移除空链接 |
+| 客服邮箱 | ⬜ | 配置 EMAIL_URL |
+
+### P2 - 技术验证
+
+| 项目 | 说明 |
+|------|------|
+| 环境变量 | `NEXT_PUBLIC_SITE_URL`, `STRIPE_WEBHOOK_SECRET`, R2 配置等 |
+| Webhook | Stripe webhook 端点配置 |
+| 构建测试 | `pnpm lint` + `pnpm build` |
+| 功能测试 | 登录、支付、视频/图片生成流程 |
+
+### 修复脚本
+
+```bash
+# 执行数据库修复
+pnpm tsx scripts/fix-launch-issues.ts
+```
+
+---
+
+## 十二、外部资源参考
+
+### UI/UX 设计资源
+
+- **uiax-skill**: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  - 57 种 UI 样式
+  - 95 种行业配色方案
+  - 56 种字体搭配
+  - 可用于设计参考和 AI 辅助设计
+
