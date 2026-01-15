@@ -442,7 +442,121 @@ pnpm tsx scripts/fix-launch-issues.ts
 
 ---
 
-## 十二、外部资源参考
+## 十二、R2 存储管理
+
+### 文件夹结构
+
+```
+nanobananavideo/                    # R2 Bucket
+├── website/                        # 网站专属资源 (公开)
+│   ├── showcase/                   # 展示视频素材
+│   │   ├── reference-to-video/     # 多参考图生视频模板
+│   │   ├── start-end-frames/       # 首尾帧对比模板
+│   │   └── audio-showcase/         # 带音频视频模板
+│   └── gallery/                    # Gallery 页面素材 (后续)
+│
+└── users/                          # 用户生成资源
+    ├── images/{userId}/            # 用户生成的图片
+    └── videos/{userId}/            # 用户生成的视频
+```
+
+### 环境变量
+
+```bash
+R2_ACCOUNT_ID=<纯账户ID，不含URL>   # 例: 0d4042693bdf560b0fd435ae6935912c
+R2_ACCESS_KEY_ID=<API Token ID>
+R2_SECRET_ACCESS_KEY=<API Token Secret>
+R2_BUCKET_NAME=nanobananavideo
+R2_PUBLIC_URL=https://cdn.nanobananavideo.net
+```
+
+### 核心文件
+
+```
+lib/cloudflare/
+├── r2-client.ts    # S3 客户端初始化
+├── r2.ts           # 上传/删除/列表/预签名 URL
+├── r2-utils.ts     # 工具函数 (key 生成等)
+└── r2-download.ts  # 下载相关
+
+app/api/kie/save-to-r2/route.ts  # 保存到 R2 的 API 端点
+```
+
+### 使用示例
+
+```typescript
+// 服务端直接上传
+import { serverUploadFile } from '@/lib/cloudflare/r2';
+
+const url = await serverUploadFile(buffer, 'website/showcase/test.mp4', 'video/mp4');
+
+// 通过 API 保存 kie.ai 临时 URL 到 R2
+const response = await fetch('/api/kie/save-to-r2', {
+  method: 'POST',
+  body: JSON.stringify({
+    sourceUrl: 'https://tempfile.aiquickdraw.com/xxx.mp4',
+    type: 'video',
+    path: 'users/{userId}/videos',
+  }),
+});
+```
+
+### 测试脚本
+
+```bash
+# 测试 R2 上传
+pnpm tsx scripts/test-r2-upload.ts
+```
+
+---
+
+## 十三、展示素材生成
+
+### 三种展示视频模板
+
+| 模板 | 用途 | 素材 |
+|------|------|------|
+| Reference → Video | 多参考图生成视频 | 4张参考图 + 1个视频 |
+| Start > End | 首尾帧对比 | 首帧图 + 视频 + 尾帧图 |
+| Context-Aware Audio | 带音频视频展示 | 1个带音频视频 |
+
+### 已生成素材 (R2)
+
+```
+website/showcase/
+├── reference-to-video/case-1/     # 日式咖啡店主题
+│   ├── ref-1.webp                 # 咖啡师肖像
+│   ├── ref-2.webp                 # 手冲咖啡壶
+│   ├── ref-3.webp                 # 拿铁艺术
+│   ├── ref-4.webp                 # 咖啡店内景
+│   └── output.mp4                 # 生成的视频
+├── start-end-frames/case-1/       # 陶艺创作主题
+│   ├── first-frame.webp           # 首帧
+│   ├── last-frame.webp            # 尾帧 (待提取)
+│   └── output.mp4                 # 生成的视频
+└── audio-showcase/case-1/         # 海边冲浪主题
+    └── output.mp4                 ```
+
+### 生成脚本
+
+```bash
+# 批量生成展示素材 (图片+视频+上传R2)
+pnpm tsx scripts/generate-showcase-assets.ts
+
+# 单独重新生成某个视频
+pnpm tsx scripts/regenerate-surfing-video.ts
+```
+
+### CDN 访问
+
+所有素材通过 CDN 访问：
+```
+https://cdn.nanobananavideo.net/website/showcase/{模板}/{case}/{文件}
+```
+
+---
+
+## 十四、外部资源参考
 
 ### UI/UX 设计资源
 
