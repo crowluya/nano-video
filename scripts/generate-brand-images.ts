@@ -12,7 +12,7 @@ import { loadEnvConfig } from '@next/env';
 import { KieClient } from '../lib/kie/client';
 import { writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import fetch from 'node-fetch';
+// Using built-in fetch (Node.js 18+)
 
 // Load environment variables
 const projectDir = process.cwd();

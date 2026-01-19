@@ -43,7 +43,16 @@
       "Bash(pnpm add:*)",
       "mcp__zread__get_repo_structure",
       "mcp__zread__read_file",
-      "mcp__zread__search_doc"
+      "mcp__zread__search_doc",
+      "mcp__zai-mcp-server__analyze_image",
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(pnpm run build:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(pnpm exec next lint:*)",
+      "Bash(pnpm build:*)",
+      "Bash(tee:*)"
     ]
   }
 }

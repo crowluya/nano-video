@@ -144,7 +144,8 @@ function getModelsForType(type: ModelType) {
         name: m.name,
         description: m.description,
         features: m.features,
-        creditsPerGeneration: m.creditsPerGeneration,
+        // Video credits are calculated dynamically based on resolution and duration
+        creditsPerGeneration: undefined,
       }));
     case "music":
       return KIE_MUSIC_MODELS.map((m) => ({

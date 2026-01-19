@@ -92,10 +92,16 @@ export async function POST(req: Request) {
       });
     } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
       // Flux Kontext
+      // Filter out unsupported aspect ratios for Flux Kontext
+      const validFluxRatios = ["21:9", "16:9", "4:3", "1:1", "3:4", "9:16"];
+      const fluxAspectRatio = options.aspectRatio && validFluxRatios.includes(options.aspectRatio)
+        ? options.aspectRatio as "21:9" | "16:9" | "4:3" | "1:1" | "3:4" | "9:16"
+        : undefined;
+
       taskId = await client.generateFluxKontextImage({
         prompt,
         model: modelId as "flux-kontext-pro" | "flux-kontext-max",
-        aspectRatio: options.aspectRatio as "21:9" | "16:9" | "4:3" | "1:1" | "3:4" | "9:16" | "16:21" | undefined,
+        aspectRatio: fluxAspectRatio,
         inputImage: options.inputImageUrl,
         outputFormat: options.outputFormat === "jpg" ? "jpeg" : options.outputFormat as "jpeg" | "png" | undefined,
       });

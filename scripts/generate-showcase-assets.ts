@@ -220,7 +220,7 @@ async function generateVideo(
       taskId = await client.generateVeo3Video({
         prompt: videoConfig.prompt,
         aspectRatio: "16:9",
-        duration: 8,
+        // Note: Veo3 doesn't support duration parameter
       });
 
       console.log(`     TaskId: ${taskId}`);

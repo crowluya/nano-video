@@ -175,7 +175,7 @@ export default function VideoGenPage() {
               ) : (
                 <>
                   <Sparkles className="mr-2 h-4 w-4" />
-                  Generate ({selectedModel?.creditsPerGeneration} credits)
+                  Generate Video
                 </>
               )}
             </Button>

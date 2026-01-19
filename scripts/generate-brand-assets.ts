@@ -9,7 +9,6 @@ import sharp from 'sharp';
 import pngToIco from 'png-to-ico';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { join } from 'path';
-import fetch from 'node-fetch';
 
 const projectDir = process.cwd();
 loadEnvConfig(projectDir);
