@@ -36,7 +36,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-video-conversion.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-video-conversion.webp"
         ]
       },
       {
@@ -57,7 +57,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-ai-models.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-ai-models.webp"
         ]
       },
       {
@@ -78,7 +78,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-free-trial.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-free-trial.webp"
         ]
       },
       {
@@ -99,7 +99,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-commercial-use.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-commercial-use.webp"
         ]
       },
       {
@@ -120,7 +120,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-keyframes.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-keyframes.webp"
         ]
       },
       {
@@ -141,7 +141,7 @@
           }
         ],
         "images": [
-          "/images/brand/feature-fast-generation.webp"
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-fast-generation.webp"
         ]
       }
     ]
@@ -157,31 +157,31 @@
       {
         "title": "UGC 广告 (TikTok, Instagram, Shopify)",
         "description": "为 TikTok、Instagram 和 Shopify 商店创建引人入胜的用户生成内容风格广告。非常适合希望扩大视频广告制作而无需昂贵制作成本的电商品牌。",
-        "image": "/images/brand/usecase-ugc-ads.webp",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
       {
         "title": "无脸 YouTube 视频",
         "description": "从 Nano Banana 图像生成无脸 YouTube 视频。非常适合教育内容、产品评论和故事频道。无需拍摄设备或演员。",
-        "image": "/images/brand/usecase-youtube.webp",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-youtube.webp",
         "icon": "Youtube"
       },
       {
         "title": "电商产品视频",
         "description": "将产品图像转换为电商商店的动态产品视频。通过专业的产品演示和生活方式视频提高转化率。",
-        "image": "/images/brand/usecase-ecommerce.webp",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ecommerce.webp",
         "icon": "ShoppingCart"
       },
       {
         "title": "电影级视频 (关键帧)",
         "description": "从多个关键帧创建电影级视频。非常适合希望可视化故事板或创建概念视频的电影制作人、动画师和内容创作者。",
-        "image": "/images/brand/usecase-cinematic.webp",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-cinematic.webp",
         "icon": "Film"
       },
       {
         "title": "TikTok 内容",
         "description": "从 Nano Banana 图像生成病毒式 TikTok 内容。非常适合希望扩大内容制作并保持一致发布计划的创作者。",
-        "image": "/images/brand/usecase-tiktok.webp",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
     ]

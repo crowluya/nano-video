@@ -41,9 +41,9 @@
           }
         ],
         "images": [
-          "/images/features/template1.webp",
-          "/images/features/template2.webp",
-          "/images/features/template3.webp"
+          "https://cdn.nanobananavideo.net/website/images/features/template1.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/template2.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/template3.webp"
         ]
       },
       {
@@ -64,7 +64,7 @@
           }
         ],
         "images": [
-          "/images/features/login.png"
+          "https://cdn.nanobananavideo.net/website/images/features/login.png"
         ]
       },
       {
@@ -85,8 +85,8 @@
           }
         ],
         "images": [
-          "/images/features/database-config.webp",
-          "/images/features/database-tables.webp"
+          "https://cdn.nanobananavideo.net/website/images/features/database-config.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/database-tables.webp"
         ]
       },
       {
@@ -107,8 +107,8 @@
           }
         ],
         "images": [
-          "/images/features/payment-1.png",
-          "/images/features/payment-2.png"
+          "https://cdn.nanobananavideo.net/website/images/features/payment-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/payment-2.png"
         ]
       },
       {
@@ -129,8 +129,8 @@
           }
         ],
         "images": [
-          "/images/features/ai-1.png",
-          "/images/features/ai-2.png"
+          "https://cdn.nanobananavideo.net/website/images/features/ai-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/ai-2.png"
         ]
       },
       {
@@ -151,11 +151,11 @@
           }
         ],
         "images": [
-          "/images/features/cms-1.png",
-          "/images/features/admin-3.png",
-          "/images/features/cms-3.png",
-          "/images/features/cms-4.png",
-          "/images/features/cms-5.png"
+          "https://cdn.nanobananavideo.net/website/images/features/cms-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-4.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-5.png"
         ]
       },
       {
@@ -176,7 +176,7 @@
           }
         ],
         "images": [
-          "/images/features/admin-4.png"
+          "https://cdn.nanobananavideo.net/website/images/features/admin-4.png"
         ]
       },
       {
@@ -197,12 +197,12 @@
           }
         ],
         "images": [
-          "/images/features/admin-2.png",
-          "/images/features/prices-1.png",
-          "/images/features/prices-2.png",
-          "/images/features/prices-3.png",
-          "/images/features/prices-4.png",
-          "/images/features/prices-5.png"
+          "https://cdn.nanobananavideo.net/website/images/features/admin-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-4.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-5.png"
         ]
       },
       {
@@ -223,8 +223,8 @@
           }
         ],
         "images": [
-          "/images/features/email-2.png",
-          "/images/features/email-1.png"
+          "https://cdn.nanobananavideo.net/website/images/features/email-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/email-1.png"
         ]
       },
       {
@@ -245,9 +245,9 @@
           }
         ],
         "images": [
-          "/images/features/user-1.png",
-          "/images/features/user-2.png",
-          "/images/features/user-3.png"
+          "https://cdn.nanobananavideo.net/website/images/features/user-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/user-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/user-3.png"
         ]
       },
       {
@@ -268,10 +268,10 @@
           }
         ],
         "images": [
-          "/images/features/admin-1.png",
-          "/images/features/admin-2.png",
-          "/images/features/admin-3.png",
-          "/images/features/admin-4.png"
+          "https://cdn.nanobananavideo.net/website/images/features/admin-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-4.png"
         ]
       },
       {
@@ -292,9 +292,9 @@
           }
         ],
         "images": [
-          "/images/features/other-1.png",
-          "/images/features/other-2.png",
-          "/images/features/other-3.png"
+          "https://cdn.nanobananavideo.net/website/images/features/other-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/other-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/other-3.png"
         ]
       }
     ]
