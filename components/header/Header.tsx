@@ -36,18 +36,19 @@ const Header = async () => {
             </span>
           </I18nLink>
 
+          {/* Desktop navigation */}
           <HeaderLinks />
         </div>
 
         <div className="flex items-center gap-x-2 flex-1 justify-end">
-          {/* PC */}
+          {/* Desktop controls */}
           <div className="hidden lg:flex items-center gap-x-2">
             <LocaleSwitcher />
             <ThemeToggle />
             <UserAvatar user={user as User} />
           </div>
 
-          {/* Mobile */}
+          {/* Mobile controls */}
           <div className="flex lg:hidden items-center gap-x-2">
             <UserAvatar user={user as User} />
             <MobileMenu />

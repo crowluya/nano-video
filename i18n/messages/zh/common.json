@@ -55,9 +55,9 @@
       },
       "unsubscribe": {
         "title": "退订邮件通知",
-        "success": "您已成功退订 Nexty 邮件通知。",
+        "success": "您已成功退订 Nano Banana Video 邮件通知。",
         "emailPrefix": "邮箱：",
-        "regretMessage": "您随时可以重新订阅邮件，获取 Nexty 最新更新和教程。",
+        "regretMessage": "您随时可以重新订阅邮件，获取 Nano Banana Video 最新更新和教程。",
         "errorGeneric": "处理您的退订请求时发生错误",
         "errorNoToken": "未提供退订令牌",
         "errorMessage": "请确保您使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
@@ -100,15 +100,15 @@
           "links": [
             {
               "name": "文档",
-              "href": "https://docs.nexty.dev/zh/docs",
-              "target": "_blank"
+              "href": "/#faq",
+              "target": ""
             },
             {
-              "name": "功能路线图",
-              "href": "https://nexty.dev/zh/roadmap"
+              "name": "定价",
+              "href": "/#pricing"
             },
             {
-              "href": "mailto:hi@nexty.dev",
+              "href": "mailto:contact@nanobananavideo.net",
               "name": "联系我们"
             }
           ]
@@ -137,9 +137,9 @@
     }
   },
   "Home": {
-    "title": "NEXTY.DEV",
-    "tagLine": "多场景 Next.js 全栈 SaaS 开发模板",
-    "description": "Nexty 是一个功能齐全的 Next.js SaaS 全栈模板，让你能够快速构建各种商业网站，无论是内容站、工具站还是集成 AI 能力的付费网站。"
+    "title": "Nano Banana Video",
+    "tagLine": "AI 驱动的创意工作室",
+    "description": "使用 AI 创造令人惊叹的图像、视频和音乐。通过 Nano Banana、Midjourney、Sora 2、Veo 3.1 和 Suno 生成内容 - 尽在一个平台。"
   },
   "Login": {
     "title": "欢迎回来",

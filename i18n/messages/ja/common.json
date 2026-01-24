@@ -55,9 +55,9 @@
       },
       "unsubscribe": {
         "title": "ニュースレター配信停止",
-        "success": "Nextyニュースレターの配信停止が完了しました。",
+        "success": "Nano Banana Video ニュースレターの配信停止が完了しました。",
         "emailPrefix": "メールアドレス：",
-        "regretMessage": "いつでも再登録して、Nextyの最新アップデートやチュートリアルを受け取ることができます。",
+        "regretMessage": "いつでも再登録して、Nano Banana Video の最新アップデートやチュートリアルを受け取ることができます。",
         "errorGeneric": "配信停止の処理中にエラーが発生しました",
         "errorNoToken": "配信停止トークンが提供されていません",
         "errorMessage": "正しい配信停止リンクを使用していることをご確認ください。問題が解決しない場合は、サポートチームまでお問い合わせください。",
@@ -99,16 +99,16 @@
           "title": "サポート",
           "links": [
             {
-              "name": "Docs",
-              "href": "https://docs.nexty.dev/ja/docs",
-              "target": "_blank"
+              "name": "ドキュメント",
+              "href": "/#faq",
+              "target": ""
             },
             {
-              "name": "Roadmap",
-              "href": "https://nexty.dev/ja/roadmap"
+              "name": "料金プラン",
+              "href": "/#pricing"
             },
             {
-              "href": "mailto:hi@nexty.dev",
+              "href": "mailto:contact@nanobananavideo.net",
               "name": "お問い合わせ"
             }
           ]
@@ -137,9 +137,9 @@
     }
   },
   "Home": {
-    "title": "NEXTY.DEV",
-    "tagLine": "最新の Next.js フルスタック SaaS テンプレート",
-    "description": "Next.js と Supabase を活用した本格的な SaaS 開発キット。コンテンツ配信、AI ツール、サブスクリプションサービスを迅速に構築できます。"
+    "title": "Nano Banana Video",
+    "tagLine": "AI 駆動のクリエイティブスタジオ",
+    "description": "AI で素晴らしい画像、動画、音楽を作成。Nano Banana、Midjourney、Sora 2、Veo 3.1、Suno でコンテンツを生成 - すべて 1 つのプラットフォームで。"
   },
   "Login": {
     "title": "おかえりなさい",

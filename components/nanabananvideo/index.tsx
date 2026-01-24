@@ -3,6 +3,7 @@ import NanoBananaFAQ from "@/components/nanabananvideo/FAQ";
 import NanoBananaFeatures from "@/components/nanabananvideo/Features";
 import NanoBananaGallery from "@/components/nanabananvideo/Gallery";
 import NanoBananaHero from "@/components/nanabananvideo/Hero";
+import { KeyFeatures } from "@/components/nanabananvideo/KeyFeatures";
 import NanoBananaPricing from "@/components/nanabananvideo/Pricing";
 import NanoBananaUseCases from "@/components/nanabananvideo/UseCases";
 import VideoGenerationDemo from "@/components/nanabananvideo/VideoGenerationDemo";
@@ -36,6 +37,8 @@ export default async function NanoBananaVideoPage() {
       <BG1 />
 
       {messages.NanoBananaVideo?.Hero && <NanoBananaHero />}
+
+      <KeyFeatures />
 
       <VideoShowcase />
 

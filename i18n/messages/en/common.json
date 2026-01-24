@@ -55,9 +55,9 @@
       },
       "unsubscribe": {
         "title": "Newsletter Unsubscription",
-        "success": "You have successfully unsubscribed from Nexty newsletters.",
+        "success": "You have successfully unsubscribed from Nano Banana Video newsletters.",
         "emailPrefix": "Email:",
-        "regretMessage": "You can resubscribe anytime to receive the latest Nexty updates and tutorials.",
+        "regretMessage": "You can resubscribe anytime to receive the latest Nano Banana Video updates and tutorials.",
         "errorGeneric": "An error occurred while processing your unsubscribe request",
         "errorNoToken": "No unsubscribe token provided",
         "errorMessage": "Please make sure you're using the correct unsubscribe link. If the problem persists, contact our support team for assistance.",
@@ -100,15 +100,15 @@
           "links": [
             {
               "name": "Docs",
-              "href": "https://docs.nexty.dev/docs",
-              "target": "_blank"
+              "href": "/#faq",
+              "target": ""
             },
             {
-              "name": "Roadmap",
-              "href": "https://nexty.dev/roadmap"
+              "name": "Pricing",
+              "href": "/#pricing"
             },
             {
-              "href": "mailto:hi@nexty.dev",
+              "href": "mailto:contact@nanobananavideo.net",
               "name": "Contact Us"
             }
           ]

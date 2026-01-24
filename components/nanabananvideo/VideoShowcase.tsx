@@ -2,18 +2,19 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+// Using the latest AI-generated videos from R2 CDN
 const videos = [
   {
-    url: 'https://tempfile.aiquickdraw.com/v/228e623c000be1ae80b3c6e5b4fd421f_1765983853.mp4',
-    title: 'Video 1',
+    url: 'https://cdn.nanobananavideo.net/website/gallery/realistic/realistic-1.mp4',
+    title: 'AI Spokesperson - Professional Product Showcase',
   },
   {
-    url: 'https://file.aiquickdraw.com/custom-page/akr/section-images/17607764967900u9630hr.mp4',
-    title: 'Video 2',
+    url: 'https://cdn.nanobananavideo.net/website/gallery/realistic/realistic-2.mp4',
+    title: 'Coffee Latte Art - Cinematic Close-up',
   },
   {
-    url: 'https://file.aiquickdraw.com/custom-page/akr/section-images/1760692304341bbjb1icx.mp4',
-    title: 'Video 3',
+    url: 'https://cdn.nanobananavideo.net/website/gallery/ugc/ugc-1.mp4',
+    title: 'UGC Style - Engaging Content',
   },
 ];
 
@@ -68,9 +69,14 @@ export function VideoShowcase() {
             </div>
           </div>
 
-          {/* Optional: Video counter */}
-          <div className="mt-4 text-center text-sm text-muted-foreground">
-            Video {currentVideoIndex + 1} of {videos.length}
+          {/* Video info */}
+          <div className="mt-4 text-center">
+            <p className="text-lg font-semibold text-foreground">
+              {videos[currentVideoIndex].title}
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              Video {currentVideoIndex + 1} of {videos.length}
+            </p>
           </div>
         </div>
       </div>
