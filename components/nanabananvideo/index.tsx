@@ -1,6 +1,7 @@
 import NanoBananaCTA from "@/components/nanabananvideo/CTA";
 import NanoBananaFAQ from "@/components/nanabananvideo/FAQ";
 import NanoBananaFeatures from "@/components/nanabananvideo/Features";
+import NanoBananaGallery from "@/components/nanabananvideo/Gallery";
 import NanoBananaHero from "@/components/nanabananvideo/Hero";
 import NanoBananaPricing from "@/components/nanabananvideo/Pricing";
 import NanoBananaUseCases from "@/components/nanabananvideo/UseCases";
@@ -18,6 +19,7 @@ export default async function NanoBananaVideoPage() {
     hasNanoBananaVideo: !!messages.NanoBananaVideo,
     hasHero: !!messages.NanoBananaVideo?.Hero,
     hasFeatures: !!messages.NanoBananaVideo?.Features,
+    hasGallery: !!messages.NanoBananaVideo?.Gallery,
     hasVideoDemo: !!messages.NanoBananaVideo?.VideoDemo,
     hasUseCases: !!messages.NanoBananaVideo?.UseCases,
     hasPricing: !!messages.NanoBananaVideo?.Pricing,
@@ -38,6 +40,8 @@ export default async function NanoBananaVideoPage() {
       <VideoShowcase />
 
       {messages.NanoBananaVideo?.Features && <NanoBananaFeatures />}
+
+      {messages.NanoBananaVideo?.Gallery && <NanoBananaGallery />}
 
       <VideoGenerationDemo />
 

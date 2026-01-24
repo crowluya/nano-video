@@ -1,0 +1,92 @@
+[
+  {
+    "id": "realistic-1",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/c8159dcbb96dd96f63609222f6dcadab_1769245988.mp4",
+    "thumbnailUrl": "",
+    "title": "AI Spokesperson",
+    "description": "Professional AI-generated spokesperson presenting a sleek smartphone product",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "realistic-2",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/2cbad6b36631e999192122c6e55ad31e_1769246080.mp4",
+    "thumbnailUrl": "",
+    "title": "Coffee Latte Art",
+    "description": "Close-up shot of barista creating latte art with steamed milk",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "realistic-3",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/8e3ac29bb4b417e8c6dcde8141dba227_1769245895.mp4",
+    "thumbnailUrl": "",
+    "title": "City Timelapse",
+    "description": "Time-lapse of modern city skyline at twilight with dramatic colors",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "ugc-1",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/3e3bf0cb9ee7a1653b0ba6d1569b42fd_1769246180.mp4",
+    "thumbnailUrl": "",
+    "title": "Unboxing Experience",
+    "description": "First-person POV unboxing premium headphones with genuine excitement",
+    "duration": 10,
+    "aspectRatio": "9:16"
+  },
+  {
+    "id": "ugc-2",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/d1e5a6a8971ae4810b186109d3ff4877_1769246275.mp4",
+    "thumbnailUrl": "",
+    "title": "Fitness Workout",
+    "description": "Energetic fitness workout with jumping jacks in bright modern living room",
+    "duration": 10,
+    "aspectRatio": "9:16"
+  },
+  {
+    "id": "ugc-3",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/1c564f525f03d1a86293bde7f95b8670_1769246367.mp4",
+    "thumbnailUrl": "",
+    "title": "Avocado Toast",
+    "description": "Hands preparing colorful and healthy avocado toast in sunny kitchen",
+    "duration": 10,
+    "aspectRatio": "9:16"
+  },
+  {
+    "id": "3d-1",
+    "category": "3d",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/82c87d2b1549a2c31133e12b1a2e71a8_1769247832.mp4",
+    "thumbnailUrl": "",
+    "title": "3D Headphones Showcase",
+    "description": "3D animated product showcase with wireless headphones rotating on pedestal",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "3d-2",
+    "category": "3d",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/1cf6ddbfd5373d02f57b712eeb80aa40_1769247931.mp4",
+    "thumbnailUrl": "",
+    "title": "Cute 3D Character",
+    "description": "Cute 3D animated character walking happily towards camera, Disney-Pixar style",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "3d-3",
+    "category": "3d",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/ea8b82aa5dcd26f8d0cabe0b6c1229d3_1769248031.mp4",
+    "thumbnailUrl": "",
+    "title": "3D Logo Animation",
+    "description": "3D brand logo animation with geometric shapes assembling elegantly",
+    "duration": 10,
+    "aspectRatio": "16:9"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "realistic-3",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/8e3ac29bb4b417e8c6dcde8141dba227_1769245895.mp4",
+    "prompt": "Time-lapse of modern city skyline at twilight, sleek skyscrapers with windows lighting up gradually from bottom to top, smooth traffic light trails below, dramatic sky color transition from deep blue to vibrant orange and pink, urban lifestyle, high-quality architectural cinematography",
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "realistic-1",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/c8159dcbb96dd96f63609222f6dcadab_1769245988.mp4",
+    "prompt": "Professional AI-generated spokesperson presenting a sleek smartphone product, smooth hand movements showing phone features from multiple angles, studio lighting, clean white background, 4K cinematic quality, confident and friendly presentation style",
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "realistic-2",
+    "category": "realistic",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/2cbad6b36631e999192122c6e55ad31e_1769246080.mp4",
+    "prompt": "Close-up shot of barista creating latte art, slow pour of steamed milk into coffee cup, forming beautiful heart pattern, steam rising elegantly, warm cozy café ambiance, golden hour sunlight streaming through window, shallow depth of field, cinematic food photography",
+    "aspectRatio": "16:9"
+  },
+  {
+    "id": "ugc-1",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/3e3bf0cb9ee7a1653b0ba6d1569b42fd_1769246180.mp4",
+    "prompt": "First-person POV unboxing experience, hands carefully and excitedly opening premium minimalist headphones packaging, revealing product slowly, genuine excitement and curiosity, natural bright bedroom lighting, authentic UGC style, vertical video format, TikTok aesthetic",
+    "aspectRatio": "9:16"
+  },
+  {
+    "id": "ugc-2",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/d1e5a6a8971ae4810b186109d3ff4877_1769246275.mp4",
+    "prompt": "Energetic fitness workout in bright modern living room, person doing enthusiastic jumping jacks with genuine smile, motivational workout atmosphere, athletic wear, natural sunlight streaming through large windows, high energy authentic UGC fitness content, vertical video",
+    "aspectRatio": "9:16"
+  },
+  {
+    "id": "ugc-3",
+    "category": "ugc",
+    "videoUrl": "https://tempfile.aiquickdraw.com/v/1c564f525f03d1a86293bde7f95b8670_1769246367.mp4",
+    "prompt": "Hands preparing colorful and healthy avocado toast in bright sunny kitchen, fresh ingredients, knife spreading mashed avocado, adding toppings with care, sunny morning vibe, ASMR-style food preparation, natural lighting, lifestyle content creator aesthetic, vertical video format",
+    "aspectRatio": "9:16"
+  }
+]
