@@ -1,37 +1,16 @@
 import NanoBananaVideoPage from "@/components/nanabananvideo";
 import { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = "Nano Banana to Video - Free AI Video Generator | Sora 2 & Veo 3.1";
-  const description = "Convert Nano Banana images to professional videos instantly. Support Sora 2 and Veo 3.1 Fast. Free trial, no watermark. Perfect for UGC ads and e-commerce.";
-  const keywords = [
-    "nano banana to video",
-    "nano banana video",
-    "sora 2",
-    "veo 3.1",
-    "ai video generator",
-    "free video generator",
-    "no watermark",
-    "ugc ads",
-    "tiktok video",
-    "instagram video",
-    "shopify video",
-    "faceless youtube",
-    "text to video",
-    "image to video",
-    "keyframes to video",
-    "1080p video",
-    "commercial use",
-    "video generation",
-    "ai video",
-    "nano banana edit",
-    "nano banana pro"
-  ];
+  const t = await getTranslations("Seo");
+
+  const title = t("title");
+  const description = t("description");
 
   return {
     title,
     description,
-    keywords: keywords.join(", "),
     openGraph: {
       title,
       description,
@@ -41,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "Nano Banana to Video - AI Video Generator",
+          alt: title,
         },
       ],
     },
