@@ -143,7 +143,7 @@ export default function NanoBananaHero() {
                 className="h-11 rounded-xl px-8 py-2 text-white border-2 border-primary"
               >
                 <I18nLink
-                  href="/video-generation"
+                  href="/#video-demo"
                   className="flex items-center gap-2"
                 >
                   <MousePointerClick className="w-4 h-4" />
@@ -156,7 +156,7 @@ export default function NanoBananaHero() {
                 asChild
               >
                 <I18nLink
-                  href="/nanabananvideo#gallery"
+                  href="/#gallery"
                   className="flex items-center gap-2"
                 >
                   <Images className="w-4 h-4 text-indigo-500" />
