@@ -15,23 +15,6 @@ import { getMessages } from "next-intl/server";
 export default async function NanoBananaVideoPage() {
   const messages = await getMessages();
 
-  // #region agent log
-  console.log('[NanoBananaVideoPage] Messages check:', {
-    hasNanoBananaVideo: !!messages.NanoBananaVideo,
-    hasHero: !!messages.NanoBananaVideo?.Hero,
-    hasFeatures: !!messages.NanoBananaVideo?.Features,
-    hasGallery: !!messages.NanoBananaVideo?.Gallery,
-    hasVideoDemo: !!messages.NanoBananaVideo?.VideoDemo,
-    hasUseCases: !!messages.NanoBananaVideo?.UseCases,
-    hasPricing: !!messages.NanoBananaVideo?.Pricing,
-    hasTestimonials: !!messages.NanoBananaVideo?.Testimonials,
-    hasFAQ: !!messages.NanoBananaVideo?.FAQ,
-    hasCTA: !!messages.NanoBananaVideo?.CTA,
-    messageKeys: Object.keys(messages || {}),
-  });
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'components/nanabananvideo/index.tsx:13', message: 'NanoBananaVideoPage entry', data: { hasNanoBananaVideo: !!messages.NanoBananaVideo, hasHero: !!messages.NanoBananaVideo?.Hero, hasFeatures: !!messages.NanoBananaVideo?.Features, hasVideoDemo: !!messages.NanoBananaVideo?.VideoDemo, hasUseCases: !!messages.NanoBananaVideo?.UseCases, hasPricing: !!messages.NanoBananaVideo?.Pricing, hasTestimonials: !!messages.NanoBananaVideo?.Testimonials, hasFAQ: !!messages.NanoBananaVideo?.FAQ, hasCTA: !!messages.NanoBananaVideo?.CTA, messageKeys: Object.keys(messages || {}) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'E' }) }).catch(() => { });
-  // #endregion
-
   return (
     <div className="w-full">
       <BG1 />
@@ -44,13 +27,13 @@ export default async function NanoBananaVideoPage() {
 
       {messages.NanoBananaVideo?.Features && <NanoBananaFeatures />}
 
-      {messages.NanoBananaVideo?.Gallery && <NanoBananaGallery />}
-
       <VideoGenerationDemo />
 
       <ImageGenerationDemo />
 
       {messages.NanoBananaVideo?.UseCases && <NanoBananaUseCases />}
+
+      {messages.NanoBananaVideo?.Gallery && <NanoBananaGallery />}
 
       {messages.NanoBananaVideo?.Pricing && <NanoBananaPricing />}
 

@@ -1,4 +1,3 @@
-import BuiltWithButton from "@/components/BuiltWithButton";
 import { Newsletter } from "@/components/footer/Newsletter";
 import { TwitterX } from "@/components/social-icons/icons";
 import { siteConfig } from "@/config/site";
@@ -138,8 +137,6 @@ export default async function Footer() {
                     </Link>
                   )}
                 </div>
-
-                <BuiltWithButton />
               </div>
             </div>
 

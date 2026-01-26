@@ -177,8 +177,8 @@ async function generateImage(prompt: string): Promise<string> {
     maxAttempts: 30,
   });
 
-  console.log(`   ✅ 图片生成完成: ${imageUrl}`);
-  return imageUrl;
+  console.log(`   ✅ 图片生成完成: ${imageUrl[0]}`);
+  return imageUrl[0];
 }
 
 /**
@@ -293,11 +293,14 @@ async function generateVideoImageToVideo(
   console.log(`   🖼️  参考图: ${referenceImageUrl}`);
 
   const taskId = await kieClient.generateSora2Video({
-    prompt: config.prompt,
-    imageUrls: [referenceImageUrl],
-    aspectRatio: config.aspectRatio === "16:9" ? "landscape" : "portrait",
-    nFrames: "10", // 10秒
-    removeWatermark: true,
+    model: 'sora-2-image-to-video',
+    input: {
+      prompt: config.prompt,
+      image_urls: [referenceImageUrl],
+      aspect_ratio: config.aspectRatio === "16:9" ? "landscape" : "portrait",
+      n_frames: "10", // 10秒
+      remove_watermark: true,
+    },
   });
 
   console.log(`   ✅ TaskId: ${taskId}`);
