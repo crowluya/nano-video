@@ -45,9 +45,9 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
     mode: session.mode,
     metadata: session.metadata,
   });
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:41',message:'handleCheckoutSessionCompleted entry',data:{sessionId:session.id,mode:session.mode,metadata:session.metadata},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:41', message: 'handleCheckoutSessionCompleted entry', data: { sessionId: session.id, mode: session.mode, metadata: session.metadata }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
   // #endregion
-  
+
   const userId = session.metadata?.userId;
   const planId = session.metadata?.planId;
   const priceId = session.metadata?.priceId;
@@ -55,7 +55,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
   if (!userId || !planId || !priceId) {
     console.error('Critical metadata (userId, planId, priceId) missing in checkout session:', session.id, session.metadata);
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:46',message:'Missing metadata',data:{userId,planId,priceId,metadata:session.metadata},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:46', message: 'Missing metadata', data: { userId, planId, priceId, metadata: session.metadata }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
     // #endregion
     return;
   }
@@ -100,7 +100,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
       existed,
       orderId: insertedOrder?.id,
     });
-    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:80',message:'Order creation result',data:{existed,orderId:insertedOrder?.id},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:80', message: 'Order creation result', data: { existed, orderId: insertedOrder?.id }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
     // #endregion
 
     if (existed) {
@@ -120,20 +120,20 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
       planId,
       orderId,
     });
-    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:96',message:'Upgrading credits',data:{userId,planId,orderId},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+    fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:96', message: 'Upgrading credits', data: { userId, planId, orderId }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
     // #endregion
-    
+
     try {
       await upgradeOneTimeCredits(userId, planId, orderId);
-      
+
       // #region agent log
       console.log('[handleCheckoutSessionCompleted] Credits upgraded successfully');
-      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:98',message:'Credits upgraded successfully',data:{userId,orderId},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:98', message: 'Credits upgraded successfully', data: { userId, orderId }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
       // #endregion
     } catch (error) {
       console.error(`CRITICAL: Failed to upgrade one-time credits for user ${userId}, order ${orderId}:`, error);
       // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'app/api/stripe/webhook/webhook-handlers.ts:100',message:'Failed to upgrade credits',data:{userId,orderId,error:String(error)},timestamp:Date.now(),sessionId:'debug-session',runId:'run2',hypothesisId:'H'})}).catch(()=>{});
+      fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'app/api/stripe/webhook/webhook-handlers.ts:100', message: 'Failed to upgrade credits', data: { userId, orderId, error: String(error) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run2', hypothesisId: 'H' }) }).catch(() => { });
       // #endregion
       await sendCreditUpgradeFailedEmail({ userId, orderId, planId, error });
       throw error;

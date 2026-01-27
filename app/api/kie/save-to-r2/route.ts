@@ -1,6 +1,6 @@
 /**
  * Save Kie.ai Generated Content to R2 API Route
- * 
+ *
  * POST /api/kie/save-to-r2
  * - Downloads content from kie.ai temporary storage
  * - Uploads to Cloudflare R2 for permanent storage
@@ -8,9 +8,17 @@
  */
 
 import { apiResponse } from "@/lib/api-response";
+import { getSession } from "@/lib/auth/server";
 import { serverUploadFile } from "@/lib/cloudflare/r2";
 import { generateR2Key } from "@/lib/cloudflare/r2-utils";
 import { z } from "zod";
+
+// File size limits (in bytes)
+const MAX_FILE_SIZE = {
+  image: 10 * 1024 * 1024,  // 10MB
+  video: 100 * 1024 * 1024, // 100MB
+  audio: 20 * 1024 * 1024,  // 20MB
+};
 
 const inputSchema = z.object({
   sourceUrl: z.string().url("Invalid source URL"),
@@ -21,6 +29,12 @@ const inputSchema = z.object({
 
 export async function POST(req: Request) {
   try {
+    // Check authentication
+    const session = await getSession();
+    if (!session?.user) {
+      return apiResponse.unauthorized("Authentication required");
+    }
+
     // Check R2 configuration
     if (!process.env.R2_BUCKET_NAME || !process.env.R2_PUBLIC_URL) {
       return apiResponse.serverError("Server configuration error: R2 is not configured");
@@ -43,9 +57,33 @@ export async function POST(req: Request) {
       return apiResponse.badRequest(`Failed to fetch file from source: ${response.statusText}`);
     }
 
+    // Validate content type
     const contentType = response.headers.get("content-type") || getDefaultContentType(type);
+    if (!isValidContentType(contentType, type)) {
+      return apiResponse.badRequest(`Invalid content type: ${contentType} for type: ${type}`);
+    }
+
+    // Check content length before downloading
+    const contentLength = response.headers.get("content-length");
+    if (contentLength) {
+      const fileSize = parseInt(contentLength, 10);
+      const maxSize = MAX_FILE_SIZE[type];
+      if (fileSize > maxSize) {
+        return apiResponse.badRequest(
+          `File size (${(fileSize / 1024 / 1024).toFixed(2)}MB) exceeds maximum allowed size (${(maxSize / 1024 / 1024).toFixed(0)}MB) for ${type}`
+        );
+      }
+    }
+
     const arrayBuffer = await response.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
+
+    // Verify actual file size after download
+    if (buffer.length > MAX_FILE_SIZE[type]) {
+      return apiResponse.badRequest(
+        `File size (${(buffer.length / 1024 / 1024).toFixed(2)}MB) exceeds maximum allowed size (${(MAX_FILE_SIZE[type] / 1024 / 1024).toFixed(0)}MB) for ${type}`
+      );
+    }
 
     // Determine file extension
     let extension = getExtensionFromContentType(contentType);
@@ -80,6 +118,16 @@ export async function POST(req: Request) {
     const errorMessage = error instanceof Error ? error.message : "Failed to save file to R2";
     return apiResponse.serverError(errorMessage);
   }
+}
+
+function isValidContentType(contentType: string, type: "image" | "video" | "audio"): boolean {
+  const validTypes: Record<string, string[]> = {
+    image: ["image/png", "image/jpeg", "image/jpg", "image/webp", "image/gif"],
+    video: ["video/mp4", "video/webm", "video/quicktime"],
+    audio: ["audio/mpeg", "audio/mp3", "audio/wav", "audio/ogg"],
+  };
+
+  return validTypes[type]?.some(valid => contentType.toLowerCase().includes(valid)) || false;
 }
 
 function getDefaultContentType(type: "image" | "video" | "audio"): string {

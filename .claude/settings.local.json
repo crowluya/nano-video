@@ -52,7 +52,10 @@
       "Bash(findstr:*)",
       "Bash(pnpm exec next lint:*)",
       "Bash(pnpm build:*)",
-      "Bash(tee:*)"
+      "Bash(tee:*)",
+      "Bash(git pull:*)",
+      "Bash(pnpm run lint)",
+      "WebSearch"
     ]
   }
 }
