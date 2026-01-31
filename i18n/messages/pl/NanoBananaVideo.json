@@ -1,0 +1,457 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "NEW",
+      "text": "Darmowy Generator Wideo AI - Bez Znaku Wodnego",
+      "href": "#video-demo"
+    },
+    "title": "Nano Banana to Video - Generator Wideo AI z Sora 2 & Veo 3.1",
+    "description": "Konwertuj obrazy Nano Banana na profesjonalne wideo natychmiast. Obsługa Sora 2 i Veo 3.1 Fast. Darmowy próbny, bez znaku wodnego. Idealny do reklam UGC i e-commerce.",
+    "getStarted": "Rozpocznij Tworzenie",
+    "getStartedLink": "#video-demo"
+  },
+  "Features": {
+    "badge": {
+      "label": "FUNKCJE",
+      "text": "Profesjonalna Generacja Wideo AI"
+    },
+    "title": "Najlepszy Konwerter Nano Banana na Wideo",
+    "description": "Przekształć swoje obrazy Nano Banana w oszałamiające wideo z najnowszymi modelami AI. Szybko, za darmo i bez znaku wodnego.",
+    "items": [
+      {
+        "title": "Konwersja Nano Banana na Wideo",
+        "description": "Konwertuj swoje obrazy Nano Banana na profesjonalne wideo w kilka minut z zaawansowaną technologią AI.",
+        "details": [
+          {
+            "title": "Wiele Metod Wejściowych",
+            "description": "Obsługa tekst do wideo, obraz do wideo i klatki kluczowe do wideo."
+          },
+          {
+            "title": "Wysoka Jakość Wyjściowa",
+            "description": "Generuj wideo 1080p z jakością profesjonalną, idealne do użytku komercyjnego."
+          },
+          {
+            "title": "Szybka Generacja",
+            "description": "Twórz wideo w 3-10 minut w zależności od modelu i złożoności."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-video-conversion.webp"
+        ]
+      },
+      {
+        "title": "Wiele Modeli AI (Sora 2 & Veo 3.1 Fast)",
+        "description": "Wybierz spośród najnowszych modeli generowania wideo AI, w tym OpenAI Sora 2 i Google Veo 3.1 Fast.",
+        "details": [
+          {
+            "title": "Sora 2",
+            "description": "Najnowszy model generowania wideo OpenAI z wyjątkową jakością i realizmem."
+          },
+          {
+            "title": "Veo 3.1 Fast",
+            "description": "Najszybszy model generowania wideo Google z wieloma trybami generowania."
+          },
+          {
+            "title": "Porównanie Modeli",
+            "description": "Porównaj Nano Banana vs Sora vs Veo 3, aby wybrać najlepszy model dla swoich potrzeb."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-ai-models.webp"
+        ]
+      },
+      {
+        "title": "Darmowy i Bez Znaku Wodnego",
+        "description": "Rozpocznij tworzenie wideo za darmo bez żadnego znaku wodnego. Idealne do testowania i małych projektów.",
+        "details": [
+          {
+            "title": "Darmowe Punkty Próbne",
+            "description": "Otrzymaj darmowe punkty, aby przetestować generowanie wideo bez żadnej płatności."
+          },
+          {
+            "title": "Bez Znaku Wodnego",
+            "description": "Wszystkie wygenerowane wideo są bez znaku wodnego do użytku profesjonalnego."
+          },
+          {
+            "title": "Elastyczne Ceny",
+            "description": "Płać według użycia lub subskrybuj dla nieograniczonego generowania wideo."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-free-trial.webp"
+        ]
+      },
+      {
+        "title": "UGC i Użytek Komercyjny",
+        "description": "Idealny do tworzenia reklam UGC dla TikTok, Instagram i sklepów Shopify.",
+        "details": [
+          {
+            "title": "Reklamy TikTok UGC",
+            "description": "Twórz angażujące reklamy TikTok z obrazów Nano Banana w kilka minut."
+          },
+          {
+            "title": "Instagram i Shopify",
+            "description": "Generuj wideo produktów dla rolek Instagram i sklepów Shopify."
+          },
+          {
+            "title": "Licencja Komercyjna",
+            "description": "Wszystkie wideo posiadają prawa do użytku komercyjnego dla Twojej firmy."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-commercial-use.webp"
+        ]
+      },
+      {
+        "title": "Klatki Kluczowe na Wideo",
+        "description": "Twórz kinematograficzne wideo z wielu klatek kluczowych z płynnymi przejściami.",
+        "details": [
+          {
+            "title": "Referencja do Wideo",
+            "description": "Użyj 2-3 obrazów referencyjnych, aby prowadzić proces generowania wideo."
+          },
+          {
+            "title": "Płynne Przejścia",
+            "description": "AI generuje płynne przejścia między klatkami kluczowymi automatycznie."
+          },
+          {
+            "title": "Jakość Kinematograficzna",
+            "description": "Idealne do tworzenia wideo przypominających filmy ze scenorysów."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-keyframes.webp"
+        ]
+      },
+      {
+        "title": "Szybka Generacja (3-10 minut)",
+        "description": "Generuj profesjonalne wideo w zaledwie 3-10 minut w zależności od modelu i złożoności.",
+        "details": [
+          {
+            "title": "Szybka Realizacja",
+            "description": "Większość wideo jest gotowa w 3-5 minut z Veo 3.1 Fast."
+          },
+          {
+            "title": "Postęp w Czasie Rzeczywistym",
+            "description": "Śledź postęp generowania z aktualizacjami statusu na żywo."
+          },
+          {
+            "title": "Generacja Zbiorcza",
+            "description": "Generuj wiele wideo jednocześnie, aby zaoszczędzić czas."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/brand/feature-fast-generation.webp"
+        ]
+      }
+    ]
+  },
+  "UseCases": {
+    "badge": {
+      "label": "PRZYPADKI UŻYCIA",
+      "text": "Przekształć Swoje Tworzenie Treści"
+    },
+    "title": "Idealny dla Każdego Twórcy",
+    "description": "Niezależnie od tego, czy tworzysz reklamy UGC, bez twarzy wideo YouTube, czy treści e-commerce, Nano Banana to Video ma Cię pokryte.",
+    "cases": [
+      {
+        "title": "Reklamy UGC (TikTok, Instagram, Shopify)",
+        "description": "Create engaging user-generated content style ads for TikTok, Instagram, and Shopify stores. Perfect for e-commerce brands looking to scale their video ad production without expensive production costs.",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ugc-ads.webp",
+        "icon": "Video"
+      },
+      {
+        "title": "Wideo YouTube Bez Twarzy",
+        "description": "Generuj wideo YouTube bez twarzy z obrazów Nano Banana. Idealne do treści edukacyjnych, recenzji produktów i kanałów storytellingowych. Nie potrzebujesz sprzętu filmowego ani aktorów.",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-youtube.webp",
+        "icon": "Youtube"
+      },
+      {
+        "title": "Wideo Produktów E-commerce",
+        "description": "Przekształć obrazy produktów w dynamiczne wideo produktów dla swojego sklepu e-commerce. Zwiększ współczynnik konwersji z profesjonalnymi demonstracjami produktów i wideo lifestyle.",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ecommerce.webp",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Wideo Kinematograficzne (Klatki Kluczowe)",
+        "description": "Twórz wideo kinematograficzne z wielu klatek kluczowych. Idealne dla filmowców, animatorów i twórców treści, którzy chcą wizualizować scenorysy lub tworzyć wideo koncepcyjne.",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-cinematic.webp",
+        "icon": "Film"
+      },
+      {
+        "title": "Treści TikTok",
+        "description": "Generate viral TikTok content from Nano Banana images. Perfect for creators looking to scale their content production and maintain consistent posting schedules.",
+        "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-tiktok.webp",
+        "icon": "Smartphone"
+      }
+    ]
+  },
+  "Testimonials": {
+    "badge": {
+      "label": "OPINIE"
+    },
+    "title": "Ukochany Przez Twórców na Całym Świecie",
+    "description": "Dołącz do tysięcy twórców, którzy codziennie używają Nano Banana to Video"
+  },
+  "FAQ": {
+    "title": "Często Zadawane Pytania",
+    "description": "Wszystko, co musisz wiedzieć o Nano Banana to Video",
+    "items": [
+      {
+        "question": "How to convert Nano Banana to video?",
+        "answer": "Converting Nano Banana to video is simple: 1) Select your preferred AI model (Sora 2 or Veo 3.1), 2) Choose your generation mode (text-to-video or image-to-video), 3) Upload your Nano Banana image if using image-to-video, 4) Enter your prompt describing the video motion, 5) Click generate and wait 3-10 minutes for your video to be ready."
+      },
+      {
+        "question": "Is Nano Banana to video free?",
+        "answer": "Yes! We offer free trial credits so you can test the video generation without any payment. All generated videos are watermark-free. After using your free credits, you can choose to pay as you go or subscribe for unlimited video generation."
+      },
+      {
+        "question": "How to remove watermark from Nano Banana videos?",
+        "answer": "All videos generated on our platform are automatically watermark-free! You don't need to do anything special. Unlike other platforms, we don't add watermarks to your videos, so they're ready for professional and commercial use immediately."
+      },
+      {
+        "question": "Nano Banana vs Sora vs Veo 3 - which is better?",
+        "answer": "Each model has its strengths: Sora 2 excels at realistic motion and high-quality output, perfect for cinematic videos. Veo 3.1 Fast is the fastest option with multiple generation modes, ideal for quick turnaround. Nano Banana Edit is great for image editing before video generation. We recommend trying all models with your free credits to see which fits your needs best."
+      },
+      {
+        "question": "Can I use Nano Banana videos commercially?",
+        "answer": "Yes! All videos generated on our platform come with commercial use rights. You can use them for UGC ads, TikTok content, YouTube videos, e-commerce stores, and any other commercial purposes without any restrictions."
+      },
+      {
+        "question": "How long does it take to generate a video?",
+        "answer": "Video generation typically takes 3-10 minutes depending on the model and complexity. Veo 3.1 Fast is the quickest (3-5 minutes), while Sora 2 may take 5-10 minutes for higher quality results. You can track the progress in real-time with our live status updates."
+      },
+      {
+        "question": "What video formats are supported?",
+        "answer": "All videos are generated in standard MP4 format with 1080p resolution. This format is compatible with all major platforms including TikTok, Instagram, YouTube, Shopify, and more. The videos are optimized for web streaming and download."
+      },
+      {
+        "question": "Do I need to create an account to use it?",
+        "answer": "You can try the video generation without an account, but creating a free account allows you to save your videos, track your generation history, and manage your credits more easily. Account creation is quick and only requires an email or social login."
+      },
+      {
+        "question": "How to get 1080p video from Nano Banana?",
+        "answer": "All videos generated on our platform are automatically created in 1080p resolution! Simply generate your video as normal using either Sora 2 or Veo 3.1, and the output will be in full HD 1080p quality, perfect for professional use."
+      },
+      {
+        "question": "What are the best prompts for video generation?",
+        "answer": "The best prompts are detailed and specific. Describe the motion you want, camera movements, lighting, and atmosphere. For example: 'Camera slowly pans across a sunset beach while waves gently crash on the shore' works better than just 'beach video'. Include details about speed (slow, fast), direction (left to right, zoom in), and mood (calm, energetic)."
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Przekształć Obrazy Nano Banana Pro na Wideo Teraz",
+    "description": "Konwertuj obrazy Nano Banana Pro na wideo z najbardziej potężnym Sora 2 i Veo 3.1. Darmowy próbny, nie jest wymagana karta kredytowa.",
+    "button": "Wypróbuj Za Darmo Teraz",
+    "trustText": "Zaufany przez twórców na całym świecie",
+    "features": {
+      "deploy": "🎬 Natychmiastowa Generacja",
+      "production": "✨ Bez Znaku Wodnego",
+      "updates": "🚀 Szybkie Przetwarzanie",
+      "i18n": "💎 Użytek Komercyjny"
+    }
+  },
+  "VideoDemo": {
+    "title": "nano banana video generator",
+    "loginPrompt": "Zaloguj się, aby zapisać swoje wideo i uzyskać dostęp do więcej funkcji",
+    "loginButton": "Zaloguj się"
+  },
+  "PromptGenerator": {
+    "title": "Generator Promptów",
+    "description": "Generuj wyższej jakości prompty wideo przez wielokrotne czaty",
+    "clear": "Wyczyść",
+    "modelLabel": "Model",
+    "freeUserHint": "Darmowi użytkownicy mogą używać tylko Gemini 2.5 Flash Lite. Ulepsz, aby używać DeepSeek.",
+    "previewHint": "Możesz podglądać tę stronę. Wysyłanie wiadomości wymaga logowania.",
+    "emptyState": "Opisz swój cel (np. ruch kamery, styl, tempo, działanie tematu). Wygeneruję dla ciebie silniejszy prompt.",
+    "inputPlaceholder": "Opisz swój pożądany efekt wideo / cel promptu...",
+    "reasoningTitle": "Rozumowanie",
+    "loginRequired": "Proszę zalogować się, aby użyć Generatora Promptów",
+    "defaultError": "Nie udało się wygenerować odpowiedzi"
+  },
+  "VideoGeneration": {
+    "title": "nano banana video generator",
+    "subtitle": "Generuj wideo używając modeli AI Sora 2 i Veo 3.1",
+    "costPerGeneration": "Koszt na Generację",
+    "selectModel": "Wybierz model",
+    "availableCredits": "Dostępne",
+    "generationType": "Typ Generacji",
+    "prompt": "Prompt",
+    "promptPlaceholder": "Opisz wideo, które chcesz wygenerować...",
+    "promptDescription": "Prompt tekstowy opisujący pożądany ruch wideo",
+    "imageUpload": "Przesyłanie Obrazu",
+    "referenceImages": "Obrazy Referencyjne",
+    "imagesRequired": "obrazów wymaganych",
+    "parameters": "Parametry",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "Format Obrazu",
+        "portrait": "9:16",
+        "landscape": "16:9",
+        "help": "Ten parametr definiuje format obrazu wideo"
+      },
+      "resolution": {
+        "label": "Rozdzielczość",
+        "help": "Jakość rozdzielczości wygenerowanego wideo"
+      },
+      "duration": {
+        "label": "Czas trwania",
+        "help": "Liczba klatek do wygenerowania"
+      },
+      "removeWatermark": {
+        "title": "Usuń Znak Wodny",
+        "description": "Gdy włączone, usuwa znaki wodne z wygenerowanego wideo"
+      }
+    },
+    "insufficientCredits": "Niewystarczające punkty. Wymagane: {required}, Dostępne: {available}.",
+    "getMoreCredits": "Uzyskaj więcej punktów",
+    "generating": "Generowanie...",
+    "generate": "Generuj",
+    "storyboardPrompt": {
+      "title": "Generator Promptów Scenariusza",
+      "description": "Generacja promptów kinematograficznych z AI z twoich obrazów",
+      "generateFast": "Generuj (Szybko)",
+      "generateMaster": "Generuj (Master)",
+      "generating": "Generowanie scenariusza...",
+      "upgradeRequired": "Ulepsz, aby użyć trybu Master",
+      "noImages": "Najpierw prześlij obraz(y)",
+      "singleImageRequired": "Prześlij 1 obraz dla Sora 2",
+      "dualImageRequired": "Prześlij 2 obrazy dla Veo 3.1",
+      "result": "Wygenerowany Prompt Scenariusza",
+      "applyToPrompt": "Zastosuj do Promptu",
+      "fast": "Szybko",
+      "master": "Master"
+    }
+  },
+  "Pricing": {
+    "badge": {
+      "label": "CENNIK",
+      "text": "Elastyczne Plany dla Każdego Twórcy"
+    },
+    "title": "Wybierz Swój Plan Generowania Wideo",
+    "description": "Rozpocznij tworzenie profesjonalnych wideo z naszymi elastycznymi planami cenowymi. Dostępny darmowy próbny, nie jest wymagana karta kredytowa.",
+    "annual": "Roczny",
+    "monthly": "Miesięczny",
+    "onetime": "Jednorazowy",
+    "saveTip": "Oszczędź 20%"
+  },
+  "ImageGeneration": {
+    "title": "nano banana image generator",
+    "subtitle": "Generuj obrazy używając modeli AI Nano Banana, Nano Banana Pro i Midjourney",
+    "costPerGeneration": "Koszt na Generację",
+    "selectModel": "Wybierz model",
+    "availableCredits": "Dostępne",
+    "generationType": "Typ Generacji",
+    "textToImage": "Tekst do Obrazu",
+    "imageToImage": "Obraz do Obrazu",
+    "prompt": "Prompt",
+    "promptPlaceholder": "Opisz obraz, który chcesz wygenerować...",
+    "promptDescription": "Prompt tekstowy opisujący pożądany obraz",
+    "referenceImage": "Obraz Referencyjny",
+    "parameters": "Parametry",
+    "parameterPanel": {
+      "aspectRatio": {
+        "label": "Format Obrazu",
+        "help": "Format obrazu wygenerowanego obrazu (1:1 kwadrat, 16:9 poziomy, 9:16 pionowy)"
+      },
+      "resolution": {
+        "label": "Rozdzielczość",
+        "help": "Rozdzielczość wyjściowa: 1K/2K (30 punktów), 4K (60 punktów)"
+      },
+      "speed": {
+        "label": "Prędkość",
+        "help": "Prędkość generowania Midjourney (tryb szybki domyślnie)"
+      }
+    },
+    "insufficientCredits": "Niewystarczające punkty. Wymagane: {required}, Dostępne: {available}.",
+    "getMoreCredits": "Uzyskaj więcej punktów",
+    "generating": "Generowanie...",
+    "pleaseWait": "Proszę czekać, podczas gdy twój obraz jest generowany...",
+    "generate": "Punkty",
+    "download": "Pobierz",
+    "previewPlaceholder": "Twój wygenerowany obraz pojawi się tutaj"
+  },
+  "ImageDemo": {
+    "title": "nano banana image generator",
+    "loginPrompt": "Zaloguj się, aby zapisać swoje obrazy i uzyskać dostęp do więcej funkcji",
+    "loginButton": "Zaloguj się"
+  },
+  "Gallery": {
+    "badge": {
+      "label": "JAKOŚĆ",
+      "text": "Galeria Jakości Wideo"
+    },
+    "title": "Oszałamiające Wideo Wygenerowane przez AI",
+    "description": "Odkryj naszą galerię wideo stworzoną z Sora 2 i Veo 3.1",
+    "tabs": {
+      "realistic": "Realistyczny",
+      "ugc": "Styl UGC",
+      "3d": "Animacja 3D"
+    },
+    "categories": {
+      "realistic": {
+        "title": "Wideo w Stylu Realistycznym",
+        "description": "Profesjonalne wideo realistyczne wygenerowane przez AI",
+        "videos": [
+          {
+            "id": "realistic-1",
+            "title": "Rzecznik AI",
+            "description": "Profesjonalny rzecznik wygenerowany przez AI prezentujący produkt smartfona"
+          },
+          {
+            "id": "realistic-2",
+            "title": "Latte Art Kawowy",
+            "description": "Zbliżenie baristy tworzącego latte art ze spienionym mlekiem"
+          },
+          {
+            "id": "realistic-3",
+            "title": "Timelapse Miasta",
+            "description": "Timelapse nowoczesnej linii miasta o zmierzchu z dramatycznymi kolorami"
+          }
+        ]
+      },
+      "ugc": {
+        "title": "Wideo w Stylu UGC",
+        "description": "Autentyczne wideo w stylu treści generowanych przez użytkowników dla mediów społecznościowych",
+        "videos": [
+          {
+            "id": "ugc-1",
+            "title": "Doświadczenie Odpakowania",
+            "description": "POV z pierwszej osoby odpakowywania premium słuchawek z autentycznym entuzjazmem"
+          },
+          {
+            "id": "ugc-2",
+            "title": "Trening Fitness",
+            "description": "Energetyczny trening fitness z jumping jacks w jasnym pokoju dziennym"
+          },
+          {
+            "id": "ugc-3",
+            "title": "Toast Awokado",
+            "description": "Ręce przygotowujące kolorowy zdrowy toast awokado w słonecznej kuchni"
+          }
+        ]
+      },
+      "3d": {
+        "title": "Wideo Animacji 3D",
+        "description": "Kreatywne wideo animowane 3D z jakością w stylu Pixara",
+        "videos": [
+          {
+            "id": "3d-1",
+            "title": "Prezentacja Słuchawek 3D",
+            "description": "Prezentacja produktu animowanego 3D z obrotowymi słuchawkami bezprzewodowymi"
+          },
+          {
+            "id": "3d-2",
+            "title": "Słodka Postać 3D",
+            "description": "Słodka animowana postać 3D spacerująca szczęśliwie, styl Disney-Pixar"
+          },
+          {
+            "id": "3d-3",
+            "title": "Animacja Logo 3D",
+            "description": "Animacja logo marki 3D z montażem kształtów geometrycznych"
+          }
+        ]
+      }
+    }
+  }
+}

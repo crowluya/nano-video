@@ -55,7 +55,9 @@
       "Bash(tee:*)",
       "Bash(git pull:*)",
       "Bash(pnpm run lint)",
-      "WebSearch"
+      "WebSearch",
+      "Skill(ralph-loop:ralph-loop)",
+      "Skill(superpowers:brainstorming)"
     ]
   }
 }

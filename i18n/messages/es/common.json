@@ -1,0 +1,335 @@
+{
+  "LanguageDetection": {
+    "title": "Sugerencia de Idioma",
+    "description": "Notamos que el idioma de tu navegador difiere del idioma actual del sitio. Puedes cambiar de idioma en cualquier momento.",
+    "countdown": "Cerrando en {countdown} segundos",
+    "switchTo": "Cambiar a"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "Características",
+        "href": "/#features"
+      },
+      {
+        "name": "Generador de Video",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "Generador de Prompts",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Generador de Imágenes",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "Precios",
+        "href": "/#pricing"
+      },
+      {
+        "name": "Casos de Uso",
+        "href": "/#use-cases"
+      },
+      {
+        "name": "Preguntas Frecuentes",
+        "href": "/#faq"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Copyright © {year} {name} Todos los derechos reservados.",
+    "About": "Acerca de",
+    "PrivacyPolicy": "Política de Privacidad",
+    "TermsOfService": "Términos de Servicio",
+    "RefundPolicy": "Política de Reembolso",
+    "Newsletter": {
+      "title": "Suscríbete a nuestro boletín",
+      "description": "Mantente actualizado con nuestras últimas noticias.",
+      "subscribe": {
+        "invalidEmail": "Por favor ingresa una dirección de correo válida",
+        "defaultErrorMessage": "La suscripción falló. Por favor intenta de nuevo más tarde",
+        "successMessage": "¡Suscripción exitosa!",
+        "multipleSubmissions": "Demasiadas solicitudes. Por favor intenta de nuevo mañana"
+      },
+      "unsubscribe": {
+        "title": "Cancelar Suscripción del Boletín",
+        "success": "Has cancelado tu suscripción a los boletines de Nano Banana Video exitosamente.",
+        "emailPrefix": "Correo:",
+        "regretMessage": "Puedes volver a suscribirte en cualquier momento para recibir las últimas actualizaciones y tutoriales de Nano Banana Video.",
+        "errorGeneric": "Ocurrió un error al procesar tu solicitud de cancelación",
+        "errorNoToken": "No se proporcionó token de cancelación",
+        "errorMessage": "Asegúrate de estar usando el enlace de cancelación correcto. Si el problema persiste, contacta a nuestro equipo de soporte para obtener ayuda.",
+        "contactPrefix": "Contáctanos en:",
+        "contactPrefixSuccess": "Si tienes alguna pregunta, no dudes en contactarnos en:",
+        "backToHome": "Volver al Inicio",
+        "invalidEmail": "Dirección de correo inválida",
+        "notInNewsletter": "Este correo no está en nuestra lista de suscriptores",
+        "confirmTitle": "Confirmar Cancelación",
+        "confirmMessage": "¿Estás seguro de que deseas cancelar tu suscripción a nuestro boletín? Ya no recibirás actualizaciones sobre nuevas características y contenido.",
+        "confirmButton": "Sí, Cancelar Suscripción",
+        "cancelButton": "Cancelar",
+        "processing": "Procesando...",
+        "finalWarning": "Esta acción no se puede deshacer. Siempre puedes volver a suscribirte más tarde.",
+        "errorInvalidToken": "Enlace de cancelación inválido. El enlace puede estar corrupto o expirado."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "Productos",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "Características"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "Precios"
+            },
+            {
+              "href": "/blog",
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "title": "Soporte",
+          "links": [
+            {
+              "name": "Documentos",
+              "href": "/#faq",
+              "target": ""
+            },
+            {
+              "name": "Precios",
+              "href": "/#pricing"
+            },
+            {
+              "href": "mailto:contact@nanobananavideo.net",
+              "name": "Contáctanos"
+            }
+          ]
+        },
+        {
+          "title": "Idiomas",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "Estudio Creativo con IA",
+    "description": "Crea imágenes, videos y música impresionantes con IA. Genera contenido con Nano Banana, Midjourney, Sora 2, Veo 3.1 y Suno, todo en un solo lugar."
+  },
+  "Seo": {
+    "title": "Nano Banana Video - Generador de Video con IA | Sora 2 y Veo 3.1",
+    "description": "Convierte imágenes de Nano Banana a videos en 3 minutos. Soporte para Sora 2, Veo 3.1 Fast, Kling. Prueba gratuita, sin marca de agua. Perfecto para anuncios de TikTok, YouTube Shorts, videos de e-commerce."
+  },
+  "Login": {
+    "title": "Bienvenido de vuelta",
+    "description": "Inicia sesión con los siguientes métodos",
+    "Toast": {
+      "Email": {
+        "successTitle": "¡Enlace mágico enviado!",
+        "successDescription": "Por favor revisa tu correo para el enlace de inicio de sesión.",
+        "errorTitle": "Error",
+        "errorDescription": "Falló el envío del enlace mágico. Por favor intenta de nuevo."
+      },
+      "Google": {
+        "errorTitle": "Error",
+        "errorDescription": "Falló el inicio de sesión con Google. Por favor intenta de nuevo."
+      },
+      "Github": {
+        "errorTitle": "Error",
+        "errorDescription": "Falló el inicio de sesión con Github. Por favor intenta de nuevo."
+      }
+    },
+    "signInMethods": {
+      "or": "O continúa con",
+      "signInWithGoogle": "Continuar con Google",
+      "signInWithGithub": "Continuar con Github",
+      "signInWithEmail": "Continuar con Correo"
+    },
+    "Button": {
+      "signIn": "Iniciar Sesión",
+      "signOut": "Cerrar Sesión"
+    },
+    "UserMenus": [
+      {
+        "name": "Generador de Imágenes",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Generador de Video",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Configuración",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "Mis Pedidos",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Suscripción",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "Historial de Créditos",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "Resumen",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "Usuarios",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "Pedidos",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Precios",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "Blogs",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "Archivos R2",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "Publicaciones del Blog",
+    "description": "Información sobre el ecosistema de Next.js y actualizaciones de la plantilla NEXTY.DEV.",
+    "emptyState": {
+      "title": "Sin publicaciones",
+      "description": "Estamos creando contenido emocionante, ¡mantente atento!"
+    },
+    "loadMorePostsFailed": "Falló la carga de más publicaciones",
+    "loadMorePosts": "Cargando más publicaciones...",
+    "filterPostsFailed": "Falló la carga de publicaciones",
+    "noPostsFoundForThisTag": "No se encontraron publicaciones con esta etiqueta",
+    "reachedTheEnd": "Has llegado al final de todas las publicaciones",
+    "BlogDetail": {
+      "featured": "Publicación Destacada",
+      "viewCount": "{count} vistas",
+      "accessRestricted": "Acceso Restringido",
+      "unauthorized": "Este artículo solo está disponible para usuarios registrados",
+      "premium": "Contenido Premium",
+      "premiumContent": "Este artículo es exclusivo para suscriptores",
+      "signIn": "Iniciar Sesión",
+      "upgrade": "Actualizar",
+      "backToBlogs": "Volver a la Lista de Blogs",
+      "notFound": "Artículo No Encontrado"
+    }
+  },
+  "About": {
+    "title": "Acerca de",
+    "description": "Sobre el sitio"
+  },
+  "AIDemo": {
+    "title": "Demostración de Capacidades de IA",
+    "description": "Esta página muestra características no públicas y es exclusiva para usuarios que han comprado la plantilla. Está diseñada para aprendizaje y pruebas del proceso de invocación de modelos de IA. Para usarla, simplemente inicia la plantilla localmente e ingresa tu clave de API en las variables de entorno. La demostración de IA incluye funcionalidades como conversaciones de una sola vuelta y múltiples vueltas, texto a imagen, imagen a imagen, y conversiones de texto/imagen a video. A través de esta demostración, puedes comprender rápidamente el flujo de trabajo de invocación de IA, acelerando tu viaje en la construcción de aplicaciones de IA.",
+    "metaDescription": "Esta página muestra capacidades de IA incluyendo conversaciones de una sola vuelta y múltiples vueltas, texto a imagen, imagen a imagen, y conversiones de texto/imagen a video."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - Acceso Denegado",
+      "description": "No tienes permiso para acceder a esta página.",
+      "button": {
+        "name": "Volver a la página de inicio",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "Error de Redirección",
+      "description": "Ocurrió un error durante el proceso de autenticación.",
+      "goToHome": "Ir al Inicio",
+      "goToLogin": "Ir al Inicio de Sesión",
+      "invalid_params": {
+        "title": "Parámetros Inválidos",
+        "description": "Faltan parámetros requeridos en la solicitud."
+      },
+      "invalid_redirect": {
+        "title": "URL de Redirección Inválida",
+        "description": "La URL de redirección proporcionada no está permitida."
+      },
+      "token_expired": {
+        "title": "Token Expirado",
+        "description": "Tu token de verificación ha expirado. Por favor intenta iniciar sesión de nuevo."
+      },
+      "invalid_token": {
+        "title": "Token Inválido",
+        "description": "El token de verificación proporcionado es inválido."
+      },
+      "invalid_link_or_expired": {
+        "title": "Enlace Inválido o Expirado",
+        "description": "El enlace de verificación de correo es inválido o ha expirado."
+      },
+      "server_error": {
+        "title": "Error del Servidor",
+        "description": "Ocurrió un error inesperado en el servidor durante la autenticación."
+      },
+      "unknown": {
+        "title": "Error de Autenticación",
+        "description": "Ocurrió un error desconocido durante el proceso de autenticación."
+      }
+    },
+    "StripeError": {
+      "title": "Error del Portal de Pago",
+      "description": "Ocurrió un error con tu información de pago.",
+      "goToHome": "Ir al Inicio",
+      "goToDashboard": "Ir al Panel"
+    }
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "Hero": {
+    "badge": {
+      "label": "NEW",
+      "text": "Darmowy Generator Wideo AI - Bez Znaku Wodnego",
+      "href": "#video-demo"
+    },
+    "title": "Nano Banana to Video - Generator Wideo AI z Sora 2 & Veo 3.1",
+    "description": "Konwertuj obrazy Nano Banana na profesjonalne wideo natychmiast. Obsługa Sora 2 i Veo 3.1 Fast. Darmowy próbny, bez znaku wodnego. Idealny do reklam UGC i e-commerce.",
+    "getStarted": "Rozpocznij Tworzenie",
+    "getStartedLink": "#video-demo"
+  },
+  "Features": {
+    "badge": {
+      "label": "FUNKCJE",
+      "text": "Profesjonalna Generacja Wideo AI"
+    },
+    "title": "Najlepszy Konwerter Nano Banana na Wideo",
+    "description": "Przekształć swoje obrazy Nano Banana w oszałamiające wideo z najnowszymi modelami AI. Szybko, za darmo i bez znaku wodnego.",
+    "items": [
+      {
+        "title": "3 Powerful Boilerplates",
+        "description": "Purchase once, get 3 powerful boilerplates.",
+        "details": [
+          {
+            "title": "Boilerplate 1: Nexty",
+            "description": "Universal SaaS boilerplate with every feature you need.",
+            "href": "https://demo.nexty.dev"
+          },
+          {
+            "title": "Boilerplate 2: nexty-flux-kontext",
+            "description": "AI Image Generation SaaS boilerplate.",
+            "href": "https://flux-kontext.nexty.dev"
+          },
+          {
+            "title": "Boilerplate 3: nexty-directory",
+            "description": "Directory & listing website boilerplate.",
+            "href": "https://dofollow.tools"
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/template1.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/template2.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/template3.webp"
+        ]
+      },
+      {
+        "title": "Authentication",
+        "description": "Integrated Better Auth with multiple sign-in options.",
+        "details": [
+          {
+            "title": "Social Sign-in",
+            "description": "Google, GitHub, and more."
+          },
+          {
+            "title": "Magic Links",
+            "description": "Email verification with magic links."
+          },
+          {
+            "title": "Bot Protection",
+            "description": "Protect your app from bots with Cloudflare Turnstile."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/login.png"
+        ]
+      },
+      {
+        "title": "Database",
+        "description": "Integrated Drizzle ORM with multiple database options, such as Supabase, Neon, and Self-hosted PostgreSQL.",
+        "details": [
+          {
+            "title": "One Line Configuration",
+            "description": "Just fill in DATABASE_URL, and the best configuration will be automatically completed."
+          },
+          {
+            "title": "Comprehensive Built-in Tables",
+            "description": "Comprehensive set of tables for user management, pricing plans, orders, content management, and more."
+          },
+          {
+            "title": "Multiple Database Options",
+            "description": "Supabase, Neon, and Self-hosted PostgreSQL."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/database-config.webp",
+          "https://cdn.nanobananavideo.net/website/images/features/database-tables.webp"
+        ]
+      },
+      {
+        "title": "Payment System",
+        "description": "Complete billing solution with Stripe Checkout and Stripe's Billing Portal.",
+        "details": [
+          {
+            "title": "All Payment Methods",
+            "description": "Nexty supports monthly and annual subscriptions, and one-time payments."
+          },
+          {
+            "title": "Usage-based Billing",
+            "description": "Nexty supports usage-based billing for apps that need to charge users based on their usage."
+          },
+          {
+            "title": "Smart Admin Management",
+            "description": "Nexty's pricing plans are managed through the admin dashboard, bound to Stripe Price IDs for intelligent, secure, and real-time preview capabilities."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/payment-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/payment-2.png"
+        ]
+      },
+      {
+        "title": "AI Capabilities",
+        "description": "Complete AI integration toolkit with interactive demos, multi-provider support, and ready-to-deploy AI image generation website template.",
+        "details": [
+          {
+            "title": "AI Demo Hub",
+            "description": "Nexty includes built-in demos for chat, text-to-image, image-to-image, and video generation to help developers learn AI workflows and test models quickly."
+          },
+          {
+            "title": "Universal AI Provider Support",
+            "description": "Nexty offers AI SDK integration supporting GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter, and Replicate for maximum flexibility."
+          },
+          {
+            "title": "Bonus:  AI Image Generation Website",
+            "description": "Nexty paid users receive a complete Flux Kontext AI image generation website template for rapid deployment of AI art platforms."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/ai-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/ai-2.png"
+        ]
+      },
+      {
+        "title": "CMS",
+        "description": "Advanced CMS going beyond basic content management with paywall protection, AI translation, and multi-purpose publishing capabilities.",
+        "details": [
+          {
+            "title": "Content Access Control",
+            "description": "Nexty's CMS supports public, logged-in users, and subscriber-only content with paywall protection for monetized content sites."
+          },
+          {
+            "title": "AI-Powered Translation",
+            "description": "Nexty's CMS includes built-in AI translation for multilingual content creation, plus duplicate feature for efficient content production workflows."
+          },
+          {
+            "title": "Multi-Purpose Publishing",
+            "description": "Nexty's CMS enables both free blog sites and paid content platforms with advanced status management (draft, published, archived)."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/cms-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-4.png",
+          "https://cdn.nanobananavideo.net/website/images/features/cms-5.png"
+        ]
+      },
+      {
+        "title": "File Storage",
+        "description": "Enterprise-grade file management powered by Cloudflare R2 with admin dashboard, automatic CDN distribution, and optimized upload workflows.",
+        "details": [
+          {
+            "title": "Admin File Management",
+            "description": "Nexty provides a dedicated admin dashboard for comprehensive file management with upload, delete, and organization capabilities."
+          },
+          {
+            "title": "Cloudflare R2 Integration",
+            "description": "Nexty leverages Cloudflare R2 for cost-effective, high-performance file storage with automatic CDN distribution worldwide."
+          },
+          {
+            "title": "Optimized Upload Experience",
+            "description": "Nexty features drag-and-drop uploads, preview functionality, and automatic file processing for seamless user experience."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Visual Pricing Management",
+        "description": "Nexty introduces dashboard pricing management that's secure and convenient, update your pricing without touching code.",
+        "details": [
+          {
+            "title": "Real-Time Preview",
+            "description": "Nexty's pricing card editor includes real-time preview, enabling you to see how pricing cards will look before saving."
+          },
+          {
+            "title": "Stripe Integration",
+            "description": "Nexty fetches pricing data from Stripe with one-click verification for accurate billing setup."
+          },
+          {
+            "title": "Multi-language Support",
+            "description": "Nexty supports AI-powered translation for pricing cards, enabling easy management of multilingual pricing content."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/admin-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-4.png",
+          "https://cdn.nanobananavideo.net/website/images/features/prices-5.png"
+        ]
+      },
+      {
+        "title": "Email System",
+        "description": "Complete email solution with Cloudflare domain email and Resend integration for professional communications and subscriber management.",
+        "details": [
+          {
+            "title": "Professional Domain Email",
+            "description": "Nexty implements domain email through Cloudflare, making your brand appear more professional and helping build trust with users."
+          },
+          {
+            "title": "Advanced Email Marketing",
+            "description": "Nexty includes Resend integration for subscriber management and email campaigns, with built-in newsletter subscription module in the footer."
+          },
+          {
+            "title": "Built-in Email Automation",
+            "description": "Nexty includes newsletter subscription and payment failure notification emails, plus pre-built templates for essential user communications."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/email-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/email-1.png"
+        ]
+      },
+      {
+        "title": "User Dashboard",
+        "description": "Complete user dashboard that provides a seamless experience for users.",
+        "details": [
+          {
+            "title": "Profile Management",
+            "description": "Nexty includes comprehensive profile settings."
+          },
+          {
+            "title": "Subscription Management",
+            "description": "Nexty provides subscription management with billing history and plan upgrades through Stripe integration."
+          },
+          {
+            "title": "Credit History & Usage",
+            "description": "Nexty tracks credit grants and usage with detailed history, supporting both one-time and subscription-based credit systems."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/user-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/user-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/user-3.png"
+        ]
+      },
+      {
+        "title": "Admin Dashboard",
+        "description": "Comprehensive admin dashboard providing full control over users, pricing, content, and files for complete SaaS management.",
+        "details": [
+          {
+            "title": "User Management",
+            "description": "Nexty provides complete user management with role control, Stripe customer integration, and account administration."
+          },
+          {
+            "title": "Pricing Management",
+            "description": "Nexty offers visual pricing plan management with environment separation, Stripe integration, and real-time preview."
+          },
+          {
+            "title": "CMS & File Management",
+            "description": "Nexty includes blog management with multilingual support, access control, and R2 file management with preview capabilities."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/admin-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-3.png",
+          "https://cdn.nanobananavideo.net/website/images/features/admin-4.png"
+        ]
+      },
+      {
+        "title": "Marketing & Growth",
+        "description": "Complete growth toolkit with internationalization, analytics, advertising, and SEO optimization for global reach and business success.",
+        "details": [
+          {
+            "title": "i18n",
+            "description": "Nexty supports multiple languages out-of-the-box with easy expansion for worldwide market reach."
+          },
+          {
+            "title": "Analytics & AdSense",
+            "description": "Nexty includes Google Analytics, Plausible tracking, and AdSense integration for insights and revenue generation."
+          },
+          {
+            "title": "SEO Optimization",
+            "description": "Nexty provides comprehensive SEO optimization with meta tags and sitemaps for better rankings."
+          }
+        ],
+        "images": [
+          "https://cdn.nanobananavideo.net/website/images/features/other-1.png",
+          "https://cdn.nanobananavideo.net/website/images/features/other-2.png",
+          "https://cdn.nanobananavideo.net/website/images/features/other-3.png"
+        ]
+      }
+    ]
+  }
+}

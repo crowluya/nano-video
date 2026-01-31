@@ -1,0 +1,330 @@
+{
+  "LanguageDetection": {
+    "title": "Sugestia Języka",
+    "description": "Zauważyliśmy, że język przeglądarki różni się od obecnego języka strony. Możesz zmienić język w dowolnym momencie.",
+    "countdown": "Zamknięcie za {countdown} sekund",
+    "switchTo": "Przełącz na"
+  },
+  "Header": {
+    "links": [
+      {
+        "name": "Funkcje",
+        "href": "/#features"
+      },
+      {
+        "name": "Generator Wideo",
+        "href": "/#video-demo"
+      },
+      {
+        "name": "Generator Promptów",
+        "href": "/#prompt-generator"
+      },
+      {
+        "name": "Generator Obrazów",
+        "href": "/#image-demo"
+      },
+      {
+        "id": "pricing",
+        "name": "Cennik",
+        "href": "/#pricing"
+      },
+      {
+        "name": "Przypadki Użycia",
+        "href": "/#use-cases"
+      },
+      {
+        "name": "FAQ",
+        "href": "/#faq"
+      },
+      {
+        "name": "Blog",
+        "href": "/blog"
+      }
+    ]
+  },
+  "Footer": {
+    "Copyright": "Prawa autorskie © {year} {name} Wszelkie prawa zastrzeżone.",
+    "About": "O nas",
+    "PrivacyPolicy": "Polityka Prywatności",
+    "TermsOfService": "Warunki Korzystania",
+    "RefundPolicy": "Polityka Zwrotów",
+    "Newsletter": {
+      "title": "Zapisz się na nasz newsletter",
+      "description": "Bądź na bieżąco z najnowszymi wiadomościami.",
+      "subscribe": {
+        "invalidEmail": "Wprowadź prawidłowy adres e-mail",
+        "defaultErrorMessage": "Subskrypcja nie powiodła się. Spróbuj ponownie później",
+        "successMessage": "Pomyślnie zasubskrybowano!",
+        "multipleSubmissions": "Zbyt wiele zapytań. Spróbuj ponownie jutro"
+      },
+      "unsubscribe": {
+        "title": "Rezygnacja z Newslettera",
+        "success": "Pomyślnie zrezygnowałeś z newsletterów Nano Banana Video.",
+        "emailPrefix": "E-mail:",
+        "regretMessage": "Możesz ponownie zasubskrybować w dowolnym momencie, aby otrzymywać najnowsze aktualizacje i samouczki Nano Banana Video.",
+        "errorGeneric": "Wystąpił błąd podczas przetwarzania wniosku o rezygnację",
+        "errorNoToken": "Nie podano tokena rezygnacji",
+        "errorMessage": "Upewnij się, że używasz poprawnego linku rezygnacji. Jeśli problem persists, skontaktuj się z naszym zespołem wsparcia.",
+        "contactPrefix": "Skontaktuj się z nami pod adresem:",
+        "contactPrefixSuccess": "Jeśli masz jakiekolwiek pytania, skontaktuj się z nami pod adresem:",
+        "backToHome": "Powrót na stronę główną",
+        "invalidEmail": "Nieprawidłowy adres e-mail",
+        "notInNewsletter": "Ten adres e-mail nie znajduje się na naszej liście subskrypcji",
+        "confirmTitle": "Potwierdź Rezygnację",
+        "confirmMessage": "Czy na pewno chcesz zrezygnować z naszego newslettera? Nie będziesz już otrzymywać aktualizacji o nowych funkcjach i treściach.",
+        "confirmButton": "Tak, Zrezygnuj",
+        "cancelButton": "Anuluj",
+        "processing": "Przetwarzanie...",
+        "finalWarning": "Tej czynności nie można cofnąć. Zawsze możesz ponownie zasubskrybować później.",
+        "errorInvalidToken": "Nieprawidłowy link rezygnacji. Link mógł zostać uszkodzony lub wygasł."
+      }
+    },
+    "Links": {
+      "groups": [
+        {
+          "title": "Produkty",
+          "links": [
+            {
+              "href": "/#features",
+              "name": "Funkcje"
+            },
+            {
+              "id": "pricing",
+              "href": "/#pricing",
+              "name": "Cennik"
+            },
+            {
+              "href": "/blog",
+              "name": "Blog"
+            }
+          ]
+        },
+        {
+          "title": "Wsparcie",
+          "links": [
+            {
+              "name": "Dokumentacja",
+              "href": "/#faq",
+              "target": ""
+            },
+            {
+              "name": "Cennik",
+              "href": "/#pricing"
+            },
+            {
+              "href": "mailto:contact@nanobananavideo.net",
+              "name": "Kontakt"
+            }
+          ]
+        },
+        {
+          "title": "Języki",
+          "links": [
+            {
+              "href": "/en",
+              "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/zh",
+              "name": "中文",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Home": {
+    "title": "Nano Banana Video",
+    "tagLine": "Study Kreatywne z AI",
+    "description": "Twórz oszałamiające obrazy, wideo i muzykę z AI. Generuj treści z Nano Banana, Midjourney, Sora 2, Veo 3.1 i Suno - wszystko w jednym miejscu."
+  },
+  "Seo": {
+    "title": "Nano Banana Video - Generator Wideo AI | Sora 2 & Veo 3.1",
+    "description": "Konwertuj obrazy Nano Banana na wideo w 3 minuty. Obsługa Sora 2, Veo 3.1 Fast, Kling. Darmowy próbny, bez znaku wodnego. Idealny do reklam TikTok, YouTube Shorts, wideo e-commerce."
+  },
+  "Login": {
+    "title": "Witaj ponownie",
+    "description": "Zaloguj się za pomocą poniższych metod",
+    "Toast": {
+      "Email": {
+        "successTitle": "Magiczny link wysłany!",
+        "successDescription": "Sprawdź swoją skrzynkę odbiorczą pod kątem linku logowania.",
+        "errorTitle": "Błąd",
+        "errorDescription": "Nie udało się wysłać magicznego linku. Spróbuj ponownie."
+      },
+      "Google": {
+        "errorTitle": "Błąd",
+        "errorDescription": "Nie udało się zalogować za pomocą Google. Spróbuj ponownie."
+      },
+      "Github": {
+        "errorTitle": "Błąd",
+        "errorDescription": "Nie udało się zalogować za pomocą Github. Spróbuj ponownie."
+      }
+    },
+    "signInMethods": {
+      "or": "Lub kontynuuj za pomocą",
+      "signInWithGoogle": "Kontynuuj z Google",
+      "signInWithGithub": "Kontynuuj z Github",
+      "signInWithEmail": "Kontynuuj z E-mail"
+    },
+    "Button": {
+      "signIn": "Zaloguj się",
+      "signOut": "Wyloguj się"
+    },
+    "UserMenus": [
+      {
+        "name": "Generator Obrazów",
+        "href": "/dashboard/image-gen",
+        "icon": "Image"
+      },
+      {
+        "name": "Generator Wideo",
+        "href": "/dashboard/video-gen",
+        "icon": "Film"
+      },
+      {
+        "name": "Ustawienia",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      },
+      {
+        "name": "Moje Zamówienia",
+        "href": "/dashboard/my-orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Subskrypcja",
+        "href": "/dashboard/subscription",
+        "icon": "WalletCards"
+      },
+      {
+        "name": "Historia Punktów",
+        "href": "/dashboard/credit-history",
+        "icon": "Coins"
+      }
+    ],
+    "AdminMenus": [
+      {
+        "name": "Przegląd",
+        "href": "/dashboard/overview",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "name": "Użytkownicy",
+        "href": "/dashboard/users",
+        "icon": "Users"
+      },
+      {
+        "name": "Zamówienia",
+        "href": "/dashboard/orders",
+        "icon": "ShoppingCart"
+      },
+      {
+        "name": "Ceny",
+        "href": "/dashboard/prices",
+        "icon": "DollarSign"
+      },
+      {
+        "name": "Blogi",
+        "href": "/dashboard/blogs",
+        "icon": "Rss"
+      },
+      {
+        "name": "Pliki R2",
+        "href": "/dashboard/r2-resources",
+        "icon": "FileBox"
+      }
+    ]
+  },
+  "Blogs": {
+    "title": "Posty na Blogu",
+    "description": "Spostrzeżenia na temat ekosystemu Next.js i aktualizacje szablonu NEXTY.DEV.",
+    "emptyState": {
+      "title": "Brak postów na blogu",
+      "description": "Tworzymy ekscytujące treści, pozostańcie z nami!"
+    },
+    "loadMorePostsFailed": "Nie udało się załadować więcej postów",
+    "loadMorePosts": "Ładowanie więcej postów...",
+    "filterPostsFailed": "Nie udało się załadować postów",
+    "noPostsFoundForThisTag": "Nie znaleziono postów z tym tagiem",
+    "reachedTheEnd": "Osiągnąłeś koniec wszystkich postów",
+    "BlogDetail": {
+      "featured": "Wyróżniony Post",
+      "viewCount": "{count} wyświetleń",
+      "accessRestricted": "Dostęp Ograniczony",
+      "unauthorized": "Ten artykuł jest dostępny tylko dla zalogowanych użytkowników",
+      "premium": "Treść Premium",
+      "premiumContent": "Ten artykuł jest ekskluzywny dla subskrybentów",
+      "signIn": "Zaloguj się",
+      "upgrade": "Ulepsz",
+      "backToBlogs": "Powrót do listy blogów",
+      "notFound": "Artykuł Nie Znaleziony"
+    }
+  },
+  "About": {
+    "title": "O nas",
+    "description": "O stronie"
+  },
+  "AIDemo": {
+    "title": "Demo Możliwości AI",
+    "description": "Ta strona prezentuje funkcje niepubliczne i jest wyłącznie dla użytkowników, którzy zakupili szablon. Została zaprojektowana do nauki i testowania procesu wywoływania modelu AI. Aby go użyć, po prostu uruchom szablon lokalnie i wprowadź swój klucz API w zmiennych środowiskowych. Demo AI obejmuje funkcje takie jak rozmowy jednokrotne i wielokrotne, tekst-do-obrazu, obraz-do-obrazu oraz konwersje tekst/obraz-do-wideo. Poprzez to demo możesz szybko zrozumieć przepływ pracy AI, przyspieszając swoją podróż w budowaniu aplikacji AI.",
+    "metaDescription": "Ta strona prezentuje możliwości AI, w tym rozmowy jednokrotne i wielokrotne, konwersje tekst-do-obrazu, obraz-do-obrazu oraz tekst/obraz-do-wideo."
+  },
+  "ErrorPage": {
+    "403": {
+      "title": "403 - Dostęp Odmówiony",
+      "description": "Nie masz uprawnień do dostępu do tej strony.",
+      "button": {
+        "name": "Powrót do strony głównej",
+        "href": "/"
+      }
+    },
+    "RedirectError": {
+      "title": "Błąd Przekierowania",
+      "description": "Wystąpił błąd podczas procesu uwierzytelniania.",
+      "goToHome": "Przejdź do strony głównej",
+      "goToLogin": "Przejdź do logowania",
+      "invalid_params": {
+        "title": "Nieprawidłowe Parametry",
+        "description": "W żądaniu brakuje wymaganych parametrów."
+      },
+      "invalid_redirect": {
+        "title": "Nieprawidłowy URL Przekierowania",
+        "description": "Podany URL przekierowania nie jest dozwolony."
+      },
+      "token_expired": {
+        "title": "Token Wygasł",
+        "description": "Twój token weryfikacyjny wygasł. Spróbuj zalogować się ponownie."
+      },
+      "invalid_token": {
+        "title": "Nieprawidłowy Token",
+        "description": "Podany token weryfikacyjny jest nieprawidłowy."
+      },
+      "invalid_link_or_expired": {
+        "title": "Nieprawidłowy Lub Wygasły Link",
+        "description": "Link weryfikacyjny e-maila jest nieprawidłowy lub wygasł."
+      },
+      "server_error": {
+        "title": "Błąd Serwera",
+        "description": "Wystąpił nieoczekiwany błąd na serwerze podczas uwierzytelniania."
+      },
+      "unknown": {
+        "title": "Błąd Uwierzytelniania",
+        "description": "Wystąpił nieznany błąd podczas procesu uwierzytelniania."
+      }
+    },
+    "StripeError": {
+      "title": "Błąd Portalu Płatności",
+      "description": "Wystąpił błąd z informacjami o płatności.",
+      "goToHome": "Przejdź do strony głównej",
+      "goToDashboard": "Przejdź do Panelu"
+    }
+  }
+}
