@@ -2,7 +2,7 @@
 import { removeUserFromContacts, sendEmail } from '@/actions/resend';
 import { siteConfig } from '@/config/site';
 import { NewsletterWelcomeEmail } from '@/emails/newsletter-welcome';
-import { DEFAULT_LOCALE } from '@/i18n/routing';
+import { DEFAULT_LOCALE, type Locale } from '@/i18n/routing';
 import { actionResponse, ActionResult } from '@/lib/action-response';
 import { normalizeEmail, validateEmail } from '@/lib/email';
 import { checkRateLimit, getClientIPFromHeaders } from '@/lib/upstash';
@@ -25,7 +25,7 @@ async function validateRateLimit(locale: string) {
   }
 }
 
-export async function subscribeToNewsletter(email: string, locale = DEFAULT_LOCALE): Promise<ActionResult<{ email: string }>> {
+export async function subscribeToNewsletter(email: string, locale: Locale = DEFAULT_LOCALE): Promise<ActionResult<{ email: string }>> {
   try {
     await validateRateLimit(locale);
 
@@ -61,7 +61,7 @@ export async function subscribeToNewsletter(email: string, locale = DEFAULT_LOCA
   }
 }
 
-export async function unsubscribeFromNewsletter(token: string, locale = DEFAULT_LOCALE): Promise<ActionResult<{ email: string }>> {
+export async function unsubscribeFromNewsletter(token: string, locale: Locale = DEFAULT_LOCALE): Promise<ActionResult<{ email: string }>> {
   try {
     await validateRateLimit(locale);
     const t = await getTranslations({ locale, namespace: 'Footer.Newsletter' });

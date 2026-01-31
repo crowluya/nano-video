@@ -2,41 +2,41 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "Next.js SaaS Full Stack Template",
+      "text": "Next.js SaaS 풀스택 템플릿",
       "href": "https://nexty.dev/#pricing"
     },
-    "title": "A Modern Next.js Full Stack SaaS Boilerplate",
-    "description": "Our Next.js boilerplate includes authentication, Stripe payments, AI integration, CMS, and everything you need to start earning immediately.",
-    "getStarted": "Get Started",
+    "title": "현대적인 Next.js 풀스택 SaaS 보일러플레이트",
+    "description": "당사의 Next.js 보일러플레이트는 인증, Stripe 결제, AI 통합, CMS 및 즉시 수익 창출을 시작하는 데 필요한 모든 것을 포함합니다.",
+    "getStarted": "시작하기",
     "getStartedLink": "https://nexty.dev/#pricing",
-    "viewDocs": "View Documentation",
+    "viewDocs": "문서 보기",
     "viewDocsLink": "https://nexty.dev/docs"
   },
   "Features": {
     "badge": {
-      "label": "FEATURES",
-      "text": "Production-ready SaaS Development Kit"
+      "label": "기능",
+      "text": "프로덕션 준비된 SaaS 개발 키트"
     },
-    "title": "Production-ready Next.js SaaS Boilerplate",
-    "description": "The Next.js boilerplate includes every essential feature modern SaaS applications require, letting you focus on your unique business logic and customer value.",
+    "title": "프로덕션 준비된 Next.js SaaS 보일러플레이트",
+    "description": "Next.js 보일러플레이트는 최신 SaaS 애플리케이션에 필요한 모든 필수 기능을 포함하며, 독창적인 비즈니스 로직과 고객 가치에 집중할 수 있습니다.",
     "items": [
       {
-        "title": "3 Powerful Boilerplates",
-        "description": "Purchase once, get 3 powerful boilerplates.",
+        "title": "3가지 강력한 보일러플레이트",
+        "description": "한 번 구매하여 3가지 강력한 보일러플레이트를 받으세요.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Universal SaaS boilerplate with every feature you need.",
+            "title": "보일러플레이트 1: Nexty",
+            "description": "필요한 모든 기능을 갖춘 범용 SaaS 보일러플레이트.",
             "href": "https://demo.nexty.dev"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "AI Image Generation SaaS boilerplate.",
+            "title": "보일러플레이트 2: nexty-flux-kontext",
+            "description": "AI 이미지 생성 SaaS 보일러플레이트.",
             "href": "https://flux-kontext.nexty.dev"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Directory & listing website boilerplate.",
+            "title": "보일러플레이트 3: nexty-directory",
+            "description": "디렉토리 및 리스팅 웹사이트 보일러플레이트.",
             "href": "https://dofollow.tools"
           }
         ],
@@ -47,20 +47,20 @@
         ]
       },
       {
-        "title": "Authentication",
-        "description": "Integrated Better Auth with multiple sign-in options.",
+        "title": "인증",
+        "description": "여러 로그인 옵션과 통합된 Better Auth.",
         "details": [
           {
-            "title": "Social Sign-in",
-            "description": "Google, GitHub, and more."
+            "title": "소셜 로그인",
+            "description": "Google, GitHub 등."
           },
           {
-            "title": "Magic Links",
-            "description": "Email verification with magic links."
+            "title": "매직 링크",
+            "description": "매직 링크를 통한 이메일 인증."
           },
           {
-            "title": "Bot Protection",
-            "description": "Protect your app from bots with Cloudflare Turnstile."
+            "title": "봇 보호",
+            "description": "Cloudflare Turnstile로 앱을 봇으로부터 보호하세요."
           }
         ],
         "images": [
@@ -68,20 +68,20 @@
         ]
       },
       {
-        "title": "Database",
-        "description": "Integrated Drizzle ORM with multiple database options, such as Supabase, Neon, and Self-hosted PostgreSQL.",
+        "title": "데이터베이스",
+        "description": "Supabase, Neon, 자체 호스팅 PostgreSQL 등 다양한 데이터베이스 옵션과 통합된 Drizzle ORM.",
         "details": [
           {
-            "title": "One Line Configuration",
-            "description": "Just fill in DATABASE_URL, and the best configuration will be automatically completed."
+            "title": "원라인 설정",
+            "description": "DATABASE_URL만 입력하면 최적의 구성이 자동으로 완료됩니다."
           },
           {
-            "title": "Comprehensive Built-in Tables",
-            "description": "Comprehensive set of tables for user management, pricing plans, orders, content management, and more."
+            "title": "종합적인 내장 테이블",
+            "description": "사용자 관리, 가격 플랜, 주문, 콘텐츠 관리 등을 위한 포괄적인 테이블 세트."
           },
           {
-            "title": "Multiple Database Options",
-            "description": "Supabase, Neon, and Self-hosted PostgreSQL."
+            "title": "다양한 데이터베이스 옵션",
+            "description": "Supabase, Neon 및 자체 호스팅 PostgreSQL."
           }
         ],
         "images": [
@@ -90,20 +90,20 @@
         ]
       },
       {
-        "title": "Payment System",
-        "description": "Complete billing solution with Stripe Checkout and Stripe's Billing Portal.",
+        "title": "결제 시스템",
+        "description": "Stripe 체크아웃 및 Stripe의 빌링 포털을 갖춘 완전한 빌링 솔루션.",
         "details": [
           {
-            "title": "All Payment Methods",
-            "description": "Nexty supports monthly and annual subscriptions, and one-time payments."
+            "title": "모든 결제 수단",
+            "description": "Nexty는 월간 및 연간 구독, 일시불 결제를 지원합니다."
           },
           {
-            "title": "Usage-based Billing",
-            "description": "Nexty supports usage-based billing for apps that need to charge users based on their usage."
+            "title": "사용량 기반 과금",
+            "description": "Nexty는 사용량에 따라 사용자에게 요금을 청구해야 하는 앱을 위한 사용량 기반 과금을 지원합니다."
           },
           {
-            "title": "Smart Admin Management",
-            "description": "Nexty's pricing plans are managed through the admin dashboard, bound to Stripe Price IDs for intelligent, secure, and real-time preview capabilities."
+            "title": "스마트 관리자 관리",
+            "description": "Nexty의 가격 플랜은 관리자 대시보드를 통해 관리되며, Stripe Price ID에 바인딩되어 지능적이고 안전하며 실시간 미리보기 기능을 제공합니다."
           }
         ],
         "images": [
@@ -112,20 +112,20 @@
         ]
       },
       {
-        "title": "AI Capabilities",
-        "description": "Complete AI integration toolkit with interactive demos, multi-provider support, and ready-to-deploy AI image generation website template.",
+        "title": "AI 기능",
+        "description": "대화형 데모, 다중 공급자 지원, 즉시 배포 가능한 AI 이미지 생성 웹사이트 템플릿을 갖춘 완전한 AI 통합 툴킷.",
         "details": [
           {
-            "title": "AI Demo Hub",
-            "description": "Nexty includes built-in demos for chat, text-to-image, image-to-image, and video generation to help developers learn AI workflows and test models quickly."
+            "title": "AI 데모 허브",
+            "description": "Nexty는 개발자가 AI 워크플로우를 학습하고 모델을 빠르게 테스트할 수 있도록 채팅, 텍스트-이미지, 이미지-이미지, 비디오 생성을 위한 내장 데모를 포함합니다."
           },
           {
-            "title": "Universal AI Provider Support",
-            "description": "Nexty offers AI SDK integration supporting GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter, and Replicate for maximum flexibility."
+            "title": "범용 AI 공급자 지원",
+            "description": "Nexty는 최대 유연성을 위해 GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter, Replicate를 지원하는 AI SDK 통합을 제공합니다."
           },
           {
-            "title": "Bonus:  AI Image Generation Website",
-            "description": "Nexty paid users receive a complete Flux Kontext AI image generation website template for rapid deployment of AI art platforms."
+            "title": "보너스: AI 이미지 생성 웹사이트",
+            "description": "Nexty 유료 사용자는 AI 아트 플랫폼의 신속한 배포를 위한 완전한 Flux Kontext AI 이미지 생성 웹사이트 템플릿을 받습니다."
           }
         ],
         "images": [
@@ -135,19 +135,19 @@
       },
       {
         "title": "CMS",
-        "description": "Advanced CMS going beyond basic content management with paywall protection, AI translation, and multi-purpose publishing capabilities.",
+        "description": "페이월 보호, AI 번역, 다목적 게시 기능을 갖춘 기본 콘텐츠 관리를 넘어선 고급 CMS.",
         "details": [
           {
-            "title": "Content Access Control",
-            "description": "Nexty's CMS supports public, logged-in users, and subscriber-only content with paywall protection for monetized content sites."
+            "title": "콘텐츠 액세스 제어",
+            "description": "Nexty의 CMS는 공개, 로그인 사용자, 구독자 전용 콘텐츠를 지원하며 수익화된 콘텐츠 사이트를 위한 페이월 보호를 제공합니다."
           },
           {
-            "title": "AI-Powered Translation",
-            "description": "Nexty's CMS includes built-in AI translation for multilingual content creation, plus duplicate feature for efficient content production workflows."
+            "title": "AI 기반 번역",
+            "description": "Nexty의 CMS는 다국어 콘텐츠 생성을 위한 내장 AI 번역과 효율적인 콘텐츠 제작 워크플로우를 위한 복제 기능을 포함합니다."
           },
           {
-            "title": "Multi-Purpose Publishing",
-            "description": "Nexty's CMS enables both free blog sites and paid content platforms with advanced status management (draft, published, archived)."
+            "title": "다목적 게시",
+            "description": "Nexty의 CMS는 고급 상태 관리(초안, 게시됨, 보관됨)를 통해 무료 블로그 사이트와 유료 콘텐츠 플랫폼을 모두 지원합니다."
           }
         ],
         "images": [
@@ -159,20 +159,20 @@
         ]
       },
       {
-        "title": "File Storage",
-        "description": "Enterprise-grade file management powered by Cloudflare R2 with admin dashboard, automatic CDN distribution, and optimized upload workflows.",
+        "title": "파일 저장소",
+        "description": "관리자 대시보드, 자동 CDN 배포, 최적화된 업로드 워크플로우를 갖춘 Cloudflare R2 기반의 엔터프라이즈급 파일 관리.",
         "details": [
           {
-            "title": "Admin File Management",
-            "description": "Nexty provides a dedicated admin dashboard for comprehensive file management with upload, delete, and organization capabilities."
+            "title": "관리자 파일 관리",
+            "description": "Nexty는 업로드, 삭제, 구성 기능을 갖춘 포괄적인 파일 관리를 위한 전용 관리자 대시보드를 제공합니다."
           },
           {
-            "title": "Cloudflare R2 Integration",
-            "description": "Nexty leverages Cloudflare R2 for cost-effective, high-performance file storage with automatic CDN distribution worldwide."
+            "title": "Cloudflare R2 통합",
+            "description": "Nexty는 비용 효율적이고 고성능인 파일 저장소를 위해 Cloudflare R2를 활용하며 전 세계적으로 자동 CDN 배포를 제공합니다."
           },
           {
-            "title": "Optimized Upload Experience",
-            "description": "Nexty features drag-and-drop uploads, preview functionality, and automatic file processing for seamless user experience."
+            "title": "최적화된 업로드 경험",
+            "description": "Nexty는 드래그 앤 드롭 업로드, 미리보기 기능, 자동 파일 처리를 제공하여 원활한 사용자 경험을 제공합니다."
           }
         ],
         "images": [
@@ -180,20 +180,20 @@
         ]
       },
       {
-        "title": "Visual Pricing Management",
-        "description": "Nexty introduces dashboard pricing management that's secure and convenient, update your pricing without touching code.",
+        "title": "시각적 가격 관리",
+        "description": "Nexty는 안전하고 편리한 대시보드 가격 관리를 도입하여 코드를 건드리지 않고 가격을 업데이트할 수 있습니다.",
         "details": [
           {
-            "title": "Real-Time Preview",
-            "description": "Nexty's pricing card editor includes real-time preview, enabling you to see how pricing cards will look before saving."
+            "title": "실시간 미리보기",
+            "description": "Nexty의 가격 카드 편집기는 실시간 미리보기를 포함하여 저장 전에 가격 카드의 모양을 확인할 수 있습니다."
           },
           {
-            "title": "Stripe Integration",
-            "description": "Nexty fetches pricing data from Stripe with one-click verification for accurate billing setup."
+            "title": "Stripe 통합",
+            "description": "Nexty는 정확한 빌링 설정을 위해 원클릭 검증로 Stripe에서 가격 데이터를 가져옵니다."
           },
           {
-            "title": "Multi-language Support",
-            "description": "Nexty supports AI-powered translation for pricing cards, enabling easy management of multilingual pricing content."
+            "title": "다국어 지원",
+            "description": "Nexty는 가격 카드에 대한 AI 기반 번역을 지원하여 다국어 가격 콘텐츠를 쉽게 관리할 수 있습니다."
           }
         ],
         "images": [
@@ -206,20 +206,20 @@
         ]
       },
       {
-        "title": "Email System",
-        "description": "Complete email solution with Cloudflare domain email and Resend integration for professional communications and subscriber management.",
+        "title": "이메일 시스템",
+        "description": "전문적인 커뮤니케이션과 구독자 관리를 위한 Cloudflare 도메인 이메일과 Resend 통합을 갖춘 완전한 이메일 솔루션.",
         "details": [
           {
-            "title": "Professional Domain Email",
-            "description": "Nexty implements domain email through Cloudflare, making your brand appear more professional and helping build trust with users."
+            "title": "전문 도메인 이메일",
+            "description": "Nexty는 Cloudflare를 통해 도메인 이메일을 구현하여 브랜드를 더욱 전문적으로 보이게 하고 사용자와의 신뢰를 구축하는 데 도움을 줍니다."
           },
           {
-            "title": "Advanced Email Marketing",
-            "description": "Nexty includes Resend integration for subscriber management and email campaigns, with built-in newsletter subscription module in the footer."
+            "title": "고급 이메일 마케팅",
+            "description": "Nexty는 구독자 관리 및 이메일 캠페인을 위한 Resend 통합을 포함하며 푸터에 내장된 뉴스레터 구독 모듈이 있습니다."
           },
           {
-            "title": "Built-in Email Automation",
-            "description": "Nexty includes newsletter subscription and payment failure notification emails, plus pre-built templates for essential user communications."
+            "title": "내장 이메일 자동화",
+            "description": "Nexty는 뉴스레터 구독 및 결제 실패 알림 이메일을 포함하며 필수 사용자 커뮤니케이션을 위한 사전 구축된 템플릿을 제공합니다."
           }
         ],
         "images": [
@@ -228,20 +228,20 @@
         ]
       },
       {
-        "title": "User Dashboard",
-        "description": "Complete user dashboard that provides a seamless experience for users.",
+        "title": "사용자 대시보드",
+        "description": "사용자를 위한 원활한 경험을 제공하는 완전한 사용자 대시보드.",
         "details": [
           {
-            "title": "Profile Management",
-            "description": "Nexty includes comprehensive profile settings."
+            "title": "프로필 관리",
+            "description": "Nexty는 포괄적인 프로필 설정을 포함합니다."
           },
           {
-            "title": "Subscription Management",
-            "description": "Nexty provides subscription management with billing history and plan upgrades through Stripe integration."
+            "title": "구독 관리",
+            "description": "Nexty는 Stripe 통합을 통해 빌링 기록 및 플랜 업그레이드가 가능한 구독 관리를 제공합니다."
           },
           {
-            "title": "Credit History & Usage",
-            "description": "Nexty tracks credit grants and usage with detailed history, supporting both one-time and subscription-based credit systems."
+            "title": "크레딧 기록 및 사용량",
+            "description": "Nexty는 상세한 기록으로 크레딧 부여 및 사용량을 추적하며 일회성 및 구독 기반 크레딧 시스템을 모두 지원합니다."
           }
         ],
         "images": [
@@ -251,20 +251,20 @@
         ]
       },
       {
-        "title": "Admin Dashboard",
-        "description": "Comprehensive admin dashboard providing full control over users, pricing, content, and files for complete SaaS management.",
+        "title": "관리자 대시보드",
+        "description": "완전한 SaaS 관리를 위해 사용자, 가격, 콘텐츠, 파일에 대한 완전한 제어를 제공하는 포괄적인 관리자 대시보드.",
         "details": [
           {
-            "title": "User Management",
-            "description": "Nexty provides complete user management with role control, Stripe customer integration, and account administration."
+            "title": "사용자 관리",
+            "description": "Nexty는 역할 제어, Stripe 고객 통합, 계정 관리를 갖춘 완전한 사용자 관리를 제공합니다."
           },
           {
-            "title": "Pricing Management",
-            "description": "Nexty offers visual pricing plan management with environment separation, Stripe integration, and real-time preview."
+            "title": "가격 관리",
+            "description": "Nexty는 환경 분리, Stripe 통합, 실시간 미리보기를 갖춘 시각적 가격 플랜 관리를 제공합니다."
           },
           {
-            "title": "CMS & File Management",
-            "description": "Nexty includes blog management with multilingual support, access control, and R2 file management with preview capabilities."
+            "title": "CMS 및 파일 관리",
+            "description": "Nexty는 다국어 지원, 액세스 제어, 미리보기 기능을 갖춘 R2 파일 관리를 포함하는 블로그 관리를 포함합니다."
           }
         ],
         "images": [
@@ -275,20 +275,20 @@
         ]
       },
       {
-        "title": "Marketing & Growth",
-        "description": "Complete growth toolkit with internationalization, analytics, advertising, and SEO optimization for global reach and business success.",
+        "title": "마케팅 및 성장",
+        "description": "글로벌 도달 및 비즈니스 성공을 위한 국제화, 분석, 광고, SEO 최적화를 갖춘 완전한 성장 툴킷.",
         "details": [
           {
-            "title": "i18n",
-            "description": "Nexty supports multiple languages out-of-the-box with easy expansion for worldwide market reach."
+            "title": "국제화",
+            "description": "Nexty는 전 세계 시장 도달을 위한 쉬운 확장이 가능한 기본 다국어 지원을 제공합니다."
           },
           {
-            "title": "Analytics & AdSense",
-            "description": "Nexty includes Google Analytics, Plausible tracking, and AdSense integration for insights and revenue generation."
+            "title": "분석 및 AdSense",
+            "description": "Nexty는 인사이트 및 수익 창출을 위한 Google Analytics, Plausible 추적, AdSense 통합을 포함합니다."
           },
           {
-            "title": "SEO Optimization",
-            "description": "Nexty provides comprehensive SEO optimization with meta tags and sitemaps for better rankings."
+            "title": "SEO 최적화",
+            "description": "Nexty는 더 나은 순위를 위한 메타 태그 및 사이트맵을 포함한 포괄적인 SEO 최적화를 제공합니다."
           }
         ],
         "images": [
@@ -301,33 +301,33 @@
   },
   "UseCases": {
     "badge": {
-      "label": "USE CASES",
-      "text": "Multiple Solution Scenarios"
+      "label": "사용 사례",
+      "text": "다양한 솔루션 시나리오"
     },
-    "title": "One Boilerplate, Multiple Solutions",
-    "description": "Whether you're building AI tools, content platforms, or other SaaS products, our Next.js SaaS boilerplate adapts to your specific needs with minimal configuration required.",
+    "title": "하나의 보일러플레이트, 다양한 솔루션",
+    "description": "AI 도구, 콘텐츠 플랫폼 또는 기타 SaaS 제품을 구축하든 당사의 Next.js SaaS 보일러플레이트는 최소한의 구성으로 특정 요구사항에 맞게 조정됩니다.",
     "cases": [
       {
-        "title": "AI-Powered SaaS Tools",
-        "description": "Launch production-ready AI applications in days, not months. Built-in integrations with OpenRouter, Replicate, and leading AI providers. Includes smart usage tracking, automated billing, and everything you need to monetize AI workflows.",
+        "title": "AI 기반 SaaS 도구",
+        "description": "수개월이 아닌 며칠 만에 프로덕션 준비된 AI 애플리케이션을 출시하세요. OpenRouter, Replicate 및 선도적인 AI 공급자와의 내장 통합. 스마트 사용량 추적, 자동화된 빌링 및 AI 워크플로우 수익화에 필요한 모든 것이 포함됩니다.",
         "image": "/placeholder.webp",
         "icon": "Bot"
       },
       {
-        "title": "Content & Blog Platforms",
-        "description": "Launch SEO-optimized content websites with advanced CMS capabilities. Features include Markdown editing, multilingual support, paywall protection, AI translation, and AdSense integration. Perfect for building premium content platforms, newsletters, or content-driven SaaS applications.",
+        "title": "콘텐츠 및 블로그 플랫폼",
+        "description": "고급 CMS 기능을 갖춘 SEO 최적화된 콘텐츠 웹사이트를 출시하세요. Markdown 편집, 다국어 지원, 페이월 보호, AI 번역, AdSense 통합 기능이 포함됩니다. 프리미엄 콘텐츠 플랫폼, 뉴스레터 또는 콘텐츠 기반 SaaS 애플리케이션 구축에 완벽합니다.",
         "image": "/placeholder.webp",
         "icon": "FileText"
       },
       {
-        "title": "Subscription & Marketplace Platforms",
-        "description": "Build recurring revenue businesses with automated billing, customer management, and payment processing. Features include subscription management, usage-based pricing, customer portals, and comprehensive analytics. Perfect for SaaS marketplaces, subscription services, or premium tool platforms.",
+        "title": "구독 및 마켓플레이스 플랫폼",
+        "description": "자동화된 빌링, 고객 관리, 결제 처리로 반복 수익 비즈니스를 구축하세요. 구독 관리, 사용량 기반 가격 책정, 고객 포털, 포괄적인 분석 기능이 포함됩니다. SaaS 마켓플레이스, 구독 서비스 또는 프리미엄 도구 플랫폼에 완벽합니다.",
         "image": "/placeholder.webp",
         "icon": "CreditCard"
       },
       {
-        "title": "Free Tools & Lead Magnets",
-        "description": "Create viral free tools that drive massive organic traffic. Lightning-fast performance and SEO optimization. Perfect for building your email list, generating leads, or creating the next viral calculator/converter tool.",
+        "title": "무료 도구 및 리드 마그넷",
+        "description": "엄청난 유기적 트래픽을 유도하는 바이럴 무료 도구를 만드세요. 번개처럼 빠른 성능과 SEO 최적화. 이메일 리스트 구축, 리드 생성 또는 다음 바이럴 계산기/변환기 도구 만들기에 완벽합니다.",
         "image": "/placeholder.webp",
         "icon": "Wrench"
       }
@@ -335,75 +335,75 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "TESTIMONIALS"
+      "label": "고객 후기"
     },
-    "title": "What Our Customers Say",
-    "description": "Don't just take our word for it"
+    "title": "고객의 의견",
+    "description": "저희 말만 믿지 마세요"
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Common questions about our Next.js SaaS boilerplate and how it can help you build better applications faster",
+    "title": "자주 묻는 질문",
+    "description": "당사의 Next.js SaaS 보일러플레이트와 더 나은 애플리케이션을 더 빨리 구축하는 데 도움이 되는 방법에 대한 일반적인 질문",
     "items": [
       {
-        "question": "Can I use this boilerplate as a non-technical person?",
-        "answer": "Absolutely! Nexty is specifically designed to work seamlessly with AI assistants, allowing even those with zero programming experience to develop products through AI-assisted development. Our code structure and documentation are AI-friendly, making it easier for AI to understand and modify the code. Technical teams will benefit from even greater development efficiency."
+        "question": "비기술자도 이 보일러플레이트를 사용할 수 있나요?",
+        "answer": "물론입니다! Nexty는 AI 어시스턴트와 원활하게 작동하도록 특별히 설계되어 프로그래밍 경험이 전혀 없는 사람도 AI 지원 개발을 통해 제품을 개발할 수 있습니다. 당사의 코드 구조와 문서는 AI 친화적이어서 AI가 코드를 이해하고 수정하기 쉽습니다. 기술 팀은 훨씬 더 큰 개발 효율성을 누릴 수 있습니다."
       },
       {
-        "question": "What makes this the best Next.js SaaS boilerplate?",
-        "answer": "Nexty is the most comprehensive Next.js SaaS starter kit available. Unlike other templates that only provide basic components, we include complete business workflows: authentication, payments, AI integration, content management, and monetization features. Everything is production-ready and battle-tested in real applications."
+        "question": "이것이 최고의 Next.js SaaS 보일러플레이트인 이유는 무엇인가요?",
+        "answer": "Nexty는 사용 가능한 가장 포괄적인 Next.js SaaS 스타터 키트입니다. 기본 구성 요소만 제공하는 다른 템플릿과 달리 당사는 인증, 결제, AI 통합, 콘텐츠 관리 및 수익화 기능과 같은 완전한 비즈니스 워크플로우를 포함합니다. 모든 것이 프로덕션 준비되었으며 실제 애플리케이션에서 검증되었습니다."
       },
       {
-        "question": "How quickly can I launch my SaaS with this boilerplate?",
-        "answer": "Your first project will take 3-5 days as you learn the boilerplate's features, but the learning curve pays off quickly. Our customers who've mastered the system now launch complete SaaS applications in just 1-2 days. The boilerplate handles all the complex infrastructure, so you can focus on what makes your product unique."
+        "question": "이 보일러플레이트로 얼마나 빨리 SaaS를 출시할 수 있나요?",
+        "answer": "첫 번째 프로젝트는 보일러플레이트의 기능을 배우는 동안 3-5일이 소요되지만 학습 곡선은 빠르게 보상됩니다. 시스템을 마스터한 당사 고객은 이제 단 1-2일 만에 완전한 SaaS 애플리케이션을 출시합니다. 보일러플레이트는 모든 복잡한 인프라를 처리하므로 제품을 독특하게 만드는 것에 집중할 수 있습니다."
       },
       {
-        "question": "Is this suitable for AI-powered SaaS applications?",
-        "answer": "Absolutely! Our boilerplate includes comprehensive AI SDK integration with working examples for text generation, image creation, and video processing. It's compatible with OpenAI, Claude, Gemini, Grok, DeepSeek, and other popular AI models. Perfect for building AI tools or content generation platforms."
+        "question": "AI 기반 SaaS 애플리케이션에 적합한가요?",
+        "answer": "물론입니다! 당사의 보일러플레이트는 텍스트 생성, 이미지 생성, 비디오 처리를 위한 작업 예제와 함께 포괄적인 AI SDK 통합을 포함합니다. OpenAI, Claude, Gemini, Grok, DeepSeek 및 기타 인기 AI 모델과 호환됩니다. AI 도구 또는 콘텐츠 생성 플랫폼 구축에 완벽합니다."
       },
       {
-        "question": "What payment methods and billing models are supported?",
-        "answer": "The boilerplate includes complete Stripe integration supporting one-time payments, subscriptions, usage-based billing, and automated renewals. You can start monetizing immediately."
+        "question": "어떤 결제 수단과 빌링 모델이 지원되나요?",
+        "answer": "보일러플레이트는 일회성 결제, 구독, 사용량 기반 빌링, 자동 갱신을 지원하는 완전한 Stripe 통합을 포함합니다. 즉시 수익화를 시작할 수 있습니다."
       },
       {
-        "question": "How does the content management system work?",
-        "answer": "Our built-in CMS supports Markdown and rich text editing, multilingual content, SEO optimization, paywall protection, and AI translation. You can manage articles, pages, and premium content through an intuitive admin dashboard with role-based access control."
+        "question": "콘텐츠 관리 시스템은 어떻게 작동하나요?",
+        "answer": "내장된 CMS는 Markdown 및 리치 텍스트 편집, 다국어 콘텐츠, SEO 최적화, 페이월 보호, AI 번역을 지원합니다. 역할 기반 액세스 제어가 있는 직관적인 관리자 대시보드를 통해 기사, 페이지 및 프리미엄 콘텐츠를 관리할 수 있습니다."
       },
       {
-        "question": "Is the boilerplate SEO-optimized?",
-        "answer": "Yes! The boilerplate includes comprehensive SEO features: automatic meta tags, structured data, XML sitemaps, OpenGraph support, and performance optimization. It's built with Next.js best practices for search engine visibility and faster loading times."
+        "question": "보일러플레이트가 SEO 최적화되어 있나요?",
+        "answer": "네! 보일러플레이트는 자동 메타 태그, 구조화된 데이터, XML 사이트맵, OpenGraph 지원 및 성능 최적화를 포함한 포괄적인 SEO 기능을 포함합니다. 검색 엔진 가시성과 더 빠른 로딩 시간을 위한 Next.js 모범 사례로 구축되었습니다."
       },
       {
-        "question": "What kind of support do you provide?",
-        "answer": "We provide comprehensive documentation, code examples, and email support. We also have a public Discord community where you can get help from other developers and share your projects."
+        "question": "어떤 종류의 지원을 제공하나요?",
+        "answer": "포괄적인 문서, 코드 예제 및 이메일 지원을 제공합니다. 다른 개발자의 도움을 받고 프로젝트를 공유할 수 있는 공개 Discord 커뮤니티도 있습니다."
       },
       {
-        "question": "How do I manage pricing cards?",
-        "answer": "This is a key selling point of Nexty. You can manage pricing cards in the Dashboard, including adding, editing, and deleting pricing cards with AI multilingual translation support, eliminating complex multilingual file configuration."
+        "question": "가격 카드를 어떻게 관리하나요?",
+        "answer": "이것은 Nexty의 핵심 판매 포인트입니다. 대시보드에서 가격 카드를 관리할 수 있으며 AI 다국어 번역 지원을 통해 추가, 편집 및 삭제가 가능하여 복잡한 다국어 파일 구성을 제거합니다."
       }
     ]
   },
   "CTA": {
-    "title": "Launch Your Product Fast, and Earn Money Fast",
-    "description": "Stop starting from scratch! Use Nexty templates to focus on your core idea, rapidly build, validate, and start earning.",
-    "button": "Get Template Now",
-    "trustText": "Trusted by developers worldwide",
+    "title": "제품을 빠르게 출시하고 빠르게 돈을 버세요",
+    "description": "처음부터 시작하지 마세요! Nexty 템플릿을 사용하여 핵심 아이디어에 집중하고 빠르게 구축, 검증 및 수익 창출을 시작하세요.",
+    "button": "지금 템플릿 받기",
+    "trustText": "전 세계 개발자들이 신뢰합니다",
     "features": {
-      "deploy": "🚀 Quick Deploy",
-      "production": "🔧 Production Ready",
-      "updates": "💎 Lifetime Updates",
-      "i18n": "🌍 Internationalization"
+      "deploy": "🚀 빠른 배포",
+      "production": "🔧 프로덕션 준비 완료",
+      "updates": "💎 평생 업데이트",
+      "i18n": "🌍 국제화"
     }
   },
   "Pricing": {
     "badge": {
-      "label": "PRICING",
-      "text": "One-Time Payment, Lifetime Updates"
+      "label": "가격",
+      "text": "일회성 결제, 평생 업데이트"
     },
-    "title": "Ship your SaaS in days, not months",
-    "description": "Using our battle-tested SaaS starter template, so you can skip boilerplate coding and focus on the features your users actually need.",
-    "annual": "Annual",
-    "monthly": "Monthly",
-    "onetime": "One-Time",
-    "saveTip": "Save 20%"
+    "title": "수개월이 아닌 며칠 만에 SaaS를 출시하세요",
+    "description": "검증된 SaaS 스타터 템플릿을 사용하여 보일러플레이트 코딩을 건너뛰고 사용자가 실제로 필요로 하는 기능에 집중할 수 있습니다.",
+    "annual": "연간",
+    "monthly": "월간",
+    "onetime": "일회성",
+    "saveTip": "20% 절약"
   }
 }

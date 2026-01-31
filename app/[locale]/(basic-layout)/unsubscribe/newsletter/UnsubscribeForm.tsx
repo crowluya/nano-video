@@ -2,6 +2,7 @@
 
 import { unsubscribeFromNewsletter } from "@/actions/newsletter";
 import { Button } from "@/components/ui/button";
+import type { Locale } from "@/i18n/routing";
 import { Link as I18nLink } from "@/i18n/routing";
 import { ArrowLeft, CheckCircle, Loader2, Mail, XCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -11,7 +12,7 @@ import { useState } from "react";
 interface UnsubscribeFormProps {
   token: string;
   email: string;
-  locale: string;
+  locale: Locale;
   adminEmail: string;
 }
 

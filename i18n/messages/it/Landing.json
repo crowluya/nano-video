@@ -1,42 +1,42 @@
 {
   "Hero": {
     "badge": {
-      "label": "NEW",
-      "text": "Next.js SaaS Full Stack Template",
+      "label": "NUOVO",
+      "text": "Template SaaS Full Stack Next.js",
       "href": "https://nexty.dev/#pricing"
     },
-    "title": "A Modern Next.js Full Stack SaaS Boilerplate",
-    "description": "Our Next.js boilerplate includes authentication, Stripe payments, AI integration, CMS, and everything you need to start earning immediately.",
-    "getStarted": "Get Started",
+    "title": "Un Moderno Boilerplate SaaS Full Stack Next.js",
+    "description": "Il nostro boilerplate Next.js include autenticazione, pagamenti Stripe, integrazione AI, CMS e tutto ciò che ti serve per iniziare a guadagnare immediatamente.",
+    "getStarted": "Inizia Ora",
     "getStartedLink": "https://nexty.dev/#pricing",
-    "viewDocs": "View Documentation",
+    "viewDocs": "Visualizza Documentazione",
     "viewDocsLink": "https://nexty.dev/docs"
   },
   "Features": {
     "badge": {
-      "label": "FEATURES",
-      "text": "Production-ready SaaS Development Kit"
+      "label": "FUNZIONALITÀ",
+      "text": "Kit di Sviluppo SaaS Production-Ready"
     },
-    "title": "Production-ready Next.js SaaS Boilerplate",
-    "description": "The Next.js boilerplate includes every essential feature modern SaaS applications require, letting you focus on your unique business logic and customer value.",
+    "title": "Boilerplate SaaS Next.js Production-Ready",
+    "description": "Il boilerplate Next.js include ogni funzionalità essenziale che le applicazioni SaaS moderne richiedono, permettendoti di concentrarti sulla tua logica di business unica e sul valore per i clienti.",
     "items": [
       {
-        "title": "3 Powerful Boilerplates",
-        "description": "Purchase once, get 3 powerful boilerplates.",
+        "title": "3 Boilerplate Potenti",
+        "description": "Acquista una volta, ottieni 3 boilerplate potenti.",
         "details": [
           {
             "title": "Boilerplate 1: Nexty",
-            "description": "Universal SaaS boilerplate with every feature you need.",
+            "description": "Boilerplate SaaS universale con ogni funzionalità di cui hai bisogno.",
             "href": "https://demo.nexty.dev"
           },
           {
             "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "AI Image Generation SaaS boilerplate.",
+            "description": "Boilerplate SaaS per generazione di immagini AI.",
             "href": "https://flux-kontext.nexty.dev"
           },
           {
             "title": "Boilerplate 3: nexty-directory",
-            "description": "Directory & listing website boilerplate.",
+            "description": "Boilerplate per siti web di directory e listing.",
             "href": "https://dofollow.tools"
           }
         ],
@@ -47,20 +47,20 @@
         ]
       },
       {
-        "title": "Authentication",
-        "description": "Integrated Better Auth with multiple sign-in options.",
+        "title": "Autenticazione",
+        "description": "Better Auth integrato con più opzioni di accesso.",
         "details": [
           {
-            "title": "Social Sign-in",
-            "description": "Google, GitHub, and more."
+            "title": "Accesso Social",
+            "description": "Google, GitHub e altro ancora."
           },
           {
             "title": "Magic Links",
-            "description": "Email verification with magic links."
+            "description": "Verifica email con magic link."
           },
           {
-            "title": "Bot Protection",
-            "description": "Protect your app from bots with Cloudflare Turnstile."
+            "title": "Protezione Bot",
+            "description": "Proteggi la tua app dai bot con Cloudflare Turnstile."
           }
         ],
         "images": [
@@ -69,19 +69,19 @@
       },
       {
         "title": "Database",
-        "description": "Integrated Drizzle ORM with multiple database options, such as Supabase, Neon, and Self-hosted PostgreSQL.",
+        "description": "Drizzle ORM integrato con più opzioni di database, come Supabase, Neon e PostgreSQL self-hosted.",
         "details": [
           {
-            "title": "One Line Configuration",
-            "description": "Just fill in DATABASE_URL, and the best configuration will be automatically completed."
+            "title": "Configurazione in Una Riga",
+            "description": "Basta compilare DATABASE_URL e la configurazione ottimale verrà completata automaticamente."
           },
           {
-            "title": "Comprehensive Built-in Tables",
-            "description": "Comprehensive set of tables for user management, pricing plans, orders, content management, and more."
+            "title": "Tabelle Incorporate Complete",
+            "description": "Set completo di tabelle per gestione utenti, piani prezzi, ordini, gestione contenuti e altro ancora."
           },
           {
-            "title": "Multiple Database Options",
-            "description": "Supabase, Neon, and Self-hosted PostgreSQL."
+            "title": "Più Opzioni Database",
+            "description": "Supabase, Neon e PostgreSQL self-hosted."
           }
         ],
         "images": [
@@ -90,20 +90,20 @@
         ]
       },
       {
-        "title": "Payment System",
-        "description": "Complete billing solution with Stripe Checkout and Stripe's Billing Portal.",
+        "title": "Sistema di Pagamento",
+        "description": "Soluzione di fatturazione completa con Stripe Checkout e Portale di Fatturazione Stripe.",
         "details": [
           {
-            "title": "All Payment Methods",
-            "description": "Nexty supports monthly and annual subscriptions, and one-time payments."
+            "title": "Tutti i Metodi di Pagamento",
+            "description": "Nexty supporta abbonamenti mensili e annuali e pagamenti una tantum."
           },
           {
-            "title": "Usage-based Billing",
-            "description": "Nexty supports usage-based billing for apps that need to charge users based on their usage."
+            "title": "Fatturazione Basata sull'Utilizzo",
+            "description": "Nexty supporta la fatturazione basata sull'utilizzo per app che devono addebitare gli utenti in base al loro utilizzo."
           },
           {
-            "title": "Smart Admin Management",
-            "description": "Nexty's pricing plans are managed through the admin dashboard, bound to Stripe Price IDs for intelligent, secure, and real-time preview capabilities."
+            "title": "Gestione Admin Intelligente",
+            "description": "I piani prezzi di Nexty sono gestiti tramite dashboard admin, collegati agli ID Price Stripe per capacità di anteprima intelligenti, sicure e in tempo reale."
           }
         ],
         "images": [
@@ -112,20 +112,20 @@
         ]
       },
       {
-        "title": "AI Capabilities",
-        "description": "Complete AI integration toolkit with interactive demos, multi-provider support, and ready-to-deploy AI image generation website template.",
+        "title": "Capacità AI",
+        "description": "Toolkit completo di integrazione AI con demo interattive, supporto multi-provider e template di sito web di generazione immagini AI pronto per il deploy.",
         "details": [
           {
-            "title": "AI Demo Hub",
-            "description": "Nexty includes built-in demos for chat, text-to-image, image-to-image, and video generation to help developers learn AI workflows and test models quickly."
+            "title": "Hub Demo AI",
+            "description": "Nexty include demo incorporate per chat, text-to-image, image-to-image e generazione video per aiutare gli sviluppatori a imparare i flussi di lavoro AI e testare rapidamente i modelli."
           },
           {
-            "title": "Universal AI Provider Support",
-            "description": "Nexty offers AI SDK integration supporting GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter, and Replicate for maximum flexibility."
+            "title": "Supporto Universale Provider AI",
+            "description": "Nexty offre integrazione AI SDK supportando GPT, Claude, Gemini, DeepSeek, Grok, OpenRouter e Replicate per massima flessibilità."
           },
           {
-            "title": "Bonus:  AI Image Generation Website",
-            "description": "Nexty paid users receive a complete Flux Kontext AI image generation website template for rapid deployment of AI art platforms."
+            "title": "Bonus: Sito Web di Generazione Immagini AI",
+            "description": "Gli utenti paganti Nexty ricevono un completo template di sito web di generazione immagini AI Flux Kontext per rapido deployment di piattaforme artistiche AI."
           }
         ],
         "images": [
@@ -135,19 +135,19 @@
       },
       {
         "title": "CMS",
-        "description": "Advanced CMS going beyond basic content management with paywall protection, AI translation, and multi-purpose publishing capabilities.",
+        "description": "CMS avanzato che va oltre la gestione contenuti di base con protezione paywall, traduzione AI e capacità di pubblicazione multiuso.",
         "details": [
           {
-            "title": "Content Access Control",
-            "description": "Nexty's CMS supports public, logged-in users, and subscriber-only content with paywall protection for monetized content sites."
+            "title": "Controllo Accesso Contenuti",
+            "description": "Il CMS di Nexty supporta contenuti pubblici, utenti loggati e solo abbonati con protezione paywall per siti di contenuti monetizzati."
           },
           {
-            "title": "AI-Powered Translation",
-            "description": "Nexty's CMS includes built-in AI translation for multilingual content creation, plus duplicate feature for efficient content production workflows."
+            "title": "Traduzione Alimentata da AI",
+            "description": "Il CMS di Nexty include traduzione AI incorporata per creazione di contenuti multilingua, più funzione duplicato per flussi di produzione contenuti efficienti."
           },
           {
-            "title": "Multi-Purpose Publishing",
-            "description": "Nexty's CMS enables both free blog sites and paid content platforms with advanced status management (draft, published, archived)."
+            "title": "Pubblicazione Multiuso",
+            "description": "Il CMS di Nexty abilita sia siti blog gratuiti che piattaforme contenuti a pagamento con gestione stato avanzata (bozza, pubblicato, archiviato)."
           }
         ],
         "images": [
@@ -159,20 +159,20 @@
         ]
       },
       {
-        "title": "File Storage",
-        "description": "Enterprise-grade file management powered by Cloudflare R2 with admin dashboard, automatic CDN distribution, and optimized upload workflows.",
+        "title": "Archiviazione File",
+        "description": "Gestione file enterprise alimentata da Cloudflare R2 con dashboard admin, distribuzione CDN automatica e flussi di caricamento ottimizzati.",
         "details": [
           {
-            "title": "Admin File Management",
-            "description": "Nexty provides a dedicated admin dashboard for comprehensive file management with upload, delete, and organization capabilities."
+            "title": "Gestione File Admin",
+            "description": "Nexty fornisce una dashboard admin dedicata per gestione file completa con capacità di caricamento, eliminazione e organizzazione."
           },
           {
-            "title": "Cloudflare R2 Integration",
-            "description": "Nexty leverages Cloudflare R2 for cost-effective, high-performance file storage with automatic CDN distribution worldwide."
+            "title": "Integrazione Cloudflare R2",
+            "description": "Nexty sfrutta Cloudflare R2 per archiviazione file economiche e ad alte prestazioni con distribuzione CDN automatica in tutto il mondo."
           },
           {
-            "title": "Optimized Upload Experience",
-            "description": "Nexty features drag-and-drop uploads, preview functionality, and automatic file processing for seamless user experience."
+            "title": "Esperienza di Caricamento Ottimizzata",
+            "description": "Nexty offre caricamenti drag-and-drop, funzionalità anteprima e elaborazione file automatica per esperienza utente senza soluzione di continuità."
           }
         ],
         "images": [
@@ -180,20 +180,20 @@
         ]
       },
       {
-        "title": "Visual Pricing Management",
-        "description": "Nexty introduces dashboard pricing management that's secure and convenient, update your pricing without touching code.",
+        "title": "Gestione Prezzi Visuale",
+        "description": "Nexty introduce gestione prezzi dashboard sicura e conveniente, aggiorna i tuoi prezzi senza toccare il codice.",
         "details": [
           {
-            "title": "Real-Time Preview",
-            "description": "Nexty's pricing card editor includes real-time preview, enabling you to see how pricing cards will look before saving."
+            "title": "Anteprima in Tempo Reale",
+            "description": "L'editor schede prezzi di Nexty include anteprima in tempo reale, permettendoti di vedere come appariranno le schede prezzi prima di salvare."
           },
           {
-            "title": "Stripe Integration",
-            "description": "Nexty fetches pricing data from Stripe with one-click verification for accurate billing setup."
+            "title": "Integrazione Stripe",
+            "description": "Nexty recupera dati prezzi da Stripe con verifica con un clic per configurazione fatturazione accurata."
           },
           {
-            "title": "Multi-language Support",
-            "description": "Nexty supports AI-powered translation for pricing cards, enabling easy management of multilingual pricing content."
+            "title": "Supporto Multilingua",
+            "description": "Nexty supporta traduzione alimentata da AI per schede prezzi, permettendo facile gestione di contenuti prezzi multilingua."
           }
         ],
         "images": [
@@ -206,20 +206,20 @@
         ]
       },
       {
-        "title": "Email System",
-        "description": "Complete email solution with Cloudflare domain email and Resend integration for professional communications and subscriber management.",
+        "title": "Sistema Email",
+        "description": "Soluzione email completa con email di dominio Cloudflare e integrazione Resend per comunicazioni professionali e gestione abbonati.",
         "details": [
           {
-            "title": "Professional Domain Email",
-            "description": "Nexty implements domain email through Cloudflare, making your brand appear more professional and helping build trust with users."
+            "title": "Email di Dominio Professionale",
+            "description": "Nexty implementa email di dominio attraverso Cloudflare, facendo apparire il tuo brand più professionale e aiutando a costruire fiducia con gli utenti."
           },
           {
-            "title": "Advanced Email Marketing",
-            "description": "Nexty includes Resend integration for subscriber management and email campaigns, with built-in newsletter subscription module in the footer."
+            "title": "Email Marketing Avanzato",
+            "description": "Nexty include integrazione Resend per gestione abbonati e campagne email, con modulo di abbonamento newsletter incorporato nel footer."
           },
           {
-            "title": "Built-in Email Automation",
-            "description": "Nexty includes newsletter subscription and payment failure notification emails, plus pre-built templates for essential user communications."
+            "title": "Automazione Email Incorporata",
+            "description": "Nexty include abbonamento newsletter e email di notifica fallimento pagamento, più template predefiniti per comunicazioni utente essenziali."
           }
         ],
         "images": [
@@ -228,20 +228,20 @@
         ]
       },
       {
-        "title": "User Dashboard",
-        "description": "Complete user dashboard that provides a seamless experience for users.",
+        "title": "Dashboard Utente",
+        "description": "Dashboard utente completa che fornisce un'esperienza senza soluzione di continuità per gli utenti.",
         "details": [
           {
-            "title": "Profile Management",
-            "description": "Nexty includes comprehensive profile settings."
+            "title": "Gestione Profilo",
+            "description": "Nexty include impostazioni profilo complete."
           },
           {
-            "title": "Subscription Management",
-            "description": "Nexty provides subscription management with billing history and plan upgrades through Stripe integration."
+            "title": "Gestione Abbonamento",
+            "description": "Nexty fornisce gestione abbonamento con cronologia fatturazione e upgrade piani attraverso integrazione Stripe."
           },
           {
-            "title": "Credit History & Usage",
-            "description": "Nexty tracks credit grants and usage with detailed history, supporting both one-time and subscription-based credit systems."
+            "title": "Cronologia Crediti e Utilizzo",
+            "description": "Nexty traccia concessioni e utilizzo crediti con cronologia dettagliata, supportando sia sistemi crediti una tantum che basati su abbonamento."
           }
         ],
         "images": [
@@ -251,20 +251,20 @@
         ]
       },
       {
-        "title": "Admin Dashboard",
-        "description": "Comprehensive admin dashboard providing full control over users, pricing, content, and files for complete SaaS management.",
+        "title": "Dashboard Admin",
+        "description": "Dashboard admin completa fornendo controllo totale su utenti, prezzi, contenuti e file per gestione SaaS completa.",
         "details": [
           {
-            "title": "User Management",
-            "description": "Nexty provides complete user management with role control, Stripe customer integration, and account administration."
+            "title": "Gestione Utenti",
+            "description": "Nexty fornisce gestione utenti completa con controllo ruoli, integrazione clienti Stripe e amministrazione account."
           },
           {
-            "title": "Pricing Management",
-            "description": "Nexty offers visual pricing plan management with environment separation, Stripe integration, and real-time preview."
+            "title": "Gestione Prezzi",
+            "description": "Nexty offre gestione piani prezzi visuale con separazione ambiente, integrazione Stripe e anteprima in tempo reale."
           },
           {
-            "title": "CMS & File Management",
-            "description": "Nexty includes blog management with multilingual support, access control, and R2 file management with preview capabilities."
+            "title": "CMS e Gestione File",
+            "description": "Nexty include gestione blog con supporto multilingua, controllo accessi e gestione file R2 con capacità anteprima."
           }
         ],
         "images": [
@@ -275,20 +275,20 @@
         ]
       },
       {
-        "title": "Marketing & Growth",
-        "description": "Complete growth toolkit with internationalization, analytics, advertising, and SEO optimization for global reach and business success.",
+        "title": "Marketing e Crescita",
+        "description": "Toolkit di crescita completo con internazionalizzazione, analytics, pubblicità e ottimizzazione SEO per raggiunto globale e successo aziendale.",
         "details": [
           {
             "title": "i18n",
-            "description": "Nexty supports multiple languages out-of-the-box with easy expansion for worldwide market reach."
+            "description": "Nexty supporta più lingue out-of-the-box con facile espansione per raggiunto mercato mondiale."
           },
           {
-            "title": "Analytics & AdSense",
-            "description": "Nexty includes Google Analytics, Plausible tracking, and AdSense integration for insights and revenue generation."
+            "title": "Analytics e AdSense",
+            "description": "Nexty include Google Analytics, tracciamento Plausible e integrazione AdSense per insight e generazione entrate."
           },
           {
-            "title": "SEO Optimization",
-            "description": "Nexty provides comprehensive SEO optimization with meta tags and sitemaps for better rankings."
+            "title": "Ottimizzazione SEO",
+            "description": "Nexty fornisce ottimizzazione SEO completa con meta tag e sitemap per migliori classifiche."
           }
         ],
         "images": [
@@ -301,33 +301,33 @@
   },
   "UseCases": {
     "badge": {
-      "label": "USE CASES",
-      "text": "Multiple Solution Scenarios"
+      "label": "CASI D'USO",
+      "text": "Scenari di Soluzione Multipla"
     },
-    "title": "One Boilerplate, Multiple Solutions",
-    "description": "Whether you're building AI tools, content platforms, or other SaaS products, our Next.js SaaS boilerplate adapts to your specific needs with minimal configuration required.",
+    "title": "Un Boilerplate, Soluzioni Multiple",
+    "description": "Che tu stia costruendo strumenti AI, piattaforme contenuti o altri prodotti SaaS, il nostro boilerplate SaaS Next.js si adatta alle tue esigenze specifiche con configurazione minima richiesta.",
     "cases": [
       {
-        "title": "AI-Powered SaaS Tools",
-        "description": "Launch production-ready AI applications in days, not months. Built-in integrations with OpenRouter, Replicate, and leading AI providers. Includes smart usage tracking, automated billing, and everything you need to monetize AI workflows.",
+        "title": "Strumenti SaaS Alimentati da AI",
+        "description": "Lancia applicazioni AI production-ready in giorni, non mesi. Integrazioni incorporate con OpenRouter, Replicate e provider AI leader. Include tracciamento intelligente utilizzo, fatturazione automatizzata e tutto ciò che ti serve per monetizzare flussi di lavoro AI.",
         "image": "/placeholder.webp",
         "icon": "Bot"
       },
       {
-        "title": "Content & Blog Platforms",
-        "description": "Launch SEO-optimized content websites with advanced CMS capabilities. Features include Markdown editing, multilingual support, paywall protection, AI translation, and AdSense integration. Perfect for building premium content platforms, newsletters, or content-driven SaaS applications.",
+        "title": "Piattaforme Contenuti e Blog",
+        "description": "Lancia siti web contenuti SEO-ottimizzati con capacità CMS avanzate. Le funzionalità includono editing Markdown, supporto multilingua, protezione paywall, traduzione AI e integrazione AdSense. Perfetto per costruire piattaforme contenuti premium, newsletter o applicazioni SaaS driven da contenuti.",
         "image": "/placeholder.webp",
         "icon": "FileText"
       },
       {
-        "title": "Subscription & Marketplace Platforms",
-        "description": "Build recurring revenue businesses with automated billing, customer management, and payment processing. Features include subscription management, usage-based pricing, customer portals, and comprehensive analytics. Perfect for SaaS marketplaces, subscription services, or premium tool platforms.",
+        "title": "Piattaforme Abbonamento e Marketplace",
+        "description": "Costruisci aziende a entrate ricorrenti con fatturazione automatizzata, gestione clienti e elaborazione pagamenti. Le funzionalità includono gestione abbonamenti, prezzi basati sull'utilizzo, portali clienti e analytics complete. Perfetto per marketplace SaaS, servizi abbonamento o piattaforme strumenti premium.",
         "image": "/placeholder.webp",
         "icon": "CreditCard"
       },
       {
-        "title": "Free Tools & Lead Magnets",
-        "description": "Create viral free tools that drive massive organic traffic. Lightning-fast performance and SEO optimization. Perfect for building your email list, generating leads, or creating the next viral calculator/converter tool.",
+        "title": "Strumenti Gratuiti e Lead Magnet",
+        "description": "Crea strumenti gratuiti virali che guidano traffico organico massiccio. Prestazioni lightning-fast e ottimizzazione SEO. Perfetto per costruire la tua lista email, generare lead o creare il prossimo strumento calcolatrice/convertitore virale.",
         "image": "/placeholder.webp",
         "icon": "Wrench"
       }
@@ -335,75 +335,75 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "TESTIMONIALS"
+      "label": "TESTIMONIANZE"
     },
-    "title": "What Our Customers Say",
-    "description": "Don't just take our word for it"
+    "title": "Cosa Dicono i Nostri Clienti",
+    "description": "Non credere solo sulla nostra parola"
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Common questions about our Next.js SaaS boilerplate and how it can help you build better applications faster",
+    "title": "Domande Frequenti",
+    "description": "Domande comuni sul nostro boilerplate SaaS Next.js e come può aiutarti a costruire applicazioni migliori più velocemente",
     "items": [
       {
-        "question": "Can I use this boilerplate as a non-technical person?",
-        "answer": "Absolutely! Nexty is specifically designed to work seamlessly with AI assistants, allowing even those with zero programming experience to develop products through AI-assisted development. Our code structure and documentation are AI-friendly, making it easier for AI to understand and modify the code. Technical teams will benefit from even greater development efficiency."
+        "question": "Posso usare questo boilerplate come persona non tecnica?",
+        "answer": "Assolutamente! Nexty è specificamente progettato per funzionare perfettamente con assistenti AI, permettendo anche a quelli con zero esperienza di programmazione di sviluppare prodotti attraverso sviluppo assistito da AI. La nostra struttura del codice e documentazione sono AI-friendly, rendendo più facile per AI capire e modificare il codice. I team tecnici beneficeranno di ancora maggiore efficienza di sviluppo."
       },
       {
-        "question": "What makes this the best Next.js SaaS boilerplate?",
-        "answer": "Nexty is the most comprehensive Next.js SaaS starter kit available. Unlike other templates that only provide basic components, we include complete business workflows: authentication, payments, AI integration, content management, and monetization features. Everything is production-ready and battle-tested in real applications."
+        "question": "Cosa rende questo il miglior boilerplate SaaS Next.js?",
+        "answer": "Nexty è il kit starter SaaS Next.js più completo disponibile. A differenza di altri template che forniscono solo componenti di base, includiamo flussi di lavoro business completi: autenticazione, pagamenti, integrazione AI, gestione contenuti e funzionalità di monetizzazione. Tutto è production-ready e testato in battaglia in applicazioni reali."
       },
       {
-        "question": "How quickly can I launch my SaaS with this boilerplate?",
-        "answer": "Your first project will take 3-5 days as you learn the boilerplate's features, but the learning curve pays off quickly. Our customers who've mastered the system now launch complete SaaS applications in just 1-2 days. The boilerplate handles all the complex infrastructure, so you can focus on what makes your product unique."
+        "question": "Quanto velocemente posso lanciare il mio SaaS con questo boilerplate?",
+        "answer": "Il tuo primo progetto richiederà 3-5 giorni mentre impari le funzionalità del boilerplate, ma la curva di apprendimento ripaga rapidamente. I nostri clienti che hanno padroneggiato il sistema ora lanciano applicazioni SaaS complete in solo 1-2 giorni. Il boilerplate gestisce tutta l'infrastruttura complessa, così puoi concentrarti su ciò che rende il tuo prodotto unico."
       },
       {
-        "question": "Is this suitable for AI-powered SaaS applications?",
-        "answer": "Absolutely! Our boilerplate includes comprehensive AI SDK integration with working examples for text generation, image creation, and video processing. It's compatible with OpenAI, Claude, Gemini, Grok, DeepSeek, and other popular AI models. Perfect for building AI tools or content generation platforms."
+        "question": "È adatto per applicazioni SaaS alimentate da AI?",
+        "answer": "Assolutamente! Il nostro boilerplate include integrazione completa AI SDK con esempi funzionanti per generazione testo, creazione immagini ed elaborazione video. È compatibile con OpenAI, Claude, Gemini, Grok, DeepSeek e altri popolari modelli AI. Perfetto per costruire strumenti AI o piattaforme generazione contenuti."
       },
       {
-        "question": "What payment methods and billing models are supported?",
-        "answer": "The boilerplate includes complete Stripe integration supporting one-time payments, subscriptions, usage-based billing, and automated renewals. You can start monetizing immediately."
+        "question": "Quali metodi di pagamento e modelli di fatturazione sono supportati?",
+        "answer": "Il boilerplate include integrazione Stripe completa supportando pagamenti una tantum, abbonamenti, fatturazione basata sull'utilizzo e rinnovi automatizzati. Puoi iniziare a monetizzare immediatamente."
       },
       {
-        "question": "How does the content management system work?",
-        "answer": "Our built-in CMS supports Markdown and rich text editing, multilingual content, SEO optimization, paywall protection, and AI translation. You can manage articles, pages, and premium content through an intuitive admin dashboard with role-based access control."
+        "question": "Come funziona il sistema di gestione contenuti?",
+        "answer": "Il nostro CMS incorporato supporta editing Markdown e rich text, contenuti multilingua, ottimizzazione SEO, protezione paywall e traduzione AI. Puoi gestire articoli, pagine e contenuti premium attraverso una dashboard admin intuitiva con controllo accessi basato su ruoli."
       },
       {
-        "question": "Is the boilerplate SEO-optimized?",
-        "answer": "Yes! The boilerplate includes comprehensive SEO features: automatic meta tags, structured data, XML sitemaps, OpenGraph support, and performance optimization. It's built with Next.js best practices for search engine visibility and faster loading times."
+        "question": "Il boilerplate è SEO-ottimizzato?",
+        "answer": "Sì! Il boilerplate include funzionalità SEO complete: meta tag automatici, dati strutturati, sitemap XML, supporto OpenGraph e ottimizzazione prestazioni. È costruito con best practice Next.js per visibilità motori di ricerca e tempi di caricamento più veloci."
       },
       {
-        "question": "What kind of support do you provide?",
-        "answer": "We provide comprehensive documentation, code examples, and email support. We also have a public Discord community where you can get help from other developers and share your projects."
+        "question": "Che tipo di supporto fornite?",
+        "answer": "Forniamo documentazione completa, esempi di codice e supporto email. Abbiamo anche una community Discord pubblica dove puoi ottenere aiuto da altri sviluppatori e condividere i tuoi progetti."
       },
       {
-        "question": "How do I manage pricing cards?",
-        "answer": "This is a key selling point of Nexty. You can manage pricing cards in the Dashboard, including adding, editing, and deleting pricing cards with AI multilingual translation support, eliminating complex multilingual file configuration."
+        "question": "Come gestisco le schede prezzi?",
+        "answer": "Questo è un punto chiave di vendita di Nexty. Puoi gestire le schede prezzi nella Dashboard, inclusa aggiunta, modifica ed eliminazione di schede prezzi con supporto traduzione multilingua AI, eliminando complessa configurazione file multilingua."
       }
     ]
   },
   "CTA": {
-    "title": "Launch Your Product Fast, and Earn Money Fast",
-    "description": "Stop starting from scratch! Use Nexty templates to focus on your core idea, rapidly build, validate, and start earning.",
-    "button": "Get Template Now",
-    "trustText": "Trusted by developers worldwide",
+    "title": "Lancia il Tuo Prodotto Veloce, e Guadagna Soldi Veloce",
+    "description": "Smetti di iniziare da zero! Usa i template Nexty per concentrarti sulla tua idea core, costruire rapidamente, validare e iniziare a guadagnare.",
+    "button": "Ottieni Template Ora",
+    "trustText": "Fidato da sviluppatori in tutto il mondo",
     "features": {
-      "deploy": "🚀 Quick Deploy",
+      "deploy": "🚀 Deploy Veloce",
       "production": "🔧 Production Ready",
-      "updates": "💎 Lifetime Updates",
-      "i18n": "🌍 Internationalization"
+      "updates": "💎 Aggiornamenti a Vita",
+      "i18n": "🌍 Internazionalizzazione"
     }
   },
   "Pricing": {
     "badge": {
-      "label": "PRICING",
-      "text": "One-Time Payment, Lifetime Updates"
+      "label": "PREZZI",
+      "text": "Pagamento Una Tantum, Aggiornamenti a Vita"
     },
-    "title": "Ship your SaaS in days, not months",
-    "description": "Using our battle-tested SaaS starter template, so you can skip boilerplate coding and focus on the features your users actually need.",
-    "annual": "Annual",
-    "monthly": "Monthly",
-    "onetime": "One-Time",
-    "saveTip": "Save 20%"
+    "title": "Spedisci il tuo SaaS in giorni, non mesi",
+    "description": "Usando il nostro template starter SaaS battle-tested, così puoi saltare il coding boilerplate e concentrarti sulle funzionalità di cui i tuoi utenti hanno realmente bisogno.",
+    "annual": "Annuale",
+    "monthly": "Mensile",
+    "onetime": "Una Tantum",
+    "saveTip": "Risparmia il 20%"
   }
 }

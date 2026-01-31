@@ -5,6 +5,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FormDescription } from "@/components/ui/form";
+import type { Locale } from "@/i18n/routing";
 import { DEFAULT_LOCALE, LOCALES } from "@/i18n/routing";
 import { safeJsonParse } from "@/lib/safeJson";
 import { AlertTriangle } from "lucide-react";
@@ -15,7 +16,7 @@ interface PricingCardPreviewProps {
 }
 
 export function PricingCardPreview({ watchedValues }: PricingCardPreviewProps) {
-  const [displayLocale, setDisplayLocale] = useState(DEFAULT_LOCALE);
+  const [displayLocale, setDisplayLocale] = useState<Locale>(DEFAULT_LOCALE);
   const [parseError, setParseError] = useState<string | null>(null);
 
   const previewPlanData = useMemo(() => {

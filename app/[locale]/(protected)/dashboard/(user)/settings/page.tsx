@@ -1,8 +1,8 @@
 import { getSession } from "@/lib/auth/server";
 import { user as userSchema } from "@/lib/db/schema";
 import { constructMetadata } from "@/lib/metadata";
+import type { Locale } from "@/i18n/routing";
 import { Metadata } from "next";
-import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import Settings from "./Setting";

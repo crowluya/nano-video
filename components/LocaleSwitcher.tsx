@@ -52,7 +52,7 @@ export default function LocaleSwitcher() {
         <Languages className="w-4 h-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuRadioGroup value={locale} onValueChange={onSelectChange}>
+        <DropdownMenuRadioGroup value={locale} onValueChange={(value) => onSelectChange(value as Locale)}>
           {routing.locales.map((cur) => (
             <DropdownMenuRadioItem key={cur} value={cur}>
               {LOCALE_NAMES[cur]}

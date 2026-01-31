@@ -1,6 +1,7 @@
 "use client";
 
 import { subscribeToNewsletter } from "@/actions/newsletter";
+import type { Locale } from "@/i18n/routing";
 import { normalizeEmail, validateEmail } from "@/lib/email";
 import { cn } from "@/lib/utils";
 import { Send } from "lucide-react";
@@ -38,7 +39,7 @@ export function Newsletter() {
 
       const result = await subscribeToNewsletter(
         normalizedEmailAddress,
-        currentLocale
+        currentLocale as Locale
       );
 
       if (!result.success) {

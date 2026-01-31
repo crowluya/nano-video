@@ -1,8 +1,8 @@
 import { getPricingPlanById } from "@/actions/prices/admin";
 import { pricingPlans as pricingPlansSchema } from "@/lib/db/schema";
 import { constructMetadata } from "@/lib/metadata";
+import type { Locale } from "@/i18n/routing";
 import { Metadata } from "next";
-import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { PricePlanForm } from "../PricePlanForm";
 

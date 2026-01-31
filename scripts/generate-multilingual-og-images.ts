@@ -65,8 +65,7 @@ async function generateOgImage(locale: Locale, client: KieClient): Promise<Buffe
     model: 'nano-banana-pro',
     input: {
       prompt,
-      aspectRatio: '16:9', // Standard OG image aspect ratio
-      num_images: 1,
+      aspect_ratio: '16:9', // Standard OG image aspect ratio
     },
   });
 
@@ -77,7 +76,7 @@ async function generateOgImage(locale: Locale, client: KieClient): Promise<Buffe
     intervalMs: 3000,
     maxAttempts: 60,
     onProgress: (attempt, status) => {
-      console.log(`  Progress: attempt ${attempt}, state: ${status.state}`);
+      console.log(`  Progress: attempt ${attempt}, state: ${(status as { state: string }).state}`);
     },
   });
 

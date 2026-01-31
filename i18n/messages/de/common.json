@@ -1,124 +1,124 @@
 {
   "LanguageDetection": {
-    "title": "语言建议",
-    "description": "检测到你的浏览器语言和当前语言不一样，你随时都可切换语言。",
-    "countdown": "将在 {countdown} 秒后关闭",
-    "switchTo": "切换到"
+    "title": "Sprachvorschlag",
+    "description": "Wir haben bemerkt, dass Ihre Browsersprache von der aktuellen Site-Sprache abweicht. Sie können die Sprache jederzeit wechseln.",
+    "countdown": "Schließung in {countdown} Sekunden",
+    "switchTo": "Wechseln zu"
   },
   "Header": {
     "links": [
       {
-        "name": "功能特性",
+        "name": "Funktionen",
         "href": "/#features"
       },
       {
-        "name": "视频生成器",
+        "name": "Video-Generator",
         "href": "/#video-demo"
       },
       {
-        "name": "提示词生成器",
+        "name": "Prompt-Generator",
         "href": "/#prompt-generator"
       },
       {
-        "name": "图像生成器",
+        "name": "Bild-Generator",
         "href": "/#image-demo"
       },
       {
         "id": "pricing",
-        "name": "定价",
+        "name": "Preise",
         "href": "/#pricing"
       },
       {
-        "name": "使用案例",
+        "name": "Anwendungsfälle",
         "href": "/#use-cases"
       },
       {
-        "name": "常见问题",
+        "name": "FAQ",
         "href": "/#faq"
       },
       {
-        "name": "博客",
+        "name": "Blog",
         "href": "/blog"
       }
     ]
   },
   "Footer": {
-    "Copyright": "版权所有 © {year} {name} 保留所有权利。",
-    "About": "关于",
-    "PrivacyPolicy": "隐私政策",
-    "TermsOfService": "条款与条件",
-    "RefundPolicy": "退款政策",
+    "Copyright": "Copyright © {year} {name} Alle Rechte vorbehalten.",
+    "About": "Über uns",
+    "PrivacyPolicy": "Datenschutzerklärung",
+    "TermsOfService": "Nutzungsbedingungen",
+    "RefundPolicy": "Rückerstattungsrichtlinie",
     "Newsletter": {
-      "title": "订阅我们的邮件",
-      "description": "获取最新的更新和教程",
+      "title": "Abonnieren Sie unseren Newsletter",
+      "description": "Bleiben Sie auf dem Laufenden mit unseren neuesten Neuigkeiten.",
       "subscribe": {
-        "invalidEmail": "请输入有效的邮箱地址",
-        "defaultErrorMessage": "订阅失败，请稍后再试",
-        "successMessage": "订阅成功",
-        "multipleSubmissions": "你已多次提交，请明天再试再试"
+        "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "defaultErrorMessage": "Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut",
+        "successMessage": "Erfolgreich abonniert!",
+        "multipleSubmissions": "Zu viele Anfragen. Bitte versuchen Sie es morgen erneut"
       },
       "unsubscribe": {
-        "title": "退订邮件通知",
-        "success": "您已成功退订 Nano Banana Video 邮件通知。",
-        "emailPrefix": "邮箱：",
-        "regretMessage": "您随时可以重新订阅邮件，获取 Nano Banana Video 最新更新和教程。",
-        "errorGeneric": "处理您的退订请求时发生错误",
-        "errorNoToken": "未提供退订令牌",
-        "errorMessage": "请确保您使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
-        "contactPrefix": "请发送邮件至：",
-        "contactPrefixSuccess": "如有任何问题，请随时联系我们：",
-        "backToHome": "返回主页",
-        "invalidEmail": "无效的邮箱地址",
-        "notInNewsletter": "该邮箱不在我们的订阅列表中",
-        "confirmTitle": "确认退订",
-        "confirmMessage": "您确定要退订我们的邮件通讯吗？您将不再收到有关新功能和内容的更新。",
-        "confirmButton": "确认退订",
-        "cancelButton": "取消",
-        "processing": "处理中...",
-        "finalWarning": "此操作无法撤销。您可以随时重新订阅。",
-        "errorInvalidToken": "无效的退订链接。链接可能已损坏或过期。"
+        "title": "Newsletter-Abmeldung",
+        "success": "Sie haben sich erfolgreich vom Nano Banana Video Newsletter abgemeldet.",
+        "emailPrefix": "E-Mail:",
+        "regretMessage": "Sie können sich jederzeit erneut abonnieren, um die neuesten Nano Banana Video Updates und Tutorials zu erhalten.",
+        "errorGeneric": "Bei der Verarbeitung Ihrer Abmeldungsanfrage ist ein Fehler aufgetreten",
+        "errorNoToken": "Kein Abmeldung-Token bereitgestellt",
+        "errorMessage": "Bitte stellen Sie sicher, dass Sie den richtigen Abmeldelink verwenden. Wenn das Problem weiterhin besteht, kontaktieren Sie unser Support-Team für Hilfe.",
+        "contactPrefix": "Kontaktieren Sie uns unter:",
+        "contactPrefixSuccess": "Wenn Sie Fragen haben, können Sie uns jederzeit kontaktieren unter:",
+        "backToHome": "Zurück zur Startseite",
+        "invalidEmail": "Ungültige E-Mail-Adresse",
+        "notInNewsletter": "Diese E-Mail ist nicht in unserer Abonnentenliste",
+        "confirmTitle": "Abmeldung bestätigen",
+        "confirmMessage": "Sind Sie sicher, dass Sie unseren Newsletter abbestellen möchten? Sie werden keine Updates mehr über neue Funktionen und Inhalte erhalten.",
+        "confirmButton": "Ja, abbestellen",
+        "cancelButton": "Abbrechen",
+        "processing": "Verarbeitung läuft...",
+        "finalWarning": "Diese Aktion kann nicht rückgängig gemacht werden. Sie können sich später jederzeit erneut anmelden.",
+        "errorInvalidToken": "Ungültiger Abmeldelink. Der Link könnte beschädigt oder abgelaufen sein."
       }
     },
     "Links": {
       "groups": [
         {
-          "title": "产品",
+          "title": "Produkte",
           "links": [
             {
               "href": "/#features",
-              "name": "功能特性"
+              "name": "Funktionen"
             },
             {
               "id": "pricing",
               "href": "/#pricing",
-              "name": "定价"
+              "name": "Preise"
             },
             {
               "href": "/blog",
-              "name": "博客"
+              "name": "Blog"
             }
           ]
         },
         {
-          "title": "支持",
+          "title": "Support",
           "links": [
             {
-              "name": "文档",
+              "name": "Dokumentation",
               "href": "/#faq",
               "target": ""
             },
             {
-              "name": "定价",
+              "name": "Preise",
               "href": "/#pricing"
             },
             {
               "href": "mailto:contact@nanobananavideo.net",
-              "name": "联系我们"
+              "name": "Kontaktieren Sie uns"
             }
           ]
         },
         {
-          "title": "语言",
+          "title": "Sprachen",
           "links": [
             {
               "href": "/en",
@@ -134,6 +134,51 @@
               "href": "/ja",
               "name": "日本語",
               "useA": true
+            },
+            {
+              "href": "/de",
+              "name": "Deutsch",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/it",
+              "name": "Italiano",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            },
+            {
+              "href": "/ru",
+              "name": "Русский",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
+              "useA": true
+            },
+            {
+              "href": "/nl",
+              "name": "Nederlands",
+              "useA": true
+            },
+            {
+              "href": "/pl",
+              "name": "Polski",
+              "useA": true
             }
           ]
         }
@@ -142,189 +187,189 @@
   },
   "Home": {
     "title": "Nano Banana Video",
-    "tagLine": "AI 驱动的创意工作室",
-    "description": "使用 AI 创造令人惊叹的图像、视频和音乐。通过 Nano Banana、Midjourney、Sora 2、Veo 3.1 和 Suno 生成内容 - 尽在一个平台。"
+    "tagLine": "KI-gestütztes Kreativstudio",
+    "description": "Erstellen Sie atemberaubende Bilder, Videos und Musik mit KI. Generieren Sie Inhalte mit Nano Banana, Midjourney, Sora 2, Veo 3.1 und Suno - alles an einem Ort."
   },
   "Seo": {
-    "title": "Nano Banana Video - AI 视频生成器 | Sora 2 & Veo 3.1",
-    "description": "Nano Banana 图像转视频 3 分钟出片。支持 Sora 2、Veo 3.1、Kling。免费试用、无水印。适合 TikTok 广告、YouTube 短视频、电商产品视频制作。"
+    "title": "Nano Banana Video - KI-Video-Generator | Sora 2 & Veo 3.1",
+    "description": "Konvertieren Sie Nano Banana Bilder in 3 Minuten in Videos. Unterstützung für Sora 2, Veo 3.1 Fast, Kling. Kostenlose Testversion, kein Wasserzeichen. Perfekt für TikTok Werbung, YouTube Shorts, E-Commerce-Videos."
   },
   "Login": {
-    "title": "欢迎回来",
-    "description": "你可以通过以下方式登录",
+    "title": "Willkommen zurück",
+    "description": "Melden Sie sich mit den folgenden Methoden an",
     "Toast": {
       "Email": {
-        "successTitle": "邮件已发送",
-        "successDescription": "请检查你的邮箱获取登录链接。",
-        "errorTitle": "错误",
-        "errorDescription": "发送邮件失败，请重试。"
+        "successTitle": "Magic-Link gesendet!",
+        "successDescription": "Bitte überprüfen Sie Ihre E-Mail auf den Anmelde-Link.",
+        "errorTitle": "Fehler",
+        "errorDescription": "Magic-Link konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
       },
       "Google": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 Google 登录失败，请重试。"
+        "errorTitle": "Fehler",
+        "errorDescription": "Anmeldung mit Google fehlgeschlagen. Bitte versuchen Sie es erneut."
       },
       "Github": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 GitHub 登录失败，请重试。"
+        "errorTitle": "Fehler",
+        "errorDescription": "Anmeldung mit Github fehlgeschlagen. Bitte versuchen Sie es erneut."
       }
     },
     "signInMethods": {
-      "or": "或者",
-      "signInWithGoogle": "使用 Google 登录",
-      "signInWithGithub": "使用 GitHub 登录",
-      "signInWithEmail": "使用邮箱登录"
+      "or": "Oder fortfahren mit",
+      "signInWithGoogle": "Mit Google fortfahren",
+      "signInWithGithub": "Mit Github fortfahren",
+      "signInWithEmail": "Mit E-Mail fortfahren"
     },
     "Button": {
-      "signIn": "登录",
-      "signOut": "退出"
+      "signIn": "Anmelden",
+      "signOut": "Abmelden"
     },
     "UserMenus": [
       {
-        "name": "图像生成",
+        "name": "Bild-Gen",
         "href": "/dashboard/image-gen",
         "icon": "Image"
       },
       {
-        "name": "视频生成",
+        "name": "Video-Gen",
         "href": "/dashboard/video-gen",
         "icon": "Film"
       },
       {
-        "name": "个人设置",
+        "name": "Einstellungen",
         "href": "/dashboard/settings",
         "icon": "Settings"
       },
       {
-        "name": "我的订单",
+        "name": "Meine Bestellungen",
         "href": "/dashboard/my-orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "管理订阅",
+        "name": "Abonnement",
         "href": "/dashboard/subscription",
         "icon": "WalletCards"
       },
       {
-        "name": "积分明细",
+        "name": "Guthaben-Verlauf",
         "href": "/dashboard/credit-history",
         "icon": "Coins"
       }
     ],
     "AdminMenus": [
       {
-        "name": "概览",
+        "name": "Übersicht",
         "href": "/dashboard/overview",
         "icon": "LayoutDashboard"
       },
       {
-        "name": "用户管理",
+        "name": "Benutzer",
         "href": "/dashboard/users",
         "icon": "Users"
       },
       {
-        "name": "订单管理",
+        "name": "Bestellungen",
         "href": "/dashboard/orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "定价管理",
+        "name": "Preise",
         "href": "/dashboard/prices",
         "icon": "DollarSign"
       },
       {
-        "name": "博客管理",
+        "name": "Blogs",
         "href": "/dashboard/blogs",
         "icon": "Rss"
       },
       {
-        "name": "R2资源管理",
+        "name": "R2-Dateien",
         "href": "/dashboard/r2-resources",
         "icon": "FileBox"
       }
     ]
   },
   "Blogs": {
-    "title": "博客列表",
-    "description": "分享 Next.js 生态圈和 NEXTY.DEV 模板动态。",
+    "title": "Blog-Beiträge",
+    "description": "Einblicke in das Next.js-Ökosystem und NEXTY.DEV Template-Updates.",
     "emptyState": {
-      "title": "暂无博客文章",
-      "description": "我们正在创作精彩内容，敬请期待！"
+      "title": "Keine Blog-Beiträge",
+      "description": "Wir erstellen spannende Inhalte, bleiben Sie dran!"
     },
-    "loadMorePostsFailed": "加载更多博客失败",
-    "loadMorePosts": "加载更多博客……",
-    "filterPostsFailed": "加载博客失败",
-    "noPostsFoundForThisTag": "暂无此标签的博客文章",
-    "reachedTheEnd": "已加载全部博客文章",
+    "loadMorePostsFailed": "Fehler beim Laden weiterer Beiträge",
+    "loadMorePosts": "Weitere Beiträge werden geladen...",
+    "filterPostsFailed": "Fehler beim Laden der Beiträge",
+    "noPostsFoundForThisTag": "Keine Beiträge mit diesem Tag gefunden",
+    "reachedTheEnd": "Sie haben das Ende aller Beiträge erreicht",
     "BlogDetail": {
-      "featured": "精选文章",
-      "viewCount": "{count} 次阅读",
-      "accessRestricted": "访问受限",
-      "unauthorized": "此文章仅对登录用户开放",
-      "premium": "付费内容",
-      "premiumContent": "此文章仅对订阅用户开放",
-      "signIn": "登录",
-      "upgrade": "升级",
-      "backToBlogs": "返回博客列表",
-      "notFound": "文章未找到"
+      "featured": "Empfohlener Beitrag",
+      "viewCount": "{count} Aufrufe",
+      "accessRestricted": "Zugang beschränkt",
+      "unauthorized": "Dieser Artikel ist nur für angemeldete Benutzer verfügbar",
+      "premium": "Premium-Inhalt",
+      "premiumContent": "Dieser Artikel ist exklusiv für Abonnenten",
+      "signIn": "Anmelden",
+      "upgrade": "Upgraden",
+      "backToBlogs": "Zurück zur Blog-Liste",
+      "notFound": "Artikel nicht gefunden"
     }
   },
   "About": {
-    "title": "关于我们",
-    "description": "关于我们"
+    "title": "Über uns",
+    "description": "Über die Site"
   },
   "AIDemo": {
-    "title": "AI 能力演示",
-    "description": "本页面非公开功能，仅用于购买模板的用户学习和测试 AI 模型调用流程。在本地启动模板后，环境变量填写自己的 API Key 即可使用。AI Demo 包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频的转换，通过 Demo 你可以快速理解 AI 调用流程，以加速你的AI应用构建之旅。",
-    "metaDescription": "本页面提供包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频等 AI 能力调用展示。"
+    "title": "KI-Fähigkeiten Demo",
+    "description": "Diese Seite zeigt nicht-öffentliche Funktionen und ist exklusiv für Benutzer, die die Vorlage gekauft haben. Sie ist zum Lernen und Testen des KI-Modellaufrufprozesses konzipiert. Um sie zu verwenden, starten Sie einfach die Vorlage lokal und geben Sie Ihren API-Schlüssel in den Umgebungsvariablen ein. Die KI-Demo enthält Funktionen wie Ein- und Mehrteilengespräche, Text-zu-Bild, Bild-zu-Bild und Text/Bild-zu-Video-Konvertierungen. Durch diese Demo können Sie den KI-Aufrufworkflow schnell verstehen und Ihre Reise beim Aufbau von KI-Anwendungen beschleunigen.",
+    "metaDescription": "Diese Seite zeigt KI-Fähigkeiten einschließlich Ein- und Mehrteilengespräche, Text-zu-Bild, Bild-zu-Bild und Text/Bild-zu-Video-Konvertierungen."
   },
   "ErrorPage": {
     "403": {
-      "title": "403 - 访问被拒绝",
-      "description": "你没有权限访问此页面。",
+      "title": "403 - Zugang verweigert",
+      "description": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen.",
       "button": {
-        "name": "返回首页",
+        "name": "Zurück zur Startseite",
         "href": "/"
       }
     },
     "RedirectError": {
-      "title": "重定向错误",
-      "description": "认证过程中发生错误。",
-      "goToHome": "返回首页",
-      "goToLogin": "返回登录页面",
+      "title": "Weiterleitungsfehler",
+      "description": "Während des Authentifizierungsprozesses ist ein Fehler aufgetreten.",
+      "goToHome": "Zur Startseite",
+      "goToLogin": "Zur Anmeldung",
       "invalid_params": {
-        "title": "参数错误",
-        "description": "请求缺少必要参数。"
+        "title": "Ungültige Parameter",
+        "description": "Erforderliche Parameter fehlen in der Anfrage."
       },
       "invalid_redirect": {
-        "title": "重定向错误",
-        "description": "重定向 URL 无效。"
+        "title": "Ungültige Weiterleitungs-URL",
+        "description": "Die bereitgestellte Weiterleitungs-URL ist nicht zulässig."
       },
       "token_expired": {
-        "title": "令牌过期",
-        "description": "你的验证令牌已过期。请重新登录。"
+        "title": "Token abgelaufen",
+        "description": "Ihr Verifizierungs-Token ist abgelaufen. Bitte versuchen Sie, sich erneut anzumelden."
       },
       "invalid_token": {
-        "title": "令牌错误",
-        "description": "提供的验证令牌无效。"
+        "title": "Ungültiges Token",
+        "description": "Das bereitgestellte Verifizierungs-Token ist ungültig."
       },
       "invalid_link_or_expired": {
-        "title": "链接错误",
-        "description": "邮箱验证链接无效或已过期。"
+        "title": "Ungültiger oder abgelaufener Link",
+        "description": "Der E-Mail-Verifizierungslink ist ungültig oder abgelaufen."
       },
       "server_error": {
-        "title": "服务器错误",
-        "description": "认证过程中服务器发生意外错误。"
+        "title": "Serverfehler",
+        "description": "Während der Authentifizierung ist ein unerwarteter Fehler auf dem Server aufgetreten."
       },
       "unknown": {
-        "title": "认证错误",
-        "description": "认证过程中发生未知错误。"
+        "title": "Authentifizierungsfehler",
+        "description": "Während des Authentifizierungsprozesses ist ein unbekannter Fehler aufgetreten."
       }
     },
     "StripeError": {
-      "goToHome": "返回首页",
-      "goToDashboard": "返回仪表盘",
-      "title": "Payment Portal Error",
-      "description": "支付信息发生错误。"
+      "title": "Zahlungsportal-Fehler",
+      "description": "Ein Fehler ist mit Ihren Zahlungsinformationen aufgetreten.",
+      "goToHome": "Zur Startseite",
+      "goToDashboard": "Zum Dashboard"
     }
   }
 }

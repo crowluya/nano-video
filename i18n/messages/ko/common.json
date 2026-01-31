@@ -1,128 +1,168 @@
 {
   "LanguageDetection": {
-    "title": "语言建议",
-    "description": "检测到你的浏览器语言和当前语言不一样，你随时都可切换语言。",
-    "countdown": "将在 {countdown} 秒后关闭",
-    "switchTo": "切换到"
+    "title": "언어 제안",
+    "description": "브라우저 언어가 현재 사이트 언어와 다른 것을 감지했습니다. 언제든지 언어를 전환할 수 있습니다.",
+    "countdown": "{countdown}초 후 닫힙니다",
+    "switchTo": "전환"
   },
   "Header": {
     "links": [
       {
-        "name": "功能特性",
+        "name": "기능",
         "href": "/#features"
       },
       {
-        "name": "视频生成器",
+        "name": "비디오 생성기",
         "href": "/#video-demo"
       },
       {
-        "name": "提示词生成器",
+        "name": "프롬프트 생성기",
         "href": "/#prompt-generator"
       },
       {
-        "name": "图像生成器",
+        "name": "이미지 생성기",
         "href": "/#image-demo"
       },
       {
         "id": "pricing",
-        "name": "定价",
+        "name": "가격",
         "href": "/#pricing"
       },
       {
-        "name": "使用案例",
+        "name": "사용 사례",
         "href": "/#use-cases"
       },
       {
-        "name": "常见问题",
+        "name": "FAQ",
         "href": "/#faq"
       },
       {
-        "name": "博客",
+        "name": "블로그",
         "href": "/blog"
       }
     ]
   },
   "Footer": {
-    "Copyright": "版权所有 © {year} {name} 保留所有权利。",
-    "About": "关于",
-    "PrivacyPolicy": "隐私政策",
-    "TermsOfService": "条款与条件",
-    "RefundPolicy": "退款政策",
+    "Copyright": "저작권 © {year} {name} 모든 권리 보유.",
+    "About": "소개",
+    "PrivacyPolicy": "개인정보 처리방침",
+    "TermsOfService": "서비스 약관",
+    "RefundPolicy": "환불 정책",
     "Newsletter": {
-      "title": "订阅我们的邮件",
-      "description": "获取最新的更新和教程",
+      "title": "뉴스레터 구독",
+      "description": "최신 소식을 받아보세요.",
       "subscribe": {
-        "invalidEmail": "请输入有效的邮箱地址",
-        "defaultErrorMessage": "订阅失败，请稍后再试",
-        "successMessage": "订阅成功",
-        "multipleSubmissions": "你已多次提交，请明天再试再试"
+        "invalidEmail": "유효한 이메일 주소를 입력해주세요",
+        "defaultErrorMessage": "구독에 실패했습니다. 나중에 다시 시도해주세요",
+        "successMessage": "성공적으로 구독했습니다!",
+        "multipleSubmissions": "요청이 너무 많습니다. 내일 다시 시도해주세요"
       },
       "unsubscribe": {
-        "title": "退订邮件通知",
-        "success": "您已成功退订 Nano Banana Video 邮件通知。",
-        "emailPrefix": "邮箱：",
-        "regretMessage": "您随时可以重新订阅邮件，获取 Nano Banana Video 最新更新和教程。",
-        "errorGeneric": "处理您的退订请求时发生错误",
-        "errorNoToken": "未提供退订令牌",
-        "errorMessage": "请确保您使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
-        "contactPrefix": "请发送邮件至：",
-        "contactPrefixSuccess": "如有任何问题，请随时联系我们：",
-        "backToHome": "返回主页",
-        "invalidEmail": "无效的邮箱地址",
-        "notInNewsletter": "该邮箱不在我们的订阅列表中",
-        "confirmTitle": "确认退订",
-        "confirmMessage": "您确定要退订我们的邮件通讯吗？您将不再收到有关新功能和内容的更新。",
-        "confirmButton": "确认退订",
-        "cancelButton": "取消",
-        "processing": "处理中...",
-        "finalWarning": "此操作无法撤销。您可以随时重新订阅。",
-        "errorInvalidToken": "无效的退订链接。链接可能已损坏或过期。"
+        "title": "뉴스레터 구독 취소",
+        "success": "Nano Banana Video 뉴스레터 구독을 성공적으로 취소했습니다.",
+        "emailPrefix": "이메일:",
+        "regretMessage": "언제든지 다시 구독하여 Nano Banana Video의 최신 업데이트와 튜토리얼을 받을 수 있습니다.",
+        "errorGeneric": "구독 취소 요청 처리 중 오류가 발생했습니다",
+        "errorNoToken": "구독 취소 토큰이 제공되지 않았습니다",
+        "errorMessage": "올바른 구독 취소 링크를 사용하고 있는지 확인해주세요. 문제가 지속되면 고객지원팀에 문의하여 도움을 받으세요.",
+        "contactPrefix": "문의:",
+        "contactPrefixSuccess": "질문이 있으시면 언제든지 문의하세요:",
+        "backToHome": "홈으로",
+        "invalidEmail": "유효하지 않은 이메일 주소",
+        "notInNewsletter": "이 이메일은 구독 목록에 없습니다",
+        "confirmTitle": "구독 취소 확인",
+        "confirmMessage": "뉴스레터 구독을 취소하시겠습니까? 새로운 기능과 콘텐츠에 대한 업데이트를 더 이상 받지 못합니다.",
+        "confirmButton": "네, 구독 취소",
+        "cancelButton": "취소",
+        "processing": "처리 중...",
+        "finalWarning": "이 작업은 되돌릴 수 없습니다. 나중에 언제든지 다시 구독할 수 있습니다.",
+        "errorInvalidToken": "유효하지 않은 구독 취소 링크입니다. 링크가 손상되었거나 만료되었을 수 있습니다."
       }
     },
     "Links": {
       "groups": [
         {
-          "title": "产品",
+          "title": "제품",
           "links": [
             {
               "href": "/#features",
-              "name": "功能特性"
+              "name": "기능"
             },
             {
               "id": "pricing",
               "href": "/#pricing",
-              "name": "定价"
+              "name": "가격"
             },
             {
               "href": "/blog",
-              "name": "博客"
+              "name": "블로그"
             }
           ]
         },
         {
-          "title": "支持",
+          "title": "지원",
           "links": [
             {
-              "name": "文档",
+              "name": "문서",
               "href": "/#faq",
               "target": ""
             },
             {
-              "name": "定价",
+              "name": "가격",
               "href": "/#pricing"
             },
             {
               "href": "mailto:contact@nanobananavideo.net",
-              "name": "联系我们"
+              "name": "문의하기"
             }
           ]
         },
         {
-          "title": "语言",
+          "title": "언어",
           "links": [
             {
               "href": "/en",
               "name": "English",
+              "useA": true
+            },
+            {
+              "href": "/es",
+              "name": "Español",
+              "useA": true
+            },
+            {
+              "href": "/fr",
+              "name": "Français",
+              "useA": true
+            },
+            {
+              "href": "/de",
+              "name": "Deutsch",
+              "useA": true
+            },
+            {
+              "href": "/it",
+              "name": "Italiano",
+              "useA": true
+            },
+            {
+              "href": "/pt",
+              "name": "Português",
+              "useA": true
+            },
+            {
+              "href": "/ru",
+              "name": "Русский",
+              "useA": true
+            },
+            {
+              "href": "/ja",
+              "name": "日本語",
+              "useA": true
+            },
+            {
+              "href": "/ko",
+              "name": "한국어",
               "useA": true
             },
             {
@@ -131,8 +171,13 @@
               "useA": true
             },
             {
-              "href": "/ja",
-              "name": "日本語",
+              "href": "/ar",
+              "name": "العربية",
+              "useA": true
+            },
+            {
+              "href": "/hi",
+              "name": "हिन्दी",
               "useA": true
             }
           ]
@@ -142,189 +187,189 @@
   },
   "Home": {
     "title": "Nano Banana Video",
-    "tagLine": "AI 驱动的创意工作室",
-    "description": "使用 AI 创造令人惊叹的图像、视频和音乐。通过 Nano Banana、Midjourney、Sora 2、Veo 3.1 和 Suno 生成内容 - 尽在一个平台。"
+    "tagLine": "AI 기반 크리에이티브 스튜디오",
+    "description": "AI로 멋진 이미지, 비디오, 음악을 만드세요. Nano Banana, Midjourney, Sora 2, Veo 3.1, Suno로 콘텐츠를 생성하세요 - 한 곳에서 모두 가능합니다."
   },
   "Seo": {
-    "title": "Nano Banana Video - AI 视频生成器 | Sora 2 & Veo 3.1",
-    "description": "Nano Banana 图像转视频 3 分钟出片。支持 Sora 2、Veo 3.1、Kling。免费试用、无水印。适合 TikTok 广告、YouTube 短视频、电商产品视频制作。"
+    "title": "Nano Banana Video - AI 비디오 생성기 | Sora 2 & Veo 3.1",
+    "description": "Nano Banana 이미지를 3분 만에 비디오로 변환하세요. Sora 2, Veo 3.1 Fast, Kling을 지원합니다. 무료 체험, 워터마크 없음. TikTok 광고, YouTube Shorts, 이커머스 비디오에 완벽합니다."
   },
   "Login": {
-    "title": "欢迎回来",
-    "description": "你可以通过以下方式登录",
+    "title": "환영합니다",
+    "description": "다음 방법으로 로그인하세요",
     "Toast": {
       "Email": {
-        "successTitle": "邮件已发送",
-        "successDescription": "请检查你的邮箱获取登录链接。",
-        "errorTitle": "错误",
-        "errorDescription": "发送邮件失败，请重试。"
+        "successTitle": "매직 링크가 전송되었습니다!",
+        "successDescription": "이메일에서 로그인 링크를 확인하세요.",
+        "errorTitle": "오류",
+        "errorDescription": "매직 링크 전송에 실패했습니다. 다시 시도해주세요."
       },
       "Google": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 Google 登录失败，请重试。"
+        "errorTitle": "오류",
+        "errorDescription": "Google 로그인에 실패했습니다. 다시 시도해주세요."
       },
       "Github": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 GitHub 登录失败，请重试。"
+        "errorTitle": "오류",
+        "errorDescription": "Github 로그인에 실패했습니다. 다시 시도해주세요."
       }
     },
     "signInMethods": {
-      "or": "或者",
-      "signInWithGoogle": "使用 Google 登录",
-      "signInWithGithub": "使用 GitHub 登录",
-      "signInWithEmail": "使用邮箱登录"
+      "or": "또는 다음으로 계속",
+      "signInWithGoogle": "Google로 계속",
+      "signInWithGithub": "Github로 계속",
+      "signInWithEmail": "이메일로 계속"
     },
     "Button": {
-      "signIn": "登录",
-      "signOut": "退出"
+      "signIn": "로그인",
+      "signOut": "로그아웃"
     },
     "UserMenus": [
       {
-        "name": "图像生成",
+        "name": "이미지 생성",
         "href": "/dashboard/image-gen",
         "icon": "Image"
       },
       {
-        "name": "视频生成",
+        "name": "비디오 생성",
         "href": "/dashboard/video-gen",
         "icon": "Film"
       },
       {
-        "name": "个人设置",
+        "name": "설정",
         "href": "/dashboard/settings",
         "icon": "Settings"
       },
       {
-        "name": "我的订单",
+        "name": "내 주문",
         "href": "/dashboard/my-orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "管理订阅",
+        "name": "구독",
         "href": "/dashboard/subscription",
         "icon": "WalletCards"
       },
       {
-        "name": "积分明细",
+        "name": "크레딧 내역",
         "href": "/dashboard/credit-history",
         "icon": "Coins"
       }
     ],
     "AdminMenus": [
       {
-        "name": "概览",
+        "name": "개요",
         "href": "/dashboard/overview",
         "icon": "LayoutDashboard"
       },
       {
-        "name": "用户管理",
+        "name": "사용자",
         "href": "/dashboard/users",
         "icon": "Users"
       },
       {
-        "name": "订单管理",
+        "name": "주문",
         "href": "/dashboard/orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "定价管理",
+        "name": "가격",
         "href": "/dashboard/prices",
         "icon": "DollarSign"
       },
       {
-        "name": "博客管理",
+        "name": "블로그",
         "href": "/dashboard/blogs",
         "icon": "Rss"
       },
       {
-        "name": "R2资源管理",
+        "name": "R2 파일",
         "href": "/dashboard/r2-resources",
         "icon": "FileBox"
       }
     ]
   },
   "Blogs": {
-    "title": "博客列表",
-    "description": "分享 Next.js 生态圈和 NEXTY.DEV 模板动态。",
+    "title": "블로그 게시물",
+    "description": "Next.js 생태계와 NEXTY.DEV 템플릿 업데이트에 대한 인사이트.",
     "emptyState": {
-      "title": "暂无博客文章",
-      "description": "我们正在创作精彩内容，敬请期待！"
+      "title": "블로그 게시물 없음",
+      "description": "흥미로운 콘텐츠를 만드는 중이니 기대해주세요!"
     },
-    "loadMorePostsFailed": "加载更多博客失败",
-    "loadMorePosts": "加载更多博客……",
-    "filterPostsFailed": "加载博客失败",
-    "noPostsFoundForThisTag": "暂无此标签的博客文章",
-    "reachedTheEnd": "已加载全部博客文章",
+    "loadMorePostsFailed": "더 많은 게시물을 불러오지 못했습니다",
+    "loadMorePosts": "더 많은 게시물 불러오는 중...",
+    "filterPostsFailed": "게시물을 불러오지 못했습니다",
+    "noPostsFoundForThisTag": "이 태그에 대한 게시물을 찾을 수 없습니다",
+    "reachedTheEnd": "모든 게시물의 끝에 도달했습니다",
     "BlogDetail": {
-      "featured": "精选文章",
-      "viewCount": "{count} 次阅读",
-      "accessRestricted": "访问受限",
-      "unauthorized": "此文章仅对登录用户开放",
-      "premium": "付费内容",
-      "premiumContent": "此文章仅对订阅用户开放",
-      "signIn": "登录",
-      "upgrade": "升级",
-      "backToBlogs": "返回博客列表",
-      "notFound": "文章未找到"
+      "featured": "추천 게시물",
+      "viewCount": "{count} 조회수",
+      "accessRestricted": "액세스 제한됨",
+      "unauthorized": "이 문서는 로그인한 사용자만 이용할 수 있습니다",
+      "premium": "프리미엄 콘텐츠",
+      "premiumContent": "이 문서는 구독자 전용입니다",
+      "signIn": "로그인",
+      "upgrade": "업그레이드",
+      "backToBlogs": "블로그 목록으로",
+      "notFound": "문서를 찾을 수 없음"
     }
   },
   "About": {
-    "title": "关于我们",
-    "description": "关于我们"
+    "title": "소개",
+    "description": "사이트 소개"
   },
   "AIDemo": {
-    "title": "AI 能力演示",
-    "description": "本页面非公开功能，仅用于购买模板的用户学习和测试 AI 模型调用流程。在本地启动模板后，环境变量填写自己的 API Key 即可使用。AI Demo 包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频的转换，通过 Demo 你可以快速理解 AI 调用流程，以加速你的AI应用构建之旅。",
-    "metaDescription": "本页面提供包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频等 AI 能力调用展示。"
+    "title": "AI 기능 데모",
+    "description": "이 페이지는 비공개 기능을 보여주며 템플릿을 구매한 사용자만을 위한 것입니다. AI 모델 호출 프로세스를 학습하고 테스트하도록 설계되었습니다. 사용하려면 템플릿을 로컬에서 시작하고 환경 변수에 API 키를 입력하세요. AI 데모에는 단일 및 다중 회차 대화, 텍스트를 이미지로, 이미지를 이미지로, 텍스트/이미지를 비디오로 변환하는 기능이 포함됩니다. 이 데모를 통해 AI 호출 워크플로를 빠르게 이해하고 AI 애플리케이션 구축 여정을 가속화할 수 있습니다.",
+    "metaDescription": "이 페이지는 단일 및 다중 회차 대화, 텍스트를 이미지로, 이미지를 이미지로, 텍스트/이미지를 비디오로 변환하는 AI 기능을 보여줍니다."
   },
   "ErrorPage": {
     "403": {
-      "title": "403 - 访问被拒绝",
-      "description": "你没有权限访问此页面。",
+      "title": "403 - 액세스 거부됨",
+      "description": "이 페이지에 액세스할 권한이 없습니다.",
       "button": {
-        "name": "返回首页",
+        "name": "홈페이지로",
         "href": "/"
       }
     },
     "RedirectError": {
-      "title": "重定向错误",
-      "description": "认证过程中发生错误。",
-      "goToHome": "返回首页",
-      "goToLogin": "返回登录页面",
+      "title": "리디렉션 오류",
+      "description": "인증 프로세스 중 오류가 발생했습니다.",
+      "goToHome": "홈으로",
+      "goToLogin": "로그인으로",
       "invalid_params": {
-        "title": "参数错误",
-        "description": "请求缺少必要参数。"
+        "title": "잘못된 매개변수",
+        "description": "요청에 필요한 매개변수가 누락되었습니다."
       },
       "invalid_redirect": {
-        "title": "重定向错误",
-        "description": "重定向 URL 无效。"
+        "title": "잘못된 리디렉션 URL",
+        "description": "제공된 리디렉션 URL이 허용되지 않습니다."
       },
       "token_expired": {
-        "title": "令牌过期",
-        "description": "你的验证令牌已过期。请重新登录。"
+        "title": "토큰 만료됨",
+        "description": "검증 토큰이 만료되었습니다. 다시 로그인해주세요."
       },
       "invalid_token": {
-        "title": "令牌错误",
-        "description": "提供的验证令牌无效。"
+        "title": "잘못된 토큰",
+        "description": "제공된 검증 토큰이 유효하지 않습니다."
       },
       "invalid_link_or_expired": {
-        "title": "链接错误",
-        "description": "邮箱验证链接无效或已过期。"
+        "title": "잘못되었거나 만료된 링크",
+        "description": "이메일 검증 링크가 유효하지 않거나 만료되었습니다."
       },
       "server_error": {
-        "title": "服务器错误",
-        "description": "认证过程中服务器发生意外错误。"
+        "title": "서버 오류",
+        "description": "인증 중 서버에서 예기치 않은 오류가 발생했습니다."
       },
       "unknown": {
-        "title": "认证错误",
-        "description": "认证过程中发生未知错误。"
+        "title": "인증 오류",
+        "description": "인증 프로세스 중 알 수 없는 오류가 발생했습니다."
       }
     },
     "StripeError": {
-      "goToHome": "返回首页",
-      "goToDashboard": "返回仪表盘",
-      "title": "Payment Portal Error",
-      "description": "支付信息发生错误。"
+      "title": "결제 포털 오류",
+      "description": "결제 정보에 오류가 발생했습니다.",
+      "goToHome": "홈으로",
+      "goToDashboard": "대시보드로"
     }
   }
 }

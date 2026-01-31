@@ -1,8 +1,8 @@
 import { getOrders } from "@/actions/orders/admin";
 import { constructMetadata } from "@/lib/metadata";
+import type { Locale } from "@/i18n/routing";
 import { Loader2 } from "lucide-react";
 import { Metadata } from "next";
-import { Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import { columns } from "./Columns";

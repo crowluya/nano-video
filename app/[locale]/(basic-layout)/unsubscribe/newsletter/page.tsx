@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import type { Locale } from "@/i18n/routing";
 import { Mail } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import UnsubscribeForm from "./UnsubscribeForm";
@@ -28,7 +29,7 @@ async function validateToken(token: string, locale: string) {
 
 export default async function Page(props: { searchParams: SearchParams }) {
   const t = await getTranslations("Footer.Newsletter");
-  const currentLocale = await getLocale();
+  const currentLocale = (await getLocale()) as Locale;
 
   const searchParams = await props.searchParams;
   const token = searchParams.token as string;
