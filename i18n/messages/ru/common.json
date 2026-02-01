@@ -1,124 +1,124 @@
 {
   "LanguageDetection": {
-    "title": "语言建议",
-    "description": "检测到你的浏览器语言和当前语言不一样，你随时都可切换语言。",
-    "countdown": "将在 {countdown} 秒后关闭",
-    "switchTo": "切换到"
+    "title": "Предложение Языка",
+    "description": "Мы заметили, что язык вашего браузера отличается от текущего языка сайта. Вы можете переключить язык в любое время.",
+    "countdown": "Закрытие через {countdown} секунд",
+    "switchTo": "Переключиться на"
   },
   "Header": {
     "links": [
       {
-        "name": "功能特性",
+        "name": "Функции",
         "href": "/#features"
       },
       {
-        "name": "视频生成器",
+        "name": "Видео Генератор",
         "href": "/#video-demo"
       },
       {
-        "name": "提示词生成器",
+        "name": "Генератор Промптов",
         "href": "/#prompt-generator"
       },
       {
-        "name": "图像生成器",
+        "name": "Генератор Изображений",
         "href": "/#image-demo"
       },
       {
         "id": "pricing",
-        "name": "定价",
+        "name": "Цены",
         "href": "/#pricing"
       },
       {
-        "name": "使用案例",
+        "name": "Случаи Использования",
         "href": "/#use-cases"
       },
       {
-        "name": "常见问题",
+        "name": "FAQ",
         "href": "/#faq"
       },
       {
-        "name": "博客",
+        "name": "Блог",
         "href": "/blog"
       }
     ]
   },
   "Footer": {
-    "Copyright": "版权所有 © {year} {name} 保留所有权利。",
-    "About": "关于",
-    "PrivacyPolicy": "隐私政策",
-    "TermsOfService": "条款与条件",
-    "RefundPolicy": "退款政策",
+    "Copyright": "Авторское право © {year} {name} Все права защищены.",
+    "About": "О Нас",
+    "PrivacyPolicy": "Политика Конфиденциальности",
+    "TermsOfService": "Условия Обслуживания",
+    "RefundPolicy": "Политика Возврата",
     "Newsletter": {
-      "title": "订阅我们的邮件",
-      "description": "获取最新的更新和教程",
+      "title": "Подпишитесь на нашу рассылку",
+      "description": "Будьте в курсе наших последних новостей.",
       "subscribe": {
-        "invalidEmail": "请输入有效的邮箱地址",
-        "defaultErrorMessage": "订阅失败，请稍后再试",
-        "successMessage": "订阅成功",
-        "multipleSubmissions": "你已多次提交，请明天再试再试"
+        "invalidEmail": "Пожалуйста, введите действительный адрес электронной почты",
+        "defaultErrorMessage": "Подписка не удалась. Пожалуйста, попробуйте позже",
+        "successMessage": "Успешно подписано!",
+        "multipleSubmissions": "Слишком много запросов. Пожалуйста, попробуйте завтра"
       },
       "unsubscribe": {
-        "title": "退订邮件通知",
-        "success": "您已成功退订 Nano Banana Video 邮件通知。",
-        "emailPrefix": "邮箱：",
-        "regretMessage": "您随时可以重新订阅邮件，获取 Nano Banana Video 最新更新和教程。",
-        "errorGeneric": "处理您的退订请求时发生错误",
-        "errorNoToken": "未提供退订令牌",
-        "errorMessage": "请确保您使用了正确的退订链接。如果问题持续存在，请联系我们的客服团队获取帮助。",
-        "contactPrefix": "请发送邮件至：",
-        "contactPrefixSuccess": "如有任何问题，请随时联系我们：",
-        "backToHome": "返回主页",
-        "invalidEmail": "无效的邮箱地址",
-        "notInNewsletter": "该邮箱不在我们的订阅列表中",
-        "confirmTitle": "确认退订",
-        "confirmMessage": "您确定要退订我们的邮件通讯吗？您将不再收到有关新功能和内容的更新。",
-        "confirmButton": "确认退订",
-        "cancelButton": "取消",
-        "processing": "处理中...",
-        "finalWarning": "此操作无法撤销。您可以随时重新订阅。",
-        "errorInvalidToken": "无效的退订链接。链接可能已损坏或过期。"
+        "title": "Отписка от Рассылки",
+        "success": "Вы успешно отписались от рассылки Nano Banana Video.",
+        "emailPrefix": "Электронная почта:",
+        "regretMessage": "Вы можете подписаться снова в любое время, чтобы получать последние обновления и учебные материалы от Nano Banana Video.",
+        "errorGeneric": "При обработке вашего запроса на отмену подписки произошла ошибка",
+        "errorNoToken": "Токен отмены подписки не предоставлен",
+        "errorMessage": "Пожалуйста, убедитесь, что вы используете правильную ссылку для отмены подписки. Если проблема сохраняется, свяжитесь с нашей службой поддержки за помощью.",
+        "contactPrefix": "Свяжитесь с нами:",
+        "contactPrefixSuccess": "Если у вас есть вопросы, не стесняйтесь связаться с нами:",
+        "backToHome": "Вернуться на Главную",
+        "invalidEmail": "Недействительный адрес электронной почты",
+        "notInNewsletter": "Этот адрес электронной почты не находится в нашем списке подписчиков",
+        "confirmTitle": "Подтвердить Отмену Подписки",
+        "confirmMessage": "Вы уверены, что хотите отписаться от нашей рассылки? Вы больше не будете получать обновления о новых функциях и контенте.",
+        "confirmButton": "Да, Отписаться",
+        "cancelButton": "Отмена",
+        "processing": "Обработка...",
+        "finalWarning": "Это действие нельзя отменить. Вы всегда можете подписаться снова позже.",
+        "errorInvalidToken": "Недействительная ссылка для отмены подписки. Ссылка может быть повреждена или истекла."
       }
     },
     "Links": {
       "groups": [
         {
-          "title": "产品",
+          "title": "Продукты",
           "links": [
             {
               "href": "/#features",
-              "name": "功能特性"
+              "name": "Функции"
             },
             {
               "id": "pricing",
               "href": "/#pricing",
-              "name": "定价"
+              "name": "Цены"
             },
             {
               "href": "/blog",
-              "name": "博客"
+              "name": "Блог"
             }
           ]
         },
         {
-          "title": "支持",
+          "title": "Поддержка",
           "links": [
             {
-              "name": "文档",
+              "name": "Документация",
               "href": "/#faq",
               "target": ""
             },
             {
-              "name": "定价",
+              "name": "Цены",
               "href": "/#pricing"
             },
             {
               "href": "mailto:contact@nanobananavideo.net",
-              "name": "联系我们"
+              "name": "Свяжитесь с Нами"
             }
           ]
         },
         {
-          "title": "语言",
+          "title": "Языки",
           "links": [
             {
               "href": "/en",
@@ -187,189 +187,189 @@
   },
   "Home": {
     "title": "Nano Banana Video",
-    "tagLine": "AI 驱动的创意工作室",
-    "description": "使用 AI 创造令人惊叹的图像、视频和音乐。通过 Nano Banana、Midjourney、Sora 2、Veo 3.1 和 Suno 生成内容 - 尽在一个平台。"
+    "tagLine": "Творческая Студия на AI",
+    "description": "Создавайте потрясающие изображения, видео и музыку с AI. Генерируйте контент с Nano Banana, Midjourney, Sora 2, Veo 3.1 и Suno - всё в одном месте."
   },
   "Seo": {
-    "title": "Nano Banana Video - AI 视频生成器 | Sora 2 & Veo 3.1",
-    "description": "Nano Banana 图像转视频 3 分钟出片。支持 Sora 2、Veo 3.1、Kling。免费试用、无水印。适合 TikTok 广告、YouTube 短视频、电商产品视频制作。"
+    "title": "Nano Banana Video - AI Генератор Видео | Sora 2 & Veo 3.1",
+    "description": "Конвертируйте изображения Nano Banana в видео за 3 минуты. Поддержка Sora 2, Veo 3.1 Fast, Kling. Бесплатная пробная версия, без водяных знаков. Идеально для рекламы TikTok, YouTube Shorts, видео электронной коммерции."
   },
   "Login": {
-    "title": "欢迎回来",
-    "description": "你可以通过以下方式登录",
+    "title": "Добро пожаловать",
+    "description": "Войдите с помощью следующих методов",
     "Toast": {
       "Email": {
-        "successTitle": "邮件已发送",
-        "successDescription": "请检查你的邮箱获取登录链接。",
-        "errorTitle": "错误",
-        "errorDescription": "发送邮件失败，请重试。"
+        "successTitle": "Magic ссылка отправлена!",
+        "successDescription": "Проверьте вашу электронную почту для ссылки для входа.",
+        "errorTitle": "Ошибка",
+        "errorDescription": "Не удалось отправить magic ссылку. Пожалуйста, попробуйте снова."
       },
       "Google": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 Google 登录失败，请重试。"
+        "errorTitle": "Ошибка",
+        "errorDescription": "Вход через Google не удался. Пожалуйста, попробуйте снова."
       },
       "Github": {
-        "errorTitle": "错误",
-        "errorDescription": "使用 GitHub 登录失败，请重试。"
+        "errorTitle": "Ошибка",
+        "errorDescription": "Вход через Github не удался. Пожалуйста, попробуйте снова."
       }
     },
     "signInMethods": {
-      "or": "或者",
-      "signInWithGoogle": "使用 Google 登录",
-      "signInWithGithub": "使用 GitHub 登录",
-      "signInWithEmail": "使用邮箱登录"
+      "or": "Или продолжить с",
+      "signInWithGoogle": "Продолжить с Google",
+      "signInWithGithub": "Продолжить с Github",
+      "signInWithEmail": "Продолжить с Электронной Почтой"
     },
     "Button": {
-      "signIn": "登录",
-      "signOut": "退出"
+      "signIn": "Войти",
+      "signOut": "Выйти"
     },
     "UserMenus": [
       {
-        "name": "图像生成",
+        "name": "Генерация Изображений",
         "href": "/dashboard/image-gen",
         "icon": "Image"
       },
       {
-        "name": "视频生成",
+        "name": "Генерация Видео",
         "href": "/dashboard/video-gen",
         "icon": "Film"
       },
       {
-        "name": "个人设置",
+        "name": "Настройки",
         "href": "/dashboard/settings",
         "icon": "Settings"
       },
       {
-        "name": "我的订单",
+        "name": "Мои Заказы",
         "href": "/dashboard/my-orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "管理订阅",
+        "name": "Подписка",
         "href": "/dashboard/subscription",
         "icon": "WalletCards"
       },
       {
-        "name": "积分明细",
+        "name": "История Кредитов",
         "href": "/dashboard/credit-history",
         "icon": "Coins"
       }
     ],
     "AdminMenus": [
       {
-        "name": "概览",
+        "name": "Обзор",
         "href": "/dashboard/overview",
         "icon": "LayoutDashboard"
       },
       {
-        "name": "用户管理",
+        "name": "Пользователи",
         "href": "/dashboard/users",
         "icon": "Users"
       },
       {
-        "name": "订单管理",
+        "name": "Заказы",
         "href": "/dashboard/orders",
         "icon": "ShoppingCart"
       },
       {
-        "name": "定价管理",
+        "name": "Цены",
         "href": "/dashboard/prices",
         "icon": "DollarSign"
       },
       {
-        "name": "博客管理",
+        "name": "Блоги",
         "href": "/dashboard/blogs",
         "icon": "Rss"
       },
       {
-        "name": "R2资源管理",
+        "name": "Файлы R2",
         "href": "/dashboard/r2-resources",
         "icon": "FileBox"
       }
     ]
   },
   "Blogs": {
-    "title": "博客列表",
-    "description": "分享 Next.js 生态圈和 NEXTY.DEV 模板动态。",
+    "title": "Блог Статьи",
+    "description": "Инсайты о Next.js экосистеме и обновлениях шаблона NEXTY.DEV.",
     "emptyState": {
-      "title": "暂无博客文章",
-      "description": "我们正在创作精彩内容，敬请期待！"
+      "title": "Нет статей блога",
+      "description": "Мы создаем захватывающий контент, оставайтесь на связи!"
     },
-    "loadMorePostsFailed": "加载更多博客失败",
-    "loadMorePosts": "加载更多博客……",
-    "filterPostsFailed": "加载博客失败",
-    "noPostsFoundForThisTag": "暂无此标签的博客文章",
-    "reachedTheEnd": "已加载全部博客文章",
+    "loadMorePostsFailed": "Не удалось загрузить больше статей",
+    "loadMorePosts": "Загрузка больше статей...",
+    "filterPostsFailed": "Не удалось загрузить статьи",
+    "noPostsFoundForThisTag": "Статьи с этим тегом не найдены",
+    "reachedTheEnd": "Вы достигли конца всех статей",
     "BlogDetail": {
-      "featured": "精选文章",
-      "viewCount": "{count} 次阅读",
-      "accessRestricted": "访问受限",
-      "unauthorized": "此文章仅对登录用户开放",
-      "premium": "付费内容",
-      "premiumContent": "此文章仅对订阅用户开放",
-      "signIn": "登录",
-      "upgrade": "升级",
-      "backToBlogs": "返回博客列表",
-      "notFound": "文章未找到"
+      "featured": "Рекомендуемая Статья",
+      "viewCount": "{count} просмотров",
+      "accessRestricted": "Доступ Ограничен",
+      "unauthorized": "Эта статья доступна только для вошедших пользователей",
+      "premium": "Премиум Контент",
+      "premiumContent": "Эта статья эксклюзивна для подписчиков",
+      "signIn": "Войти",
+      "upgrade": "Обновить",
+      "backToBlogs": "Вернуться к Списку Блога",
+      "notFound": "Статья Не Найдена"
     }
   },
   "About": {
-    "title": "关于我们",
-    "description": "关于我们"
+    "title": "О Нас",
+    "description": "О сайте"
   },
   "AIDemo": {
-    "title": "AI 能力演示",
-    "description": "本页面非公开功能，仅用于购买模板的用户学习和测试 AI 模型调用流程。在本地启动模板后，环境变量填写自己的 API Key 即可使用。AI Demo 包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频的转换，通过 Demo 你可以快速理解 AI 调用流程，以加速你的AI应用构建之旅。",
-    "metaDescription": "本页面提供包括单轮对话、多轮对话、文本转图像、图像转图像、文本/图像转视频等 AI 能力调用展示。"
+    "title": "Демо AI Возможностей",
+    "description": "Эта страница показывает непубличные функции и эксклюзивна для пользователей, купивших шаблон. Она предназначена для обучения и тестирования процесса вызова AI моделей. Для использования просто запустите шаблон локально и введите ваш API ключ в переменные окружения. Демо AI включает такие функции, как одно- и многоходовые беседы, текст-в-изображение, изображение-в-изображение и текст/изображение-в-видео преобразования. Через это демо вы можете быстро понять рабочий процесс вызова AI, ускоряя ваше путешествие в создании AI приложений.",
+    "metaDescription": "Эта страница показывает AI возможности включая одно- и многоходовые беседы, текст-в-изображение, изображение-в-изображение и текст/изображение-в-видео преобразования."
   },
   "ErrorPage": {
     "403": {
-      "title": "403 - 访问被拒绝",
-      "description": "你没有权限访问此页面。",
+      "title": "403 - Доступ Запрещен",
+      "description": "У вас нет разрешения для доступа к этой странице.",
       "button": {
-        "name": "返回首页",
+        "name": "Вернуться на главную страницу",
         "href": "/"
       }
     },
     "RedirectError": {
-      "title": "重定向错误",
-      "description": "认证过程中发生错误。",
-      "goToHome": "返回首页",
-      "goToLogin": "返回登录页面",
+      "title": "Ошибка Перенаправления",
+      "description": "Произошла ошибка в процессе аутентификации.",
+      "goToHome": "На Главную",
+      "goToLogin": "На Вход",
       "invalid_params": {
-        "title": "参数错误",
-        "description": "请求缺少必要参数。"
+        "title": "Недействительные Параметры",
+        "description": "В запросе отсутствуют необходимые параметры."
       },
       "invalid_redirect": {
-        "title": "重定向错误",
-        "description": "重定向 URL 无效。"
+        "title": "Недействительный URL Перенаправления",
+        "description": "Указанный URL перенаправления не разрешен."
       },
       "token_expired": {
-        "title": "令牌过期",
-        "description": "你的验证令牌已过期。请重新登录。"
+        "title": "Токен Истек",
+        "description": "Ваш токен проверки истек. Пожалуйста, попробуйте войти снова."
       },
       "invalid_token": {
-        "title": "令牌错误",
-        "description": "提供的验证令牌无效。"
+        "title": "Недействительный Токен",
+        "description": "Указанный токен проверки недействителен."
       },
       "invalid_link_or_expired": {
-        "title": "链接错误",
-        "description": "邮箱验证链接无效或已过期。"
+        "title": "Недействительная или Истекшая Ссылка",
+        "description": "Ссылка для проверки электронной почты недействительна или истекла."
       },
       "server_error": {
-        "title": "服务器错误",
-        "description": "认证过程中服务器发生意外错误。"
+        "title": "Ошибка Сервера",
+        "description": "На сервере произошла непредвиденная ошибка во время аутентификации."
       },
       "unknown": {
-        "title": "认证错误",
-        "description": "认证过程中发生未知错误。"
+        "title": "Ошибка Аутентификации",
+        "description": "Произошла неизвестная ошибка в процессе аутентификации."
       }
     },
     "StripeError": {
-      "goToHome": "返回首页",
-      "goToDashboard": "返回仪表盘",
-      "title": "Payment Portal Error",
-      "description": "支付信息发生错误。"
+      "title": "Ошибка Платежного Портала",
+      "description": "Произошла ошибка с вашей платежной информацией.",
+      "goToHome": "На Главную",
+      "goToDashboard": "В Панель Управления"
     }
   }
 }

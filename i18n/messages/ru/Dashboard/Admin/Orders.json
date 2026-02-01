@@ -1,0 +1,12 @@
+{
+  "title": "Заказы",
+  "description": "Вот список всех заказов.",
+  "user": "Пользователь",
+  "orderId": "ID Заказа",
+  "amount": "Сумма",
+  "discount": "Скидка",
+  "type": "Тип",
+  "status": "Статус",
+  "createdAt": "Создан",
+  "filterByEmail": "Фильтровать по email..."
+}

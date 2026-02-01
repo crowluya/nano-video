@@ -1,0 +1,17 @@
+{
+  "title": "크레딧 기록",
+  "description": "모든 크레딧 부여 및 사용 내역을 여기에서 확인하세요.",
+  "load_error": "크레딧 기록을 로드하지 못했습니다. 나중에 다시 시도하세요.",
+  "no_records": "크레딧 기록을 찾을 수 없습니다.",
+  "header_date": "날짜",
+  "header_type": "유형",
+  "header_details": "세부정보",
+  "header_amount": "금액",
+  "header_balance_one_time": "일회 크레딧",
+  "header_balance_subscription": "구독 크레딧",
+  "type_one_time_purchase": "크레딧 구매",
+  "type_subscription_grant": "구독 부여",
+  "type_feature_usage": "기능 사용",
+  "type_refund_revoke": "환불 철회",
+  "type_subscription_ended_revoke": "구독 종료 철회"
+}

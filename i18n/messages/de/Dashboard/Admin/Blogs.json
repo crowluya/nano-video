@@ -1,0 +1,165 @@
+{
+  "title": "Blog-Verwaltung",
+  "description": "Dashboard zur Blogverwaltung für Erstellen, Bearbeiten, Löschen, Duplizieren und KI-Übersetzung von Blog-Beiträgen. Unterstützt das Anheften von Beiträgen, Festlegen des Status (Entwurf, Veröffentlicht, Archiviert) und Sichtbarkeitseinstellungen (öffentlich, eingeloggte Benutzer, Abonnenten). (Nur Admin)",
+  "fetchError": "Fehler beim Abrufen der Blogs: {error}",
+  "createNewButton": "Neuen Blog erstellen",
+  "List": {
+    "failedToFetch": "Fehler beim Abrufen der Blogs",
+    "searchPlaceholder": "Titel, Slugs, Beschreibungen durchsuchen..."
+  },
+  "Delete": {
+    "title": "Löschung bestätigen",
+    "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dies wird den Blog-Beitrag \"{title}\" dauerhaft löschen.",
+    "cancelButton": "Abbrechen",
+    "deleteButton": "Löschen",
+    "deleting": "Wird gelöscht...",
+    "success": "Blog erfolgreich gelöscht.",
+    "failedToDelete": "Fehler beim Löschen des Blogs",
+    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten.",
+    "errorFetching": "Fehler beim Abrufen der Blog-Informationen."
+  },
+  "Create": {
+    "pageTitle": "Blog erstellen",
+    "pageDescription": "Einen neuen Blog-Beitrag erstellen (nur Admin)",
+    "submitSuccess": "Blog erfolgreich erstellt.",
+    "submitErrorTitle": "Fehler beim Erstellen des Blogs",
+    "submitErrorDesc": "Bitte versuchen Sie es später erneut.",
+    "loadingDuplicateMessage": "Quell-Blog wird dupliziert...",
+    "errorFetchingDuplicateTitle": "Fehler beim Abrufen der Quell-Blog-Informationen.",
+    "errorFetchingDuplicateDesc": "Sie können weiterhin einen neuen Blog erstellen.",
+    "errorFetchUnexpected": "Ein unerwarteter Fehler ist aufgetreten."
+  },
+  "Edit": {
+    "pageTitle": "Blog bearbeiten",
+    "pageDescription": "Blog-Beitrag bearbeiten (nur Admin)",
+    "submitSuccess": "Blog erfolgreich aktualisiert.",
+    "submitErrorTitle": "Fehler beim Aktualisieren des Blogs",
+    "submitErrorDesc": "Bitte versuchen Sie es später erneut.",
+    "errorInvalidId": "Ungültige Blog-ID.",
+    "errorFetchFailed": "Fehler beim Abrufen des Blogs.",
+    "errorFetchUnexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+    "postNotFoundTitle": "Blog nicht gefunden",
+    "postNotFoundDesc": "Der Blog existiert nicht.",
+    "backToList": "Zurück zur Liste"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "Blog-Sprache",
+        "placeholder": "Blog-Sprache auswählen"
+      },
+      "title": {
+        "label": "Titel",
+        "placeholder": "Titel eingeben",
+        "description": "Empfohlene Länge 60 Zeichen",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "Slug",
+        "placeholder": "Slug eingeben",
+        "generateButton": "Slug generieren",
+        "description": "Generiert automatisch Slug nur aus englischen Titeln. Für andere Sprachen bitte manuell eingeben."
+      },
+      "description": {
+        "label": "Beschreibung",
+        "placeholder": "Beschreibung eingeben",
+        "description": "Empfohlene Länge 160 Zeichen",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "Tags",
+        "placeholder": "Tags auswählen",
+        "description": "Blog-Tags auswählen."
+      },
+      "featuredImageUrl": {
+        "label": "Vorschaubild",
+        "placeholder": "Vorschaubild auswählen",
+        "description": "Ein Vorschaubild auswählen."
+      },
+      "content": {
+        "label": "Inhalt",
+        "placeholder": "Blog-Inhalt eingeben, Markdown-Format unterstützt",
+        "description": "Blog-Inhalt eingeben, Markdown-Format wird unterstützt."
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Status auswählen",
+        "options": {
+          "draft": "Entwurf",
+          "published": "Veröffentlicht",
+          "archived": "Archiviert"
+        }
+      },
+      "visibility": {
+        "label": "Sichtbarkeit",
+        "placeholder": "Sichtbarkeit auswählen",
+        "options": {
+          "public": "Öffentlich",
+          "loggedIn": "Eingeloggte Benutzer",
+          "subscribers": "Nur Abonnenten"
+        }
+      },
+      "isPinned": {
+        "label": "Hervorgehoben",
+        "description": "Diesen Beitrag oben anheften."
+      }
+    },
+    "cancelButton": "Abbrechen",
+    "submittingButton": "Wird gesendet...",
+    "updateButton": "Blog aktualisieren",
+    "createButton": "Blog erstellen",
+    "upload": {
+      "uploading": "Wird hochgeladen...",
+      "uploadError": "Upload fehlgeschlagen",
+      "uploadErrorDesc": "Bitte wählen Sie eine Bilddatei aus.",
+      "noPrefix": "Präfix für Bildbenennung nicht angegeben.",
+      "invalidFileType": "Ungültiger Dateityp. Nur Bilddateien sind zulässig.",
+      "fileSizeExceeded": "Dateigrößenlimit: {maxSizeInMB}MB.",
+      "presignedUrlError": "Fehler beim Generieren der vor-signierten URL",
+      "uploadErrorUnexpected": "Ein unerwarteter Fehler ist aufgetreten.",
+      "uploadSuccess": "Upload erfolgreich",
+      "uploadSuccessDesc": "Bild in R2-Speicher hochgeladen."
+    },
+    "toolbar": {
+      "translateTo": "Übersetzen in {languageName}",
+      "noTranslationOptions": "Keine Übersetzungsoptionen verfügbar.",
+      "translateByAIDescription": "KI-Übersetzung erfordert, dass die Umgebungsvariablen NEXT_PUBLIC_AI_MODEL_ID und NEXT_PUBLIC_AI_PROVIDER konfiguriert sind",
+      "translateActionTitle": "Inhalt übersetzen"
+    },
+    "translate": {
+      "loading": "Wird übersetzt...",
+      "error": "Übersetzung fehlgeschlagen",
+      "success": "Übersetzung erfolgreich!",
+      "infoEmpty": "Übersetzungsinhalt ist leer"
+    }
+  },
+  "TagManager": {
+    "title": "Tag-Verwaltung",
+    "description": "Blog-Tags verwalten.",
+    "manageTagsButton": "Tags verwalten",
+    "newTagPlaceholder": "Tag-Namen eingeben",
+    "selectTags": "Tags auswählen",
+    "selectedTagsLabel": "Ausgewählte Tags",
+    "searchPlaceholder": "Tags durchsuchen",
+    "loadingTagsMessage": "Tags werden geladen...",
+    "noResults": "Keine Tags gefunden",
+    "createSuccess": "Tag \"{name}\" erfolgreich erstellt.",
+    "createNewTag": "Neuen Tag erstellen",
+    "creatingButton": "Wird erstellt...",
+    "createButton": "Tag erstellen",
+    "closeButton": "Schließen",
+    "editButton": "Bearbeiten",
+    "deleteButton": "Löschen",
+    "confirmDelete": "Sind Sie sicher, dass Sie den Tag \"{name}\" löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "deleteSuccess": "Tag \"{name}\" erfolgreich gelöscht.",
+    "updateSuccess": "Tag \"{name}\" erfolgreich aktualisiert.",
+    "errors": {
+      "nameRequired": "Tag-Name ist erforderlich.",
+      "fetchFailed": "Fehler beim Laden der Tags",
+      "alreadyExists": "Ein Tag mit dem Namen \"{name}\" existiert bereits.",
+      "createFailed": "Fehler beim Erstellen des Tags",
+      "deleteFailed": "Fehler beim Löschen des Tags",
+      "updateFailed": "Fehler beim Aktualisieren des Tags"
+    }
+  }
+}

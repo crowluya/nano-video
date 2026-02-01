@@ -1,0 +1,17 @@
+{
+  "title": "Histórico de Créditos",
+  "description": "Veja aqui o histórico de todas as suas concessões e usos de créditos.",
+  "load_error": "Erro ao carregar o histórico de créditos. Tente novamente mais tarde.",
+  "no_records": "Nenhum registro de histórico de créditos encontrado.",
+  "header_date": "Data",
+  "header_type": "Tipo",
+  "header_details": "Detalhes",
+  "header_amount": "Valor",
+  "header_balance_one_time": "Créditos Únicos",
+  "header_balance_subscription": "Créditos de Assinatura",
+  "type_one_time_purchase": "Compra de Créditos",
+  "type_subscription_grant": "Concessão de Assinatura",
+  "type_feature_usage": "Uso de Recurso",
+  "type_refund_revoke": "Revogação de Reembolso",
+  "type_subscription_ended_revoke": "Revogação de Fim de Assinatura"
+}

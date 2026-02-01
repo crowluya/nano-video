@@ -1,0 +1,21 @@
+{
+  "title": "Panoramica",
+  "users": "Utenti",
+  "oneTimePayments": "Pagamenti Una Tantum",
+  "monthlySubscriptions": "Abbonamenti Mensili",
+  "yearlySubscriptions": "Abbonamenti Annuale",
+  "today": "Oggi",
+  "yesterday": "Ieri",
+  "growthRate": "Tasso di Crescita",
+  "newUsers": "Nuovi Utenti",
+  "totalUsers": "Totale Utenti",
+  "orders": "Ordini",
+  "revenue": "Entrate",
+  "count": "Conteggio",
+  "growthTrend": "Trend di Crescita",
+  "totalOrders": "Totale Ordini",
+  "newOrders": "Nuovi Ordini",
+  "last7Days": "Ultimi 7 Giorni",
+  "last30Days": "Ultimi 30 Giorni",
+  "last90Days": "Ultimi 90 Giorni"
+}

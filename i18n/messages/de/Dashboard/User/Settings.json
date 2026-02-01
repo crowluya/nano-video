@@ -1,0 +1,31 @@
+{
+  "title": "Einstellungen",
+  "description": "Verwalten Sie Ihre Kontoeinstellungen und Profilinformationen.",
+  "form": {
+    "emailLabel": "E-Mail",
+    "fullNameLabel": "Vollständiger Name",
+    "fullNamePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+    "avatarLabel": "Avatar",
+    "avatarHint": "Maximale Dateigröße: {maxSizeInMB} MB. Zulässige Typen: {allowedTypes}.",
+    "updateButton": "Einstellungen aktualisieren",
+    "updatingButton": "Wird aktualisiert..."
+  },
+  "toast": {
+    "fullNameLengthError": "Der vollständige Name muss weniger als {maxLength} Zeichen haben",
+    "fullNameInvalidCharactersError": "Der vollständige Name enthält ungültige Zeichen",
+    "errorInvalidFileType": "Ungültiger Dateityp für Avatar. Nur {allowedTypes} sind zulässig.",
+    "errorInvalidFileTypeDescription": "Bitte laden Sie eine Datei hoch, die kleiner als {maxSizeInMB} MB ist.",
+    "errorFileSizeExceeded": "Avatar-Größe überschreitet das Limit von {maxSizeInMB} MB.",
+    "errorFileSizeExceededDescription": "Bitte laden Sie eine Datei hoch, die kleiner als {maxSizeInMB} MB ist.",
+    "errorInvalidFullName": "Ungültiger vollständiger Name angegeben.",
+    "errorFullNameRequired": "Vollständiger Name ist erforderlich.",
+    "updateSuccessTitle": "Profil aktualisiert",
+    "updateSuccessDescription": "Ihr Profil wurde erfolgreich aktualisiert.",
+    "updateErrorTitle": "Aktualisierung fehlgeschlagen",
+    "updateErrorDescription": "Fehler beim Aktualisieren der Einstellungen. Bitte versuchen Sie es später erneut.",
+    "errorDeleteOldAvatar": "Fehler beim Löschen des alten Avatars.",
+    "errorUploadAvatar": "Fehler beim Hochladen des Avatars.",
+    "errorUpdateAuthUser": "Fehler beim Aktualisieren des Auth-Benutzers.",
+    "errorUpdateUserProfile": "Fehler beim Aktualisieren des Benutzerprofils."
+  }
+}

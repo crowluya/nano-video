@@ -1,0 +1,12 @@
+{
+  "title": "주문",
+  "description": "모든 주문 목록입니다.",
+  "user": "사용자",
+  "orderId": "주문 ID",
+  "amount": "금액",
+  "discount": "할인",
+  "type": "유형",
+  "status": "상태",
+  "createdAt": "생성일",
+  "filterByEmail": "이메일로 필터..."
+}

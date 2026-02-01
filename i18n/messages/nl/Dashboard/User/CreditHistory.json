@@ -1,0 +1,17 @@
+{
+  "title": "Credietgeschiedenis",
+  "description": "Bekijk hier de geschiedenis van al uw tegoeden en gebruik.",
+  "load_error": "Fout bij laden van credietgeschiedenis. Probeer het later opnieuw.",
+  "no_records": "Geen credietgeschiedenis records gevonden.",
+  "header_date": "Datum",
+  "header_type": "Type",
+  "header_details": "Details",
+  "header_amount": "Bedrag",
+  "header_balance_one_time": "Eenmalig Crediet",
+  "header_balance_subscription": "Abonnementscrediet",
+  "type_one_time_purchase": "Credietaankoop",
+  "type_subscription_grant": "Abonnementstoekenning",
+  "type_feature_usage": "Functiegebruik",
+  "type_refund_revoke": "Terugbetaling Intrekken",
+  "type_subscription_ended_revoke": "Abonnement Beëindigd Intrekken"
+}

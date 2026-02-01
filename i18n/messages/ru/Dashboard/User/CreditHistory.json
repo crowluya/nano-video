@@ -1,0 +1,17 @@
+{
+  "title": "История Кредитов",
+  "description": "Здесь вы можете просмотреть историю всех ваших начислений и использований кредитов.",
+  "load_error": "Ошибка при загрузке истории кредитов. Попробуйте снова позже.",
+  "no_records": "Записи истории кредитов не найдены.",
+  "header_date": "Дата",
+  "header_type": "Тип",
+  "header_details": "Детали",
+  "header_amount": "Сумма",
+  "header_balance_one_time": "Разовые Кредиты",
+  "header_balance_subscription": "Кредиты Подписки",
+  "type_one_time_purchase": "Покупка Кредитов",
+  "type_subscription_grant": "Начисление Подписки",
+  "type_feature_usage": "Использование Функции",
+  "type_refund_revoke": "Отзыв Возврата",
+  "type_subscription_ended_revoke": "Отзыв Окончания Подписки"
+}

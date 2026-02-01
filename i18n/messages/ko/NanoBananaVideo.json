@@ -1,38 +1,38 @@
 {
   "Hero": {
     "badge": {
-      "label": "NEW",
-      "text": "Free AI Video Generator - No Watermark",
+      "label": "새로운 기능",
+      "text": "무료 AI 비디오 생성기 - 워터마크 없음",
       "href": "#video-demo"
     },
-    "title": "Nano Banana to Video - AI Video Generator with Sora 2 & Veo 3.1",
-    "description": "Convert Nano Banana images to professional videos instantly. Support Sora 2 and Veo 3.1 Fast. Free trial, no watermark. Perfect for UGC ads and e-commerce.",
-    "getStarted": "Start Creating",
+    "title": "Nano Banana를 비디오로 - Sora 2 및 Veo 3.1 AI 비디오 생성기",
+    "description": "Nano Banana 이미지를 즉시 전문 비디오로 변환하세요. Sora 2 및 Veo 3.1 Fast를 지원합니다. 무료 체험, 워터마크 없음. UGC 광고 및 이커머스에 완벽합니다.",
+    "getStarted": "지금 시작하기",
     "getStartedLink": "#video-demo"
   },
   "Features": {
     "badge": {
-      "label": "FEATURES",
-      "text": "Professional AI Video Generation"
+      "label": "기능",
+      "text": "전문 AI 비디오 생성"
     },
-    "title": "The Best Nano Banana to Video Converter",
-    "description": "Transform your Nano Banana images into stunning videos with cutting-edge AI models. Fast, free, and no watermark.",
+    "title": "최고의 Nano Banana 비디오 변환기",
+    "description": "최첨단 AI 모델로 Nano Banana 이미지를 놀라운 비디오로 변환하세요. 빠르고, 무료이며, 워터마크가 없습니다.",
     "items": [
       {
-        "title": "Nano Banana to Video Conversion",
-        "description": "Convert your Nano Banana images to professional videos in minutes with advanced AI technology.",
+        "title": "Nano Banana 비디오 변환",
+        "description": "고급 AI 기술로 몇 분 만에 Nano Banana 이미지를 전문 비디오로 변환하세요.",
         "details": [
           {
-            "title": "Multiple Input Methods",
-            "description": "Support text to video, image to video, and keyframes to video conversion."
+            "title": "다양한 입력 방법",
+            "description": "텍스트-투-비디오, 이미지-투-비디오, 키프레임-투-비디오 변환을 지원합니다."
           },
           {
-            "title": "High Quality Output",
-            "description": "Generate 1080p videos with professional quality, perfect for commercial use."
+            "title": "고품질 출력",
+            "description": "상업용으로 완벽한 전문 품질의 1080p 비디오를 생성하세요."
           },
           {
-            "title": "Fast Generation",
-            "description": "Create videos in 3-10 minutes depending on the model and complexity."
+            "title": "빠른 생성",
+            "description": "모델과 복잡성에 따라 3-10분 내에 비디오를 만드세요."
           }
         ],
         "images": [
@@ -40,20 +40,20 @@
         ]
       },
       {
-        "title": "Multiple AI Models (Sora 2 & Veo 3.1 Fast)",
-        "description": "Choose from the latest AI video generation models including OpenAI Sora 2 and Google Veo 3.1 Fast.",
+        "title": "다중 AI 모델 (Sora 2 및 Veo 3.1 Fast)",
+        "description": "OpenAI Sora 2 및 Google Veo 3.1 Fast를 포함한 최신 AI 비디오 생성 모델 중에서 선택하세요.",
         "details": [
           {
             "title": "Sora 2",
-            "description": "OpenAI's latest video generation model with exceptional quality and realism."
+            "description": "탁월한 품질과 리얼리즘을 갖춘 OpenAI의 최신 비디오 생성 모델입니다."
           },
           {
             "title": "Veo 3.1 Fast",
-            "description": "Google's fastest video generation model with multiple generation modes."
+            "description": "다양한 생성 모드를 갖춘 Google의 가장 빠른 비디오 생성 모델입니다."
           },
           {
-            "title": "Model Comparison",
-            "description": "Compare Nano Banana vs Sora vs Veo 3 to choose the best model for your needs."
+            "title": "모델 비교",
+            "description": "Nano Banana vs Sora vs Veo 3를 비교하여 요구 사항에 가장 적합한 모델을 선택하세요."
           }
         ],
         "images": [
@@ -61,20 +61,20 @@
         ]
       },
       {
-        "title": "Free & No Watermark",
-        "description": "Start creating videos for free without any watermark. Perfect for testing and small projects.",
+        "title": "무료 및 워터마크 없음",
+        "description": "워터마크 없이 무료로 비디오 만들기를 시작하세요. 테스트 및 소규모 프로젝트에 완벽합니다.",
         "details": [
           {
-            "title": "Free Trial Credits",
-            "description": "Get free credits to test the video generation without any payment."
+            "title": "무료 체험 크레딧",
+            "description": "결제 없이 비디오 생성을 테스트할 수 있는 무료 크레딧을 받으세요."
           },
           {
-            "title": "No Watermark",
-            "description": "All generated videos are watermark-free for professional use."
+            "title": "워터마크 없음",
+            "description": "생성된 모든 비디오는 전문 용도로 사용할 수 있는 워터마크가 없습니다."
           },
           {
-            "title": "Flexible Pricing",
-            "description": "Pay as you go or subscribe for unlimited video generation."
+            "title": "유연한 가격",
+            "description": "사용량에 따라 지불하거나 무제한 비디오 생성을 위해 구독하세요."
           }
         ],
         "images": [
@@ -82,20 +82,20 @@
         ]
       },
       {
-        "title": "UGC & Commercial Use",
-        "description": "Perfect for creating UGC ads for TikTok, Instagram, and Shopify stores.",
+        "title": "UGC 및 상업용 사용",
+        "description": "TikTok, Instagram 및 Shopify 상점을 위한 UGC 광고 만들기에 완벽합니다.",
         "details": [
           {
-            "title": "TikTok UGC Ads",
-            "description": "Create engaging TikTok ads from Nano Banana images in minutes."
+            "title": "TikTok UGC 광고",
+            "description": "몇 분 만에 Nano Banana 이미지에서 매력적인 TikTok 광고를 만드세요."
           },
           {
-            "title": "Instagram & Shopify",
-            "description": "Generate product videos for Instagram reels and Shopify stores."
+            "title": "Instagram 및 Shopify",
+            "description": "Instagram Reels 및 Shopify 상점을 위한 제품 비디오를 생성하세요."
           },
           {
-            "title": "Commercial License",
-            "description": "All videos come with commercial use rights for your business."
+            "title": "상업용 라이선스",
+            "description": "모든 비디오는 비즈니스를 위한 상업용 사용 권한이 포함되어 있습니다."
           }
         ],
         "images": [
@@ -103,20 +103,20 @@
         ]
       },
       {
-        "title": "Keyframes to Video",
-        "description": "Create cinematic videos from multiple keyframes with smooth transitions.",
+        "title": "키프레임을 비디오로",
+        "description": "부드러운 전환으로 여러 키프레임에서 영화 같은 비디오를 만드세요.",
         "details": [
           {
-            "title": "Reference to Video",
-            "description": "Use 2-3 reference images to guide the video generation process."
+            "title": "참조에서 비디오로",
+            "description": "비디오 생성 프로세스를 안내하기 위해 2-3개의 참조 이미지를 사용하세요."
           },
           {
-            "title": "Smooth Transitions",
-            "description": "AI generates smooth transitions between keyframes automatically."
+            "title": "부드러운 전환",
+            "description": "AI가 키프레임 사이에 부드러운 전환을 자동으로 생성합니다."
           },
           {
-            "title": "Cinematic Quality",
-            "description": "Perfect for creating movie-like videos from storyboards."
+            "title": "영화 같은 품질",
+            "description": "스토리보드에서 영화 같은 비디오를 만드는 데 완벽합니다."
           }
         ],
         "images": [
@@ -124,20 +124,20 @@
         ]
       },
       {
-        "title": "Fast Generation (3-10 minutes)",
-        "description": "Generate professional videos in just 3-10 minutes depending on model and complexity.",
+        "title": "빠른 생성 (3-10분)",
+        "description": "모델과 복잡성에 따라 단 3-10분 만에 전문 비디오를 생성하세요.",
         "details": [
           {
-            "title": "Quick Turnaround",
-            "description": "Most videos are ready in 3-5 minutes with Veo 3.1 Fast."
+            "title": "빠른 전달",
+            "description": "Veo 3.1 Fast를 사용하면 대부분의 비디오가 3-5분 내에 준비됩니다."
           },
           {
-            "title": "Real-time Progress",
-            "description": "Track the generation progress with live status updates."
+            "title": "실시간 진행 상황",
+            "description": "라이브 상태 업데이트로 생성 진행 상황을 추적하세요."
           },
           {
-            "title": "Batch Generation",
-            "description": "Generate multiple videos simultaneously to save time."
+            "title": "일괄 처리 생성",
+            "description": "시간을 절약하기 위해 여러 비디오를 동시에 생성하세요."
           }
         ],
         "images": [
@@ -148,39 +148,39 @@
   },
   "UseCases": {
     "badge": {
-      "label": "USE CASES",
-      "text": "Transform Your Content Creation"
+      "label": "사용 사례",
+      "text": "콘텐츠 생성을 변형하세요"
     },
-    "title": "Perfect for Every Creator",
-    "description": "Whether you're creating UGC ads, faceless YouTube videos, or e-commerce content, Nano Banana to Video has you covered.",
+    "title": "모든 크리에이터를 위한 완벽한 솔루션",
+    "description": "UGC 광고, 무인면 YouTube 비디오 또는 이커머스 콘텐츠를 만들든, Nano Banana 비디오가 모두 지원합니다.",
     "cases": [
       {
-        "title": "UGC Ads (TikTok, Instagram, Shopify)",
-        "description": "Create engaging user-generated content style ads for TikTok, Instagram, and Shopify stores. Perfect for e-commerce brands looking to scale their video ad production without expensive production costs.",
+        "title": "UGC 광고 (TikTok, Instagram, Shopify)",
+        "description": "TikTok, Instagram 및 Shopify 상점을 위한 매력적인 사용자 생성 콘텐츠 스타일의 광고를 만드세요. 비용이 많이 드는 제작 비용 없이 비디오 광고 생산을 확장하려는 이커머스 브랜드에 완벽합니다.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
       {
-        "title": "Faceless YouTube Videos",
-        "description": "Generate faceless YouTube videos from Nano Banana images. Perfect for educational content, product reviews, and storytelling channels. No filming equipment or actors needed.",
+        "title": "무인면 YouTube 비디오",
+        "description": "Nano Banana 이미지에서 무인면 YouTube 비디오를 생성하세요. 교육 콘텐츠, 제품 리뷰 및 스토리텔링 채널에 완벽합니다. 촬영 장비나 배우가 필요하지 않습니다.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-youtube.webp",
         "icon": "Youtube"
       },
       {
-        "title": "E-commerce Product Videos",
-        "description": "Transform product images into dynamic product videos for your e-commerce store. Increase conversion rates with professional product demonstrations and lifestyle videos.",
+        "title": "이커머스 제품 비디오",
+        "description": "제품 이미지를 이커머스 상점을 위한 동적 제품 비디오로 변환하세요. 전문 제품 데모 및 라이프스타일 비디오로 전환율을 높이세요.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ecommerce.webp",
         "icon": "ShoppingCart"
       },
       {
-        "title": "Cinematic Videos (Keyframes)",
-        "description": "Create cinematic videos from multiple keyframes. Perfect for filmmakers, animators, and content creators who want to visualize storyboards or create concept videos.",
+        "title": "영화 같은 비디오 (키프레임)",
+        "description": "여러 키프레임에서 영화 같은 비디오를 만드세요. 스토리보드를 시각화하거나 컨셉 비디오를 만들려는 영화 제작자, 애니메이터, 콘텐츠 크리에이터에게 완벽합니다.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-cinematic.webp",
         "icon": "Film"
       },
       {
-        "title": "TikTok Content",
-        "description": "Generate viral TikTok content from Nano Banana images. Perfect for creators looking to scale their content production and maintain consistent posting schedules.",
+        "title": "TikTok 콘텐츠",
+        "description": "Nano Banana 이미지에서 바이럴 TikTok 콘텐츠를 생성하세요. 콘텐츠 생산을 확장하고 일관된 게시 일정을 유지하려는 크리에이터에게 완벽합니다.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
@@ -188,267 +188,267 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "TESTIMONIALS"
+      "label": "후기"
     },
-    "title": "Loved by Creators Worldwide",
-    "description": "Join thousands of creators who use Nano Banana to Video daily"
+    "title": "전 세계 크리에이터들의 사랑을 받습니다",
+    "description": "매일 Nano Banana 비디오를 사용하는 수천 명의 크리에이터와 함께하세요"
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Everything you need to know about Nano Banana to Video",
+    "title": "자주 묻는 질문",
+    "description": "Nano Banana 비디오에 대해 알아야 할 모든 것",
     "items": [
       {
-        "question": "How to convert Nano Banana to video?",
-        "answer": "Converting Nano Banana to video is simple: 1) Select your preferred AI model (Sora 2 or Veo 3.1), 2) Choose your generation mode (text-to-video or image-to-video), 3) Upload your Nano Banana image if using image-to-video, 4) Enter your prompt describing the video motion, 5) Click generate and wait 3-10 minutes for your video to be ready."
+        "question": "Nano Banana를 비디오로 변환하는 방법은?",
+        "answer": "Nano Banana를 비디오로 변환하는 것은 간단합니다: 1) 선호하는 AI 모델(Sora 2 또는 Veo 3.1)을 선택하고, 2) 생성 모드(텍스트-투-비디오 또는 이미지-투-비디오)를 선택하고, 3) 이미지-투-비디오를 사용하는 경우 Nano Banana 이미지를 업로드하고, 4) 비디오 움직임을 설명하는 프롬프트를 입력하고, 5) 생성을 클릭하고 비디오가 준비될 때까지 3-10분 기다리세요."
       },
       {
-        "question": "Is Nano Banana to video free?",
-        "answer": "Yes! We offer free trial credits so you can test the video generation without any payment. All generated videos are watermark-free. After using your free credits, you can choose to pay as you go or subscribe for unlimited video generation."
+        "question": "Nano Banana 비디오는 무료인가요?",
+        "answer": "네! 결제 없이 비디오 생성을 테스트할 수 있는 무료 체험 크레딧을 제공합니다. 생성된 모든 비디오는 워터마크가 없습니다. 무료 크레딧을 사용한 후 사용량에 따라 지불하거나 무제한 비디오 생성을 위해 구독을 선택할 수 있습니다."
       },
       {
-        "question": "How to remove watermark from Nano Banana videos?",
-        "answer": "All videos generated on our platform are automatically watermark-free! You don't need to do anything special. Unlike other platforms, we don't add watermarks to your videos, so they're ready for professional and commercial use immediately."
+        "question": "Nano Banana 비디오에서 워터마크를 제거하는 방법은?",
+        "answer": "우리 플랫폼에서 생성된 모든 비디오는 자동으로 워터마크가 없습니다! 특별히 할 일이 없습니다. 다른 플랫폼과 달리 비디오에 워터마크를 추가하지 않으므로 즉시 전문 및 상업용으로 사용할 수 있습니다."
       },
       {
-        "question": "Nano Banana vs Sora vs Veo 3 - which is better?",
-        "answer": "Each model has its strengths: Sora 2 excels at realistic motion and high-quality output, perfect for cinematic videos. Veo 3.1 Fast is the fastest option with multiple generation modes, ideal for quick turnaround. Nano Banana Edit is great for image editing before video generation. We recommend trying all models with your free credits to see which fits your needs best."
+        "question": "Nano Banana vs Sora vs Veo 3 - 무엇이 더 좋은가요?",
+        "answer": "각 모델은 장점이 있습니다: Sora 2는 사실적인 움직임과 높은 출력 품질에서 뛰어나며 영화 같은 비디오에 완벽합니다. Veo 3.1 Fast는 여러 생성 모드를 갖춘 가장 빠른 옵션이며 빠른 전달에 이상적입니다. Nano Banana Edit는 비디오 생성 전 이미지 편집에 탁월합니다. 요구 사항에 가장 적합한 모델을 확인하기 위해 무료 크레딧으로 모든 모델을 시도해 보는 것이 좋습니다."
       },
       {
-        "question": "Can I use Nano Banana videos commercially?",
-        "answer": "Yes! All videos generated on our platform come with commercial use rights. You can use them for UGC ads, TikTok content, YouTube videos, e-commerce stores, and any other commercial purposes without any restrictions."
+        "question": "Nano Banana 비디오를 상업적으로 사용할 수 있나요?",
+        "answer": "네! 우리 플랫폼에서 생성된 모든 비디오는 상업용 사용 권한이 포함되어 있습니다. UGC 광고, TikTok 콘텐츠, YouTube 비디오, 이커머스 상점 및 기타 상업적 목적으로 제한 없이 사용할 수 있습니다."
       },
       {
-        "question": "How long does it take to generate a video?",
-        "answer": "Video generation typically takes 3-10 minutes depending on the model and complexity. Veo 3.1 Fast is the quickest (3-5 minutes), while Sora 2 may take 5-10 minutes for higher quality results. You can track the progress in real-time with our live status updates."
+        "question": "비디오를 생성하는 데 얼마나 걸리나요?",
+        "answer": "비디오 생성은 일반적으로 모델과 복잡성에 따라 3-10분 걸립니다. Veo 3.1 Fast가 가장 빠르며(3-5분), Sora 2는 더 높은 품질의 결과를 위해 5-10분 걸릴 수 있습니다. 라이브 상태 업데이트로 진행 상황을 실시간으로 추적할 수 있습니다."
       },
       {
-        "question": "What video formats are supported?",
-        "answer": "All videos are generated in standard MP4 format with 1080p resolution. This format is compatible with all major platforms including TikTok, Instagram, YouTube, Shopify, and more. The videos are optimized for web streaming and download."
+        "question": "지원되는 비디오 형식은 무엇인가요?",
+        "answer": "모든 비디오는 1080p 해상도의 표준 MP4 형식으로 생성됩니다. 이 형식은 TikTok, Instagram, YouTube, Shopify 등을 포함한 모든 주요 플랫폼과 호환됩니다. 비디오는 웹 스트리밍 및 다운로드에 최적화되어 있습니다."
       },
       {
-        "question": "Do I need to create an account to use it?",
-        "answer": "You can try the video generation without an account, but creating a free account allows you to save your videos, track your generation history, and manage your credits more easily. Account creation is quick and only requires an email or social login."
+        "question": "사용하기 위해 계정을 만들어야 하나요?",
+        "answer": "계정 없이 비디오 생성을 시도할 수 있지만, 무료 계정을 만들면 비디오를 저장하고, 생성 기록을 추적하며, 크레딧을 더 쉽게 관리할 수 있습니다. 계정 생성은 빠르며 이메일 또는 소셜 로그인만 필요합니다."
       },
       {
-        "question": "How to get 1080p video from Nano Banana?",
-        "answer": "All videos generated on our platform are automatically created in 1080p resolution! Simply generate your video as normal using either Sora 2 or Veo 3.1, and the output will be in full HD 1080p quality, perfect for professional use."
+        "question": "Nano Banana에서 1080p 비디오를 얻는 방법은?",
+        "answer": "우리 플랫폼에서 생성된 모든 비디오는 자동으로 1080p 해상도로 생성됩니다! Sora 2 또는 Veo 3.1을 사용하여 평소처럼 비디오를 생성하기만 하면 전문 용도로 완벽한 Full HD 1080p 품질로 출력됩니다."
       },
       {
-        "question": "What are the best prompts for video generation?",
-        "answer": "The best prompts are detailed and specific. Describe the motion you want, camera movements, lighting, and atmosphere. For example: 'Camera slowly pans across a sunset beach while waves gently crash on the shore' works better than just 'beach video'. Include details about speed (slow, fast), direction (left to right, zoom in), and mood (calm, energetic)."
+        "question": "비디오 생성을 위한 최고의 프롬프트는 무엇인가요?",
+        "answer": "최고의 프롬프트는 자세하고 구체적입니다. 원하는 움직임, 카메라 움직임, 조명 및 분위기를 설명하세요. 예를 들어 '카메라가 일몰 해변을 천천히 팬하면서 파도가 해안에 부드럽게 부서지는 것'이 '해변 비디오'보다 더 효과적입니다. 속도(느림, 빠름), 방향(왼쪽에서 오른쪽, 줌), 분위기(차분함, 활력)에 대한 세부 정보를 포함하세요."
       }
     ]
   },
   "CTA": {
-    "title": "Turn Nano Banana Pro Images Into Video Now",
-    "description": "Convert Nano Banana Pro images into videos with the most powerful Sora 2 and Veo 3.1. Free trial, no credit card required.",
-    "button": "Try Free Now",
-    "trustText": "Trusted by creators worldwide",
+    "title": "지금 Nano Banana Pro 이미지를 비디오로 변환하세요",
+    "description": "가장 강력한 Sora 2 및 Veo 3.1로 Nano Banana Pro 이미지를 비디오로 변환하세요. 무료 체험, 신용카드 불필요.",
+    "button": "지금 무료로 시도",
+    "trustText": "전 세계 크리에이터들의 신뢰를 받습니다",
     "features": {
-      "deploy": "🎬 Instant Generation",
-      "production": "✨ No Watermark",
-      "updates": "🚀 Fast Processing",
-      "i18n": "💎 Commercial Use"
+      "deploy": "🎬 즉시 생성",
+      "production": "✨ 워터마크 없음",
+      "updates": "🚀 빠른 처리",
+      "i18n": "💎 상업용 사용"
     }
   },
   "VideoDemo": {
-    "title": "nano banana video generator",
-    "loginPrompt": "Sign in to save your videos and access more features",
-    "loginButton": "Sign In"
+    "title": "nano banana 비디오 생성기",
+    "loginPrompt": "로그인하여 비디오를 저장하고 더 많은 기능에 액세스하세요",
+    "loginButton": "로그인"
   },
   "PromptGenerator": {
-    "title": "Prompt Generator",
-    "description": "Generate higher-quality video prompts through multi-turn chat",
-    "clear": "Clear",
-    "modelLabel": "Model",
-    "freeUserHint": "Free users can only use Gemini 2.5 Flash Lite. Upgrade to use DeepSeek.",
-    "previewHint": "You can preview this page. Sending messages requires login.",
-    "emptyState": "Describe your goal (e.g., camera movement, style, pacing, subject action). I will generate a stronger prompt for you.",
-    "inputPlaceholder": "Describe your desired video effect / prompt goal...",
-    "reasoningTitle": "Reasoning",
-    "loginRequired": "Please sign in to use Prompt Generator",
-    "defaultError": "Failed to generate response"
+    "title": "프롬프트 생성기",
+    "description": "멀티턴 채팅을 통해 더 고품질 비디오 프롬프트 생성",
+    "clear": "지우기",
+    "modelLabel": "모델",
+    "freeUserHint": "무료 사용자는 Gemini 2.5 Flash Lite만 사용할 수 있습니다. DeepSeek를 사용하려면 업그레이드하세요.",
+    "previewHint": "이 페이지를 미리 볼 수 있습니다. 메시지를 보내려면 로그인이 필요합니다.",
+    "emptyState": "목표를 설명하세요(예: 카메라 움직임, 스타일, 템포, 주체 작업). 더 강력한 프롬프트를 생성해 드리겠습니다.",
+    "inputPlaceholder": "원하는 비디오 효과 / 프롬프트 목표를 설명하세요...",
+    "reasoningTitle": "추론",
+    "loginRequired": "프롬프트 생성기를 사용하려면 로그인하세요",
+    "defaultError": "응답 생성 실패"
   },
   "VideoGeneration": {
-    "title": "nano banana video generator",
-    "subtitle": "Generate videos using Sora 2 and Veo 3.1 AI models",
-    "costPerGeneration": "Cost per Generation",
-    "selectModel": "Select model",
-    "availableCredits": "Available",
-    "generationType": "Generation Type",
-    "prompt": "Prompt",
-    "promptPlaceholder": "Describe the video you want to generate...",
-    "promptDescription": "The text prompt describing the desired video motion",
-    "imageUpload": "Image Upload",
-    "referenceImages": "Reference Images",
-    "imagesRequired": "images required",
-    "parameters": "Parameters",
+    "title": "nano banana 비디오 생성기",
+    "subtitle": "Sora 2 및 Veo 3.1 AI 모델을 사용하여 비디오 생성",
+    "costPerGeneration": "생성당 비용",
+    "selectModel": "모델 선택",
+    "availableCredits": "사용 가능",
+    "generationType": "생성 유형",
+    "prompt": "프롬프트",
+    "promptPlaceholder": "생성하려는 비디오를 설명하세요...",
+    "promptDescription": "원하는 비디오 움직임을 설명하는 텍스트 프롬프트",
+    "imageUpload": "이미지 업로드",
+    "referenceImages": "참조 이미지",
+    "imagesRequired": "이미지 필요",
+    "parameters": "매개변수",
     "parameterPanel": {
       "aspectRatio": {
-        "label": "Aspect Ratio",
+        "label": "화면 비율",
         "portrait": "9:16",
         "landscape": "16:9",
-        "help": "This parameter defines the aspect ratio of the video"
+        "help": "이 매개변수는 비디오의 화면 비율을 정의합니다"
       },
       "resolution": {
-        "label": "Resolution",
-        "help": "The resolution quality of the generated video"
+        "label": "해상도",
+        "help": "생성된 비디오의 해상도 품질"
       },
       "duration": {
-        "label": "Duration",
-        "help": "The number of frames to be generated"
+        "label": "지속 시간",
+        "help": "생성할 프레임 수"
       },
       "removeWatermark": {
-        "title": "Remove Watermark",
-        "description": "When enabled, removes watermarks from the generated video"
+        "title": "워터마크 제거",
+        "description": "활성화되면 생성된 비디오에서 워터마크를 제거합니다"
       }
     },
-    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
-    "getMoreCredits": "Get more credits",
-    "generating": "Generating...",
-    "generate": "Generate",
+    "insufficientCredits": "크레딧이 부족합니다. 필요: {required}, 사용 가능: {available}.",
+    "getMoreCredits": "더 많은 크레딧 얻기",
+    "generating": "생성 중...",
+    "generate": "생성",
     "storyboardPrompt": {
-      "title": "Storyboard Prompt Generator",
-      "description": "AI-powered cinematic prompt generation from your images",
-      "generateFast": "Generate (Fast)",
-      "generateMaster": "Generate (Master)",
-      "generating": "Generating storyboard...",
-      "upgradeRequired": "Upgrade to use Master mode",
-      "noImages": "Please upload image(s) first",
-      "singleImageRequired": "Upload 1 image for Sora 2",
-      "dualImageRequired": "Upload 2 images for Veo 3.1",
-      "result": "Generated Storyboard Prompt",
-      "applyToPrompt": "Apply to Prompt",
-      "fast": "Fast",
-      "master": "Master"
+      "title": "스토리보드 프롬프트 생성기",
+      "description": "이미지에서 AI 기반 영화 같은 프롬프트 생성",
+      "generateFast": "생성(빠름)",
+      "generateMaster": "생성(마스터)",
+      "generating": "스토리보드 생성 중...",
+      "upgradeRequired": "마스터 모드를 사용하려면 업그레이드하세요",
+      "noImages": "먼저 이미지를 업로드하세요",
+      "singleImageRequired": "Sora 2를 위해 1개 이미지 업로드",
+      "dualImageRequired": "Veo 3.1을 위해 2개 이미지 업로드",
+      "result": "생성된 스토리보드 프롬프트",
+      "applyToPrompt": "프롬프트에 적용",
+      "fast": "빠름",
+      "master": "마스터"
     }
   },
   "Pricing": {
     "badge": {
-      "label": "PRICING",
-      "text": "Flexible Plans for Every Creator"
+      "label": "가격",
+      "text": "모든 크리에이터를 위한 유연한 플랜"
     },
-    "title": "Choose Your Video Generation Plan",
-    "description": "Start creating professional videos with our flexible pricing plans. Free trial available, no credit card required.",
-    "annual": "Annual",
-    "monthly": "Monthly",
-    "onetime": "One-Time",
-    "saveTip": "Save 20%"
+    "title": "비디오 생성 플랜을 선택하세요",
+    "description": "유연한 가격 플랜으로 전문 비디오 만들기를 시작하세요. 무료 체험 가능, 신용카드 불필요.",
+    "annual": "연간",
+    "monthly": "월간",
+    "onetime": "일회성",
+    "saveTip": "20% 절약"
   },
   "ImageGeneration": {
-    "title": "nano banana image generator",
-    "subtitle": "Generate images using Nano Banana, Nano Banana Pro, and Midjourney AI models",
-    "costPerGeneration": "Cost per Generation",
-    "selectModel": "Select model",
-    "availableCredits": "Available",
-    "generationType": "Generation Type",
-    "textToImage": "Text to Image",
-    "imageToImage": "Image to Image",
-    "prompt": "Prompt",
-    "promptPlaceholder": "Describe the image you want to generate...",
-    "promptDescription": "The text prompt describing the desired image",
-    "referenceImage": "Reference Image",
-    "parameters": "Parameters",
+    "title": "nano banana 이미지 생성기",
+    "subtitle": "Nano Banana, Nano Banana Pro 및 Midjourney AI 모델을 사용하여 이미지 생성",
+    "costPerGeneration": "생성당 비용",
+    "selectModel": "모델 선택",
+    "availableCredits": "사용 가능",
+    "generationType": "생성 유형",
+    "textToImage": "텍스트를 이미지로",
+    "imageToImage": "이미지를 이미지로",
+    "prompt": "프롬프트",
+    "promptPlaceholder": "생성하려는 이미지를 설명하세요...",
+    "promptDescription": "원하는 이미지를 설명하는 텍스트 프롬프트",
+    "referenceImage": "참조 이미지",
+    "parameters": "매개변수",
     "parameterPanel": {
       "aspectRatio": {
-        "label": "Aspect Ratio",
-        "help": "The aspect ratio of the generated image (1:1 square, 16:9 landscape, 9:16 portrait)"
+        "label": "화면 비율",
+        "help": "생성된 이미지의 화면 비율(1:1 정사각형, 16:9 가로, 9:16 세로)"
       },
       "resolution": {
-        "label": "Resolution",
-        "help": "Output resolution: 1K/2K (30 credits), 4K (60 credits)"
+        "label": "해상도",
+        "help": "출력 해상도: 1K/2K(30크레딧), 4K(60크레딧)"
       },
       "speed": {
-        "label": "Speed",
-        "help": "Midjourney generation speed (fast mode by default)"
+        "label": "속도",
+        "help": "Midjourney 생성 속도(기본값 빠른 모드)"
       }
     },
-    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
-    "getMoreCredits": "Get more credits",
-    "generating": "Generating...",
-    "pleaseWait": "Please wait while your image is being generated...",
-    "generate": "Credits",
-    "download": "Download",
-    "previewPlaceholder": "Your generated image will appear here"
+    "insufficientCredits": "크레딧이 부족합니다. 필요: {required}, 사용 가능: {available}.",
+    "getMoreCredits": "더 많은 크레딧 얻기",
+    "generating": "생성 중...",
+    "pleaseWait": "이미지가 생성되는 동안 기다려 주세요...",
+    "generate": "크레딧",
+    "download": "다운로드",
+    "previewPlaceholder": "생성된 이미지가 여기에 나타납니다"
   },
   "ImageDemo": {
-    "title": "nano banana image generator",
-    "loginPrompt": "Sign in to save your images and access more features",
-    "loginButton": "Sign In"
+    "title": "nano banana 이미지 생성기",
+    "loginPrompt": "로그인하여 이미지를 저장하고 더 많은 기능에 액세스하세요",
+    "loginButton": "로그인"
   },
   "Gallery": {
     "badge": {
-      "label": "QUALITY",
-      "text": "Video Quality Gallery"
+      "label": "품질",
+      "text": "비디오 품질 갤러리"
     },
-    "title": "Stunning AI-Generated Videos",
-    "description": "Explore our gallery of videos created with Sora 2 and Veo 3.1",
+    "title": "AI로 생성된 놀라운 비디오",
+    "description": "Sora 2 및 Veo 3.1로 만든 비디오 갤러리를 탐색하세요",
     "tabs": {
-      "realistic": "Realistic",
-      "ugc": "UGC Style",
-      "3d": "3D Animation"
+      "realistic": "리얼리스틱",
+      "ugc": "UGC 스타일",
+      "3d": "3D 애니메이션"
     },
     "categories": {
       "realistic": {
-        "title": "Realistic Style Videos",
-        "description": "Professional quality realistic videos generated by AI",
+        "title": "리얼리스틱 스타일 비디오",
+        "description": "AI로 생성된 전문 품질의 사실적인 비디오",
         "videos": [
           {
             "id": "realistic-1",
-            "title": "AI Spokesperson",
-            "description": "Professional AI-generated spokesperson presenting smartphone product"
+            "title": "AI 스포크스퍼슨",
+            "description": "스마트폰 제품을 발표하는 전문 AI 생성 스포크스퍼슨"
           },
           {
             "id": "realistic-2",
-            "title": "Coffee Latte Art",
-            "description": "Close-up shot of barista creating latte art with steamed milk"
+            "title": "커피 라떼 아트",
+            "description": "우유를 스팀으로 만든 라떼 아트를 만드는 바리스타의 클로즈업 샷"
           },
           {
             "id": "realistic-3",
-            "title": "City Timelapse",
-            "description": "Time-lapse of modern city skyline at twilight with dramatic colors"
+            "title": "도시 타임랩스",
+            "description": "드라마틱한 색상의 황혼 녘 현대 도시 스카이라인의 타임랩스"
           }
         ]
       },
       "ugc": {
-        "title": "UGC Style Videos",
-        "description": "Authentic user-generated content style videos for social media",
+        "title": "UGC 스타일 비디오",
+        "description": "소셜 미디어를 위한 진정한 사용자 생성 콘텐츠 스타일 비디오",
         "videos": [
           {
             "id": "ugc-1",
-            "title": "Unboxing Experience",
-            "description": "First-person POV unboxing premium headphones with genuine excitement"
+            "title": "언박싱 경험",
+            "description": "진정한 열정으로 프리미엄 헤드폰을 개봉하는 1인칭 시점"
           },
           {
             "id": "ugc-2",
-            "title": "Fitness Workout",
-            "description": "Energetic fitness workout with jumping jacks in bright living room"
+            "title": "피트니스 운동",
+            "description": "밝은 거실에서 에너지 넘치는 피트니스 운동과 점핑 잭"
           },
           {
             "id": "ugc-3",
-            "title": "Avocado Toast",
-            "description": "Hands preparing colorful healthy avocado toast in sunny kitchen"
+            "title": "아보카도 토스트",
+            "description": "햇살 좋은 주방에서 다채로운 건강 아보카도 토스트를 준비하는 손"
           }
         ]
       },
       "3d": {
-        "title": "3D Animation Videos",
-        "description": "Creative 3D animated videos with Pixar-style quality",
+        "title": "3D 애니메이션 비디오",
+        "description": "Pixar 스타일 품질의 창의적인 3D 애니메이션 비디오",
         "videos": [
           {
             "id": "3d-1",
-            "title": "3D Headphones Showcase",
-            "description": "3D animated product showcase with wireless headphones rotating"
+            "title": "3D 헤드폰 쇼케이스",
+            "description": "회전하는 무선 헤드폰과 함께 3D 애니메이션 제품 쇼케이스"
           },
           {
             "id": "3d-2",
-            "title": "Cute 3D Character",
-            "description": "Cute 3D animated character walking happily, Disney-Pixar style"
+            "title": "귀여운 3D 캐릭터",
+            "description": "행복하게 걷는 귀여운 3D 애니메이션 캐릭터, Disney-Pixar 스타일"
           },
           {
             "id": "3d-3",
-            "title": "3D Logo Animation",
-            "description": "3D brand logo animation with geometric shapes assembling"
+            "title": "3D 로고 애니메이션",
+            "description": "기하학적 모양이 조립되는 3D 브랜드 로고 애니메이션"
           }
         ]
       }

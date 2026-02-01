@@ -1,0 +1,165 @@
+{
+  "title": "Blogbeheer",
+  "description": "Dashboard voor blogbeheer om blogberichten te maken, bewerken, verwijderen, dupliceren en vertalen met AI. Ondersteunt het pinnen van berichten, instellen van status (concept, gepubliceerd, gearchiveerd) en zichtbaarheidsinstellingen (openbaar, ingelogde gebruikers, abonnees). (Alleen beheerders)",
+  "fetchError": "Fout bij ophalen van blogs: {error}",
+  "createNewButton": "Nieuwe Blog Maken",
+  "List": {
+    "failedToFetch": "Fout bij ophalen van blogs",
+    "searchPlaceholder": "Titels, slugs, beschrijvingen zoeken..."
+  },
+  "Delete": {
+    "title": "Verwijdering Bevestigen",
+    "description": "Deze actie kan niet ongedaan worden gemaakt. Dit zal het blogbericht \"{title}\" permanent verwijderen.",
+    "cancelButton": "Annuleren",
+    "deleteButton": "Verwijderen",
+    "deleting": "Verwijderen...",
+    "success": "Blog succesvol verwijderd.",
+    "failedToDelete": "Fout bij verwijderen van blog",
+    "unexpectedError": "Er is een onverwachte fout opgetreden.",
+    "errorFetching": "Fout bij ophalen van bloginformatie."
+  },
+  "Create": {
+    "pageTitle": "Blog Maken",
+    "pageDescription": "Maak een nieuw blogbericht (Alleen beheerders)",
+    "submitSuccess": "Blog succesvol gemaakt.",
+    "submitErrorTitle": "Fout bij maken van blog",
+    "submitErrorDesc": "Probeer het later opnieuw.",
+    "loadingDuplicateMessage": "Bronblog dupliceren...",
+    "errorFetchingDuplicateTitle": "Fout bij ophalen van bronbloginformatie.",
+    "errorFetchingDuplicateDesc": "U kunt nog steeds doorgaan met het maken van een nieuwe blog.",
+    "errorFetchUnexpected": "Er is een onverwachte fout opgetreden."
+  },
+  "Edit": {
+    "pageTitle": "Blog Bewerken",
+    "pageDescription": "Blogbericht bewerken (Alleen beheerders)",
+    "submitSuccess": "Blog succesvol bijgewerkt.",
+    "submitErrorTitle": "Fout bij bijwerken van blog",
+    "submitErrorDesc": "Probeer het later opnieuw.",
+    "errorInvalidId": "Ongeldige blog-ID.",
+    "errorFetchFailed": "Fout bij ophalen van blog.",
+    "errorFetchUnexpected": "Er is een onverwachte fout opgetreden.",
+    "postNotFoundTitle": "Blog Niet Gevonden",
+    "postNotFoundDesc": "De blog bestaat niet.",
+    "backToList": "Terug naar lijst"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "Blogtaal",
+        "placeholder": "Blogtaal selecteren"
+      },
+      "title": {
+        "label": "Titel",
+        "placeholder": "Titel invoeren",
+        "description": "Aanbevolen lengte van 60 tekens",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "Slug",
+        "placeholder": "Slug invoeren",
+        "generateButton": "Slug genereren",
+        "description": "Genereert automatisch slug alleen uit Engelse titels. Voor andere talen voer handmatig in."
+      },
+      "description": {
+        "label": "Beschrijving",
+        "placeholder": "Beschrijving invoeren",
+        "description": "Aanbevolen lengte van 160 tekens",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "Labels",
+        "placeholder": "Labels selecteren",
+        "description": "Bloglabels selecteren."
+      },
+      "featuredImageUrl": {
+        "label": "Uitgelichte Afbeelding",
+        "placeholder": "Uitgelichte afbeelding selecteren",
+        "description": "Selecteer een uitgelichte afbeelding."
+      },
+      "content": {
+        "label": "Inhoud",
+        "placeholder": "Bloginhoud invoeren, Markdown-formaat ondersteund",
+        "description": "Bloginhoud invoeren, Markdown-formaat ondersteund."
+      },
+      "status": {
+        "label": "Status",
+        "placeholder": "Status selecteren",
+        "options": {
+          "draft": "Concept",
+          "published": "Gepubliceerd",
+          "archived": "Gearchiveerd"
+        }
+      },
+      "visibility": {
+        "label": "Zichtbaarheid",
+        "placeholder": "Zichtbaarheid selecteren",
+        "options": {
+          "public": "Openbaar",
+          "loggedIn": "Ingelogde Gebruikers",
+          "subscribers": "Alleen Abonnees"
+        }
+      },
+      "isPinned": {
+        "label": "Uitgelicht",
+        "description": "Dit bericht bovenaan vastpinnen."
+      }
+    },
+    "cancelButton": "Annuleren",
+    "submittingButton": "Indienen...",
+    "updateButton": "Blog Bijwerken",
+    "createButton": "Blog Maken",
+    "upload": {
+      "uploading": "Uploaden...",
+      "uploadError": "Upload Mislukt",
+      "uploadErrorDesc": "Selecteer een afbeeldingsbestand.",
+      "noPrefix": "Geen voorvoegsel voor afbeeldingsnaam opgegeven.",
+      "invalidFileType": "Ongeldig bestandstype. Alleen afbeeldingsbestanden zijn toegestaan.",
+      "fileSizeExceeded": "Bestandsgroottelimiet: {maxSizeInMB}MB.",
+      "presignedUrlError": "Fout bij genereren van voor-ondertekende URL",
+      "uploadErrorUnexpected": "Er is een onverwachte fout opgetreden.",
+      "uploadSuccess": "Upload Succesvol",
+      "uploadSuccessDesc": "Afbeelding geüpload naar R2-opslag."
+    },
+    "toolbar": {
+      "translateTo": "Vertalen naar {languageName}",
+      "noTranslationOptions": "Geen vertaalmogelijkheden beschikbaar.",
+      "translateByAIDescription": "AI-vertaling vereist dat de omgevingsvariabelen NEXT_PUBLIC_AI_MODEL_ID en NEXT_PUBLIC_AI_PROVIDER zijn geconfigureerd",
+      "translateActionTitle": "Inhoud Vertalen"
+    },
+    "translate": {
+      "loading": "Vertalen...",
+      "error": "Vertaling Mislukt",
+      "success": "Vertaling Succesvol!",
+      "infoEmpty": "Vertaalinhoud is leeg"
+    }
+  },
+  "TagManager": {
+    "title": "Labelbeheer",
+    "description": "Bloglabels beheren.",
+    "manageTagsButton": "Labels Beheren",
+    "newTagPlaceholder": "Tagnaam invoeren",
+    "selectTags": "Labels Selecteren",
+    "selectedTagsLabel": "Geselecteerde Labels",
+    "searchPlaceholder": "Zoeken naar labels",
+    "loadingTagsMessage": "Labels laden...",
+    "noResults": "Geen labels gevonden",
+    "createSuccess": "Label \"{name}\" succesvol gemaakt.",
+    "createNewTag": "Nieuw Label Maken",
+    "creatingButton": "Maken...",
+    "createButton": "Label Maken",
+    "closeButton": "Sluiten",
+    "editButton": "Bewerken",
+    "deleteButton": "Verwijderen",
+    "confirmDelete": "Weet u zeker dat u het label \"{name}\" wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+    "deleteSuccess": "Label \"{name}\" succesvol verwijderd.",
+    "updateSuccess": "Label \"{name}\" succesvol bijgewerkt.",
+    "errors": {
+      "nameRequired": "Labelnaam is vereist.",
+      "fetchFailed": "Fout bij laden van labels",
+      "alreadyExists": "Er bestaat al een label met de naam \"{name}\".",
+      "createFailed": "Fout bij maken van label",
+      "deleteFailed": "Fout bij verwijderen van label",
+      "updateFailed": "Fout bij bijwerken van label"
+    }
+  }
+}

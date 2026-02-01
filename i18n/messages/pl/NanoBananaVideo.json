@@ -156,7 +156,7 @@
     "cases": [
       {
         "title": "Reklamy UGC (TikTok, Instagram, Shopify)",
-        "description": "Create engaging user-generated content style ads for TikTok, Instagram, and Shopify stores. Perfect for e-commerce brands looking to scale their video ad production without expensive production costs.",
+        "description": "Twórz angażujące reklamy w stylu treści generowanych przez użytkowników dla TikTok, Instagram i sklepów Shopify. Idealne dla marek e-commerce poszukujących skalowania produkcji reklam wideo bez drogich kosztów produkcji.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
@@ -180,7 +180,7 @@
       },
       {
         "title": "Treści TikTok",
-        "description": "Generate viral TikTok content from Nano Banana images. Perfect for creators looking to scale their content production and maintain consistent posting schedules.",
+        "description": "Generuj wiralne treści TikTok z obrazów Nano Banana. Idealne dla twórców poszukujących skalowania produkcji treści i utrzymania consistent harmonogramu publikacji.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
@@ -198,44 +198,44 @@
     "description": "Wszystko, co musisz wiedzieć o Nano Banana to Video",
     "items": [
       {
-        "question": "How to convert Nano Banana to video?",
-        "answer": "Converting Nano Banana to video is simple: 1) Select your preferred AI model (Sora 2 or Veo 3.1), 2) Choose your generation mode (text-to-video or image-to-video), 3) Upload your Nano Banana image if using image-to-video, 4) Enter your prompt describing the video motion, 5) Click generate and wait 3-10 minutes for your video to be ready."
+        "question": "Jak przekonwertować Nano Banana na wideo?",
+        "answer": "Konwersja Nano Banana na wideo jest prosta: 1) Wybierz preferowany model AI (Sora 2 lub Veo 3.1), 2) Wybierz tryb generowania (tekst-na-wideo lub obraz-na-wideo), 3) Prześlij swój obraz Nano Banana, jeśli używasz trybu obraz-na-wideo, 4) Wpisz swój prompt opisujący ruch wideo, 5) Kliknij generuj i poczekaj 3-10 minut, aż Twoje wideo będzie gotowe."
       },
       {
-        "question": "Is Nano Banana to video free?",
-        "answer": "Yes! We offer free trial credits so you can test the video generation without any payment. All generated videos are watermark-free. After using your free credits, you can choose to pay as you go or subscribe for unlimited video generation."
+        "question": "Czy konwersja Nano Banana na wideo jest darmowa?",
+        "answer": "Tak! Oferujemy darmowe punkty próbne, abyś mógł przetestować generowanie wideo bez żadnych płatności. Wszystkie wygenerowane wideo są bez znaku wodnego. Po wykorzystaniu darmowych punktów możesz wybrać płatność zgodnie z użyciem lub subskrypcję dla nieograniczonego generowania wideo."
       },
       {
-        "question": "How to remove watermark from Nano Banana videos?",
-        "answer": "All videos generated on our platform are automatically watermark-free! You don't need to do anything special. Unlike other platforms, we don't add watermarks to your videos, so they're ready for professional and commercial use immediately."
+        "question": "Jak usunąć znak wodny z wideo Nano Banana?",
+        "answer": "Wszystkie wideo wygenerowane na naszej platformie są automatycznie bez znaku wodnego! Nie musisz robić nic specjalnego. W przeciwieństwie do innych platform, nie dodajemy znaków wodnych do Twoich wideo, więc są one natychmiast gotowe do użytku profesjonalnego i komercyjnego."
       },
       {
-        "question": "Nano Banana vs Sora vs Veo 3 - which is better?",
-        "answer": "Each model has its strengths: Sora 2 excels at realistic motion and high-quality output, perfect for cinematic videos. Veo 3.1 Fast is the fastest option with multiple generation modes, ideal for quick turnaround. Nano Banana Edit is great for image editing before video generation. We recommend trying all models with your free credits to see which fits your needs best."
+        "question": "Nano Banana vs Sora vs Veo 3 - który jest lepszy?",
+        "answer": "Każdy model ma swoje mocne strony: Sora 2 doskonale sprawdza się w realistycznym ruchu i wysokiej jakości wyjścia, idealny dla wideo kinowych. Veo 3.1 Fast jest najszybszą opcją z wieloma trybami generowania, idealny dla szybkiej realizacji. Nano Banana Edit jest świetny do edycji obrazów przed generowaniem wideo. Zalecamy wypróbowanie wszystkich modeli z darmowymi punktami, aby zobaczyć, który najlepiej odpowiada Twoim potrzebom."
       },
       {
-        "question": "Can I use Nano Banana videos commercially?",
-        "answer": "Yes! All videos generated on our platform come with commercial use rights. You can use them for UGC ads, TikTok content, YouTube videos, e-commerce stores, and any other commercial purposes without any restrictions."
+        "question": "Czy mogę używać wideo Nano Banana komercyjnie?",
+        "answer": "Tak! Wszystkie wideo wygenerowane na naszej platformie posiadają prawa do użytku komercyjnego. Możesz używać ich dla reklam UGC, treści TikTok, wideo YouTube, sklepów e-commerce i innych celów komercyjnych bez żadnych ograniczeń."
       },
       {
-        "question": "How long does it take to generate a video?",
-        "answer": "Video generation typically takes 3-10 minutes depending on the model and complexity. Veo 3.1 Fast is the quickest (3-5 minutes), while Sora 2 may take 5-10 minutes for higher quality results. You can track the progress in real-time with our live status updates."
+        "question": "Ile czasu zajmuje wygenerowanie wideo?",
+        "answer": "Generowanie wideo zazwyczaj zajmuje 3-10 minut w zależności od modelu i złożoności. Veo 3.1 Fast jest najszybszy (3-5 minut), podczas gdy Sora 2 może zająć 5-10 minut dla wyników wyższej jakości. Możesz śledzić postęp w czasie rzeczywistym z naszymi aktualizacjami statusu na żywo."
       },
       {
-        "question": "What video formats are supported?",
-        "answer": "All videos are generated in standard MP4 format with 1080p resolution. This format is compatible with all major platforms including TikTok, Instagram, YouTube, Shopify, and more. The videos are optimized for web streaming and download."
+        "question": "Jakie formaty wideo są obsługiwane?",
+        "answer": "Wszystkie wideo są generowane w standardowym formacie MP4 z rozdzielczością 1080p. Ten format jest kompatybilny ze wszystkimi głównymi platformami, w tym TikTok, Instagram, YouTube, Shopify i innymi. Wideo są zoptymalizowane do strumieniowania i pobierania w sieci."
       },
       {
-        "question": "Do I need to create an account to use it?",
-        "answer": "You can try the video generation without an account, but creating a free account allows you to save your videos, track your generation history, and manage your credits more easily. Account creation is quick and only requires an email or social login."
+        "question": "Czy muszę stworzyć konto, aby używać?",
+        "answer": "Możesz wypróbować generowanie wideo bez konta, ale stworzenie darmowego konta pozwala zapisywać Twoje wideo, śledzić historię generowania i łatwiej zarządzać punktami. Stworzenie konta jest szybkie i wymaga tylko adresu e-mail lub logowania społecznościowego."
       },
       {
-        "question": "How to get 1080p video from Nano Banana?",
-        "answer": "All videos generated on our platform are automatically created in 1080p resolution! Simply generate your video as normal using either Sora 2 or Veo 3.1, and the output will be in full HD 1080p quality, perfect for professional use."
+        "question": "Jak uzyskać wideo 1080p z Nano Banana?",
+        "answer": "Wszystkie wideo wygenerowane na naszej platformie są automatycznie tworzone w rozdzielczości 1080p! Po prostu wygeneruj swoje wideo normalnie, używając Sora 2 lub Veo 3.1, a wyjście będzie w pełnej jakości HD 1080p, idealnej do użytku profesjonalnego."
       },
       {
-        "question": "What are the best prompts for video generation?",
-        "answer": "The best prompts are detailed and specific. Describe the motion you want, camera movements, lighting, and atmosphere. For example: 'Camera slowly pans across a sunset beach while waves gently crash on the shore' works better than just 'beach video'. Include details about speed (slow, fast), direction (left to right, zoom in), and mood (calm, energetic)."
+        "question": "Jakie są najlepsze prompty do generowania wideo?",
+        "answer": "Najlepsze prompty są szczegółowe i konkretne. Opisz ruch, który chcesz, ruchy kamery, oświetlenie i atmosferę. Na przykład: 'Kamera powoli przesuwa się po plaży o zachodzie słońca, podczas gdy fale delikatnie rozbijają się o brzeg' działa lepiej niż tylko 'wideo plaży'. Uwzględnij szczegóły o prędkości (wolno, szybko), kierunku (od lewej do prawej, przybliżenie) i nastroju (spokojny, energiczny)."
       }
     ]
   },

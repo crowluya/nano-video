@@ -1,0 +1,31 @@
+{
+  "title": "Ustawienia",
+  "description": "Zarządzaj ustawieniami konta i informacjami o profilu.",
+  "form": {
+    "emailLabel": "E-mail",
+    "fullNameLabel": "Pełna Nazwa",
+    "fullNamePlaceholder": "Wprowadź swoją pełną nazwę",
+    "avatarLabel": "Awatar",
+    "avatarHint": "Maksymalny rozmiar pliku: {maxSizeInMB} MB. Dozwolone typy: {allowedTypes}.",
+    "updateButton": "Zaktualizuj Ustawienia",
+    "updatingButton": "Aktualizowanie..."
+  },
+  "toast": {
+    "fullNameLengthError": "Pełna nazwa musi mieć mniej niż {maxLength} znaków",
+    "fullNameInvalidCharactersError": "Pełna nazwa zawiera nieprawidłowe znaki",
+    "errorInvalidFileType": "Nieprawidłowy typ pliku dla awatara. Dozwolone są tylko {allowedTypes}.",
+    "errorInvalidFileTypeDescription": "Prześlij plik mniejszy niż {maxSizeInMB} MB.",
+    "errorFileSizeExceeded": "Rozmiar awatara przekracza limit {maxSizeInMB} MB.",
+    "errorFileSizeExceededDescription": "Prześlij plik mniejszy niż {maxSizeInMB} MB.",
+    "errorInvalidFullName": "Podano nieprawidłową pełną nazwę.",
+    "errorFullNameRequired": "Pełna nazwa jest wymagana.",
+    "updateSuccessTitle": "Profil Zaktualizowany",
+    "updateSuccessDescription": "Twój profil został pomyślnie zaktualizowany.",
+    "updateErrorTitle": "Aktualizacja Nieudana",
+    "updateErrorDescription": "Błąd podczas aktualizacji ustawień. Spróbuj ponownie później.",
+    "errorDeleteOldAvatar": "Błąd podczas usuwania starego awatara.",
+    "errorUploadAvatar": "Błąd podczas przesyłania awatara.",
+    "errorUpdateAuthUser": "Błąd podczas aktualizacji użytkownika uwierzytelniającego.",
+    "errorUpdateUserProfile": "Błąd podczas aktualizacji profilu użytkownika."
+  }
+}

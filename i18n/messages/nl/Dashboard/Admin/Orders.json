@@ -1,0 +1,12 @@
+{
+  "title": "Bestellingen",
+  "description": "Hier is een lijst van alle bestellingen.",
+  "user": "Gebruiker",
+  "orderId": "Bestel-ID",
+  "amount": "Bedrag",
+  "discount": "Korting",
+  "type": "Type",
+  "status": "Status",
+  "createdAt": "Aangemaakt op",
+  "filterByEmail": "Filteren op e-mail..."
+}

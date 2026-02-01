@@ -1,0 +1,17 @@
+{
+  "title": "Guthabenhistorie",
+  "description": "Hier können Sie den Verlauf aller Ihrer Gutschriften und Verwendungen sehen.",
+  "load_error": "Fehler beim Laden der Guthabenhistorie. Bitte versuchen Sie es später erneut.",
+  "no_records": "Keine Einträge in der Guthabenhistorie gefunden.",
+  "header_date": "Datum",
+  "header_type": "Typ",
+  "header_details": "Details",
+  "header_amount": "Betrag",
+  "header_balance_one_time": "Einmalguthaben",
+  "header_balance_subscription": "Abonnement-Guthaben",
+  "type_one_time_purchase": "Guthabenkauf",
+  "type_subscription_grant": "Abonnement-Gutschrift",
+  "type_feature_usage": "Feature-Nutzung",
+  "type_refund_revoke": "Rückerstattung-Widerruf",
+  "type_subscription_ended_revoke": "Abonnement-beendet-Widerruf"
+}

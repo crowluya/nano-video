@@ -1,0 +1,12 @@
+{
+  "title": "Zamówienia",
+  "description": "Oto lista wszystkich zamówień.",
+  "user": "Użytkownik",
+  "orderId": "ID Zamówienia",
+  "amount": "Kwota",
+  "discount": "Rabat",
+  "type": "Typ",
+  "status": "Status",
+  "createdAt": "Utworzono",
+  "filterByEmail": "Filtruj po e-mailu..."
+}

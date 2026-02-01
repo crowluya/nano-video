@@ -1,0 +1,12 @@
+{
+  "title": "Commandes",
+  "description": "Voici la liste de toutes les commandes.",
+  "user": "Utilisateur",
+  "orderId": "ID de commande",
+  "amount": "Montant",
+  "discount": "Remise",
+  "type": "Type",
+  "status": "Statut",
+  "createdAt": "Créé le",
+  "filterByEmail": "Filtrer par e-mail..."
+}

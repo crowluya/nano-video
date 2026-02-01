@@ -1,0 +1,165 @@
+{
+  "title": "블로그 관리",
+  "description": "블로그 게시물을 생성, 편집, 삭제, 복제하고 AI로 번역하기 위한 블로그 관리 대시보드. 게시물 고정, 상태 설정(초안, 게시됨, 보관됨) 및 가시성 설정(공개, 로그인 사용자, 구독자)을 지원합니다. (관리자만)",
+  "fetchError": "블로그를 가져오지 못했습니다: {error}",
+  "createNewButton": "새 블로그 만들기",
+  "List": {
+    "failedToFetch": "블로그를 가져오지 못했습니다",
+    "searchPlaceholder": "제목, 슬러그, 설명 검색..."
+  },
+  "Delete": {
+    "title": "삭제 확인",
+    "description": "이 작업은 되돌릴 수 없습니다. 이렇게 하면 블로그 게시물 \"{title}\"이(가) 영구적으로 삭제됩니다.",
+    "cancelButton": "취소",
+    "deleteButton": "삭제",
+    "deleting": "삭제 중...",
+    "success": "블로그가 성공적으로 삭제되었습니다.",
+    "failedToDelete": "블로그 삭제 실패",
+    "unexpectedError": "예기치 않은 오류가 발생했습니다.",
+    "errorFetching": "블로그 정보를 가져오지 못했습니다."
+  },
+  "Create": {
+    "pageTitle": "블로그 만들기",
+    "pageDescription": "새 블로그 게시물 만들기 (관리자만)",
+    "submitSuccess": "블로그가 성공적으로 생성되었습니다.",
+    "submitErrorTitle": "블로그 생성 실패",
+    "submitErrorDesc": "나중에 다시 시도하세요.",
+    "loadingDuplicateMessage": "소스 블로그 복제 중...",
+    "errorFetchingDuplicateTitle": "소스 블로그 정보를 가져오지 못했습니다.",
+    "errorFetchingDuplicateDesc": "새 블로그 만들기를 계속할 수 있습니다.",
+    "errorFetchUnexpected": "예기치 않은 오류가 발생했습니다."
+  },
+  "Edit": {
+    "pageTitle": "블로그 편집",
+    "pageDescription": "블로그 게시물 편집 (관리자만)",
+    "submitSuccess": "블로그가 성공적으로 업데이트되었습니다.",
+    "submitErrorTitle": "블로그 업데이트 실패",
+    "submitErrorDesc": "나중에 다시 시도하세요.",
+    "errorInvalidId": "잘못된 블로그 ID.",
+    "errorFetchFailed": "블로그를 가져오지 못했습니다.",
+    "errorFetchUnexpected": "예기치 않은 오류가 발생했습니다.",
+    "postNotFoundTitle": "블로그를 찾을 수 없음",
+    "postNotFoundDesc": "블로그가 존재하지 않습니다.",
+    "backToList": "목록으로 돌아가기"
+  },
+  "Form": {
+    "fields": {
+      "language": {
+        "label": "블로그 언어",
+        "placeholder": "블로그 언어 선택"
+      },
+      "title": {
+        "label": "제목",
+        "placeholder": "제목 입력",
+        "description": "권장 길이 60자",
+        "recommendedLength": "60"
+      },
+      "slug": {
+        "label": "슬러그",
+        "placeholder": "슬러그 입력",
+        "generateButton": "슬러그 생성",
+        "description": "영어 제목에서만 슬러그를 자동 생성합니다. 다른 언어는 수동으로 입력하세요."
+      },
+      "description": {
+        "label": "설명",
+        "placeholder": "설명 입력",
+        "description": "권장 길이 160자",
+        "recommendedLength": "160"
+      },
+      "tags": {
+        "label": "태그",
+        "placeholder": "태그 선택",
+        "description": "블로그 태그를 선택하세요."
+      },
+      "featuredImageUrl": {
+        "label": "대표 이미지",
+        "placeholder": "대표 이미지 선택",
+        "description": "대표 이미지를 선택하세요."
+      },
+      "content": {
+        "label": "콘텐츠",
+        "placeholder": "블로그 콘텐츠 입력, Markdown 형식 지원",
+        "description": "블로그 콘텐츠 입력, Markdown 형식 지원."
+      },
+      "status": {
+        "label": "상태",
+        "placeholder": "상태 선택",
+        "options": {
+          "draft": "초안",
+          "published": "게시됨",
+          "archived": "보관됨"
+        }
+      },
+      "visibility": {
+        "label": "가시성",
+        "placeholder": "가시성 선택",
+        "options": {
+          "public": "공개",
+          "loggedIn": "로그인 사용자",
+          "subscribers": "구독자만"
+        }
+      },
+      "isPinned": {
+        "label": "고정됨",
+        "description": "이 게시물을 상단에 고정하세요."
+      }
+    },
+    "cancelButton": "취소",
+    "submittingButton": "제출 중...",
+    "updateButton": "블로그 업데이트",
+    "createButton": "블로그 만들기",
+    "upload": {
+      "uploading": "업로드 중...",
+      "uploadError": "업로드 실패",
+      "uploadErrorDesc": "이미지 파일을 선택하세요.",
+      "noPrefix": "이미지命名 접두사가 제공되지 않았습니다.",
+      "invalidFileType": "잘못된 파일 유형입니다. 이미지 파일만 허용됩니다.",
+      "fileSizeExceeded": "파일 크기 제한: {maxSizeInMB}MB.",
+      "presignedUrlError": "사전 서명된 URL 생성 실패",
+      "uploadErrorUnexpected": "예기치 않은 오류가 발생했습니다.",
+      "uploadSuccess": "업로드 성공",
+      "uploadSuccessDesc": "이미지가 R2 저장소에 업로드되었습니다."
+    },
+    "toolbar": {
+      "translateTo": "{languageName}(으)로 번역",
+      "noTranslationOptions": "사용 가능한 번역 옵션이 없습니다.",
+      "translateByAIDescription": "AI 번역을 사용하려면 NEXT_PUBLIC_AI_MODEL_ID 및 NEXT_PUBLIC_AI_PROVIDER 환경 변수가 구성되어야 합니다",
+      "translateActionTitle": "콘텐츠 번역"
+    },
+    "translate": {
+      "loading": "번역 중...",
+      "error": "번역 실패",
+      "success": "번역 성공!",
+      "infoEmpty": "번역 콘텐츠가 비어 있습니다"
+    }
+  },
+  "TagManager": {
+    "title": "태그 관리",
+    "description": "블로그 태그를 관리합니다.",
+    "manageTagsButton": "태그 관리",
+    "newTagPlaceholder": "태그 이름 입력",
+    "selectTags": "태그 선택",
+    "selectedTagsLabel": "선택된 태그",
+    "searchPlaceholder": "태그 검색",
+    "loadingTagsMessage": "태그 로드 중...",
+    "noResults": "태그를 찾을 수 없습니다",
+    "createSuccess": "태그 \"{name}\"이(가) 성공적으로 생성되었습니다.",
+    "createNewTag": "새 태그 만들기",
+    "creatingButton": "생성 중...",
+    "createButton": "태그 만들기",
+    "closeButton": "닫기",
+    "editButton": "편집",
+    "deleteButton": "삭제",
+    "confirmDelete": "태그 \"{name}\"을(를) 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.",
+    "deleteSuccess": "태그 \"{name}\"이(가) 성공적으로 삭제되었습니다.",
+    "updateSuccess": "태그 \"{name}\"이(가) 성공적으로 업데이트되었습니다.",
+    "errors": {
+      "nameRequired": "태그 이름이 필요합니다.",
+      "fetchFailed": "태그 로드 실패",
+      "alreadyExists": "이름 \"{name}\"인 태그가 이미 있습니다.",
+      "createFailed": "태그 생성 실패",
+      "deleteFailed": "태그 삭제 실패",
+      "updateFailed": "태그 업데이트 실패"
+    }
+  }
+}

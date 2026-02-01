@@ -1,0 +1,21 @@
+{
+  "title": "개요",
+  "users": "사용자",
+  "oneTimePayments": "일회 결제",
+  "monthlySubscriptions": "월간 구독",
+  "yearlySubscriptions": "연간 구독",
+  "today": "오늘",
+  "yesterday": "어제",
+  "growthRate": "성장률",
+  "newUsers": "새 사용자",
+  "totalUsers": "총 사용자",
+  "orders": "주문",
+  "revenue": "수익",
+  "count": "수",
+  "growthTrend": "성장 추세",
+  "totalOrders": "총 주문",
+  "newOrders": "새 주문",
+  "last7Days": "최근 7일",
+  "last30Days": "최근 30일",
+  "last90Days": "최근 90일"
+}

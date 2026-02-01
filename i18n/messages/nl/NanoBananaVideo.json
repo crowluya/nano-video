@@ -1,38 +1,38 @@
 {
   "Hero": {
     "badge": {
-      "label": "NEW",
-      "text": "Free AI Video Generator - No Watermark",
+      "label": "NIEUW",
+      "text": "Gratis AI Video Generator - Geen Watermerk",
       "href": "#video-demo"
     },
-    "title": "Nano Banana to Video - AI Video Generator with Sora 2 & Veo 3.1",
-    "description": "Convert Nano Banana images to professional videos instantly. Support Sora 2 and Veo 3.1 Fast. Free trial, no watermark. Perfect for UGC ads and e-commerce.",
-    "getStarted": "Start Creating",
+    "title": "Nano Banana to Video - AI Video Generator met Sora 2 en Veo 3.1",
+    "description": "Converteer Nano Banana afbeeldingen direct naar professionele video's. Ondersteunt Sora 2 en Veo 3.1 Fast. Gratis proefperiode, geen watermerk. Perfect voor UGC-advertenties en e-commerce.",
+    "getStarted": "Begin Met Maken",
     "getStartedLink": "#video-demo"
   },
   "Features": {
     "badge": {
-      "label": "FEATURES",
-      "text": "Professional AI Video Generation"
+      "label": "FUNCTIES",
+      "text": "Professionele AI Video Generatie"
     },
-    "title": "The Best Nano Banana to Video Converter",
-    "description": "Transform your Nano Banana images into stunning videos with cutting-edge AI models. Fast, free, and no watermark.",
+    "title": "De Beste Nano Banana naar Video Converter",
+    "description": "Transformeer uw Nano Banana afbeeldingen tot prachtige video's met geavanceerde AI modellen. Snel, gratis en zonder watermerk.",
     "items": [
       {
-        "title": "Nano Banana to Video Conversion",
-        "description": "Convert your Nano Banana images to professional videos in minutes with advanced AI technology.",
+        "title": "Nano Banana naar Video Conversie",
+        "description": "Converteer uw Nano Banana afbeeldingen in enkele minuten naar professionele video's met geavanceerde AI technologie.",
         "details": [
           {
-            "title": "Multiple Input Methods",
-            "description": "Support text to video, image to video, and keyframes to video conversion."
+            "title": "Meerdere Invoermethodes",
+            "description": "Ondersteunt tekst naar video, afbeelding naar video, en keyframes naar video conversie."
           },
           {
-            "title": "High Quality Output",
-            "description": "Generate 1080p videos with professional quality, perfect for commercial use."
+            "title": "Hoge Kwaliteit Output",
+            "description": "Genereer 1080p video's met professionele kwaliteit, perfect voor commercieel gebruik."
           },
           {
-            "title": "Fast Generation",
-            "description": "Create videos in 3-10 minutes depending on the model and complexity."
+            "title": "Snelle Generatie",
+            "description": "Maak video's in 3-10 minuten afhankelijk van het model en de complexiteit."
           }
         ],
         "images": [
@@ -40,20 +40,20 @@
         ]
       },
       {
-        "title": "Multiple AI Models (Sora 2 & Veo 3.1 Fast)",
-        "description": "Choose from the latest AI video generation models including OpenAI Sora 2 and Google Veo 3.1 Fast.",
+        "title": "Meerdere AI Modellen (Sora 2 en Veo 3.1 Fast)",
+        "description": "Kies uit de nieuwste AI video generatiemodellen inclusief OpenAI Sora 2 en Google Veo 3.1 Fast.",
         "details": [
           {
             "title": "Sora 2",
-            "description": "OpenAI's latest video generation model with exceptional quality and realism."
+            "description": "OpenAI's nieuwste video generatiemodel met uitzonderlijke kwaliteit en realisme."
           },
           {
             "title": "Veo 3.1 Fast",
-            "description": "Google's fastest video generation model with multiple generation modes."
+            "description": "Google's snelste video generatiemodel met meerdere generatiemodi."
           },
           {
-            "title": "Model Comparison",
-            "description": "Compare Nano Banana vs Sora vs Veo 3 to choose the best model for your needs."
+            "title": "Model Vergelijking",
+            "description": "Vergelijk Nano Banana vs Sora vs Veo 3 om het beste model voor uw behoeften te kiezen."
           }
         ],
         "images": [
@@ -61,20 +61,20 @@
         ]
       },
       {
-        "title": "Free & No Watermark",
-        "description": "Start creating videos for free without any watermark. Perfect for testing and small projects.",
+        "title": "Gratis en Geen Watermerk",
+        "description": "Begin gratis met het maken van video's zonder enig watermerk. Perfect voor testen en kleine projecten.",
         "details": [
           {
-            "title": "Free Trial Credits",
-            "description": "Get free credits to test the video generation without any payment."
+            "title": "Gratis Proefcredits",
+            "description": "Krijg gratis credits om de video generatie te testen zonder betaling."
           },
           {
-            "title": "No Watermark",
-            "description": "All generated videos are watermark-free for professional use."
+            "title": "Geen Watermerk",
+            "description": "Alle gegenereerde video's zijn watermerk-vrij voor professioneel gebruik."
           },
           {
-            "title": "Flexible Pricing",
-            "description": "Pay as you go or subscribe for unlimited video generation."
+            "title": "Flexibele Prijzen",
+            "description": "Betaal naar gebruik of abonneer voor onbeperkte video generatie."
           }
         ],
         "images": [
@@ -82,20 +82,20 @@
         ]
       },
       {
-        "title": "UGC & Commercial Use",
-        "description": "Perfect for creating UGC ads for TikTok, Instagram, and Shopify stores.",
+        "title": "UGC en Commercieel Gebruik",
+        "description": "Perfect voor het maken van UGC-advertenties voor TikTok, Instagram en Shopify winkels.",
         "details": [
           {
-            "title": "TikTok UGC Ads",
-            "description": "Create engaging TikTok ads from Nano Banana images in minutes."
+            "title": "TikTok UGC Advertenties",
+            "description": "Maak boeiende TikTok-advertenties van Nano Banana afbeeldingen in enkele minuten."
           },
           {
-            "title": "Instagram & Shopify",
-            "description": "Generate product videos for Instagram reels and Shopify stores."
+            "title": "Instagram en Shopify",
+            "description": "Genereer productvideo's voor Instagram reels en Shopify winkels."
           },
           {
-            "title": "Commercial License",
-            "description": "All videos come with commercial use rights for your business."
+            "title": "Commerciële Licentie",
+            "description": "Alle video's komen met commerciële gebruiksrechten voor uw bedrijf."
           }
         ],
         "images": [
@@ -103,20 +103,20 @@
         ]
       },
       {
-        "title": "Keyframes to Video",
-        "description": "Create cinematic videos from multiple keyframes with smooth transitions.",
+        "title": "Keyframes naar Video",
+        "description": "Maak cinematografische video's van meerdere keyframes met vloeiende overgangen.",
         "details": [
           {
-            "title": "Reference to Video",
-            "description": "Use 2-3 reference images to guide the video generation process."
+            "title": "Referentie naar Video",
+            "description": "Gebruik 2-3 referentieafbeeldingen om het video generatieproces te begeleiden."
           },
           {
-            "title": "Smooth Transitions",
-            "description": "AI generates smooth transitions between keyframes automatically."
+            "title": "Vloeiende Overgangen",
+            "description": "AI genereert vloeiende overgangen tussen keyframes automatisch."
           },
           {
-            "title": "Cinematic Quality",
-            "description": "Perfect for creating movie-like videos from storyboards."
+            "title": "Cinematografische Kwaliteit",
+            "description": "Perfect voor het maken van filmachtige video's van storyboards."
           }
         ],
         "images": [
@@ -124,20 +124,20 @@
         ]
       },
       {
-        "title": "Fast Generation (3-10 minutes)",
-        "description": "Generate professional videos in just 3-10 minutes depending on model and complexity.",
+        "title": "Snelle Generatie (3-10 minuten)",
+        "description": "Genereer professionele video's in slechts 3-10 minuten afhankelijk van model en complexiteit.",
         "details": [
           {
-            "title": "Quick Turnaround",
-            "description": "Most videos are ready in 3-5 minutes with Veo 3.1 Fast."
+            "title": "Snelle Oplevering",
+            "description": "De meeste video's zijn klaar in 3-5 minuten met Veo 3.1 Fast."
           },
           {
-            "title": "Real-time Progress",
-            "description": "Track the generation progress with live status updates."
+            "title": "Real-time Voortgang",
+            "description": "Volg de generatievoortgang met live statusupdates."
           },
           {
-            "title": "Batch Generation",
-            "description": "Generate multiple videos simultaneously to save time."
+            "title": "Batch Generatie",
+            "description": "Genereer meerdere video's tegelijkertijd om tijd te besparen."
           }
         ],
         "images": [
@@ -148,39 +148,39 @@
   },
   "UseCases": {
     "badge": {
-      "label": "USE CASES",
-      "text": "Transform Your Content Creation"
+      "label": "GEBRUIKSCASES",
+      "text": "Transformeer Uw Content Creatie"
     },
-    "title": "Perfect for Every Creator",
-    "description": "Whether you're creating UGC ads, faceless YouTube videos, or e-commerce content, Nano Banana to Video has you covered.",
+    "title": "Perfect voor Elke Creator",
+    "description": "Of u nu UGC-advertenties, faceless YouTube video's of e-commerce content maakt, Nano Banana to Video heeft alles wat u nodig heeft.",
     "cases": [
       {
-        "title": "UGC Ads (TikTok, Instagram, Shopify)",
-        "description": "Create engaging user-generated content style ads for TikTok, Instagram, and Shopify stores. Perfect for e-commerce brands looking to scale their video ad production without expensive production costs.",
+        "title": "UGC Advertenties (TikTok, Instagram, Shopify)",
+        "description": "Maak boeiende advertenties in user-generated content stijl voor TikTok, Instagram en Shopify winkels. Perfect voor e-commerce merken die hun video advertentieproductie willen opschalen zonder dure productiekosten.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ugc-ads.webp",
         "icon": "Video"
       },
       {
-        "title": "Faceless YouTube Videos",
-        "description": "Generate faceless YouTube videos from Nano Banana images. Perfect for educational content, product reviews, and storytelling channels. No filming equipment or actors needed.",
+        "title": "Faceless YouTube Video's",
+        "description": "Genereer faceless YouTube video's van Nano Banana afbeeldingen. Perfect voor educatieve content, productreviews en storytelling kanalen. Geen filmapparatuur of acteurs nodig.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-youtube.webp",
         "icon": "Youtube"
       },
       {
-        "title": "E-commerce Product Videos",
-        "description": "Transform product images into dynamic product videos for your e-commerce store. Increase conversion rates with professional product demonstrations and lifestyle videos.",
+        "title": "E-commerce Productvideo's",
+        "description": "Transformeer productafbeeldingen naar dynamische productvideo's voor uw e-commerce winkel. Verhoog conversiepercentages met professionele productdemonstraties en lifestyle video's.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-ecommerce.webp",
         "icon": "ShoppingCart"
       },
       {
-        "title": "Cinematic Videos (Keyframes)",
-        "description": "Create cinematic videos from multiple keyframes. Perfect for filmmakers, animators, and content creators who want to visualize storyboards or create concept videos.",
+        "title": "Cinematografische Video's (Keyframes)",
+        "description": "Maak cinematografische video's van meerdere keyframes. Perfect voor filmmakers, animators en content creators die storyboards willen visualiseren of conceptvideo's willen maken.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-cinematic.webp",
         "icon": "Film"
       },
       {
         "title": "TikTok Content",
-        "description": "Generate viral TikTok content from Nano Banana images. Perfect for creators looking to scale their content production and maintain consistent posting schedules.",
+        "description": "Genereer virale TikTok content van Nano Banana afbeeldingen. Perfect voor creators die hun contentproductie willen opschalen en consistente publicatieschema's willen behouden.",
         "image": "https://cdn.nanobananavideo.net/website/images/brand/usecase-tiktok.webp",
         "icon": "Smartphone"
       }
@@ -188,267 +188,267 @@
   },
   "Testimonials": {
     "badge": {
-      "label": "TESTIMONIALS"
+      "label": "GETUIGSCHRIFTEN"
     },
-    "title": "Loved by Creators Worldwide",
-    "description": "Join thousands of creators who use Nano Banana to Video daily"
+    "title": "Geliefd bij Creators Wereldwijd",
+    "description": "Sluit u aan bij duizenden creators die dagelijks Nano Banana to Video gebruiken"
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Everything you need to know about Nano Banana to Video",
+    "title": "Veelgestelde Vragen",
+    "description": "Alles wat u moet weten over Nano Banana to Video",
     "items": [
       {
-        "question": "How to convert Nano Banana to video?",
-        "answer": "Converting Nano Banana to video is simple: 1) Select your preferred AI model (Sora 2 or Veo 3.1), 2) Choose your generation mode (text-to-video or image-to-video), 3) Upload your Nano Banana image if using image-to-video, 4) Enter your prompt describing the video motion, 5) Click generate and wait 3-10 minutes for your video to be ready."
+        "question": "Hoe converteer ik Nano Banana naar video?",
+        "answer": "Het converteren van Nano Banana naar video is eenvoudig: 1) Selecteer uw voorkeurs AI model (Sora 2 of Veo 3.1), 2) Kies uw generatiemodus (tekst-naar-video of afbeelding-naar-video), 3) Upload uw Nano Banana afbeelding bij afbeelding-naar-video, 4) Voer uw prompt in die de videobeweging beschrijft, 5) Klik op genereer en wacht 3-10 minuten tot uw video klaar is."
       },
       {
-        "question": "Is Nano Banana to video free?",
-        "answer": "Yes! We offer free trial credits so you can test the video generation without any payment. All generated videos are watermark-free. After using your free credits, you can choose to pay as you go or subscribe for unlimited video generation."
+        "question": "Is Nano Banana to video gratis?",
+        "answer": "Ja! We bieden gratis proefcredits zodat u de video generatie kunt testen zonder betaling. Alle gegenereerde video's zijn watermerk-vrij. Na gebruik van uw gratis credits kunt u kiezen om naar gebruik te betalen of u abonneren voor onbeperkte video generatie."
       },
       {
-        "question": "How to remove watermark from Nano Banana videos?",
-        "answer": "All videos generated on our platform are automatically watermark-free! You don't need to do anything special. Unlike other platforms, we don't add watermarks to your videos, so they're ready for professional and commercial use immediately."
+        "question": "Hoe verwijder ik watermerk van Nano Banana video's?",
+        "answer": "Alle video's die op ons platform worden gegenereerd zijn automatisch watermerk-vrij! U hoeft niets speciaals te doen. In tegenstelling tot andere platforms voegen wij geen watermerken toe aan uw video's, dus ze zijn direct klaar voor professioneel en commercieel gebruik."
       },
       {
-        "question": "Nano Banana vs Sora vs Veo 3 - which is better?",
-        "answer": "Each model has its strengths: Sora 2 excels at realistic motion and high-quality output, perfect for cinematic videos. Veo 3.1 Fast is the fastest option with multiple generation modes, ideal for quick turnaround. Nano Banana Edit is great for image editing before video generation. We recommend trying all models with your free credits to see which fits your needs best."
+        "question": "Nano Banana vs Sora vs Veo 3 - welke is beter?",
+        "answer": "Elk model heeft zijn sterke punten: Sora 2 blinkt uit in realistische beweging en hoge kwaliteit output, perfect voor cinematografische video's. Veo 3.1 Fast is de snelste optie met meerdere generatiemodi, ideaal voor snelle oplevering. Nano Banana Edit is geweldig voor afbeeldingsbewerking voor video generatie. We raden aan om alle modellen te proberen met uw gratis credits om te zien welke het beste bij uw behoeften past."
       },
       {
-        "question": "Can I use Nano Banana videos commercially?",
-        "answer": "Yes! All videos generated on our platform come with commercial use rights. You can use them for UGC ads, TikTok content, YouTube videos, e-commerce stores, and any other commercial purposes without any restrictions."
+        "question": "Kan ik Nano Banana video's commercieel gebruiken?",
+        "answer": "Ja! Alle video's die op ons platform worden gegenereerd komen met commerciële gebruiksrechten. U kunt ze gebruiken voor UGC-advertenties, TikTok content, YouTube video's, e-commerce winkels en alle andere commerciële doeleinden zonder beperkingen."
       },
       {
-        "question": "How long does it take to generate a video?",
-        "answer": "Video generation typically takes 3-10 minutes depending on the model and complexity. Veo 3.1 Fast is the quickest (3-5 minutes), while Sora 2 may take 5-10 minutes for higher quality results. You can track the progress in real-time with our live status updates."
+        "question": "Hoe lang duurt het om een video te genereren?",
+        "answer": "Video generatie duurt typisch 3-10 minuten afhankelijk van het model en de complexiteit. Veo 3.1 Fast is het snelst (3-5 minuten), terwijl Sora 2 5-10 minuten kan duren voor hogere kwaliteit resultaten. U kunt de voortgang in real-time volgen met onze live statusupdates."
       },
       {
-        "question": "What video formats are supported?",
-        "answer": "All videos are generated in standard MP4 format with 1080p resolution. This format is compatible with all major platforms including TikTok, Instagram, YouTube, Shopify, and more. The videos are optimized for web streaming and download."
+        "question": "Welke videoformaten worden ondersteund?",
+        "answer": "Alle video's worden gegenereerd in standaard MP4 formaat met 1080p resolutie. Dit formaat is compatibel met alle grote platforms inclusief TikTok, Instagram, YouTube, Shopify en meer. De video's zijn geoptimaliseerd voor web streaming en download."
       },
       {
-        "question": "Do I need to create an account to use it?",
-        "answer": "You can try the video generation without an account, but creating a free account allows you to save your videos, track your generation history, and manage your credits more easily. Account creation is quick and only requires an email or social login."
+        "question": "Moet ik een account maken om het te gebruiken?",
+        "answer": "U kunt de video generatie proberen zonder een account, maar het aanmaken van een gratis account stelt u in staat om uw video's op te slaan, uw generatiegeschiedenis te volgen en uw credits eenvoudiger te beheren. Het aanmaken van een account is snel en vereist alleen een e-mailadres of social login."
       },
       {
-        "question": "How to get 1080p video from Nano Banana?",
-        "answer": "All videos generated on our platform are automatically created in 1080p resolution! Simply generate your video as normal using either Sora 2 or Veo 3.1, and the output will be in full HD 1080p quality, perfect for professional use."
+        "question": "Hoe krijg ik 1080p video van Nano Banana?",
+        "answer": "Alle video's die op ons platform worden gegenereerd zijn automatisch gemaakt in 1080p resolutie! Genereer eenvoudig uw video normaal met zowel Sora 2 als Veo 3.1, en de output is in Full HD 1080p kwaliteit, perfect voor professioneel gebruik."
       },
       {
-        "question": "What are the best prompts for video generation?",
-        "answer": "The best prompts are detailed and specific. Describe the motion you want, camera movements, lighting, and atmosphere. For example: 'Camera slowly pans across a sunset beach while waves gently crash on the shore' works better than just 'beach video'. Include details about speed (slow, fast), direction (left to right, zoom in), and mood (calm, energetic)."
+        "question": "Wat zijn de beste prompts voor video generatie?",
+        "answer": "De beste prompts zijn gedetailleerd en specifiek. Beschrijf de beweging die u wilt, camerabewegingen, belichting en sfeer. Bijvoorbeeld: 'Camera schuift langzaam over een zonsondergang strand terwijl golven zacht op de kust breken' werkt beter dan alleen 'strand video'. Inclusief details over snelheid (langzaam, snel), richting (links naar rechts, zoom in) en stemming (kalm, energiek)."
       }
     ]
   },
   "CTA": {
-    "title": "Turn Nano Banana Pro Images Into Video Now",
-    "description": "Convert Nano Banana Pro images into videos with the most powerful Sora 2 and Veo 3.1. Free trial, no credit card required.",
-    "button": "Try Free Now",
-    "trustText": "Trusted by creators worldwide",
+    "title": "Converteer Nano Banana Pro Afbeeldingen Nu naar Video",
+    "description": "Converteer Nano Banana Pro afbeeldingen naar video's met de krachtige Sora 2 en Veo 3.1. Gratis proefperiode, geen creditcard vereist.",
+    "button": "Probeer Nu Gratis",
+    "trustText": "Vertrouwd door creators wereldwijd",
     "features": {
-      "deploy": "🎬 Instant Generation",
-      "production": "✨ No Watermark",
-      "updates": "🚀 Fast Processing",
-      "i18n": "💎 Commercial Use"
+      "deploy": "🎬 Directe Generatie",
+      "production": "✨ Geen Watermerk",
+      "updates": "🚀 Snelle Verwerking",
+      "i18n": "💎 Commercieel Gebruik"
     }
   },
   "VideoDemo": {
     "title": "nano banana video generator",
-    "loginPrompt": "Sign in to save your videos and access more features",
-    "loginButton": "Sign In"
+    "loginPrompt": "Log in om uw video's op te slaan en meer functies te krijgen",
+    "loginButton": "Log In"
   },
   "PromptGenerator": {
     "title": "Prompt Generator",
-    "description": "Generate higher-quality video prompts through multi-turn chat",
-    "clear": "Clear",
+    "description": "Genereer hogere kwaliteit video prompts via multi-turn chat",
+    "clear": "Wissen",
     "modelLabel": "Model",
-    "freeUserHint": "Free users can only use Gemini 2.5 Flash Lite. Upgrade to use DeepSeek.",
-    "previewHint": "You can preview this page. Sending messages requires login.",
-    "emptyState": "Describe your goal (e.g., camera movement, style, pacing, subject action). I will generate a stronger prompt for you.",
-    "inputPlaceholder": "Describe your desired video effect / prompt goal...",
-    "reasoningTitle": "Reasoning",
-    "loginRequired": "Please sign in to use Prompt Generator",
-    "defaultError": "Failed to generate response"
+    "freeUserHint": "Gratis gebruikers kunnen alleen Gemini 2.5 Flash Lite gebruiken. Upgrade om DeepSeek te gebruiken.",
+    "previewHint": "U kunt deze pagina voorbeeld bekijken. Berichten versturen vereist inloggen.",
+    "emptyState": "Beschrijf uw doel (bijv. camerabeweging, stijl, tempo, onderwerp actie). Ik zal een sterkere prompt voor u genereren.",
+    "inputPlaceholder": "Beschrijf uw gewenste video effect / prompt doel...",
+    "reasoningTitle": "Redenering",
+    "loginRequired": "Log in om de Prompt Generator te gebruiken",
+    "defaultError": "Kan geen antwoord genereren"
   },
   "VideoGeneration": {
     "title": "nano banana video generator",
-    "subtitle": "Generate videos using Sora 2 and Veo 3.1 AI models",
-    "costPerGeneration": "Cost per Generation",
-    "selectModel": "Select model",
-    "availableCredits": "Available",
-    "generationType": "Generation Type",
+    "subtitle": "Genereer video's met Sora 2 en Veo 3.1 AI modellen",
+    "costPerGeneration": "Kosten per Generatie",
+    "selectModel": "Selecteer model",
+    "availableCredits": "Beschikbaar",
+    "generationType": "Generatie Type",
     "prompt": "Prompt",
-    "promptPlaceholder": "Describe the video you want to generate...",
-    "promptDescription": "The text prompt describing the desired video motion",
-    "imageUpload": "Image Upload",
-    "referenceImages": "Reference Images",
-    "imagesRequired": "images required",
+    "promptPlaceholder": "Beschrijf de video die u wilt genereren...",
+    "promptDescription": "De tekst prompt die de gewenste video beweging beschrijft",
+    "imageUpload": "Afbeelding Upload",
+    "referenceImages": "Referentieafbeeldingen",
+    "imagesRequired": "afbeeldingen vereist",
     "parameters": "Parameters",
     "parameterPanel": {
       "aspectRatio": {
-        "label": "Aspect Ratio",
+        "label": "Beeldverhouding",
         "portrait": "9:16",
         "landscape": "16:9",
-        "help": "This parameter defines the aspect ratio of the video"
+        "help": "Deze parameter definieert de beeldverhouding van de video"
       },
       "resolution": {
-        "label": "Resolution",
-        "help": "The resolution quality of the generated video"
+        "label": "Resolutie",
+        "help": "De resolutiekwaliteit van de gegenereerde video"
       },
       "duration": {
-        "label": "Duration",
-        "help": "The number of frames to be generated"
+        "label": "Duur",
+        "help": "Het aantal frames dat wordt gegenereerd"
       },
       "removeWatermark": {
-        "title": "Remove Watermark",
-        "description": "When enabled, removes watermarks from the generated video"
+        "title": "Watermerk Verwijderen",
+        "description": "Wanneer ingeschakeld, verwijdert watermerken van de gegenereerde video"
       }
     },
-    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
-    "getMoreCredits": "Get more credits",
-    "generating": "Generating...",
-    "generate": "Generate",
+    "insufficientCredits": "Onvoldoende credits. Vereist: {required}, Beschikbaar: {available}.",
+    "getMoreCredits": "Meer credits krijgen",
+    "generating": "Genereren...",
+    "generate": "Genereer",
     "storyboardPrompt": {
       "title": "Storyboard Prompt Generator",
-      "description": "AI-powered cinematic prompt generation from your images",
-      "generateFast": "Generate (Fast)",
-      "generateMaster": "Generate (Master)",
-      "generating": "Generating storyboard...",
-      "upgradeRequired": "Upgrade to use Master mode",
-      "noImages": "Please upload image(s) first",
-      "singleImageRequired": "Upload 1 image for Sora 2",
-      "dualImageRequired": "Upload 2 images for Veo 3.1",
-      "result": "Generated Storyboard Prompt",
-      "applyToPrompt": "Apply to Prompt",
-      "fast": "Fast",
+      "description": "AI-aangedreven cinematografische prompt generatie van uw afbeeldingen",
+      "generateFast": "Genereer (Snel)",
+      "generateMaster": "Genereer (Master)",
+      "generating": "Storyboard genereren...",
+      "upgradeRequired": "Upgrade om de Master modus te gebruiken",
+      "noImages": "Upload eerst afbeelding(en)",
+      "singleImageRequired": "Upload 1 afbeelding voor Sora 2",
+      "dualImageRequired": "Upload 2 afbeeldingen voor Veo 3.1",
+      "result": "Gegenereerde Storyboard Prompt",
+      "applyToPrompt": "Toepassen op Prompt",
+      "fast": "Snel",
       "master": "Master"
     }
   },
   "Pricing": {
     "badge": {
-      "label": "PRICING",
-      "text": "Flexible Plans for Every Creator"
+      "label": "PRIJZEN",
+      "text": "Flexibele Plannen voor Elke Creator"
     },
-    "title": "Choose Your Video Generation Plan",
-    "description": "Start creating professional videos with our flexible pricing plans. Free trial available, no credit card required.",
-    "annual": "Annual",
-    "monthly": "Monthly",
-    "onetime": "One-Time",
-    "saveTip": "Save 20%"
+    "title": "Kies Uw Video Generatie Plan",
+    "description": "Begin met het maken van professionele video's met onze flexibele prijzenplannen. Gratis proefperiode beschikbaar, geen creditcard vereist.",
+    "annual": "Jaarlijks",
+    "monthly": "Maandelijks",
+    "onetime": "Eenmalig",
+    "saveTip": "Bespaar 20%"
   },
   "ImageGeneration": {
-    "title": "nano banana image generator",
-    "subtitle": "Generate images using Nano Banana, Nano Banana Pro, and Midjourney AI models",
-    "costPerGeneration": "Cost per Generation",
-    "selectModel": "Select model",
-    "availableCredits": "Available",
-    "generationType": "Generation Type",
-    "textToImage": "Text to Image",
-    "imageToImage": "Image to Image",
+    "title": "nano banana afbeelding generator",
+    "subtitle": "Genereer afbeeldingen met Nano Banana, Nano Banana Pro en Midjourney AI modellen",
+    "costPerGeneration": "Kosten per Generatie",
+    "selectModel": "Selecteer model",
+    "availableCredits": "Beschikbaar",
+    "generationType": "Generatie Type",
+    "textToImage": "Tekst naar Afbeelding",
+    "imageToImage": "Afbeelding naar Afbeelding",
     "prompt": "Prompt",
-    "promptPlaceholder": "Describe the image you want to generate...",
-    "promptDescription": "The text prompt describing the desired image",
-    "referenceImage": "Reference Image",
+    "promptPlaceholder": "Beschrijf de afbeelding die u wilt genereren...",
+    "promptDescription": "De tekst prompt die de gewenste afbeelding beschrijft",
+    "referenceImage": "Referentieafbeelding",
     "parameters": "Parameters",
     "parameterPanel": {
       "aspectRatio": {
-        "label": "Aspect Ratio",
-        "help": "The aspect ratio of the generated image (1:1 square, 16:9 landscape, 9:16 portrait)"
+        "label": "Beeldverhouding",
+        "help": "De beeldverhouding van de gegenereerde afbeelding (1:1 vierkant, 16:9 liggend, 9:16 staand)"
       },
       "resolution": {
-        "label": "Resolution",
-        "help": "Output resolution: 1K/2K (30 credits), 4K (60 credits)"
+        "label": "Resolutie",
+        "help": "Output resolutie: 1K/2K (30 credits), 4K (60 credits)"
       },
       "speed": {
-        "label": "Speed",
-        "help": "Midjourney generation speed (fast mode by default)"
+        "label": "Snelheid",
+        "help": "Midjourney generatiesnelheid (snelle modus standaard)"
       }
     },
-    "insufficientCredits": "Insufficient credits. Required: {required}, Available: {available}.",
-    "getMoreCredits": "Get more credits",
-    "generating": "Generating...",
-    "pleaseWait": "Please wait while your image is being generated...",
+    "insufficientCredits": "Onvoldoende credits. Vereist: {required}, Beschikbaar: {available}.",
+    "getMoreCredits": "Meer credits krijgen",
+    "generating": "Genereren...",
+    "pleaseWait": "Wacht terwijl uw afbeelding wordt gegenereerd...",
     "generate": "Credits",
     "download": "Download",
-    "previewPlaceholder": "Your generated image will appear here"
+    "previewPlaceholder": "Uw gegenereerde afbeelding verschijnt hier"
   },
   "ImageDemo": {
-    "title": "nano banana image generator",
-    "loginPrompt": "Sign in to save your images and access more features",
-    "loginButton": "Sign In"
+    "title": "nano banana afbeelding generator",
+    "loginPrompt": "Log in om uw afbeeldingen op te slaan en meer functies te krijgen",
+    "loginButton": "Log In"
   },
   "Gallery": {
     "badge": {
-      "label": "QUALITY",
-      "text": "Video Quality Gallery"
+      "label": "KWALITEIT",
+      "text": "Video Kwaliteit Galerij"
     },
-    "title": "Stunning AI-Generated Videos",
-    "description": "Explore our gallery of videos created with Sora 2 and Veo 3.1",
+    "title": "Prachtige AI-Gegenereerde Video's",
+    "description": "Verken onze galerij van video's gemaakt met Sora 2 en Veo 3.1",
     "tabs": {
-      "realistic": "Realistic",
-      "ugc": "UGC Style",
-      "3d": "3D Animation"
+      "realistic": "Realistisch",
+      "ugc": "UGC Stijl",
+      "3d": "3D Animatie"
     },
     "categories": {
       "realistic": {
-        "title": "Realistic Style Videos",
-        "description": "Professional quality realistic videos generated by AI",
+        "title": "Realistische Stijl Video's",
+        "description": "Professionele kwaliteit realistische video's gegenereerd door AI",
         "videos": [
           {
             "id": "realistic-1",
-            "title": "AI Spokesperson",
-            "description": "Professional AI-generated spokesperson presenting smartphone product"
+            "title": "AI Woordvoerder",
+            "description": "Professionele AI-gegenereerde woordvoerder die smartphone product presenteert"
           },
           {
             "id": "realistic-2",
-            "title": "Coffee Latte Art",
-            "description": "Close-up shot of barista creating latte art with steamed milk"
+            "title": "Koffie Latte Kunst",
+            "description": "Close-up shot van barista die latte kunst maakt met gestoomde melk"
           },
           {
             "id": "realistic-3",
-            "title": "City Timelapse",
-            "description": "Time-lapse of modern city skyline at twilight with dramatic colors"
+            "title": "Stad Timelapse",
+            "description": "Timelapse van moderne stedelijke skyline bij schemering met dramatische kleuren"
           }
         ]
       },
       "ugc": {
-        "title": "UGC Style Videos",
-        "description": "Authentic user-generated content style videos for social media",
+        "title": "UGC Stijl Video's",
+        "description": "Authentieke user-generated content stijl video's voor social media",
         "videos": [
           {
             "id": "ugc-1",
-            "title": "Unboxing Experience",
-            "description": "First-person POV unboxing premium headphones with genuine excitement"
+            "title": "Unboxing Ervaring",
+            "description": "Eerste persoon POV unboxing premium koptelefoons met oprechte opwinding"
           },
           {
             "id": "ugc-2",
             "title": "Fitness Workout",
-            "description": "Energetic fitness workout with jumping jacks in bright living room"
+            "description": "Energetische fitness workout met jumping jacks in heldere woonkamer"
           },
           {
             "id": "ugc-3",
             "title": "Avocado Toast",
-            "description": "Hands preparing colorful healthy avocado toast in sunny kitchen"
+            "description": "Handen die kleurrijke gezonde avocado toast bereiden in zonnige keuken"
           }
         ]
       },
       "3d": {
-        "title": "3D Animation Videos",
-        "description": "Creative 3D animated videos with Pixar-style quality",
+        "title": "3D Animatie Video's",
+        "description": "Creatieve 3D geanimeerde video's met Pixar-stijl kwaliteit",
         "videos": [
           {
             "id": "3d-1",
-            "title": "3D Headphones Showcase",
-            "description": "3D animated product showcase with wireless headphones rotating"
+            "title": "3D Koptelefoon Showcase",
+            "description": "3D geanimeerde product showcase met draadloze koptelefoons die roteren"
           },
           {
             "id": "3d-2",
-            "title": "Cute 3D Character",
-            "description": "Cute 3D animated character walking happily, Disney-Pixar style"
+            "title": "Schattige 3D Karakter",
+            "description": "Schattige 3D geanimeerde karakter die gelukkig loopt, Disney-Pixar stijl"
           },
           {
             "id": "3d-3",
-            "title": "3D Logo Animation",
-            "description": "3D brand logo animation with geometric shapes assembling"
+            "title": "3D Logo Animatie",
+            "description": "3D merklogo animatie met geometrische vormen die samenkomen"
           }
         ]
       }

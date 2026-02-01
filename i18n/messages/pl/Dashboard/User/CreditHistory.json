@@ -1,0 +1,17 @@
+{
+  "title": "Historia Kredytu",
+  "description": "Tutaj możesz zobaczyć historię wszystkich przyznań i użycia kredytów.",
+  "load_error": "Błąd podczas ładowania historii kredytu. Spróbuj ponownie później.",
+  "no_records": "Nie znaleziono rekordów historii kredytu.",
+  "header_date": "Data",
+  "header_type": "Typ",
+  "header_details": "Szczegóły",
+  "header_amount": "Kwota",
+  "header_balance_one_time": "Kredyt Jednorazowy",
+  "header_balance_subscription": "Kredyt Subskrypcji",
+  "type_one_time_purchase": "Zakup Kredytu",
+  "type_subscription_grant": "Przyznanie Subskrypcji",
+  "type_feature_usage": "Użycie Funkcji",
+  "type_refund_revoke": "Unieważnienie Zwrotu",
+  "type_subscription_ended_revoke": "Unieważnienie Zakończenia Subskrypcji"
+}

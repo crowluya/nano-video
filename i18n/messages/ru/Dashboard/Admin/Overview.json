@@ -1,0 +1,21 @@
+{
+  "title": "Обзор",
+  "users": "Пользователи",
+  "oneTimePayments": "Разовые Платежи",
+  "monthlySubscriptions": "Ежемесячные Подписки",
+  "yearlySubscriptions": "Ежегодные Подписки",
+  "today": "Сегодня",
+  "yesterday": "Вчера",
+  "growthRate": "Темп Роста",
+  "newUsers": "Новые Пользователи",
+  "totalUsers": "Всего Пользователей",
+  "orders": "Заказы",
+  "revenue": "Доход",
+  "count": "Количество",
+  "growthTrend": "Тенденция Роста",
+  "totalOrders": "Всего Заказов",
+  "newOrders": "Новые Заказы",
+  "last7Days": "Последние 7 Дней",
+  "last30Days": "Последние 30 Дней",
+  "last90Days": "Последние 90 Дней"
+}

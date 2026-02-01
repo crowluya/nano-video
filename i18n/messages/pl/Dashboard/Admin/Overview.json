@@ -1,0 +1,21 @@
+{
+  "title": "Przegląd",
+  "users": "Użytkownicy",
+  "oneTimePayments": "Płatności Jednorazowe",
+  "monthlySubscriptions": "Subskrypcje Miesięczne",
+  "yearlySubscriptions": "Subskrypcje Roczne",
+  "today": "Dzisiaj",
+  "yesterday": "Wczoraj",
+  "growthRate": "Wskaźnik Wzrostu",
+  "newUsers": "Nowi Użytkownicy",
+  "totalUsers": "Całkowita Liczba Użytkowników",
+  "orders": "Zamówienia",
+  "revenue": "Przychód",
+  "count": "Liczba",
+  "growthTrend": "Trend Wzrostu",
+  "totalOrders": "Całkowita Liczba Zamówień",
+  "newOrders": "Nowe Zamówienia",
+  "last7Days": "Ostatnie 7 Dni",
+  "last30Days": "Ostatnie 30 Dni",
+  "last90Days": "Ostatnie 90 Dni"
+}

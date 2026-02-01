@@ -1,0 +1,31 @@
+{
+  "title": "Instellingen",
+  "description": "Beheer uw accountinstellingen en profielinformatie.",
+  "form": {
+    "emailLabel": "E-mail",
+    "fullNameLabel": "Volledige Naam",
+    "fullNamePlaceholder": "Voer uw volledige naam in",
+    "avatarLabel": "Avatar",
+    "avatarHint": "Maximale bestandsgrootte: {maxSizeInMB} MB. Toegestane typen: {allowedTypes}.",
+    "updateButton": "Instellingen Bijwerken",
+    "updatingButton": "Bijwerken..."
+  },
+  "toast": {
+    "fullNameLengthError": "De volledige naam moet minder dan {maxLength} tekens bevatten",
+    "fullNameInvalidCharactersError": "De volledige naam bevat ongeldige tekens",
+    "errorInvalidFileType": "Ongeldig bestandstype voor avatar. Alleen {allowedTypes} zijn toegestaan.",
+    "errorInvalidFileTypeDescription": "Upload een bestand kleiner dan {maxSizeInMB} MB.",
+    "errorFileSizeExceeded": "Avatargrootte overschrijdt de limiet van {maxSizeInMB} MB.",
+    "errorFileSizeExceededDescription": "Upload een bestand kleiner dan {maxSizeInMB} MB.",
+    "errorInvalidFullName": "Ongeldige volledige naam opgegeven.",
+    "errorFullNameRequired": "Volledige naam is vereist.",
+    "updateSuccessTitle": "Profiel Bijgewerkt",
+    "updateSuccessDescription": "Uw profiel is succesvol bijgewerkt.",
+    "updateErrorTitle": "Bijwerken Mislukt",
+    "updateErrorDescription": "Fout bij bijwerken van instellingen. Probeer het later opnieuw.",
+    "errorDeleteOldAvatar": "Fout bij verwijderen van oude avatar.",
+    "errorUploadAvatar": "Fout bij uploaden van avatar.",
+    "errorUpdateAuthUser": "Fout bij bijwerken van authenticatiegebruiker.",
+    "errorUpdateUserProfile": "Fout bij bijwerken van gebruikersprofiel."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Cronologia Crediti",
+  "description": "Visualizza qui la cronologia di tutti i tuoi crediti e utilizzi.",
+  "load_error": "Errore nel caricamento della cronologia dei crediti. Riprova più tardi.",
+  "no_records": "Nessun record di cronologia crediti trovato.",
+  "header_date": "Data",
+  "header_type": "Tipo",
+  "header_details": "Dettagli",
+  "header_amount": "Importo",
+  "header_balance_one_time": "Crediti Una Tantum",
+  "header_balance_subscription": "Crediti Abbonamento",
+  "type_one_time_purchase": "Acquisto Crediti",
+  "type_subscription_grant": "Concessione Abbonamento",
+  "type_feature_usage": "Utilizzo Funzionalità",
+  "type_refund_revoke": "Revoca Rimborso",
+  "type_subscription_ended_revoke": "Revoca Fine Abbonamento"
+}
