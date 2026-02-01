@@ -8,7 +8,13 @@
     "title": "Nano Banana to Video - Generatore di Video AI con Sora 2 e Veo 3.1",
     "description": "Converti le immagini Nano Banana in video professionali istantaneamente. Supporta Sora 2 e Veo 3.1 Fast. Prova gratuita, senza watermark. Perfetto per pubblicità UGC e e-commerce.",
     "getStarted": "Inizia a Creare",
-    "getStartedLink": "#video-demo"
+    "getStartedLink": "#video-demo",
+    "viewGallery": "Vedi Galleria",
+    "sellingPoints": {
+      "noCreditCard": "Senza carta di credito",
+      "exportMp4": "Esporta MP4",
+      "fastRendering": "Rendering veloce"
+    }
   },
   "Features": {
     "badge": {
@@ -275,7 +281,15 @@
     "costPerGeneration": "Costo per Generazione",
     "selectModel": "Seleziona modello",
     "availableCredits": "Disponibile",
-    "generationType": "Tipo di Generazione",
+    "generationType": {
+      "label": "Tipo di Generazione",
+      "textToVideo": "Testo a Video",
+      "imageToVideo": "Immagine a Video",
+      "imageMode": "Modalità Immagine",
+      "singleImage": "Immagine Singola",
+      "startEnd": "Inizio e Fine",
+      "reference": "Riferimento"
+    },
     "prompt": "Prompt",
     "promptPlaceholder": "Descrivi il video che desideri generare...",
     "promptDescription": "Il prompt di testo che descrive il movimento video desiderato",

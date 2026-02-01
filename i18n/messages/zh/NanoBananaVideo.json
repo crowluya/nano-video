@@ -8,7 +8,13 @@
     "title": "Nano Banana 转视频 - Sora 2 & Veo 3.1 AI 视频生成器",
     "description": "即时将 Nano Banana 图像转换为专业视频。支持 Sora 2 和 Veo 3.1 Fast。免费试用，无水印。非常适合 UGC 广告和电商。",
     "getStarted": "开始创作",
-    "getStartedLink": "#video-demo"
+    "getStartedLink": "#video-demo",
+    "viewGallery": "查看画廊",
+    "sellingPoints": {
+      "noCreditCard": "无需信用卡",
+      "exportMp4": "导出 MP4",
+      "fastRendering": "快速渲染"
+    }
   },
   "Features": {
     "badge": {
@@ -275,7 +281,15 @@
     "costPerGeneration": "每次生成费用",
     "selectModel": "选择模型",
     "availableCredits": "可用",
-    "generationType": "生成类型",
+    "generationType": {
+      "label": "生成类型",
+      "textToVideo": "文本转视频",
+      "imageToVideo": "图片转视频",
+      "imageMode": "图片模式",
+      "singleImage": "单图",
+      "startEnd": "首尾帧",
+      "reference": "参考图"
+    },
     "prompt": "提示词",
     "promptPlaceholder": "描述你想生成的视频...",
     "promptDescription": "描述所需视频动作的文本提示",

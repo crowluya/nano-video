@@ -2,6 +2,7 @@
 
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export type GenerationTypeType = "text-to-video" | "image-to-video";
 export type ImageToVideoMode = "single" | "startEnd" | "reference";
@@ -19,12 +20,14 @@ export function GenerationTypeSelector({
   onGenerationTypeChange,
   onImageToVideoModeChange,
 }: GenerationTypeSelectorProps) {
+  const t = useTranslations("NanoBananaVideo.VideoGeneration.generationType");
+
   return (
     <div className="space-y-3">
       {/* Generation Type - Text to Video / Image to Video */}
       <div>
         <Label className="text-xs text-muted-foreground mb-2 block">
-          Generation Type
+          {t("label")}
         </Label>
         <div className="flex gap-2">
           <button
@@ -36,7 +39,7 @@ export function GenerationTypeSelector({
                 : "bg-muted hover:bg-muted/80"
             )}
           >
-            Text to Video
+            {t("textToVideo")}
           </button>
           <button
             onClick={() => onGenerationTypeChange("image-to-video")}
@@ -47,7 +50,7 @@ export function GenerationTypeSelector({
                 : "bg-muted hover:bg-muted/80"
             )}
           >
-            Image to Video
+            {t("imageToVideo")}
           </button>
         </div>
       </div>
@@ -56,7 +59,7 @@ export function GenerationTypeSelector({
       {generationType === "image-to-video" && (
         <div>
           <Label className="text-xs text-muted-foreground mb-2 block">
-            Image Mode
+            {t("imageMode")}
           </Label>
           <div className="flex gap-1">
             <button
@@ -68,7 +71,7 @@ export function GenerationTypeSelector({
                   : "bg-muted hover:bg-muted/80"
               )}
             >
-              Single Image
+              {t("singleImage")}
             </button>
             <button
               onClick={() => onImageToVideoModeChange("startEnd")}
@@ -79,7 +82,7 @@ export function GenerationTypeSelector({
                   : "bg-muted hover:bg-muted/80"
               )}
             >
-              Start & End
+              {t("startEnd")}
             </button>
             <button
               onClick={() => onImageToVideoModeChange("reference")}
@@ -90,7 +93,7 @@ export function GenerationTypeSelector({
                   : "bg-muted hover:bg-muted/80"
               )}
             >
-              Reference
+              {t("reference")}
             </button>
           </div>
         </div>

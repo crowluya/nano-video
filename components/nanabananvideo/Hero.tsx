@@ -108,14 +108,15 @@ function VideoPlayer() {
   );
 }
 
-const sellingPoints = [
-  { icon: Check, text: "No credit card" },
-  { icon: Check, text: "Export MP4" },
-  { icon: Check, text: "Fast rendering" },
-];
-
 export default function NanoBananaHero() {
   const t = useTranslations("NanoBananaVideo.Hero");
+  const tCommon = useTranslations("common");
+
+  const sellingPoints = [
+    { icon: Check, text: t("sellingPoints.noCreditCard") },
+    { icon: Check, text: t("sellingPoints.exportMp4") },
+    { icon: Check, text: t("sellingPoints.fastRendering") },
+  ];
 
   return (
     <div className="w-full">
@@ -160,7 +161,7 @@ export default function NanoBananaHero() {
                   className="flex items-center gap-2"
                 >
                   <Images className="w-4 h-4 text-indigo-500" />
-                  View Gallery
+                  {t("viewGallery")}
                 </I18nLink>
               </Button>
             </div>
