@@ -17,16 +17,22 @@ const options = {
 };
 
 async function getMDXContent(locale: string) {
-  const filePath = path.join(
-    process.cwd(),
-    "content",
-    "about",
-    `${locale}.mdx`
-  );
+  const makeFilePath = (targetLocale: string) =>
+    path.join(process.cwd(), "content", "about", `${targetLocale}.mdx`);
+
   try {
-    const content = await fs.readFile(filePath, "utf-8");
-    return content;
+    return await fs.readFile(makeFilePath(locale), "utf-8");
   } catch (error) {
+    const err = error as NodeJS.ErrnoException;
+    if (err?.code === "ENOENT" && locale !== "en") {
+      try {
+        return await fs.readFile(makeFilePath("en"), "utf-8");
+      } catch (fallbackError) {
+        console.error(`Error reading MDX file: ${fallbackError}`);
+        return "";
+      }
+    }
+
     console.error(`Error reading MDX file: ${error}`);
     return "";
   }

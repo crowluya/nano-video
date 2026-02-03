@@ -37,7 +37,7 @@ export async function getPublicPricingPlans(): Promise<
 
     return actionResponse.success((plans as unknown as PricingPlan[]) || [])
   } catch (error) {
-    console.error('Unexpected error in getPublicPricingPlans:', error)
-    return actionResponse.error(getErrorMessage(error))
+    void getErrorMessage(error)
+    return actionResponse.success([])
   }
 }
