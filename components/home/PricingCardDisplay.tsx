@@ -52,20 +52,6 @@ export function PricingCardDisplay({
   const monthlyCredits = benefits.monthlyCredits || 0;
   const oneTimeCredits = benefits.oneTimeCredits || 0;
   
-  // #region agent log
-  console.log('[PricingCardDisplay]', {
-    planId: plan.id,
-    title: plan.cardTitle,
-    price: plan.price,
-    paymentType: plan.paymentType,
-    benefitsJsonbType: typeof plan.benefitsJsonb,
-    benefitsJsonb: plan.benefitsJsonb,
-    parsedBenefits: benefits,
-    monthlyCredits,
-    oneTimeCredits,
-  });
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'components/home/PricingCardDisplay.tsx:41',message:'Extracting credits from plan',data:{planId:plan.id,title:plan.cardTitle,price:plan.price,paymentType:plan.paymentType,benefitsType:typeof plan.benefitsJsonb,benefits:plan.benefitsJsonb,parsedBenefits:benefits,monthlyCredits,oneTimeCredits},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-  // #endregion
   
   // Determine credit display text
   const getCreditsDisplay = () => {
@@ -83,17 +69,6 @@ export function PricingCardDisplay({
 
   const creditsDisplay = getCreditsDisplay();
   
-  // #region agent log
-  console.log('[PricingCardDisplay] Credits display:', {
-    planId: plan.id,
-    title: plan.cardTitle,
-    creditsDisplay,
-    hasCredits: !!creditsDisplay,
-    isOneTime: isOneTimePaymentType(plan.paymentType),
-    isRecurring: isRecurringPaymentType(plan.paymentType),
-  });
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'components/home/PricingCardDisplay.tsx:57',message:'Credits display determined',data:{planId:plan.id,title:plan.cardTitle,creditsDisplay,hasCredits:!!creditsDisplay},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-  // #endregion
 
   return (
     <div
@@ -170,3 +145,4 @@ export function PricingCardDisplay({
     </div>
   );
 }
+

@@ -30,9 +30,6 @@ export default async function NanoBananaPricing() {
     console.error("Failed to fetch public pricing plans:", result.error);
   }
 
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'components/nanabananvideo/Pricing.tsx:28', message: 'All plans received', data: { count: allPlans.length, plans: allPlans.map(p => ({ id: p.id, title: p.cardTitle, price: p.price, paymentType: p.paymentType, interval: p.recurringInterval })) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'B' }) }).catch(() => { });
-  // #endregion
 
   const annualPlans = allPlans.filter(
     (plan) =>
@@ -50,9 +47,6 @@ export default async function NanoBananaPricing() {
     isOneTimePaymentType(plan.paymentType)
   );
 
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'components/nanabananvideo/Pricing.tsx:47', message: 'Plans filtered by type', data: { monthly: monthlyPlans.length, annual: annualPlans.length, oneTime: oneTimePlans.length, monthlyPlans: monthlyPlans.map(p => ({ title: p.cardTitle, price: p.price })), annualPlans: annualPlans.map(p => ({ title: p.cardTitle, price: p.price })), oneTimePlans: oneTimePlans.map(p => ({ title: p.cardTitle, price: p.price })) }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'B' }) }).catch(() => { });
-  // #endregion
 
   // count the number of available plan types
   const availablePlanTypes = [
@@ -108,18 +102,6 @@ export default async function NanoBananaPricing() {
               highlightText: undefined,
             } as PricingPlanTranslation);
 
-          // #region agent log
-          console.log('[Pricing.tsx] Rendering plan:', {
-            planId: plan.id,
-            title: plan.cardTitle,
-            price: plan.price,
-            hasLangJsonb: !!plan.langJsonb,
-            locale,
-            hasLocalizedPlan: !!localizedPlan,
-            benefitsJsonb: plan.benefitsJsonb,
-          });
-          fetch('http://127.0.0.1:7242/ingest/50c3a73e-ed9b-489d-9c57-b43ba19279a7', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ location: 'components/nanabananvideo/Pricing.tsx:97', message: 'Rendering plan card', data: { planId: plan.id, title: plan.cardTitle, price: plan.price, hasLangJsonb: !!plan.langJsonb, locale, hasLocalizedPlan: !!localizedPlan, benefitsJsonb: plan.benefitsJsonb }, timestamp: Date.now(), sessionId: 'debug-session', runId: 'run1', hypothesisId: 'D' }) }).catch(() => { });
-          // #endregion
 
           return (
             <PricingCardDisplay
@@ -213,4 +195,5 @@ export default async function NanoBananaPricing() {
     </section>
   );
 }
+
 
