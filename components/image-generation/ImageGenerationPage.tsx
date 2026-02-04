@@ -128,7 +128,7 @@ export default function ImageGenerationPage() {
         ...params,
       };
 
-      const response = await fetch("/api/ai-demo/image-generation", {
+      const response = await fetch("/api/generation/image", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -483,7 +483,7 @@ function ImagePolling({ taskId, modelId, onComplete, onError }: ImagePollingProp
       attempts++;
 
       try {
-        const response = await fetch("/api/ai-demo/image-generation/status", {
+        const response = await fetch("/api/generation/image/status", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ taskId, modelId }),

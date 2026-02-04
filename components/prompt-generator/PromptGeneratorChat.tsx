@@ -112,7 +112,7 @@ export default function PromptGeneratorChat() {
 
   const { messages, input, handleInputChange, handleSubmit, status, setMessages } =
     useChat({
-      api: "/api/ai-demo/prompt-generator-chat",
+      api: "/api/generation/prompt-chat",
       initialMessages,
       body: {
         provider: selectedModel.provider,

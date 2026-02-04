@@ -59,7 +59,7 @@ export function StoryboardPromptGenerator({
     setGeneratedPrompt("");
 
     try {
-      const response = await fetch("/api/ai-demo/generate-storyboard-prompt", {
+      const response = await fetch("/api/generation/storyboard-prompt", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

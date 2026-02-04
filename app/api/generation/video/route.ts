@@ -112,7 +112,7 @@ export async function POST(req: Request) {
       for (const imageBase64DataUri of images) {
         const uploadResult = await client.uploadFileBase64({
           base64Data: imageBase64DataUri.split(',')[1],
-          uploadPath: "ai-demo/video-generation",
+          uploadPath: "generation/video",
           fileName: `input-image-${Date.now()}-${Math.random().toString(36).substring(7)}.png`,
         });
 

@@ -119,7 +119,7 @@ function ChatBotPromptBox({
 
     setOptimizing(true);
     try {
-      const response = await fetch("/api/ai-demo/generate-storyboard-prompt", {
+      const response = await fetch("/api/generation/storyboard-prompt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -408,7 +408,7 @@ export default function VideoGenerationPage() {
         }
       }
 
-      const response = await fetch("/api/ai-demo/video-generation", {
+      const response = await fetch("/api/generation/video", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
