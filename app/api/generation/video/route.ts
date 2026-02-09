@@ -18,7 +18,7 @@ const inputSchema = z.object({
   modelId: z.string(),
   provider: z.string(),
   // Veo 3.1 parameters
-  generationType: z.enum(["TEXT_2_VIDEO", "FIRST_AND_LAST_FRAMES_2_VIDEO", "REFERENCE_2_VIDEO"]).optional(),
+  generationType: z.enum(["TEXT_2_VIDEO", "IMAGE_2_VIDEO", "FIRST_AND_LAST_FRAMES_2_VIDEO", "REFERENCE_2_VIDEO"]).optional(),
   aspectRatio: z.enum(["16:9", "9:16", "Auto", "1:1"]).optional(),
   // Sora 2 parameters
   aspect_ratio: z.enum(["portrait", "landscape"]).optional(),
@@ -175,23 +175,44 @@ export async function POST(req: Request) {
         remainingCredits: creditResult.remainingCredits,
       });
     } else if (modelId.startsWith("veo-3")) {
-      const effectiveGenerationType = generationType || (
-        uploadedImageUrls.length >= 2
-          ? "FIRST_AND_LAST_FRAMES_2_VIDEO"
-          : uploadedImageUrls.length >= 1
-            ? "REFERENCE_2_VIDEO"
-            : "TEXT_2_VIDEO"
-      );
+      // Determine generation type based on images and explicit parameter
+      let effectiveGenerationType = generationType;
+
+      if (!effectiveGenerationType) {
+        // Auto-detect based on number of images
+        if (uploadedImageUrls.length === 0) {
+          effectiveGenerationType = "TEXT_2_VIDEO";
+        } else if (uploadedImageUrls.length === 1) {
+          effectiveGenerationType = "IMAGE_2_VIDEO";
+        } else if (uploadedImageUrls.length === 2) {
+          effectiveGenerationType = "FIRST_AND_LAST_FRAMES_2_VIDEO";
+        } else if (uploadedImageUrls.length >= 3) {
+          effectiveGenerationType = "REFERENCE_2_VIDEO";
+        } else {
+          effectiveGenerationType = "TEXT_2_VIDEO";
+        }
+      }
+
+      // Validate image count for each mode
+      if (effectiveGenerationType === "IMAGE_2_VIDEO") {
+        if (uploadedImageUrls.length !== 1) {
+          return apiResponse.badRequest("IMAGE_2_VIDEO mode requires exactly 1 image");
+        }
+      }
 
       if (effectiveGenerationType === "FIRST_AND_LAST_FRAMES_2_VIDEO") {
         if (uploadedImageUrls.length !== 2) {
-          return apiResponse.badRequest("Veo Start/End requires exactly 2 images (start and end frames)");
+          return apiResponse.badRequest("FIRST_AND_LAST_FRAMES_2_VIDEO mode requires exactly 2 images (start and end frames)");
         }
       }
 
       if (effectiveGenerationType === "REFERENCE_2_VIDEO") {
         if (uploadedImageUrls.length < 1 || uploadedImageUrls.length > 4) {
-          return apiResponse.badRequest("Veo Reference requires 1-4 images");
+          return apiResponse.badRequest("REFERENCE_2_VIDEO mode requires 1-4 reference images");
+        }
+        // Reference mode only supports 16:9
+        if (aspectRatio && aspectRatio !== "16:9") {
+          return apiResponse.badRequest("REFERENCE_2_VIDEO mode only supports 16:9 aspect ratio");
         }
       }
 

@@ -158,7 +158,7 @@ export interface MidjourneyStatusResponse {
 
 // --- Veo 3.1 (Google) ---
 export type Veo3Model = 'veo3' | 'veo3_fast';
-export type Veo3GenerationType = 'TEXT_2_VIDEO' | 'FIRST_AND_LAST_FRAMES_2_VIDEO' | 'REFERENCE_2_VIDEO';
+export type Veo3GenerationType = 'TEXT_2_VIDEO' | 'IMAGE_2_VIDEO' | 'FIRST_AND_LAST_FRAMES_2_VIDEO' | 'REFERENCE_2_VIDEO';
 export type Veo3AspectRatio = '16:9' | '9:16' | 'Auto';
 
 export interface Veo3GenerateRequest {
@@ -204,7 +204,7 @@ export interface Veo3StatusResponse {
 }
 
 // --- Sora 2 (OpenAI) ---
-export type Sora2Model = 
+export type Sora2Model =
   | 'sora-2-text-to-video'
   | 'sora-2-image-to-video'
   | 'sora-2-pro-text-to-video'

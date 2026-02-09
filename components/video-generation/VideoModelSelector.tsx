@@ -3,8 +3,8 @@
 import { Label } from "@/components/ui/label";
 import { KIE_VIDEO_MODELS } from "@/config/models";
 import { cn } from "@/lib/utils";
-import { VideoModel } from "./VideoGenerationPage";
 import { GenerationTypeType, ImageToVideoMode } from "./GenerationTypeSelector";
+import { VideoModel } from "./VideoGenerationPage";
 
 interface VideoModelSelectorProps {
   selectedModel: VideoModel | null;
@@ -21,25 +21,7 @@ export function VideoModelSelector({
 }: VideoModelSelectorProps) {
   // Get available models based on generation type
   const getAvailableModels = (): VideoModel[] => {
-    if (generationType === "text-to-video") {
-      // Text to Video: Sora 2 only
-      return KIE_VIDEO_MODELS.filter(
-        (m) => m.id === "sora-2-text-to-video"
-      ) as VideoModel[];
-    }
-
-    // Image to Video
-    if (imageToVideoMode === "single") {
-      // Single Image: Sora 2, Sora 2 Pro
-      return KIE_VIDEO_MODELS.filter(
-        (m) => m.id === "sora-2-image-to-video" || m.id === "sora-2-pro-image-to-video"
-      ) as VideoModel[];
-    } else {
-      // Start/End Frame or Reference: Veo 3.1 Fast
-      return KIE_VIDEO_MODELS.filter(
-        (m) => m.id === "veo-3.1-fast"
-      ) as VideoModel[];
-    }
+    return KIE_VIDEO_MODELS.filter((m) => m.id === "veo-3.1-fast") as VideoModel[];
   };
 
   const models = getAvailableModels();
@@ -57,8 +39,8 @@ export function VideoModelSelector({
         <p className="text-xs text-muted-foreground mt-0.5">
           {generationType === "text-to-video" ? "Text to Video Mode" :
             imageToVideoMode === "startEnd" ? "Start & End Frame Mode" :
-            imageToVideoMode === "reference" ? "Reference Images Mode" :
-            "Single Image Mode"}
+              imageToVideoMode === "reference" ? "Reference Images Mode" :
+                "Single Image Mode"}
         </p>
       </div>
     );
@@ -68,6 +50,7 @@ export function VideoModelSelector({
   const getDisplayName = (modelId: string): string => {
     if (modelId.includes("pro")) return "Sora 2 Pro";
     if (modelId.includes("sora-2")) return "Sora 2";
+    if (modelId === "veo-3.1-fast") return "Veo 3.1 Fast";
     return modelId;
   };
 

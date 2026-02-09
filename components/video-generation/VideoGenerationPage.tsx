@@ -263,28 +263,14 @@ export default function VideoGenerationPage() {
 
   // Initialize model based on default generation type
   useEffect(() => {
-    const defaultModel = KIE_VIDEO_MODELS.find(m => m.id === "sora-2-text-to-video");
+    const defaultModel = KIE_VIDEO_MODELS.find(m => m.id === "veo-3.1-fast");
     if (defaultModel) setSelectedModel(defaultModel);
   }, []);
 
   // Update model when generation type or image mode changes
   useEffect(() => {
-    if (generationType === "text-to-video") {
-      // Text to Video: Sora 2
-      const sora2Model = KIE_VIDEO_MODELS.find(m => m.id === "sora-2-text-to-video");
-      if (sora2Model) setSelectedModel(sora2Model);
-    } else {
-      // Image to Video
-      if (imageToVideoMode === "single") {
-        // Single Image: Sora 2 (default)
-        const sora2Model = KIE_VIDEO_MODELS.find(m => m.id === "sora-2-image-to-video");
-        if (sora2Model) setSelectedModel(sora2Model);
-      } else {
-        // Start/End Frame or Reference: Veo 3.1 Fast
-        const veoModel = KIE_VIDEO_MODELS.find(m => m.id === "veo-3.1-fast");
-        if (veoModel) setSelectedModel(veoModel);
-      }
-    }
+    const veoModel = KIE_VIDEO_MODELS.find(m => m.id === "veo-3.1-fast");
+    if (veoModel) setSelectedModel(veoModel);
   }, [generationType, imageToVideoMode]);
 
   const [prompt, setPrompt] = useState("");
@@ -384,14 +370,20 @@ export default function VideoGenerationPage() {
         const veoAspectRatio = params.aspect_ratio === "portrait" ? "9:16" : "16:9";
         requestBody.aspectRatio = veoAspectRatio;
 
-        if (imageToVideoMode === "startEnd") {
+        // 根据 generationType 和 imageToVideoMode 确定 Veo 的 generationType
+        if (generationType === "text-to-video") {
+          // Text-to-Video 模式
+          requestBody.generationType = "TEXT_2_VIDEO";
+        } else if (imageToVideoMode === "startEnd") {
+          // Start/End Frame 模式
           requestBody.generationType = "FIRST_AND_LAST_FRAMES_2_VIDEO";
           requestBody.images = [startImage, endImage].filter(Boolean);
         } else if (imageToVideoMode === "reference") {
+          // Reference 模式
           requestBody.generationType = "REFERENCE_2_VIDEO";
           requestBody.images = referenceImages;
         } else {
-          // Single image mode with Veo
+          // Single Image 模式
           requestBody.generationType = "IMAGE_2_VIDEO";
           requestBody.images = images;
         }
