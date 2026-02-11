@@ -40,7 +40,6 @@ import {
   SunoStatusResponse,
   Veo3ExtendRequest,
   Veo3GenerateRequest,
-  Veo3Response,
   Veo3StatusResponse,
   WanStatusResponse,
   WanVideoRequest,
@@ -50,6 +49,30 @@ import {
 
 const DEFAULT_BASE_URL = 'https://api.kie.ai';
 const DEFAULT_FILE_UPLOAD_URL = 'https://kieai.redpandaai.co';
+
+export class KieUpstreamError extends Error {
+  httpStatus?: number;
+  upstreamCode?: number | string;
+  upstreamMessage?: string;
+  rawBody?: string;
+  isTimeout?: boolean;
+
+  constructor(message: string, options?: {
+    httpStatus?: number;
+    upstreamCode?: number | string;
+    upstreamMessage?: string;
+    rawBody?: string;
+    isTimeout?: boolean;
+  }) {
+    super(message);
+    this.name = 'KieUpstreamError';
+    this.httpStatus = options?.httpStatus;
+    this.upstreamCode = options?.upstreamCode;
+    this.upstreamMessage = options?.upstreamMessage;
+    this.rawBody = options?.rawBody;
+    this.isTimeout = options?.isTimeout;
+  }
+}
 
 export class KieClient {
   private apiKey: string;
@@ -104,21 +127,28 @@ export class KieClient {
 
       if (!response.ok) {
         const errorText = await response.text();
-        throw new Error(`Kie API Error (${response.status}): ${errorText}`);
+        throw new KieUpstreamError('Upstream request failed', {
+          httpStatus: response.status,
+          rawBody: errorText.slice(0, 2000),
+        });
       }
 
       const data = await response.json();
 
       // Handle API-level errors
       if (data.code && data.code !== 200) {
-        throw new Error(`Kie API Error: ${data.msg || 'Unknown error'}`);
+        throw new KieUpstreamError('Upstream API error', {
+          upstreamCode: data.code,
+          upstreamMessage: data.msg || 'Unknown error',
+          rawBody: JSON.stringify(data).slice(0, 2000),
+        });
       }
 
       return data;
     } catch (error) {
       clearTimeout(timeoutId);
       if (error instanceof Error && error.name === 'AbortError') {
-        throw new Error('Kie API request timeout');
+        throw new KieUpstreamError('Upstream request timeout', { isTimeout: true });
       }
       throw error;
     }
@@ -277,7 +307,7 @@ export class KieClient {
     );
     return response.data.taskId;
   }
-  
+
   // ===========================================================================
   // Image Generation - Z-Image (Tongyi-MAI)
   // ===========================================================================
@@ -386,7 +416,7 @@ export class KieClient {
     const finalStatus = await this.poll(
       () => this.getMidjourneyStatus(taskId),
       (status) => status.successFlag === 1 || status.successFlag === 2 || status.successFlag === 3 ||
-                  status.state === 'success' || status.state === 'fail',
+        status.state === 'success' || status.state === 'fail',
       { ...DEFAULT_POLLING_OPTIONS.image, ...options }
     );
 

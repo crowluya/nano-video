@@ -13,7 +13,7 @@
       },
       {
         "name": "Generador de Video",
-        "href": "/#video-demo"
+        "href": "/#video-Generator"
       },
       {
         "name": "Generador de Prompts",
@@ -21,7 +21,7 @@
       },
       {
         "name": "Generador de Imágenes",
-        "href": "/#image-demo"
+        "href": "/#image-Generator"
       },
       {
         "id": "pricing",

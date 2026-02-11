@@ -19,9 +19,9 @@ export default function VideoGenerationDemo() {
   const isLoggedIn = !!session?.user;
 
   return (
-    <section id="video-generator" className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="video-Generator" className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="video-demo" className="sr-only" />
+        <div id="video-Generator" className="sr-only" />
         <div className="text-center mb-8">
           <h2 className="text-center z-10 text-lg md:text-5xl font-sans font-semibold mb-4">
             <span className="title-gradient">{t("title")}</span>

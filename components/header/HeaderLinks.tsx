@@ -31,18 +31,19 @@ const HeaderLinks = () => {
     promptGeneratorLink.href = "/#prompt-generator";
   }
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId: string, behavior: ScrollBehavior = "smooth") => {
     const byId = document.getElementById(sectionId);
     if (byId) {
-      byId.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = byId.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior });
       return true;
     }
 
     // Fallback to finding by heading text
     const headingMap: Record<string, string> = {
       "prompt-generator": "Prompt Generator",
-      "image-demo": "nano banana image generator",
-      "video-demo": "nano banana video generator",
+      "image-Generator": "nano banana image generator",
+      "video-Generator": "nano banana video generator",
     };
 
     const headingText = headingMap[sectionId];
@@ -56,7 +57,8 @@ const HeaderLinks = () => {
           if (!target.id) {
             target.id = sectionId;
           }
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          const top = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior });
           return true;
         }
       }
@@ -123,22 +125,33 @@ const HeaderLinks = () => {
                 href={link.href}
                 title={link.name}
                 onClick={(e) => {
-                  const anchorLinks = ["/#prompt-generator", "/#image-demo"];
+                  const anchorLinks = ["/#prompt-generator", "/#image-Generator", "/#video-Generator"];
                   const isAnchorLink = anchorLinks.some(anchor => link.href === anchor);
                   if (!isAnchorLink) return;
                   if (!pathname || pathname !== "/") return;
                   e.preventDefault();
 
                   const sectionId = link.href.replace("/#", "");
-                  const ok = scrollToSection(sectionId);
-                  window.history.replaceState(null, "", ok ? link.href : "/#video-demo");
+                  window.history.replaceState(null, "", link.href);
+
+                  const tryScroll = () => scrollToSection(sectionId, "auto");
+                  const ok = tryScroll();
 
                   if (!ok) {
-                    const byVideoDemo = document.getElementById("video-demo");
-                    if (byVideoDemo) {
-                      byVideoDemo.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
+                    return;
                   }
+
+                  requestAnimationFrame(() => {
+                    tryScroll();
+                    setTimeout(() => {
+                      const el = document.getElementById(sectionId);
+                      if (!el) return;
+                      const top = el.getBoundingClientRect().top;
+                      if (Math.abs(top) > 24) {
+                        tryScroll();
+                      }
+                    }, 250);
+                  });
                 }}
                 prefetch={
                   link.target && link.target === "_blank" ? false : true

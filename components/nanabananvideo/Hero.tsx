@@ -3,7 +3,7 @@
 import FeatureBadge from "@/components/shared/FeatureBadge";
 import { Button } from "@/components/ui/button";
 import { Link as I18nLink } from "@/i18n/routing";
-import { Images, MousePointerClick, Play, Pause, Check } from "lucide-react";
+import { Check, Images, MousePointerClick, Pause, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
@@ -85,11 +85,10 @@ function VideoPlayer() {
           <button
             key={index}
             onClick={() => setCurrentVideoIndex(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentVideoIndex
+            className={`h-2 rounded-full transition-all ${index === currentVideoIndex
                 ? 'w-8 bg-white'
                 : 'w-2 bg-white/50 hover:bg-white/75'
-            }`}
+              }`}
             aria-label={`Play video ${index + 1}`}
           />
         ))}
@@ -144,7 +143,7 @@ export default function NanoBananaHero() {
                 className="h-11 rounded-xl px-8 py-2 text-white border-2 border-primary"
               >
                 <I18nLink
-                  href="/#video-demo"
+                  href="/#video-Generator"
                   className="flex items-center gap-2"
                 >
                   <MousePointerClick className="w-4 h-4" />

@@ -8,9 +8,10 @@
 
 import { createActivityLog } from "@/actions/usage/activity-logs";
 import { apiResponse } from "@/lib/api-response";
+import { getSession } from "@/lib/auth/server";
 import { db } from "@/lib/db";
-import { creditLogs as creditLogsSchema, taskCreditMappings } from "@/lib/db/schema";
-import { getKieClient } from "@/lib/kie";
+import { activityLogs as activityLogsSchema, creditLogs as creditLogsSchema, taskCreditMappings } from "@/lib/db/schema";
+import { getKieClient, KieUpstreamError } from "@/lib/kie";
 import { refundKieCredits } from "@/lib/kie/credits";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
@@ -21,11 +22,84 @@ const querySchema = z.object({
   modelId: z.string().optional(),
 });
 
+type FailureReason =
+  | 'invalid_input'
+  | 'insufficient_credits'
+  | 'upload_failed'
+  | 'upstream_failed'
+  | 'timeout'
+  | 'unknown';
+
+function classifyFailureReason(params: {
+  error?: unknown;
+  upstreamErrorMessage?: string | null;
+  upstreamErrorCode?: string | null;
+}): { reason: FailureReason; errorMessageInternal?: string; errorCodeInternal?: string | null; httpStatus?: number; rawBody?: string } {
+  const upstreamMsg = params.upstreamErrorMessage || undefined;
+  const upstreamCode = params.upstreamErrorCode || undefined;
+
+  if (params.error instanceof KieUpstreamError) {
+    const msg = params.error.upstreamMessage || params.error.message;
+    if (params.error.isTimeout || msg.toLowerCase().includes('timeout')) {
+      return {
+        reason: 'timeout',
+        errorMessageInternal: msg,
+        errorCodeInternal: (params.error.upstreamCode as any) ?? upstreamCode ?? null,
+        httpStatus: params.error.httpStatus,
+        rawBody: params.error.rawBody,
+      };
+    }
+    return {
+      reason: 'upstream_failed',
+      errorMessageInternal: msg,
+      errorCodeInternal: (params.error.upstreamCode as any) ?? upstreamCode ?? null,
+      httpStatus: params.error.httpStatus,
+      rawBody: params.error.rawBody,
+    };
+  }
+
+  const msg = (upstreamMsg || (params.error instanceof Error ? params.error.message : '')).toLowerCase();
+
+  if (msg.includes('insufficient credits')) {
+    return { reason: 'insufficient_credits', errorMessageInternal: upstreamMsg || msg, errorCodeInternal: upstreamCode ?? null };
+  }
+
+  if (msg.includes('invalid') || msg.includes('require') || msg.includes('parameter')) {
+    return { reason: 'invalid_input', errorMessageInternal: upstreamMsg || msg, errorCodeInternal: upstreamCode ?? null };
+  }
+
+  return { reason: 'unknown', errorMessageInternal: upstreamMsg || (params.error instanceof Error ? params.error.message : undefined), errorCodeInternal: upstreamCode ?? null };
+}
+
+async function hasExistingFinalLog(params: {
+  userId: string;
+  taskId: string;
+  action: string;
+}): Promise<boolean> {
+  const existing = await db
+    .select({ id: activityLogsSchema.id })
+    .from(activityLogsSchema)
+    .where(and(
+      eq(activityLogsSchema.userId, params.userId),
+      eq(activityLogsSchema.action, params.action),
+      eq(activityLogsSchema.resourceId, params.taskId)
+    ))
+    .limit(1);
+
+  return existing.length > 0;
+}
+
 export async function GET(req: Request) {
   try {
     const apiKey = process.env.KIE_API_KEY;
     if (!apiKey) {
       return apiResponse.serverError("Server configuration error: Missing KIE_API_KEY");
+    }
+
+    const session = await getSession();
+    const userId = session?.user?.id;
+    if (!userId) {
+      return apiResponse.unauthorized("Authentication required");
     }
 
     const url = new URL(req.url);
@@ -48,25 +122,25 @@ export async function GET(req: Request) {
 
     let status: "pending" | "processing" | "success" | "failed" = "pending";
     let resultUrls: string[] = [];
-    let rawStatus: unknown = null;
+    let upstreamErrorMessage: string | null = null;
+    let upstreamErrorCode: string | null = null;
 
     if (type === "image") {
       // Determine which image status endpoint to use based on modelId
       if (modelId === "gpt4o-image") {
         const imageStatus = await client.get4oImageStatus(taskId);
-        rawStatus = imageStatus;
 
         if (imageStatus.successFlag === 1) {
           status = "success";
           resultUrls = imageStatus.response?.resultUrls || [];
         } else if (imageStatus.successFlag === 2 || imageStatus.successFlag === 3) {
           status = "failed";
+          upstreamErrorMessage = null;
         } else {
           status = "processing";
         }
       } else if (modelId === "flux-kontext-pro" || modelId === "flux-kontext-max") {
         const fluxStatus = await client.getFluxKontextStatus(taskId);
-        rawStatus = fluxStatus;
 
         if (fluxStatus.successFlag === 1) {
           status = "success";
@@ -80,25 +154,27 @@ export async function GET(req: Request) {
           }
         } else if (fluxStatus.successFlag === 2 || fluxStatus.successFlag === 3) {
           status = "failed";
+          upstreamErrorMessage = fluxStatus.errorMessage || null;
+          upstreamErrorCode = fluxStatus.errorCode || null;
         } else {
           status = "processing";
         }
       } else if (modelId === "midjourney") {
         const mjStatus = await client.getMidjourneyStatus(taskId);
-        rawStatus = mjStatus;
 
         if (mjStatus.successFlag === 1 || mjStatus.state === "success") {
           status = "success";
           resultUrls = mjStatus.resultUrls || [];
         } else if (mjStatus.successFlag === 2 || mjStatus.successFlag === 3 || mjStatus.state === "fail") {
           status = "failed";
+          upstreamErrorMessage = mjStatus.errorMessage || null;
+          upstreamErrorCode = mjStatus.errorCode || null;
         } else {
           status = "processing";
         }
       } else {
         // Nano Banana and others use generic job endpoint
         const jobStatus = await client.getNanoBananaStatus(taskId);
-        rawStatus = jobStatus;
 
         if (jobStatus.state === "success") {
           status = "success";
@@ -112,6 +188,7 @@ export async function GET(req: Request) {
           }
         } else if (jobStatus.state === "fail" || jobStatus.state === "failed") {
           status = "failed";
+          upstreamErrorMessage = null;
         } else {
           status = "processing";
         }
@@ -120,7 +197,6 @@ export async function GET(req: Request) {
       // Determine which video status endpoint to use based on modelId
       if (modelId === "veo3" || modelId === "veo3_fast" || (modelId?.startsWith("veo-3") ?? false)) {
         const veoStatus = await client.getVeo3Status(taskId);
-        rawStatus = veoStatus;
 
         if (veoStatus.successFlag === 1) {
           status = "success";
@@ -143,12 +219,13 @@ export async function GET(req: Request) {
           }
         } else if (veoStatus.successFlag === 2 || veoStatus.successFlag === 3) {
           status = "failed";
+          upstreamErrorMessage = veoStatus.errorMessage || null;
+          upstreamErrorCode = veoStatus.errorCode || null;
         } else {
           status = "processing";
         }
       } else if (modelId === "runway-gen3") {
         const runwayStatus = await client.getRunwayStatus(taskId);
-        rawStatus = runwayStatus;
 
         if (runwayStatus.state === "success") {
           status = "success";
@@ -157,13 +234,13 @@ export async function GET(req: Request) {
           }
         } else if (runwayStatus.state === "fail") {
           status = "failed";
+          upstreamErrorMessage = null;
         } else {
           status = "processing";
         }
       } else {
         // Sora 2, Wan use generic job endpoint
         const jobStatus = await client.getSora2Status(taskId);
-        rawStatus = jobStatus;
 
         if (jobStatus.state === "success") {
           status = "success";
@@ -241,7 +318,6 @@ export async function GET(req: Request) {
       }
     } else if (type === "music") {
       const sunoStatus = await client.getSunoStatus(taskId);
-      rawStatus = sunoStatus;
 
       if (sunoStatus.status === "SUCCESS") {
         status = "success";
@@ -251,8 +327,50 @@ export async function GET(req: Request) {
         }
       } else if (sunoStatus.status === "FAILED") {
         status = "failed";
+        upstreamErrorMessage = null;
       } else {
         status = "processing";
+      }
+    }
+
+    // Write succeeded/failed activity logs with sanitized reason and internal error details.
+    if ((status === 'success' || status === 'failed') && (type === 'video' || type === 'image' || type === 'music')) {
+      const action = `${type}_generation_${status === 'success' ? 'succeeded' : 'failed'}`;
+      const alreadyLogged = await hasExistingFinalLog({ userId, taskId, action });
+
+      if (!alreadyLogged) {
+        if (status === 'success') {
+          await createActivityLog({
+            action,
+            resourceType: type,
+            resourceId: taskId,
+            metadata: {
+              taskId,
+              modelId,
+              resultUrls,
+            },
+          }).catch(err => console.error('Failed to log generation success:', err));
+        } else {
+          const classified = classifyFailureReason({
+            upstreamErrorMessage,
+            upstreamErrorCode,
+          });
+
+          await createActivityLog({
+            action,
+            resourceType: type,
+            resourceId: taskId,
+            metadata: {
+              taskId,
+              modelId,
+              reason: classified.reason,
+              errorMessageInternal: classified.errorMessageInternal?.slice(0, 300),
+              errorCodeInternal: classified.errorCodeInternal ?? null,
+              httpStatus: classified.httpStatus ?? null,
+              rawBody: classified.rawBody,
+            },
+          }).catch(err => console.error('Failed to log generation failure:', err));
+        }
       }
     }
 
@@ -275,13 +393,11 @@ export async function GET(req: Request) {
       resultUrls,
       isComplete: status === "success" || status === "failed",
       creditsRefunded,
-      raw: rawStatus,
     });
 
   } catch (error: unknown) {
     console.error("Status check failed:", error);
-    const errorMessage = error instanceof Error ? error.message : "Failed to check status";
-    return apiResponse.serverError(errorMessage);
+    return apiResponse.serverError("Failed to check status");
   }
 }
 

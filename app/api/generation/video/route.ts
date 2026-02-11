@@ -8,9 +8,57 @@ import { apiResponse } from "@/lib/api-response";
 import { getSession } from "@/lib/auth/server";
 import { db } from "@/lib/db";
 import { taskCreditMappings } from "@/lib/db/schema";
-import { getKieClient } from "@/lib/kie";
+import { getKieClient, KieUpstreamError } from "@/lib/kie";
 import { calculateVideoCredits, checkKieCredits, deductKieCredits, refundKieCredits } from "@/lib/kie/credits";
 import { z } from 'zod';
+
+type FailureReason =
+  | 'invalid_input'
+  | 'insufficient_credits'
+  | 'upload_failed'
+  | 'upstream_failed'
+  | 'timeout'
+  | 'unknown';
+
+function classifyFailureReason(error: unknown): {
+  reason: FailureReason;
+  errorMessageInternal?: string;
+  errorCodeInternal?: string | number | null;
+  httpStatus?: number | null;
+  rawBody?: string;
+} {
+  if (error instanceof KieUpstreamError) {
+    const msg = error.upstreamMessage || error.message;
+    if (error.isTimeout || msg.toLowerCase().includes('timeout')) {
+      return {
+        reason: 'timeout',
+        errorMessageInternal: msg,
+        errorCodeInternal: error.upstreamCode ?? null,
+        httpStatus: error.httpStatus ?? null,
+        rawBody: error.rawBody,
+      };
+    }
+    return {
+      reason: 'upstream_failed',
+      errorMessageInternal: msg,
+      errorCodeInternal: error.upstreamCode ?? null,
+      httpStatus: error.httpStatus ?? null,
+      rawBody: error.rawBody,
+    };
+  }
+
+  const msg = (error instanceof Error ? error.message : '').toLowerCase();
+  if (msg.includes('insufficient credits')) {
+    return { reason: 'insufficient_credits', errorMessageInternal: error instanceof Error ? error.message : undefined, errorCodeInternal: null, httpStatus: null };
+  }
+  if (msg.includes('upload') || msg.includes('image') && msg.includes('upload')) {
+    return { reason: 'upload_failed', errorMessageInternal: error instanceof Error ? error.message : undefined, errorCodeInternal: null, httpStatus: null };
+  }
+  if (msg.includes('invalid') || msg.includes('require') || msg.includes('parameter')) {
+    return { reason: 'invalid_input', errorMessageInternal: error instanceof Error ? error.message : undefined, errorCodeInternal: null, httpStatus: null };
+  }
+  return { reason: 'unknown', errorMessageInternal: error instanceof Error ? error.message : undefined, errorCodeInternal: null, httpStatus: null };
+}
 
 const inputSchema = z.object({
   images: z.array(z.string().startsWith('data:image/')).optional(),
@@ -30,6 +78,7 @@ const inputSchema = z.object({
 export async function POST(req: Request) {
   let creditResult: { success: boolean; logId?: string; creditsDeducted?: number; remainingCredits?: number; error?: string } | undefined;
   let requestedModelId: string | undefined;
+  let taskId: string | undefined;
 
   try {
     const rawBody = await req.json();
@@ -56,7 +105,7 @@ export async function POST(req: Request) {
 
     // Validate provider is kie
     if (provider !== "kie") {
-      return apiResponse.badRequest("Only kie.ai provider is supported for video generation");
+      return apiResponse.badRequest("Unsupported provider");
     }
 
     // Validate model exists
@@ -89,7 +138,6 @@ export async function POST(req: Request) {
     }
 
     const creditLogId = creditResult.logId;
-    let taskId: string | undefined;
 
     // Record activity log
     await createActivityLog({
@@ -246,12 +294,14 @@ export async function POST(req: Request) {
       });
     } else {
       return apiResponse.badRequest(
-        `Unsupported video model: ${modelId}. Only Sora 2 / Sora 2 Pro and Veo 3.1 are supported.`
+        `Unsupported video model: ${modelId}`
       );
     }
   } catch (error: any) {
     console.error("Video generation failed:", error);
     const errorMessage = error?.message || "Failed to generate video";
+    const clientErrorMessage = "Failed to generate video";
+    const classified = classifyFailureReason(error);
 
     // Refund credits if deduction was successful
     if (creditResult?.success && creditResult.logId) {
@@ -276,15 +326,18 @@ export async function POST(req: Request) {
       resourceType: 'video',
       metadata: {
         modelId: requestedModelId,
+        taskId,
+        reason: classified.reason,
         error: errorMessage,
+        errorMessageInternal: classified.errorMessageInternal?.slice(0, 300),
+        errorCodeInternal: classified.errorCodeInternal ?? null,
+        httpStatus: classified.httpStatus ?? null,
+        rawBody: classified.rawBody,
         creditsRefunded: creditResult?.success || false,
       },
     }).catch(err => console.error('Failed to log activity:', err));
 
-    if (errorMessage.includes("API key") || errorMessage.includes("authentication")) {
-      return apiResponse.serverError(`Server configuration error: ${errorMessage}`);
-    }
-    return apiResponse.serverError(errorMessage);
+    return apiResponse.serverError(clientErrorMessage);
   }
 }
 

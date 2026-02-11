@@ -40,7 +40,7 @@ export default function NanoBananaCTA() {
 
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <I18nLink
-                  href="#video-demo"
+                  href="#video-Generator"
                   className="flex items-center gap-2"
                   prefetch={true}
                 >

@@ -13,7 +13,7 @@
       },
       {
         "name": "비디오 생성기",
-        "href": "/#video-demo"
+        "href": "/#video-Generator"
       },
       {
         "name": "프롬프트 생성기",
@@ -21,7 +21,7 @@
       },
       {
         "name": "이미지 생성기",
-        "href": "/#image-demo"
+        "href": "/#image-Generator"
       },
       {
         "id": "pricing",

@@ -3,12 +3,12 @@
     "badge": {
       "label": "NUOVO",
       "text": "Generatore di Video AI Gratuito - Senza Watermark",
-      "href": "#video-demo"
+      "href": "#video-Generator"
     },
     "title": "Nano Banana to Video - Generatore di Video AI con Sora 2 e Veo 3.1",
     "description": "Converti le immagini Nano Banana in video professionali istantaneamente. Supporta Sora 2 e Veo 3.1 Fast. Prova gratuita, senza watermark. Perfetto per pubblicità UGC e e-commerce.",
     "getStarted": "Inizia a Creare",
-    "getStartedLink": "#video-demo",
+    "getStartedLink": "#video-Generator",
     "viewGallery": "Vedi Galleria",
     "sellingPoints": {
       "noCreditCard": "Senza carta di credito",

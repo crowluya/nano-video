@@ -1,8 +1,8 @@
 "use client";
 
+import ImageGenerationPage from "@/components/image-generation/ImageGenerationPage";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import ImageGenerationPage from "@/components/image-generation/ImageGenerationPage";
 import { authClient } from "@/lib/auth/auth-client";
 import { Info, LogIn } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -18,9 +18,9 @@ export default function ImageGenerationDemo() {
   const isLoggedIn = !!session?.user;
 
   return (
-    <section id="image-generator" className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="image-Generator" className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="image-demo" className="sr-only" />
+        <div id="image-Generator" className="sr-only" />
         <div className="text-center mb-8">
           <h2 className="text-center z-10 text-lg md:text-5xl font-sans font-semibold mb-4">
             <span className="title-gradient">{t("title")}</span>

@@ -32,7 +32,10 @@ export function UserInfo({ renderContainer, user }: UserInfoProps) {
 
   const t = useTranslations("Login");
 
-  const userMenus: Menu[] = t.raw("UserMenus");
+  const userMenusAll: Menu[] = t.raw("UserMenus");
+  const userMenus = userMenusAll.filter(
+    (menu) => menu.href !== "/dashboard/image-gen" && menu.href !== "/dashboard/video-gen"
+  );
   const adminMenus: Menu[] = t.raw("AdminMenus");
 
   if (!user) {

@@ -112,7 +112,7 @@ export default function Page() {
     "thumbnailUrl": "/og-image.jpg",
     "uploadDate": "2024-01-01T00:00:00Z",
     "duration": "PT5M",
-    "contentUrl": "/nanabananvideo#video-demo"
+    "contentUrl": "/nanabananvideo#video-Generator"
   };
 
   return (

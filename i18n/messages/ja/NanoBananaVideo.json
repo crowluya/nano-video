@@ -3,12 +3,12 @@
     "badge": {
       "label": "新着",
       "text": "無料AIビデオジェネレーター - ウォーターマークなし",
-      "href": "#video-demo"
+      "href": "#video-Generator"
     },
     "title": "Nano Banana to Video - Sora 2 & Veo 3.1 AIビデオジェネレーター",
     "description": "Nano Banana画像を瞬時にプロフェッショナルなビデオに変換。Sora 2とVeo 3.1 Fastをサポート。無料トライアル、ウォーターマークなし。UGC広告とeコマースに最適。",
     "getStarted": "作成開始",
-    "getStartedLink": "#video-demo",
+    "getStartedLink": "#video-Generator",
     "viewGallery": "ギャラリーを見る",
     "sellingPoints": {
       "noCreditCard": "クレジットカード不要",

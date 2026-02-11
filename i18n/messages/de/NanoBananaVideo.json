@@ -3,12 +3,12 @@
     "badge": {
       "label": "NEU",
       "text": "Kostenloser KI-Videogenerator - Kein Wasserzeichen",
-      "href": "#video-demo"
+      "href": "#video-Generator"
     },
     "title": "Nano Banana zu Video - KI-Videogenerator mit Sora 2 & Veo 3.1",
     "description": "Konvertieren Sie Nano-Banana-Bilder sofort in professionelle Videos. Unterstützt Sora 2 und Veo 3.1 Fast. Kostenlose Testversion, kein Wasserzeichen. Perfekt für UGC-Werbung und E-Commerce.",
     "getStarted": "Jetzt Erstellen",
-    "getStartedLink": "#video-demo",
+    "getStartedLink": "#video-Generator",
     "viewGallery": "Galerie anzeigen",
     "sellingPoints": {
       "noCreditCard": "Keine Kreditkarte",

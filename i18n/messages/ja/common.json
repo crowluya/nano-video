@@ -13,7 +13,7 @@
       },
       {
         "name": "ビデオ生成器",
-        "href": "/#video-demo"
+        "href": "/#video-Generator"
       },
       {
         "name": "プロンプトジェネレーター",
@@ -21,7 +21,7 @@
       },
       {
         "name": "画像生成器",
-        "href": "/#image-demo"
+        "href": "/#image-Generator"
       },
       {
         "id": "pricing",

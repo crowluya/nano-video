@@ -3,12 +3,12 @@
     "badge": {
       "label": "NOUVEAU",
       "text": "Générateur Vidéo IA Gratuit - Sans Filigrane",
-      "href": "#video-demo"
+      "href": "#video-Generator"
     },
     "title": "Nano Banana vers Vidéo - Générateur Vidéo IA avec Sora 2 et Veo 3.1",
     "description": "Convertissez les images Nano Banana en vidéos professionnelles instantanément. Supporte Sora 2 et Veo 3.1 Fast. Essai gratuit, sans filigrane. Parfait pour les publicités UGC et le e-commerce.",
     "getStarted": "Commencer à Créer",
-    "getStartedLink": "#video-demo",
+    "getStartedLink": "#video-Generator",
     "viewGallery": "Voir la Galerie",
     "sellingPoints": {
       "noCreditCard": "Sans carte de crédit",

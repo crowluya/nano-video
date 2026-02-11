@@ -13,7 +13,7 @@
       },
       {
         "name": "Видео Генератор",
-        "href": "/#video-demo"
+        "href": "/#video-Generator"
       },
       {
         "name": "Генератор Промптов",
@@ -21,7 +21,7 @@
       },
       {
         "name": "Генератор Изображений",
-        "href": "/#image-demo"
+        "href": "/#image-Generator"
       },
       {
         "id": "pricing",

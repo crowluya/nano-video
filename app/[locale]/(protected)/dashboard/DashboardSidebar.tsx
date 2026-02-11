@@ -33,7 +33,10 @@ export function DashboardSidebar() {
   const t = useTranslations("Login");
   const tHome = useTranslations("Home");
 
-  const userMenus: Menu[] = t.raw("UserMenus");
+  const userMenusAll: Menu[] = t.raw("UserMenus");
+  const userMenus = userMenusAll.filter(
+    (menu) => menu.href !== "/dashboard/image-gen" && menu.href !== "/dashboard/video-gen"
+  );
   const adminMenus: Menu[] = t.raw("AdminMenus");
 
   const isActive = (href: string) => pathname === href;

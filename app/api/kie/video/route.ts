@@ -8,14 +8,14 @@
  * - Returns taskId for polling status
  */
 
-import { apiResponse } from "@/lib/api-response";
-import { getKieClient } from "@/lib/kie";
-import { deductKieCredits, refundKieCredits, calculateVideoCredits } from "@/lib/kie/credits";
+import { createActivityLog } from "@/actions/usage/activity-logs";
 import { getKieVideoModel } from "@/config/models";
+import { apiResponse } from "@/lib/api-response";
+import { getSession } from "@/lib/auth/server";
 import { db } from "@/lib/db";
 import { taskCreditMappings } from "@/lib/db/schema";
-import { getSession } from "@/lib/auth/server";
-import { createActivityLog } from "@/actions/usage/activity-logs";
+import { getKieClient } from "@/lib/kie";
+import { calculateVideoCredits, deductKieCredits, refundKieCredits } from "@/lib/kie/credits";
 import { z } from "zod";
 
 const inputSchema = z.object({
@@ -33,7 +33,7 @@ const inputSchema = z.object({
 
 export async function POST(req: Request) {
   let creditResult: { success: boolean; logId?: string; creditsDeducted?: number; remainingCredits?: number; error?: string } | undefined;
-  
+
   try {
     const apiKey = process.env.KIE_API_KEY;
     if (!apiKey) {
@@ -85,7 +85,7 @@ export async function POST(req: Request) {
     if (modelId.startsWith("sora-2")) {
       // Sora 2 models
       const hasImage = options.imageUrl || (options.imageUrls && options.imageUrls.length > 0);
-      
+
       taskId = await client.generateSora2Video({
         model: modelId as "sora-2-text-to-video" | "sora-2-image-to-video" | "sora-2-pro-text-to-video" | "sora-2-pro-image-to-video",
         input: {
@@ -127,7 +127,8 @@ export async function POST(req: Request) {
   } catch (error: unknown) {
     console.error("Video generation failed:", error);
     const errorMessage = error instanceof Error ? error.message : "Failed to generate video";
-    
+    const clientErrorMessage = "Failed to generate video";
+
     // Refund credits if deduction was successful
     if (creditResult?.success && creditResult.logId) {
       try {
@@ -154,16 +155,16 @@ export async function POST(req: Request) {
         creditsRefunded: creditResult?.success || false,
       },
     }).catch(err => console.error('Failed to log activity:', err));
-    
+
     if (errorMessage.includes("API key") || errorMessage.includes("authentication") || errorMessage.includes("401")) {
-      return apiResponse.unauthorized("Authentication error with Kie.ai API");
+      return apiResponse.unauthorized(clientErrorMessage);
     }
-    
+
     if (errorMessage.includes("Insufficient credits")) {
       return apiResponse.badRequest("Insufficient credits for this operation");
     }
-    
-    return apiResponse.serverError(errorMessage);
+
+    return apiResponse.serverError(clientErrorMessage);
   }
 }
 

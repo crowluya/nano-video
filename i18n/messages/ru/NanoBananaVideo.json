@@ -3,12 +3,12 @@
     "badge": {
       "label": "НОВОЕ",
       "text": "Бесплатный AI генератор видео - без водяных знаков",
-      "href": "#video-demo"
+      "href": "#video-Generator"
     },
     "title": "Nano Banana в Видео - AI генератор видео с Sora 2 и Veo 3.1",
     "description": "Мгновенно конвертируйте изображения Nano Banana в профессиональные видео. Поддержка Sora 2 и Veo 3.1 Fast. Бесплатная пробная версия, без водяных знаков. Идеально для UGC рекламы и электронной коммерции.",
     "getStarted": "Начать создавать",
-    "getStartedLink": "#video-demo",
+    "getStartedLink": "#video-Generator",
     "viewGallery": "Просмотреть галерею",
     "sellingPoints": {
       "noCreditCard": "Без кредитной карты",

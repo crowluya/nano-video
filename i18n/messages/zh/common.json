@@ -13,7 +13,7 @@
       },
       {
         "name": "视频生成器",
-        "href": "/#video-demo"
+        "href": "/#video-Generator"
       },
       {
         "name": "提示词生成器",
@@ -21,7 +21,7 @@
       },
       {
         "name": "图像生成器",
-        "href": "/#image-demo"
+        "href": "/#image-Generator"
       },
       {
         "id": "pricing",
