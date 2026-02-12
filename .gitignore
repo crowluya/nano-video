@@ -137,3 +137,6 @@ nul
 
 # Claude Code local settings (personal overrides)
 .claude/settings.local.json
+
+# Stripe CLI config (contains webhook endpoints)
+stripe.config.json

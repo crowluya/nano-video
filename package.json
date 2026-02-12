@@ -15,7 +15,13 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx lib/db/seed/index.ts"
+    "db:seed": "tsx lib/db/seed/index.ts",
+    "stripe:login": "~/bin/stripe.exe login",
+    "stripe:listen": "~/bin/stripe.exe listen --forward-to localhost:3000/api/stripe/webhook",
+    "stripe:listen:all": "~/bin/stripe.exe listen --forward-to localhost:3000/api/stripe/webhook --events checkout.session.completed,customer.subscription.created,customer.subscription.updated,customer.subscription.deleted,invoice.paid,invoice.payment_failed,charge.refunded,radar.early_fraud_warning.created",
+    "stripe:trigger:checkout": "~/bin/stripe.exe trigger checkout.session.completed",
+    "stripe:trigger:subscription": "~/bin/stripe.exe trigger customer.subscription.created",
+    "stripe:trigger:invoice_paid": "~/bin/stripe.exe trigger invoice.paid"
   },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.2.6",
