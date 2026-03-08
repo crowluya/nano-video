@@ -17,7 +17,7 @@ export default function LoginPage() {
     if (session?.user) {
       router.replace("/");
     }
-  }, [session?.user]);
+  }, [router, session?.user]);
 
   if (session?.user) {
     return (

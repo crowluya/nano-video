@@ -54,9 +54,9 @@ if (
   process.env.NODE_ENV === "development" &&
   !process.env.NEXTY_WELCOME_SHOWN
 ) {
-  console.log("\n🎉 Welcome to NEXTY.DEV Boilerplate!");
-  console.log("💬 Join our Discord community: https://discord.gg/VRDxBgXUZ8");
-  console.log("📚 Documentation: https://nexty.dev/docs\n\n");
+  console.log("\n🎉 Welcome to Nano Banana Video!");
+  console.log("💬 Local development environment is ready.");
+  console.log("🌐 Default site: https://nanobananavideo.net\n\n");
   process.env.NEXTY_WELCOME_SHOWN = "true";
 }
 

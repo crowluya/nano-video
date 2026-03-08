@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "블로그 게시물",
-    "description": "Next.js 생태계와 NEXTY.DEV 템플릿 업데이트에 대한 인사이트.",
+    "description": "AI 생성 워크플로, 제품 업데이트, 엔지니어링 변경 사항에 대한 인사이트.",
     "emptyState": {
       "title": "블로그 게시물 없음",
       "description": "흥미로운 콘텐츠를 만드는 중이니 기대해주세요!"

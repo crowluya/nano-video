@@ -43,7 +43,13 @@ interface BadgeProps {
   href?: string;
 }
 
-const Content = ({ icon, size, children }: BadgeProps) => (
+interface ContentProps {
+  children?: React.ReactNode;
+  icon?: React.ReactNode;
+  size?: keyof typeof sizes;
+}
+
+const Content = ({ icon, size, children }: ContentProps) => (
   <>
     <style>
       {`
@@ -86,7 +92,9 @@ export const Badge = ({
         )}
         href={href}
       >
-        <Content icon={icon} size={size} children={children} />
+        <Content icon={icon} size={size}>
+          {children}
+        </Content>
       </Link>
     );
   }
@@ -100,7 +108,9 @@ export const Badge = ({
         sizes[size]
       )}
     >
-      <Content icon={icon} size={size} children={children} />
+      <Content icon={icon} size={size}>
+        {children}
+      </Content>
     </div>
   );
 };

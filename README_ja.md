@@ -1,27 +1,56 @@
-# Nexty - モダンなフルスタック SaaS ボイラープレート
+# Nano Banana Video
 
-Nexty は、Next.js 16、React 19、Supabase を使用して構築された、機能豊富なフルスタック SaaS アプリケーションボイラープレートです。開発者が SaaS アプリケーションを迅速に構築・デプロイするための完全なソリューションを提供します。
+Nano Banana Video は、Next.js 16、React 19、better-auth、Drizzle、PostgreSQL を使って構築された多言語 AI 生成プロダクトです。現在の主な公開プロダクト面は、Nano Banana 画像ワークフロー、プロンプト生成、Sora 2 と Veo 3.1 Fast による動画生成です。
 
-- 🚀 ボイラープレートを入手 👉: https://nexty.dev  
-- 🚀 ロードマップ 👉: https://nexty.dev/roadmap  
-- 🚀 ドキュメント 👉: https://nexty.dev/docs
+## 現在の状態
 
-> 何か問題が発生した場合は、サポートまでご連絡ください：  
-> - メール：hi@nexty.dev  
-> - Twitter (中国語)：https://x.com/weijunext  
-> - Twitter (英語)：https://x.com/judewei_dev  
+最終確認日: 2026-03-09
 
-## ✨ 主な特徴
+- デフォルトのホームルート `/` は Nano Banana Video のプロダクトページを表示します
+- 主な公開ルートは `/`、`/nanabananvideo`、`/video-generation`、`/prompt-generator`、`/login` です
+- 動画生成は Sora 2、Sora 2 Pro、Veo 3.1 Fast をサポートしています
+- 画像生成、Prompt Generator、Google ログイン、Stripe 決済、管理画面、Blog/CMS はコードベース上で利用可能です
+- music、studio、remotion、creem はコード内に残っていますが、現在の主公開面ではありません
+- `pnpm lint` は現在通過しています
 
-- 🚀 **Next.js 16 & React 19** - 最新の技術スタックで構築
-- 💳 **Stripe 連携** - 完全なサブスクリプション決済システム
-- 🔒 **Supabase 認証** - 安全で信頼性の高いユーザー管理
-- 🌍 **国際化 (i18n) 対応** - 英語、中国語、日本語を標準サポート
-- 🧠 **AI 連携** - 複数の AI プロバイダー (OpenAI, Anthropic, DeepSeek, Google など) をサポート
-- 📊 **管理ダッシュボード** - ユーザー管理、料金プラン、コンテンツ管理など
-- 📱 **レスポンシブデザイン** - 様々なデバイスに最適化
-- 🎨 **Tailwind CSS** - モダンな UI デザイン
-- 📧 **メールシステム** - Resend を利用した通知・マーケティングメール
-- 🖼️ **R2/S3 ストレージ** - メディアファイル用クラウドストレージ対応
+## 技術スタック
 
-ボイラープレートの使用方法については、[ドキュメント](https://nexty.dev/docs) を参照してください。
+- Next.js 16 App Router
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- Radix UI
+- next-intl
+- Zustand
+- Drizzle ORM
+- PostgreSQL
+- better-auth
+- Stripe
+- Cloudflare R2 / S3 互換ストレージ
+
+## ローカル開発
+
+```bash
+pnpm install
+pnpm dev
+```
+
+`http://localhost:3000` を開いてください。
+
+## よく使うコマンド
+
+```bash
+pnpm dev
+pnpm build
+pnpm lint
+pnpm db:generate
+pnpm db:migrate
+pnpm db:push
+pnpm db:studio
+pnpm db:seed
+```
+
+## 補足
+
+- このリポジトリは SaaS ボイラープレートから派生しているため、一部に旧命名や旧ドキュメントが残っています
+- 現在の実態を把握するには、`README.md`、`README_zh.md`、`LAUNCH-TODO.md`、`GALLERY_TODO.md` を優先してください

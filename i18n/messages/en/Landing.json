@@ -2,42 +2,42 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "Next.js SaaS Full Stack Template",
-      "href": "https://nexty.dev/#pricing"
+      "text": "AI Image & Video Creation Platform",
+      "href": "https://nanobananavideo.net/#pricing"
     },
-    "title": "A Modern Next.js Full Stack SaaS Boilerplate",
-    "description": "Our Next.js boilerplate includes authentication, Stripe payments, AI integration, CMS, and everything you need to start earning immediately.",
+    "title": "Ship AI Creation Workflows Faster",
+    "description": "Nano Banana Video combines image generation, video generation, prompt workflows, billing, and admin tools in one production app.",
     "getStarted": "Get Started",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "View Documentation",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
       "label": "FEATURES",
       "text": "Production-ready SaaS Development Kit"
     },
-    "title": "Production-ready Next.js SaaS Boilerplate",
-    "description": "The Next.js boilerplate includes every essential feature modern SaaS applications require, letting you focus on your unique business logic and customer value.",
+    "title": "Built for AI Product Teams",
+    "description": "Run image, video, prompt, billing, and content workflows in one app without rebuilding the stack from scratch.",
     "items": [
       {
-        "title": "3 Powerful Boilerplates",
-        "description": "Purchase once, get 3 powerful boilerplates.",
+        "title": "3 Core Experiences",
+        "description": "Explore the product landing, AI image generation, and prompt workflows.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Universal SaaS boilerplate with every feature you need.",
-            "href": "https://demo.nexty.dev"
+            "title": "Showcase 1: Nano Banana Video",
+            "description": "Current product landing and generation experience.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "AI Image Generation SaaS boilerplate.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Showcase 2: AI Image Generation",
+            "description": "Image generation workflow and model selection experience.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Directory & listing website boilerplate.",
-            "href": "https://dofollow.tools"
+            "title": "Showcase 3: Prompt Generator",
+            "description": "Prompt generation workflow for image and video creation.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [
@@ -342,35 +342,35 @@
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "description": "Common questions about our Next.js SaaS boilerplate and how it can help you build better applications faster",
+    "description": "Common questions about Nano Banana Video and its AI creation workflows.",
     "items": [
       {
-        "question": "Can I use this boilerplate as a non-technical person?",
-        "answer": "Absolutely! Nexty is specifically designed to work seamlessly with AI assistants, allowing even those with zero programming experience to develop products through AI-assisted development. Our code structure and documentation are AI-friendly, making it easier for AI to understand and modify the code. Technical teams will benefit from even greater development efficiency."
+        "question": "Can non-technical teams use this product?",
+        "answer": "Yes. The product is designed to work well with AI assistants, clear admin tools, and documented workflows, so non-technical operators can manage content, pricing, and generation flows while technical teams extend the platform."
       },
       {
-        "question": "What makes this the best Next.js SaaS boilerplate?",
-        "answer": "Nexty is the most comprehensive Next.js SaaS starter kit available. Unlike other templates that only provide basic components, we include complete business workflows: authentication, payments, AI integration, content management, and monetization features. Everything is production-ready and battle-tested in real applications."
+        "question": "What makes Nano Banana Video different?",
+        "answer": "It ships complete AI creation workflows instead of isolated demos. Image generation, video generation, prompt tooling, payments, auth, CMS, and admin operations already work together in one production-oriented app."
       },
       {
-        "question": "How quickly can I launch my SaaS with this boilerplate?",
-        "answer": "Your first project will take 3-5 days as you learn the boilerplate's features, but the learning curve pays off quickly. Our customers who've mastered the system now launch complete SaaS applications in just 1-2 days. The boilerplate handles all the complex infrastructure, so you can focus on what makes your product unique."
+        "question": "How quickly can I launch an AI workflow?",
+        "answer": "Teams can usually adapt the existing product in days instead of rebuilding auth, billing, model selection, storage, and admin tools from zero. The exact timeline depends on your custom generation logic and pricing setup."
       },
       {
         "question": "Is this suitable for AI-powered SaaS applications?",
-        "answer": "Absolutely! Our boilerplate includes comprehensive AI SDK integration with working examples for text generation, image creation, and video processing. It's compatible with OpenAI, Claude, Gemini, Grok, DeepSeek, and other popular AI models. Perfect for building AI tools or content generation platforms."
+        "answer": "Yes. The current stack already supports AI image and video workflows, prompt generation, model selection, and user billing, which makes it a strong base for AI creation products."
       },
       {
         "question": "What payment methods and billing models are supported?",
-        "answer": "The boilerplate includes complete Stripe integration supporting one-time payments, subscriptions, usage-based billing, and automated renewals. You can start monetizing immediately."
+        "answer": "The product currently includes Stripe-based one-time purchases, subscriptions, pricing card management, and admin tooling for monetization workflows."
       },
       {
         "question": "How does the content management system work?",
         "answer": "Our built-in CMS supports Markdown and rich text editing, multilingual content, SEO optimization, paywall protection, and AI translation. You can manage articles, pages, and premium content through an intuitive admin dashboard with role-based access control."
       },
       {
-        "question": "Is the boilerplate SEO-optimized?",
-        "answer": "Yes! The boilerplate includes comprehensive SEO features: automatic meta tags, structured data, XML sitemaps, OpenGraph support, and performance optimization. It's built with Next.js best practices for search engine visibility and faster loading times."
+        "question": "Is the product SEO-optimized?",
+        "answer": "Yes. The site includes metadata, structured data, sitemap support, Open Graph assets, and server-rendered pages designed for search visibility and shareability."
       },
       {
         "question": "What kind of support do you provide?",
@@ -378,14 +378,14 @@
       },
       {
         "question": "How do I manage pricing cards?",
-        "answer": "This is a key selling point of Nexty. You can manage pricing cards in the Dashboard, including adding, editing, and deleting pricing cards with AI multilingual translation support, eliminating complex multilingual file configuration."
+        "answer": "Pricing cards are managed in the Dashboard. Admins can add, edit, reorder, and localize plans without manually maintaining separate multilingual pricing files."
       }
     ]
   },
   "CTA": {
     "title": "Launch Your Product Fast, and Earn Money Fast",
-    "description": "Stop starting from scratch! Use Nexty templates to focus on your core idea, rapidly build, validate, and start earning.",
-    "button": "Get Template Now",
+    "description": "Use the existing AI creation stack to focus on your workflow, audience, and monetization instead of rebuilding the product foundation.",
+    "button": "Start Now",
     "trustText": "Trusted by developers worldwide",
     "features": {
       "deploy": "🚀 Quick Deploy",
@@ -399,8 +399,8 @@
       "label": "PRICING",
       "text": "One-Time Payment, Lifetime Updates"
     },
-    "title": "Ship your SaaS in days, not months",
-    "description": "Using our battle-tested SaaS starter template, so you can skip boilerplate coding and focus on the features your users actually need.",
+    "title": "Ship faster with an existing AI product stack",
+    "description": "Use the current image, video, prompt, billing, and admin foundation to focus on the workflows your users actually need.",
     "annual": "Annual",
     "monthly": "Monthly",
     "onetime": "One-Time",

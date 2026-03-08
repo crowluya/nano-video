@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "Publicaciones del Blog",
-    "description": "Información sobre el ecosistema de Next.js y actualizaciones de la plantilla NEXTY.DEV.",
+    "description": "Información sobre flujos de trabajo de generación con IA, actualizaciones del producto y cambios técnicos.",
     "emptyState": {
       "title": "Sin publicaciones",
       "description": "Estamos creando contenido emocionante, ¡mantente atento!"

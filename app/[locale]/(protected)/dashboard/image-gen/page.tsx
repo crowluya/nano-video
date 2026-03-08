@@ -12,7 +12,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Image, Sparkles, Download, ExternalLink, Loader2 } from "lucide-react";
+import {
+  Image as ImageIcon,
+  Sparkles,
+  Download,
+  ExternalLink,
+  Loader2,
+} from "lucide-react";
 import { toast } from "sonner";
 import { ModelSelector, ModelCard } from "@/components/kie";
 import { TaskProgress } from "@/components/kie";
@@ -88,7 +94,7 @@ export default function ImageGenPage() {
     <div className="container max-w-6xl py-6">
       <div className="mb-6">
         <h1 className="text-3xl font-bold flex items-center gap-2">
-          <Image className="h-8 w-8" />
+          <ImageIcon className="h-8 w-8" />
           Image Generation
         </h1>
         <p className="text-muted-foreground">
@@ -186,7 +192,7 @@ export default function ImageGenPage() {
           <CardContent>
             {generatedImages.length === 0 ? (
               <div className="text-center py-12 text-muted-foreground">
-                <Image className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <ImageIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
                 <p>Your generated images will appear here</p>
               </div>
             ) : (
@@ -198,7 +204,7 @@ export default function ImageGenPage() {
                   >
                     <img
                       src={img.url}
-                      alt={`Generated ${index + 1}`}
+                      alt={`AI generated image ${index + 1} using ${selectedModel?.name ?? "an image model"} for prompt: ${prompt.slice(0, 80) || "custom prompt"}`}
                       className="w-full aspect-square object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
@@ -227,4 +233,3 @@ export default function ImageGenPage() {
     </div>
   );
 }
-

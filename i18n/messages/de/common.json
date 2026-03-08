@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "Blog-Beiträge",
-    "description": "Einblicke in das Next.js-Ökosystem und NEXTY.DEV Template-Updates.",
+    "description": "Einblicke in KI-Generierungs-Workflows, Produktupdates und technische Änderungen.",
     "emptyState": {
       "title": "Keine Blog-Beiträge",
       "description": "Wir erstellen spannende Inhalte, bleiben Sie dran!"

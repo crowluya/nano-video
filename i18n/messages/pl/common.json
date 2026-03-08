@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "Posty na Blogu",
-    "description": "Spostrzeżenia na temat ekosystemu Next.js i aktualizacje szablonu NEXTY.DEV.",
+    "description": "Spostrzeżenia dotyczące workflowów generowania AI, aktualizacji produktu i zmian technicznych.",
     "emptyState": {
       "title": "Brak postów na blogu",
       "description": "Tworzymy ekscytujące treści, pozostańcie z nami!"

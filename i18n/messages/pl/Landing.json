@@ -3,14 +3,14 @@
     "badge": {
       "label": "NOWOŚĆ",
       "text": "Next.js SaaS Full Stack Szablon",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Nowoczesny Next.js Full Stack SaaS Boilerplate",
     "description": "Nasz szablon Next.js obejmuje uwierzytelnianie, płatności Stripe, integrację AI, CMS i wszystko, czego potrzebujesz, aby natychmiast zacząć zarabiać.",
     "getStarted": "Rozpocznij",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Zobacz Dokumentację",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Kup raz, otrzymaj 3 potężne szablony.",
         "details": [
           {
-            "title": "Szablon 1: Nexty",
-            "description": "Uniwersalny szablon SaaS z każdą potrzebną funkcją.",
-            "href": "https://demo.nexty.dev"
+            "title": "Prezentacja 1: Nano Banana Video",
+            "description": "Aktualny landing produktu i generowanie wideo AI.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Szablon 2: nexty-flux-kontext",
-            "description": "Szablon SaaS do generowania obrazów AI.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Prezentacja 2: Generowanie obrazow AI",
+            "description": "Przeplyw generowania obrazow i wybor modelu.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Szablon 3: nexty-directory",
-            "description": "Szablon witryny katalogowej i listingowej.",
-            "href": "https://dofollow.tools"
+            "title": "Prezentacja 3: Prompt Generator",
+            "description": "Przeplyw promptow do tworzenia obrazow i wideo.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

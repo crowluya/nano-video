@@ -115,7 +115,12 @@ export function TableOfContents({
   }, [tocItems]);
 
   const scrollToHeading = (id: string) => {
-    window.location.hash = id;
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#${id}`);
+    }
+
     if (mobile) {
       setIsOpen(false);
     }

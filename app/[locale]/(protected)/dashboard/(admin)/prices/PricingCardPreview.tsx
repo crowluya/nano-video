@@ -17,12 +17,11 @@ interface PricingCardPreviewProps {
 
 export function PricingCardPreview({ watchedValues }: PricingCardPreviewProps) {
   const [displayLocale, setDisplayLocale] = useState<Locale>(DEFAULT_LOCALE);
-  const [parseError, setParseError] = useState<string | null>(null);
 
   const previewPlanData = useMemo(() => {
     const currentValues = watchedValues;
     let langJsonData = {};
-    let hasParseError = false;
+    let parseError: string | null = null;
 
     if (currentValues.langJsonb) {
       const parsedData = safeJsonParse(currentValues.langJsonb);
@@ -30,16 +29,10 @@ export function PricingCardPreview({ watchedValues }: PricingCardPreviewProps) {
         Object.keys(parsedData).length === 0 &&
         currentValues.langJsonb.trim()
       ) {
-        hasParseError = true;
-        setParseError(
-          "Unable to parse language JSON. Please check the format."
-        );
+        parseError = "Unable to parse language JSON. Please check the format.";
       } else {
         langJsonData = parsedData;
-        setParseError(null);
       }
-    } else {
-      setParseError(null);
     }
 
     const planForPreview = {
@@ -55,7 +48,7 @@ export function PricingCardPreview({ watchedValues }: PricingCardPreviewProps) {
     return {
       plan: planForPreview,
       localizedPlan,
-      hasParseError,
+      parseError,
     };
   }, [watchedValues, displayLocale]);
 
@@ -89,10 +82,10 @@ export function PricingCardPreview({ watchedValues }: PricingCardPreviewProps) {
           </FormDescription>
         </CardHeader>
         <CardContent className="m-2">
-          {parseError && (
+          {previewPlanData.parseError && (
             <Alert variant="destructive" className="mb-4">
               <AlertTriangle className="h-4 w-4" />
-              <AlertDescription>{parseError}</AlertDescription>
+              <AlertDescription>{previewPlanData.parseError}</AlertDescription>
             </Alert>
           )}
 

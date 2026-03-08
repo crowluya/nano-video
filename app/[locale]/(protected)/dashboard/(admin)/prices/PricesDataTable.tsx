@@ -57,6 +57,8 @@ export function PricesDataTable<TData extends PricingPlan, TValue>({
     right: ["actions"],
   });
 
+  // TanStack Table is intentionally used here; React Compiler memoization is not applicable.
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data,
     columns: columns as ColumnDef<TData, TValue>[],

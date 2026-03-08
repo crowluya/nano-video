@@ -253,8 +253,8 @@ function ResourceGrid({
     setFiles([]);
     setContinuationToken(undefined);
     setHasMore(true);
-    loadFiles(true);
-  }, [categoryPrefix, filterPrefix, fileTypeFilter]);
+    void loadFiles(true);
+  }, [categoryPrefix, filterPrefix, fileTypeFilter, loadFiles]);
 
   // Infinite scroll observer
   useEffect(() => {

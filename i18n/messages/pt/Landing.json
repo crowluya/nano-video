@@ -3,14 +3,14 @@
     "badge": {
       "label": "NEW",
       "text": "Next.js SaaS Full Stack Template",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Um Boilerplate Moderno Next.js Full Stack SaaS",
     "description": "Nosso boilerplate Next.js inclui autenticação, pagamentos Stripe, integração com IA, CMS e tudo que você precisa para começar a ganhar imediatamente.",
     "getStarted": "Começar Agora",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Ver Documentação",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Compre uma vez, obtenha 3 boilerplates poderosos.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Boilerplate SaaS universal com todos os recursos que você precisa.",
-            "href": "https://demo.nexty.dev"
+            "title": "Showcase 1: Nano Banana Video",
+            "description": "Landing atual do produto e experiencia de geracao de video com IA.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "Boilerplate SaaS de Geração de Imagens com IA.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Showcase 2: Geracao de Imagens com IA",
+            "description": "Fluxo de geracao de imagens e selecao de modelos.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Boilerplate de site de diretório e listagem.",
-            "href": "https://dofollow.tools"
+            "title": "Showcase 3: Prompt Generator",
+            "description": "Fluxo de prompts para criacao de imagens e videos.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

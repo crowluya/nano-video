@@ -107,14 +107,28 @@ export function PostList({
 
   useEffect(() => {
     if (inView && hasMore && !isLoading) {
-      loadMorePosts();
+      queueMicrotask(() => {
+        void loadMorePosts();
+      });
     }
   }, [inView, hasMore, isLoading, loadMorePosts]);
 
   useEffect(() => {
-    setPosts(initialPosts);
-    setPageIndex(1);
-    setHasMore(initialPosts.length < initialTotal);
+    let cancelled = false;
+
+    queueMicrotask(() => {
+      if (cancelled) {
+        return;
+      }
+
+      setPosts(initialPosts);
+      setPageIndex(1);
+      setHasMore(initialPosts.length < initialTotal);
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, [initialPosts, initialTotal]);
 
   const handleTagSelect = async (tagId: string | null) => {

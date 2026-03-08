@@ -1,12 +1,34 @@
 import NanoBananaVideoPage from "@/components/nanabananvideo";
+import { Locale } from "@/i18n/routing";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Seo");
+type Params = Promise<{ locale: string }>;
+
+type MetadataProps = {
+  params: Params;
+};
+
+function getOgImageByLocale(locale: string) {
+  switch (locale) {
+    case "zh":
+      return "/og_zh.png";
+    case "ja":
+      return "/og_ja.png";
+    default:
+      return "/og.png";
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale: locale as Locale, namespace: "Seo" });
 
   const title = t("title");
   const description = t("description");
+  const ogImage = getOgImageByLocale(locale);
 
   return {
     title,
@@ -17,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/og-image.jpg",
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: title,
@@ -28,7 +50,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-image.jpg"],
+      images: [ogImage],
     },
     alternates: {
       canonical: "/nanabananvideo",
@@ -37,6 +59,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
+  const ogImage = "/og.png";
+
   // Structured Data for SEO
   const faqSchema = {
     "@context": "https://schema.org",
@@ -109,7 +133,7 @@ export default function Page() {
     "@type": "VideoObject",
     "name": "How to Convert Nano Banana to Video",
     "description": "Learn how to convert Nano Banana images to professional videos using Sora 2 and Veo 3.1 AI models. Free, no watermark, commercial use.",
-    "thumbnailUrl": "/og-image.jpg",
+    "thumbnailUrl": ogImage,
     "uploadDate": "2024-01-01T00:00:00Z",
     "duration": "PT5M",
     "contentUrl": "/nanabananvideo#video-Generator"
@@ -133,4 +157,3 @@ export default function Page() {
     </>
   );
 }
-

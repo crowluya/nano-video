@@ -19,9 +19,9 @@ export function VideoParameterPanel({
   params,
   onParamsChange,
 }: VideoParameterPanelProps) {
-  if (!model) return null;
-
   const t = useTranslations("NanoBananaVideo.VideoGeneration.parameterPanel");
+
+  if (!model) return null;
 
   const isSora2 = model.id.startsWith("sora-2");
   const isSora2Pro = model.id.startsWith("sora-2-pro");
@@ -250,4 +250,3 @@ export function VideoParameterPanel({
     </div>
   );
 }
-

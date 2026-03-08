@@ -2,42 +2,42 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "Next.js SaaS 全栈模板",
-      "href": "https://nexty.dev/#pricing"
+      "text": "AI 图片与视频创作平台",
+      "href": "https://nanobananavideo.net/#pricing"
     },
-    "title": "多场景全栈 SaaS 开发模板",
-    "description": "Nexty 是一个功能齐全的 Next.js SaaS 全栈模板，让你能够快速构建各种商业网站，无论是内容站、工具站还是集成 AI 能力的付费网站。",
+    "title": "更快交付 AI 创作工作流",
+    "description": "Nano Banana Video 将图像生成、视频生成、提示词工作流、计费与后台工具整合在一个生产级应用中。",
     "getStarted": "立即开始",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "查看文档",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
       "label": "核心功能",
       "text": "生产级 SaaS 开发套件"
     },
-    "title": "生产就绪的 Next.js SaaS 模板",
-    "description": "这个 Next.js 模板包含现代 SaaS 应用程序所需的每一个核心功能，让您专注于独特的业务逻辑和客户价值。",
+    "title": "为 AI 产品团队而构建",
+    "description": "在一个应用中运行图像、视频、提示词、计费与内容管理工作流，而不必从零重复搭建整套基础设施。",
     "items": [
       {
-        "title": "3 套强大的模板",
-        "description": "一次购买，获得 3 套强大的模板。",
+        "title": "3 个核心体验",
+        "description": "覆盖产品官网、AI 图像生成与提示词工作流。",
         "details": [
           {
-            "title": "模板 1：Nexty",
-            "description": "包含您所需一切功能的通用 SaaS 模板。",
-            "href": "https://demo.nexty.dev"
+            "title": "案例 1：Nano Banana Video",
+            "description": "当前产品官网与 AI 视频生成体验。",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "模板 2：nexty-flux-kontext",
-            "description": "AI 图像生成 SaaS 模板。",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "案例 2：AI 图像生成",
+            "description": "图像生成工作流与模型选择体验。",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "模板 3：nexty-directory",
-            "description": "目录和列表网站模板。",
-            "href": "https://dofollow.tools"
+            "title": "案例 3：Prompt Generator",
+            "description": "面向图片与视频创作的提示词生成工作流。",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [
@@ -342,35 +342,35 @@
   },
   "FAQ": {
     "title": "常见问题",
-    "description": "关于我们的 Next.js SaaS 模板以及它如何帮助您更快地构建更好应用程序的常见问题",
+    "description": "关于 Nano Banana Video 及其 AI 创作工作流的常见问题。",
     "items": [
       {
-        "question": "非技术人员可以使用这个模板吗？",
-        "answer": "当然可以！Nexty 专门设计为与 AI 助手无缝协作，即使是零编程经验的人也能通过 AI 辅助开发来开发产品。我们的代码结构和文档对 AI 友好，使 AI 更容易理解和修改代码。技术团队将从更高的开发效率中受益更多。"
+        "question": "非技术团队也能使用这个产品吗？",
+        "answer": "可以。产品本身已经具备清晰的后台能力、文档和 AI 协作友好的工作流，非技术运营可以管理内容、定价和生成流程，技术团队再按需要扩展。"
       },
       {
-        "question": "为什么这是最好的 Next.js SaaS 模板？",
-        "answer": "Nexty 是最全面的 Next.js SaaS 启动套件。与其他只提供基本组件的模板不同，我们包含完整的业务工作流程：身份验证、支付、AI 集成、内容管理和变现功能。一切都是生产就绪的，并在实际应用中经过实战测试。"
+        "question": "Nano Banana Video 的差异点是什么？",
+        "answer": "它提供的是完整 AI 创作工作流，而不是零散的功能演示。图像生成、视频生成、提示词工具、支付、认证、CMS 和后台运营能力已经在一个面向生产的应用中整合完成。"
       },
       {
-        "question": "使用这个模板能多快启动我的 SaaS？",
-        "answer": "您的第一个项目在学习模板功能时需要 3-5 天，但学习曲线很快就会有回报。掌握系统的客户现在只需 1-2 天就能启动完整的 SaaS 应用程序。模板处理所有复杂的基础设施，因此您可以专注于让产品独特的部分。"
+        "question": "我能多快上线 AI 工作流？",
+        "answer": "通常几天内就可以在现有基础上完成适配，而不必从头重建认证、计费、模型选择、存储和后台工具。具体时间主要取决于你的生成逻辑和定价配置。"
       },
       {
         "question": "这适合 AI 驱动的 SaaS 应用程序吗？",
-        "answer": "绝对适合！我们的模板包含全面的 AI SDK 集成，提供文本生成、图像创建和视频处理的工作示例。它兼容 OpenAI、Claude、Gemini、Grok、DeepSeek 和其他流行的 AI 模型。非常适合构建 AI 工具或内容生成平台。"
+        "answer": "适合。当前栈已经覆盖 AI 图像与视频工作流、提示词生成、模型选择和用户计费，非常适合作为 AI 创作类产品的基础。"
       },
       {
         "question": "支持哪些支付方式和计费模式？",
-        "answer": "模板包含完整的 Stripe 集成，支持一次性付款、订阅、基于使用量的计费和自动续订。您可以立即开始变现。"
+        "answer": "当前产品已集成 Stripe，支持一次性购买、订阅、定价卡管理，以及后台侧的变现配置工作流。"
       },
       {
         "question": "内容管理系统如何工作？",
         "answer": "我们的内置 CMS 支持 Markdown 和富文本编辑、多语言内容、SEO 优化、付费墙保护和 AI 翻译。您可以通过具有基于角色的访问控制的直观管理后台管理文章、页面和高端内容。"
       },
       {
-        "question": "模板是否经过 SEO 优化？",
-        "answer": "是的！模板包含全面的 SEO 功能：自动元标签、结构化数据、XML 站点地图、OpenGraph 支持和性能优化。它采用 Next.js 最佳实践构建，提高搜索引擎可见性和更快的加载时间。"
+        "question": "产品是否做了 SEO 优化？",
+        "answer": "是的。站点包含 metadata、结构化数据、站点地图支持、Open Graph 资源以及面向搜索可见性和分享效果的服务端渲染页面。"
       },
       {
         "question": "您提供什么样的支持？",
@@ -378,14 +378,14 @@
       },
       {
         "question": "如何管理定价卡片？",
-        "answer": "这是 Nexty 的一个关键卖点。您可以在后台管理定价卡片，包括添加、编辑和删除定价卡片，支持 AI 多语言翻译，消除复杂的多语言文件配置。"
+        "answer": "定价卡片在后台管理。管理员可以新增、编辑、排序并本地化套餐，而不需要手工维护多份多语言定价文件。"
       }
     ]
   },
   "CTA": {
     "title": "快速推出产品，快速赚钱",
-    "description": "不要从零开始！使用 Nexty 模板专注于您的核心想法，快速构建、验证并开始赚钱。",
-    "button": "立即获取模板",
+    "description": "直接使用现有 AI 创作产品栈，把精力放在工作流、用户和变现，而不是重复搭建底层能力。",
+    "button": "立即开始",
     "trustText": "受到全球开发者信赖",
     "features": {
       "deploy": "🚀 快速部署",
@@ -399,8 +399,8 @@
       "label": "定价",
       "text": "一次付费，终生更新"
     },
-    "title": "几天而非几个月交付您的 SaaS",
-    "description": "使用我们经过实战验证的 SaaS 启动模板，跳过样板代码编写，专注于用户真正需要的功能。",
+    "title": "基于现有 AI 产品栈更快上线",
+    "description": "直接复用当前的图像、视频、提示词、计费与后台基础，专注实现用户真正需要的工作流。",
     "annual": "年付",
     "monthly": "月付",
     "onetime": "一次性",

@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "Articoli del Blog",
-    "description": "Approfondimenti sull'ecosistema Next.js e aggiornamenti del template NEXTY.DEV.",
+    "description": "Approfondimenti sui workflow di generazione AI, sugli aggiornamenti del prodotto e sui cambiamenti tecnici.",
     "emptyState": {
       "title": "Nessun articolo del blog",
       "description": "Stiamo creando contenuti entusiasmanti, rimani sintonizzato!"

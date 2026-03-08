@@ -261,8 +261,7 @@ STRIPE_CUSTOMER_PORTAL_URL=dashboard/subscription  # Customer Portal 路径
 
 ## 🔗 相关文档
 
-- [Stripe 集成文档](https://nexty.dev/zh/docs/integration/stripe)
-- [订阅变更处理文档](https://nexty.dev/zh/docs/guide/payment/subscription-change)
+- 官方 Stripe 文档: https://docs.stripe.com
+- 本项目本地 Stripe CLI 指南: `STRIPE_CLI_SETUP.md`
 - 项目支付规则：`.cursor/rules/09-payments.mdc`
 - 环境变量参考：`.cursor/rules/12-env-variables.mdc`
-

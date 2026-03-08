@@ -290,7 +290,7 @@
   },
   "Blogs": {
     "title": "博客列表",
-    "description": "分享 Next.js 生态圈和 NEXTY.DEV 模板动态。",
+    "description": "分享 AI 生成工作流、产品更新和工程实践动态。",
     "emptyState": {
       "title": "暂无博客文章",
       "description": "我们正在创作精彩内容，敬请期待！"

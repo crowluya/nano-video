@@ -6,22 +6,50 @@ import { cn } from "@/lib/utils";
 import { useLocaleStore } from "@/stores/localeStore";
 import { ArrowRight, Globe, X } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+
+function getSuggestedLocale(locale: string) {
+  if (typeof navigator === "undefined") {
+    return null;
+  }
+
+  const detectedLang = navigator.language;
+  let supportedLang = routing.locales.find((item) => item === detectedLang);
+
+  if (!supportedLang) {
+    const mainLang = detectedLang.split("-")[0];
+    supportedLang = routing.locales.find((item) => item.startsWith(mainLang));
+  }
+
+  if (!supportedLang || supportedLang === locale) {
+    return null;
+  }
+
+  return supportedLang;
+}
 
 export function LanguageDetectionAlert() {
   const [countdown, setCountdown] = useState(10); // countdown 10s and dismiss
   const [isVisible, setIsVisible] = useState(false);
   const locale = useLocale();
-  const [detectedLocale, setDetectedLocale] = useState<string | null>(null);
   const {
     showLanguageAlert,
     setShowLanguageAlert,
     dismissLanguageAlert,
     getLangAlertDismissed,
   } = useLocaleStore();
+  const isDismissed = getLangAlertDismissed();
+  const detectedLocale = useMemo(() => {
+    if (isDismissed) {
+      return null;
+    }
+
+    return getSuggestedLocale(locale);
+  }, [isDismissed, locale]);
 
   const handleDismiss = useCallback(() => {
     setIsVisible(false);
+    setCountdown(10);
     setTimeout(() => {
       dismissLanguageAlert();
     }, 300);
@@ -32,24 +60,16 @@ export function LanguageDetectionAlert() {
   }, [dismissLanguageAlert]);
 
   useEffect(() => {
-    const detectedLang = navigator.language; // Get full language code, e.g., zh_HK
-    const storedDismiss = getLangAlertDismissed();
-
-    if (!storedDismiss) {
-      let supportedLang = routing.locales.find((l) => l === detectedLang);
-
-      if (!supportedLang) {
-        const mainLang = detectedLang.split("-")[0];
-        supportedLang = routing.locales.find((l) => l.startsWith(mainLang));
-      }
-
-      if (supportedLang && supportedLang !== locale) {
-        setDetectedLocale(supportedLang);
+    if (detectedLocale && !showLanguageAlert) {
+      const timer = window.setTimeout(() => {
         setShowLanguageAlert(true);
-        setTimeout(() => setIsVisible(true), 100);
-      }
+        setCountdown(10);
+        setIsVisible(true);
+      }, 100);
+
+      return () => window.clearTimeout(timer);
     }
-  }, [locale, getLangAlertDismissed, setShowLanguageAlert]);
+  }, [detectedLocale, setShowLanguageAlert, showLanguageAlert]);
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
@@ -67,7 +87,11 @@ export function LanguageDetectionAlert() {
 
   useEffect(() => {
     if (countdown === 0 && showLanguageAlert) {
-      handleDismiss();
+      const timer = window.setTimeout(() => {
+        handleDismiss();
+      }, 0);
+
+      return () => window.clearTimeout(timer);
     }
   }, [countdown, showLanguageAlert, handleDismiss]);
 

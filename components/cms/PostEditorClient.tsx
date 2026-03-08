@@ -117,7 +117,7 @@ export function PostEditorClient({
 
       fetchPost();
     }
-  }, [mode, searchParams, postType, config]);
+  }, [config, mode, postId, postType, searchParams]);
 
   const handleSubmit = async (data: any) => {
     if (mode === "edit" && initialData?.id) {

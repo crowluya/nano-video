@@ -1,9 +1,12 @@
 {
-  "name": "nexty",
+  "name": "nano-video",
   "version": "3.2.7",
   "author": {
-    "name": "WeNext",
-    "repository": "https://github.com/wenextdev/nexty.dev"
+    "name": "Nano Banana Video"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:crowluya/nano-video.git"
   },
   "scripts": {
     "dev": "next dev",

@@ -3,14 +3,14 @@
     "badge": {
       "label": "NEU",
       "text": "Next.js SaaS Full-Stack-Vorlage",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Ein modernes Next.js Full-Stack SaaS-Boilerplate",
     "description": "Unser Next.js-Boilerplate umfasst Authentifizierung, Stripe-Zahlungen, AI-Integration, CMS und alles, was Sie benötigen, um sofort mit dem Verdienen zu beginnen.",
     "getStarted": "Jetzt starten",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Dokumentation anzeigen",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Einmal kaufen, 3 leistungsstarke Boilerplates erhalten.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Universelles SaaS-Boilerplate mit jeder Funktion, die Sie benötigen.",
-            "href": "https://demo.nexty.dev"
+            "title": "Showcase 1: Nano Banana Video",
+            "description": "Aktuelle Produkt-Landingpage und KI-Videogenerierung.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "AI-Bildgenerierungs-SaaS-Boilerplate.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Showcase 2: KI-Bildgenerierung",
+            "description": "Workflow zur Bildgenerierung und Modellauswahl.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Verzeichnis- und Listen-Website-Boilerplate.",
-            "href": "https://dofollow.tools"
+            "title": "Showcase 3: Prompt Generator",
+            "description": "Prompt-Workflow fuer Bild- und Videokreation.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

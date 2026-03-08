@@ -1,214 +1,152 @@
-# Gallery 功能开发 TODO
+# Gallery 状态同步
 
-> 参考: https://nanobananavideo.com/#quality
-
----
-
-## Phase 1: 素材准备
-
-### 1.1 Hero 背景视频 (3个)
-
-| 编号 | Prompt 主题 | 风格 | 时长 | 状态 |
-|------|-------------|------|------|------|
-| hero-1 | 电影感城市日落，镜头缓慢平移 | Cinematic | 5-10s | ⬜ |
-| hero-2 | 科技感 AI 神经网络动画 | Tech/Abstract | 5-10s | ⬜ |
-| hero-3 | 创意工作室，创作者使用电脑 | Lifestyle | 5-10s | ⬜ |
-
-### 1.2 Realistic 风格视频 (3个)
-
-| 编号 | Prompt 主题 | 说明 | 状态 |
-|------|-------------|------|------|
-| realistic-1 | 时尚模特街拍，金色时刻光线 | 商业广告感 | ⬜ |
-| realistic-2 | 产品特写，咖啡杯蒸汽升起 | 产品展示 | ⬜ |
-| realistic-3 | 人物特写，电影质感浅景深 | 人像视频 | ⬜ |
-
-### 1.3 UGC 风格视频 (3个)
-
-| 编号 | Prompt 主题 | 说明 | 状态 |
-|------|-------------|------|------|
-| ugc-1 | TikTok 风格产品开箱 | 竖屏 9:16 | ⬜ |
-| ugc-2 | 活力年轻人跳舞/运动 | 社交媒体感 | ⬜ |
-| ugc-3 | 美食制作过程 | 生活方式 | ⬜ |
-
-### 1.4 3D Animation 风格视频 (3个)
-
-| 编号 | Prompt 主题 | 说明 | 状态 |
-|------|-------------|------|------|
-| 3d-1 | 卡通角色走路动画 | Pixar 风格 | ⬜ |
-| 3d-2 | Logo 3D 旋转动画 | 品牌展示 | ⬜ |
-| 3d-3 | 产品 3D 展示旋转 | 电商产品 | ⬜ |
-
-### 1.5 案例 Base Image (3-5张)
-
-| 编号 | 主题 | 用途 | 状态 |
-|------|------|------|------|
-| case-base-1 | 专业模特肖像 | 时尚广告案例 | ⬜ |
-| case-base-2 | 产品图 (手提包/手机) | 产品植入案例 | ⬜ |
-| case-base-3 | 咖啡师/创业者 | 品牌故事案例 | ⬜ |
-
-### 1.6 案例输出视频 (3-5个)
-
-| 编号 | Base Image | Prompt | 状态 |
-|------|------------|--------|------|
-| case-video-1 | case-base-1 | 模特在城市街道行走，携带设计师手提包 | ⬜ |
-| case-video-2 | case-base-2 | 产品在桌面旋转展示，柔和灯光 | ⬜ |
-| case-video-3 | case-base-3 | 咖啡师制作咖啡，温馨咖啡店环境 | ⬜ |
+> 同步时间：2026-03-08
+> 说明：本文件已从“开发 TODO”改为“真实状态 + 剩余事项”。原文档中“Gallery 未开始”的结论已过期。
 
 ---
 
-## Phase 2: 组件开发
+## 一、当前真实状态
 
-### 2.1 Gallery 主组件
+### 已完成
 
-| 任务 | 文件 | 状态 |
-|------|------|------|
-| 创建 Gallery 容器组件 | `components/gallery/Gallery.tsx` | ⬜ |
-| 添加标题和描述 | - | ⬜ |
-| 集成 StyleTabs | - | ⬜ |
-| 集成 VideoGrid | - | ⬜ |
+- [x] Gallery 主组件已存在
+  - 文件：`components/nanabananvideo/Gallery.tsx`
 
-### 2.2 VideoCard 组件
+- [x] VideoCard 组件已存在
+  - 文件：`components/nanabananvideo/gallery/VideoCard.tsx`
 
-| 任务 | 文件 | 状态 |
-|------|------|------|
-| 创建视频卡片组件 | `components/gallery/VideoCard.tsx` | ⬜ |
-| 视频播放/暂停控制 | - | ⬜ |
-| Hover 效果 | - | ⬜ |
-| 视频时长显示 | - | ⬜ |
-| 缩略图加载 | - | ⬜ |
+- [x] 三个分类 Tabs 已实现
+  - `realistic`
+  - `ugc`
+  - `3d`
 
-### 2.3 StyleTabs 组件
+- [x] Gallery 已接入首页主产品页
+  - 入口组件：`components/nanabananvideo/index.tsx`
+  - 当前顺序：`UseCases` 之后，`Pricing` 之前
 
-| 任务 | 文件 | 状态 |
-|------|------|------|
-| 创建风格切换 Tabs | `components/gallery/StyleTabs.tsx` | ⬜ |
-| Realistic 标签 | - | ⬜ |
-| UGC 标签 | - | ⬜ |
-| 3D Animation 标签 | - | ⬜ |
-| 切换动画效果 | - | ⬜ |
+- [x] Gallery 锚点已存在
+  - `Gallery.tsx` 中 section id 为 `gallery`
+  - `Hero.tsx` 中已提供 `/#gallery` 按钮入口
 
-### 2.4 CaseStudy 组件
+- [x] EN / ZH / JA Gallery 文案已存在
+  - 位置不是原计划的独立 `Gallery.json`
+  - 当前实际集成在：
+    - `i18n/messages/en/NanoBananaVideo.json`
+    - `i18n/messages/zh/NanoBananaVideo.json`
+    - `i18n/messages/ja/NanoBananaVideo.json`
 
-| 任务 | 文件 | 状态 |
-|------|------|------|
-| 创建案例展示组件 | `components/gallery/CaseStudy.tsx` | ⬜ |
-| Base Image 展示 | - | ⬜ |
-| Prompt 展示 | - | ⬜ |
-| 生成视频展示 | - | ⬜ |
-| 流程箭头/连接线 | - | ⬜ |
+- [x] 视频资源已接入 CDN
+  - 不是原计划的 `public/videos/...`
+  - 当前实际使用 `https://cdn.nanobananavideo.net/website/gallery/...`
 
-### 2.5 i18n 翻译
+- [x] Hero 区域也已复用 Gallery 视频素材
+  - 轮播视频来自相同 CDN 路径
 
-| 任务 | 文件 | 状态 |
-|------|------|------|
-| 英文翻译 | `i18n/messages/en/Gallery.json` | ⬜ |
-| 中文翻译 | `i18n/messages/zh/Gallery.json` | ⬜ |
-| 日文翻译 | `i18n/messages/ja/Gallery.json` | ⬜ |
+### 部分完成
 
----
+- [~] 视频卡片已有播放/暂停交互
+  - hover 自动播放
+  - 移出后暂停并重置
+  - 有固定 `10s` 时长 badge
+  - 但还没有真实时长读取逻辑
 
-## Phase 3: 集成
+- [~] 占位状态已存在
+  - 视频加载前有 Loading 占位
+  - 但没有 poster 缩略图体系
 
-### 3.1 首页集成
+- [~] 响应式布局已存在
+  - 1 列 / 2 列 / 3 列网格已实现
+  - 但没有专门做移动端性能策略
 
-| 任务 | 说明 | 状态 |
-|------|------|------|
-| 在首页添加 Gallery 区块 | 放在 Features 和 Video Demo 之间 | ⬜ |
-| 添加导航锚点 `#gallery` | Header 导航添加链接 | ⬜ |
-| 更新 i18n 导航翻译 | - | ⬜ |
+### 未完成
 
-### 3.2 性能优化
-
-| 任务 | 说明 | 状态 |
-|------|------|------|
-| 视频懒加载 | Intersection Observer | ⬜ |
-| 视频预加载策略 | 仅预加载可见视频 | ⬜ |
-| 缩略图占位 | 加载前显示缩略图 | ⬜ |
-| 移动端适配 | 响应式布局 | ⬜ |
-
-### 3.3 视频存储
-
-| 任务 | 说明 | 状态 |
-|------|------|------|
-| 上传视频到 R2 | Cloudflare R2 存储 | ⬜ |
-| 配置 CDN | 视频加速 | ⬜ |
-| 视频压缩 | 优化文件大小 | ⬜ |
+- [ ] Header 导航中没有单独的 Gallery 链接
+- [ ] 没有独立的 CaseStudy 组件
+- [ ] 没有缩略图资源或 poster 图体系
+- [ ] 没有 Intersection Observer 懒加载策略
+- [ ] 没有“仅预加载可见视频”的策略
+- [ ] 没有明确的视频压缩/转码文档
 
 ---
 
-## 文件结构
+## 二、和原计划的主要偏差
 
-```
-public/
-├── videos/
-│   ├── hero/
-│   │   ├── hero-1.mp4
-│   │   ├── hero-2.mp4
-│   │   └── hero-3.mp4
-│   └── gallery/
-│       ├── realistic-1.mp4
-│       ├── realistic-2.mp4
-│       ├── realistic-3.mp4
-│       ├── ugc-1.mp4
-│       ├── ugc-2.mp4
-│       ├── ugc-3.mp4
-│       ├── 3d-1.mp4
-│       ├── 3d-2.mp4
-│       └── 3d-3.mp4
-└── images/
-    └── gallery/
-        ├── case-base-1.webp
-        ├── case-base-2.webp
-        ├── case-base-3.webp
-        └── thumbnails/
-            ├── hero-1.webp
-            ├── realistic-1.webp
-            └── ...
+### 文件结构已经变化
 
-components/
-└── gallery/
-    ├── index.ts
-    ├── Gallery.tsx
-    ├── VideoCard.tsx
-    ├── StyleTabs.tsx
-    └── CaseStudy.tsx
+原计划：
 
-i18n/messages/
-├── en/Gallery.json
-├── zh/Gallery.json
-└── ja/Gallery.json
-```
+- `components/gallery/Gallery.tsx`
+- `components/gallery/VideoCard.tsx`
+- `i18n/messages/en/Gallery.json`
 
----
+当前实际：
 
-## 生成脚本
+- `components/nanabananvideo/Gallery.tsx`
+- `components/nanabananvideo/gallery/VideoCard.tsx`
+- 文案合并在 `NanoBananaVideo.json`
 
-```bash
-# 生成 Gallery 视频素材
-pnpm tsx scripts/generate-gallery-videos.ts
+### 资源策略已经变化
 
-# 生成 Gallery 图片素材
-pnpm tsx scripts/generate-gallery-images.ts
+原计划：
 
-# 生成视频缩略图
-pnpm tsx scripts/generate-video-thumbnails.ts
-```
+- 本地静态资源放 `public/videos/` 和 `public/images/gallery/`
+
+当前实际：
+
+- Gallery 视频直接走 CDN
+- 仓库里没有对应的本地 `public/videos/gallery/*`
+- 也没有原计划里的 `public/images/gallery/thumbnails/*`
+
+### 集成位置和原文不同
+
+原计划写的是“放在 Features 和 Video Demo 之间”。
+
+当前实际顺序是：
+
+1. Hero
+2. KeyFeatures
+3. Features
+4. VideoGenerationDemo
+5. ImageGenerationDemo
+6. UseCases
+7. Gallery
+8. Pricing
+9. FAQ
+10. CTA
 
 ---
 
-## 参考资源
+## 三、当前仍值得做的任务
 
-- 参考网站: https://nanobananavideo.com/#quality
-- kie.ai 视频生成: Veo 3.1 / Sora 2
-- kie.ai 图片生成: Nano Banana Pro
+### P1
+
+- [ ] 在 Header 导航增加 Gallery 链接
+- [ ] 给视频卡片增加 poster 或缩略图
+- [ ] 给视频卡片接入真实时长，而不是写死 `10s`
+- [ ] 为 Gallery 视频增加懒加载策略
+
+### P2
+
+- [ ] 增加 Case Study 模块
+- [ ] 整理 Gallery 资源来源、上传、命名和 CDN 路径文档
+- [ ] 如果需要 SEO/社媒预览，可补充 Gallery 专用静态图
 
 ---
 
-## 进度追踪
+## 四、代码验证记录
 
-| Phase | 进度 | 状态 |
-|-------|------|------|
-| Phase 1: 素材准备 | 0/18 | ⬜ 未开始 |
-| Phase 2:15 | ⬜ 未开始 |
-| Phase 3: 页面集成 | 0/9 | ⬜ 未开始 |
-| **总计** | **0/42** | **⬜ 未开始** |
+### 已核对文件
+
+- `components/nanabananvideo/Gallery.tsx`
+- `components/nanabananvideo/gallery/VideoCard.tsx`
+- `components/nanabananvideo/index.tsx`
+- `components/nanabananvideo/Hero.tsx`
+- `i18n/messages/en/NanoBananaVideo.json`
+- `i18n/messages/zh/NanoBananaVideo.json`
+- `i18n/messages/ja/NanoBananaVideo.json`
+
+### 验证结论
+
+- Gallery 不是未开始，而是已经上线到当前产品页
+- 文案、CDN 视频、首页集成都已落地
+- 剩余工作主要是性能、导航入口、缩略图体系和扩展展示，而不是从零开发

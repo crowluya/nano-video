@@ -19,7 +19,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { PostType } from "@/lib/db/schema";
 import { Tag } from "@/types/cms";
 import { Check, Edit3, Loader2, Tags, Trash2, X } from "lucide-react";
-import { useEffect, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 import { TagCreateForm } from "./TagCreateForm";
 
@@ -32,7 +32,7 @@ export function TagManagementDialog({ postType }: { postType: PostType }) {
   const [editingTag, setEditingTag] = useState<Tag | null>(null);
   const [editingTagName, setEditingTagName] = useState("");
 
-  const fetchTags = async () => {
+  const fetchTags = useCallback(async () => {
     setIsLoading(true);
     try {
       const result = await listTagsAction({
@@ -51,11 +51,11 @@ export function TagManagementDialog({ postType }: { postType: PostType }) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [postType]);
 
   useEffect(() => {
-    fetchTags();
-  }, []);
+    void fetchTags();
+  }, [fetchTags]);
 
   const handleTagCreated = (tag: Tag) => {
     setTags((prev) =>

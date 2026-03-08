@@ -605,7 +605,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
         });
       }
     }
-  }, [completion]);
+  }, [completion, form]);
 
   const handleFormatJson = (fieldName: "langJsonb" | "benefitsJsonb") => {
     const currentValue = form.getValues(fieldName);
@@ -1480,7 +1480,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
                           placeholder={
                             isTranslating
                               ? "Translating..."
-                              : `{ "zh": { "cardTitle": "NEXTY.DEV 高级启动模板", ... }, "jp": { "cardTitle": "NEXTY.DEV 高級起動テンプレート", ... } }`
+                              : `{ "zh": { "cardTitle": "Nano Banana Video 专业套餐", ... }, "jp": { "cardTitle": "Nano Banana Video プロプラン", ... } }`
                           }
                           {...field}
                           value={field.value ?? ""}

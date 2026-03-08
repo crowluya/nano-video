@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 import {
   MessageSquare,
-  Image,
+  Image as ImageIcon,
   Film,
   Music,
   Wand2,
@@ -339,7 +339,7 @@ Respond with ONLY the prompt, no explanations.`,
 
   const steps: { id: WorkflowStep; label: string; icon: React.ReactNode }[] = [
     { id: "prompt", label: "Prompt", icon: <MessageSquare className="h-4 w-4" /> },
-    { id: "image", label: "Image", icon: <Image className="h-4 w-4" /> },
+    { id: "image", label: "Image", icon: <ImageIcon className="h-4 w-4" /> },
     { id: "video", label: "Video", icon: <Film className="h-4 w-4" /> },
     { id: "music", label: "Music", icon: <Music className="h-4 w-4" /> },
     { id: "edit", label: "Edit", icon: <Wand2 className="h-4 w-4" /> },
@@ -453,7 +453,7 @@ Respond with ONLY the prompt, no explanations.`,
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Image className="h-5 w-5" />
+                  <ImageIcon className="h-5 w-5" />
                   Image Generation
                 </CardTitle>
               </CardHeader>
@@ -672,4 +672,3 @@ Respond with ONLY the prompt, no explanations.`,
     </div>
   );
 }
-

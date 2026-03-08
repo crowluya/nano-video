@@ -34,7 +34,7 @@ import {
   ORDER_PROVIDERS,
 } from "@/lib/payments/provider-utils";
 import { Loader2 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
 
@@ -78,6 +78,7 @@ export function OrdersDataTable<TData, TValue>({
   const [data, setData] = useState<TData[]>(initialData);
   const [pageCount, setPageCount] = useState<number>(initialPageCount);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const syncedInitialDataRef = useRef(initialData);
 
   const initialLoad = useMemo(
     () =>
@@ -97,9 +98,10 @@ export function OrdersDataTable<TData, TValue>({
 
   useEffect(() => {
     if (initialLoad) {
-      if (data !== initialData) {
+      if (syncedInitialDataRef.current !== initialData) {
         setData(initialData);
         setPageCount(initialPageCount);
+        syncedInitialDataRef.current = initialData;
       }
       return;
     }

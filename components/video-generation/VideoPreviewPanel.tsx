@@ -3,7 +3,7 @@
 import { TaskProgress } from "@/components/kie/TaskProgress";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Download, Loader2 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface VideoPreviewPanelProps {
   taskId: string | null;
@@ -24,17 +24,12 @@ export function VideoPreviewPanel({
   onComplete,
   onError,
 }: VideoPreviewPanelProps) {
-  const [displayVideoUrl, setDisplayVideoUrl] = useState<string | null>(videoUrl);
-
-  useEffect(() => {
-    if (videoUrl) {
-      setDisplayVideoUrl(videoUrl);
-    }
-  }, [videoUrl]);
+  const [completedVideoUrl, setCompletedVideoUrl] = useState<string | null>(null);
+  const displayVideoUrl = completedVideoUrl ?? videoUrl;
 
   const handleTaskComplete = (urls: string[]) => {
     if (urls.length > 0) {
-      setDisplayVideoUrl(urls[0]);
+      setCompletedVideoUrl(urls[0]);
     }
     onComplete?.(urls);
   };
@@ -143,4 +138,3 @@ export function VideoPreviewPanel({
     </div>
   );
 }
-

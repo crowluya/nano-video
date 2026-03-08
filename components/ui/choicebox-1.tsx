@@ -206,3 +206,5 @@ ChoiceboxGroup.Item = ({
     </div>
   );
 };
+
+ChoiceboxGroup.Item.displayName = "ChoiceboxGroup.Item";

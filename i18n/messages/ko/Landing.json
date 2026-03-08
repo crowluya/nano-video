@@ -3,14 +3,14 @@
     "badge": {
       "label": "NEW",
       "text": "Next.js SaaS 풀스택 템플릿",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "현대적인 Next.js 풀스택 SaaS 보일러플레이트",
     "description": "당사의 Next.js 보일러플레이트는 인증, Stripe 결제, AI 통합, CMS 및 즉시 수익 창출을 시작하는 데 필요한 모든 것을 포함합니다.",
     "getStarted": "시작하기",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "문서 보기",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "한 번 구매하여 3가지 강력한 보일러플레이트를 받으세요.",
         "details": [
           {
-            "title": "보일러플레이트 1: Nexty",
-            "description": "필요한 모든 기능을 갖춘 범용 SaaS 보일러플레이트.",
-            "href": "https://demo.nexty.dev"
+            "title": "쇼케이스 1: Nano Banana Video",
+            "description": "현재 제품 랜딩과 AI 비디오 생성 경험.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "보일러플레이트 2: nexty-flux-kontext",
-            "description": "AI 이미지 생성 SaaS 보일러플레이트.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "쇼케이스 2: AI 이미지 생성",
+            "description": "이미지 생성 워크플로와 모델 선택 경험.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "보일러플레이트 3: nexty-directory",
-            "description": "디렉토리 및 리스팅 웹사이트 보일러플레이트.",
-            "href": "https://dofollow.tools"
+            "title": "쇼케이스 3: Prompt Generator",
+            "description": "이미지와 비디오 제작을 위한 프롬프트 생성 워크플로.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

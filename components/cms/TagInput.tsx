@@ -53,7 +53,7 @@ export function TagInput({
       }
     };
     loadTags();
-  }, []);
+  }, [postType]);
 
   const handleDeselectTag = (tagId: string) => {
     onChange(value.filter((t) => t.id !== tagId));

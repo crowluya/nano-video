@@ -288,9 +288,9 @@ const user = await db.query.users.findFirst({
 
 ## 九、扩展阅读
 
-### Nexty.dev 模板文档
+### 模板来源说明
 
-本项目基于 [NEXTY.DEV](https://nexty.dev) SaaS 模板开发。
+本项目最初从一个 SaaS boilerplate 演化而来，仓库中仍保留部分历史结构和文档。
 
 **核心特性参考：**
 - **认证**: Better-auth（Google/GitHub/Magic Link）
@@ -318,10 +318,9 @@ const user = await db.query.users.findFirst({
 | Resend | 邮件服务 |
 | Cloudflare R2 | 文件存储 |
 
-**文档链接：**
-- 官方文档: https://nexty.dev/docs
-- GitHub: https://github.com/weijunext
-- 作者 X: @Jude Wei
+**参考方式：**
+- 优先查看当前仓库内文档
+- 优先以实际代码、README、LAUNCH-TODO、GALLERY_TODO 为准
 
 ### 项目内部文档
 
@@ -565,4 +564,3 @@ https://cdn.nanobananavideo.net/website/showcase/{模板}/{case}/{文件}
   - 95 种行业配色方案
   - 56 种字体搭配
   - 可用于设计参考和 AI 辅助设计
-

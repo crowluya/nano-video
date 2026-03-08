@@ -3,14 +3,14 @@
     "badge": {
       "label": "NIEUW",
       "text": "Next.js SaaS Full Stack Template",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Een Moderne Next.js Full Stack SaaS Boilerplate",
     "description": "Onze Next.js boilerplate omvat authenticatie, Stripe-betalingen, AI-integratie, CMS en alles wat je nodig hebt om direct te beginnen met verdienen.",
     "getStarted": "Aan de Slag",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Documentatie Bekijken",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Eenmalige aankoop, krijg 3 krachtige boilerplates.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Universele SaaS boilerplate met elke functie die je nodig hebt.",
-            "href": "https://demo.nexty.dev"
+            "title": "Showcase 1: Nano Banana Video",
+            "description": "Huidige productlanding en AI-video generatie-ervaring.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "AI Afbeelding Generatie SaaS boilerplate.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Showcase 2: AI-afbeeldinggeneratie",
+            "description": "Workflow voor beeldgeneratie en modelselectie.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Directory & listing website boilerplate.",
-            "href": "https://dofollow.tools"
+            "title": "Showcase 3: Prompt Generator",
+            "description": "Promptworkflow voor het maken van afbeeldingen en video's.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

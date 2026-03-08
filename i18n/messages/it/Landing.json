@@ -3,14 +3,14 @@
     "badge": {
       "label": "NUOVO",
       "text": "Template SaaS Full Stack Next.js",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Un Moderno Boilerplate SaaS Full Stack Next.js",
     "description": "Il nostro boilerplate Next.js include autenticazione, pagamenti Stripe, integrazione AI, CMS e tutto ciò che ti serve per iniziare a guadagnare immediatamente.",
     "getStarted": "Inizia Ora",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Visualizza Documentazione",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Acquista una volta, ottieni 3 boilerplate potenti.",
         "details": [
           {
-            "title": "Boilerplate 1: Nexty",
-            "description": "Boilerplate SaaS universale con ogni funzionalità di cui hai bisogno.",
-            "href": "https://demo.nexty.dev"
+            "title": "Showcase 1: Nano Banana Video",
+            "description": "Landing attuale del prodotto ed esperienza di generazione video AI.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Boilerplate 2: nexty-flux-kontext",
-            "description": "Boilerplate SaaS per generazione di immagini AI.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Showcase 2: Generazione Immagini AI",
+            "description": "Flusso di generazione immagini e selezione del modello.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Boilerplate 3: nexty-directory",
-            "description": "Boilerplate per siti web di directory e listing.",
-            "href": "https://dofollow.tools"
+            "title": "Showcase 3: Prompt Generator",
+            "description": "Flusso prompt per creare immagini e video.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [

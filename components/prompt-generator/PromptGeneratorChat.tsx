@@ -94,19 +94,18 @@ export default function PromptGeneratorChat() {
     return Array.isArray(saved?.messages) ? saved!.messages! : [];
   });
 
-  const selectedModel = useMemo(() => {
-    const m = MODELS.find((x) => x.modelId === selectedModelId);
-    return m || MODELS[0];
-  }, [selectedModelId]);
+  const effectiveSelectedModelId = useMemo(() => {
+    const hasSelectedModel = availableModels.some(
+      (model) => model.modelId === selectedModelId
+    );
 
-  useEffect(() => {
-    if (!isPaid) {
-      const current = MODELS.find((m) => m.modelId === selectedModelId);
-      if (current?.paidOnly) {
-        setSelectedModelId(MODELS[0].modelId);
-      }
-    }
-  }, [isPaid, selectedModelId]);
+    return hasSelectedModel ? selectedModelId : MODELS[0].modelId;
+  }, [availableModels, selectedModelId]);
+
+  const selectedModel = useMemo(() => {
+    const m = MODELS.find((x) => x.modelId === effectiveSelectedModelId);
+    return m || MODELS[0];
+  }, [effectiveSelectedModelId]);
 
   const enableReasoning = !!selectedModel.reasoning;
 
@@ -134,15 +133,15 @@ export default function PromptGeneratorChat() {
   useEffect(() => {
     localStorage.setItem(
       STORAGE_KEY,
-      JSON.stringify({ modelId: selectedModelId, messages })
+      JSON.stringify({ modelId: effectiveSelectedModelId, messages })
     );
-  }, [messages, selectedModelId]);
+  }, [effectiveSelectedModelId, messages]);
 
   const handleClear = () => {
     setMessages([]);
     localStorage.setItem(
       STORAGE_KEY,
-      JSON.stringify({ modelId: selectedModelId, messages: [] })
+      JSON.stringify({ modelId: effectiveSelectedModelId, messages: [] })
     );
   };
 
@@ -170,7 +169,10 @@ export default function PromptGeneratorChat() {
         <Label className="text-xs text-muted-foreground mb-2 block">
           {t("modelLabel")}
         </Label>
-        <Select value={selectedModelId} onValueChange={setSelectedModelId}>
+        <Select
+          value={effectiveSelectedModelId}
+          onValueChange={setSelectedModelId}
+        >
           <SelectTrigger className="w-full sm:w-[360px]">
             <SelectValue />
           </SelectTrigger>

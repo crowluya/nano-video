@@ -33,6 +33,18 @@ import useSWR from "swr";
 
 type Period = "7d" | "30d" | "90d";
 
+interface GrowthChartTooltipPayloadItem {
+  value?: number | string;
+}
+
+interface GrowthChartTooltipProps {
+  active?: boolean;
+  payload?: GrowthChartTooltipPayloadItem[];
+  label?: string;
+  newUsersLabel: string;
+  newOrdersLabel: string;
+}
+
 const fetcher = async (period: Period): Promise<IDailyGrowthStats[]> => {
   const result = await getDailyGrowthStats(period);
   if (!result.success) {
@@ -40,6 +52,30 @@ const fetcher = async (period: Period): Promise<IDailyGrowthStats[]> => {
   }
   return result.data ?? [];
 };
+
+function GrowthChartTooltip({
+  active,
+  payload,
+  label,
+  newUsersLabel,
+  newOrdersLabel,
+}: GrowthChartTooltipProps) {
+  if (!active || !payload || payload.length < 2) {
+    return null;
+  }
+
+  return (
+    <div className="rounded-md shadow-lg bg-card p-2">
+      <p className="font-semibold">{label}</p>
+      <p style={{ color: "var(--chart-1)" }}>
+        {newUsersLabel}: {payload[0]?.value}
+      </p>
+      <p style={{ color: "var(--chart-1)" }}>
+        {newOrdersLabel}: {payload[1]?.value}
+      </p>
+    </div>
+  );
+}
 
 export const GrowthChart = () => {
   const t = useTranslations("Overview");
@@ -63,23 +99,6 @@ export const GrowthChart = () => {
     (sum, item) => sum + item.newOrdersCount,
     0
   );
-
-  const CustomTooltip = ({ active, payload, label }: any) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="rounded-md shadow-lg bg-card p-2">
-          <p className="font-semibold">{label}</p>
-          <p style={{ color: "var(--chart-1)" }}>
-            {t("newUsers")}: {payload[0].value}
-          </p>
-          <p style={{ color: "var(--chart-1)" }}>
-            {t("newOrders")}: {payload[1].value}
-          </p>
-        </div>
-      );
-    }
-    return null;
-  };
 
   return (
     <Card>
@@ -151,7 +170,14 @@ export const GrowthChart = () => {
                 axisLine={false}
               />
               <YAxis tickLine={false} axisLine={false} />
-              <Tooltip content={<CustomTooltip />} />
+              <Tooltip
+                content={
+                  <GrowthChartTooltip
+                    newOrdersLabel={t("newOrders")}
+                    newUsersLabel={t("newUsers")}
+                  />
+                }
+              />
               <Legend />
               <Area
                 type="monotone"

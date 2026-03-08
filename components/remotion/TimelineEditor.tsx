@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import {
   Film,
-  Image,
+  Image as ImageIcon,
   Music,
   Type,
   Trash2,
@@ -127,7 +127,7 @@ export const TimelineEditor: React.FC<TimelineEditorProps> = ({
             {/* Image tracks label */}
             {groupedTracks.images.length > 0 && (
               <TrackGroupLabel
-                icon={<Image className="h-3 w-3" />}
+                icon={<ImageIcon className="h-3 w-3" />}
                 label="Images"
                 count={groupedTracks.images.length}
               />
@@ -324,4 +324,3 @@ function formatTime(seconds: number): string {
 }
 
 export default TimelineEditor;
-

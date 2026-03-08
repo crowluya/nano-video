@@ -1,236 +1,150 @@
-# Nano Banana Video - 上线待办事项
+# Nano Banana Video - 上线状态同步
 
-> 生成时间：2025-01-13
-> 域名：nanobananavideo.net
-> 部署平台：Vercel
-> 数据库：Supabase PostgreSQL
+> 同步时间：2026-03-08
+> 说明：本文件基于当前仓库代码状态更新，不等同于生产环境实测结果。凡是数据库内容、第三方控制台配置、线上环境变量、支付/登录实测，若未在代码中可验证，统一标记为“待人工确认”。
 
 ---
 
-## 一、已确认配置
+## 一、当前真实状态概览
 
-### 域名与部署
-- [x] 域名：nanobananavideo.net
-- [x] 部署平台：Vercel
-- [x] 数据库：Supabase PostgreSQL
-- [x] 环境变量：已配置
+### 代码已确认
 
-### 支付配置
-- [x] Stripe：已配置激活
-- [x] 定价方案：已配置（见下方修复项）
-- [x] 新用户免费积分：80 积分
+- 默认首页 `/` 已切到 Nano Banana Video 产品页
+- 公开主页面存在：`/`、`/nanabananvideo`、`/video-generation`、`/prompt-generator`、`/login`
+- 视频生成主能力存在，当前代码重点支持：
+  - Sora 2
+  - Sora 2 Pro
+  - Veo 3.1 Fast
+- 图片生成、Prompt Generator、Blog/CMS、后台管理、积分体系、Stripe 支付链路均存在
+- 登录 UI 当前只保留 Google 登录按钮
+- Gallery 已实际落地，不是未开始状态
 
-### AI 服务
-- [x] kie.ai：已充值，额度充足
-- [x] Prompt 生成器模型：已配置（Gemini 2.5 Flash Lite / DeepSeek）
+### 代码中仍保留但不是当前主产品面的能力
 
-### 功能范围
-| 功能 | 状态 |
-|------|------|
-| 视频生成 | ✅ 上线 |
-| 图片生成 | ✅ 上线 |
-| Prompt 生成器 | ✅ 上线 |
-| Blog | ✅ 上线 |
-| 音乐生成 | ❌ 隐藏 |
-| Remotion 剪辑 | ❌ 隐藏 |
-| Studio 一体化 | ❌ 隐藏 |
+- `music-gen` 页面仍在代码中
+- `studio` 页面仍在代码中
+- Remotion 相关组件仍在代码中
+- Creem 支付链路仍在代码中
 
-### 用户体系
-- [x] 登录方式：仅 Google 登录
-- [x] 新用户积分：80
-- [x] 邀请码/推荐系统：暂不需要
+### 当前工程风险
 
-### 积分消耗配置（已确认）
-
-**图片生成：**
-| 模型 | 积分 |
-|------|------|
-| Nano Banana | 15 |
-| Nano Banana Edit | 8 |
-| Nano Banana Pro | 15 |
-| Z-Image | 8 |
-| Midjourney | 15 |
-| Flux Kontext Pro | 10 |
-| Flux Kontext Max | 15 |
-| GPT-4o Image | 10 |
-
-**视频生成：**
-| 模型 | 积分 |
-|------|------|
-| Sora 2 Fast (720p 10s) | 80 |
-| Sora 2 Fast (720p 15s) | 120 |
-| Sora 2 Pro (720p 10s) | 150 |
-| Sora 2 Pro (720p 15s) | 300 |
-| Sora 2 Pro (1080p 10s) | 300 |
-| Sora 2 Pro (1080p 15s) | 600 |
-| Veo 3.1 | 100 |
-
-**音乐生成（隐藏但保留配置）：**
-| 模型 | 积分 |
-|------|------|
-| Suno V3.5 | 15 |
-| Suno V4 | 20 |
-| Suno V4.5 | 25 |
-| Suno V4.5 Plus | 30 |
-| Suno V5 | 35 |
+- `pnpm lint` 未通过
+- 2026-03-08 本地复核结果：18 errors，27 warnings
+- `app/[locale]/(basic-layout)/nanabananvideo/page.tsx` 仍引用 `/og-image.jpg`，但 `public/` 下当前是 `og.png / og_zh.png / og_ja.png`
+- 图片积分配置存在代码不一致：
+  - `config/models.ts` 中 `google/nano-banana` 为 `5`
+  - `components/image-generation/ImageGenerationPage.tsx` 中 UI 按 `15` 计费展示
 
 ---
 
-## 二、待修复问题
+## 二、上线相关事项同步
 
-### 🔴 P0 - 数据修复（阻塞上线）
+### A. 已完成或基本完成
 
-- [ ] **FIX-001**: 修复 "Stande Plan" 拼写错误 → "Standard Plan"
-  - 位置：数据库 `pricing_plans` 表
-  - 影响：月度和年度套餐名称显示
+- [x] 首页和核心产品面已切换到 Nano Banana Video
+- [x] Google 登录 UI 已落地
+- [x] Stripe checkout session API 已存在
+- [x] Stripe webhook 路由已存在
+- [x] 隐私政策页面存在：`/privacy-policy`
+- [x] 服务条款页面存在：`/terms-of-service`
+- [x] 退款政策页面存在：`/refund-policy`
+- [x] Logo、favicon、apple touch icon 资源已存在于 `public/`
+- [x] Gallery 已接入首页并使用 CDN 视频资源
 
-- [ ] **FIX-002**: 修复 Standard Plan 积分错误
-  - 当前值：110,000
-  - 正确值：11,000
-  - 位置：数据库 `pricing_plans.benefits_jsonb`
+### B. 部分完成，需要继续收口
 
-- [ ] **FIX-003**: 确认图片生成积分配置
-  - config/models.ts 中 Nano Banana 是 5，但 UI 显示 15
-  - 需要统一配置
+- [~] **AUTH-001 只保留 Google 登录**
+  - 代码层面：登录表单已只剩 Google
+  - 仍需清理：翻译文案中还保留 GitHub / Magic Link 相关文案痕迹
 
-### 🔴 P0 - 功能隐藏（阻塞上线）
+- [~] **HIDE-001 / HIDE-002 / HIDE-003 隐藏非主功能入口**
+  - 当前用户菜单中没有 `music-gen` / `studio` / remotion 入口
+  - 但对应页面与代码仍保留在仓库中
+  - 如果目标是“对外不暴露”，当前大体成立
+  - 如果目标是“彻底移除”，尚未完成
 
-- [ ] **HIDE-001**: 隐藏音乐生成入口
-  - Dashboard 侧边栏
-  - 首页（如有）
+- [~] **品牌资源**
+  - `logo.png`、`logo.svg`、`favicon.ico` 已存在
+  - 但 OG 图实现仍不一致：页面代码引用 `/og-image.jpg`，仓库内实际资源为 `og.png / og_zh.png / og_ja.png`
 
-- [ ] **HIDE-002**: 隐藏 Remotion 剪辑入口
-  - Dashboard 侧边栏
+- [~] **法律文档**
+  - 页面路由已存在
+  - 是否满足真实上线法务要求，仍需人工审阅内容
 
-- [ ] **HIDE-003**: 隐藏 Studio 一体化入口
-  - Dashboard 侧边栏
+### C. 仍待人工确认
 
-- [ ] **HIDE-004**: 隐藏 Creem 支付相关
-  - 定价页面不显示 Creem 套餐
-  - 或设置 `is_active: false`
-
-### 🔴 P0 - 登录配置（阻塞上线）
-
-- [ ] **AUTH-001**: 只保留 Google 登录
-  - 隐藏 GitHub 登录按钮
-  - 隐藏 Magic Link 登录选项
-
----
-
-## 三、待准备内容
-
-### 🟡 P1 - 品牌资源
-
-- [ ] **BRAND-001**: 准备 Logo
-  - 格式：SVG / PNG
-  - 尺寸：建议 200x50 或类似
-
-- [ ] **BRAND-002**: 准备 Favicon
-  - 格式：ICO / PNG
-  - 尺寸：16x16, 32x32, 180x180 (Apple Touch)
-
-- [ ] **BRAND-003**: 准备 OG 图片（社交分享）
-  - 格式：PNG / JPG
-  - 尺寸：1200x630
-
-- [ ] **BRAND-004**: 替换占位图片
-  - 位置：`i18n/messages/*/NanoBananaVideo.json`
-  - Features 和 UseCases 使用 `/placeholder.webp`
-
-### 🟡 P1 - 社交与支持
-
-- [ ] **SOCIAL-001**: 配置社交媒体链接
-  - 位置：`config/site.ts`
-  - Discord: ✅ 已有 `https://discord.com/invite/R7bUxWKRqZ`
-  - Twitter/X: 待填写
-  - GitHub: 待填写或移除
-
-- [ ] **SOCIAL-002**: 配置客服/支持渠道
-  - 支持邮箱
-  - Discord 支持频道
-
-### 🟡 P1 - 法律文档
-
-- [ ] **LEGAL-001**: 准备/检查隐私政策内容
-  - 路径：`/privacy-policy`
-
-- [ ] **LEGAL-002**: 准备/检查服务条款内容
-  - 路径：`/terms-of-service`
-
-- [ ] **LEGAL-003**: 准备/检查退款政策内容
-  - 路径：`/refund-policy`
+- [ ] **FIX-001**：数据库里是否仍有 `Stande Plan`
+- [ ] **FIX-002**：数据库里 `Standard Plan` 是否仍错误写成 `110,000`
+- [ ] **HIDE-004**：生产定价页是否仍显示 Creem 套餐
+- [ ] `NEXT_PUBLIC_SITE_URL` 在线上是否已正确设置为正式域名
+- [ ] Google OAuth 线上回调是否已正确配置
+- [ ] Stripe webhook 在线上控制台是否已配置并指向正式域名
+- [ ] R2 / 邮件 / KIE 线上环境变量是否齐全
+- [ ] 生产环境支付、图片生成、视频生成链路是否已实测通过
 
 ---
 
-## 四、技术检查清单
+## 三、基于当前代码的任务清单
 
-### 环境变量确认
+### P0：必须先修
 
-```bash
-# 核心
-DATABASE_URL=                    # ✅ Supabase
-NEXT_PUBLIC_SITE_URL=            # ⬜ 需确认是否为 nanobananavideo.net
+- [ ] 修复图片积分配置不一致
+  - `config/models.ts` 中 `google/nano-banana` 为 5 credits
+  - `components/image-generation/ImageGenerationPage.tsx` 中 UI 写死为 15 credits
 
-# 认证
-BETTER_AUTH_SECRET=              # ⬜ 待确认
-NEXT_PUBLIC_GOOGLE_CLIENT_ID=    # ⬜ 待确认
-GOOGLE_CLIENT_SECRET=            # ⬜ 待确认
+- [ ] 修复站点基础元信息残留
+  - `package.json` 和若干开发文案仍有模板残留
 
-# 支付
-STRIPE_SECRET_KEY=               # ✅ 已配置
-STRIPE_WEBHOOK_SECRET=           # ⬜ 待确认
+- [ ] 修复 OG 图片引用不一致
+  - 当前代码引用 `/og-image.jpg`
+  - 当前静态资源实际存在 `public/og.png`、`public/og_zh.png`、`public/og_ja.png`
 
-# AI 服务
-KIE_API_KEY=                     # ✅ 已配置
+- [ ] 清理当前 lint errors
+  - 当前 `pnpm lint` 失败，不适合当作“已完成上线前检查”
 
-# 存储
-R2_ACCOUNT_ID=                   # ⬜ 待确认
-R2_ACCESS_KEY_ID=                # ⬜ 待确认
-R2_SECRET_ACCESS_KEY=            # ⬜ 待确认
-R2_BUCKET_NAME=                  # ⬜ 待确认
-R2_PUBLIC_URL=                   # ⬜ 待确认
+### P1：建议上线前完成
 
-# 邮件
-RESEND_API_KEY=                  # ⬜ 待确认
-```
+- [ ] 清理 GitHub / Magic Link 的残留翻译文案
+- [ ] 明确是否彻底停用 Creem
+  - 如果停用，应同步清理价格页展示、checkout 入口和后台配置路径
+- [ ] 明确是否继续保留 `music-gen` / `studio` / remotion 页面
+  - 若仅内部保留，应在文档中明确
+  - 若不再需要，应考虑移除路由和相关代码
 
-### Webhook 配置
+### P2：内容与品牌完善
 
-| 服务 | 端点 | 状态 |
-|------|------|------|
-| Stripe | `https://nanobananavideo.net/api/stripe/webhook` | ⬜ 待配置 |
-
-### 部署前检查
-
-- [ ] `pnpm lint` 无错误
-- [ ] `pnpm build` 构建成功
-- [ ] 三语言切换正常 (en/zh/ja)
-- [ ] Google 登录流程正常
-- [ ] 支付流程正常（测试模式）
-- [ ] 视频生成流程正常
-- [ ] 图片生成流程正常
+- [ ] 完整审查隐私政策、服务条款、退款政策文本
+- [ ] 配置 Twitter / GitHub / Support Email 等站点信息
+- [ ] 替换通用 Landing 文案中仍在使用的 `/placeholder.webp`
 
 ---
 
-## 五、执行顺序建议
+## 四、验证结果记录
 
-### 第一批：数据修复
-1. FIX-001, FIX-002, FIX-003
+### 已验证
 
-### 第二批：功能隐藏
-2. HIDE-001, HIDE-002, HIDE-003, HIDE-004
-3. AUTH-001
+- [x] 首页产品组件来自 `components/nanabananvideo/`
+- [x] Gallery 已实际渲染到首页
+- [x] Hero 按钮已支持跳转 `/#gallery`
+- [x] LoginForm 当前仅包含 Google 登录按钮
+- [x] Stripe checkout session API 存在
+- [x] Stripe webhook handler 存在
 
-### 第三批：品牌内容（可并行准备）
-4. BRAND-001 ~ BRAND-004
-5. SOCIAL-001, SOCIAL-002
-6. LEGAL-001 ~ LEGAL-003
+### 未验证
 
-### 第四批：最终验证
-7. 环境变量检查
-8. Webhook 配置
-9. 部署前检查
+- [ ] `pnpm build`
+- [ ] 三语言切换完整回归
+- [ ] 真实登录流程
+- [ ] 真实支付流程
+- [ ] 真实视频生成流程
+- [ ] 真实图片生成流程
 
 ---
 
-*文档生成时间：2025-01-13*
+## 五、结论
+
+这不是一份“从零开始的上线待办”了。当前仓库的真实状态是：
+
+- 主产品页、Gallery、Prompt Generator、图片/视频生成、Google 登录、Stripe 链路都已经存在
+- 旧文档里大量“未开始”或“阻塞上线”的描述已经失真
+- 真正需要优先处理的，是配置一致性、站点元信息残留、OG 资源引用、Creem 是否继续保留，以及 `pnpm lint` 失败这一类工程收口问题

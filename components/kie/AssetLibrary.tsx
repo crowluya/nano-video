@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Image,
+  Image as ImageIcon,
   Film,
   Music,
   Plus,
@@ -72,7 +72,7 @@ export const AssetLibrary: React.FC<AssetLibraryProps> = ({
   const getTypeIcon = (type: AssetType) => {
     switch (type) {
       case "image":
-        return <Image className="h-4 w-4" />;
+        return <ImageIcon className="h-4 w-4" />;
       case "video":
         return <Film className="h-4 w-4" />;
       case "audio":
@@ -110,7 +110,7 @@ export const AssetLibrary: React.FC<AssetLibraryProps> = ({
               All ({counts.all})
             </TabsTrigger>
             <TabsTrigger value="image" className="text-xs">
-              <Image className="h-3 w-3 mr-1" />
+              <ImageIcon className="h-3 w-3 mr-1" />
               {counts.image}
             </TabsTrigger>
             <TabsTrigger value="video" className="text-xs">
@@ -191,7 +191,7 @@ const AssetCard: React.FC<AssetCardProps> = ({
         {asset.type === "image" && (
           <img
             src={asset.thumbnailUrl || asset.url}
-            alt={asset.name}
+            alt={`${asset.name} asset preview`}
             className="w-full h-full object-cover"
           />
         )}
@@ -293,4 +293,3 @@ function formatDuration(seconds: number): string {
 }
 
 export default AssetLibrary;
-

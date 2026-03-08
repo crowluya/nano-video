@@ -1,6 +1,7 @@
 import { SiteConfig } from "@/types/siteConfig";
 
-export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://nexty.dev";
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://nanobananavideo.net";
 
 const GITHUB_URL = ''
 const TWITTER_URL = ''

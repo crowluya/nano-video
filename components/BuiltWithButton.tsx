@@ -2,14 +2,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-// NEXTY.DEV Affiliate Link: https://affiliates.nexty.dev/
-// sign up and use your affiliate link on BuiltWithButton to earn money
-
 export default function BuiltWithButton() {
   return (
     <Link
-      href="https://nexty.dev"
-      title="Built with NEXTY.DEV"
+      href="https://nanobananavideo.net"
+      title="Visit Nano Banana Video"
       prefetch={false}
       target="_blank"
       rel="noopener noreferrer"
@@ -18,23 +15,23 @@ export default function BuiltWithButton() {
         "px-4 rounded-md bg-transparent border-gray-500 hover:bg-gray-950 text-white hover:text-gray-100"
       )}
     >
-      <span>Built with</span>
+      <span>Visit</span>
       <span>
-        <LogoNexty className="size-4 rounded-full" />
+        <LogoNanoVideo className="size-4 rounded-full" />
       </span>
       <span className="font-bold text-base-content flex gap-0.5 items-center tracking-tight">
-        NEXTY.DEV
+        Nano Banana Video
       </span>
     </Link>
   );
 }
 
-function LogoNexty({ className }: { className?: string }) {
+function LogoNanoVideo({ className }: { className?: string }) {
   return (
     <img
-      src="/logo_nexty.png"
-      alt="Logo"
-      title="Logo"
+      src="/logo.png"
+      alt="Nano Banana Video logo"
+      title="Nano Banana Video"
       width={96}
       height={96}
       className={cn("size-8 rounded-md", className)}

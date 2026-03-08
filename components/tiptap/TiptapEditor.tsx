@@ -32,7 +32,7 @@ import {
   Heading2,
   Heading3,
   Heading4,
-  Image,
+  Image as ImageIcon,
   Italic as ItalicIcon,
   Link as LinkIcon,
   List,
@@ -758,7 +758,7 @@ export function TiptapEditor({
                   disabled={disabled}
                   title="Image"
                 >
-                  <Image className="h-4 w-4" />
+                  <ImageIcon className="h-4 w-4" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-80">
@@ -932,7 +932,7 @@ export function TiptapEditor({
                           >
                             <img
                               src={preview}
-                              alt={`Preview ${index + 1}`}
+                              alt={`Selected image grid preview ${index + 1}`}
                               className="w-full h-full object-contain"
                             />
                             <button

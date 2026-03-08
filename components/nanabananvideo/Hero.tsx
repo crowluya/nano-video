@@ -50,7 +50,6 @@ function VideoPlayer() {
       videoRef.current.play().catch(() => {
         setIsPlaying(false);
       });
-      setIsPlaying(true);
     }
   }, [currentVideoIndex]);
 

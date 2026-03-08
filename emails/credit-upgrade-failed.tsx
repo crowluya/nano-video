@@ -22,6 +22,7 @@ const CreditUpgradeFailedEmail = ({
       <div style={logo}>
         <img
           src={`${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`}
+          alt={`${siteConfig.name} logo`}
           width={80}
           height={80}
         />

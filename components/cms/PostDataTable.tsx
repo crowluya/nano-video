@@ -24,7 +24,7 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import { Loader2, PlusCircle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { useDebounce } from "use-debounce";
 
@@ -77,6 +77,7 @@ export function PostDataTable<TData, TValue>({
   const [pageCount, setPageCount] = useState<number>(initialPageCount);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const syncedInitialDataRef = useRef(initialData);
 
   useEffect(() => {
     if (debouncedGlobalFilter !== undefined) {
@@ -85,11 +86,12 @@ export function PostDataTable<TData, TValue>({
   }, [debouncedGlobalFilter]);
 
   useEffect(() => {
-    if (
-      pagination.pageIndex === 0 &&
-      !debouncedGlobalFilter &&
-      data === initialData
-    ) {
+    if (pagination.pageIndex === 0 && !debouncedGlobalFilter) {
+      if (syncedInitialDataRef.current !== initialData) {
+        setData(initialData);
+        setPageCount(initialPageCount);
+        syncedInitialDataRef.current = initialData;
+      }
       return;
     }
 
@@ -129,6 +131,8 @@ export function PostDataTable<TData, TValue>({
     pagination.pageSize,
     initialData,
     postType,
+    initialPageCount,
+    listAction,
   ]);
 
   const table = useReactTable({

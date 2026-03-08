@@ -3,14 +3,14 @@
     "badge": {
       "label": "НОВОЕ",
       "text": "Шаблон Next.js SaaS Full Stack",
-      "href": "https://nexty.dev/#pricing"
+      "href": "https://nanobananavideo.net/#pricing"
     },
     "title": "Современная начальная конфигурация SaaS на Next.js",
     "description": "Наша начальная конфигурация Next.js включает аутентификацию, платежи Stripe, интеграцию AI, CMS и всё необходимое для быстрого начала заработка.",
     "getStarted": "Начать",
-    "getStartedLink": "https://nexty.dev/#pricing",
+    "getStartedLink": "https://nanobananavideo.net/#pricing",
     "viewDocs": "Посмотреть документацию",
-    "viewDocsLink": "https://nexty.dev/docs"
+    "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
   "Features": {
     "badge": {
@@ -25,19 +25,19 @@
         "description": "Купите один раз, получите 3 мощные начальные конфигурации.",
         "details": [
           {
-            "title": "Начальная конфигурация 1: Nexty",
-            "description": "Универсальная начальная конфигурация SaaS со всеми необходимыми функциями.",
-            "href": "https://demo.nexty.dev"
+            "title": "Витрина 1: Nano Banana Video",
+            "description": "Текущий лендинг продукта и опыт генерации AI-видео.",
+            "href": "https://nanobananavideo.net"
           },
           {
-            "title": "Начальная конфигурация 2: nexty-flux-kontext",
-            "description": "Начальная конфигурация SaaS для генерации изображений AI.",
-            "href": "https://flux-kontext.nexty.dev"
+            "title": "Витрина 2: AI-генерация изображений",
+            "description": "Поток генерации изображений и выбор моделей.",
+            "href": "https://nanobananavideo.net/video-generation"
           },
           {
-            "title": "Начальная конфигурация 3: nexty-directory",
-            "description": "Начальная конфигурация для сайтов каталогов и списков.",
-            "href": "https://dofollow.tools"
+            "title": "Витрина 3: Prompt Generator",
+            "description": "Поток создания промптов для изображений и видео.",
+            "href": "https://nanobananavideo.net/prompt-generator"
           }
         ],
         "images": [
