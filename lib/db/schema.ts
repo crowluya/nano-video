@@ -136,6 +136,7 @@ export const pricingPlans = pgTable('pricing_plans', {
   currency: varchar('currency', { length: 10 }),
   displayPrice: varchar('display_price', { length: 50 }),
   originalPrice: varchar('original_price', { length: 50 }),
+  annualSavePercent: integer('annual_save_percent'),
   priceSuffix: varchar('price_suffix', { length: 100 }),
   features: jsonb('features').default('[]').notNull(),
   isHighlighted: boolean('is_highlighted').default(false).notNull(),

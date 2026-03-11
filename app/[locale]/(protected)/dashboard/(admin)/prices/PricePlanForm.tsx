@@ -105,6 +105,7 @@ const pricingPlanFormSchema = z.object({
   currency: z.string().optional().nullable(),
   displayPrice: z.string().optional().nullable(),
   originalPrice: z.string().optional().nullable(),
+  annualSavePercent: z.coerce.number().int().optional().nullable(),
   priceSuffix: z.string().optional().nullable(),
   features: z.array(featureSchema).default([]).optional(),
   isHighlighted: z.boolean().optional().nullable(),
@@ -172,6 +173,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
       currency: initialData?.currency ?? "",
       displayPrice: initialData?.displayPrice ?? "",
       originalPrice: initialData?.originalPrice ?? "",
+      annualSavePercent: initialData?.annualSavePercent ?? null,
       priceSuffix: initialData?.priceSuffix ?? "",
       features:
         initialData?.features && Array.isArray(initialData.features)
@@ -485,6 +487,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
       cardDescription: currentValues.cardDescription || "",
       displayPrice: currentValues.displayPrice || "",
       originalPrice: currentValues.originalPrice || "",
+      annualSavePercent: currentValues.annualSavePercent ?? null,
       currency:
         currentValues.currency || process.env.NEXT_PUBLIC_DEFAULT_CURRENCY,
       priceSuffix: currentValues.priceSuffix || "",
@@ -506,6 +509,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
       cardDescription: "",
       displayPrice: "",
       originalPrice: "",
+      annualSavePercent: null,
       currency: process.env.NEXT_PUBLIC_DEFAULT_CURRENCY,
       priceSuffix: "",
       features: [],
@@ -1267,6 +1271,30 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
                         </FormControl>
                         <FormDescription>
                           {t("priceSuffixDescription")}
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="annualSavePercent"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t("annualSavePercent")}</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="number"
+                            min="0"
+                            max="100"
+                            placeholder={t("annualSavePercentPlaceholder")}
+                            {...field}
+                            value={field.value ?? ""}
+                            disabled={isLoading}
+                          />
+                        </FormControl>
+                        <FormDescription>
+                          {t("annualSavePercentDescription")}
                         </FormDescription>
                         <FormMessage />
                       </FormItem>

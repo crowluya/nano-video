@@ -6,11 +6,16 @@ import { Check, X, Coins } from "lucide-react";
 import {
   isOneTimePaymentType,
   isRecurringPaymentType,
-  isMonthlyInterval,
   isYearlyInterval,
 } from "@/lib/payments/provider-utils";
 
 type PricingPlan = typeof pricingPlansSchema.$inferSelect;
+
+interface PricingBenefits {
+  monthlyCredits?: number;
+  oneTimeCredits?: number;
+  savePercent?: number;
+}
 
 interface PricingCardDisplayProps {
   id?: string;
@@ -36,23 +41,30 @@ export function PricingCardDisplay({
   const highlightText = localizedPlan?.highlightText;
 
   // Extract credits from benefitsJsonb
-  let benefits: any = {};
+  let benefits: PricingBenefits = {};
   if (plan.benefitsJsonb) {
-    if (typeof plan.benefitsJsonb === 'string') {
+    if (typeof plan.benefitsJsonb === "string") {
       try {
-        benefits = JSON.parse(plan.benefitsJsonb);
+        benefits = JSON.parse(plan.benefitsJsonb) as PricingBenefits;
       } catch (e) {
-        console.error('Failed to parse benefitsJsonb as string:', e);
+        console.error("Failed to parse benefitsJsonb as string:", e);
         benefits = {};
       }
     } else {
-      benefits = plan.benefitsJsonb as any;
+      benefits = plan.benefitsJsonb as PricingBenefits;
     }
   }
   const monthlyCredits = benefits.monthlyCredits || 0;
   const oneTimeCredits = benefits.oneTimeCredits || 0;
-  
-  
+  const savePercent = plan.annualSavePercent ?? benefits.savePercent ?? 0;
+
+  // Check if this is a yearly plan
+  const isYearly = isYearlyInterval(plan.recurringInterval);
+
+  const yearlyPrice = parseFloat(plan.price || "0") || 0;
+  const monthlyPrice = isYearly ? yearlyPrice / 12 : yearlyPrice;
+  const yearlyDisplayPrice = displayPrice || `$${yearlyPrice.toFixed(2)}`;
+
   // Determine credit display text
   const getCreditsDisplay = () => {
     if (isOneTimePaymentType(plan.paymentType) && oneTimeCredits > 0) {
@@ -98,19 +110,45 @@ export function PricingCardDisplay({
 
       <PricingCTA plan={plan} localizedPlan={localizedPlan} />
 
-      <div className="text-4xl mb-4">
-        {originalPrice ? (
-          <span className="text-sm line-through decoration-2 text-muted-foreground mr-1">
-            {originalPrice}
-          </span>
-        ) : null}
+      {/* Price display - different for yearly vs monthly */}
+      {isYearly ? (
+        // Yearly plan display: show monthly price prominently
+        <div className="mb-4">
+          <div className="text-4xl font-bold mb-1">
+            ${monthlyPrice.toFixed(2)}
+            <span className="text-lg font-normal text-muted-foreground">/month</span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+            <span>
+              Billed annually
+              {savePercent > 0 ? ` (save ${savePercent}%)` : ""}
+            </span>
+            {originalPrice ? (
+              <span className="line-through text-gray-400">
+                {originalPrice}
+              </span>
+            ) : null}
+            <span className="font-medium text-foreground">
+              {yearlyDisplayPrice} / year
+            </span>
+          </div>
+        </div>
+      ) : (
+        // Monthly plan display: original format
+        <div className="text-4xl mb-4">
+          {originalPrice ? (
+            <span className="text-sm line-through decoration-2 text-muted-foreground mr-1">
+              {originalPrice}
+            </span>
+          ) : null}
 
-        {displayPrice}
+          {displayPrice}
 
-        {priceSuffix ? (
-          <span className="text-sm text-muted-foreground">/{priceSuffix}</span>
-        ) : null}
-      </div>
+          {priceSuffix ? (
+            <span className="text-sm text-muted-foreground">/{priceSuffix}</span>
+          ) : null}
+        </div>
+      )}
 
       {creditsDisplay && (
         <div className="flex items-center gap-2 mb-6 text-lg font-medium text-primary">

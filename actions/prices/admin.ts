@@ -161,6 +161,7 @@ export async function createPricingPlanAction({
         currency: planData.currency?.toUpperCase() || null,
         displayPrice: planData.displayPrice,
         originalPrice: planData.originalPrice,
+        annualSavePercent: planData.annualSavePercent ?? null,
         priceSuffix: planData.priceSuffix,
         isHighlighted: planData.isHighlighted ?? false,
         highlightText: planData.highlightText,
