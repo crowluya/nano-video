@@ -24,13 +24,7 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import { Inter as FontSans } from "next/font/google";
 import { notFound } from "next/navigation";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 type MetadataProps = {
   params: Promise<{ locale: string }>;
@@ -80,10 +74,7 @@ export default async function LocaleLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={cn(
-          "min-h-screen bg-background flex flex-col",
-          fontSans.variable
-        )}
+        className={cn("min-h-screen bg-background flex flex-col")}
       >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider

@@ -5,6 +5,11 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  ...(process.env.NEXT_DIST_DIR
+    ? {
+        distDir: process.env.NEXT_DIST_DIR,
+      }
+    : {}),
   redirects: async () => [
     {
       source: "/dashboard",

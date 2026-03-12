@@ -27,8 +27,12 @@ import {
   updateOrderStatusAfterRefund,
 } from '@/lib/payments/webhook-helpers';
 import { stripe } from '@/lib/stripe';
-import { and, eq, InferInsertModel } from 'drizzle-orm';
+import { eq, InferInsertModel } from 'drizzle-orm';
 import Stripe from 'stripe';
+import {
+  detectSubscriptionChange,
+  handleSubscriptionChange,
+} from './subscription-change';
 
 /**
  * Handles the `checkout.session.completed` event from Stripe.
@@ -122,140 +126,118 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
   const subscriptionId = typeof invoice.parent?.subscription_details?.subscription === 'string' ? invoice.parent?.subscription_details?.subscription : null;
   const customerId = typeof invoice.customer === 'string' ? invoice.customer : null;
   const invoiceId = invoice.id;
+  const isSubscriptionUpdateInvoice = invoice.billing_reason === 'subscription_update';
 
   if (invoice.status !== 'paid' || !subscriptionId || !customerId || !invoiceId || !invoice.billing_reason?.startsWith('subscription')) {
     console.warn(`Invoice ${invoiceId ?? 'N/A'} is not a paid subscription invoice or missing essential IDs. Status: ${invoice.status}, Subscription: ${subscriptionId}, Customer: ${customerId}, Billing Reason: ${invoice.billing_reason}. Skipping.`);
     return;
   }
 
-  // Check if order already exists
-  const existingOrderResults = await db
-    .select({ id: ordersSchema.id })
-    .from(ordersSchema)
-    .where(and(
-      eq(ordersSchema.provider, 'stripe'),
-      eq(ordersSchema.providerOrderId, invoiceId)
-    ))
-    .limit(1);
+  if (!stripe) {
+    console.error('Stripe is not initialized. Please check your environment variables.');
+    return;
+  }
 
-  if (existingOrderResults.length > 0) {
-    // order exists, but we still want to sync subscription and potentially grant credits
-  } else {
+  let userId: string | null = null;
+  let planId: string | null = null;
+  let priceId: string | null = null;
+  let productId: string | null = null;
+  let subscription: Stripe.Subscription | null = null;
 
-    if (!stripe) {
-      console.error('Stripe is not initialized. Please check your environment variables.');
-      return;
+  try {
+    subscription = await stripe.subscriptions.retrieve(subscriptionId);
+    userId = subscription.metadata?.userId;
+
+    if (subscription.items.data.length > 0) {
+      priceId = subscription.items.data[0].price.id;
+      productId = typeof subscription.items.data[0].price.product === 'string'
+        ? subscription.items.data[0].price.product
+        : (subscription.items.data[0].price.product as Stripe.Product)?.id;
+
+      if (priceId) {
+        const planDataResults = await db
+          .select({ id: pricingPlansSchema.id })
+          .from(pricingPlansSchema)
+          .where(eq(pricingPlansSchema.stripePriceId, priceId))
+          .limit(1);
+        planId = planDataResults[0]?.id ?? null;
+      }
     }
 
-    let userId: string | null = null;
-    let planId: string | null = null;
-    let priceId: string | null = null;
-    let productId: string | null = null;
-    let subscription: Stripe.Subscription | null = null;
-
-    try {
-      subscription = await stripe.subscriptions.retrieve(subscriptionId);
-      userId = subscription.metadata?.userId;
-
-      if (subscription.items.data.length > 0) {
-        priceId = subscription.items.data[0].price.id;
-        productId = typeof subscription.items.data[0].price.product === 'string'
-          ? subscription.items.data[0].price.product
-          : (subscription.items.data[0].price.product as Stripe.Product)?.id;
-
-        if (priceId) {
-          const planDataResults = await db
-            .select({ id: pricingPlansSchema.id })
-            .from(pricingPlansSchema)
-            .where(eq(pricingPlansSchema.stripePriceId, priceId))
-            .limit(1);
-          planId = planDataResults[0]?.id ?? null;
-        }
-      }
-
-      // fallback
-      if (!planId) {
-        planId = subscription.metadata?.planId ?? null;
-      }
-
-      if (!userId && customerId) {
-        const customer = await stripe.customers.retrieve(customerId);
-        if (customer && !customer.deleted) {
-          userId = customer.metadata?.userId ?? null;
-        }
-      }
-    } catch (subError) {
-      console.error(`Error fetching subscription ${subscriptionId} or related data during invoice.paid handling:`, subError);
-      if (!userId) {
-        throw new Error(`Failed to retrieve subscription ${subscriptionId} and cannot determine userId for invoice ${invoiceId}.`);
-      }
-      console.warn(`Could not fully populate order details for invoice ${invoiceId} due to error: ${subError instanceof Error ? subError.message : subError}`);
-    }
-
-    if (!userId) {
-      console.error(`FATAL: User ID could not be determined for invoice ${invoiceId}. Cannot create order.`);
-      throw new Error(`User ID determination failed for invoice ${invoiceId}.`);
-    }
     if (!planId) {
-      console.warn(`Could not determine planId for subscription ${subscriptionId} from invoice ${invoiceId}. Order created, but credit grant may fail.`);
+      planId = subscription.metadata?.planId ?? null;
     }
 
-    const invoiceData = await stripe!.invoices.retrieve(invoice.id as string, { expand: ['payments'] });
-    const paymentIntentId = invoiceData.payments?.data[0]?.payment.payment_intent as string | null;
-
-    const orderType = invoice.billing_reason === 'subscription_create' ? ORDER_TYPES.SUBSCRIPTION_INITIAL : ORDER_TYPES.SUBSCRIPTION_RENEWAL;
-    const orderData: InferInsertModel<typeof ordersSchema> = {
-      userId: userId,
-      provider: 'stripe',
-      providerOrderId: invoiceId,
-      stripePaymentIntentId: paymentIntentId,
-      stripeInvoiceId: invoiceId,
-      subscriptionId: subscriptionId,
-      status: 'succeeded',
-      orderType: orderType,
-      planId: planId,
-      priceId: priceId,
-      productId: productId,
-      amountSubtotal: toCurrencyAmount(invoice.subtotal),
-      amountDiscount: toCurrencyAmount(invoice.total_discount_amounts?.reduce((sum, disc) => sum + disc.amount, 0) ?? 0),
-      amountTax: toCurrencyAmount(invoice.total_taxes?.reduce((sum, tax) => sum + tax.amount, 0) ?? 0),
-      amountTotal: toCurrencyAmount(invoice.amount_paid),
-      currency: invoice.currency,
-      metadata: {
-        stripeInvoiceId: invoice.id,
-        stripeSubscriptionId: subscriptionId,
-        stripeCustomerId: customerId,
-        billingReason: invoice.billing_reason,
-        ...(invoice.metadata || {}),
+    if (!userId && customerId) {
+      const customer = await stripe.customers.retrieve(customerId);
+      if (customer && !customer.deleted) {
+        userId = customer.metadata?.userId ?? null;
       }
-    };
-
-    const insertedOrderResults = await db
-      .insert(ordersSchema)
-      .values(orderData)
-      .returning({ id: ordersSchema.id });
-    const insertedOrder = insertedOrderResults[0];
-
-    if (!insertedOrder) {
-      console.error(`Error inserting order for invoice ${invoiceId}`);
-      throw new Error('Could not insert order');
     }
-
-    if (planId && userId && subscription) {
-      // --- [custom] Upgrade ---
-      const orderId = insertedOrder.id;
-      try {
-        const currentPeriodStart = subscription.items.data[0].current_period_start * 1000;
-        await upgradeSubscriptionCredits(userId, planId, orderId, currentPeriodStart);
-      } catch (error) {
-        console.error(`CRITICAL: Failed to upgrade subscription credits for user ${userId}, order ${orderId}:`, error);
-        await sendCreditUpgradeFailedEmail({ userId, orderId, planId, error });
-        throw error;
-      }
-      // --- End: [custom] Upgrade ---
-    } else {
-      console.warn(`Cannot grant subscription credits for invoice ${invoiceId} because planId (${planId}) or userId (${userId}) is unknown.`);
+  } catch (subError) {
+    console.error(`Error fetching subscription ${subscriptionId} or related data during invoice.paid handling:`, subError);
+    if (!userId) {
+      throw new Error(`Failed to retrieve subscription ${subscriptionId} and cannot determine userId for invoice ${invoiceId}.`);
     }
+    console.warn(`Could not fully populate order details for invoice ${invoiceId} due to error: ${subError instanceof Error ? subError.message : subError}`);
+  }
+
+  if (!userId) {
+    console.error(`FATAL: User ID could not be determined for invoice ${invoiceId}. Cannot create order.`);
+    throw new Error(`User ID determination failed for invoice ${invoiceId}.`);
+  }
+  if (!planId) {
+    console.warn(`Could not determine planId for subscription ${subscriptionId} from invoice ${invoiceId}. Order created, but credit grant may fail.`);
+  }
+
+  const invoiceData = await stripe.invoices.retrieve(invoice.id as string, { expand: ['payments'] });
+  const paymentIntentId = invoiceData.payments?.data[0]?.payment.payment_intent as string | null;
+
+  const orderType = invoice.billing_reason === 'subscription_create' ? ORDER_TYPES.SUBSCRIPTION_INITIAL : ORDER_TYPES.SUBSCRIPTION_RENEWAL;
+  const orderData: InferInsertModel<typeof ordersSchema> = {
+    userId,
+    provider: 'stripe',
+    providerOrderId: invoiceId,
+    stripePaymentIntentId: paymentIntentId,
+    stripeInvoiceId: invoiceId,
+    subscriptionId,
+    status: 'succeeded',
+    orderType,
+    planId,
+    priceId,
+    productId,
+    amountSubtotal: toCurrencyAmount(invoice.subtotal),
+    amountDiscount: toCurrencyAmount(invoice.total_discount_amounts?.reduce((sum, disc) => sum + disc.amount, 0) ?? 0),
+    amountTax: toCurrencyAmount(invoice.total_taxes?.reduce((sum, tax) => sum + tax.amount, 0) ?? 0),
+    amountTotal: toCurrencyAmount(invoice.amount_paid),
+    currency: invoice.currency,
+    metadata: {
+      stripeInvoiceId: invoice.id,
+      stripeSubscriptionId: subscriptionId,
+      stripeCustomerId: customerId,
+      billingReason: invoice.billing_reason,
+      ...(invoice.metadata || {}),
+    }
+  };
+
+  const { order: insertedOrder, existed } = await createOrderWithIdempotency(
+    'stripe',
+    orderData,
+    invoiceId
+  );
+
+  if (!existed && insertedOrder && planId && userId && subscription && !isSubscriptionUpdateInvoice) {
+    const orderId = insertedOrder.id;
+    try {
+      const currentPeriodStart = subscription.items.data[0].current_period_start * 1000;
+      await upgradeSubscriptionCredits(userId, planId, orderId, currentPeriodStart);
+    } catch (error) {
+      console.error(`CRITICAL: Failed to upgrade subscription credits for user ${userId}, order ${orderId}:`, error);
+      await sendCreditUpgradeFailedEmail({ userId, orderId, planId, error });
+      throw error;
+    }
+  } else if (!isSubscriptionUpdateInvoice && !planId) {
+    console.warn(`Cannot grant subscription credits for invoice ${invoiceId} because planId (${planId}) or userId (${userId}) is unknown.`);
   }
 
   try {
@@ -271,7 +253,11 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
  *
  * @param subscription The Stripe Subscription object.
  */
-export async function handleSubscriptionUpdate(subscription: Stripe.Subscription, isDeleted: boolean = false) {
+export async function handleSubscriptionUpdate(
+  subscription: Stripe.Subscription,
+  isDeleted: boolean = false,
+  previousAttributes?: Record<string, unknown>
+) {
   const customerId = typeof subscription.customer === 'string' ? subscription.customer : null;
 
   if (!customerId) {
@@ -297,8 +283,25 @@ export async function handleSubscriptionUpdate(subscription: Stripe.Subscription
           console.error(`Error retrieving customer ${customerId} for subscription ${subscription.id}:`, err);
         }
       }
-      revokeRemainingSubscriptionCreditsOnEnd('stripe', subscription.id, userId, subscription.metadata);
-      // --- End: [custom] Revoke the user's benefits ---
+      if (userId) {
+        await revokeRemainingSubscriptionCreditsOnEnd(
+          'stripe',
+          subscription.id,
+          userId,
+          subscription.metadata
+        );
+      }
+      return;
+    }
+
+    const previousPriceId = getPreviousPriceId(previousAttributes);
+    const currentPriceId = subscription.items.data[0]?.price?.id ?? null;
+
+    if (previousPriceId && currentPriceId && previousPriceId !== currentPriceId) {
+      const changeResult = await detectSubscriptionChange(currentPriceId, previousPriceId);
+      if (changeResult.changeType !== 'none') {
+        await handleSubscriptionChange(subscription, changeResult);
+      }
     }
   } catch (error) {
     console.error(`Error syncing subscription ${subscription.id} during update event:`, error);
@@ -341,6 +344,14 @@ export async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
   } catch (emailError) {
     console.error(`Error sending payment failed email for invoice ${invoiceId}:`, emailError);
   }
+}
+
+function getPreviousPriceId(previousAttributes?: Record<string, unknown>): string | null {
+  const previousItems = previousAttributes?.items as
+    | { data?: Array<{ price?: { id?: string } }> }
+    | undefined;
+
+  return previousItems?.data?.[0]?.price?.id ?? null;
 }
 
 /**
@@ -443,10 +454,10 @@ export async function handleRefund(charge: Stripe.Charge) {
 
   // --- [custom] Revoke the user's benefits  ---
   if (originalOrder.subscriptionId) {
-    revokeSubscriptionCredits(originalOrder);
+    await revokeSubscriptionCredits(originalOrder);
   } else {
     const refundAmountCents = Math.abs(charge.amount_refunded);
-    revokeOneTimeCredits(refundAmountCents, originalOrder, refundOrder.id);
+    await revokeOneTimeCredits(refundAmountCents, originalOrder, refundOrder.id);
   }
   // --- End: [custom] Revoke the user's benefits ---
 }

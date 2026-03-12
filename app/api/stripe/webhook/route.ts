@@ -67,8 +67,14 @@ async function processWebhookEvent(event: Stripe.Event) {
       await handleInvoicePaid(event.data.object as Stripe.Invoice);
       break;
     case 'customer.subscription.created':
-    case 'customer.subscription.updated':
       await handleSubscriptionUpdate(event.data.object as Stripe.Subscription);
+      break;
+    case 'customer.subscription.updated':
+      await handleSubscriptionUpdate(
+        event.data.object as Stripe.Subscription,
+        false,
+        (event.data as Stripe.Event.Data & { previous_attributes?: Record<string, unknown> }).previous_attributes
+      );
       break;
     case 'customer.subscription.deleted':
       await handleSubscriptionUpdate(event.data.object as Stripe.Subscription, true);

@@ -14,7 +14,22 @@ interface ChoiceboxGroupProps {
   disabled?: boolean;
 }
 
-export const ChoiceboxGroup = ({
+interface ChoiceboxItemProps {
+  title: string;
+  description?: string;
+  value: string;
+  type?: "radio" | "checkbox";
+  valueSelected?: string | string[];
+  onChange?: (value: string | string[]) => void;
+  disabled?: boolean;
+  children?: React.ReactNode;
+}
+
+interface ChoiceboxGroupComponent extends React.FC<ChoiceboxGroupProps> {
+  Item: React.FC<ChoiceboxItemProps>;
+}
+
+export const ChoiceboxGroup: ChoiceboxGroupComponent = ({
   direction,
   label,
   showLabel,
@@ -79,17 +94,6 @@ const getChoiceboxGroupClasses = (
 
   return className;
 };
-
-interface ChoiceboxItemProps {
-  title: string;
-  description?: string;
-  value: string;
-  type?: "radio" | "checkbox";
-  valueSelected?: string | string[];
-  onChange?: (value: string | string[]) => void;
-  disabled?: boolean;
-  children?: React.ReactNode;
-}
 
 ChoiceboxGroup.Item = ({
   title,
