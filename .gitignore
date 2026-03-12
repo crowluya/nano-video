@@ -86,6 +86,9 @@ web_modules/
 
 # Next.js build output
 .next
+.next-build-*
+.next-build-temp
+.next-webpack-*
 out
 
 # Nuxt.js build / generate output
@@ -134,6 +137,9 @@ dist
 # Claude Code temp files
 tmpclaude-*
 nul
+
+# Codex temp files
+.codex-tmp/
 
 # Claude Code local settings (personal overrides)
 .claude/settings.local.json
