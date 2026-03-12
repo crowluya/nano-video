@@ -3,13 +3,15 @@ import { siteConfig } from "@/config/site";
 import MagicLinkEmail from '@/emails/magic-link-email';
 import { UserWelcomeEmail } from "@/emails/user-welcome";
 import { db } from "@/lib/db";
-import { account, session, user, verification } from "@/lib/db/schema";
+import { account, creditLogs, session, usage, user, verification } from "@/lib/db/schema";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
 import { admin, anonymous, captcha, lastLoginMethod, magicLink, oneTap } from "better-auth/plugins";
 import { eq } from "drizzle-orm";
 import { cookies } from "next/headers";
+
+const WELCOME_BONUS_CREDITS = 100;
 
 export const auth = betterAuth({
   appName: siteConfig.name,
@@ -63,6 +65,35 @@ export const auth = betterAuth({
     user: {
       create: {
         after: async (createdUser) => {
+          try {
+            await db.transaction(async (tx) => {
+              const insertedUsage = await tx
+                .insert(usage)
+                .values({
+                  userId: createdUser.id,
+                  oneTimeCreditsBalance: WELCOME_BONUS_CREDITS,
+                })
+                .onConflictDoNothing()
+                .returning({ userId: usage.userId });
+
+              if (insertedUsage.length === 0) {
+                return;
+              }
+
+              await tx.insert(creditLogs).values({
+                userId: createdUser.id,
+                amount: WELCOME_BONUS_CREDITS,
+                oneTimeBalanceAfter: WELCOME_BONUS_CREDITS,
+                subscriptionBalanceAfter: 0,
+                type: 'welcome_bonus',
+                notes: 'Welcome bonus credits for new user registration',
+                relatedOrderId: null,
+              });
+            });
+          } catch (error) {
+            console.error('Failed to grant welcome bonus credits:', error);
+          }
+
           try {
             // Update user with referral code from cookie
             const cookieStore = await cookies();
