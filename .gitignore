@@ -141,6 +141,9 @@ nul
 # Codex temp files
 .codex-tmp/
 
+# Playwright MCP local logs
+.playwright-mcp/
+
 # Claude Code local settings (personal overrides)
 .claude/settings.local.json
 
