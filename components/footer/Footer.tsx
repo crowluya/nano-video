@@ -2,15 +2,17 @@ import { Newsletter } from "@/components/footer/Newsletter";
 import { TwitterX } from "@/components/social-icons/icons";
 import { siteConfig } from "@/config/site";
 import { Link as I18nLink } from "@/i18n/routing";
+import { getLocalizedInternalLinks } from "@/lib/seo/internal-links-localized";
 import { FooterLink } from "@/types/common";
 import { GithubIcon, InstagramIcon, MailIcon, Youtube } from "lucide-react";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { SiDiscord, SiTiktok } from "react-icons/si";
 
 export default async function Footer() {
   const messages = await getMessages();
+  const locale = await getLocale();
 
   const t = await getTranslations("Home");
   const tFooter = await getTranslations("Footer");
@@ -22,6 +24,41 @@ export default async function Footer() {
       pricingLink.href = process.env.NEXT_PUBLIC_PRICING_PATH!;
     }
   });
+
+  const productsGroup = footerLinks[0];
+  if (productsGroup) {
+    const productLinks = getLocalizedInternalLinks(locale, [
+      "videoGenerator",
+      "imageToVideo",
+      "textToVideo",
+      "videoPrompts",
+    ]);
+    productLinks.forEach((link) => {
+      if (!productsGroup.links.some((item) => item.href === link.href)) {
+        productsGroup.links.push({
+          href: link.href,
+          name: link.title,
+        });
+      }
+    });
+  }
+
+  const supportGroup = footerLinks[1];
+  if (supportGroup) {
+    const supportLinks = getLocalizedInternalLinks(locale, [
+      "videoPricingLimits",
+      "guideHowTo",
+      "guideSettingsLimits",
+    ]);
+    supportLinks.forEach((link) => {
+      if (!supportGroup.links.some((item) => item.href === link.href)) {
+        supportGroup.links.push({
+          href: link.href,
+          name: link.title,
+        });
+      }
+    });
+  }
 
   return (
     <div className="bg-gray-900 text-gray-300 border-t border-gray-700">

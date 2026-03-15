@@ -9,14 +9,17 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link as I18nLink, usePathname } from "@/i18n/routing";
+import { getLocalizedInternalLinks, getInternalLinksUiCopy } from "@/lib/seo/internal-links-localized";
 import { cn } from "@/lib/utils";
 import { HeaderLink } from "@/types/common";
 import { ExternalLink } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const HeaderLinks = () => {
   const tHeader = useTranslations("Header");
+  const locale = useLocale();
   const pathname = usePathname();
+  const copy = getInternalLinksUiCopy(locale);
 
   const headerLinks: HeaderLink[] = tHeader.raw("links");
   const pricingLink = headerLinks.find((link) => link.id === "pricing");
@@ -29,6 +32,46 @@ const HeaderLinks = () => {
   );
   if (promptGeneratorLink) {
     promptGeneratorLink.href = "/#prompt-generator";
+  }
+
+  const exploreLinks: HeaderLink = {
+    name: copy.navExplore,
+    href: "#",
+    items: getLocalizedInternalLinks(locale, [
+      "videoGenerator",
+      "imageToVideo",
+      "textToVideo",
+      "videoPrompts",
+      "videoFree",
+      "videoPricingLimits",
+    ]).map((link) => ({
+      name: link.title,
+      href: link.href,
+      description: link.description,
+    })),
+  };
+
+  const guideLinks: HeaderLink = {
+    name: copy.navGuides,
+    href: "#",
+    items: getLocalizedInternalLinks(locale, [
+      "guideHowTo",
+      "guideBestPrompts",
+      "guideSettingsLimits",
+    ]).map((link) => ({
+      name: link.title,
+      href: link.href,
+      description: link.description,
+    })),
+  };
+
+  const blogIndex = headerLinks.findIndex((link) => link.href === "/blog");
+  if (!headerLinks.some((link) => link.name === exploreLinks.name)) {
+    if (blogIndex >= 0) {
+      headerLinks.splice(blogIndex, 0, exploreLinks, guideLinks);
+    } else {
+      headerLinks.push(exploreLinks, guideLinks);
+    }
   }
 
   const scrollToSection = (sectionId: string, behavior: ScrollBehavior = "smooth") => {
@@ -78,7 +121,7 @@ const HeaderLinks = () => {
                   {link.name}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="w-[250px] gap-1">
+                  <ul className="w-[280px] gap-1">
                     {link.items.map((child) => (
                       <li
                         key={child.name}

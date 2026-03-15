@@ -5,12 +5,15 @@ import {
 } from "@/actions/posts/views";
 import { PostCard } from "@/components/cms/PostCard";
 import { RelatedPosts } from "@/components/cms/RelatedPosts";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { TableOfContents } from "@/components/tiptap/TableOfContents";
 import { TiptapRenderer } from "@/components/tiptap/TiptapRenderer";
 import { Button } from "@/components/ui/button";
 import { Link as I18nLink, Locale, LOCALES } from "@/i18n/routing";
 import { getPostBySlug, getPosts } from "@/lib/getBlogs";
+import { isBuildTime } from "@/lib/is-build-time";
 import { constructMetadata } from "@/lib/metadata";
+import { getInternalLinksUiCopy, getLocalizedInternalLinks } from "@/lib/seo/internal-links-localized";
 import { PostBase } from "@/types/cms";
 import dayjs from "dayjs";
 import { ArrowLeftIcon, CalendarIcon, EyeIcon } from "lucide-react";
@@ -76,6 +79,8 @@ export async function generateMetadata({
 export default async function BlogPage({ params }: { params: Params }) {
   const { slug, locale } = await params;
   const t = await getTranslations("Blogs");
+  const buildTime = isBuildTime();
+  const copy = getInternalLinksUiCopy(locale);
 
   const { post, errorCode } = await getPostBySlug(slug, locale);
 
@@ -85,16 +90,20 @@ export default async function BlogPage({ params }: { params: Params }) {
 
   // Increment and get view count
   // Option 1: Count every page load (default)
-  await incrementViewCountAction({ slug, postType: "blog", locale });
+  if (!buildTime) {
+    await incrementViewCountAction({ slug, postType: "blog", locale });
+  }
 
   // Option 2: Count unique visitors - same IP once per hour (uncomment line below, comment out line above)
   // await incrementUniqueViewCountAction({ slug, locale, postType: "blog" });
 
-  const viewCountResult = await getViewCountAction({
-    slug,
-    postType: "blog",
-    locale,
-  });
+  const viewCountResult = buildTime
+    ? { success: false as const }
+    : await getViewCountAction({
+        slug,
+        postType: "blog",
+        locale,
+      });
   const viewCount =
     viewCountResult.success && viewCountResult.data?.count
       ? viewCountResult.data.count
@@ -258,8 +267,25 @@ export default async function BlogPage({ params }: { params: Params }) {
             </article>
           )}
 
+          <div className="mt-16 rounded-3xl border border-border/70 bg-muted/30 p-8">
+            <h2 className="text-2xl font-semibold">{copy.blogDetailCta.title}</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
+              {copy.blogDetailCta.description}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild>
+                <I18nLink href="/prompt-generator">{copy.blogDetailCta.primaryLabel}</I18nLink>
+              </Button>
+              <Button asChild variant="outline">
+                <I18nLink href="/nano-banana-video-generator">
+                  {copy.blogDetailCta.secondaryLabel}
+                </I18nLink>
+              </Button>
+            </div>
+          </div>
+
           {/* Related Posts */}
-          {post.id && (
+          {post.id && !buildTime && (
             <RelatedPosts
               postId={post.id}
               postType="blog"
@@ -269,6 +295,20 @@ export default async function BlogPage({ params }: { params: Params }) {
               CardComponent={BlogPostCard}
             />
           )}
+
+          <InternalLinksSection
+            className="py-12"
+            eyebrow={copy.blogDetailRelated.eyebrow}
+            title={copy.blogDetailRelated.title}
+            description={copy.blogDetailRelated.description}
+            links={getLocalizedInternalLinks(locale, [
+              "videoPrompts",
+              "textToVideo",
+              "imageToVideo",
+              "guideHowTo",
+              "guideBestPrompts",
+            ])}
+          />
 
           <div className="mt-16 pt-8 border-t">
             <Button asChild variant="outline" size="sm">
@@ -304,6 +344,7 @@ const BlogPostCard = ({ post }: { post: PostBase }) => (
 
 export async function generateStaticParams() {
   const allParams: { locale: string; slug: string }[] = [];
+  const buildTime = isBuildTime();
 
   for (const locale of LOCALES) {
     const { posts: localPosts } = await getPosts(locale);
@@ -317,20 +358,22 @@ export async function generateStaticParams() {
       });
   }
 
-  for (const locale of LOCALES) {
-    const serverResult = await listPublishedPostsAction({
-      locale: locale,
-      pageSize: 1000,
-      visibility: "public",
-      postType: "blog",
-    });
-    if (serverResult.success && serverResult.data?.posts) {
-      serverResult.data.posts.forEach((post) => {
-        const slugPart = post.slug?.replace(/^\//, "").replace(/^blogs\//, "");
-        if (slugPart) {
-          allParams.push({ locale, slug: slugPart });
-        }
+  if (!buildTime) {
+    for (const locale of LOCALES) {
+      const serverResult = await listPublishedPostsAction({
+        locale: locale,
+        pageSize: 1000,
+        visibility: "public",
+        postType: "blog",
       });
+      if (serverResult.success && serverResult.data?.posts) {
+        serverResult.data.posts.forEach((post) => {
+          const slugPart = post.slug?.replace(/^\//, "").replace(/^blogs\//, "");
+          if (slugPart) {
+            allParams.push({ locale, slug: slugPart });
+          }
+        });
+      }
     }
   }
 

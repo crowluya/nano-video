@@ -1,6 +1,8 @@
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import VideoGenerationPage from "@/components/video-generation/VideoGenerationPage";
 import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
+import { getInternalLinksUiCopy, getLocalizedInternalLinks } from "@/lib/seo/internal-links-localized";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -29,10 +31,27 @@ export default async function VideoGenerationRoute({
 }: {
   params: Params;
 }) {
+  const { locale } = await params;
+  const copy = getInternalLinksUiCopy(locale);
+
   return (
-    <div className="w-full h-screen overflow-hidden">
-      <VideoGenerationPage />
+    <div className="w-full">
+      <div className="h-screen overflow-hidden">
+        <VideoGenerationPage />
+      </div>
+      <InternalLinksSection
+        eyebrow={copy.videoTool.eyebrow}
+        title={copy.videoTool.title}
+        description={copy.videoTool.description}
+        links={getLocalizedInternalLinks(locale, [
+          "videoGenerator",
+          "imageToVideo",
+          "textToVideo",
+          "videoFree",
+          "videoPrompts",
+          "videoPricingLimits",
+        ])}
+      />
     </div>
   );
 }
-

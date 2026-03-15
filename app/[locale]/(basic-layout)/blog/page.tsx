@@ -1,9 +1,12 @@
 import { listPublishedPostsAction } from "@/actions/posts/posts";
 import { listTagsAction } from "@/actions/posts/tags";
 import { PostList } from "@/components/cms/PostList";
+import { InternalLinksSection } from "@/components/seo/InternalLinksSection";
 import { Locale } from "@/i18n/routing";
 import { getPosts } from "@/lib/getBlogs";
+import { isBuildTime } from "@/lib/is-build-time";
 import { constructMetadata } from "@/lib/metadata";
+import { getInternalLinksUiCopy, getLocalizedInternalLinks } from "@/lib/seo/internal-links-localized";
 import { Tag } from "@/types/cms";
 import { TextSearch } from "lucide-react";
 import { Metadata } from "next";
@@ -34,16 +37,20 @@ const SERVER_POST_PAGE_SIZE = 48;
 export default async function Page({ params }: { params: Params }) {
   const { locale } = await params;
   const t = await getTranslations("Blogs");
+  const buildTime = isBuildTime();
+  const copy = getInternalLinksUiCopy(locale);
 
   const { posts: localPosts } = await getPosts(locale);
 
-  const initialServerPostsResult = await listPublishedPostsAction({
-    pageIndex: 0,
-    pageSize: SERVER_POST_PAGE_SIZE,
-    postType: "blog",
-    visibility: "public",
-    locale: locale,
-  });
+  const initialServerPostsResult = buildTime
+    ? { success: false as const }
+    : await listPublishedPostsAction({
+        pageIndex: 0,
+        pageSize: SERVER_POST_PAGE_SIZE,
+        postType: "blog",
+        visibility: "public",
+        locale: locale,
+      });
 
   const initialServerPosts =
     initialServerPostsResult.success && initialServerPostsResult.data?.posts
@@ -61,7 +68,9 @@ export default async function Page({ params }: { params: Params }) {
     );
   }
 
-  const tagsResult = await listTagsAction({ postType: "blog" });
+  const tagsResult = buildTime
+    ? { success: false as const }
+    : await listTagsAction({ postType: "blog" });
   let serverTags: Tag[] = [];
   if (tagsResult.success && tagsResult.data?.tags) {
     serverTags = tagsResult.data.tags;
@@ -71,34 +80,48 @@ export default async function Page({ params }: { params: Params }) {
     localPosts.length === 0 && initialServerPosts.length === 0;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">{t("title")}</h1>
+    <div className="w-full">
+      <InternalLinksSection
+        eyebrow={copy.blogList.eyebrow}
+        title={copy.blogList.title}
+        description={copy.blogList.description}
+        links={getLocalizedInternalLinks(locale, [
+          "videoGenerator",
+          "imageToVideo",
+          "textToVideo",
+          "videoPrompts",
+        ])}
+      />
 
-      {noPostsFound ? (
-        <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-          <TextSearch className="h-16 w-16 text-gray-400 mb-4" />
-          <h2 className="text-2xl font-semibold mb-2">
-            {t("emptyState.title") || "No blog posts"}
-          </h2>
-          <p className="text-gray-500 max-w-md">
-            {t("emptyState.description") ||
-              "We are creating exciting content, please stay tuned!"}
-          </p>
-        </div>
-      ) : (
-        <PostList
-          postType="blog"
-          baseUrl="/blog"
-          localPosts={localPosts}
-          initialPosts={initialServerPosts}
-          initialTotal={totalServerPosts}
-          serverTags={serverTags}
-          locale={locale}
-          pageSize={SERVER_POST_PAGE_SIZE}
-          showTagSelector={true}
-          emptyMessage="No posts found for this tag."
-        />
-      )}
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-bold mb-8 text-center">{t("title")}</h1>
+
+        {noPostsFound ? (
+          <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
+            <TextSearch className="h-16 w-16 text-gray-400 mb-4" />
+            <h2 className="text-2xl font-semibold mb-2">
+              {t("emptyState.title") || "No blog posts"}
+            </h2>
+            <p className="text-gray-500 max-w-md">
+              {t("emptyState.description") ||
+                "We are creating exciting content, please stay tuned!"}
+            </p>
+          </div>
+        ) : (
+          <PostList
+            postType="blog"
+            baseUrl="/blog"
+            localPosts={localPosts}
+            initialPosts={initialServerPosts}
+            initialTotal={totalServerPosts}
+            serverTags={serverTags}
+            locale={locale}
+            pageSize={SERVER_POST_PAGE_SIZE}
+            showTagSelector={true}
+            emptyMessage="No posts found for this tag."
+          />
+        )}
+      </div>
     </div>
   );
 }

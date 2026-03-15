@@ -1,5 +1,6 @@
 import { getPublishedPostBySlugAction } from '@/actions/posts/posts';
 import { DEFAULT_LOCALE } from '@/i18n/routing';
+import { isBuildTime } from '@/lib/is-build-time';
 import { PostBase, PublicPostWithContent } from '@/types/cms';
 import dayjs from 'dayjs';
 import fs from 'fs';
@@ -126,6 +127,10 @@ export async function getPostBySlug(
         console.error(`Error processing local file ${filename}:`, error);
       }
     }
+  }
+
+  if (isBuildTime()) {
+    return { post: null, error: "Post not found during build.", errorCode: undefined };
   }
 
   const serverResult = await getPublishedPostBySlugAction({ slug, locale, postType: 'blog' });

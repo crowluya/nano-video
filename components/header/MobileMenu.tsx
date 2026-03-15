@@ -15,19 +15,62 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link as I18nLink } from "@/i18n/routing";
+import { getLocalizedInternalLinks, getInternalLinksUiCopy } from "@/lib/seo/internal-links-localized";
 import { HeaderLink } from "@/types/common";
 import { Menu } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function MobileMenu() {
   const t = useTranslations("Home");
   const tHeader = useTranslations("Header");
+  const locale = useLocale();
+  const copy = getInternalLinksUiCopy(locale);
 
   const headerLinks: HeaderLink[] = tHeader.raw("links");
   const pricingLink = headerLinks.find((link) => link.id === "pricing");
   if (pricingLink) {
     pricingLink.href = process.env.NEXT_PUBLIC_PRICING_PATH!;
+  }
+
+  const exploreLinks: HeaderLink = {
+    name: copy.navExplore,
+    href: "#",
+    items: getLocalizedInternalLinks(locale, [
+      "videoGenerator",
+      "imageToVideo",
+      "textToVideo",
+      "videoPrompts",
+      "videoFree",
+      "videoPricingLimits",
+    ]).map((link) => ({
+      name: link.title,
+      href: link.href,
+      description: link.description,
+    })),
+  };
+
+  const guideLinks: HeaderLink = {
+    name: copy.navGuides,
+    href: "#",
+    items: getLocalizedInternalLinks(locale, [
+      "guideHowTo",
+      "guideBestPrompts",
+      "guideSettingsLimits",
+    ]).map((link) => ({
+      name: link.title,
+      href: link.href,
+      description: link.description,
+    })),
+  };
+
+  const blogIndex = headerLinks.findIndex((link) => link.href === "/blog");
+  if (!headerLinks.some((link) => link.name === exploreLinks.name)) {
+    if (blogIndex >= 0) {
+      headerLinks.splice(blogIndex, 0, exploreLinks, guideLinks);
+    } else {
+      headerLinks.push(exploreLinks, guideLinks);
+    }
   }
 
   return (
