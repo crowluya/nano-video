@@ -493,3 +493,99 @@ Recommended fields:
 | --- | --- | --- | --- |
 | 2026-03-13 | Submitted | syncedreview.com | https://syncedreview.com/2024/09/09/microsofts-fully-pipelined-distributed-transformer-processes-16x-sequence-length-with-extreme-hardware-efficiency/ | Comment posted with backlink |
 | 2026-03-13 | Follow Up | joaniesimon.com | Demo site, no real comment form |
+| 2026-03-17 | Skipped | yourtrustedai.com | 403 Forbidden |
+| 2026-03-17 | Skipped | world-today-news.com | Connection reset |
+| 2026-03-17 | Skipped | trplane.com | No comment form (requires login or closed) |
+| 2026-03-17 | Skipped | somuchinfo.com | No comment form |
+| 2026-03-17 | Skipped | solution4guru.com | Timeout |
+| 2026-03-17 | Skipped | uncagedminds.substack.com | Connection timeout |
+| 2026-03-17 | Skipped | toolspedia.ai | AI directory, not a blog (no comments) |
+| 2026-03-17 | Skipped | time.news | Connection aborted |
+| 2026-03-17 | Submitted | teknofili.com | Comment posted, awaiting moderation (Turkish) |
+| 2026-03-17 | Skipped | techreport.gr | Connection timeout |
+| 2026-03-17 | Follow Up | techentires.com | SSL protocol error |
+| 2026-03-17 | Skipped | archyde.com | Connection timeout |
+| 2026-03-17 | Skipped | marktechpost.com | Page 404 not found |
+| 2026-03-17 | Skipped | theregister.com | Page 404 not found |
+| 2026-03-17 | Skipped | analyticsinsight.net | Page 404 not found |
+| 2026-03-17 | Skipped | newsylist.com | Page not found |
+| 2026-03-17 | Submitted | webfusiontechnology.com | Comment submitted successfully |
+| 2026-03-17 | Skipped | newsy-today.com | Cloudflare security verification blocked |
+| 2026-03-17 | Skipped | archynewsy.com | Cloudflare security verification blocked |
+| 2026-03-17 | Submitted | archynetys.com | Comment submitted successfully |
+| 2026-03-17 | Skipped | agence-ia.com | No comment form available |
+| 2026-03-17 | Skipped | academiadeia.com | App directory, not a blog (no comments) |
+| 2026-03-17 | Skipped | techearninghub.com | 403 Forbidden |
+| 2026-03-17 | Skipped | archyworld.com | Domain redirected to gambling site |
+| 2026-03-17 | Skipped | archysport.com | Page 404 not found |
+| 2026-03-17 | Skipped | archyparrot.com | DNS resolution failed |
+| 2026-03-17 | Skipped | archynewz.com | DNS resolution failed |
+| 2026-03-17 | Skipped | universopen.com | DNS resolution failed |
+| 2026-03-17 | Skipped | siriusdigital.us | Domain expired |
+| 2026-03-17 | Skipped | sentia.community | Connection timeout |
+| 2026-03-17 | Skipped | rjblog.in | Empty page, no content |
+| 2026-03-17 | Skipped | minhajurrahmanalbi.com | DNS resolution failed (redirected to parking) |
+| 2026-03-17 | Skipped | learnwavestudios.in | Page 404 not found |
+| 2026-03-17 | Skipped | instantaitools.com | Connection aborted |
+| 2026-03-17 | Submitted | ccartassn.org | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Skipped | brainpod.ai | URL redirected to homepage (commercial site, no comments) |
+| 2026-03-17 | Skipped | allesora.com | 403 Forbidden |
+| 2026-03-17 | Skipped | aipoki.com | AI tool directory, no comment form |
+| 2026-03-17 | Skipped | aineurolib.ru | AI tool directory (Russian), no comment form |
+| 2026-03-17 | Skipped | ai-toolmaster.com | AI tool directory, no comment form |
+| 2026-03-17 | Submitted | ai.netstudy.in | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Submitted | aitoolsguidance.com | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Skipped | aifamelee.io | SSL certificate error |
+| 2026-03-17 | Skipped | ai.belarabi.me | Connection timeout |
+| 2026-03-17 | Skipped | digitalpulsehub.top | No comment form (Blogger comments not loading) |
+| 2026-03-17 | Skipped | pentvars.edu.gh | Connection timeout |
+| 2026-03-17 | Submitted | kybeledogal.com | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Skipped | dogscomfort.com | Connection aborted |
+| 2026-03-17 | Skipped | edublog.educastur.es | Connection timeout |
+| 2026-03-17 | Skipped | silverfishjewellery.co.uk | 403 Forbidden |
+| 2026-03-17 | Skipped | e-advantagesolutions.co.uk | Blog homepage (not a specific post) |
+| 2026-03-17 | Submitted | sohooebike.com | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Skipped | creati.ai | Access restricted (region blocked) |
+| 2026-03-17 | Skipped | theundiscoveredstars.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | seasidesuffolk.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | retailanswers.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | armstrongpayrollsolutions.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | theguernsey-shop.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | drc.uog.edu.et | SSL protocol error |
+| 2026-03-17 | Skipped | news.ycombinator.com | Connection timeout |
+| 2026-03-17 | Skipped | news.ycombinator.com (2nd URL) | Connection timeout |
+| 2026-03-17 | Skipped | affectiontodetail.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Submitted | jfk.blogs.archives.gov | Comment submitted (awaiting moderation) |
+| 2026-03-17 | Skipped | joinnew88.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | pokarbet789.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | hi88sport.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | creati.ai (es) | Access restricted (region blocked) |
+| 2026-03-17 | Skipped | shbetbets.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | f8bettips.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | shbetgames.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | sunwingames.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | hi88live.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | thecasinopokar.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | thef8bet.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | thehi88.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | casinopokarbet.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | f8betgames.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | thejun88.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | 789betgaming.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | f8betwin.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | casinopokarclub.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | f8betsport.com | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Submitted | blogg.ng.se | Comment posted on VR article |
+| 2026-03-17 | Skipped | mangalayatan.in | SSL error |
+| 2026-03-17 | Skipped | newcroplive.com | SSL error |
+| 2026-03-17 | Skipped | seasidesuffolk.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | bhhscalifornia.com | Connection timeout |
+| 2026-03-17 | Skipped | search.yahoo.com | Search engine page (not a blog) |
+| 2026-03-17 | Skipped | hackernewsday.com | News aggregator site (not a blog) |
+| 2026-03-17 | Skipped | theguernsey-shop.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-17 | Skipped | at.search.yahoo.com | Search engine page (not a blog) |
+| 2026-03-17 | Skipped | se.search.yahoo.com | Search engine page (not a blog) |
+| 2026-03-17 | Skipped | bandnewstv.uol.com.br | 403 Forbidden |
+| 2026-03-17 | Skipped | nanobanana.org | Own site (not a submission target) |
+| 2026-03-17 | Skipped | nanobanana.im | Own site (not a submission target) |
+| 2026-03-17 | Skipped | applealmond.com | Already has our link, no comment form |

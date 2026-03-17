@@ -1,5 +1,34 @@
 # Nano Banana Video Backlink Submission Brief
 
+评论结构模板
+1. 开场认同（30字）
+   - 肯定文章价值
+   - 表达认同感
+
+2. 补充观点（50字）
+   - 分享经验
+   - 提供建议
+
+3. 自然引用（20字）
+   - 相关资源推荐
+   - 植入目标链接
+评论示例
+原文主题：Python编程入门
+评论模板：
+"这篇教程对初学者很友好，讲解很清晰。我在学习过程中发现，结合实战项目练习效果更好。这里整理了一份进阶学习路线图：[链接]"
+4. 外链代码规范
+HTML标准写法
+<a href="https://yourdomain.com" rel="dofollow" target="_blank">锚文本</a>
+注意事项
+避免重复锚文本
+确保链接相关性
+适度使用关键词
+保持自然语境
+筛选标准
+相关性：与行业主题高度相关
+权重：域名权重DA>20
+活跃度：定期更新内容
+互动性：有评论和分享
 This document summarizes the current repository information that can be reused for backlink submissions and Playwright-based form filling.
 
 ## Folder Summary
