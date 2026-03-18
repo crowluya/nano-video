@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "AI 图片与视频创作平台",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 单图生视频与首尾帧控制",
+      "href": "/nanabananvideo"
     },
-    "title": "更快交付 AI 创作工作流",
-    "description": "Nano Banana Video 将图像生成、视频生成、提示词工作流、计费与后台工具整合在一个生产级应用中。",
-    "getStarted": "立即开始",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "把一张图生成视频，或用首尾帧精确控制镜头落点",
+    "description": "使用 Veo 3.1，你可以从单张参考图生成视频，也可以同时锁定开场帧和结束帧，让广告、转场和社交内容拥有更稳定的连续性。",
+    "getStarted": "体验 Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "查看文档",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "视频工作流",
+      "text": "单图生视频与首尾帧控制"
+    },
+    "title": "既能从一张图生成动态镜头，也能用首尾帧精确控制镜头走向",
+    "description": "使用 Veo 3.1，你可以把单张静态图转成动态视频，也可以同时锁定起始帧和结束帧，在广告、转场、产品展示和社交短视频里获得更稳定的连续性。",
+    "singleImage": {
+      "eyebrow": "单图生视频",
+      "title": "从一张图出发，生成完整且精致的动态镜头",
+      "description": "上传一张参考图后，通过提示词控制镜头运动、主体动作、节奏和氛围，而不用重新搭整套画面。",
+      "bullets": [
+        "用一张参考图锁定构图和视觉方向",
+        "通过提示词补充镜头运动和场景动态",
+        "适合产品图、人物图和投流素材"
+      ],
+      "frameLabels": {
+        "first": "参考图"
+      },
+      "videoLabel": "生成视频",
+      "button": "体验图片转视频"
+    },
+    "firstLast": {
+      "eyebrow": "首尾帧生视频",
+      "title": "同时定义镜头如何开始，以及最终落在哪个画面",
+      "description": "当单张图片无法提供足够控制力时，可以用起始帧和结束帧共同约束转场、揭示和画面连续性。",
+      "bullets": [
+        "用起始帧和结束帧控制整段镜头走向",
+        "让转场、揭示和叙事结果更可控",
+        "适合前后对比、产品揭示和电影感镜头"
+      ],
+      "frameLabels": {
+        "first": "起始帧",
+        "last": "结束帧"
+      },
+      "videoLabel": "生成视频",
+      "button": "体验引导式视频生成"
+    }
   },
   "Testimonials": {
     "badge": {

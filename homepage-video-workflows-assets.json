@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-03-18T14:48:26.417Z",
+  "singleImage": {
+    "referenceFrame": "https://cdn.nanobananavideo.net/website/home/workflows/single-image/reference-frame.png",
+    "generatedVideo": "https://cdn.nanobananavideo.net/website/home/workflows/single-image/generated-video.mp4"
+  },
+  "firstLast": {
+    "startingFrame": "https://cdn.nanobananavideo.net/website/home/workflows/first-last/starting-frame.png",
+    "endingFrame": "https://cdn.nanobananavideo.net/website/home/workflows/first-last/ending-frame.png",
+    "generatedVideo": "https://cdn.nanobananavideo.net/website/home/workflows/first-last/generated-video.mp4"
+  }
+}

@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "Next.js SaaS Full Stack Template",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 para imagem em video e controle com primeiro e ultimo frame",
+      "href": "/nanabananvideo"
     },
-    "title": "Um Boilerplate Moderno Next.js Full Stack SaaS",
-    "description": "Nosso boilerplate Next.js inclui autenticação, pagamentos Stripe, integração com IA, CMS e tudo que você precisa para começar a ganhar imediatamente.",
-    "getStarted": "Começar Agora",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Transforme uma imagem em video ou guie o final com o primeiro e o ultimo frame",
+    "description": "Gere videos Veo 3.1 a partir de uma unica imagem de referencia ou fixe o inicio e o fim da cena para ter mais continuidade em anuncios, reveals e conteudo social.",
+    "getStarted": "Testar Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "Ver Documentação",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS DE VIDEO",
+      "text": "Imagem para video e controle com primeiro e ultimo frame"
+    },
+    "title": "Crie movimento a partir de uma imagem ou guie a cena com o primeiro e o ultimo frame",
+    "description": "Com Veo 3.1, voce pode animar uma unica imagem ou travar o inicio e o fim da cena quando precisa de mais continuidade para anuncios, reveals e videos sociais.",
+    "singleImage": {
+      "eyebrow": "Imagem para video",
+      "title": "Comece com um frame e transforme-o em uma cena em movimento refinada",
+      "description": "Envie uma imagem e use prompts para controlar movimento de camera, movimento do sujeito, ritmo e atmosfera sem reconstruir toda a cena.",
+      "bullets": [
+        "Fixe composicao e direcao visual com uma unica imagem de referencia",
+        "Adicione movimento com controle de camera e cena guiado por prompt",
+        "Util para produto, retratos e criativos para social ads"
+      ],
+      "frameLabels": {
+        "first": "Imagem de referencia"
+      },
+      "videoLabel": "Video gerado",
+      "button": "Testar imagem para video"
+    },
+    "firstLast": {
+      "eyebrow": "Primeiro e ultimo frame para video",
+      "title": "Defina como a cena comeca e onde ela termina",
+      "description": "Quando uma unica imagem nao basta, use um frame inicial e um final para orientar transicoes, reveals e continuidade com mais controle.",
+      "bullets": [
+        "Controle todo o arco da cena com um frame inicial e um final",
+        "Deixe reveals, transicoes e payoff mais intencionais",
+        "Ideal para antes e depois, reveal de produto e cortes cinematograficos"
+      ],
+      "frameLabels": {
+        "first": "Frame inicial",
+        "last": "Frame final"
+      },
+      "videoLabel": "Video gerado",
+      "button": "Testar video guiado"
+    }
   },
   "Testimonials": {
     "badge": {

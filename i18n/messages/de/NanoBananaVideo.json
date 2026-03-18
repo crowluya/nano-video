@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Einzelbild-zu-Video und Steuerung mit erstem und letztem Frame"
+    },
+    "title": "Erzeugen Sie Bewegung aus einem Bild oder steuern Sie den Shot mit erstem und letztem Frame",
+    "description": "Mit Veo 3.1 koennen Sie ein einzelnes Bild animieren oder Anfangs- und Endframe festlegen, wenn Sie bei Anzeigen, Reveals und Social Videos mehr Kontrolle ueber die Kontinuitaet brauchen.",
+    "singleImage": {
+      "eyebrow": "Einzelbild zu Video",
+      "title": "Starten Sie mit einem Frame und erzeugen Sie daraus einen ausgereiften bewegten Shot",
+      "description": "Laden Sie ein Bild hoch und steuern Sie per Prompt Kamerafahrt, Bewegung des Motivs, Tempo und Stimmung, ohne die ganze Szene neu aufzubauen.",
+      "bullets": [
+        "Komposition und Bildsprache mit einem Referenzbild verankern",
+        "Bewegung ueber promptgesteuerte Kamera- und Szenenkontrolle hinzufuegen",
+        "Geeignet fuer Produktbilder, Portraets und Social Ads"
+      ],
+      "frameLabels": {
+        "first": "Referenzbild"
+      },
+      "videoLabel": "Generiertes Video",
+      "button": "Bild zu Video testen"
+    },
+    "firstLast": {
+      "eyebrow": "Erster & letzter Frame zu Video",
+      "title": "Legen Sie fest, wie die Szene beginnt und wie sie endet",
+      "description": "Wenn ein einzelnes Bild nicht genug Kontrolle bietet, helfen Start- und Endframe dabei, Uebergaenge, Reveals und Kontinuitaet praeziser zu steuern.",
+      "bullets": [
+        "Den gesamten Shot-Bogen mit Start- und Endframe kontrollieren",
+        "Reveals, Uebergaenge und Aufloesungen gezielter gestalten",
+        "Ideal fuer Vorher-Nachher-Szenen, Produktenthuellungen und cineastische Schnitte"
+      ],
+      "frameLabels": {
+        "first": "Startframe",
+        "last": "Endframe"
+      },
+      "videoLabel": "Generiertes Video",
+      "button": "Gefuehrtes Video testen"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "BEWERTUNGEN"

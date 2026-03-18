@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Obraz do wideo oraz kontrola pierwsza i ostatnia klatka"
+    },
+    "title": "Tworz ruch z jednego obrazu albo prowadz ujecie pierwsza i ostatnia klatka",
+    "description": "Dzieki Veo 3.1 mozesz animowac pojedynczy obraz albo zablokowac poczatek i koniec ujecia, gdy potrzebujesz wiekszej spojnosci w reklamach, revealach i materialach social video.",
+    "singleImage": {
+      "eyebrow": "Obraz do wideo",
+      "title": "Zacznij od jednej klatki i zmien ja w dopracowane ruchome ujecie",
+      "description": "Wgraj jeden obraz i steruj ruchem kamery, ruchem obiektu, tempem oraz nastrojem za pomoca promptu bez przebudowy calej sceny.",
+      "bullets": [
+        "Zakotwicz kompozycje i kierunek wizualny jednym obrazem referencyjnym",
+        "Dodaj ruch dzieki sterowaniu kamera i scena przez prompt",
+        "Dobre dla produktow, portretow i kreacji do social ads"
+      ],
+      "frameLabels": {
+        "first": "Obraz referencyjny"
+      },
+      "videoLabel": "Wygenerowane wideo",
+      "button": "Wyprobuj obraz do wideo"
+    },
+    "firstLast": {
+      "eyebrow": "Pierwsza i ostatnia klatka do wideo",
+      "title": "Zdefiniuj jak scena sie zaczyna i gdzie laduje",
+      "description": "Gdy pojedynczy obraz nie daje wystarczajacej kontroli, uzyj klatki poczatkowej i koncowej, aby precyzyjniej sterowac przejsciami, revealami i spojnoscia.",
+      "bullets": [
+        "Kontroluj caly luk ujecia klatka startowa i koncowa",
+        "Tworz bardziej intencjonalne przejscia, reveal i payoff",
+        "Idealne do scen przed i po, revealu produktu i filmowych ciec"
+      ],
+      "frameLabels": {
+        "first": "Klatka poczatkowa",
+        "last": "Klatka koncowa"
+      },
+      "videoLabel": "Wygenerowane wideo",
+      "button": "Wyprobuj wideo sterowane"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "OPINIE"

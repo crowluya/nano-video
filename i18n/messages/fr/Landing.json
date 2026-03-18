@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NOUVEAU",
-      "text": "Template Full Stack SaaS Next.js",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 pour image vers video et controle par premiere et derniere image",
+      "href": "/nanabananvideo"
     },
-    "title": "Un Boilerplate SaaS Full Stack Next.js Moderne",
-    "description": "Notre boilerplate Next.js inclut l'authentification, les paiements Stripe, l'intégration IA, un CMS et tout ce dont vous avez besoin pour commencer à gagner immédiatement.",
-    "getStarted": "Commencer",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Transformez une image en video ou guidez la fin avec la premiere et la derniere image",
+    "description": "Generez des videos Veo 3.1 a partir d'une seule image de reference ou verrouillez le debut et la fin du plan pour plus de continuite dans les publicites, reveals et contenus sociaux.",
+    "getStarted": "Essayer Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "Voir la Documentation",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS VIDEO",
+      "text": "Image vers video et controle par premiere et derniere image"
+    },
+    "title": "Creez du mouvement a partir d'une image ou guidez le plan avec la premiere et la derniere image",
+    "description": "Avec Veo 3.1, vous pouvez animer une image fixe ou verrouiller l'ouverture et la fin du plan lorsque vous avez besoin d'une meilleure continuite pour les publicites, reveals et videos sociales.",
+    "singleImage": {
+      "eyebrow": "Image vers video",
+      "title": "Partez d'une image et transformez-la en plan anime de qualite",
+      "description": "Telechargez une image, puis utilisez le prompt pour controler mouvement de camera, mouvement du sujet, rythme et ambiance sans reconstruire toute la scene.",
+      "bullets": [
+        "Ancrez composition et direction visuelle avec une seule image de reference",
+        "Ajoutez du mouvement via un controle camera et scene guide par prompt",
+        "Utile pour produits, portraits et creatives social ads"
+      ],
+      "frameLabels": {
+        "first": "Image de reference"
+      },
+      "videoLabel": "Video generee",
+      "button": "Essayer image vers video"
+    },
+    "firstLast": {
+      "eyebrow": "Premiere et derniere image vers video",
+      "title": "Definissez comment la scene commence et comment elle se termine",
+      "description": "Quand une seule image ne suffit pas, utilisez une image de depart et une image finale pour guider transitions, reveals et continuite de maniere plus precise.",
+      "bullets": [
+        "Controlez tout l'arc du plan avec une image de debut et une image de fin",
+        "Rendez reveals, transitions et chute plus intentionnels",
+        "Ideal pour avant-apres, reveals produit et coupes cinematographiques"
+      ],
+      "frameLabels": {
+        "first": "Image de depart",
+        "last": "Image finale"
+      },
+      "videoLabel": "Video generee",
+      "button": "Essayer video guidee"
+    }
   },
   "Testimonials": {
     "badge": {

@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Imagen a video y control con primer y ultimo fotograma"
+    },
+    "title": "Crea movimiento desde una sola imagen o guia el plano con el primer y el ultimo fotograma",
+    "description": "Con Veo 3.1 puedes animar una imagen fija o bloquear el inicio y el final del plano cuando necesitas mas continuidad para anuncios, reveals y videos sociales.",
+    "singleImage": {
+      "eyebrow": "Imagen a video",
+      "title": "Empieza con un solo fotograma y conviertelo en un plano en movimiento pulido",
+      "description": "Sube una imagen y usa prompts para controlar movimiento de camara, accion del sujeto, ritmo y atmosfera sin reconstruir toda la escena.",
+      "bullets": [
+        "Fija composicion y direccion visual con una sola imagen de referencia",
+        "Anade movimiento con control de camara y escena guiado por prompts",
+        "Util para producto, retratos y creatividades para social ads"
+      ],
+      "frameLabels": {
+        "first": "Imagen de referencia"
+      },
+      "videoLabel": "Video generado",
+      "button": "Probar imagen a video"
+    },
+    "firstLast": {
+      "eyebrow": "Primer y ultimo fotograma a video",
+      "title": "Define como empieza la escena y donde termina",
+      "description": "Cuando una sola imagen no basta, usa un fotograma inicial y otro final para guiar transiciones, reveals y continuidad con mas precision.",
+      "bullets": [
+        "Controla el arco completo del plano con un inicio y un final",
+        "Haz que reveals, transiciones y resolucion sean mas intencionales",
+        "Ideal para antes y despues, reveals de producto y cortes cinematograficos"
+      ],
+      "frameLabels": {
+        "first": "Fotograma inicial",
+        "last": "Fotograma final"
+      },
+      "videoLabel": "Video generado",
+      "button": "Probar video guiado"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "TESTIMONIOS"

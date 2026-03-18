@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NUEVO",
-      "text": "Plantilla SaaS Full Stack de Next.js",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 para imagen a video y control con primer y ultimo fotograma",
+      "href": "/nanabananvideo"
     },
-    "title": "Un Boilerplate SaaS Full Stack Moderno de Next.js",
-    "description": "Nuestro boilerplate de Next.js incluye autenticación, pagos Stripe, integración de IA, CMS y todo lo que necesitas para comenzar a ganar dinero de inmediato.",
-    "getStarted": "Comenzar",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Convierte una imagen en video o guia el final con el primer y el ultimo fotograma",
+    "description": "Genera videos con Veo 3.1 a partir de una sola imagen de referencia o fija inicio y final del plano para lograr mas continuidad en anuncios, reveals y contenido social.",
+    "getStarted": "Probar Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "Ver Documentación",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "FLUJOS DE VIDEO",
+      "text": "Imagen a video y control con primer y último fotograma"
+    },
+    "title": "Crea movimiento desde una sola imagen o guía el plano con el primer y el último fotograma",
+    "description": "Con Veo 3.1 puedes animar una imagen fija o bloquear el inicio y el final del plano cuando necesitas más continuidad para anuncios, reveals y videos sociales.",
+    "singleImage": {
+      "eyebrow": "Imagen a video",
+      "title": "Empieza con un solo fotograma y conviértelo en un plano en movimiento pulido",
+      "description": "Sube una imagen y usa prompts para controlar movimiento de cámara, acción del sujeto, ritmo y atmósfera sin reconstruir toda la escena.",
+      "bullets": [
+        "Fija composición y dirección visual con una sola imagen de referencia",
+        "Añade movimiento con control de cámara y escena guiado por prompts",
+        "Útil para producto, retratos y creatividades para social ads"
+      ],
+      "frameLabels": {
+        "first": "Imagen de referencia"
+      },
+      "videoLabel": "Video generado",
+      "button": "Probar imagen a video"
+    },
+    "firstLast": {
+      "eyebrow": "Primer y último fotograma a video",
+      "title": "Define cómo empieza la escena y dónde termina",
+      "description": "Cuando una sola imagen no basta, usa un fotograma inicial y otro final para guiar transiciones, reveals y continuidad con más precisión.",
+      "bullets": [
+        "Controla el arco completo del plano con un inicio y un final",
+        "Haz que reveals, transiciones y resolución sean más intencionales",
+        "Ideal para antes y después, reveals de producto y cortes cinematográficos"
+      ],
+      "frameLabels": {
+        "first": "Fotograma inicial",
+        "last": "Fotograma final"
+      },
+      "videoLabel": "Video generado",
+      "button": "Probar video guiado"
+    }
   },
   "Testimonials": {
     "badge": {

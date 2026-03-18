@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Da immagine a video e controllo con primo e ultimo frame"
+    },
+    "title": "Crea movimento da una sola immagine oppure guida lo shot con primo e ultimo frame",
+    "description": "Con Veo 3.1 puoi animare un singolo still oppure bloccare inizio e fine dello shot quando ti serve piu continuita per ads, reveal e video social.",
+    "singleImage": {
+      "eyebrow": "Da immagine a video",
+      "title": "Parti da un frame e trasformalo in uno shot in movimento rifinito",
+      "description": "Carica un'immagine e usa il prompt per controllare movimento camera, azione del soggetto, ritmo e atmosfera senza ricostruire l'intera scena.",
+      "bullets": [
+        "Blocca composizione e direzione visiva con una sola immagine di riferimento",
+        "Aggiungi movimento con controllo di camera e scena guidato dal prompt",
+        "Ideale per prodotto, ritratti e creativita per social ads"
+      ],
+      "frameLabels": {
+        "first": "Immagine di riferimento"
+      },
+      "videoLabel": "Video generato",
+      "button": "Prova immagine in video"
+    },
+    "firstLast": {
+      "eyebrow": "Primo e ultimo frame in video",
+      "title": "Definisci come la scena inizia e dove atterra",
+      "description": "Quando una sola immagine non basta, usa un frame iniziale e uno finale per guidare transizioni, reveal e continuita con piu controllo.",
+      "bullets": [
+        "Controlla l'intero arco dello shot con un frame iniziale e finale",
+        "Rendi reveal, transizioni e payoff piu intenzionali",
+        "Perfetto per prima e dopo, reveal prodotto e tagli cinematografici"
+      ],
+      "frameLabels": {
+        "first": "Frame iniziale",
+        "last": "Frame finale"
+      },
+      "videoLabel": "Video generato",
+      "button": "Prova video guidato"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "TESTIMONIANZE"

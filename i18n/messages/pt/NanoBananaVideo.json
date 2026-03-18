@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Imagem para video e controle com primeiro e ultimo frame"
+    },
+    "title": "Crie movimento a partir de uma imagem ou guie a cena com o primeiro e o ultimo frame",
+    "description": "Com Veo 3.1, voce pode animar uma unica imagem ou travar o inicio e o fim da cena quando precisa de mais continuidade para anuncios, reveals e videos sociais.",
+    "singleImage": {
+      "eyebrow": "Imagem para video",
+      "title": "Comece com um frame e transforme-o em uma cena em movimento refinada",
+      "description": "Envie uma imagem e use prompts para controlar movimento de camera, movimento do sujeito, ritmo e atmosfera sem reconstruir toda a cena.",
+      "bullets": [
+        "Fixe composicao e direcao visual com uma unica imagem de referencia",
+        "Adicione movimento com controle de camera e cena guiado por prompt",
+        "Util para produto, retratos e criativos para social ads"
+      ],
+      "frameLabels": {
+        "first": "Imagem de referencia"
+      },
+      "videoLabel": "Video gerado",
+      "button": "Testar imagem para video"
+    },
+    "firstLast": {
+      "eyebrow": "Primeiro e ultimo frame para video",
+      "title": "Defina como a cena comeca e onde ela termina",
+      "description": "Quando uma unica imagem nao basta, use um frame inicial e um final para orientar transicoes, reveals e continuidade com mais controle.",
+      "bullets": [
+        "Controle todo o arco da cena com um frame inicial e um final",
+        "Deixe reveals, transicoes e payoff mais intencionais",
+        "Ideal para antes e depois, reveal de produto e cortes cinematograficos"
+      ],
+      "frameLabels": {
+        "first": "Frame inicial",
+        "last": "Frame final"
+      },
+      "videoLabel": "Video gerado",
+      "button": "Testar video guiado"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "DEPOIMENTOS"

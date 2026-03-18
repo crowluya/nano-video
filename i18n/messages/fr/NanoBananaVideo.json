@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Image vers video et controle par premiere et derniere image"
+    },
+    "title": "Creez du mouvement a partir d'une image ou guidez le plan avec la premiere et la derniere image",
+    "description": "Avec Veo 3.1, vous pouvez animer une image fixe ou verrouiller l'ouverture et la fin du plan lorsque vous avez besoin d'une meilleure continuite pour les publicites, reveals et videos sociales.",
+    "singleImage": {
+      "eyebrow": "Image vers video",
+      "title": "Partez d'une image et transformez-la en plan anime de qualite",
+      "description": "Telechargez une image, puis utilisez le prompt pour controler mouvement de camera, mouvement du sujet, rythme et ambiance sans reconstruire toute la scene.",
+      "bullets": [
+        "Ancrez composition et direction visuelle avec une seule image de reference",
+        "Ajoutez du mouvement via un controle camera et scene guide par prompt",
+        "Utile pour produits, portraits et creatives social ads"
+      ],
+      "frameLabels": {
+        "first": "Image de reference"
+      },
+      "videoLabel": "Video generee",
+      "button": "Essayer image vers video"
+    },
+    "firstLast": {
+      "eyebrow": "Premiere et derniere image vers video",
+      "title": "Definissez comment la scene commence et comment elle se termine",
+      "description": "Quand une seule image ne suffit pas, utilisez une image de depart et une image finale pour guider transitions, reveals et continuite de maniere plus precise.",
+      "bullets": [
+        "Controlez tout l'arc du plan avec une image de debut et une image de fin",
+        "Rendez reveals, transitions et chute plus intentionnels",
+        "Ideal pour avant-apres, reveals produit et coupes cinematographiques"
+      ],
+      "frameLabels": {
+        "first": "Image de depart",
+        "last": "Image finale"
+      },
+      "videoLabel": "Video generee",
+      "button": "Essayer video guidee"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "TÉMOIGNAGES"

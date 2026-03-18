@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NEU",
-      "text": "Next.js SaaS Full-Stack-Vorlage",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 Bild-zu-Video und Steuerung mit erstem und letztem Frame",
+      "href": "/nanabananvideo"
     },
-    "title": "Ein modernes Next.js Full-Stack SaaS-Boilerplate",
-    "description": "Unser Next.js-Boilerplate umfasst Authentifizierung, Stripe-Zahlungen, AI-Integration, CMS und alles, was Sie benötigen, um sofort mit dem Verdienen zu beginnen.",
-    "getStarted": "Jetzt starten",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Verwandeln Sie ein Bild in Video oder steuern Sie das Ende mit erstem und letztem Frame",
+    "description": "Erzeugen Sie mit Veo 3.1 Videos aus einem einzelnen Referenzbild oder fixieren Sie Anfang und Ende des Shots fuer mehr Kontinuitaet in Ads, Reveals und Social Content.",
+    "getStarted": "Veo 3.1 testen",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "Dokumentation anzeigen",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "VIDEO-WORKFLOWS",
+      "text": "Einzelbild-zu-Video und Steuerung mit erstem und letztem Frame"
+    },
+    "title": "Erzeugen Sie Bewegung aus einem Bild oder steuern Sie den Shot mit erstem und letztem Frame",
+    "description": "Mit Veo 3.1 können Sie ein einzelnes Bild animieren oder Anfangs- und Endframe festlegen, wenn Sie bei Anzeigen, Reveals und Social Videos mehr Kontrolle über die Kontinuität brauchen.",
+    "singleImage": {
+      "eyebrow": "Einzelbild zu Video",
+      "title": "Starten Sie mit einem Frame und erzeugen Sie daraus einen ausgereiften bewegten Shot",
+      "description": "Laden Sie ein Bild hoch und steuern Sie per Prompt Kamerafahrt, Bewegung des Motivs, Tempo und Stimmung, ohne die ganze Szene neu aufzubauen.",
+      "bullets": [
+        "Komposition und Bildsprache mit einem Referenzbild verankern",
+        "Bewegung über promptgesteuerte Kamera- und Szenenkontrolle hinzufügen",
+        "Geeignet für Produktbilder, Porträts und Social Ads"
+      ],
+      "frameLabels": {
+        "first": "Referenzbild"
+      },
+      "videoLabel": "Generiertes Video",
+      "button": "Bild zu Video testen"
+    },
+    "firstLast": {
+      "eyebrow": "Erster & letzter Frame zu Video",
+      "title": "Legen Sie fest, wie die Szene beginnt und wie sie endet",
+      "description": "Wenn ein einzelnes Bild nicht genug Kontrolle bietet, helfen Start- und Endframe dabei, Übergänge, Reveals und Kontinuität präziser zu steuern.",
+      "bullets": [
+        "Den gesamten Shot-Bogen mit Start- und Endframe kontrollieren",
+        "Reveals, Übergänge und Auflösungen gezielter gestalten",
+        "Ideal für Vorher-Nachher-Szenen, Produktenthüllungen und cineastische Schnitte"
+      ],
+      "frameLabels": {
+        "first": "Startframe",
+        "last": "Endframe"
+      },
+      "videoLabel": "Generiertes Video",
+      "button": "Geführtes Video testen"
+    }
   },
   "Testimonials": {
     "badge": {

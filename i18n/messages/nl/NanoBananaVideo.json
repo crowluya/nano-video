@@ -192,6 +192,45 @@
       }
     ]
   },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "WORKFLOWS",
+      "text": "Afbeelding naar video en controle met eerste en laatste frame"
+    },
+    "title": "Maak beweging vanuit een beeld of stuur de shot met het eerste en laatste frame",
+    "description": "Met Veo 3.1 kun je een stilstaand beeld animeren of zowel het begin- als eindframe vastzetten wanneer je meer continuiteit nodig hebt voor ads, reveals en social video.",
+    "singleImage": {
+      "eyebrow": "Afbeelding naar video",
+      "title": "Begin met een frame en verander het in een verzorgde bewegende shot",
+      "description": "Upload een beeld en gebruik prompts om camerabeweging, onderwerpbeweging, tempo en sfeer te sturen zonder de hele scene opnieuw op te bouwen.",
+      "bullets": [
+        "Veranker compositie en visuele richting met een referentiebeeld",
+        "Voeg beweging toe via promptgestuurde camera- en scenecontrole",
+        "Handig voor productshots, portretten en social ads creatives"
+      ],
+      "frameLabels": {
+        "first": "Referentiebeeld"
+      },
+      "videoLabel": "Gegenereerde video",
+      "button": "Probeer afbeelding naar video"
+    },
+    "firstLast": {
+      "eyebrow": "Eerste en laatste frame naar video",
+      "title": "Bepaal hoe de scene begint en waar hij eindigt",
+      "description": "Wanneer een enkel beeld niet genoeg controle geeft, gebruik je een begin- en eindframe om transities, reveals en continuiteit strakker te sturen.",
+      "bullets": [
+        "Controleer de volledige shotboog met een begin- en eindframe",
+        "Maak reveals, transities en payoff doelgerichter",
+        "Ideaal voor before-and-after, productreveals en cinematografische cuts"
+      ],
+      "frameLabels": {
+        "first": "Beginframe",
+        "last": "Eindframe"
+      },
+      "videoLabel": "Gegenereerde video",
+      "button": "Probeer begeleide video"
+    }
+  },
   "Testimonials": {
     "badge": {
       "label": "GETUIGSCHRIFTEN"

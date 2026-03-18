@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "AI Image & Video Creation Platform",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 image to video and first-last-frame control",
+      "href": "/nanabananvideo"
     },
-    "title": "Ship AI Creation Workflows Faster",
-    "description": "Nano Banana Video combines image generation, video generation, prompt workflows, billing, and admin tools in one production app.",
-    "getStarted": "Get Started",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Turn one image into video or guide the ending with first and last frames",
+    "description": "Generate Veo 3.1 videos from a single reference image, or lock both the opening and ending frame for tighter continuity in ads, reveals, and social content.",
+    "getStarted": "Try Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "View Documentation",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "VIDEO WORKFLOWS",
+      "text": "Single image to video and first-last-frame control"
+    },
+    "title": "Create motion from one image or guide the shot with first and last frames",
+    "description": "Use Veo 3.1 to animate a single still, or lock both the opening and ending frame when you need tighter continuity for ads, reveals, and social videos.",
+    "singleImage": {
+      "eyebrow": "Single Image to Video",
+      "title": "Start with one frame and turn it into a polished moving shot",
+      "description": "Upload one image, then use prompting to control camera movement, subject motion, pacing, and mood without rebuilding the whole scene.",
+      "bullets": [
+        "Anchor composition and art direction with one reference image",
+        "Add motion through prompt-driven camera and scene control",
+        "Useful for product shots, portraits, and paid social creatives"
+      ],
+      "frameLabels": {
+        "first": "Reference image"
+      },
+      "videoLabel": "Generated video",
+      "button": "Try image to video"
+    },
+    "firstLast": {
+      "eyebrow": "First & Last Frame to Video",
+      "title": "Define how the scene begins and how it lands",
+      "description": "Set both the starting frame and ending frame to guide transitions, reveals, and continuity when a single image does not give you enough control.",
+      "bullets": [
+        "Control the arc of the shot with a starting frame and an ending frame",
+        "Keep reveals, transitions, and story payoff more intentional",
+        "Ideal for before-and-after scenes, product reveals, and cinematic cuts"
+      ],
+      "frameLabels": {
+        "first": "Starting frame",
+        "last": "Ending frame"
+      },
+      "videoLabel": "Generated video",
+      "button": "Try guided video"
+    }
   },
   "Testimonials": {
     "badge": {

@@ -2,13 +2,13 @@
   "Hero": {
     "badge": {
       "label": "NIEUW",
-      "text": "Next.js SaaS Full Stack Template",
-      "href": "https://nanobananavideo.net/#pricing"
+      "text": "Veo 3.1 voor afbeelding naar video en controle met eerste en laatste frame",
+      "href": "/nanabananvideo"
     },
-    "title": "Een Moderne Next.js Full Stack SaaS Boilerplate",
-    "description": "Onze Next.js boilerplate omvat authenticatie, Stripe-betalingen, AI-integratie, CMS en alles wat je nodig hebt om direct te beginnen met verdienen.",
-    "getStarted": "Aan de Slag",
-    "getStartedLink": "https://nanobananavideo.net/#pricing",
+    "title": "Zet een beeld om naar video of stuur de uitkomst met het eerste en laatste frame",
+    "description": "Genereer Veo 3.1-video's vanuit een enkel referentiebeeld of zet begin en einde van de shot vast voor meer continuiteit in ads, reveals en social content.",
+    "getStarted": "Probeer Veo 3.1",
+    "getStartedLink": "/nanabananvideo",
     "viewDocs": "Documentatie Bekijken",
     "viewDocsLink": "https://nanobananavideo.net/nanabananvideo"
   },
@@ -332,6 +332,45 @@
         "icon": "Wrench"
       }
     ]
+  },
+  "VideoWorkflows": {
+    "badge": {
+      "label": "VIDEO-WORKFLOWS",
+      "text": "Afbeelding naar video en controle met eerste en laatste frame"
+    },
+    "title": "Maak beweging vanuit een beeld of stuur de shot met het eerste en laatste frame",
+    "description": "Met Veo 3.1 kun je een stilstaand beeld animeren of zowel het begin- als eindframe vastzetten wanneer je meer continuiteit nodig hebt voor ads, reveals en social video.",
+    "singleImage": {
+      "eyebrow": "Afbeelding naar video",
+      "title": "Begin met een frame en verander het in een verzorgde bewegende shot",
+      "description": "Upload een beeld en gebruik prompts om camerabeweging, onderwerpbeweging, tempo en sfeer te sturen zonder de hele scene opnieuw op te bouwen.",
+      "bullets": [
+        "Veranker compositie en visuele richting met een referentiebeeld",
+        "Voeg beweging toe via promptgestuurde camera- en scenecontrole",
+        "Handig voor productshots, portretten en social ads creatives"
+      ],
+      "frameLabels": {
+        "first": "Referentiebeeld"
+      },
+      "videoLabel": "Gegenereerde video",
+      "button": "Probeer afbeelding naar video"
+    },
+    "firstLast": {
+      "eyebrow": "Eerste en laatste frame naar video",
+      "title": "Bepaal hoe de scene begint en waar hij eindigt",
+      "description": "Wanneer een enkel beeld niet genoeg controle geeft, gebruik je een begin- en eindframe om transities, reveals en continuiteit strakker te sturen.",
+      "bullets": [
+        "Controleer de volledige shotboog met een begin- en eindframe",
+        "Maak reveals, transities en payoff doelgerichter",
+        "Ideaal voor before-and-after, productreveals en cinematografische cuts"
+      ],
+      "frameLabels": {
+        "first": "Beginframe",
+        "last": "Eindframe"
+      },
+      "videoLabel": "Gegenereerde video",
+      "button": "Probeer begeleide video"
+    }
   },
   "Testimonials": {
     "badge": {
