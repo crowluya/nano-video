@@ -684,3 +684,165 @@ Recommended fields:
 | 2026-03-18 | Success | madrimasd.org (Alexander Zvonkin) | Comment submitted successfully |
 | 2026-03-18 | Success | madrimasd.org (Matemáticos en ICSU) | Comment submitted successfully |
 | 2026-03-18 | Success | madrimasd.org (Matemáticos en Google Scholar) | Comment submitted successfully |
+
+---
+
+## 145个外链提交 TODO
+
+**状态说明**: ⏳待提交 | ✅已提交 | ⏭️跳过 | 💰付费 | 🔒需登录 | ❌网站不可用
+
+| # | 网址 | 状态 | 备注 |
+|---|------|------|------|
+| 1 | egolinks.online | ⏭️ | 非目录，Linktree类工具 |
+| 2 | linkstack.fr | ⏭️ | Cloudflare阻止 |
+| 3 | yrtree.me | ⏭️ | 非目录，Linktree类工具 |
+| 4 | linkstack.lgbt | ⏭️ | 非目录，Linktree类工具 |
+| 5 | linksta.cc | ⏭️ | 非目录，Linktree类工具 |
+| 6 | aiawesome.com | ⏳ | Typeform链接损坏 |
+| 7 | crozdesk.com | ⏳ | 需电话注册 |
+| 8 | startupsea.com | ❌ | 网站不可用 |
+| 9 | makermove.com | ❌ | 网站不可用 |
+| 10 | sidebar.io | 🔒 | 需登录 |
+| 11 | aidepot.co | 🔒 | 需注册 |
+| 12 | topai.tools | 💰 | 付费$47-$229 |
+| 13 | producthunt.com | ⏭️ | Cloudflare阻止 |
+| 14 | topnocode.tools | ❌ | 域名出售 |
+| 15 | surges.co | ⏭️ | 非目录，营销博客 |
+| 16 | toolscout.ai | ✅ | 已提交成功 |
+| 17 | lachief.io | ⏳ | 需上传logo |
+| 18 | uneedbest.com | ❌ | 域名被劫持 |
+| 19 | futuretools.io | ⏳ | 需验证码 |
+| 20 | saashub.com | ⏳ | 表单卡住 |
+| 21 | aitrendz.xyz | 💰 | 付费€29.99-€299 |
+| 22 | ebool.com | ✅ | 已提交，3-4月审核 |
+| 23 | aicyclopedia.com | ⏳ | 需上传图片 |
+| 24 | appagg.com | ⏭️ | 仅接受应用商店链接 |
+| 25 | goodfirms.co | ⏳ | 待检查 |
+| 26 | aistash.co | ⏳ | 待检查 |
+| 27 | softwaresuggest.com | ⏳ | 待检查 |
+| 28 | aitoolmate.com | ⏳ | 待检查 |
+| 29 | startupguys.net | ⏳ | 待检查 |
+| 30 | dang.ai | ⏳ | 待检查 |
+| 31 | cuspera.com | ⏳ | 待检查 |
+| 32 | toolpilot.ai | ⏳ | 待检查 |
+| 33 | aitoolguru.com | ⏳ | 待检查 |
+| 34 | joinly.xyz | ⏳ | 待检查 |
+| 35 | gartner.com | 🔒 | 需企业账户 |
+| 36 | serchen.com | ⏳ | 待检查 |
+| 37 | startupaitools.com | ⏳ | 待检查 |
+| 38 | 10words.io | ⏳ | 待检查 |
+| 39 | getapp.com | 🔒 | 需企业账户 |
+| 40 | getbyte.tech | ⏳ | 待检查 |
+| 41 | airadar.getinference.com | ⏳ | 待检查 |
+| 42 | aitoolhunt.com | ⏳ | 待检查 |
+| 43 | humanornot.co | ⏳ | 待检查 |
+| 44 | betalist.com | ⏳ | 草稿中，需上传icon |
+| 45 | library.phygital.plus | ⏳ | 待检查 |
+| 46 | saasgenius.com | ⏳ | 待检查 |
+| 47 | startupranking.com | ⏳ | 待检查 |
+| 48 | microlaunch.net | ⏳ | 待检查 |
+| 49 | saasaitools.com | ⏳ | 待检查 |
+| 50 | startupstash.com | 🔒 | 需企业邮箱 |
+| 51 | igniter.ai | ❌ | 域名出售 |
+| 52 | discovercloud.com | ❌ | 连接超时 |
+| 53 | aitoptools.com | 🔒 | 需Google登录 |
+| 54 | webapprater.com | 💰 | 付费$29-$249 |
+| 55 | ikantam.com | ⏭️ | 非目录，开发代理 |
+| 56 | pluginplay.ai | ❌ | 网站关闭 |
+| 57 | futurepedia.io | 💰 | 付费$247-$497 |
+| 58 | alternativeto.net | 🔒 | 需登录 |
+| 59 | findmyaitool.com | ⏳ | 待检查 |
+| 60 | nocodefounders.com | ⏳ | 待检查 |
+| 61 | news.ycombinator.com | 🔒 | 需登录 |
+| 62 | launched.io | ⏳ | 待检查 |
+| 63 | techcrunch.com | ⏭️ | 媒体投稿 |
+| 64 | techpluto.com | ⏳ | 待检查 |
+| 65 | peerlist.io | ⏳ | 待检查 |
+| 66 | smart-tools.ai | ⏳ | 待检查 |
+| 67 | startupdope.com | ⏳ | 待检查 |
+| 68 | egolinks.online | ⏭️ | 重复#1 |
+| 69 | feedmystartup.com | ⏳ | 待检查 |
+| 70 | switbai.com | ❌ | 网站不可用 |
+| 71 | startuplister.com | ❌ | 网站关闭 |
+| 72 | softgist.com | ❌ | 404错误 |
+| 73 | spotsaas.com | ✅ | 已提交成功 |
+| 74 | ventureradar.com | 🔒 | 需注册 |
+| 75 | webwiki.com | ❌ | 403禁止 |
+| 76 | sideprojectors.com | 🔒 | 需注册 |
+| 77 | beingguru.com | ⏳ | 待检查 |
+| 78 | theresanaiforthat.com | 💰 | 付费$49-$347 |
+| 79 | startupanz.com | ⏳ | 待检查 |
+| 80 | pitchwall.co | ⏳ | 需上传图片 |
+| 81 | toolspedia.io | 💰 | 付费$49+ |
+| 82 | saasworthy.com | 🔒 | 需企业邮箱 |
+| 83 | appsumo.com | ✅ | 已提交，等待审核 |
+| 84 | tooldirectory.ai | ⏳ | 需上传图片 |
+| 85 | aicenter.ai | 💰 | 付费$15+ |
+| 86 | entrepreneurloop.com | ⏳ | 需邮件联系 |
+| 87 | softwareworld.co | ⏳ | 待检查 |
+| 88 | g2.com | 🔒 | 需登录 |
+| 89 | thewarehouse.ai | ⏳ | 待检查 |
+| 90 | webofai.com | ⏳ | 待检查 |
+| 91 | popularaitools.ai | ⏳ | 待检查 |
+| 92 | easywithai.com | 💰 | 付费$125 |
+| 93 | peerspot.com | ⏭️ | 企业向，不适合 |
+| 94 | thataicollection.com | 💰 | 付费$19+ |
+| 95 | indiehackers.com | 🔒 | 需登录 |
+| 96 | activesearchresults.com | ✅ | 已提交收录 |
+| 97 | alltopstartups.com | 💰 | 付费$29+ |
+| 98 | fullstackai.co | 💰 | 付费$20+ |
+| 99 | opentoolsai.gumroad.com | ⏭️ | 付费服务€2000 |
+| 100 | postmake.io | ⏳ | 待检查 |
+| 101 | aiinfinity-meetpatel.notion.site | ⏳ | 待检查 |
+| 102 | supertools.therundown.ai | ⏳ | 待检查 |
+| 103 | landing.mycloudmedia.co.uk | ⏳ | 待检查 |
+| 104 | taalk.com | ⏳ | 待检查 |
+| 105 | stackshare.io | ⏳ | 待检查 |
+| 106 | toolify.ai | 💰 | 付费$99 |
+| 107 | aiscout.net | ⏳ | 待检查 |
+| 108 | alternative.me | ⏳ | 待检查 |
+| 109 | gpte.ai | ⏳ | 待检查 |
+| 110 | fuelup.co | ⏳ | 待检查 |
+| 111 | ilib.com | ⏭️ | 非目录 |
+| 112 | ai-search.io | 💰 | 付费$299 |
+| 113 | marsx.dev | ⏭️ | 非目录 |
+| 114 | launchingnext.com | ✅ | 已提交，等待4月 |
+| 115 | stork.ai | 🔒 | 需登录 |
+| 116 | aitoolnet.com | 💰 | 付费$9.9+ |
+| 117 | news.bensbites.co | 🔒 | 无Google登录 |
+| 118 | uneed.best | ✅ | 已提交，排队中 |
+| 119 | americaninno.com | ⏳ | 待检查 |
+| 120 | new-startups.com | ⏳ | 待检查 |
+| 121 | thestartupinc.com | ⏳ | 待检查 |
+| 122 | textify.ai | ⏳ | 待检查 |
+| 123 | aioftheday.com | ⏳ | 待检查 |
+| 124 | tools.robingood.com | 🔒 | 无Google登录 |
+| 125 | 1000.tools | ⏳ | 待检查 |
+| 126 | killerstartups.com | ⏳ | 待检查 |
+| 127 | startupcollections.com | ⏳ | 待检查 |
+| 128 | startups.fyi | ⏳ | 待检查 |
+| 129 | textify.ai | ⏭️ | 重复#122 |
+| 130 | cipinet.com | ⏳ | 待检查 |
+| 131 | startupbuffer.com | ⏳ | 待检查 |
+| 132 | aitoolboard.com | ⏳ | 待检查 |
+| 133 | toolsalad.com | ⏳ | 待检查 |
+| 134 | aitools.fyi | ⏳ | 待检查 |
+| 135 | appsandwebsites.com | ⏳ | 待检查 |
+| 136 | aitoppicks.com | ⏳ | 待检查 |
+| 137 | domore.ai | ⏳ | 待检查 |
+| 138 | aixploria.com | ⏳ | 待检查 |
+| 139 | promoteproject.com | 🔒 | 需积分 |
+| 140 | jcount.com | ⏳ | 待检查 |
+| 141 | sprout24.com | ⏳ | 待检查 |
+| 142 | gptdemo.net | ⏳ | 待检查 |
+| 143 | aiwizard.ai | ⏳ | 待检查 |
+| 144 | apprater.net | ⏳ | 待检查 |
+| 145 | theaiexchange.com | ⏭️ | 非目录 |
+
+**统计**:
+- ✅ 已提交: 7
+- ⏳ 待提交: 74
+- 💰 付费: 17
+- 🔒 需登录/注册: 16
+- ⏭️ 跳过(非目录/重复): 13
+- ❌ 网站不可用: 12
