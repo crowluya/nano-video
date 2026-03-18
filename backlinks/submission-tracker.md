@@ -589,3 +589,98 @@ Recommended fields:
 | 2026-03-17 | Skipped | nanobanana.org | Own site (not a submission target) |
 | 2026-03-17 | Skipped | nanobanana.im | Own site (not a submission target) |
 | 2026-03-17 | Skipped | applealmond.com | Already has our link, no comment form |
+| 2026-03-18 | Skipped | chfr.search.yahoo.com | Search engine page (not a blog) |
+| 2026-03-18 | Skipped | theundiscoveredstars.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | blogs.baruch.cuny.edu | Comments closed on GPS Locator article |
+| 2026-03-18 | Skipped | lookweep.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | armstrongpayrollsolutions.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | retailanswers.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | ultimatetoolsnewsletter.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | bearsudev.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | theritachen.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | tzangms.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | fraoggiano.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | new-reporter.com | Connection timeout |
+| 2026-03-18 | Skipped | demystiq.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | saar.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | news.getdelmar.com | 403 Forbidden |
+| 2026-03-18 | Skipped | em.fis.unam.mx | Connection timeout |
+| 2026-03-18 | Skipped | openroadventuress.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | webdesign-cirencester.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | e-advantagesolutions.co.uk | Blog homepage (not a specific post, gambling content) |
+| 2026-03-18 | Skipped | disneyaiposter.com | AI tool homepage (not a blog post) |
+| 2026-03-18 | Skipped | ai.ettoday.net | Connection timeout |
+| 2026-03-18 | Skipped | tastymagazine.substack.com | Connection timeout |
+| 2026-03-18 | Skipped | pic.murakumomura.com | SSL certificate error (ERR_CERT_COMMON_NAME_INVALID) |
+| 2026-03-18 | Skipped | bezembinderproducties.nl | Blog homepage (not AI-related, Dutch roofing/real estate content) |
+| 2026-03-18 | Skipped | reservationslunel.groupe-lentrepotes.fr | Connection timeout |
+| 2026-03-18 | Skipped | blogs.baruch.cuny.edu/skutch | Comments closed on design article |
+| 2026-03-18 | Skipped | blogs.baruch.cuny.edu/skutch (p=56) | Comments closed on customer feedback article |
+| 2026-03-18 | Skipped | imei.info | Connection timeout |
+| 2026-03-18 | Skipped | dizzy03.pixnet.net | Connection timeout |
+| 2026-03-18 | Skipped | technews.tw | Connection reset |
+| 2026-03-18 | Skipped | cool3c.com | Requires login to comment (Nano Banana Pro article) |
+| 2026-03-18 | Skipped | reservationslunel.groupe-lentrepotes.fr (video) | Connection timeout |
+| 2026-03-18 | Skipped | blog.bhhscalifornia.com | Irrelevant content (real estate article, not AI-related) |
+| 2026-03-18 | Skipped | affectiontodetail.co.uk | Blog homepage (gambling content) |
+| 2026-03-18 | Skipped | news.ycombinator.com | Connection timeout (Hacker News aggregator) |
+| 2026-03-18 | Skipped | imei.info (news) | hCaptcha verification required (cannot auto-submit) |
+| 2026-03-18 | Skipped | imei.info (ru/news) | Connection timeout |
+| 2026-03-18 | Skipped | blogs.clemson.edu/upstate | No comment form visible (requires login) |
+| 2026-03-18 | Failed | natashakundi.com | 403 Forbidden when posting comment |
+| 2026-03-18 | Skipped | curateclick.com | No comment form available (AI article) |
+| 2026-03-18 | Failed | reportervisionnews.com | Comment submission redirected to search page |
+| 2026-03-18 | Failed | blogs.clemson.edu (cotton_corn) | Comment submission redirected to search page |
+| 2026-03-18 | Skipped | lookweep.co.uk | Blog homepage (gambling content) |
+| 2026-03-18 | Skipped | blogs.clemson.edu (annual-tree-farm) | Comment submission redirects to search page |
+| 2026-03-18 | Skipped | meertalen.nl | Blog homepage (not a specific post) |
+| 2026-03-18 | Skipped | meertalen.nl (AI NSFW) | No comment form available |
+| 2026-03-18 | Skipped | meertalen.nl (Mixboard) | No comment form available |
+| 2026-03-18 | Skipped | kopenschoteltje.nl | Blog homepage (not a specific post) |
+| 2026-03-18 | Skipped | kopenschoteltje.nl (AI NSFW) | No comment form available |
+| 2026-03-18 | Skipped | blog.setlist.fm | Connection timeout |
+| 2026-03-18 | Skipped | creati.ai | Access restricted (service not available in region) |
+| 2026-03-18 | Skipped | perfectcorp.com | Page failed to load properly (resource errors) |
+| 2026-03-18 | Skipped | ktla.com | News site (press release), no comment form |
+| 2026-03-18 | Skipped | my.dev.vanderbilt.edu | Connection timeout |
+| 2026-03-18 | Skipped | n.yam.com | Connection timeout |
+| 2026-03-18 | Skipped | outofthebox-smoothjazz.nl | Blog homepage (not a specific post) |
+| 2026-03-18 | Failed | imei.info (fr/news AI delivery) | Cloudflare challenge blocked submission |
+| 2026-03-18 | Skipped | reservationslunel.groupe-lentrepotes.fr | Connection timeout |
+| 2026-03-18 | Skipped | sebaura.nl | Blog homepage (not a specific post) |
+| 2026-03-18 | Skipped | sebaura.nl (AI NSFW) | No comment form available |
+| 2026-03-18 | Skipped | spurt-sproeisystemen.nl | Blog homepage (gambling content) |
+| 2026-03-18 | Skipped | sybvanderploeg-info.nl | Blog homepage (gambling content) |
+| 2026-03-18 | Failed | imei.info (fr/news Google Play) | hCaptcha blocked submission |
+| 2026-03-18 | Success | imei.info (es/news Poland tech hiring) | Comment submitted successfully |
+| 2026-03-18 | Skipped | imei.info (fr/news audio noise removal) | Skipped per user request |
+| 2026-03-18 | Skipped | imei.info (all remaining URLs) | Skipped per user request - hCaptcha issues |
+| 2026-03-18 | Skipped | scilogs.spektrum.de/page/2729 | Pagination page (not a specific post) |
+| 2026-03-18 | Success | betterreading.com.au (Top 100 2023) | Comment submitted successfully |
+| 2026-03-18 | Skipped | blogs.opovo.com.br (astrologia) | Connection timeout |
+| 2026-03-18 | Skipped | bly.com (stay energized) | Connection timeout |
+| 2026-03-18 | Skipped | estore.thehumanelement.com | Connection timeout |
+| 2026-03-18 | Skipped | thehubnews.net (AI公仔) | Cloudflare blocked access |
+| 2026-03-18 | Failed | natashakundi.com (Jimmy Choo perfume) | 403 Forbidden on comment submission |
+| 2026-03-18 | Skipped | pgpaud.unimed.ac.id (poster design) | Connection timeout |
+| 2026-03-18 | Skipped | onpattison.com (Banana Pro AI) | Cloudflare security verification blocking access |
+| 2026-03-18 | Skipped | pictory.ai (AI images prompt) | No comment form available |
+| 2026-03-18 | Skipped | framablog.org (IA générative) | No comment form available |
+| 2026-03-18 | Skipped | blog.visitsoutheastengland.com (Literary Festival) | Blogger comment iframe not loading |
+| 2026-03-18 | Skipped | blogs.uww.edu (Karl Kopinski art) | Requires login to post comment |
+| 2026-03-18 | Skipped | financialcontent.com (Nano Banana press release) | No comment form available (press release) |
+| 2026-03-18 | Success | scilogs.spektrum.de (Highway to Kriemhild) | Comment submitted successfully (pending moderation) |
+| 2026-03-18 | Skipped | sostav.ru (нейросети детский рисунок) | Requires login to comment |
+| 2026-03-18 | Skipped | blog.metastock.com (Ichimoku Method) | Blogger comment iframe not loading |
+| 2026-03-18 | Success | iemlabs.com (Nano Banana AI Image Generator) | Comment submitted successfully (pending moderation) |
+| 2026-03-18 | Skipped | punjabnewsexpress.com (AI video adoption) | Connection timeout |
+| 2026-03-18 | Skipped | fitinline.com (Banana Pro AI Image Generator) | No comment form available |
+| 2026-03-18 | Skipped | aijourn.com (Nano Banana AI Image Generation) | No comment form available |
+| 2026-03-18 | Skipped | insidehalton.com (AI slop article) | HTTP response code failure |
+| 2026-03-18 | Skipped | madrimasd.org (Matemáticas y sus fronteras) | Archive page (not a single article) |
+| 2026-03-18 | Success | madrimasd.org (Walter Noll) | Comment submitted successfully |
+| 2026-03-18 | Success | madrimasd.org (CEI UAM+CSIC) | Comment submitted successfully |
+| 2026-03-18 | Success | madrimasd.org (Arquitectura moderna y matemáticas) | Comment submitted successfully |
+| 2026-03-18 | Success | madrimasd.org (Alexander Zvonkin) | Comment submitted successfully |
+| 2026-03-18 | Success | madrimasd.org (Matemáticos en ICSU) | Comment submitted successfully |
+| 2026-03-18 | Success | madrimasd.org (Matemáticos en Google Scholar) | Comment submitted successfully |
