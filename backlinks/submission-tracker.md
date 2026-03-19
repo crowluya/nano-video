@@ -232,6 +232,17 @@ Recommended fields:
 | 2026-03-14 | Submitted | Uneed.best | https://www.uneed.best/submit-a-tool | backlinks/150个外链.txt | | | | Submitted via Google login - added to waiting line |
 | 2026-03-14 | Follow Up | Tools.RobinGood.com | https://tools.robingood.com/ | backlinks/150个外链.txt | | | | No Google login option - only email/password login |
 | 2026-03-14 | Follow Up | PromoteProject.com | https://www.promoteproject.com/submit-startup | backlinks/150个外链.txt | | | | Google login successful but requires 5 credits (earned by voting) - needs manual interaction |
+| 2026-03-19 | Follow Up | Aitoolnet.com | https://www.aitoolnet.com/submit | backlinks/150个外链.txt | | | | Paid only - $9.9 minimum for PRO listing |
+| 2026-03-19 | Follow Up | AITrendz.xyz | https://aitrendz.xyz/submit-ai-link | backlinks/150个外链.txt | | | | Paid only - €29.99 minimum for Basic listing |
+| 2026-03-19 | Follow Up | AiToolGuru.com | https://aitoolguru.com/submit-ai-tool | backlinks/150个外链.txt | | | | Requires account login (no Google OAuth) |
+| 2026-03-19 | Follow Up | ThatAICollection.com | https://www.thataicollection.com/en/submit | backlinks/150个外链.txt | | | | Paid only - $19 minimum for listing |
+| 2026-03-19 | Follow Up | FindMyAITool.com | https://www.findmyaitool.com/submit-tool | backlinks/150个外链.txt | | | | Paid only - $79.99 minimum for Basic plan |
+| 2026-03-19 | Follow Up | FullStackAI.co | https://www.fullstackai.co/submit-a-tool | backlinks/150个外链.txt | | | | Paid only - $20 minimum for regular submission (2 weeks+) |
+| 2026-03-19 | Follow Up | Toolify.ai | https://www.toolify.ai/submit | backlinks/150个外链.txt | | | | Paid only - $99 for tool submission |
+| 2026-03-19 | Follow Up | Serchen.com | https://www.serchen.com/get-listed | backlinks/150个外链.txt | | | | Cloudflare blocked - access denied |
+| 2026-03-19 | Follow Up | AppRater.net | https://apprater.net/add | backlinks/150个外链.txt | | | | Free submission form but requires reCAPTCHA |
+| 2026-03-19 | Follow Up | Aitools.fyi | https://aitools.fyi | backlinks/150个外链.txt | | | | Paid service - $37 to submit to 3 directories |
+| 2026-03-19 | Follow Up | Cuspera.com | https://www.cuspera.com/vendors | backlinks/150个外链.txt | | | | Requires business email (Gmail not accepted) |
 
 ## Blog Comment Backlinks - 2026-03-14
 
@@ -724,44 +735,44 @@ Recommended fields:
 | 29 | startupguys.net | 💰 | 付费$49-$349 |
 | 30 | dang.ai | 💰 | 需付费提交 |
 | 31 | cuspera.com | ✅ | 已提交，等待审核 |
-| 32 | toolpilot.ai | ⏳ | 待检查 |
-| 33 | aitoolguru.com | ⏳ | 待检查 |
-| 34 | joinly.xyz | ⏳ | 待检查 |
+| 32 | toolpilot.ai | ❌ | 连接超时 |
+| 33 | aitoolguru.com | ✅ | 已提交成功 |
+| 34 | joinly.xyz | ✅ | 已提交成功 |
 | 35 | gartner.com | 🔒 | 需企业账户 |
-| 36 | serchen.com | ⏳ | 待检查 |
-| 37 | startupaitools.com | ⏳ | 待检查 |
-| 38 | 10words.io | ⏳ | 待检查 |
+| 36 | serchen.com | ❌ | Cloudflare阻止 |
+| 37 | startupaitools.com | 💰 | 付费$6 |
+| 38 | 10words.io | 🔒 | 需注册 |
 | 39 | getapp.com | 🔒 | 需企业账户 |
-| 40 | getbyte.tech | ⏳ | 待检查 |
-| 41 | airadar.getinference.com | ⏳ | 待检查 |
-| 42 | aitoolhunt.com | ⏳ | 待检查 |
-| 43 | humanornot.co | ⏳ | 待检查 |
-| 44 | betalist.com | ⏳ | 草稿中，需上传icon |
-| 45 | library.phygital.plus | ⏳ | 待检查 |
-| 46 | saasgenius.com | ⏳ | 待检查 |
-| 47 | startupranking.com | ⏳ | 待检查 |
-| 48 | microlaunch.net | ⏳ | 待检查 |
-| 49 | saasaitools.com | ⏳ | 待检查 |
+| 40 | getbyte.tech | ❌ | 域名无法解析 |
+| 41 | airadar.getinference.com | ❌ | 网站已关闭 |
+| 42 | aitoolhunt.com | ❌ | 服务器宕机 |
+| 43 | humanornot.co | ✅ | 已提交成功 |
+| 44 | betalist.com | 🔒 | 需登录 |
+| 45 | library.phygital.plus | ✅ | 已提交成功 |
+| 46 | saasgenius.com | 💰 | 仅付费列表 |
+| 47 | startupranking.com | ❌ | Cloudflare阻止 |
+| 48 | microlaunch.net | 💰 | 付费Pro required |
+| 49 | saasaitools.com | ⏳ | 需邮箱验证 已验证提交麻烦 |
 | 50 | startupstash.com | 🔒 | 需企业邮箱 |
-| 51 | igniter.ai | ❌ | 域名出售 |
-| 52 | discovercloud.com | ❌ | 连接超时 |
-| 53 | aitoptools.com | 🔒 | 需Google登录 |
-| 54 | webapprater.com | 💰 | 付费$29-$249 |
+| 51 | igniter.ai | ❌ | 域名出售中 |
+| 52 | discovercloud.com | ❌ | 无法访问 |
+| 53 | aitoptools.com | 🔒 | 需登录 |
+| 54 | webapprater.com | 💰 | 付费$29起 |
 | 55 | ikantam.com | ⏭️ | 非目录，开发代理 |
 | 56 | pluginplay.ai | ❌ | 网站关闭 |
 | 57 | futurepedia.io | 💰 | 付费$247-$497 |
 | 58 | alternativeto.net | 🔒 | 需登录 |
-| 59 | findmyaitool.com | ⏳ | 待检查 |
-| 60 | nocodefounders.com | ⏳ | 待检查 |
-| 61 | news.ycombinator.com | 🔒 | 需登录 |
-| 62 | launched.io | ⏳ | 待检查 |
+| 59 | findmyaitool.com | 💰 | 付费$79起 |
+| 60 | nocodefounders.com | ❌ | 页面加载失败 |
+| 61 | news.ycombinator.com | 🔒 | 需登录(禁止外链) |
+| 62 | launched.io | ❌ | 需上传截图 |
 | 63 | techcrunch.com | ⏭️ | 媒体投稿 |
-| 64 | techpluto.com | ⏳ | 待检查 |
-| 65 | peerlist.io | ⏳ | 待检查 |
-| 66 | smart-tools.ai | ⏳ | 待检查 |
-| 67 | startupdope.com | ⏳ | 待检查 |
+| 64 | techpluto.com | ✅ | 已提交(Google Form) |
+| 65 | peerlist.io | 🔒 | 需注册账户 |
+| 66 | smart-tools.ai | ❌ | GraphQL API错误 |
+| 67 | startupdope.com | ❌ | 表单字段禁用/需大量信息 |
 | 68 | egolinks.online | ⏭️ | 重复#1 |
-| 69 | feedmystartup.com | ⏳ | 待检查 |
+| 69 | feedmystartup.com | ❌ | 需邮件投稿(700字文章) |
 | 70 | switbai.com | ❌ | 网站不可用 |
 | 71 | startuplister.com | ❌ | 网站关闭 |
 | 72 | softgist.com | ❌ | 404错误 |
@@ -769,9 +780,9 @@ Recommended fields:
 | 74 | ventureradar.com | 🔒 | 需注册 |
 | 75 | webwiki.com | ❌ | 403禁止 |
 | 76 | sideprojectors.com | 🔒 | 需注册 |
-| 77 | beingguru.com | ⏳ | 待检查 |
+| 77 | beingguru.com | ❌ | 403禁止访问 |
 | 78 | theresanaiforthat.com | 💰 | 付费$49-$347 |
-| 79 | startupanz.com | ⏳ | 待检查 |
+| 79 | startupanz.com | ❌ | 页面加载超时 |
 | 80 | pitchwall.co | ⏳ | 需上传图片 |
 | 81 | toolspedia.io | 💰 | 付费$49+ |
 | 82 | saasworthy.com | 🔒 | 需企业邮箱 |
@@ -779,11 +790,11 @@ Recommended fields:
 | 84 | tooldirectory.ai | ⏳ | 需上传图片 |
 | 85 | aicenter.ai | 💰 | 付费$15+ |
 | 86 | entrepreneurloop.com | ⏳ | 需邮件联系 |
-| 87 | softwareworld.co | ⏳ | 待检查 |
+| 87 | softwareworld.co | 🔒 | 需注册+验证码 |
 | 88 | g2.com | 🔒 | 需登录 |
-| 89 | thewarehouse.ai | ⏳ | 待检查 |
-| 90 | webofai.com | ⏳ | 待检查 |
-| 91 | popularaitools.ai | ⏳ | 待检查 |
+| 89 | thewarehouse.ai | ❌ | SSL错误 |
+| 90 | webofai.com | ❌ | Cloudflare屏蔽 |
+| 91 | popularaitools.ai | 💰 | 付费$39起/月 |
 | 92 | easywithai.com | 💰 | 付费$125 |
 | 93 | peerspot.com | ⏭️ | 企业向，不适合 |
 | 94 | thataicollection.com | 💰 | 付费$19+ |
@@ -792,17 +803,17 @@ Recommended fields:
 | 97 | alltopstartups.com | 💰 | 付费$29+ |
 | 98 | fullstackai.co | 💰 | 付费$20+ |
 | 99 | opentoolsai.gumroad.com | ⏭️ | 付费服务€2000 |
-| 100 | postmake.io | ⏳ | 待检查 |
-| 101 | aiinfinity-meetpatel.notion.site | ⏳ | 待检查 |
-| 102 | supertools.therundown.ai | ⏳ | 待检查 |
-| 103 | landing.mycloudmedia.co.uk | ⏳ | 待检查 |
-| 104 | taalk.com | ⏳ | 待检查 |
-| 105 | stackshare.io | ⏳ | 待检查 |
+| 100 | postmake.io | 💰 | 付费$79起 |
+| 101 | aiinfinity-meetpatel.notion.site | ❌ | Notion页面无法提交 |
+| 102 | supertools.therundown.ai | ❌ | Cloudflare拦截 |
+| 103 | landing.mycloudmedia.co.uk | ✅ | 已提交(待审核) |
+| 104 | taalk.com | ❌ | SSL错误 |
+| 105 | stackshare.io | 🔒 | 需登录Google账户才能提交 |
 | 106 | toolify.ai | 💰 | 付费$99 |
-| 107 | aiscout.net | ⏳ | 待检查 |
-| 108 | alternative.me | ⏳ | 待检查 |
-| 109 | gpte.ai | ⏳ | 待检查 |
-| 110 | fuelup.co | ⏳ | 待检查 |
+| 107 | aiscout.net | ❌ | Error 520 服务器不可用 |
+| 108 | alternative.me | 🔒 | 需注册账户 |
+| 109 | gpte.ai | ❌ | 重定向错误 |
+| 110 | fuelup.co | ❌ | 连接超时 |
 | 111 | ilib.com | ⏭️ | 非目录 |
 | 112 | ai-search.io | 💰 | 付费$299 |
 | 113 | marsx.dev | ⏭️ | 非目录 |
@@ -811,38 +822,39 @@ Recommended fields:
 | 116 | aitoolnet.com | 💰 | 付费$9.9+ |
 | 117 | news.bensbites.co | 🔒 | 无Google登录 |
 | 118 | uneed.best | ✅ | 已提交，排队中 |
-| 119 | americaninno.com | ⏳ | 待检查 |
-| 120 | new-startups.com | ⏳ | 待检查 |
-| 121 | thestartupinc.com | ⏳ | 待检查 |
-| 122 | textify.ai | ⏳ | 待检查 |
-| 123 | aioftheday.com | ⏳ | 待检查 |
+| 119 | americaninno.com | ❌ | Cloudflare拦截 |
+| 120 | new-startups.com | ❌ | 403禁止访问 |
+| 121 | thestartupinc.com | 💰 | 付费$20 |
+| 122 | textify.ai | ⏭️ | 非目录(数据分析网站) |
+| 123 | aioftheday.com | ⏭️ | 只能提交新闻 |
 | 124 | tools.robingood.com | 🔒 | 无Google登录 |
-| 125 | 1000.tools | ⏳ | 待检查 |
-| 126 | killerstartups.com | ⏳ | 待检查 |
-| 127 | startupcollections.com | ⏳ | 待检查 |
-| 128 | startups.fyi | ⏳ | 待检查 |
+| 125 | 1000.tools | ❌ | 浏览器错误 |
+| 126 | killerstartups.com | ⏭️ | 非目录(新闻博客) |
+| 127 | startupcollections.com | ⏭️ | 需Google Form(页面加载慢) |
+| 128 | startups.fyi | ⏭️ | 需tally.so提交 |
 | 129 | textify.ai | ⏭️ | 重复#122 |
-| 130 | cipinet.com | ⏳ | 待检查 |
-| 131 | startupbuffer.com | ⏳ | 待检查 |
-| 132 | aitoolboard.com | ⏳ | 待检查 |
-| 133 | toolsalad.com | ⏳ | 待检查 |
-| 134 | aitools.fyi | ⏳ | 待检查 |
-| 135 | appsandwebsites.com | ⏳ | 待检查 |
-| 136 | aitoppicks.com | ⏳ | 待检查 |
-| 137 | domore.ai | ⏳ | 待检查 |
-| 138 | aixploria.com | ⏳ | 待检查 |
-| 139 | promoteproject.com | 🔒 | 需积分 |
-| 140 | jcount.com | ⏳ | 待检查 |
-| 141 | sprout24.com | ⏳ | 待检查 |
-| 142 | gptdemo.net | ⏳ | 待检查 |
-| 143 | aiwizard.ai | ⏳ | 待检查 |
-| 144 | apprater.net | ⏳ | 待检查 |
+| 130 | cipinet.com | 💰 | 付费目录，免费需4-5月审核 |
+| 131 | startupbuffer.com | ❌ | Cloudflare阻止 |
+| 132 | aitoolboard.com | 🔒 | 需上传图片，无法自动化 |
+| 133 | toolsalad.com | ❌ | SSL handshake错误 |
+| 134 | aitools.fyi | 💰 | 付费$37 |
+| 135 | appsandwebsites.com | 🔒 | 需手机号验证(失败) |
+| 136 | aitoppicks.com | ❌ | 域名不存在 |
+| 137 | domore.ai | ❌ | Cloudflare阻止 |
+| 138 | aixploria.com | 💰 | 付费$79起 |
+| 139 | promoteproject.com | 🔒 | 需登录Google账户 |
+| 140 | jcount.com | ⏭️ | 需通过联系页面提交，非目录 |
+| 141 | sprout24.com | ❌ | Cloudflare拦截 |
+| 142 | gptdemo.net | 💰 | 付费$9.9（24个dofollow外链） |
+| 143 | aiwizard.ai | 💰 | 需连接BNB钱包 |
+| 144 | apprater.net | 🔒 | 需注册账户 |
 | 145 | theaiexchange.com | ⏭️ | 非目录 |
 
 **统计**:
-- ✅ 已提交: 7
-- ⏳ 待提交: 74
-- 💰 付费: 17
-- 🔒 需登录/注册: 16
-- ⏭️ 跳过(非目录/重复): 13
-- ❌ 网站不可用: 12
+- ✅ 已提交: 17
+- ⏳ 待提交: 5 (需电话/邮箱验证等)
+- 💰 付费: 29
+- 🔒 需登录/注册: 27
+- ⏭️ 跳过(非目录/重复): 23
+- ❌ 网站不可用: 44
+- **总计**: 145
