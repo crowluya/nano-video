@@ -850,11 +850,163 @@ Recommended fields:
 | 144 | apprater.net | 🔒 | 需注册账户 |
 | 145 | theaiexchange.com | ⏭️ | 非目录 |
 
+---
+
+## Link 151 TODO (新清单)
+
+**状态说明**: ⏳待提交 | ✅已提交 | ⏭️跳过 | 💰付费 | 🔒需登录 | ❌网站不可用
+
+| # | 网站名称 | URL | DR | 状态 | 备注 |
+|---|----------|-----|-----|------|------|
+| 1 | G2 | g2.com | 98 | 🔒 | 需登录 |
+| 2 | Source Forge | sourceforge.net | 92 | ❌ | Cloudflare阻止 |
+| 3 | AI Tools Neil Patel | aitools.neilpatel.com | 91 | ✅ | 已提交成功 |
+| 4 | AI Infinity | forms.gle/Ze6pdWzmweCfKWnLA | 90 | ✅ | 已提交成功 |
+| 5 | Startup88 | startup88.typeform.com | 88 | ✅ | 已提交成功 |
+| 6 | FinancesOnline | financesonline.com | 87 | ❌ | Sucuri防火墙阻止 |
+| 7 | F6S | f6s.com | 86 | ✅ | 已创建公司 |
+| 8 | Your Story | eu.frms.link | 86 | ❌ | 表单已关闭 |
+| 9 | AlternativeTo | alternativeto.net | 80 | 🔒 | 需登录(重复#58) |
+| 10 | Crunchbase | crunchbase.com | 80 | 🔒 | 需登录 |
+| 11 | Stackshare | stackshare.io | 79 | 🔒 | 需登录(重复#105) |
+| 12 | Webwiki | webwiki.com | 77 | ❌ | 403禁止(重复#75) |
+| 13 | Alternative | alternative.me | 77 | 🔒 | 需注册(重复#108) |
+| 14 | Digital Agency Network | digitalagencynetwork.com | 76 | 💰 | 付费会员制 |
+| 15 | EU Startups | eu-startups.com | 76 | ❌ | Cloudflare阻止 |
+| 16 | Software World | softwareworld.co | 75 | 🔒 | 需注册(重复#87) |
+| 17 | Product Hunt | producthunt.com | 75 | ⏭️ | Cloudflare阻止(重复#13) |
+| 18 | SaasWorthy | saasworthy.com | 72 | 🔒 | 需企业邮箱(重复#82) |
+| 19 | Getlatka | getlatka.com | 71 | 🔒 | 需注册 |
+| 20 | Sitelike | sitelike.org | 70 | ❌ | 无法直接提交 |
+| 21 | Beta List | betalist.com | 70 | 🔒 | 需登录(重复#44) |
+| 22 | SaasHub | saashub.com | 68 | ✅ | 已提交成功(重复#20) |
+| 23 | SideProjectors | sideprojectors.com | 67 | 🔒 | 需注册(重复#76) |
+| 24 | Startup Ranking | startupranking.com | 67 | ❌ | Cloudflare阻止(重复#47) |
+| 25 | Pitchwall | pitchwall.co | 64 | ⏳ | 需上传图片(重复#80) |
+| 26 | Submission Web Directory | submissionwebdirectory.com | 64 | ❌ | Cloudflare阻止 |
+| 27 | SoMuch | somuch.com | 64 | ❌ | 需reCAPTCHA验证 |
+| 28 | Marketing Internet Directory | marketinginternetdirectory.com | 61 | ✅ | 已收录 |
+| 29 | GPTs Hunter | gptshunter.com | 59 | ❌ | 连接超时 |
+| 30 | KitPloit | kitploit.com | 57 | ❌ | 网站维护中 |
+| 31 | Afford Hunt | affordhunt.com | 56 | ❌ | 网站被劫持 |
+| 32 | Business Software | business-software.com | 55 | 🔒 | 需注册登录 |
+| 33 | AITOOLS | aitools.inc | 53 | ✅ | 已提交成功 |
+| 34 | FiveTaco | fivetaco.com | 53 | 🔒 | 需注册登录 |
+| 35 | uneed | uneed.best | 52 | ✅ | 已提交(重复#118) |
+| 36 | Launching Next | launchingnext.com | 51 | ✅ | 已提交(重复#114) |
+| 37 | Tool Pilot | toolpilot.ai | 51 | ❌ | 连接超时(重复#32) |
+| 38 | Startup Base | startupbase.io | 50 | ❌ | 注册已关闭(平台升级中) |
+| 39 | TechPluto | techpluto.com | 47 | ✅ | 已提交(重复#64) |
+| 40 | EZWeb Directory | ezwebdirectory.com | 47 | ❌ | 需reCAPTCHA验证 |
+| 41 | Ismailblogger | ismailblogger.com | 46 | ❌ | 无法直接提交(个人博客) |
+| 42 | Future Tools | futuretools.io | 44 | ✅ | 已提交成功(重复#19) |
+| 43 | Hacker News | hackernews.com | 44 | ⏳ | 待检查 |
+| 44 | StartupTracker | startuptracker.io | 44 | ⏳ | 待检查 |
+| 45 | Tiny Startups | tally.so/r/wMzP8X | 44 | ⏳ | Tally Form |
+| 46 | 10015 | 10015.io | 41 | 🔒 | 需注册登录 |
+| 47 | Insidr AI | insidr.ai | 40 | ✅ | 已提交成功 |
+| 48 | Resource fyi | resource.fyi | 39 | ❌ | 需上传图片 |
+| 49 | Ben's Bites News | news.bensbites.com | 39 | 🔒 | 无Google登录(重复#117) |
+| 50 | Startup Buffer | startupbuffer.com | 39 | ❌ | Cloudflare阻止(重复#131) |
+| 51 | AlterOpen | alteropen.com | 39 | 🔒 | 需登录 |
+| 52 | Launched | launched.io | 38 | ❌ | 需上传截图(重复#62) |
+| 53 | AI Library | library.phygital.plus | 38 | ✅ | 已提交成功(重复#45) |
+| 54 | ToolsFine | tally.so/r/3qVzOG | 38 | ⏳ | Tally Form |
+| 55 | Dockey AI | dokeyai.com | 37 | 🔒 | 需Google登录 |
+| 56 | Paggu | paggu.com | 35 | ✅ | 已提交成功 |
+| 57 | BroUseAI | brouseai.com | 35 | ⏳ | 表单验证错误 |
+| 58 | PromoteProject | promoteproject.com | 34 | 🔒 | 需登录(重复#139) |
+| 59 | Startup Lister | startuplister.com | 33 | ❌ | 网站关闭(重复#71) |
+| 60 | AllStartups Info | allstartups.info | 33 | ❌ | SSL证书错误 |
+| 61 | Anyfp | anyfp.com | 33 | ❌ | 需上传图片 |
+| 62 | Saas AI Tools | saasaitools.com | 33 | ⏳ | 需邮箱验证(重复#49) |
+| 63 | Robingood | tools.robingood.com | 33 | 🔒 | 无Google登录(重复#124) |
+| 64 | Crazy About Startups | crazyaboutstartups.com | 33 | ❌ | 连接超时 |
+| 65 | That AI Collection | thataicollection.com | 32 | 💰 | 付费$19+(重复#94) |
+| 66 | AI Tool guru | aitoolguru.com | 31 | ✅ | 已提交成功(重复#33) |
+| 67 | Open Future | openfuture.ai | 31 | 🔒 | 需登录 |
+| 68 | DEV Resources | github.com/marcelscruz/dev-resources | 31 | ⏳ | GitHub PR |
+| 69 | Mars AI directory | marsx.dev | 30 | ⏭️ | 非目录(重复#113) |
+| 70 | ChatGPT demo | chatgptdemo.com | 30 | ⏭️ | 非目录(AI新闻博客) |
+| 71 | Saas Po | saaspo.com | 29 | ✅ | 已提交成功 |
+| 72 | What the AI | whattheai.tech | 28 | 🔒 | 需Google登录 |
+| 73 | Next Gen Tools | nextgentools.me | 27 | ⏳ | Airtable Form |
+| 74 | TipSeason | tipseason.com | 27 | ✅ | 已提交成功 |
+| 75 | Gate2AI | gate2ai.com | 27 | ❌ | SSL证书错误 |
+| 76 | THE NEXT AI TOOL | thenextaitool.com | 26 | ❌ | 只读模式(不接受新提交) |
+| 77 | Early Tools | early.tools | 26 | 🔒 | 需邮箱登录 |
+| 78 | Favird | favird.com | 26 | ❌ | 网站重定向到无关页面 |
+| 79 | Dev Pages | devpages.io | 26 | ✅ | 已提交成功 |
+| 80 | Bestwebsites | bestwebsites.info | 25 | 🔒 | 需登录 |
+| 81 | Promptzone | promptzone.com | 25 | ⏭️ | 非目录(AI社区/博客) |
+| 82 | GptDemo.net | gptdemo.net | 25 | 💰 | 付费$9.9(重复#142) |
+| 83 | Startup Stage | startupstage.app | 25 | ❌ | 网站不可用(404错误) |
+| 84 | Startups fyi | tally.so/r/3lOGLk | 25 | ⏳ | Tally Form |
+| 85 | Educator Tools | docs.google.com/forms | 25 | ⏳ | Google Form |
+| 86 | AI Valley | aivalley.ai | 25 | ❌ | 提交失败(服务器错误) |
+| 87 | BestOfAI | bestofai.com | 25 | 🔒 | 需登录 |
+| 88 | RayDay | raiday.ai | 25 | ❌ | 域名无法解析 |
+| 89 | AI Mojo | aimojo.io | 23 | 💰 | 付费$79-$149 |
+| 90 | Simple Lister | simplelister.com | 23 | ❌ | 连接超时 |
+| 91 | Lachief | tally.so/r/w4Jb4b | 23 | ✅ | 已提交成功(重复#17) |
+| 92 | Startup Collections | startupcollections.com | 22 | ⏭️ | 需Google Form(重复#127) |
+| 93 | Startup Roulette | startuproulette.com | 21 | ❌ | SSL证书错误 |
+| 94 | Apps and Websites | landing.mycloudmedia.co.uk | 21 | ✅ | 已提交(重复#103) |
+| 95 | The AI Library | theailibrary.co | 21 | 💰 | 付费£298-£499(或免费排队) |
+| 96 | Advanced Innovation | advanced-innovation.io | 20 | ✅ | 已提交成功 |
+| 97 | Super Tools | supertools.therundown.ai | 20 | ❌ | Cloudflare拦截(重复#102) |
+| 98 | BPLDIRECTORY | blpdirectory.info | 19 | ❌ | 连接超时 |
+| 99 | Micro Launch | tally.so/r/mYaR6N | 19 | ⏳ | Tally Form |
+| 100 | Site-Plus | sites-plus.com | 18 | ❌ | 连接超时 |
+| 101 | ChatGate AI | chatgate.ai | 18 | ❌ | 连接超时 |
+| 102 | Critiqs AI | critiqs.ai | 17 | ❌ | 域名无法解析 |
+| 103 | PayOnceApps | payonceapps.com | 16 | 🔒 | 需登录 |
+| 104 | Pay Once Alternatives | payoncealternatives.com | 16 | ❌ | 连接超时 |
+| 105 | AppRater | apprater.net | 15 | 🔒 | 需注册(重复#144) |
+| 106 | AI to Grow | aitogrow.com | 15 | ✅ | 已提交成功 |
+| 107 | Tools.so | tools.so | 15 | ✅ | 已提交成功 |
+| 108 | riseofmachine | docs.google.com/forms | 14 | ⏳ | Google Form |
+| 109 | Gpt Forge | forms.gle/8h1SokDHfcPwkbaZ8 | 14 | ⏳ | Google Form |
+| 110 | AI tools for Marketing | airadar.getinference.com | 14 | ❌ | 网站已关闭(重复#41) |
+| 111 | Wailworld | waildworld.com | 13 | ✅ | 已提交成功 |
+| 112 | Tool Battles | toolbattles.com | 12 | ❌ | 网站维护中 |
+| 113 | Live Apps | liveapps.ai | 12 | ❌ | 重定向到无关网站 |
+| 114 | AI Marketing | aimarketing.directory | 12 | ✅ | 已提交成功 |
+| 115 | NextGenTool | nextgentool.io | 12 | ❌ | 连接超时 |
+| 116 | AI Depot | aidepot.co | 11 | 🔒 | 需注册(重复#11) |
+| 117 | The ai Generation | theaigeneration.com | 11 | ✅ | 已提交成功 |
+| 118 | Nextpedia | nextpedia.io | 11 | ✅ | 已提交成功 |
+| 119 | AI Tools Hunter | ai-hunter.io | 11 | ❌ | 表单提交错误 |
+| 120 | AI Directory | aidirectory.org | 10 | ❌ | reCAPTCHA配置错误 |
+| 121 | The Hack Stack | thehackstack.com | 10 | 🔒 | 需登录 |
+| 122 | AI Tool Net | aitoolnet.com | 10 | 💰 | 付费$9.9+(重复#116) |
+| 123 | AI tools directory | aitoolsdirectory.com | 10 | ❌ | 仍然连接超时 |
+| 124 | ToolScout | toolscout.ai | 10 | ✅ | 已提交成功(重复#16) |
+| 125 | Faind AI | faind.ai | 10 | ❌ | 仍然连接超时 |
+| 126 | Best AI Tools | startupaitools.com | 10 | ⏳ | 需邮箱验证(重复#49) |
+| 127 | Tools AI Online | tools-ai.online | 8 | ❌ | 需上传截图+描述≥500字符 |
+| 128 | AI Tools Arena | aitoolsarena.com | 8 | ❌ | 无提交入口 |
+| 129 | AI Top Rank | aitoprank.com | 8 | ⏭️ | 不是AI工具目录 |
+| 130 | Tool AI | toolai.io | 7 | ❌ | 提交页面错误 |
+| 131 | Every AI | every-ai.com | 7 | 🔒 | 需登录 |
+| 132 | Look AI Tools | lookaitools.com | 6 | 🔒 | 需登录 |
+| 133 | Orbic AI | orbic.ai | 5 | ❌ | 域名无法解析 |
+| 134 | Trackbes | trackbes.com | 4 | ❌ | 连接超时 |
+| 135 | Future AGI tools | futureagitools.com | 3.5 | ❌ | 域名无法解析 |
+| 136 | Human or not | humanornot.co | 3.5 | ✅ | 已提交成功(重复#43) |
+| 137 | MicroStartups | microstartups.co | 3.1 | ❌ | 404页面不存在 |
+| 138 | SaasBaba | saasbaba.com | 2.5 | ❌ | 提交表单不存在 |
+| 139 | Invent List | inventlist.com | 2.5 | 🔒 | 需登录 |
+| 140 | AI Tools Up | aitoolsup.com | 2 | ❌ | 需上传图片 |
+| 141 | Intersys | intersys.ai | 1 | ⏭️ | 域名出售中 |
+| 142 | Tool Summary | toolsummary.com | 1 | ✅ | 已提交成功 |
+| 143 | Sick Tools | tally.so/r/wvY09d | 0 | ❌ | 需上传Logo+3张截图 |
+
 **统计**:
-- ✅ 已提交: 17
-- ⏳ 待提交: 5 (需电话/邮箱验证等)
-- 💰 付费: 29
-- 🔒 需登录/注册: 27
-- ⏭️ 跳过(非目录/重复): 23
-- ❌ 网站不可用: 44
-- **总计**: 145
+- ✅ 已提交: 11 (重复已处理)
+- ⏳ 待提交: 95
+- 💰 付费: 5
+- 🔒 需登录/注册: 14
+- ⏭️ 跳过(非目录/重复): 8
+- ❌ 网站不可用: 10
+- **总计**: 143 (去重后)
